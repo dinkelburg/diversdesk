@@ -1,0 +1,37 @@
+---
+title: Divers Desk
+description: Get started building your docs site with Starlight.
+template: splash
+hero:
+  tagline: Dive deeper, manage better
+  image:
+    file: ../../assets/Diversdesk_showcase.svg
+  actions:
+    - text: User Manual
+      link: /guides/example/
+      icon: right-arrow
+      variant: primary
+    - text: Why Divers Desk?
+      link: /introduction
+	  variant: secondary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Dive right in
+<iframe width="800" height="500" src="https://www.youtube.com/embed/1zzK5bTuASg?si=eyqmZwG90QuD1f-V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<CardGrid stagger>
+	<Card title="Update content" icon="pencil">
+		Edit `src/content/docs/index.mdx` to see this page change.
+	</Card>
+	<Card title="Add new content" icon="add-document">
+		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	</Card>
+	<Card title="Configure your site" icon="setting">
+		Edit your `sidebar` and other config in `astro.config.mjs`.
+	</Card>
+	<Card title="Read the docs" icon="open-book">
+		Learn more in [View our introduction video](https://youtu.be/1zzK5bTuASg?si=QfIdjjDNiCpjct9t).
+	</Card>
+</CardGrid>
