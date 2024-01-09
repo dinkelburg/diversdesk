@@ -6,7 +6,7 @@ description: How to and different methods to login to your account
 To login, you can visit [traveltruster.com](https://www.traveltruster.com/) and select the login button for desktop or the profile icon on mobile phone.
 From there you can follow the prompt, and you'll be led to your account. 
 
-![Steps to login into your environment](/public/images/login_steps1.jpg)
+![Steps to login into your environment](/images/login_steps1.jpg)
 
 ## Supported Login methods:
 
@@ -18,7 +18,7 @@ Through an exisiting google account you can easily and secure login without the 
 
 ### 3. Password 
 You can establish a password for the conventional login method, ensuring seamless access across multiple devices. Please ensure the use of a robust password to enhance the security of your account.
-![Create or reset your password](/public/images/reset_password.jpg)
+![Create or reset your password](/images/reset_password.jpg)
 
 
 
