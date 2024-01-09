@@ -3,7 +3,7 @@ title: Divers Desk
 description: Get started building your docs site with Starlight.
 template: splash
 hero:
-  tagline: Dive center management software
+  tagline: Streamline your operations with our dive center management software
   image:
     file: ../../assets/Diversdesk_showcase.jpg
   actions:
@@ -17,18 +17,15 @@ hero:
 ---
 
 import {Card, CardGrid} from '@astrojs/starlight/components';
+import { YouTube } from "astro-embed";
 
-## Featured
-
-<CardGrid>
+<CardGrid stagger>
     <Card title="Introduction Video">
-        <iframe width="1280" height="720" src="https://www.youtube.com/embed/QUUr5A2rRKw" 
-        title="Divers Desk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-        gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <YouTube id="https://youtu.be/QUUr5A2rRKw?si=J_Rjg7dSmfYrUWVH" />
     </Card>
-    <Card title="FAQs">
-       Find our frequently asked questions listed here.
-      
+    <Card title="Get in touch for a demo or free trial">
+       [![Book a demo button](/src/assets/Book_a_demo_button.svg)](mailto:info@diversdesk.com) 
+       - ![Book a demo button](/src/assets/divers_desk_small_banner.png)
     </Card>
     <Card title="Getting Started">
         Dive right in
@@ -37,3 +34,4 @@ import {Card, CardGrid} from '@astrojs/starlight/components';
         Learn more in [View our introduction video](https://youtu.be/1zzK5bTuASg?si=QfIdjjDNiCpjct9t).
     </Card>
 </CardGrid>
+
