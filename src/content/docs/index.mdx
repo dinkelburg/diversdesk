@@ -3,12 +3,12 @@ title: Divers Desk
 description: Get started building your docs site with Starlight.
 template: splash
 hero:
-  tagline: Dive deeper, manage better
+  tagline: Dive center management software
   image:
-    file: ../../assets/Diversdesk_showcase.svg
+    file: ../../assets/Diversdesk_showcase.jpg
   actions:
     - text: User Manual
-      link: /guides/example/
+      link: /user_manual/login/
       icon: right-arrow
       variant: primary
     - text: Why Divers Desk?
@@ -18,28 +18,22 @@ hero:
 
 import {Card, CardGrid} from '@astrojs/starlight/components';
 
+## Featured
 
-<div className="flex flex-wrap gap-6 justify-between">
-## Dive right in
-    <div className="h-52">
-<iframe width="800" height="500" src="https://www.youtube.com/embed/1zzK5bTuASg?si=eyqmZwG90QuD1f-V"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-    </div>
-</div>
-
-<CardGrid stagger>
-    <Card title="Update content" icon="pencil">
-        Edit `src/content/docs/index.mdx` to see this page change.
+<CardGrid>
+    <Card title="Introduction Video">
+        <iframe width="1280" height="720" src="https://www.youtube.com/embed/QUUr5A2rRKw" 
+        title="Divers Desk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+        gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </Card>
-    <Card title="Add new content" icon="add-document">
-        Add Markdown or MDX files to `src/content/docs` to create new pages.
+    <Card title="FAQs">
+       Find our frequently asked questions listed here.
+      
     </Card>
-    <Card title="Configure your site" icon="setting">
-        Edit your `sidebar` and other config in `astro.config.mjs`.
+    <Card title="Getting Started">
+        Dive right in
     </Card>
-    <Card title="Read the docs" icon="open-book">
+    <Card title="Popular articles" icon="open-book">
         Learn more in [View our introduction video](https://youtu.be/1zzK5bTuASg?si=QfIdjjDNiCpjct9t).
     </Card>
 </CardGrid>

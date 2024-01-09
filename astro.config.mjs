@@ -9,25 +9,36 @@ export default defineConfig({
     logo: {
       src: './src/assets/app icon.svg'
     },
-    title: 'Knowledge Base',
+    title: 'DD Knowledge Base',
     social: {
       github: 'https://github.com/withastro/starlight'
     },
-    sidebar: [{
+    sidebar: [
+    {
       label: 'Introduction',
       link: '/introduction'
-    }, {
-      label: 'Guides',
+    }, 
+    {
+      label: 'Quick Start Guide',
+      link: '/quick_start_guide'
+    }, 
+    {
+      label: 'User Manual',
       items: [
       // Each item here is one entry in the navigation menu.
       {
-        label: 'Example Guide',
-        link: '/guides/example/'
+        label: 'Login, Users and Rights',
+        link: '/user_manual/login/'
+      },
+      {
+        label: 'Customer Onboarding Methods',
+        link: '/user_manual/customer_onboarding/'
       }]
     }, {
-      label: 'Reference',
-      autogenerate: {
-        directory: 'reference'
+      label: 'Articles',
+      autogenerate: 
+      {
+        directory: 'articles'
       }
     }]
   }), tailwind()]
