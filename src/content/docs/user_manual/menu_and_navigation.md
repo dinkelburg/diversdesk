@@ -5,7 +5,7 @@ description: Know your way around the platform
 
 Once logged into your account, all navigation through the platform starts at the hamburger menu in the left top corner of your screen.
 
-![Page navigation through the hamburger menu](/public/images/Page_navigation_through_hamburger_menu.png)
+![Page navigation through the hamburger menu](/images/Page_navigation_through_hamburger_menu.png)
 
 ## Workflow pages
 
