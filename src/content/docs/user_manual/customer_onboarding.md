@@ -15,8 +15,8 @@ Each method is described in the appropriate steps below.
 
 ## 1. Share the Booking URL
 
-![Distinct Divemasters and Instructors through the diving level drop-down](/src/assets/Share_a_booking_URL_1.png)
-![Distinct Divemasters and Instructors through the diving level drop-down](/src/assets/Share_a_booking_URL_2.png)
+![Distinct Divemasters and Instructors through the diving level drop-down](/images/Share_a_booking_URL_1.png)
+![Distinct Divemasters and Instructors through the diving level drop-down](/images/Share_a_booking_URL_2.png)
 
 ## 2. Send a Personalized Email
 
@@ -26,13 +26,13 @@ You can fill up all the desired fields on behalf of the customer, or simply stic
 :::tip[Tip]
 Create a custom registration form without mandatory fields. This will give you the freedom to solely fill the desired fields in the registration form. More info [**here**](/articles/custom_registration_form)
 :::
-![Distinct Divemasters and Instructors through the diving level drop-down](/src/assets/Register_customer_step1a.png)
+![Register customer step 1a](/images/Register_customer_step1a.png)
 
 ## 3. Select an Existing Registration 
 An existing registration can also be found through the Register here button within the booking.
-![Distinct Divemasters and Instructors through the diving level drop-down](/src/assets/Register_here_button.svg)
+![Register here button](/images/Register_here_button.svg)
 
 For returning customers you can select an existing registration from your database. All fields are prefilled according to the latest registration of this particular participant.
 
 
-![Distinct Divemasters and Instructors through the diving level drop-down](/src/assets/Register_customer_step1b.png)
+![Register customer steop 1b](/images/Register_customer_step1b.png)
