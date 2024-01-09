@@ -3,15 +3,23 @@ title: Customer Onboarding Methods
 description: Ways to onboard your customer
 ---
 
-There are currently 2 onboarding methods supported. 
+After the creation of an activity, the customer(s) can register themselves through a unique booking URL. Next to this we give the freedom for you to register the customer (partly or complete) for a personal approach.
 
-## 1. Customer onboards him/herself through the booking url
+- From here there are multiple onboarding methods available. You can:
+- **1.** [Share the Booking URL](/user_manual/customer_onboarding/#1-customer-onboards-himherself-through-the-booking-url)
+- **2.** [Send a Personalized email](/user_manual/customer_onboarding/#2-registers-customer-partly-or-complete)
+- For existing customers you can select an existing registration from your database: 
+- **3.** [Select an Existing registration](/user_manual/customer_onboarding/#3-select-an-existing-registration)
 
-![Distinct Divemasters and Instructors through the diving level drop-down](/src/assets/Customer%20self%20registration.jpg)
+Each method is described in the appropriate steps below.
 
-## 2. Manager registers the customer (partly or complete)
+## 1. Share the Booking URL
 
-### Fill the desired fields (see 3a)
+![Distinct Divemasters and Instructors through the diving level drop-down](/src/assets/Share_a_booking_URL_1.png)
+![Distinct Divemasters and Instructors through the diving level drop-down](/src/assets/Share_a_booking_URL_2.png)
+
+## 2. Send a Personalized Email
+
 After creating an activity, a user with manager rights can fill the desired fields of the registration form. 
 You can fill up all the desired fields on behalf of the customer, or simply stick to the bare minimum. e.g. Name and email.
 
@@ -20,7 +28,10 @@ Create a custom registration form without mandatory fields. This will give you t
 :::
 ![Distinct Divemasters and Instructors through the diving level drop-down](/src/assets/Register_customer_step1a.png)
 
-### Use an existing registration (see 3b)
+## 3. Select an Existing Registration 
+An existing registration can also be found through the Register here button within the booking.
+![Distinct Divemasters and Instructors through the diving level drop-down](/src/assets/Register_here_button.svg)
+
 For returning customers you can select an existing registration from your database. All fields are prefilled according to the latest registration of this particular participant.
 
 
