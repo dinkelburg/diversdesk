@@ -41,8 +41,8 @@ export default defineConfig({
           link: '/user_manual/users_and_rights/'
         },
         {
-          label: 'Creating and scheduling activities',
-          link: '/user_manual/create_an_activity/'
+          label: 'Booking and scheduling',
+          link: '/user_manual/booking_and_scheduling/'
         },
         {
           label: 'Customer onboarding methods',
