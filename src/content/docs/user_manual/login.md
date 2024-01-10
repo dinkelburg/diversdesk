@@ -20,7 +20,6 @@ Your company profile and connected pages will only show once your email is linke
 - Please [**Contact us**](mailto:info@traveltruster.com?subject=Issues%20viewing%20my%20company%20page)  if you experience any difficulty viewing your company pages.
 :::
 
-
 ### 2. Google 
 Alternatively, you can sign up using your Google account.
 
