@@ -12,7 +12,6 @@ Once logged into your account, all navigation through the platform starts at the
 ### Planning
 The planning page serves as the central hub for scheduling and organizing your trips and activities. From this single page, you can access a multitude of functionalities. For instance:
 - **A day view and date picker**
-- view 
 - **A month calendar**
 - **View customer details**
 - **View staff availability**

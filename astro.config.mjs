@@ -19,10 +19,10 @@ export default defineConfig({
       label: 'Introduction',
       link: '/introduction'
     }, 
-    {
-      label: 'Quick Start Guide',
-      link: '/quickstart_guide'
-    }, 
+    // {
+    //   label: 'Quick Start Guide',
+    //   link: '/quickstart_guide'
+    // }, 
     {
       label: 'User Manual',
       items: 
@@ -33,20 +33,24 @@ export default defineConfig({
           link: '/user_manual/login/'
         },
         {
-          label: 'Menu and Navigation',
+          label: 'Menu and navigation',
           link: '/user_manual/menu_and_navigation/'
         },
         {
-          label: 'Users and Rights',
+          label: 'Users and rights',
           link: '/user_manual/users_and_rights/'
         },
         {
-          label: 'Create an Activity',
+          label: 'Creating and scheduling activities',
           link: '/user_manual/create_an_activity/'
         },
         {
-          label: 'Customer Onboarding Methods',
+          label: 'Customer onboarding methods',
           link: '/user_manual/customer_onboarding/'
+        },
+        {
+          label: 'Customer base',
+          link: '/user_manual/customer_base/'
         }
       ]
     }, {
