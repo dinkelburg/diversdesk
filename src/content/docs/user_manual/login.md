@@ -5,10 +5,13 @@ description: How to and different methods to create or login to your account
 
 ## Create an account
 
-Already got an account? continue to the section [Login to your account.](/user_manual/login/#login-to-your-account)
+Already got an account? continue reading at [Login to your account.](/user_manual/login/#login-to-your-account)
 
-You can create an account through [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signup). Via a secure email verification link, your account will be created.
-If your email address is connected to an existing company page (_by someone in your organization with manager rights or a member of TravelTruster_), you can view your company page through the hamburger menu in the top right corner.
+You can create an account through [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signup). Via a secure email verification link you can create and login to your account. Once logged in, you can view your company page through the hamburger menu in the top right corner.
+:::note[Note]
+Your company profile and connected pages will only show once your email is linked, and appropriate user rights are granted.
+- Please [**Contact us**](mailto:info@traveltruster.com?subject=Issues%20viewing%20my%20company%20page)  if you experience any difficulty viewing your company pages.
+:::
 
 ![Create an account through a verification email link](/images/Create_an_account.jpg)
 
