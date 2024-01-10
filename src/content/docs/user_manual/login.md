@@ -5,16 +5,23 @@ description: How to and different methods to create or login to your account
 
 ## Create an account
 
-Already got an account? continue reading at [Login to your account.](/user_manual/login/#login-to-your-account)
+You can create an account through a sequre email verification link, or through an existing google account. 
 
-You can create an account through [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signup). Via a secure email verification link you can create and login to your account. Once logged in, you can view your company page through the hamburger menu in the top right corner.
+- Already got an account? continue reading at [Login to your account.](/user_manual/login/#login-to-your-account)
+
+### 1. Email verification link
+Through the sign-up button on [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signup) you can fill your email and send a verification login to create your account. 
+
+![Create an account through a verification email link](/images/Create_an_account.jpg)
+
+- Verifying your email will automatically log you into your account. Once logged in, you can access your company page through the hamburger menu in the top-left corner.
 :::note[Note]
 Your company profile and connected pages will only show once your email is linked, and appropriate user rights are granted.
 - Please [**Contact us**](mailto:info@traveltruster.com?subject=Issues%20viewing%20my%20company%20page)  if you experience any difficulty viewing your company pages.
 :::
 
-![Create an account through a verification email link](/images/Create_an_account.jpg)
 
+### 2. Google 
 Alternatively, you can sign up using your Google account.
 
 ![Create an account through google](/images/Create_an_account2.jpg)
