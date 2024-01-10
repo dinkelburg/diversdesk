@@ -11,9 +11,9 @@ export default defineConfig({
     //  src: './src/assets/app icon.svg'
     //},
     title: 'DD Knowledge Base',
-    social: {
-      github: 'https://github.com/withastro/starlight'
-    },
+    // social: {
+    //   github: 'https://github.com/withastro/starlight'
+    // },
     sidebar: [
     {
       label: 'Introduction',
