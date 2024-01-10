@@ -5,7 +5,7 @@ description: How to and different methods to create or login to your account
 
 ## Create an account
 
-You can create an account through a sequre email verification link, or through an existing google account. 
+You can create an account through a secure email verification link, or through an existing google account. 
 
 - Already got an account? continue reading at [Login to your account.](/user_manual/login/#login-to-your-account)
 
