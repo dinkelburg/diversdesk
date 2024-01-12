@@ -4,9 +4,26 @@ description: How to create your first activity
 ---
 
 ## Create a booking
-You can create a booking through the **add activity** hyperlink on the planner page.
+You can create a booking through the 'add activity' hyperlink on the planner page.
 
 ![Creating an activity](/images/Creating_an_activity.jpg)
+
+- **Read more about:**
+- **-** The available [Input fields](/user_manual/booking_and_scheduling/#input-fields)
+- **-** How to [Edit an existing booking](/user_manual/booking_and_scheduling/#edit-an-existing-booking)
+
+### Booking page
+
+A booking page has now been created.
+
+![Creating an activity](/images/Creating_an_activity2.jpg)
+
+- The booking page is accessible via a unique URL, which you can easily share with your customers through various methods such as QR code, WhatsApp, Email, or other preferred channels.
+<br></br>
+- **Discover more about the capabilities of the booking page. Learn how to:**
+- **-** Create and manage payments.
+- **-** Register [new](/user_manual/customer_onboarding/#2-send-a-personalized-email) or [existing](/user_manual/customer_onboarding/#3-select-an-existing-registration) participants 
+- **-** [Share](/user_manual/customer_onboarding/#1-share-the-booking-url) the unique booking URL with individual or multiple group members, allowing each of them to register through the same link.
 
 ### Input fields
 
@@ -52,10 +69,6 @@ Pickup/meeting times for the following days on a multi-day course are assumed to
 **Internal notes**
 <br>Internal notes are only visible to you and staff members. Use this space to leave remarks, requests, or any other noteworthy information for your colleagues dealing with this booking.
 
-### Functionalities on the booking page
-- The booking page has multiple functionalities. Here you can: 
-- **-** Create and manage payments.
-- **-** Register [new](/user_manual/customer_onboarding/#2-send-a-personalized-email) or [existing](/user_manual/customer_onboarding/#3-select-an-existing-registration) participants 
-- **-** [Share](/user_manual/customer_onboarding/#1-share-the-booking-url) the unique booking URL one or multiple group members of the booking. From there they can all register through the same URL.
+### Edit an existing booking
 
-![Creating an activity](/images/Creating_an_activity2.jpg)
+![Edit an existing booking](/images/edit_an_existing_booking.jpg)
