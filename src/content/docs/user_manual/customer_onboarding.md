@@ -15,8 +15,8 @@ Each method is described in the appropriate steps below.
 
 ## 1. Share the Booking URL
 
-![Distinct Divemasters and Instructors through the diving level drop-down](/images/Share_a_booking_URL_1.png)
-![Distinct Divemasters and Instructors through the diving level drop-down](/images/Share_a_booking_URL_2.png)
+![Share the booking url with your customer](/images/Share_a_booking_URL_1.png)
+![Share the booking url with your customer part 2](/images/Share_a_booking_URL_2.png)
 
 ## 2. Send a Personalized Email
 
