@@ -4,8 +4,7 @@ description: Dive Center Management Software.
 template: splash
 hero:
   tagline: Streamline your operations with our dive center management software
-  image:
-    file: ../../assets/diversdesk_showcase.png
+ 
   actions:
     - text: User Manual
       link: /user_manual/login/
@@ -18,10 +17,26 @@ hero:
 import {Card, CardGrid} from '@astrojs/starlight/components';
 import { YouTube } from "astro-embed";
 
+<style>
+{`
+     .intro{
+        position: relative;
+        top: -22em;
+        left: 55%;
+        width: 27em;
+     }
+`}
+
+</style>
+
+    <div class="intro">
+         <YouTube id="https://youtu.be/QUUr5A2rRKw?si=J_Rjg7dSmfYrUWVH" />
+    </div>
 <CardGrid stagger>
-    <Card title="Introduction video">
+  <Card title="Introduction video">
         <YouTube id="https://youtu.be/QUUr5A2rRKw?si=J_Rjg7dSmfYrUWVH" />
     </Card>
+
     <Card title="Get in touch for a demo or free trial">
        [![Book a demo button](/images/Book_a_demo_button.svg)](mailto:info@diversdesk.com?subject=Diversdesk%20demo) 
        - ![Book a demo button](/images/divers_desk_small_banner.png)
