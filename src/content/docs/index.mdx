@@ -4,7 +4,7 @@ description: Dive Center Management Software.
 template: splash
 hero:
   tagline: Streamline your operations with our dive center management software
- 
+
   actions:
     - text: User Manual
       link: /user_manual/login/
@@ -15,52 +15,21 @@ hero:
 ---
 
 import {Card, CardGrid} from '@astrojs/starlight/components';
-import { YouTube } from "astro-embed";
+import {YouTube} from "astro-embed";
 
-<style>
-{`
-     .intro{
-        position: relative;
-        top: -22em;
-        left: 55%;
-        width: 27em;
-     }
-     .mid-body{
-      margin-top: -15em !important;
-     }
+<div>
+    <YouTube id="https://youtu.be/QUUr5A2rRKw?si=J_Rjg7dSmfYrUWVH" />
+    <CardGrid stagger>
+        <Card title="Seamless planning, anytime, anywhere">
+            ![Diversdesk showcase](/images/Diversdesk_showcase.png)
+        </Card>
 
-    /* Small devices (portrait tablets and large phones, 600px and up) */
-    @media only screen and (max-width: 600px) {
-        .intro{
-          position: relative;
-          top: 0em;
-          left: 2%;
-          width: 20em;
-          margin-bottom: 2%;
-      }
-      .mid-body{
-        margin-top: 5em !important;
-     }
+        <Card title="Get in touch for a demo or free trial">
+            [![Book a demo
+            button](/images/Book_a_demo_button.svg)](mailto:info@diversdesk.com?subject=Diversdesk%20demo)
 
-    }
-
-`}
-
-</style>
-    <div class="intro">
-         <YouTube id="https://youtu.be/QUUr5A2rRKw?si=J_Rjg7dSmfYrUWVH" />
-    </div>
-<div class="mid-body">
-  <CardGrid stagger>
-    <Card title="Seamless planning, anytime, anywhere">
-        ![Diversdesk showcase](/images/Diversdesk_showcase.png)
-      </Card>
-
-      <Card title="Get in touch for a demo or free trial">
-        [![Book a demo button](/images/Book_a_demo_button.svg)](mailto:info@diversdesk.com?subject=Diversdesk%20demo) 
-        
-        - ![Bannar Diversdesk](/images/divers_desk_small_banner.png)
-      </Card>
-  </CardGrid>
+            - ![Bannar Diversdesk](/images/divers_desk_small_banner.png)
+        </Card>
+    </CardGrid>
 </div>
 
