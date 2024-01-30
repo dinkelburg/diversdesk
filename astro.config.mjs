@@ -6,11 +6,11 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [starlight({
-    //logo: 
-    //{
-    //  src: './src/assets/app icon.svg'
-    //},
-    title: 'DD Knowledge Base',
+    logo: 
+    {
+     src: './src/assets/DiversDesk_Icon.svg'
+    },
+    title: '',
     // social: {
     //   github: 'https://github.com/withastro/starlight'
     // },
