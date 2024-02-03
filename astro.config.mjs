@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [starlight({
-    favicon: './DD_favicon.svg',
+    favicon: './favicon.svg',
     logo: 
     {
      src: './src/assets/DiversDesk_Icon.svg'
