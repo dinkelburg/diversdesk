@@ -7,9 +7,20 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [starlight({
     favicon: './favicon.svg',
+    head:[
+      {
+        tag: 'link',
+        attrs:{
+          rel:'icon',
+          href:'./favicon.svg',
+          sizes:'32x32,'
+        },
+      },
+    ],
     logo: 
     {
-     src: './src/assets/DiversDesk_Icon.svg'
+      light:'./src/assets/DiversDesk_Logo_Day.svg',
+      dark: './src/assets/DiversDesk_Logo_Night.svg',
     },
     title: '',
     // social: {
