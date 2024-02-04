@@ -11,9 +11,9 @@ export default defineConfig({
       {
         tag: 'link',
         attrs:{
-          rel:'icon',
+          rel:'apple-touch-icon',
           href:'./favicon.ico',
-          sizes:'32x32,'
+          sizes:'32x32',
         },
       },
     ],
