@@ -6,11 +6,23 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [starlight({
-    //logo: 
-    //{
-    //  src: './src/assets/app icon.svg'
-    //},
-    title: 'DD Knowledge Base',
+    favicon: './favicon.svg',
+    head:[
+      {
+        tag: 'link',
+        attrs:{
+          rel:'apple-touch-icon',
+          href:'./favicon.ico',
+          sizes:'32x32',
+        },
+      },
+    ],
+    logo: 
+    {
+      light:'./src/assets/DiversDesk_Logo_Day.svg',
+      dark: './src/assets/DiversDesk_Logo_Night.svg',
+    },
+    title: '',
     // social: {
     //   github: 'https://github.com/withastro/starlight'
     // },
