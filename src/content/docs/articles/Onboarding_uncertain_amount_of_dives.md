@@ -3,10 +3,14 @@ title: Adding dives to an ongoing activity
 description: The customer you are about to onboard does not yet know on how many dives he or she will participate. 
 ---
 
-### User case: 
+### Use case: 
 A customer decides to join for an x amount of diving days with a flexible amount of dives. Both the duration and amount of dives are in this case undecided. 
 
-#### Method 1. Using Add-ons for additional dives
+This user case can be dealt with in 2 different ways:
+<br>[**1.** Using add-ons for additional dives](#method-1-using-add-ons-for-additional-dives-recommended)
+<br>[**2.** Changing or editing the activity](#method-2-change-the-base-product-to-match-the-amount-of-dives)
+
+### Method 1. Using Add-ons for additional dives (recommended)
 
 We kick off by creating a suitable add-on that can be used for any additional dives decided upon after the activity creation.
 In our example this price is used as a price/dive for 5 dives or more.
@@ -39,6 +43,26 @@ Don't forget to update the duration if there are extra diving days added to this
 
 ![Selecting a multi-day activity from your base-products](/images/Edit_activity_to_add_add-ons.png)
 
+Below an example of editing both trip duration and additional dives (through add-ons)
+![Desktop image of a booking screen with highlighted duration and add-on](/images/Trip_edit_duration_and_add-on_highlighted.png)
 
+### Method 2. Change the base-product to match the amount of dives
+Instead of using add-ons you can also change out the base product in order match the amount of dives & duration agreed upon.
+<br><p>**1.** Navigate to the booking and edit the desired activity
+<br>**2.** Clicking on the currently connected activity will disconnect this activity from the booking
+<br>**3.** you can now select the new activity. 
+<br>**4.** Change the duration and price accordingly
+![Change the connected activity of a booking](/images/Change_connected_activity.png)
+:::note[Note]
+Don’t have a suitable activity in your product portfolio? No worries. Read here how to create one or copy an existing activity. 
+:::
 
+<br>**5.** Once the duration and price are matching the new situatin, the booking can be submitted
+<br>**6.** The new info is updated within the booking
+<br>**7.** and the outstanding balance is updated accordingly
+<br>**8.** Any forms that were completed before the changes will remain completed after the product update
+![Update the input fields of the newly connected activity](/images/Update_desired_fields_of_a_changed_activity.png)
 
+:::note[Note]
+In case the newly added product has different forms connected, it can appear that preveously filled forms are missing. *Don't be alarmed!* Any forms that were filled/signed off and don't show after the product changes will remain saved within your secure database.
+:::
