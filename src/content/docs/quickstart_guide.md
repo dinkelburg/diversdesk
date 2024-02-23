@@ -28,12 +28,12 @@ This creates a personal and professional look towards your customers.
 After establishing your account, you can begin personalizing your own company page and enter your activities. These activities can then be quickly selected throughout our management software.
 
 ### 4. Customize and connect the appropriate forms
-Using the Forms and Product pages you can customize and connect the desired registration and liability forms for each created product. [Read here](./articles/custom_registration_form) how to customize forms and connect the appropriate forms to each of your products. <br>
+Using the Forms and Product pages you can customize and connect the desired registration and liability forms for each created product. [Read here](/articles/custom_registration_form) how to customize forms and connect the appropriate forms to each of your products. <br>
 This guarantees a smooth onboarding for each one of your customers.
 ![Sign up on traveltruster](/images/tt_hamburger_dropdown_forms_page.png)
 
 ### 5. Enter your staff members 
-Enter your staff members and allocate appropriate rights. How to do this can be read on the [Users and rights](./user_manual/users_and_rights) page within the user manual.
+Enter your staff members and allocate appropriate rights. How to do this can be read on the [Users and rights](/user_manual/users_and_rights) page within the user manual.
 
 #### You are now ready to start enjoying our software. 
 Please know we are here to assist you with any questions, unclarities or a simply a good chat :). <br>
