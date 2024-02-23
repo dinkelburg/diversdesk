@@ -4,7 +4,7 @@ description: Get started through a few simple settings
 ---
 
 Hi there! <br>
-Thank you for making it to our quickstart guide! We're delighted to have you here. 
+Thank you for making it to our quickstart guide! We're delighted to have you here. <br>
 Please follow the 5 steps below and right away get started with our software.
 
 > "Well begun is half done." - Aristotle
@@ -26,8 +26,6 @@ This creates a personal and professional look towards your customers.
 
 ### 3. Personalize your company page and enter activities 
 After establishing your account, you can begin personalizing your own company page and enter your activities. These activities can then be quickly selected throughout our management software.
-
-Info on how to set up your personal page can be [found here](./user_manual/setup_your_personal_page) 
 
 ### 4. Customize and connect the appropriate forms
 Using the Forms and Product pages you can customize and connect the desired registration and liability forms for each created product. [Read here](./articles/custom_registration_form) how to customize forms and connect the appropriate forms to each of your products. <br>
