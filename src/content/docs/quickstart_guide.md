@@ -10,7 +10,7 @@ Please follow the 5 steps below and right away get started with our software.
 > "Well begun is half done." - Aristotle
 
 ### 1. Create an account 
-Navigate to [traveltruster.com](https://www.traveltruster.com/) and create an account through the 'Sign up' hyperlink in the right top corner.
+Navigate to [traveltruster.com](https://www.traveltruster.com/?persist_modal=account&persist_flow=signup) and create an account through the 'Sign up' hyperlink in the right top corner.
 ![Sign up on traveltruster](/images/tt_landing_page_sign_up.png)
 
 
