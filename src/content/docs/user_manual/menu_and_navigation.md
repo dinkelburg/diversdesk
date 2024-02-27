@@ -25,30 +25,4 @@ A monthly calendar that displays your trips using color coding.
 Trips with a majority of fun divers on board are shown in blue, those with a majority of course takers in purple, snorkelers in green, and freedivers in brown.
 ![Colors of the month calendar](/images/Colors_month_calendar.png)
 
-- **View customer details**
-- **View staff availability**
-- **View fleet availability**
-- **Edit existing trips and activities**
-- **Create new trips and activities**
 
-- ### Bookings
-
-- ### Workload
-
-- ### Detailed day view
-
-- ### Customer base
-
-- ### Forms
-
-- ### Boats
-
-- ### Main pages
-
-- ### My Page
-
-- ### Add-ons
-
-- ### Products
-
-- ### Users

@@ -30,34 +30,51 @@ export default defineConfig({
     }, {
       label: 'Quickstart Guide',
       link: '/quickstart_guide'
-    }, {
+    }, 
+    {
       label: 'User Manual',
-      items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: 'Login to your account',
-        link: '/user_manual/login/'
-      }, {
-        label: 'Menu and navigation',
-        link: '/user_manual/menu_and_navigation/'
-      }, {
-        label: 'Users and rights',
-        link: '/user_manual/users_and_rights/'
-      }, {
-        label: 'Booking and scheduling',
-        link: '/user_manual/booking_and_scheduling/'
-      }, {
-        label: 'Customer onboarding methods',
-        link: '/user_manual/customer_onboarding/'
-      }, {
-        label: 'Customer base',
-        link: '/user_manual/customer_base/'
-      }]
-    }, {
+      items: 
+      [
+        // Each item here is one entry in the navigation menu.
+        {
+          label: 'Login to your account',
+          link: '/user_manual/login/'
+        }, 
+        {
+          label: 'Menu and navigation',
+          link: '/user_manual/menu_and_navigation/'
+        }, 
+        {
+          label: 'Users and rights',
+          link: '/user_manual/users_and_rights/'
+        }, 
+        {
+          label: 'Booking and scheduling',
+          link: '/user_manual/booking_and_scheduling/'
+        }, 
+        {
+          label: 'Customer onboarding methods',
+          link: '/user_manual/customer_onboarding/'
+        }, 
+        {
+          label: 'Customer base',
+          link: '/user_manual/customer_base/'
+        }
+      ]
+    }, 
+    {
       label: 'Articles',
-      autogenerate: {
+      autogenerate: 
+      {
         directory: 'articles'
-      }
+      }, 
+    },
+    {
+      label: 'Updates',
+      autogenerate: 
+      {
+        directory: 'updates'
+      }, 
     }]
   }), tailwind(), markdoc()]
 });
