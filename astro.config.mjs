@@ -64,17 +64,37 @@ export default defineConfig({
     }, 
     {
       label: 'Articles',
-      autogenerate: 
-      {
-        directory: 'articles'
-      }, 
+      // autogenerate: 
+      // {
+      //  directory: 'articles'
+      // }, 
+      items:
+      [
+        {
+          label: 'Add an icon to your mobile homescreen',
+          link: '/articles/add_to_homescreen'
+        },
+        {
+          label: 'Create a custom registration form',
+          link: '/articles/custom_registration_form'
+        },
+        {
+          label: 'Adding dives to an ongoing activity',
+          link: 'articles/adding_dives_to_an_ongoing_activity',
+          badge: 'new'
+        }
+      ]
     },
     {
       label: 'Updates',
-      autogenerate: 
+      items: 
+      [
       {
-        directory: 'updates'
-      }, 
+        label: 'Update report 26 Feb 2024',
+        link: '/updates/240226_update_report',
+        badge: 'new'
+      }
+    ]
     }]
   }), tailwind(), markdoc()]
 });
