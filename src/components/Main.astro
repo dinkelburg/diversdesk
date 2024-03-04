@@ -1,0 +1,311 @@
+---
+import { YouTube } from '@astro-community/astro-embed-youtube';
+import { Image } from 'astro:assets';
+import StaffCalendarsIcon  from '../assets/Icon_Staff_calendars.svg?raw';
+import WorkLoadIcon from '../assets/Icon_workload.svg?raw';
+import MetricsIcon from '../assets/Icon_metrics.svg?raw';
+import CustomerDatabaseIcon from '../assets/Icon_customer_database.svg?raw';
+import PaperlessOnboardingIcon from '../assets/Icon_paperless_onboarding.svg?raw';
+import PlanningSchedulingIcon from '../assets/Icon_planning_and_scheduling.svg?raw';
+import BartImage from '../assets/Bart_landingpage.png';
+import RubenImage from '../assets/Ruben_landingpage.png';
+import GaeImage from '../assets/Gae_landingpage.png';
+---
+
+<div class="items-center justify-center" id="banner">
+    <div class="max-w-auto text-center mt-28">
+        <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-black">Seamless planning, anytime, anywhere</h1>
+        <p class="mb-5 text-2xl text-gray-700 dark:text-gray-500">Intuitive dive center management software</p>
+        <div class="flow-root my-8 w-1/6 mx-auto ">
+        
+            <button type="button" class="float-left rounded-full text-white font-bold bg-orange-500 hover:bg-white-700 focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-300   px-5 py-2.5 text-center me-2 mb-2">Start free trial</button>
+            <button type="button" class="float-right rounded-full text-orange-500 font-bold bg-transparent border border-orange-500 hover:bg-white-700 focus:ring-4 focus:outline-none focus:ring-orange-300 dark:focus:ring-orange-600 px-5 py-2.5 text-center me-2 mb-2">Book a demo</button>
+        </div>
+    </div>
+    <img class="h-auto max-w-full mx-auto mt-30" src="../banner.png" alt="image description">
+</div>
+<div id="middle-content" class="items-center justify-center mt-32 mb-10">
+    <div class="max-w-auto text-center mt-28">
+    <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-black">Explore our handy features</h2>
+    </div>
+    <div class="flex flex-wrap justify-center mt-5">
+
+        <!-- card 1 -->
+        <div class="p-4 w-96">
+            <div class="flex rounded-2xl h-full dark:bg-sky-50 bg-sky-50 p-3 shadow-md flex-col">
+                <div class="flex items-center  mb-1">
+                    <div class="w-16 h-14 mr-3 inline-flex items-center  flex-shrink-0">
+                       
+                        <Fragment set:html={PlanningSchedulingIcon} />
+                       
+                    </div>
+                    <h2 class="text-black text-center dark:text-black text-sm font-bold">Planning & scheduling</h2>
+                </div>
+           
+            </div>
+        </div>
+    
+        <!-- card 2 -->
+        <div class="p-4 w-96">
+            <div class="flex rounded-2xl h-full dark:bg-sky-50 bg-sky-50 p-3 shadow-md flex-col">
+                <div class="flex items-center mb-1">
+                    <div class="w-16 h-14 mr-3 inline-flex items-center  flex-shrink-0">
+
+                        <Fragment set:html={PaperlessOnboardingIcon} />
+                          
+                    </div>
+                    <h2 class="text-black text-center dark:text-black text-sm font-bold">Paperless onboarding</h2>
+                  
+                </div>
+           
+            
+            </div>
+        </div>
+    
+        <!-- card 3 -->
+        <div class="p-4 w-96">
+            <div class="flex rounded-2xl h-full dark:bg-sky-50 bg-sky-50 p-3 shadow-md flex-col">
+                <div class="flex items-center mb-1">
+                    <div class="w-16 h-14 mr-3 inline-flex items-center  flex-shrink-0">
+                       
+                        <Fragment set:html={CustomerDatabaseIcon} />
+                    </div>
+                    <h2 class="text-black text-center dark:text-black text-sm font-bold">Customer Database</h2>
+                  
+                </div>
+           
+             
+                 
+             
+            </div>
+        </div>
+
+     
+    
+    </div>
+
+    <div class="flex flex-wrap justify-center mt-2">
+
+       
+          <!-- card 4 -->
+          <div class="p-3 w-96">
+            <div class="flex rounded-2xl h-full dark:bg-sky-50 bg-sky-50 p-3 shadow-md flex-col">
+                <div class="flex items-center mb-1">
+                    <div class="w-16 h-14 mr-3 inline-flex items-center  flex-shrink-0">
+                       
+                        <Fragment set:html={StaffCalendarsIcon} />
+                          
+                    </div>
+                    <h2 class="text-black text-center dark:text-black text-sm font-bold">Staff Calendars</h2>
+                </div>
+           
+             
+            </div>
+        </div>
+
+        <!-- card 5 -->
+
+        <div class="p-3 w-96">
+            <div class="flex rounded-2xl h-full dark:bg-sky-50 bg-sky-50 p-3 shadow-md flex-col">
+                <div class="flex items-center mb-1">
+                    <div class="w-16 h-14 mr-3 inline-flex items-center  flex-shrink-0">
+                       
+                        <Fragment set:html={WorkLoadIcon} />
+                          
+                    </div>
+                    <h2 class="text-black text-center dark:text-black text-sm font-bold">Workload</h2>
+                </div>
+        
+            </div>
+        </div>
+
+        <!-- card 6 -->
+        <div class="p-3 w-96">
+            <div class="flex rounded-2xl h-full dark:bg-sky-50 bg-sky-50 p-3 shadow-md flex-col">
+                <div class="flex items-center mb-1">
+                    <div class="w-16 h-14 mr-3 inline-flex items-center  flex-shrink-0">
+                       
+                        <Fragment set:html={MetricsIcon} />
+                          
+                    </div>
+                    
+                    <h2 class="text-black text-center dark:text-black text-sm font-bold">Metrics</h2>
+                </div>
+           
+          
+                 
+          
+            </div>
+        </div>
+    
+    </div>
+
+
+</div>
+
+<div class="bg-sky-50 flow-root">
+
+    <div class="float-left w-1/2 p-20">
+        <div class="max-w-auto text-center mt-28 pl-20">
+        <h3 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-3xl dark:text-black">Watch Divers desk in actions</h3>
+        </div>
+        <div>
+            Dive center management software designed to simplify your daily operations. with as user-friendly inerface, it provides visual insights into boat and trip capacity, ensuring efficient planning for each day
+        </div>
+    </div>
+    <div class="float-right w-1/2 p-20">
+        
+        <YouTube id="https://youtu.be/QUUr5A2rRKw?si=J_Rjg7dSmfYrUWVH" />
+
+    </div>
+
+</div>
+<div id="end-content" class="items-center justify-center mt-32">
+    <div class="max-w-auto text-center mt-28">
+    <h2 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-black">Meet Our Team</h2>
+    <p>
+        Get to know the faces behind the scenes and learn about the values that drive us
+    </p>
+    </div>
+    <div class="flex flex-wrap justify-center mt-10">
+
+        <!-- card 1 -->
+        <div class="p-4 w-64">
+            <div class="flex rounded-lg h-full dark:bg-white-400 bg-white-200 p-0 shadow-md flex-col">
+                <div class="w-full rounded-t-lg h-32 overflow-hidden">
+                       
+                        <Image src={BartImage} class="h-32" alt="Bart"/>
+                  
+                </div>
+           
+                <div class="flex flex-col items-center justify-center mt-2">
+                    <h2 class="text-black text-center dark:text-black text-lg lg-text-xl font-bold">Bart</h2>
+                    <p class="leading-relaxed text-base text-center text-gray-600 dark:text-gray-600">
+                       Co-Founder and Designer
+                    </p>
+
+                    <div class="leading-relaxed text-sm text-center text-gray-600 dark:text-gray-600 p-4">
+                        "As a devoted diver, i co-founded our software after seeing the challenges dive center face. My Goal?
+                        To create intuitive solutions that tackle the issues head-on. 
+                        I'm passionate about making diving and dive center management seamless, 
+                        ensuring every dive is about the adventure, not the paperwork"
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+    
+        <!-- card 2 -->
+        <div class="p-4 w-64">
+            <div class="flex rounded-lg h-full dark:bg-white-400 bg-white-200 p-0 shadow-md flex-col">
+                <div class="w-full rounded-t-lg h-32 overflow-hidden">
+                       
+
+                        <Image src={RubenImage} class="h-32" alt="Ruben"/>
+                  
+                </div>
+           
+                <div class="flex flex-col items-center justify-center mt-2">
+                    <h2 class="text-black text-center dark:text-black text-lg lg-text-xl font-bold">Ruben</h2>
+                    <p class="leading-relaxed text-base text-center text-gray-600 dark:text-gray-600">
+                        Co-Founder and Developer
+                    </p>
+                    <p class="leading-relaxed text-sm text-center text-gray-600 dark:text-gray-600 p-4">
+                        "I've co-founded our dive center software out of curiousity. 
+                        As i grown into a passionate diver and developer,
+                        my goal is to innovate and enhance dive center operations, 
+                        making every center and diver's experience smoother and more enjoyable"
+                    </p>
+                
+                </div>
+            </div>
+        </div>
+    
+        <!-- card 3 -->
+        <div class="p-4 w-64">
+            <div class="flex rounded-lg h-full dark:bg-white-400 bg-white-200 p-0 shadow-md flex-col">
+                <div class="w-full rounded-t-lg h-32 overflow-hidden">
+                       
+                        <Image src={GaeImage} class="h-32" alt="Gae"/>
+                  
+                </div>
+           
+                <div class="flex flex-col items-center justify-center mt-2">
+                    <h2 class="text-black text-center dark:text-black text-lg lg-text-xl font-bold">Gae Marie</h2>
+                    <p class="leading-relaxed text-base text-center text-gray-600 dark:text-gray-600">
+                        Marketing and Content Specialist
+                    </p>
+                    <p class="leading-relaxed text-sm text-center text-gray-600 dark:text-gray-600 p-4">
+                        "Initially on board for marketing. I quicly saw the impact of our software and fell in love with it's vision.
+                         Now, I dive regularly, intertwining my passion for diving and skill in marketing to share our story. 
+                         connect with divers globally, and enhance our vibrant diving community"
+                    </p>
+                  
+                </div>
+            </div>
+        </div>
+
+      
+    
+    </div>
+
+
+</div>
+
+
+<div class="bg-sky-50 flow-root p-40">
+
+    <div class="items-center justify-center rounded-lg bg-white h-auto">
+        <div class="text-center bg-inherit">
+      
+            <h2 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl dark:text-black text-center">
+                Let's get in touch!
+             </h2>
+    
+ 
+
+       
+
+
+            <div class="float-left w-1/2 p-20 ">
+                <div class="max-w-auto text-center mt-28 pl-20">
+                <h3 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-3xl dark:text-black">Contact</h3>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+            <div class="float-right w-1/2 p-20">
+                
+                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div class="mb-4">
+                      <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                        Full name
+                      </label>
+                      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="Fullname">
+                    </div>
+                    <div class="mb-6">
+                      <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                        Email
+                      </label>
+                      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Email">
+                    </div>
+                    <div class="flex items-center justify-between">
+                      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                        Submit
+                      </button>
+                     
+                    </div>
+                  </form>
+        
+            </div>
+
+        </div>
+       
+
+
+
+    </div>
+
+</div>
+
