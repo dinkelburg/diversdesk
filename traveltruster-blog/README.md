@@ -1,6 +1,6 @@
 # Astro Creek - a blog theme for Astro
 
-![](./public/images/creek.png)
+![](/images/creek.png)
 
 Creek is an open source blog theme for [Astro SSG](https://docs.astro.build/getting-started/).
 

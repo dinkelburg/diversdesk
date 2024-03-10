@@ -12,7 +12,7 @@ Below you wil find the 5 marine creatures we highly recommend to check out durin
 
 ## 1. MOLA MOLA
 Let us start with the Mola Mola, also called the sunfish. This enigmatic species is the world's heaviest bony fish, attaining weights of up to 5100 pounds (2300 kg) and measuring up to 14 feet (4+ m) from the top of the dorsal to the bottom of the anal fin. They can be found in most tropical and temperate oceans at random, and their only predators are orcas and huge sharks but fear not, the seas near Bali are too warm to draw large sharks. The term "ocean sunfish" refers to a very huge, oddly shaped fish that likes to float on its side at the water's surface to warm itself in the sun (Also the reason that they get run over by boats sometimes which is sad, but true). Around Bali, we observe mola mola all year round. The Mola Mola spends a large portion of its life below 200 meters in depth, so we can only see them when they surface, especially between July and the end of November.
-![3 Mola's at Crystal bay](./public/images/Mola_mola_at_crystal_bay.png)
+![3 Mola's at Crystal bay](/images/Mola_mola_at_crystal_bay.png)
 
 ## 2. MANTA RAYS
 Next, we'll come to our enormous sea angels - our Manta Rays. Manta rays are known for being peaceful, curious, and kind creatures. The word 'manta' means 'blanket' in Spanish, and the link is obvious. They glide smoothly through the water, and it's fascinating to witness how animals choose to engage with humans. They adore the scuba divers' bubbles. and utilize it as their own private spa. They frequently glide over you to tickle themselves with the air bubbles coming out of your bcd if you are patient and composed. You'll never forget your experience with a Manta Ray.

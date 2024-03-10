@@ -12,7 +12,7 @@ Bali is well-known for its pristine beaches and beautiful blue waters. It’s no
 
 ### Activities that might interest you
 
-![Manta ray](./public/images/card_dive_trips_to_manta_point.png)
+![Manta ray](/images/card_dive_trips_to_manta_point.png)
 
 Due to its equator-side location, the area experiences year-round tropical weather, with highs of 30 to 32 °C and lows of 24 to 26 °C. In Bali, there are two different seasons:
 the dry season (May to September), which is characterized by dry southeast winds from the nearby Australian continent, and: 
