@@ -13,7 +13,7 @@ const { title, date, hero, youtube } = Astro.props;
 
 <article class="max-w-5xl mx-auto px-3">
   <header class="mx-auto max-w-3xl text-center content">
-    <h1>{title}</h1>
+    <h1 class="mb-4 text-4xl md:text-5xl">{title}</h1>
   </header>
 
   <!-- Image -->
@@ -31,5 +31,5 @@ const { title, date, hero, youtube } = Astro.props;
     <slot />
   </section>
 
-  <EmailSignup />
+  <!-- <EmailSignup /> -->
 </article>
