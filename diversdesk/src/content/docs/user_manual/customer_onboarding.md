@@ -3,6 +3,13 @@ title: Customer Onboarding Methods
 description: Ways to onboard your customer
 ---
 
+<!-- Diversdesk stands out in its incredable flexible onboarding methods.
+
+As a dive-center you can choose to:
+- **1** Register customers through a created booking
+- **2** Allow a stand-alone registeration through a customizable/generic onboarding page
+
+## Register customers through a created booking -->
 After the creation of an activity, the customer(s) can register themselves through a unique booking URL. Next to this we give the freedom for you to register the customer (partly or complete) for a personal approach.
 
 - From here there are multiple onboarding methods available. You can:
@@ -10,6 +17,7 @@ After the creation of an activity, the customer(s) can register themselves throu
 - **2.** [Send a Personalized email](/user_manual/customer_onboarding/#2-send-a-personalized-email)
 - For existing customers you can select an existing registration from your database: 
 - **3.** [Select an Existing registration](/user_manual/customer_onboarding/#3-select-an-existing-registration)
+<!-- - **4.** [Generic onboarding method](/user_manual/customer_onboarding/#4-register-through-a-generic-registration-page) -->
 
 Each method is described in the appropriate steps below.
 
@@ -36,3 +44,5 @@ For returning customers you can select an existing registration from your databa
 
 
 ![Register customer steop 1b](/images/Register_customer_step1b.png)
+
+<!-- ## 4. Register Through a Generic Registration Page -->
