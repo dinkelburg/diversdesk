@@ -1,5 +1,6 @@
 ---
 title: Freedive Nusa | Training & Help page
+pagefind: false
 ---
 
 #### Hi team Freedive Nusa,

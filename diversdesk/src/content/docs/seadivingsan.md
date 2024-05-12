@@ -1,5 +1,6 @@
 ---
 title: S.E.A. Diving Bali _ Support Page 
+pagefind: false
 ---
 
 This page will contain all the questions, videos and discussed subjects during the period you use our platform. 
