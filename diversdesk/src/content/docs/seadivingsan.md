@@ -6,8 +6,10 @@ pagefind: false
 This page will contain all the questions, videos and discussed subjects during the period you use our platform. 
 Every recording or unclarity will added here, so you can always use this page as your reference.
 
+### Adding a rest day _ 2024.05.22
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/1d8a6e1aec73461fb9a2ebd74c8cecde?sid=a10a3ab0-d942-44cd-8432-c257f45e092f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-### S.E.A. Diving Bali - 26 April 2024
+### S.E.A. Diving Bali - 2024.04.26
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/2bf0d1a811d44758b4179187b0030ad3?sid=bdc10715-cb28-4310-ab7c-1be666654965" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Participant overview _ S.E.A. Diving Bali 2024.04.25
