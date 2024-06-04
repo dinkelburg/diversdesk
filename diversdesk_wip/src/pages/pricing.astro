@@ -1,0 +1,23 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import ComparePricing from "@components/compare-pricing.astro";
+import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import pricing from "@data/pricing.json";
+
+---
+
+
+<MainLayout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Pricing</Fragment>
+      <Fragment slot="desc">
+        Simple & Predictable pricing. No Surprises.
+      </Fragment>
+    </Sectionhead>
+    <PricingSection pricing={pricing} />  
+    <ComparePricing />
+  </Container>
+</MainLayout>

@@ -1,0 +1,266 @@
+---
+// Import SecondaryCTA component for use in this module
+import SecondaryCTA from "@components/ui/buttons/SecondaryCTA.astro";
+import Icon from "@components/ui/icons/Icon.astro";
+
+// Define props from Astro
+const { pricing } = Astro.props;
+
+// Define TypeScript type for products.
+type Product = {
+  name: string;
+  description: string;
+  price: string;
+  cents: string;
+  billingFrequency: string;
+  billingsubtitle: string;
+  users: Array<string>;
+  features: Array<string>;
+  purchaseBtnTitle: string;
+  purchaseLink: string;
+};
+
+interface PricingSectionProps {
+  title: string;
+  subTitle: string;
+  badge: string;
+  thirdOption: string;
+  btnText: string;
+  pricing: {
+    title: string;
+    subTitle: string;
+    starterKit: Product;
+    professionalToolbox: Product;
+  };
+}
+---
+
+<section
+  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+  <!-- Section heading and sub-heading -->
+  <div class="mx-auto mb-10 max-w-4xl text-center lg:mb-14">
+    <h2
+      class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+    >
+      {pricing.title}
+    </h2>
+    <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+      {pricing.subTitle}
+    </p>
+  </div>
+  <!-- Contains four main product blocks -->
+  <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-4">
+    <!-- CRM ONLY Product details -->
+    <div
+      class="w-full rounded-xl bg-gray-800 p-6 sm:w-1/2 sm:rounded-xl sm:p-8 lg:w-1/5"
+    >
+      <div class="mb-4">
+        <h3 class="text-2xl font-bold text-neutral-100 sm:text-3xl">
+          {pricing.CRM_only.name}
+        </h3>
+        <p class="text-indigo-300">{pricing.CRM_only.description}</p>
+      </div>
+
+      <div class="mb-4">
+        <span class="text-4xl font-bold text-neutral-200"
+          >{pricing.CRM_only.price}</span
+        >
+        <span class="text-lg font-bold text-neutral-300"
+          >{pricing.CRM_only.cents}</span
+        >
+        <span class="ms-3 text-sm text-indigo-200"
+          >{pricing.CRM_only.billingFrequency}</span
+        ></br>
+        <span class="ms-3 text-sm text-indigo-200"
+        >{pricing.CRM_only.billingsubtitle}</span
+      >
+      </div>
+      <!-- Features list - automatically created by mapping over `features` array -->
+      <ul class="mb-6 space-y-2 text-neutral-300">
+        <!-- {
+          pricing.CRM_only.users.map((feature: string) => (
+            <li class="flex items-center gap-1.5">
+              <Icon name="checkCircle" />
+
+              <span>{feature}</span>
+            </li>
+          ))
+        }
+        <hr></hr> -->
+        {
+          pricing.CRM_only.features.map((feature: string) => (
+            <li class="flex items-center gap-1.5">
+              <Icon name="checkCircle" />
+
+              <span>{feature}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <!-- CTA for purchasing the product -->
+      <a
+        href={pricing.CRM_only.purchaseLink}
+        class="block rounded-lg bg-gray-500 px-8 py-3 text-center text-sm font-bold text-gray-100 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-600 focus-visible:ring active:text-gray-300 md:text-base"
+        >{pricing.CRM_only.purchaseBtnTitle}</a
+      >
+    </div>
+    <!-- STARTER product details -->
+    <div
+      class="w-full rounded-xl bg-gradient-to-tr from-[#FF512F] to-[#F09819] p-6 shadow-xl sm:w-1/4 sm:p-8"
+    >
+      <div
+        class="mb-4 flex flex-col items-start justify-between gap-4 lg:flex-row"
+      >
+        <div>
+          <h3 class="text-2xl font-bold text-neutral-100 sm:text-3xl">
+            {pricing.Starter.name}
+          </h3>
+          <p class="text-orange-200">{pricing.Starter.description}</p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <span class="text-6xl font-bold text-neutral-200"
+          >{pricing.Starter.price}</span
+        >
+        <span class="text-lg font-bold text-orange-100"
+          >{pricing.Starter.cents}</span
+        >
+        <span class="ms-3 text-orange-200"
+          >{pricing.Starter.billingFrequency}</span
+        ></br>
+        <span class="ms-3 text-sm text-orange-200"
+        >{pricing.CRM_only.billingsubtitle}</span
+        >
+      </div>
+      <!-- Features list - automatically created by mapping over `features` array -->
+      <ul class="mb-6 space-y-2 text-orange-100">
+        {
+          pricing.Starter.features.map((feature: string) => (
+            <li class="flex items-center gap-1.5">
+              <Icon name="checkCircle" />
+
+              <span>{feature}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <!-- CTA for purchasing the product -->
+      <a
+        href={pricing.Starter.purchaseLink}
+        class="block rounded-lg bg-orange-200 bg-opacity-50 px-8 py-3 text-center text-sm font-bold text-neutral-100 outline-none ring-orange-300 transition duration-100 hover:bg-orange-300 hover:bg-opacity-50 focus-visible:ring active:bg-orange-400 md:text-base"
+        >{pricing.Starter.purchaseBtnTitle}</a
+      >
+    </div>
+        <!-- PRO product details -->
+        <div
+        class="w-full rounded-xl bg-gradient-to-tr from-[#FF512F] to-[#F09819] p-6 shadow-xl sm:w-1/4 sm:p-8"
+      >
+        <div
+          class="mb-4 flex flex-col items-start justify-between gap-4 lg:flex-row"
+        >
+          <div>
+            <h3 class="text-2xl font-bold text-neutral-100 sm:text-3xl">
+              {pricing.Pro.name}
+            </h3>
+            <p class="text-orange-200">{pricing.Pro.description}</p>
+          </div>
+  
+          <span
+            class="order-first inline-block rounded-full bg-orange-200 bg-opacity-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-center text-orange-600 lg:order-none"
+            >{pricing.badge}</span
+          >
+        </div>
+  
+        <div class="mb-4">
+          <span class="text-6xl font-bold text-neutral-200"
+            >{pricing.Pro.price}</span
+          >
+          <span class="text-lg font-bold text-orange-100"
+            >{pricing.Pro.cents}</span
+          >
+          <span class="ms-3 text-orange-200"
+            >{pricing.Pro.billingFrequency}</span
+          ></br>
+          <span class="ms-3 text-sm text-orange-200"
+          >{pricing.CRM_only.billingsubtitle}</span
+          >
+        </div>
+        <!-- Features list - automatically created by mapping over `features` array -->
+        <ul class="mb-6 space-y-2 text-orange-100">
+          {
+            pricing.Pro.features.map((feature: string) => (
+              <li class="flex items-center gap-1.5">
+                <Icon name="checkCircle" />
+  
+                <span>{feature}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <!-- CTA for purchasing the product -->
+        <a
+          href={pricing.Pro.purchaseLink}
+          class="block rounded-lg bg-orange-200 bg-opacity-50 px-8 py-3 text-center text-sm font-bold text-neutral-100 outline-none ring-orange-300 transition duration-100 hover:bg-orange-300 hover:bg-opacity-50 focus-visible:ring active:bg-orange-400 md:text-base"
+          >{pricing.Pro.purchaseBtnTitle}</a
+        >
+      </div>
+      <!-- ENTERPRISE PLAN -->
+      <div
+      class="w-full rounded-xl bg-gradient-to-tr from-[#FF512F] to-[#F09819] p-6 shadow-xl sm:w-1/4 sm:p-8"
+    >
+      <div
+        class="mb-4 flex flex-col items-start justify-between gap-4 lg:flex-row"
+      >
+        <div>
+          <h3 class="text-2xl font-bold text-neutral-100 sm:text-3xl">
+            {pricing.Enterprise.name}
+          </h3>
+          <p class="text-orange-200">{pricing.Enterprise.description}</p>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <span class="text-6xl font-bold text-neutral-200"
+          >{pricing.Enterprise.price}</span
+        >
+        <span class="text-lg font-bold text-orange-100"
+          >{pricing.Enterprise.cents}</span
+        > </br>
+        <span class="ms-3 text-orange-200"
+          >{pricing.Enterprise.billingFrequency}</span
+        >
+        <span class="ms-3 text-sm text-orange-200"
+        >{pricing.CRM_only.billingsubtitle}</span
+        >
+      </div>
+      <!-- Features list - automatically created by mapping over `features` array -->
+      <ul class="mb-6 space-y-2 text-orange-100">
+        {
+          pricing.Enterprise.features.map((feature: string) => (
+            <li class="flex items-center gap-1.5">
+              <Icon name="checkCircle" />
+
+              <span>{feature}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <!-- CTA for purchasing the product -->
+      <a
+        href={pricing.Enterprise.purchaseLink}
+        class="block rounded-lg bg-orange-200 bg-opacity-50 px-8 py-3 text-center text-sm font-bold text-neutral-100 outline-none ring-orange-300 transition duration-100 hover:bg-orange-300 hover:bg-opacity-50 focus-visible:ring active:bg-orange-400 md:text-base"
+        >{pricing.Enterprise.purchaseBtnTitle}</a
+      >
+    </div>
+  </div>
+  <!-- Call to action for Enterprise Solutions -->
+  <!-- <div class="mt-8 flex items-center justify-center gap-x-3 md:mt-12">
+    <p class="text-sm text-neutral-600 dark:text-neutral-400">
+      {pricing.thirdOption}
+    </p>
+
+    <SecondaryCTA title={pricing.btnText} url="#" />
+  </div> -->
+</section>
