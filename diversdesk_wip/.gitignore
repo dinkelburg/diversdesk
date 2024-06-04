@@ -4,6 +4,8 @@ dist/
 .astro/
 .idea/
 
+.vercel/output
+
 # dependencies
 node_modules/
 
