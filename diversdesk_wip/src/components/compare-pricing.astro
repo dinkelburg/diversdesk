@@ -4,6 +4,9 @@ import Sectionhead from "@components/sectionhead.astro";
 import Link from "@components/ui/link.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
+// Define props from Astro
+const { pricing } = Astro.props;
+
 const features = [
   "Custom Domains",
   "Storage",
@@ -32,7 +35,7 @@ const plans = [
   {
     name: "CRM Only",
     price: "$25",
-    color: "grey",
+    color: "orange",
     values: [
       "Single Subdomain",
       "1GB",
@@ -58,8 +61,8 @@ const plans = [
   },
   {
     name: "Starter",
-    price: "$49/mo",
-    color: "indigo",
+    price: "$39/mo",
+    color: "orange-400",
     values: [
       "1 Custom Domain",
       "10GB",
@@ -85,8 +88,8 @@ const plans = [
     ],
   },
   {
-    name: "Business",
-    price: "$149/mo",
+    name: "Pro",
+    price: "$59/mo",
     popular: true,
     color: "orange",
     values: [
@@ -115,7 +118,7 @@ const plans = [
   {
     name: "Enterprise",
     price: "Custom",
-    color: "purple",
+    color: "black",
     values: [
       "100 Custom Domains",
       "200GB",
@@ -151,33 +154,33 @@ const colors = {
 
 <Container>
   <div class="mt-16">
-    <h3 class="text-xl lg:text-3xl font-bold lg:tracking-tight">
+    <h3 class="text-xl lg:text-3xl font-bold lg:tracking-tight dark:text-neutral-200">
       Compare Plans
     </h3>
-    <p class="mt-1 text-slate-600">
+    <p class="mt-1 text-slate-600 dark:text-neutral-400">
       Use the table below to compare full features of this product.
     </p>
   </div>
 
   {/* Desktop Version */}
   <div
-    class="mt-8 overflow-x-auto lg:overflow-visible w-full border border-gray-200 rounded-md">
+    class="mt-8 overflow-x-auto lg:overflow-visible w-full border border-neutral-300 rounded-md">
     <div class="min-w-max">
       <div
-        class="sticky top-18 py-6  bg-gray-200 border-b border-slate-200 rounded-t-md">
-        <div class="grid grid-cols-5 gap-0 items-center bg-gray-200">
-          <div class="text-slate-500 px-5">Compare Plans</div>
+        class="sticky top-18 py-6  bg-white border-b border-neutral-300 rounded-t-md dark:bg-neutral-800 dark:border-neutral-600">
+        <div class="grid grid-cols-5 gap-0 items-center bg-white dark:bg-neutral-800">
+          <div class="text-slate-500 px-5 dark:text-neutral-200">Compare Plans</div>
           {
             plans.map((plan) => (
               <div class="px-5">
-                <h3 class:list={plan.color}>
+                <h3 class="dark:text-neutral-200">
                   {plan.name}
                 </h3>
-                <div class="text-xl mt-1 lg:text-2xl font-bold text-black">
+                <div class="text-xl mt-1 lg:text-2xl font-bold text-black dark:text-neutral-200">
                   {plan.price}
                 </div>
 
-                <div class="flex mt-3">
+                <div class="flex mt-3 ">
                   <Link
                     href="#"
                     block
@@ -193,10 +196,11 @@ const colors = {
       </div>
 
       <div class="grid grid-cols-5 gap-0 items-center">
-        <div class="grid">
+        <div class="grid dark:text-neutral-300">
           {
             features.map((feature) => (
-              <div class="border-b border-slate-200 font-medium text-sm py-3 px-5 odd:bg-slate-50">
+              <div class="border-b border-neutral-300 font-medium text-sm py-3 px-5 odd:bg-neutral-100
+               dark:odd:bg-neutral-700 dark:border-neutral-600">
                 {feature}
               </div>
             ))
@@ -205,9 +209,10 @@ const colors = {
 
         {
           plans.map((plan) => (
-            <div class="grid gap-0">
+            <div class="grid gap-0 dark:text-neutral-300">
               {plan.values.map((value) => (
-                <div class="border-b border-slate-200 odd:bg-slate-50 text-sm py-3 px-5">
+                <div class="border-b border-neutral-300 odd:bg-neutral-100 text-sm py-3 px-5
+                 dark:odd:bg-neutral-700 dark:border-neutral-600">
                   {typeof value === "boolean" ? (
                       <Icon name="checkCircle" />
                   ) : (
@@ -221,4 +226,5 @@ const colors = {
       </div>
     </div>
   </div>
+  <br/><br/>
 </Container>
