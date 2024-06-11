@@ -18,6 +18,7 @@ import pricing from "@data/pricing.json";
 import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
+import Ipad_Iphone from "@images/Ipad_Iphone.svg";
 import dashboard from "@images/dashboard-image.avif";
 import { Icons } from "node_modules/@astrojs/starlight/components/Icons";
 import Icon from "@/components/ui/icons/Icon.astro";
@@ -150,10 +151,10 @@ const testimonials = [
   /> -->
 
   <!--Testimonials section-->
-  <TestimonialsSectionAlt
+  <!-- <TestimonialsSectionAlt
     title="What Our Customers Say"
     testimonials={testimonials}
-  />
+  /> -->
 
   <FeaturesNavs 
     title=`Why Choose Diversdesk`
@@ -161,9 +162,9 @@ const testimonials = [
       {
         heading: "Save Time",
         content:
-          "Diversdesk presents you industry's most flexible planner, offering multi-booking, multi-activity, and cross-location scheduling capabilities. Quickly allocate customers with just a few clicks, ensuring smooth operations and satisfied clients.",
-        svg: "calendar",
-        src: tools,
+          "Streamline customer onboarding by sharing a single booking URL that handles registration, waivers, and payments. Everything is managed seamlessly in a fraction of the time, eliminating human errors, and all details are neatly visualized in your calendar.",
+        svg: "save_time",
+        src: Ipad_Iphone,
         alt: "Yellow and black heavy equipment on brown grass field",
         first: true,
       },  
@@ -171,7 +172,7 @@ const testimonials = [
         heading: "Boost revenue",
         content:
           "Still printing and keeping paperwork? With Diversdesk, you can go 100% paperless. Use our embedded Diver Medical forms and official waivers from your certification organization, or create custom waivers from scratch. Secure, professional, and environmentally friendly.",
-        svg: "signature",
+        svg: "boost_revenue",
         src: dashboard,
         alt: "A screenshot or graphic representation of the intuitive dashboard",
         second: true,
