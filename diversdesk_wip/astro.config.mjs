@@ -35,7 +35,7 @@ export default defineConfig({
       },
     }),
     starlight({
-      title: "ScrewFast Docs",
+      title: "Diversdesk Docs",
       defaultLocale: "root",
       // locales: {
       //   root: {
@@ -52,23 +52,17 @@ export default defineConfig({
       // https://starlight.astro.build/guides/sidebar/
       sidebar: [
         {
-          label: "Quick Start Guides",
-          translations: {
-            de: "Schnellstartanleitungen",
-            es: "Guías de Inicio Rápido",
-            fa: "راهنمای شروع سریع",
-            fr: "Guides de Démarrage Rapide",
-            ja: "クイックスタートガイド",
-            "zh-cn": "快速入门指南",
-          },
-          autogenerate: { directory: "guides" },
-        },
-        {
-          label: "Tools & Equipment",
-          items: [
-            { label: "Tool Guides", link: "tools/tool-guides/" },
-            { label: "Equipment Care", link: "tools/equipment-care/" },
-          ],
+          label: "Quick Start Guide",
+          link: '/quickstart_guide'
+          // translations: {
+          //   de: "Schnellstartanleitungen",
+          //   es: "Guías de Inicio Rápido",
+          //   fa: "راهنمای شروع سریع",
+          //   fr: "Guides de Démarrage Rapide",
+          //   ja: "クイックスタートガイド",
+          //   "zh-cn": "快速入门指南",
+          // },
+          // autogenerate: { directory: "guides" },
         },
         {
           label: "Construction Services",
