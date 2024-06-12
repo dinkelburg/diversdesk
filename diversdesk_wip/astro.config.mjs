@@ -37,18 +37,18 @@ export default defineConfig({
     starlight({
       title: "ScrewFast Docs",
       defaultLocale: "root",
-      locales: {
-        root: {
-          label: "English",
-          lang: "en",
-        },
-        de: { label: "Deutsch", lang: "de" },
-        es: { label: "Español", lang: "es" },
-        fa: { label: "Persian", lang: "fa", dir: "rtl" },
-        fr: { label: "Français", lang: "fr" },
-        ja: { label: "日本語", lang: "ja" },
-        "zh-cn": { label: "简体中文", lang: "zh-CN" },
-      },
+      // locales: {
+      //   root: {
+      //     label: "English",
+      //     lang: "en",
+      //   },
+      //   de: { label: "Deutsch", lang: "de" },
+      //   es: { label: "Español", lang: "es" },
+      //   fa: { label: "Persian", lang: "fa", dir: "rtl" },
+      //   fr: { label: "Français", lang: "fr" },
+      //   ja: { label: "日本語", lang: "ja" },
+      //   "zh-cn": { label: "简体中文", lang: "zh-CN" },
+      // },
       // https://starlight.astro.build/guides/sidebar/
       sidebar: [
         {
