@@ -1,7 +1,7 @@
 /* Dark mode colors. */
 :root {
     --backdrop-color: #272727cc;
-    --sl-color-accent: #ff801f;
+    --sl-color-accent: #F86545;
     --sl-color-accent-high: #ffa057;
     --sl-color-accent-low: #562800;
     --sl-color-black: #181818;
@@ -18,8 +18,8 @@
 /* Light mode colors. */
 :root[data-theme="light"] {
     --backdrop-color: #f6f6f699;
-    --sl-color-accent: #b73d00;
-    --sl-color-accent-high: #562800;
+    --sl-color-accent: #F86545;
+    --sl-color-accent-high: #F86545;
     --sl-color-accent-low: #ffa057;
     --sl-color-black: #fff;
     --sl-color-gray-1: #272727;
@@ -52,10 +52,10 @@ article.card {
 }
 
 .starlight-aside--tip {
-    background: linear-gradient(45deg, #ff512f, #f09819);
-    border: none;
+    background: linear-gradient(45deg, #EBF6FA, #DBECF3);
+    border: #DBE7EC;
     border-radius: 0.5rem;
-    color: #66350c;
+    color: #384950;
 }
 
 .starlight-aside--note {
@@ -70,11 +70,11 @@ article.card {
 }
 
 .starlight-aside--tip .starlight-aside__title {
-    color: #ffe0c2;
+    color: #536E78;
 }
 
 .starlight-aside--note .starlight-aside__title {
-    color: #bbf3fef7;
+    color: #536E78;
 }
 
 .sl-markdown-content ul:not(:where(.not-content *)) {
