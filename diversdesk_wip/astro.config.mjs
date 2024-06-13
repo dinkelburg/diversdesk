@@ -65,17 +65,21 @@ export default defineConfig({
           // autogenerate: { directory: "guides" },
         },
         {
-          label: "Construction Services",
-          autogenerate: { directory: "construction" },
+          label: "User Manual",
+          autogenerate: { directory: "user_manual" },
         },
         {
           label: "Advanced Topics",
           autogenerate: { directory: "advanced" },
         },
+        {
+          label: "Terms and Conditions",
+          link: '/terms_and_conditions'
+        },
       ],
-      social: {
-        github: "https://github.com/mearashadowfax/ScrewFast",
-      },
+      // social: {
+      //   github: "https://github.com/mearashadowfax/ScrewFast",
+      // },
       disable404Route: true,
       customCss: ["./src/styles/starlight.css"],
       favicon: "/favicon.ico",
