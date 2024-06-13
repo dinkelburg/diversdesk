@@ -11,7 +11,7 @@ Please follow the 5 steps below and right away get started with our software.
 
 ### 1. Create an account 
 Navigate to [traveltruster.com](https://www.traveltruster.com/?persist_modal=account&persist_flow=signup) and create an account through the 'Sign up' hyperlink in the right top corner.
-![Sign up on traveltruster](https://www.diversdesk.com/images/tt_landing_page_sign_up.png)
+![Sign up on traveltruster](/images/tt_landing_page_sign_up.png)
 
 
 ### 2. Claim your business domain 
@@ -30,7 +30,7 @@ After establishing your account, you can begin personalizing your own company pa
 ### 4. Customize and connect the appropriate forms
 Using the Forms and Product pages you can customize and connect the desired registration and liability forms for each created product. [Read here](/articles/custom_registration_form) how to customize forms and connect the appropriate forms to each of your products. <br>
 This guarantees a smooth onboarding for each one of your customers.
-![Sign up on traveltruster](https://diversdesk.com/images/tt_hamburger_dropdown_forms_page.png)
+![Sign up on traveltruster](/images/tt_hamburger_dropdown_forms_page.png)
 
 ### 5. Enter your staff members 
 Enter your staff members and allocate appropriate rights. How to do this can be read on the [Users and rights](/user_manual/users_and_rights) page within the user manual.

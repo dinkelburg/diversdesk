@@ -1,7 +1,7 @@
 /* Dark mode colors. */
 :root {
     --primary-button-hover: #ff801f;
-    --backdrop-color: #ab361c;
+    --backdrop-color: #272727cc;
     --sl-color-accent: #ff801f;
     --sl-color-accent-high: #ffa057;
     --sl-color-accent-low: #562800;
@@ -22,7 +22,7 @@
     --primary-button-hover: #ff801f;
     --backdrop-color: #f6f6f699;
     --sl-color-accent: #f76b15;
-    --sl-color-accent-high: #c63a1a;
+    --sl-color-accent-high: #562800;
     --sl-color-accent-low: #ffa057;
     --sl-color-black: #fff;
     --sl-color-gray-1: #272727;
@@ -37,7 +37,7 @@
 }
 
 .page {
-    background: linear-gradient(215deg, var(--overlay-orange), transparent 40%), radial-gradient(var(--overlay-yellow), transparent 40%) no-repeat center center / cover, radial-gradient(var(--overlay-yellow), transparent 65%) no-repeat center center / cover;
+    background: linear-gradient(215deg, var(--overlay-yellow), transparent 40%), radial-gradient(var(--overlay-yellow), transparent 40%) no-repeat center center / cover, radial-gradient(var(--overlay-yellow), transparent 65%) no-repeat center center / cover;
     background-blend-mode: overlay;
 }
 
