@@ -69,8 +69,8 @@ export default defineConfig({
           autogenerate: { directory: "user_manual" },
         },
         {
-          label: "Advanced Topics",
-          autogenerate: { directory: "advanced" },
+          label: "Articles",
+          autogenerate: { directory: "articles" },
         },
         {
           label: "Terms and Conditions",

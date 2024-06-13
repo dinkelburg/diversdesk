@@ -17,8 +17,7 @@ import features from "@data/features.json";
 import pricing from "@data/pricing.json";
 import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
-import tools from "@images/automated-tools.avif";
-import Ipad_Iphone from "@images/Ipad_Iphone.svg";
+import savetime from "@images/save_time_1.png";
 import dashboard from "@images/dashboard-image.avif";
 import { Icons } from "node_modules/@astrojs/starlight/components/Icons";
 import Icon from "@/components/ui/icons/Icon.astro";
@@ -156,7 +155,7 @@ const testimonials = [
     testimonials={testimonials}
   /> -->
 
-  <FeaturesNavs 
+  <!-- <FeaturesNavs 
     title=`Why Choose Diversdesk`
     tabs={[
       {
@@ -164,10 +163,19 @@ const testimonials = [
         content:
           "Streamline customer onboarding by sharing a single booking URL that handles registration, waivers, and payments. Everything is managed seamlessly in a fraction of the time, eliminating human errors, and all details are neatly visualized in your calendar.",
         svg: "save_time",
-        src: Ipad_Iphone,
+        src: savetime,
         alt: "Yellow and black heavy equipment on brown grass field",
         first: true,
       },  
+      {
+        heading: "Eliminate Human Errors",
+        content:
+          "Eliminate the need for manual data entries. Customer registrations become directly visible on your dashboard. Visual trip insights also remove the need for manual participant counts, making your operation less prone to overbookings and human errors.",
+        svg: "boost_revenue",
+        src: dashboard,
+        alt: "A screenshot or graphic representation of the intuitive dashboard",
+        second: true,
+      },
       {
         heading: "Boost revenue",
         content:
@@ -186,11 +194,11 @@ const testimonials = [
         alt: "Gray metal building frame near tower crane during daytime",
       }
     ]}
-  />  
+  />   -->
 
   <PricingSection pricing={pricing} />
 
-  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+  <!-- <FAQ title="Frequently<br />asked questions" faqs={faqs} /> -->
 
   <HeroSectionAlt
     title="Let's Build Together"
