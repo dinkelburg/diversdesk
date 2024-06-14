@@ -73,4 +73,3 @@ Don’t have a suitable activity in your product portfolio? No worries. Read her
 In case the newly added product has different forms connected, it can appear that preveously filled forms are missing. *Don't be alarmed!* Any forms that were filled/signed off and don't show after the product changes will remain saved within your secure database.
 :::
 
-<span> 1 2 3 4 </span>

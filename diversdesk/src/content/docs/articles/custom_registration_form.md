@@ -10,4 +10,4 @@ Through duplicating these forms, you can modify and name the form to your liking
 ![Create custom form](/images/Create_custom_form_1.png)
 ![Create custom form2](/images/Create_custom_form_2.png)
 
-## A manager form
+<!-- ## A manager form -->

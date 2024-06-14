@@ -12,11 +12,11 @@ As a dive-center you can choose to:
 ## Register customers through a created booking -->
 After the creation of an activity, the customer(s) can register themselves through a unique booking URL. Next to this we give the freedom for you to register the customer (partly or complete) for a personal approach.
 
-- From here there are multiple onboarding methods available. You can:
-- **1.** [Share the Booking URL](/user_manual/customer_onboarding/#1-share-the-booking-url)
-- **2.** [Send a Personalized email](/user_manual/customer_onboarding/#2-send-a-personalized-email)
-- For existing customers you can select an existing registration from your database: 
-- **3.** [Select an Existing registration](/user_manual/customer_onboarding/#3-select-an-existing-registration)
+From here there are multiple onboarding methods available. You can:
+</br>**1.** [Share the Booking URL](/user_manual/customer_onboarding/#1-share-the-booking-url)
+</br>**2.** [Send a Personalized email](/user_manual/customer_onboarding/#2-send-a-personalized-email)
+</br>For existing customers you can select an existing registration from your database: 
+</br>**3.** [Select an Existing registration](/user_manual/customer_onboarding/#3-select-an-existing-registration)
 <!-- - **4.** [Generic onboarding method](/user_manual/customer_onboarding/#4-register-through-a-generic-registration-page) -->
 
 Each method is described in the appropriate steps below.

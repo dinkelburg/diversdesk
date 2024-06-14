@@ -1,99 +1,118 @@
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
+import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import markdoc from "@astrojs/markdoc";
+import vercelStatic from "@astrojs/vercel/static";
+import sitemap from "@astrojs/sitemap";
+import compressor from "astro-compressor";
+import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [starlight({
-    favicon: './favicon.svg',
-    head: [{
-      tag: 'link',
-      attrs: {
-        rel: 'apple-touch-icon',
-        href: './favicon.ico',
-        sizes: '32x32'
-      }
-    }],
-    logo: {
-      light: './src/assets/DiversDesk_Logo_Day.svg',
-      dark: './src/assets/DiversDesk_Logo_Night.svg'
+  // https://docs.astro.build/en/guides/images/#authorizing-remote-images
+  site: "https://diversdesk.com",
+  image: {
+    domains: ["images.unsplash.com"],
+  },
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "fr"],
+    fallback: {
+      fr: "en",
     },
-    title: '',
-    // social: {
-    //   github: 'https://github.com/withastro/starlight'
-    // },
-    sidebar: [{
-      label: 'Introduction',
-      link: '/introduction'
-    }, {
-      label: 'Quickstart Guide',
-      link: '/quickstart_guide'
-    }, 
-    {
-      label: 'User Manual',
-      items: 
-      [
-        // Each item here is one entry in the navigation menu.
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
+  prefetch: true,
+  integrations: [
+    tailwind(),
+    sitemap({
+      i18n: {
+        defaultLocale: "en", // All urls that don't contain `fr` after `https://diversdesk.com/` will be treated as default locale, i.e. `en`
+        locales: {
+          en: "en", // The `defaultLocale` value must present in `locales` keys
+          fr: "fr",
+        },
+      },
+    }),
+    starlight({
+      title: "Diversdesk Docs",
+      defaultLocale: "root",
+      // locales: {
+      //   root: {
+      //     label: "English",
+      //     lang: "en",
+      //   },
+      //   de: { label: "Deutsch", lang: "de" },
+      //   es: { label: "Español", lang: "es" },
+      //   fa: { label: "Persian", lang: "fa", dir: "rtl" },
+      //   fr: { label: "Français", lang: "fr" },
+      //   ja: { label: "日本語", lang: "ja" },
+      //   "zh-cn": { label: "简体中文", lang: "zh-CN" },
+      // },
+      // https://starlight.astro.build/guides/sidebar/
+      sidebar: [
         {
-          label: 'Login to your account',
-          link: '/user_manual/login/'
-        }, 
-        {
-          label: 'Menu and navigation',
-          link: '/user_manual/menu_and_navigation/'
-        }, 
-        {
-          label: 'Users and rights',
-          link: '/user_manual/users_and_rights/'
-        }, 
-        {
-          label: 'Booking and scheduling',
-          link: '/user_manual/booking_and_scheduling/'
-        }, 
-        {
-          label: 'Customer onboarding methods',
-          link: '/user_manual/customer_onboarding/'
-        }, 
-        {
-          label: 'Customer base',
-          link: '/user_manual/customer_base/'
-        }
-      ]
-    }, 
-    {
-      label: 'Articles',
-      // autogenerate: 
-      // {
-      //  directory: 'articles'
-      // }, 
-      items:
-      [
-        {
-          label: 'Add an icon to your mobile homescreen',
-          link: '/articles/add_to_homescreen'
+          label: "Quick Start Guide",
+          link: '/quickstart_guide'
+          // translations: {
+          //   de: "Schnellstartanleitungen",
+          //   es: "Guías de Inicio Rápido",
+          //   fa: "راهنمای شروع سریع",
+          //   fr: "Guides de Démarrage Rapide",
+          //   ja: "クイックスタートガイド",
+          //   "zh-cn": "快速入门指南",
+          // },
+          // autogenerate: { directory: "guides" },
         },
         {
-          label: 'Create a custom registration form',
-          link: '/articles/custom_registration_form'
+          label: "User Manual",
+          autogenerate: { directory: "user_manual" },
         },
         {
-          label: 'Adding dives to an ongoing activity',
-          link: 'articles/adding_dives_to_an_ongoing_activity',
-          badge: 'new'
-        }
-      ]
-    },
-    {
-      label: 'Updates',
-      items: 
-      [
-      {
-        label: 'Update report 26 Feb 2024',
-        link: '/updates/240226_update_report',
-        badge: 'new'
-      }
-    ]
-    }]
-  }), tailwind(), markdoc()]
+          label: "Articles",
+          autogenerate: { directory: "articles" },
+        },
+        {
+          label: "Terms and Conditions",
+          link: '/terms_and_conditions'
+        },
+      ],
+      // social: {
+      //   github: "https://github.com/mearashadowfax/ScrewFast",
+      // },
+      disable404Route: true,
+      customCss: ["./src/styles/starlight.css"],
+      favicon: "/favicon.ico",
+      components: {
+        SiteTitle: "./src/components/ui/starlight/SiteTitle.astro",
+        Head: "./src/components/ui/starlight/Head.astro",
+      },
+      head: [
+        {
+          tag: "meta",
+          attrs: {
+            property: "og:image",
+            content: "https://diversdesk.com" + "/social.webp",
+          },
+        },
+        {
+          tag: "meta",
+          attrs: {
+            property: "twitter:image",
+            content: "https://diversdesk.com" + "/social.webp",
+          },
+        },
+      ],
+    }),
+    compressor({
+      gzip: false,
+      brotli: true,
+    }),
+  ],
+  output: "static",
+  experimental: {
+    clientPrerender: true,
+    directRenderScript: true,
+  },
+  adapter: vercelStatic(),
 });

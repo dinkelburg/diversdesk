@@ -2,7 +2,7 @@
 title: Diversdesk Terms & Conditions
 pagefind: false
 ---
-# Diversdesk Addendum to Traveltruster Terms and Conditions
+### Diversdesk Addendum to Traveltruster Terms and Conditions
 
 **1. INSTRODUCTION** </br>
 This Diversdesk Addendum ("Addendum") governs the use of the Diversdesk platform and services ("Diversdesk Services") provided by Traveltruster B.V. ("Company", "we", "us"). This Addendum forms part of the Traveltruster Terms and Conditions ("General Terms and Conditions") when using Diversdesk Services.
