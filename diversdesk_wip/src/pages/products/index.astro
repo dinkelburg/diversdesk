@@ -80,7 +80,7 @@ const pageTitle: string = `Products | ${SITE.title}`;
     "inLanguage": "en-US"
   }}
 >
-  <div
+  <!-- <div
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
     <div class="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
@@ -100,8 +100,8 @@ const pageTitle: string = `Products | ${SITE.title}`;
       </div>
       <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} />
     </div>
-    <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
-    <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
+    <!-Displaying products in alternating styles. Alternative product gets different card styling.--
+    <!-Maps through all product entries and displays them with either CardSmall or CardWide based on their position.--
     <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
       {
         product.map((product, index) => {
@@ -115,7 +115,7 @@ const pageTitle: string = `Products | ${SITE.title}`;
       }
     </section>
   </div>
-  <!--Features statistics section-->
+  <!-Features statistics section--
   <FeaturesStatsAlt
     title="Why Choose Diversdesk?"
     subTitle="Transform your ideas into tangible results with Diversdesk tools. Whether you're starting with a sketch on a napkin or diving into a comprehensive construction project, our tools are engineered to help you build with confidence."
@@ -125,9 +125,9 @@ const pageTitle: string = `Products | ${SITE.title}`;
       "Customer support dedicated to your project's success.",
     ]}
   />
-  <!--Testimonials section-->
+  <!-Testimonials section--
   <TestimonialsSectionAlt
     title="What Our Customers Say"
     testimonials={testimonials}
-  />
+  /> -->
 </MainLayout>

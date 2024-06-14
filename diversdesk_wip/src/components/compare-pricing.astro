@@ -35,7 +35,7 @@ const plans = [
     {
         name: "CRM Only",
         price: "$25",
-        color: "orange",
+        color: "gray-500",
         values: [
             "5", // Total Users Accounts
             "1",
@@ -90,7 +90,7 @@ const plans = [
         name: "Pro",
         price: "$59/mo",
         popular: true,
-        color: "orange",
+        color: "orange-400",
         values: [
             "20",
             "5",
@@ -175,9 +175,9 @@ const colors = {
                         <div class="text-xl mt-1 lg:text-2xl font-bold text-black dark:text-neutral-200">
                             {plan.price}
                         </div>
-                        <div class="flex mt-3 ">
+                        <div class="flex mt-3 pb-6">
                             <Link
-                                    href="#"
+                                    href="/contact"
                                     block
                                     size="sm"
                                     class="whitespace-nowrap"

@@ -57,10 +57,10 @@ const pageTitle: string = `Blog | ${SITE.title}`;
     inLanguage: "en-US",
   }}
 >
-  <section
+  <!-- <section
     class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
   >
-    <!--Page header-->
+    <!-Page header--
     <div class="mx-auto max-w-3xl text-left sm:text-center">
       <h1
         class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
@@ -79,18 +79,18 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
-    <!--Blog posts grid-->
+    <!-Blog posts grid--
     <div class="grid gap-6 lg:grid-cols-2">
       {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
     </div>
   </section>
-  <!--Most recent blog post-->
+  <!-Most recent blog post--
   <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
     <CardBlogRecent blogEntry={mostRecentPost} />
   </section>
-  <!--Insights section-->
+  <!-Insights section--
   <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
@@ -111,5 +111,5 @@ const pageTitle: string = `Blog | ${SITE.title}`;
         ))
       }
     </div>
-  </section>
+  </section> -->
 </MainLayout>
