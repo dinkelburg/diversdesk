@@ -3,10 +3,11 @@ title: Diversdesk Terms & Conditions
 pagefind: false
 ---
 # Diversdesk Addendum to Traveltruster Terms and Conditions
-The traveltruster terms and conditions can be found [**here**](https://www.traveltruster.com/terms-of-conditions.pdf).
 
 **1. INSTRODUCTION** </br>
 This Diversdesk Addendum ("Addendum") governs the use of the Diversdesk platform and services ("Diversdesk Services") provided by Traveltruster B.V. ("Company", "we", "us"). This Addendum forms part of the Traveltruster Terms and Conditions ("General Terms and Conditions") when using Diversdesk Services.
+
+The traveltruster terms and conditions can be found [**here**](https://www.traveltruster.com/terms-of-conditions.pdf).
 
 **2. DESCRIPTION OF DIVERSDESK SERVICES** </br>
 With Diversdesk, The Company offers a comprehensive digital management platform designed for dive centers and tour operators. The platform facilitates planning, scheduling, activity management, and customer onboarding, enhancing overall operational efficiency. It also includes features for secure data storage and payment processing.

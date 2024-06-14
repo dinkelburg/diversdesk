@@ -12,16 +12,16 @@ const footerLinks = [
     section: "Support",
     links: [
       { name: "Documentation", url: "/welcome-to-docs/" },  
-      { name: "FAQ", url: "/products" },
+      // { name: "FAQ", url: "/products" },
       // { name: "Contact", url: "/services" },
     ],
   },
   {
     section: "Company",
     links: [
-      { name: "About us", url: "#" },
+      // { name: "About us", url: "#" },
       // { name: "Blog", url: "/blog" },
-      { name: "Careers", url: "#" },
+      // { name: "Careers", url: "#" },
       { name: "Contact", url: "#" },
     ],
   },
