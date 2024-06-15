@@ -22,7 +22,7 @@ const footerLinks = [
       // { name: "About us", url: "#" },
       // { name: "Blog", url: "/blog" },
       // { name: "Careers", url: "#" },
-      { name: "Contact", url: "#" },
+      { name: "Contact", url: "/contact" },
     ],
   },
 ];

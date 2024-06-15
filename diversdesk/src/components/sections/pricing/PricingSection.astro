@@ -71,7 +71,7 @@ interface PricingSectionProps {
         >
         <span class=" ms-3 text-sm text-indigo-200 whitespace-nowrap"
           >{pricing.CRM_only.billingFrequency}</span 
-        >
+        ></br>
         <span class="ms-3 text-sm text-indigo-200"
         >{pricing.CRM_only.billingsubtitle}</span
       >
@@ -92,7 +92,6 @@ interface PricingSectionProps {
           pricing.CRM_only.features.map((feature: string) => (
             <li class="flex items-center gap-1.5 whitespace-nowrap">
               <Icon name="checkCircle" />
-
               <span>{feature}</span>
             </li>
           ))
@@ -129,7 +128,7 @@ interface PricingSectionProps {
         >
         <span class="ms-3 text-orange-200"
           >{pricing.Starter.billingFrequency}</span
-        >
+        > </br>
         <span class="ms-3 text-sm text-orange-200"
         >{pricing.CRM_only.billingsubtitle}</span
         >
@@ -181,7 +180,7 @@ interface PricingSectionProps {
           >
           <span class="ms-3 text-orange-200"
             >{pricing.Pro.billingFrequency}</span
-          >
+          > </br>
           <span class="ms-3 text-sm text-orange-200"
           >{pricing.CRM_only.billingsubtitle}</span
           >
@@ -229,7 +228,7 @@ interface PricingSectionProps {
         >
         <span class="ms-3 text-orange-200"
           >{pricing.Enterprise.billingFrequency}</span
-        >
+        > </br>
         <span class="ms-3 text-sm text-orange-200"
         >{pricing.CRM_only.billingsubtitle}</span
         >

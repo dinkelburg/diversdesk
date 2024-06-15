@@ -3,8 +3,8 @@ import ogImageSrc from "@images/social.png";
 export const SITE = {
   title: "Diversdesk",
   tagline: "Intutitive Dive Center Management Software",
-  description: "Diversdesk offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.",
-  description_short: "Diversdesk offers top-tier hardware tools and expert construction services to meet all your project needs.",
+  description: "Diversdesk offers state of the art Dive Center Management Software. Contact our sales team for fitting solution for your business.",
+  description_short: "Intuitive Dive Center Management Software by Diversdesk.",
   url: "https://diversdesk.com",
   author: "Bart Klein Goldewijk",
 };
@@ -33,7 +33,7 @@ export const OG = {
   locale: "en_US",
   type: "website",
   url: SITE.url,
-  title: `${SITE.title}: : Hardware Tools & Construction Services`,
-  description: "Equip your projects with Diversdesk's top-quality hardware tools and expert construction services. Trusted by industry leaders, Diversdesk offers simplicity, affordability, and reliability. Experience the difference with user-centric design and cutting-edge tools. Start exploring now!",
+  title: `${SITE.title}: : Intuitive Dive Center Management Software`,
+  description: "Streamline your Dive Center with Diversdesk's intuitive and feature rich software. Diversdesk offers solutions for planning and scheduling, paperless customer onboarding including official waivers and diver medical, custom waiver creation, Staff calendars and workload and more..",
   image: ogImageSrc,
 };
