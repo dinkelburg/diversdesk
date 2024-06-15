@@ -1,6 +1,6 @@
 ---
-title: "Enhancing Safety and Workmanship with Diversdesk Construction Services"
-description: "Quality construction services for lasting results"
+title: "Saving time"
+description: "Save time"
 author: "Brad"
 authorImage: "@/images/blog/brad.avif"
 authorImageAlt: "Avatar Description"
