@@ -8,7 +8,7 @@
   "CRM_only": {
     "name": "CRM Only",
     "description": "No planner functionalities",
-    "price": "$25",
+    "price": "$27",
     "cents": ".00",
     "billingFrequency": "USD / mo",
     "billingsubtitle": "Billed annually",
@@ -24,7 +24,7 @@
   "Starter": {
     "name": "Starter",
     "description": "Best for small businesses",
-    "price": "$39",
+    "price": "$42",
     "cents": ".00",
     "billingFrequency": "USD / mo",
     "billingsubtitle": "Billed annually",
@@ -39,7 +39,7 @@
   "Pro": {
     "name": "Pro",
     "description": "Best for medium sized businesses",
-    "price": "$59",
+    "price": "$64",
     "cents": ".00",
     "billingFrequency": "USD / mo",
     "billingsubtitle": "Billed annually",
