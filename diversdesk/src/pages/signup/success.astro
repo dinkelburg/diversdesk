@@ -1,0 +1,33 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import DemoSignupSection from "@/components/sections/SignupSection.astro";
+import { SITE } from "@data/constants";
+
+const pageTitle: string = `Contact | ${SITE.title}`;
+---
+
+<!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://diversdesk.com/contact",
+    "url": "https://diversdesk.com/contact",
+    "name": "Contact Us | Diversdesk",
+    "description":
+      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our software.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://diversdesk.com",
+      "name": "Diversdesk",
+      "description":
+        "Diversdesk offers a state of the art Dive Center Management tool to meet all your operational needs.",
+    },
+    "inLanguage": "en-US"
+  }}
+>
+    <div class="mt-6 p-3 rounded-md text-green-500 mx-auto border border-green-500">Send successfully</div>
+  <DemoSignupSection />
+</MainLayout>
