@@ -24,6 +24,7 @@ const formTitle: string = "Please fill in the form below to start your 14 day tr
 const formSubTitle: string = "You will hear from us within 24 hours.";
 
 const redirectBaseUrl = isProd ? 'https://www.diversdesk.com' : 'http://localhost:4321'
+const actionUrl = isProd ? 'https://www.traveltruster.com' : 'https://test.traveltruster.com';
 const namePrefix = 'reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.'
 ---
 
@@ -46,7 +47,7 @@ const namePrefix = 'reference_prefix-ref-00053-00000-signup_submission.signup_su
             <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-4">
                 <!-- Form for user input with various input fields.-->
                 <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-                <form action="https://test.traveltruster.com" method="post">
+                <form action={actionUrl} method="post">
                     <input name="redirect" value={redirectBaseUrl + `/signup/${type}/success`} type="hidden"/>
                     <div class="grid gap-4">
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
