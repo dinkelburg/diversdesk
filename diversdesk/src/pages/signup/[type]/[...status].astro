@@ -1,8 +1,18 @@
 ---
+
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import DemoSignupSection from "@/components/sections/SignupSection.astro";
 import { SITE } from "@data/constants";
+
+export function getStaticPaths() {
+  return [
+    { params: { type: 'normal', status: 'success' } },
+    { params: { type: 'normal', status: undefined } },
+    { params: { type: 'trial', status: undefined } },
+    { params: { type: 'trial', status: 'success' } },
+  ];
+}
 
 const pageTitle: string = `Contact | ${SITE.title}`;
 ---
@@ -28,6 +38,5 @@ const pageTitle: string = `Contact | ${SITE.title}`;
     "inLanguage": "en-US"
   }}
 >
-    <div class="mt-6 p-3 rounded-md text-green-500 mx-auto border border-green-500">Send successfully</div>
   <DemoSignupSection />
 </MainLayout>
