@@ -24,6 +24,7 @@ const formTitle: string = "Please fill in the form below to start your 14 day tr
 const formSubTitle: string = "We'll get back to you in 1-2 business days.";
 
 const redirectBaseUrl = isProd ? 'https://www.diversdesk.com' : 'http://localhost:4321'
+const namePrefix = 'reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.'
 ---
 
 <!-- Contact Us -->
@@ -46,18 +47,18 @@ const redirectBaseUrl = isProd ? 'https://www.diversdesk.com' : 'http://localhos
                 <!-- Form for user input with various input fields.-->
                 <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
                 <form action="https://test.traveltruster.com" method="post">
-                    <input name="redirect" value={redirectBaseUrl +  "/signup/success"} type="hidden"/>
+                    <input name="redirect" value={redirectBaseUrl +  `/signup/${type}/success`} type="hidden"/>
                     <div class="grid gap-4">
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <TextInput
                                     id="hs-fullname-contacts"
                                     label="Full Name"
-                                    name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.full_name"
+                                    name={namePrefix + "full_name"}
                             />
                             <TextInput
                                     id="hs-firstname-contacts"
                                     label="Position/Job Title"
-                                    name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.job_title"
+                                    name={namePrefix + "job_title"}
                             />
                         </div>
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -67,7 +68,7 @@ const redirectBaseUrl = isProd ? 'https://www.diversdesk.com' : 'http://localhos
                                 <!-- Email input field -->
                                 <input
                                         type="email"
-                                        name={"reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.email"}
+                                        name={namePrefix + "email"}
                                         id={'email-input'}
                                         autocomplete="email"
                                         class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
@@ -78,7 +79,7 @@ const redirectBaseUrl = isProd ? 'https://www.diversdesk.com' : 'http://localhos
                                 <label for={'phone-input'} class="sr-only">Phone Number</label>
                                 <input
                                         type="tel"
-                                        name={'reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.phone'}
+                                        name={namePrefix + 'phone'}
                                         id={'phone-input'}
                                         class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
                                         placeholder={'Phone Number'}
@@ -87,30 +88,30 @@ const redirectBaseUrl = isProd ? 'https://www.diversdesk.com' : 'http://localhos
                             <TextInput
                                     id="hs-companymame-contacts"
                                     label="Company Name"
-                                    name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.company"
+                                    name={namePrefix + "company"}
                             />
                             <TextInput
                                     id="hs-website-contacts"
                                     label="Company Website"
-                                    name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.website"
+                                    name={namePrefix + "website"}
                             />
                         </div>
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <TextInput
                                     id="hs-country"
                                     label="Country of Operation"
-                                    name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.country"
+                                    name={namePrefix + "country"}
                             />
                             <TextInput
                                     id="hs-email-contacts"
                                     label="VAT Number"
-                                    name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.vat_number"
+                                    name={namePrefix + "vat_number"}
                             />
                         </div>
                         <TextAreaInput
                                 id="hs-info-contacts"
                                 label="Additional Info or Questions"
-                                name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.comment"
+                                name={namePrefix + "comment"}
                         />
                         <div class="flex items-center">
                             <!-- Checkbox input -->
