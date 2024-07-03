@@ -37,56 +37,59 @@ const formSubTitle: string = "We'll get back to you in 1-2 business days.";
       <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-4"> 
         <!-- Form for user input with various input fields.-->
         <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-        <form>
+        <form action="https://test.traveltruster.com" method="post">
+          <input name="redirect" value="http://localhost:4321/signup" type="hidden" />
           <div class="grid gap-4">
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-fullname-contacts"
                 label="Full Name"
-                name="hs-fullname-contacts"
+                name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.full_name"
               />
               <TextInput
               id="hs-firstname-contacts"
               label="Position/Job Title"
-              name="hs-jobtitle-contacts"
+              name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.job_title"
               />
             </div>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <EmailContactInput
                 id="hs-email-contacts"
                 label="Email (Work)"
+                name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.email"
               />
               <PhoneInput
               id="hs-phone-contacts"
               label="Phone Number"
+              name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.phone"
             />
               <TextInput
                 id="hs-companymame-contacts"
                 label="Company Name"
-                name="hs-companyname-contacts"
+                name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.company"
               />
                 <TextInput
                 id="hs-website-contacts"
                 label="Company Website"
-                name="hs-website-contacts"
+                name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.website"
             />
             </div>
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <TextInput
                 id="hs-firstname-contacts"
                 label="Country of Operation"
-                name="hs-country-contacts"
+                name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.country"
               />
               <TextInput
                 id="hs-email-contacts"
                 label="VAT Number"
-                name="hs-vatnumber-contacts"
+                name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.vat_number"
               />
             </div>
             <TextAreaInput
               id="hs-info-contacts"
               label="Additional Info or Questions"
-              name="hs-info-contacts"
+              name="reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.comment"
             />
             <Checkbox
               id="hs-checkbox-contacts"
