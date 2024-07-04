@@ -73,8 +73,12 @@ export default defineConfig({
           autogenerate: { directory: "articles" },
         },
         {
-          label: "Terms and Conditions",
-          link: '/terms_and_conditions'
+          label: "Terms of Service",
+          link: '/terms_of_service'
+        },
+        {
+          label: "Privacy Policy",
+          link: '/privacy_policy'
         },
       ],
       // social: {

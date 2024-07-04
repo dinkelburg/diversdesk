@@ -1,0 +1,280 @@
+---
+title: Diversdesk - Terms of Service
+pagefind: false
+---
+v1.0 [English]
+
+Last update: July 1st, 2023
+
+### 1. Introduction
+
+"Diversdesk" is a software product created and owned by Traveltruster B.V., a limited company with VAT Number NL863851617B01, located at De Witte Rieteweg 5, 7363SJ, Marienvelde, the Netherlands (hereinafter referred to as "Diversdesk," "us," "we," or "our").
+
+These Terms of Service (hereinafter referred to as "Terms of Service") are designed to outline the rights and responsibilities, as well as the overall relationship, between Diversdesk and the Clients and Users of the Website and related Services. Additional Special Terms may supplement these Terms of Service and, if applicable, take precedence over them.
+
+
+Capitalized terms in these Terms of Service are defined as follows:
+"Terms of Service": Refers to these Terms of Service.
+"Client": Refers to the individual or entity subscribing to the Software or additional services for professional purposes, whether for commercial, freelance, or organizational activities, including acting on behalf of another professional.
+"Personal Data": Refers to any personal data as defined by Regulation (EU) 2016/679 of the European Parliament and Council of 27 April 2016 (GDPR) relating to an identifiable natural person.
+"Term": Refers to the specific number of months during which the Client is permitted to access and use the Software.
+"Software": Refers to the Diversdesk software offering developed by traveltruster B.V., provided as a "software as a service" (SaaS).
+"License": Refers to the non-exclusive right to use the Software granted by Diversdesk to the Client and Users.
+"Party(ies)": Refers to Diversdesk and/or the Client.
+"Plan(s)": Refers to the various service levels associated with the Software Subscription. Diversdesk offers different plans based on the volume of objects, features, and support level.
+"Subscription": Refers to the contractual agreement between the Client and Diversdesk to use the Software for the specified Term, detailing the chosen Plan as specified in the order.
+"Site": Refers to the Diversdesk website, accessible at https://www.diversdesk.com, which provides information about the Software.
+"Users": Refers to the Account Creator, Administrators, Collaborators, and any third party granted access by the Client.
+ 
+### 2. Purpose of the Service
+##### 2.1. Provision of Services
+The provision of services (hereinafter referred to as the "Services") is the subject of this Agreement between Diversdesk and the Client. It includes providing the Client with access to the Diversdesk software through the Internet using "cloud computing" technology.
+##### 2.2. Subscription Conditions
+The subscription to the Services presented on the Website is defined by the conditions specified at the time of subscription. These conditions depend on the Plan chosen by the Licensee or the number of user/manager accounts created by the Licensee. Detailed conditions are available on the Website and in the documents provided by Diversdesk, which the Client acknowledges and accepts. The subscription includes, but is not limited to:
+A license to use the Diversdesk software owned by Traveltruster B.V.
+Complementary services such as technical support, improvements and updates, and security backups.
+
+### 3. Underwriting process
+ 
+##### 3.1. Acceptance
+ 
+To subscribe to the Services, the Client must accept the Terms of Service by checking a box in an online form or by any other means communicated by Diversdesk. The Client must also accept any specific conditions and pay the required amount, which depends on the chosen Plan and any additional services. These details are announced on the Website and in the documents and invoices provided to the Client.
+
+Before validating the subscription and accessing the Service, Diversdesk offers one or more demonstrations of the Software and its various functionalities. This allows the Client to analyze and ensure that the proposed Service meets their needs. A demonstration request can be made directly on the website www.Diversdesk.com or by email to info@Diversdesk.com.
+
+Diversdesk may also propose other methods it deems appropriate to facilitate the Client's understanding of the Services and Features.
+ 
+##### 3.2 Commitment
+By accepting the Terms of Service and subscribing to the Services, the Licensee fully and unconditionally commits to all the present Terms of Service as well as any Special Conditions that Diversdesk may have posted on the Website or transmitted in the Subscription documentation.
+The Client acknowledges that they have checked the suitability of the Software for their needs, received the necessary information and advice prior to the Subscription, and reviewed the detailed list of functionalities offered by each Plan available on the "pricing" page of www.Diversdesk.com.
+The acquisition of Diversdesk grants a non-exclusive, revocable, and non-transferable right of access to the Service and its use for internal commercial purposes only. This right is limited to the number of Users defined in the Subscription for which the Client has paid the corresponding fees.
+Memory updated
+Here's the revised version, ensuring all functionalities are mentioned appropriately:
+
+### 4. General Services
+##### 4.1 Description of the Services
+Diversdesk is a SaaS (Software-as-a-Service) tool specifically designed for Dive Centers and Tour Operators. It consists of a web-based application that enables users to efficiently manage various aspects of their business. Key features include:
+Planning and Scheduling: Create and manage detailed schedules for activities and staff.
+Bookings Management: Handle direct and online bookings seamlessly.
+Payment Tracking: Keep track of payments and generate payment links through the integrated payment gateway.
+Pre-Accounting Tasks: Simplify financial management with pre-accounting functionalities.
+Customer Database: Maintain detailed records of customers for better service and marketing.
+Staff Calendars and Workload Insights: Gain a clear view of staff activities and workload distribution for efficient resource utilization.
+Activity Creation: Easily create and manage various activities and products offered by the dive center or tour operator.
+Add-Ons Management: Enter and manage additional services or products.
+Boat Management: Organize and manage boat schedules and activities.
+Communication Tools: Utilize various communication functionalities to stay connected with customers and staff.
+Resource Allocation: Assign staff and resources efficiently to various tasks and activities.
+Business Insights: Access analytics and reports to make informed business decisions.
+Digital Waivers: Use digital waivers with various translations for ease of customer onboarding.
+Integration with Payment Gateways: Automate payment processes and updates with integrated solutions like Xendit.
+Registered Users will gain a comprehensive view of their company's activities through these features. The specific functionalities available to the User depend on the Plan and Services contracted by the Client, as indicated on the Website or in any documents provided by Diversdesk.
+
+### 5. Characteristics of the Services
+##### 5.1 Required Equipment and Internet Connection
+To access and use Diversdesk, appropriate equipment such as computers or other suitable hardware with an Internet connection is required. The Client may use Diversdesk through any computer equipment that meets the following technical requirements:
+A Windows XP or higher operating system, or MacOS X 10.6 or higher.
+Mozilla Firefox browser (version 17 or higher), Google Chrome (version 24 or higher), Safari (version 5 or higher), or Internet Explorer (version 9 or higher).
+An Internet connection is required for the service to function. The quality of the Client's Internet connection may influence the behavior of the application. It is recommended to have an ADSL line of 4 Mbps or higher.
+Diversdesk cannot guarantee the availability of the service, taking into account the functioning of the Internet, nor that the use of the service will be uninterrupted.
+##### 5.2 Client Compliance and Acknowledgement
+The Client certifies that they have verified the suitability of Diversdesk for their purposes and acknowledges its basic features, conditions, and the basic requirements for access and use.
+##### 5.3 User Accounts and Access Levels
+The Services are non-transferable, prohibiting their transfer to third parties, rental, subletting, granting of licenses or sublicenses, or transfer of any technical information received under these Terms of Service. User Accounts are defined according to different permission levels. When the Client creates User accounts for their employees and partners, they have access to the Features under the conditions defined by the Administrators and under the exclusive responsibility of the Client.
+The possible user access levels are:
+- Owner
+- Manager (administrator account)
+- Staff+ (read-only account)
+- Instructor
+- Divemaster
+- Crew
+- Captain
+- Freelancer 
+
+Diversdesk reserves the right to modify this list of access levels in the future with the possible introduction of new Features. By default, the Account set up by Diversdesk is a Manager account (administrator) with all access rights. This administrator accepts the Terms of Service to access the Software and use its various Features. The Account Creator must be legally capable of contracting, have the necessary authorizations, and comply with all applicable laws. The Account Creator is also responsible for setting up limited access for the Client's third-party clients. Users declare that they are authorized to use the Software and have accepted the Terms of Service. The use of the Software is reserved for professional Clients only.
+5.4 Secure Login Methods
+Diversdesk provides the Client with multiple login options, including using Google, a passwordless verification email link, and the option to create a password once the email is verified through either the verification link or Google login. In case of loss or theft of the login credentials, or any suspected unauthorized access to Diversdesk by third parties, the Client shall immediately inform Diversdesk to take the necessary technical measures to prevent any unauthorized access.
+ 
+### 6. Support and maintenance
+ 
+##### 6.1. Setting up
+ 
+On the basis of the information provided by the Client at the time of subscription, the Software will be opened with the Functionalities provided for by the chosen Plan.
+A first initial configuration of the Product catalogue may be carried out by Diversdesk, in accordance with the limits on the number of products configured per Plan defined on the Website. Under no circumstances shall Diversdesk be held responsible for the consequences of this, and it is the Client's responsibility to verify the adequacy of this configuration.
+A complete and comprehensive set-up could be achieved beyond these limits for an additional set-up service not included in the Plans;
+Diversdesk may occasionally offer data import via CSV files.
+
+### 6.2 Training
+Diversdesk offers a training service by videoconference according to the modalities and the number of hours defined in the chosen Price Plan. During the training, the Diversdesk staff accompanies the analysis of functional needs, the explanation of the functionalities, the sharing of use cases and the accompaniment to the implementation and handling of the solution.
+It will be possible to carry out trainings and videoconferences beyond the total number of hours foreseen in the chosen Plan, with a fee based on the time spent by the Diversdesk training staff, as defined from time to time by Diversdesk.
+It would be possible to carry out face-to-face training at the client's expense after acceptance of a specific estimate.
+
+##### 6.3. Client support
+Client support will be delivered in accordance with the chosen Pricing Plan, as described on the Website. 
+The main communication channel for Client support is a live chat service available from the Software interface.
+Users may contact support for information on accessing or using the Software in accordance with the chosen Plan:
+CRM only, Starter Plan - Live chat & email support and video on demand during office hours.
+Pro plan and Enterprise Plan - Support via live chat, video on demand, Live video conferencing, and telephone 24/7
+ 
+The helpdesk will be available from Monday to Friday from 9:00 am to 6:30 pm except on public holidays (the "Office Hours"). Any messages sent outside of these hours will be dealt with on the next working day.
+The Client also has access to an online space with tutorials and educational content specially designed to facilitate learning.
+In the event of a technical incident, our technical team is available 7 days a week to analyse the data and measurements of our technical infrastructure, to make the necessary corrections, and to communicate as quickly as possible to the Users the information on the technical incidence and its resolution through the support communication channels defined above.
+
+##### 6.4. Updates and maintenance
+The Diversdesk Service includes the regular addition of new features, security patches and bug fixes, introduced centrally for all Users of the Diversdesk Service via a regular Update process. 
+The development and addition of new features is carried out according to priorities defined by Diversdesk in relation to the needs shared by the Clients or any other source of information in the industry. The Client acknowledges and agrees that only Diversdesk has the responsibility to define these features, and the corresponding priorities and deadlines for their implementation, and that in no case shall the Client require from Diversdesk new features or a change in the priorities or deadlines for development and updates.
+With a view to continuous improvement of the Software, the Client accepts that maintenance may result in a temporary suspension of the Service and access to the Service. This suspension will be carried out as much as possible between 10pm and 7am on working days (GMT).
+
+###### 7. Pricing Plans and Payments
+##### 7.1. Pricing Plans
+Each Pricing Plan offers access to specific functionalities of the Software at a defined price. The Plan subscribed to under these Terms of Service is subject to the features, functionality, and pricing indicated on the Website and the documents provided during the contracting process.
+##### 7.2. Payment of the Subscription
+The total price for the Subscription is payable in advance at the beginning of the Subscription or renewal period. The Client shall pay by bank transfer, credit card, or other means of payment as instructed. The Client must ensure that the full invoiced amount is paid, free of any bank commission or currency exchange charges. If a payment is received for less than the Subscription price, the Client must make an additional payment to cover the shortfall, free of any fees for Diversdesk.
+##### 7.3. Guarantee on Payment
+The Client guarantees that they have the necessary funds and authorizations to use the chosen payment method. The Client is responsible for ensuring the validity of the bank account or credit card used and maintaining the active status of the means of payment associated with their Diversdesk account. In case of changes to bank account or credit card information, the Client agrees to notify Diversdesk at least thirty (30) days prior to the due date for payment of a Subscription to avoid payment failure.
+##### 7.4. Late or Non-Payment
+Failure to pay any amount due by the Client on the due date will automatically result in the invoicing of late interest equal to three times the legal interest rate of the European Central Bank. An additional sum of €40 (excl. VAT) will be charged to the Client for collection costs. The Client shall reimburse Diversdesk for all costs, including any legal fees, associated with the collection of unpaid amounts.
+In the event of late payment, Diversdesk may temporarily or permanently suspend the provision of services if payment has not been received within seven (7) days of a formal request. After this period, Diversdesk will issue a new request, granting an additional ten (10) days to make the payment. If the payment is not received within this period, Diversdesk may proceed with the definitive interruption of the Service. The cost of restoring the Service will be borne by the Client and will amount to €150 (excluding VAT).
+##### 7.5. Invoices
+Invoices shall be issued only by electronic means, which the Client expressly accepts. The Client agrees to inform Diversdesk of any change in the information necessary for payment and invoicing, such as postal address, bank information, company identity and registration information, or EU VAT number. Any dispute regarding an invoice must be expressed in a letter with acknowledgment of receipt or an e-mail to info@diversdesk.com within fifteen (15) days from the date of the invoice (or pro forma invoice). In the absence of such a letter or e-mail, the Client shall be deemed to have accepted the invoice.
+##### 7.6. Changes
+The Client is obliged to follow any email communications regarding possible changes in payment terms, payment frequency, or any other billing information.
+
+### 8. The Duration of the Contract
+##### 8.1. Duration of the Contract
+The contract commences with the Subscription on the day of acceptance of the Terms of Service, subject to payment of the price, and is fixed for an Initial Period of 12 months in accordance with the chosen Plan. Diversdesk may occasionally propose a Subscription with a duration different from 12 months, the terms of which shall be defined in the associated Special Conditions.
+##### 8.2. Renewal
+The Subscription shall be renewed from date to date, for successive periods of the same duration as the Initial Period (hereinafter referred to, together with the Initial Period, as the "Periods"), except in cases where Special Conditions for Periods of different duration have been explicitly validated beforehand by Diversdesk.
+The renewal shall be tacitly validated unless terminated by either Diversdesk or the Client thirty (30) days before the end of the Subscription Period.
+
+### 9. Termination of the Account
+##### 9.1. Terms of Termination
+Diversdesk allows the termination of Licensee accounts and the associated Subscription. Registered Users may terminate their User account at any time by sending an email to info@diversdesk.com. Diversdesk may also cancel this agreement by terminating the provision of the service, after notifying the Client thirty (30) days in advance of the intended termination date.
+##### 9.2. Obligations
+In the event of early termination of the Subscription and associated accounts for reasons attributable to the Client, the Client shall be obliged to pay Diversdesk the full amount due until the end of the current Subscription period. Under no circumstances may the reimbursement of payments made prior to the date of the termination request be required.
+##### 9.3. Withdrawal
+If the Client encounters serious issues preventing access to the Software or use of the Features despite following the subscription and acceptance procedure defined in these Terms of Service, the Client has a 14-day withdrawal period to cancel the Subscription and the contract between the parties. This decision must be communicated to Diversdesk by letter with acknowledgement of receipt or by email to info@diversdesk.com within 14 days from the start of the Subscription, detailing the limitations that made use impossible.
+This exceptional procedure will be accompanied by the reimbursement of the payment made for the subscription, less a flat fee of €150 retained for setup, service, and support costs incurred during this period. Under no circumstances may the subscription be retracted once the 14-day withdrawal period has expired.
+
+
+### 10. Return of Stored Data and Liability
+##### 10.1 Data Export
+Diversdesk provides tools for account holders to export their information to their own systems, available as long as the account remains active. Prior to terminating their account, users are responsible for exporting all data from the Software.
+##### 10.2 Data Recovery After Termination
+Clients may request their data from Diversdesk within sixty (60) days after Subscription termination, subject to a fee. Diversdesk will provide the following data in a structured format:
+Documents: reservations, invoices, credit notes, tickets
+Accounting: sales journal, cash receipts journal, POS closures
+Clients: client contacts
+Activities: session history, rental history, accommodation history
+Upon request, Diversdesk will provide a quote defining the terms of service for this work. Complex recovery requests not covered above will incur additional costs, including recovery, client follow-up, and secure shipping, borne by the client. After 60 days, Diversdesk is no longer obligated to maintain or provide client data and may delete it, unless prohibited by law.
+10.3 Data Deletion
+Diversdesk will delete client data from its servers within twelve (12) months after Subscription termination, except where longer retention is required by law or legitimate interest related to the client relationship. Diversdesk is not liable for data stored by clients using the services, except as governed by clauses on personal data protection.
+
+### 11. Authorization of Use and Diversdesk License
+By subscribing to the Services, Traveltruster B.V. grants the Licensee a non-transferable, non-exclusive license to use Diversdesk via Internet provision without territorial limitation. This license is subject to the terms provided in these Terms of Service and any specific terms agreed upon during the contract process.
+
+### 12. Obligations of the Licensee
+The Licensee agrees to:
+Adhere to payment terms outlined in the Terms of Service.
+Use the Services and functionalities in compliance with these Terms of Service and the Diversdesk license, including applicable laws, intellectual and industrial property rights, morality, accepted customs, and public order.
+Not violate Diversdesk's or third parties' rights or interests, including intellectual or industrial property rights (patents, trademarks, trade secrets, copyrights, or other proprietary rights).
+Refrain from introducing viruses, Trojan horses, or other malicious software intended to disrupt, destroy, or limit Diversdesk's functionality.
+Not engage in reverse engineering, deciphering, or decrypting techniques or modify Diversdesk beyond permitted activities under applicable law.
+Avoid damaging, disabling, overloading, or impairing Diversdesk or its connected networks, or interfering with others' use and enjoyment.
+Refrain from harming or overloading Diversdesk servers or systems through API use or online sales integrations; excessive use may result in service suspension or require financial compensation.
+Not simulate Diversdesk's appearance or function through any means.
+Regularly review updates to these Terms of Service and associated notices for important information.
+The Licensee acknowledges that use of the Services is their responsibility, aimed at professionals who bear full responsibility for interpretations and information obtained through Diversdesk. Inactivity on the Software due to reduced professional or associative activity does not entitle the Licensee to financial compensation, changes in Subscription periods, or other forms of compensation.
+ 
+### 14. Exclusion of Liability
+##### 14.1 User Obligations
+Diversdesk is not liable for any breaches by users of these terms, or any other applicable laws or regulations.
+##### 14.2 Limitation of Liability
+Diversdesk disclaims all liability for damages arising directly or indirectly from the use or non-use of its services, including work interruptions, data loss, economic loss, or loss of anticipated revenue. Diversdesk also disclaims any warranties or representations regarding actions performed by others without its prior written consent.
+##### 14.3 User Responsibility
+Diversdesk is not liable for any damages or injuries suffered by users or third parties due to the use of its services, except in cases of intentional fault or gross negligence.
+##### 14.4 Liability Limitation
+In any event, Diversdesk's liability, if applicable, is limited to the total amount received from the user for the services provided.
+##### 14.5 User-Generated Content
+Diversdesk is not responsible for any content users input, store, process, publish, share, or send via its services or functionalities.
+##### 14.6 Third-Party Links
+Diversdesk is not responsible for the content or actions resulting from accessing third-party websites through links on its services.
+##### 14.7 Warranty Disclaimer
+Diversdesk does not provide warranties for services or products offered by licensees to end clients, particularly those offered free of charge.
+##### 14.8 Service Information Accuracy
+Diversdesk is not liable for the accuracy, updating, or compliance with regulations of schedules, prices, or other information related to services offered by licensees.
+##### 14.9 Third-Party Integration
+Diversdesk is not responsible for integrating third-party meteorological data, online sales, or matters related to licensee cash flow. This includes data entered by licensees as per Section 5 of the General Terms of Service.
+##### 14.10 Indemnification
+Licensees agree not to hold Diversdesk liable for any fines, compensation, or penalties resulting from actions contrary to these Terms of Service.
+##### 14.11 Applicable Law
+In jurisdictions where the exclusion of warranties or liabilities is not permitted by law, only those liabilities not allowed under applicable laws and jurisdictions shall apply.
+
+
+
+### 15. Intellectual and Industrial Property
+##### 15.1 Ownership and Use of Intellectual Property
+All elements comprising the Website and Diversdesk, including source code, design, structure, technology, documentation, manuals, signs, and other code elements, as well as their improvements and upgrades, are the intellectual property of Diversdesk. Diversdesk holds the rights of use and exploitation as applicable. These elements are protected under intellectual and industrial property laws, prohibiting reproduction, distribution, public communication, or transformation beyond the limits specified in these Terms of Service. All rights not expressly granted are reserved by Diversdesk.
+##### 15.2 Respect for Intellectual Property
+Diversdesk respects the intellectual property of content, files, or developments submitted by the Licensee. Regarding any content shared or posted on the Website, the User warrants that they are the rightful author or hold sufficient intellectual and/or industrial property rights to share or publish it, assuming any associated liabilities.
+##### 15.3 User-Generated Content
+Diversdesk may allow the publication of photos and audiovisual content obtained directly or through authorized users. In such cases, the Client agrees to:
+Grant Diversdesk broad permission for the lawful publication of such content on the Internet.
+Refrain from publishing offensive content or content infringing third-party rights, including image rights, personal dignity, copyright, or data protection.
+Avoid harassing, abusing, or harming others through posted content. Diversdesk does not control or endorse Client or User-published content and thus, Clients and Users must avoid inappropriate or illegal content, including links to websites with unlawful content or harmful software.
+##### 15.4 Branding and Trademarks
+The name, logo, trade names, and trademarks of Diversdesk are the property of traveltruster B.V. The Client is not granted any rights to use them except as explicitly authorized in these Terms. Diversdesk reserves full rights, titles, and interests in all copies of the Diversdesk Service.
+
+
+### 16 Personal Data Protection and Confidentiality
+##### 16.1 GDPR
+Diversdesk acknowledges the principles outlined in Regulation 2016/679 of the European Parliament and of the Council of 27 April 2016 on the protection of individuals with regard to the processing of personal data and on the free movement of such data ("GDPR"), and is committed to incorporating these principles into its practices.
+16.2 Description and Purposes of Processing
+Diversdesk collects personal data from Users such as name, email, address, telephone number, date of birth, photograph, and identifiers voluntarily provided for accessing and using the Software. The purposes of processing include:
+Creating user accounts
+Providing the Software and its functionalities
+Managing site and software security and backups
+Handling the commercial relationship (subscriptions, invoices, payments, support)
+Managing prospects and information requests (sending offers, newsletters)
+Managing requests to exercise User rights: access, rectification, deletion, opposition, portability, and processing limitation
+Managing data recovery
+##### 16.3 Obligations of the Parties
+The Parties acknowledge that Diversdesk processes Personal Data entered by the Client in the Software, as the Software Publisher, solely for the purposes and under the conditions agreed in the Terms of Service, to fulfill its obligations under these Terms.
+As the data controller, the Client is responsible for complying with its legal and regulatory obligations regarding Personal Data processing. The Client acknowledges that the measures implemented by Diversdesk within these Terms provide sufficient guarantees of compliance with regulations, and undertakes to comply with applicable laws and regulations at all times.
+As a subcontractor, Diversdesk follows the Client's documented instructions regarding processing, alerting the Client to any instructions that do not comply with regulations.
+Diversdesk shall not be liable for decisions made by the Client as data controller, and these Terms do not provide legal advice. If the Client uses functionalities to process sensitive Personal Data, it does so knowingly, and Diversdesk is not liable for non-compliance with regulations.
+The Client agrees to promptly inform Diversdesk of any changes in its requests that may affect Diversdesk's status regarding data protection regulations.
+##### 16.4 Obligations of the Subcontractor
+Cooperation and Assistance: The Client acknowledges that Diversdesk's cooperation and assistance include:
+Notifying breaches promptly
+Assisting in managing Client requests for exercising rights
+Forwarding direct requests for rights exercise to the Client
+Security and Privacy: Diversdesk implements technical and organizational security measures corresponding to EU Regulation 2016/679 and subsequent legislation to ensure data security, prevent manipulation, loss, or unauthorized access.
+As data controller, the Client determines and implements technical and organizational measures for data security and confidentiality. The Client acknowledges that security measures communicated before subscription meet regulatory requirements.
+Subsequent Subcontracting: Diversdesk may use subcontractors to assist in processing Personal Data. Diversdesk selects subcontractors carefully and informs the Client of any planned changes in writing.
+Audits: Upon justified request, the Client may audit the Software to verify compliance with regulations and these Terms, under specified conditions.
+Localization - Data Transfers: Personal Data is stored on Diversdesk servers hosted by Microsoft in Europe. Transfers to service providers outside the EU comply with GDPR requirements, including appropriate safeguards.
+Return, Destruction of Personal Data: Upon request, Diversdesk returns or securely deletes Personal Data within 60 days of termination.
+Register of Processing Activities: Diversdesk maintains a record of processing activities on behalf of the Client, including data categories, processing purposes, transfers, and security measures.
+
+### 17. Compensation
+Should Diversdesk incur damages, losses, and/or costs (including attorneys' fees) due to violations committed by the Licensee, the Licensee agrees to indemnify Diversdesk. In cases where claims or legal proceedings are initiated against Diversdesk as a result of the Licensee's breaches, the Licensee shall indemnify Diversdesk against any expenses, costs, damages, or liabilities arising from such actions.
+
+### 18. General Provisions
+##### 18.1. Safeguarding and Interpretation
+If any provision of these Terms is deemed illegal, invalid, or unenforceable by a competent authority, it shall be modified to be interpreted as enforceable and effective as closely as possible to the original intent. The failure by Diversdesk to strictly enforce any provision of these Terms shall not be construed as a waiver of its right to enforce such provision strictly in the future. The invalidity of one or more provisions of these Terms as determined by a competent authority shall not affect the validity of the remaining provisions.
+##### 18.2. Commercial Communications
+By subscribing to Diversdesk, the Client may request the receipt of commercial communications. The Client retains the right to revoke this consent at any time by notifying Diversdesk or using the designated email address.
+##### 18.3. Language
+These Terms are governed by the Dutch law. If the User has received a version of these Terms in English, it was provided as a courtesy or for convenience, and the User agrees that the Dutch version governs. In the event of any inconsistency between the original Dutch version and a translation of these Terms, the Dutch version shall prevail.
+##### 18.4. Assignment and Delegation
+The Licensee may not assign or delegate the rights and obligations under these Terms. Any such attempted assignment or delegation shall be void. Diversdesk retains the right to freely assign its rights and obligations under these Terms to third parties.
+##### 18.5. Amendments
+Diversdesk reserves the right to modify, limit, or cancel all or part of these Terms and the conditions applicable to subscription plans at any time. In such cases, Diversdesk will provide advance notice to the Licensee.
+##### 18.6. Force Majeure
+Diversdesk shall not be liable for any failure or delay in performing its obligations under these Terms due to circumstances beyond its reasonable control, including but not limited to natural disasters, acts of war, strikes, government regulations, technical failures, or third-party suspensions of services.
+##### 18.7. Governing Law and Jurisdiction
+Any dispute arising out of or related to these Terms shall be governed by the Dutch law, irrespective of the original licensee's country, server location, or service usage location. Both Diversdesk and the Licensee agree to submit to the exclusive jurisdiction of the courts of the Hague, the Netherlands, expressly waiving any other jurisdiction that may apply.
+### 19. Use of the traveltruster Marketplace
+If Traveltruster's marketplace is operational in the region where the Operator is active, the Party may choose to advertise there. Any use of Traveltruster's marketplace is subject to the terms and conditions outlined on traveltruster.com.
+For further inquiries, please contact Diversdesk at info@traveltruster.com.
