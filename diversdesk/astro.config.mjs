@@ -74,11 +74,11 @@ export default defineConfig({
         },
         {
           label: "Terms of Service",
-          link: '/terms_of_service'
+          link: '/terms-conditions'
         },
         {
           label: "Privacy Policy",
-          link: '/privacy_policy'
+          link: '/privacy-policy'
         },
       ],
       // social: {
