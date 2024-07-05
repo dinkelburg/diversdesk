@@ -1,5 +1,5 @@
 ---
-title: Diversesk - Privacy Policy
+title: Diversdesk - Privacy Policy
 description: Privacy policy
 ---
 
