@@ -73,12 +73,12 @@ export default defineConfig({
           autogenerate: { directory: "articles" },
         },
         {
-          label: "Terms of Service",
-          link: '/terms-conditions'
+          label: "Video Training",
+          link: '/video_training'
         },
-        {
-          label: "Privacy Policy",
-          link: '/privacy-policy'
+        { 
+          label: "Terms",
+          autogenerate: { directory: "terms" },
         },
       ],
       // social: {
