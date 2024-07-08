@@ -76,9 +76,13 @@ export default defineConfig({
           label: "Video Training",
           link: '/video_training'
         },
-        { 
-          label: "Terms",
-          autogenerate: { directory: "terms" },
+        {
+          label: "Tems of Service",
+          link: '/terms-conditions'
+        },
+        {
+          label: "Privacy Policy",
+          link: '/privacy-policy'
         },
       ],
       // social: {
