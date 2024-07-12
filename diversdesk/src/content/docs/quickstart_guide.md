@@ -10,12 +10,20 @@ Please follow the 5 steps below and right away get started with our software.
 > "Well begun is half done." - Aristotle
 
 ### 1. Sign-up or Enroll in your free trial 
-Navigate to [traveltruster.com](https://www.traveltruster.com/?persist_modal=account&persist_flow=signup) (or the URL to your white-label environment) and create an account through the 'Sign up' hyperlink in the right top corner.
-![Sign up on traveltruster](https://www.diversdesk.com/images/tt_landing_page_sign_up.png)
+You can sign-up for diversdesk services [**here**](https://diversdesk.com/signup/form)  . 
+![Login to your environment](https://www.diversdesk.com/images/Sign_up_for_diversdesk.png) </br>
 
+Alternatively, you can register [**here**](https://diversdesk.com/signup/trial) to start your 14 day free trial.
 
-### 2. Claim your business domain 
-Please [get in touch](mailto:info@diversdesk.com?subject=Request%20to%20create%20my%20Diversdesk%20page) to let us know you have created an account and are ready to get started using our software. We will in turn create your company's page and connect this to your account.
+After signing up we will get your personal, or trial environment ready and get in touch within 24 hours.
+
+:::tip[Details to your environment]
+You will receive an email from us with the URL to your environment and all the supporting documentation needed to get started.
+:::
+
+### 2. Login to your environment 
+Navigate to the URL of your environment and log in to your enviroment through the 'Log in' button in the right top corner.
+![Login to your environment](https://www.diversdesk.com/images/login_to_your_environment.png)
 
 :::tip[White lable]
 Did you know that we support white labeling? This allows you to enjoy:<br> 
