@@ -2,7 +2,7 @@
 :root {
     --backdrop-color: #272727cc;
     --sl-color-accent: #F86545;
-    --sl-color-accent-high: #ffa057;
+    --sl-color-accent-high: #FF7557;
     --sl-color-accent-low: #562800;
     --sl-color-black: #181818;
     --sl-color-gray-1: #eee;
@@ -19,7 +19,7 @@
 :root[data-theme="light"] {
     --backdrop-color: #f6f6f699;
     --sl-color-accent: #F86545;
-    --sl-color-accent-high: #F86545;
+    --sl-color-accent-high: #FF7557;
     --sl-color-accent-low: #ffa057;
     --sl-color-black: #fff;
     --sl-color-gray-1: #272727;
@@ -59,10 +59,10 @@ article.card {
 }
 
 .starlight-aside--note {
-    background: linear-gradient(45deg, #00b4db, #2193b0);
+    background: linear-gradient(45deg, #74A8BD, #6897AA);
     border: none;
     border-radius: 0.5rem;
-    color: #004558;
+    color: #E8F2F6;
 }
 
 .starlight-aside__icon {
@@ -70,11 +70,11 @@ article.card {
 }
 
 .starlight-aside--tip .starlight-aside__title {
-    color: #536E78;
+    color: #E8F2F6;
 }
 
 .starlight-aside--note .starlight-aside__title {
-    color: #536E78;
+    color: #fcfdfe;
 }
 
 .sl-markdown-content ul:not(:where(.not-content *)) {

@@ -1,9 +1,9 @@
 /* Dark mode colors. */
 :root {
-    --primary-button-hover: #ff801f;
-    --backdrop-color: #ab361c;
-    --sl-color-accent: #ff801f;
-    --sl-color-accent-high: #ffa057;
+    --primary-button-hover: #F86545;
+    --backdrop-color: #6f6f6f;
+    --sl-color-accent: #FF7557;
+    --sl-color-accent-high: #FF7557;
     --sl-color-accent-low: #562800;
     --sl-color-black: #181818;
     --sl-color-gray-1: #eee;
@@ -19,10 +19,10 @@
 
 /* Light mode colors. */
 :root[data-theme='light'] {
-    --primary-button-hover: #ff801f;
+    --primary-button-hover: #F86545;
     --backdrop-color: #f6f6f699;
-    --sl-color-accent: #f76b15;
-    --sl-color-accent-high: #c63a1a;
+    --sl-color-accent: #FF7557;
+    --sl-color-accent-high: #4b4b4b;
     --sl-color-accent-low: #ffa057;
     --sl-color-black: #fff;
     --sl-color-gray-1: #272727;

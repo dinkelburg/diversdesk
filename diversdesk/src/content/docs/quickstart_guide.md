@@ -9,8 +9,8 @@ Please follow the 5 steps below and right away get started with our software.
 
 > "Well begun is half done." - Aristotle
 
-### 1. Create an account 
-Navigate to [traveltruster.com](https://www.traveltruster.com/?persist_modal=account&persist_flow=signup) and create an account through the 'Sign up' hyperlink in the right top corner.
+### 1. Sign-up or Enroll in your free trial 
+Navigate to [traveltruster.com](https://www.traveltruster.com/?persist_modal=account&persist_flow=signup) (or the URL to your white-label environment) and create an account through the 'Sign up' hyperlink in the right top corner.
 ![Sign up on traveltruster](https://www.diversdesk.com/images/tt_landing_page_sign_up.png)
 
 
