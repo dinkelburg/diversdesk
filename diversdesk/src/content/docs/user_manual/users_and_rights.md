@@ -1,10 +1,10 @@
 ---
 title: Users and Rights
 description: Allocate different rights to your staff members
-order: 2
+sidebar:
+    label: Users and Rights
+    order: 3
 ---
-
-## Users and rights
 
 On the user page you can create users accounts and assign the appropriate rights to your staff members.
 ![On the user page you can find all staff members and given rights](/images/users_page_overview.jpg)

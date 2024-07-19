@@ -9,11 +9,10 @@ Please follow the 5 steps below and right away get started with our software.
 
 > "Well begun is half done." - Aristotle
 
-### 1. Sign-up or Enroll in your free trial 
-You can sign-up for diversdesk services [**here**](https://diversdesk.com/signup/form)  . 
-![Login to your environment](https://www.diversdesk.com/images/Sign_up_for_diversdesk.png) </br>
+### 1. Sign-up or enroll in your free trial 
+In order to start using our software, we kindly ask you to [**sign-up**](https://diversdesk.com/signup/form), or register for your [**14 day free trial**](https://diversdesk.com/signup/trial)</br>
 
-Alternatively, you can register [**here**](https://diversdesk.com/signup/trial) to start your 14 day free trial.
+![Login to your environment](https://www.diversdesk.com/images/Sign_up_for_diversdesk.png) </br>
 
 After signing up we will get your personal, or trial environment ready and get in touch within 24 hours.
 
@@ -23,7 +22,8 @@ You will receive an email from us with the URL to your environment and all the s
 
 ### 2. Login to your environment 
 Navigate to the URL of your environment and log in to your enviroment through the 'Log in' button in the right top corner.
-![Login to your environment](https://www.diversdesk.com/images/login_to_your_environment.png)
+![Login to your environment](https://www.diversdesk.com/images/login_to_your_environment.png) </br>
+[Read more](/user_manual/login) about the supported login methods. 
 
 :::tip[White lable]
 Did you know that we support white labeling? This allows you to enjoy:<br> 
