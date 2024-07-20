@@ -3,18 +3,22 @@ title: Pure Dive _ Support Page
 pagefind: false
 ---
 
+This support page contains all the on-demand videos we've created for you. We do our very best to also capture your questions and other subjects we've discussed, so you can always use this page as your reference. <br>
+On the right-hand side, you will find an index with all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.
+
 ## Pending actions:
 
-| **Pending** | **Type** | **By** | **Estimated completion date** |
-| ---| ---| ---| --- |
-| Privacy policy form code: | Action | Pure | 17 Jun 24 |
-| CSV Export file | Feature | Diversdesk | 23 Jul 24 |
-| User logging info | Feature | Diversdesk | 29 Jul 24 |
-| Preset text templates | Feature | Diversdesk | 3 Aug 24 |
-| Payment confirmation upload | Feature | Diversdesk | Aug 24 |
+| **Description** | **Type** | **By** | **Est compl date** |
+| --- |--- |--- | --- |
+| Fill out Diversdesk <a href="https://www.diversdesk.com/signup/form" target="_blank"> **Signup** </a> | Action | Pure | **Pending** | 
+| SSI Privacy policy waiver code | Action | Pure | **Pending** |
+| CSV Export file | Feature | Diversdesk | 23 Jul '24 |
+| User logging info | Feature | Diversdesk | 29 Jul '24 |
+| Pre-set text templates | Feature | Diversdesk | 3 Aug '24 |
+| Payment confirmation upload | Feature | Diversdesk | Aug '24 |
 | In depth training for Ark | Action | Pure + Diversdesk | On demand |
 
-_\*The dates above are estimates and may vary if more pressing matters arise. You will be informed if there are any changes to the estimates._
+_\*The dates above are estimates (made on 10 Jul '24) and may vary if more pressing matters arise or if time passes before we receive the green light. You will be informed if there are any changes to the estimates.._
 
   
 
@@ -87,19 +91,22 @@ In this video we will discuss:
 
 ## Pure Q&A list
 
-### Q: Does the system allow printing the bills? Generating an invoice and printing it on a small thermal printer?
+### Q: Can I print Bills </br>
+**Q:** Does the system allow printing the bills? Generating an invoice and printing it on a small thermal printer?</br>
 **A:** By generating an invoice, an A4 pdf is automatically created (for normal printer). Not sure what file format your thermal printer requires. We can always have a look at it.
 
-### Q: Is there a youtube manual for using the platform? With a step by step manual of the workflow?
-Documentation can be found through: [https://www.diversdesk.com/quickstart\_guide/](https://www.diversdesk.com/quickstart_guide/)
+### Q: Where can I find a Manual?
+**Q:** Is there a youtube manual for using the platform? With a step by step manual of the workflow? </br>
+**A:** Documentation can be found through: [https://www.diversdesk.com/quickstart\_guide/](https://www.diversdesk.com/quickstart_guide/)
 Video training can be foud through: [https://www.diversdesk.com/video\_training](https://www.diversdesk.com/video_training)
 
 ### Q: How can I delete an existing booking?
 **A:** Atm bookings will stay in the cancel tab. From there we will delete upon request. And the rights to completely delete be given during our next update.
 [https://www.loom.com/share/324e71211b374ab180915f4e5a0f1578?sid=edc90d07-6e9b-4831-aead-1bddd2f7a959](https://www.loom.com/share/324e71211b374ab180915f4e5a0f1578?sid=edc90d07-6e9b-4831-aead-1bddd2f7a959)
 
-### Q: While registering a booking - is it possible to add a field mentioning who of the staff has made that booking? Should be possible to pick any of the staff or mark it as Agent or Other. Can it be a dropdown menu in the booking reference field?
-**A: Staff history**
+### Q: Is there an Activity Log kept in Diversdesk?
+**Q:** While registering a booking - is it possible to add a field mentioning who of the staff has made that booking? Should be possible to pick any of the staff or mark it as Agent or Other. Can it be a dropdown menu in the booking reference field?
+**A: Activity Log / Staff history**
 Yes, We do alreay track the entries/changes made and by which user account. It simply doesn't show yet on your end. We can ofcourse make this visible, but it entitles a bit of work.
 **Sales channel**
 Very good one. This has been a request on multiple occcasions and we can implement this one fairly fast.
@@ -107,11 +114,14 @@ Very good one. This has been a request on multiple occcasions and we can impleme
 For any missing entry fields, we've applied some comments that are booking wide or for a single customer. Pls find an example below.
 [https://www.loom.com/share/889a74cbb5e44885b064d6b889ee11e5?sid=11d42051-ce73-4125-9fba-756fda52ab1c](https://www.loom.com/share/889a74cbb5e44885b064d6b889ee11e5?sid=11d42051-ce73-4125-9fba-756fda52ab1c)
 
-### Q: ⁠Will it be possible to add a custom text to the Message field of a Booking? So the guest receives the link where he/she needs to fill up the required fields with that text being there already?
+### Q: Can I add pre-set text templates to a booking? 
+**Q:** ⁠Will it be possible to add a custom text to the Message field of a Booking? So the guest receives the link where he/she needs to fill up the required fields with that text being there already? </br>
+
 **A:** **Message template:**
 I assume you meant a prefilled text in the comment section. At this point this is not possible. We understand this is something that is desired and have a ticket for this, but we didn't find this our highest priority just yet. Mainly because there's a fairly easy workaround for now.
+
 **Current/intermediate solution:**
-We suggest to keep a little notepad open with the text you'd like to drop here and simply paste it.
+We suggest to keep a little notepad open with the text you'd like to drop here and simply paste it. </br>
 [https://www.loom.com/share/9e405c41bd714880add425d471d9072c?sid=db1f10d7-a573-445b-8dc5-16c39f238034](https://www.loom.com/share/9e405c41bd714880add425d471d9072c?sid=db1f10d7-a573-445b-8dc5-16c39f238034)
 
 **Q** That is one of the (if not the most) crucial things to have for us. A number of people who will fill out the form and consider that a booking without paying a deposit is very high.
@@ -120,7 +130,8 @@ The open notepad etc. is not a solution as it can be easily forgotten, left ou
 
 Main idea is that the form the customer is filling contains all the information required leaving 0 space for speculations, assumptions etc.
 
-### Q. ⁠When the guest gets the link to the registration form is it possible to change the following in that form:
+### Q: Can I customize the registration form? 
+**Q:** ⁠When the guest gets the link to the registration form is it possible to change the following in that form:
 - make Stay non-obligatory field
 - ⁠remove Weightbelt option
 - ⁠remove Meal preference
@@ -135,38 +146,46 @@ This is all possible. Exept perhaps how you'd like to show the rental and own ge
 **Add privacy policy**
 This is fully customizable and can be added as either a signed waiver or added text with tick-box to the registration.
 **Solution**
-Please find both solutions in the attached video here:
+Please find both solutions in the attached video here: </br>
 .[https://www.loom.com/share/270be82c26824ccc8675f5fdeaf6dad4?sid=5dc8a44b-b189-428c-9318-eeb75336b9ae](https://www.loom.com/share/270be82c26824ccc8675f5fdeaf6dad4?sid=5dc8a44b-b189-428c-9318-eeb75336b9ae)
 For the SSI privacy policy. Is that a default waiver? If so, We're happy to add this if you (or our contact at SSI) supplies this to us.
 
 ### Q: Is it possible to remove freediving from the activity categories?
 **A:** No this is not possible. On the product page the empty product categories are hidden by default though.
 
-### Q: If I am adding a merch or lost gear into the bill as add-on, will it deduct it from an existing inventory or that function is not available yet?
+### Q: Does Diversdesk have an inventory system 
+**Q:** If I am adding a merch or lost gear into the bill as add-on, will it deduct it from an existing inventory or that function is not available yet? </br>
+
 **A:** No, this will (at the moment of writing, 10-07-2024), not yet be deducted. This feature has yet to be completed and released.
 
-### Q: For me it is crucial that when creating a booking that will be sent to a customer later a sales channel (person) is a mandatory field. Later, when I’m generating a monthly report I can see who made this booking.
+### Q: Can the Sales Channel (Person) be made mandatory?
+**Q:** For me it is crucial that when creating a booking that will be sent to a customer later a sales channel (person) is a mandatory field. Later, when I’m generating a monthly report I can see who made this booking.
+
 **A:** This we can add. We are currently already storing this data, but it isn't yet published.
 
 ### Q: ⁠Transaction input - Can I see how the deposit was paid and how the bill was settled for the certain guest?
+
 **A:** Yes, You can select the payment method and amount. I recomend watching the video below.
 
 ### Q: Can we add a payment including payment confirmation to a booking?
-**A:** With our fully integrated payment gateway this is all automated through. I'll demo it in the added video below.
+
+**A:** With our fully integrated payment gateway this is all automated through. I'll demo it in the added video below. </br>
 [https://www.loom.com/share/76ee8e88f63b403bbad1db00f64631af?sid=3f18ca7e-a356-4a8f-b06c-5ce309076d5b](https://www.loom.com/share/76ee8e88f63b403bbad1db00f64631af?sid=3f18ca7e-a356-4a8f-b06c-5ce309076d5b)
 
 ### Q: Can we have an option to upload a payment confirmation?
+
 **A:** Payment confirmation upload is indeed a good additional feature.
 Regarding the upload feature: While we recognize its useful, it hasn't been a priority because most communication currently occurs via WhatsApp and we've observed that our current users simply use WhatsApp to request and share screenshots. (Doesn't take away that this would be a useful feature to have).
 
 Q: If I create 3 templates for each boat, will that mean that the system understand the total capacity as 6 boats all together?
 **A:** No, templates are solely a pre-created trip to fast-select those when scheduling your day. The capacity of the day is solely depending on the scheduled trips on this particular day.
-Please find the vid below to demonstrate the use of our trip-templates.
+Please find the vid below to demonstrate the use of our trip-templates. </br>
 [https://www.loom.com/share/0fd280057dfc4f088be7a578c80b055c?sid=cb2659eb-72d1-4d59-8474-820b1f3a93ed](https://www.loom.com/share/0fd280057dfc4f088be7a578c80b055c?sid=cb2659eb-72d1-4d59-8474-820b1f3a93ed)
 
 ### Q: Self Registration ➝ Dive and Stay and Learn and Stay Packages.
+
 **Q:** System does not allow to self register a non-diving companion or a person doing different amount of dives or customize the package. The way it’s visible in the calendar (start - finish), extended view with all additional info. From what I see it can (but only to a certain extent) be done manually.
-</br></br> **A:** Please vind an aswerk below in the form of a video:
+</br></br> **A:** Please vind an aswerk below in the form of a video: </br>
 [https://www.loom.com/share/592e9f1dd14a446c89ccef4c628e2767?sid=791a1ab2-ff25-4ffc-8dbf-6355e8174635](https://www.loom.com/share/592e9f1dd14a446c89ccef4c628e2767?sid=791a1ab2-ff25-4ffc-8dbf-6355e8174635)
 
 **Q:** I understand how to customise and edit the entries.
