@@ -22,7 +22,7 @@ You will receive an email from us with the URL to your environment and all the s
 
 ### 2. Login to your environment 
 Navigate to the URL of your environment and log in to your enviroment through the 'Log in' button in the right top corner.
-![Login to your environment](https://www.diversdesk.com/images/login_to_your_environment.png) </br>
+![Login to your environment](/images/login_to_your_environment.png) </br>
 [Read more](/user_manual/login) about the supported login methods. 
 
 :::tip[White lable]
