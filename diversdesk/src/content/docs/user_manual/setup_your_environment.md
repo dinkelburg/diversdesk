@@ -39,11 +39,29 @@ Products are divided into different categories. Beside each product category, yo
 ![Create an activity](/images/create_an_activity.png)
 
 ### Edit a Product/Activity 
-Editing a product can be done by clicking on the 
+Editing a product can be done by clicking on the 'Edit' hyperlink within the actvivity/product. 
 ![Edit an activity](/images/edit_an_activity.png)
 
+There is a range of fields where you can input all the information and details available for this activity, and connect any add-ons available for this particular product.
 
 ## Add-ons
+On the 'Add-on' page, accesable thought the hamburger menu, you can enter or edit your add-ons.
+
+During the creation of an add-on, you need to specify if this add-on is valid:
+- Per Day 
+- Per Dive
+- Per Trip
+- One Time Fee
+
+![Add-ons page overview](/images/Add-on_page.png)
+
+Once an add-on is created, it can be connected to one or more of your products. This can be done through the product edit page.
+![Edit an activity](/images/Connecting_an_add_on.png)
+
+:::tip[Tip] 
+Later on, you can always navigate back to the add-on page to quickly see which products an existing add-on is connected to. Clicking on one of the product cards will immediately lead you to the product page.
+:::
+![Add-ons page overview](/images/Connected_products_to_an_add-on.png)
 
 ## Fleet
 
