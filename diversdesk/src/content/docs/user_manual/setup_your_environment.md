@@ -32,11 +32,16 @@ You can navigate to your landing page from anywhere in the application through t
 :::
 
 ## Products and Activities
+By default, we will enter a few example products for you. Like your company details, these can also be found through 'My Page'. </br>
 
-### Edit an Activity 
-Editing products and activities can be done from within the activity or product in question.
+### Create a Product/Activity
+Products are divided into different categories. Beside each product category, you will find a 'Create' hyperlink to create a new product within that category group.
+![Create an activity](/images/create_an_activity.png)
 
+### Edit a Product/Activity 
+Editing a product can be done by clicking on the 
 ![Edit an activity](/images/edit_an_activity.png)
+
 
 ## Add-ons
 
