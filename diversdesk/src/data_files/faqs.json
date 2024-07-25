@@ -11,15 +11,21 @@
     },
     {
       "question": "How does the free trial work?",
-      "answer": "Our free trial gives you full access to Diversdesk’s features for a limited period. After the trial, you can choose a plan that best fits your needs and convert to a paid plan, unless you decide to end our journey together. No strings attached. Rest assured, we'll notify you when the end of your trial is approaching"
+      "answer": "Our free trial gives you full access to Diversdesk’s features for a limited period. After the trial, you can choose a plan that best fits your needs and convert to a paid plan, unless you decide to end our journey together. No strings attached. Rest assured, we'll notify you when the end of your trial is approaching. Sign up",
+      "linkText": "here",
+      "url": "https://www.diversdesk.com/signup/trial",
+      "answer2": " to start your free trial."
     },
     {
       "question": "How does the payment processing work?",
       "answer": "Diversdesk integrates with Xendit for seamless payment processing. Payments made through Xendit are automatically updated as paid in the system. You can also manually enter other payment methods if needed."
     },
     {
-      "question": "Can I cancel my subscription at any time?",
-      "answer": "Yes, you can cancel your subscription by providing a 30-day notice. The cancellation will take effect at the end of your current billing cycle."
+      "question": "How do we start?",
+      "answer": "Fantastic choice! We're thrilled to have you join the Diversdesk community. To get started, please fill out our signup form",
+      "linkText": "here",
+      "url": "https://www.diversdesk.com/signup/form",
+      "answer2": " and our team will right away set up your personal Diversdesk environment."
     },
     {
       "question": "Is my data secure on Diversdesk?",
@@ -36,6 +42,10 @@
     {
       "question": "How do I manage staff access and permissions?",
       "answer": "Diversdesk allows you to set different rights and permissions for staff members, ensuring they have access only to the areas of the platform relevant to their roles."
+    },
+    {
+      "question": "Can I cancel my subscription at any time??",
+      "answer": "Yes, you can cancel your subscription by providing a 30-day notice. The cancellation will take effect at the end of your current billing cycle."
     }
   ]
 }
