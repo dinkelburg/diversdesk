@@ -15,7 +15,9 @@ import heroImage from "@images/hero-image.png";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
-import savetime from "@images/save_time_1.png";
+import CustomerOnboarding from "@images/customer_briefing.png";
+import CutErrors from "@images/happy_customers.png";
+import BoostRevenue from "@images/happy_divers.png";
 import {Icons} from "node_modules/@astrojs/starlight/components/Icons";
 import Icon from "@/components/ui/icons/Icon.astro";
 import {YouTube} from 'astro-embed';
@@ -32,31 +34,29 @@ const testimonials = [
     // First testimonial data
     {
       content:
-        " \"Since switching to Diversdesk's hardware tools, the efficiency on our construction sites has skyrocketed. The durability of the hex bolts and precision of the machine screws are simply unmatched. It's refreshing to work with a company that truly understands the daily demands of the industry.\" ",
-      author: "Jason Clark",
-      role: "Site Foreman | TopBuild",
-      avatarSrc:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+        " \"I recently started using the dive management system from Divers Desk, and I must say it has completely transformed the way I handle my dive shop operations. The system is not only user-friendly but also incredibly efficient, allowing me to easily schedule dives, track payments, and effectively oversee and coordinate activities. What truly sets this system apart is the exceptional support provided by the team. Whenever I had a question or needed assistance, they were quick to respond and always went above and beyond to ensure that I had everything I needed to succeed. Their dedication to customer service is truly commendable. I can confidently say that Divers Desk, coupled with the outstanding support, has significantly improved my dive shop operations and overall experience. I highly recommend it to anyone in the diving industry looking for a reliable and supportive solution.\" ",
+      author: "TI",
+      role: "Owner | Jom Adventure",
+      avatarSrc: "/images/ti_jomadventure_avatar.png",
       avatarAlt: "Image Description",
     },
     // Second testimonial data
     {
       content:
-        " \"As an interior designer, I'm always looking for high-quality materials and tools that help bring my visions to life. Diversdesk's mixed screws assortment has been a game-changer for my projects, providing the perfect blend of quality and variety. The outstanding customer support was just the cherry on top!\" ",
-      author: "Maria Gonzalez",
-      role: "Interior Designer | Creative Spaces",
-      avatarSrc:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+        " \"We at the Bali Dive Resort and Spa were looking for a paperless registration solution for a long time before we found ‘DiversDesk’.\n'DiversDesk' Scuba Diver Planner is an outstanding tool for any dive operation. Its user-friendly interface makes it easy to navigate, while features like paperless registration and pre-booked dive management streamline operations. Divers can complete all necessary paperwork, including medical forms and liability releases, before arriving, saving time and reducing paper use. \nWe are particularly impressed with the platform’s ease of use and the responsive support team, who listen to and act on our feedback. Regular updates ensure we always have the latest features. We highly recommend ‘DiversDesk’ to dive centers and resorts looking to save time, reduce paper usage, and enhance efficiency.\" ",
+      author: "Miikka",
+      role: "Manager | Bali Dive Resort and Spa",
+      avatarSrc: "/images/miikka_bdrs_avatar.png",
       avatarAlt: "Image Description",
     },
     // Third testimonial data
     {
       content:
-        " \"I’ve been a professional carpenter for over 15 years, and I can sincerely say that Diversdesk’s tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
-      author: "Richard Kim",
-      role: "Master Carpenter | WoodWright",
+        " \"I cherish the day we started using the platform 'Diversdesk'. Since then, our booking system has improved in so many ways. We used to send our guests a Word registration form. Now, we send them a link from 'Diversdesk', and the rest practically goes by itself. Creating the booking link takes just 2 minutes, and the response from our guests is super positive. We don't use any paperwork anymore because the medical form and liability release are filled in online. Super convenient, time saving, and most important, good for the environment! Last but not least, payments are much easier now. 'Diversdesk' manages our credit card payments and ensures we receive everything correctly. The service from 'Diversdesk' is exceptional. As someone who struggles with computers, I've asked for help many times, and they've always found a solution. If I can work with this platform, anyone can! Thank you 'Diversdesk' for saving the world 🌎 🫶\" ",
+      author: "Lars",
+      role: "Owner | S.E.A. Diving Bali",
       avatarSrc:
-        "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
+        "/images/lars_seadb_avatar.png",
       avatarAlt: "Image Description",
     },
 ];
@@ -70,7 +70,7 @@ const testimonials = [
     /> -->
 
     <HeroSection
-            title=`Seamless Planning, Anytime, Anywhere with <span
+            title=`Seamless Dive Center Management, Anytime, Anywhere with <span
         class="text-orange-400 dark:text-orange-400">Diversdesk</span>`
             subTitle="Intuitive Dive Center Management Software"
             primaryBtn="Book a demo"
@@ -87,8 +87,8 @@ const testimonials = [
     />
 
     <!-- <ClientsSection
-      title="Trusted by Industry Leaders"
-      subTitle="Experience the reliability chosen by industry giants."
+      title="Trusted by Centers Worldwide"
+      subTitle="The most sophisticated scheduler in the diving industry."
     /> -->
 
     <FeaturesGeneral
@@ -153,57 +153,49 @@ const testimonials = [
     /> -->
 
     <!--Testimonials section-->
-    <!-- <TestimonialsSectionAlt
+    <TestimonialsSectionAlt
       title="What Our Customers Say"
       testimonials={testimonials}
-    /> -->
+    />
 
-    <!-- <FeaturesNavs
+    <FeaturesNavs
       title=`Why Choose Diversdesk`
       tabs={[
         {
-          heading: "Save Time",
+          heading: "Customer onboarding in Record Time",
           content:
-            "Streamline customer onboarding by sharing a single booking URL that handles registration, waivers, and payments. Everything is managed seamlessly in a fraction of the time, eliminating human errors, and all details are neatly visualized in your calendar.",
+            "Streamline customer onboarding by sharing a single booking URL that handles registration, waivers, and payments. Everything is managed seamlessly in a fraction of the time, presenting a pleasant experience and professional appearance to your customers.",
           svg: "save_time",
-          src: savetime,
+          src: CustomerOnboarding,
           alt: "Yellow and black heavy equipment on brown grass field",
           first: true,
         },
         {
-          heading: "Eliminate Human Errors",
+          heading: "Cut Errors and System Complexity",
           content:
-            "Eliminate the need for manual data entries. Customer registrations become directly visible on your dashboard. Visual trip insights also remove the need for manual participant counts, making your operation less prone to overbookings and human errors.",
+            "Eliminate the need for multiple systems, double and manual data entries. Customer registrations become directly visible in your environment. Visual trip insights also remove the need for manual participant counts, making your operation less prone to overbookings and human errors.",
           svg: "boost_revenue",
-          src: dashboard,
+          src: CutErrors,
           alt: "A screenshot or graphic representation of the intuitive dashboard",
           second: true,
         },
         {
           heading: "Boost revenue",
           content:
-            "Still printing and keeping paperwork? With Diversdesk, you can go 100% paperless. Use our embedded Diver Medical forms and official waivers from your certification organization, or create custom waivers from scratch. Secure, professional, and environmentally friendly.",
+            "Through unique insights from DiversDesk, your center can reduce overhead, make data-driven decisions, and leverage upsell opportunities. Understand preferences and key trends to optimize marketing efficiency and tailor offerings, ultimately enhancing customer experience and boosting revenue.",
           svg: "boost_revenue",
-          src: dashboard,
+          src: BoostRevenue,
           alt: "A screenshot or graphic representation of the intuitive dashboard",
           second: true,
-        },
-        {
-          heading: "Proffesionalize",
-          content:
-            "Minimize complexity, maximize productivity. Diversdesk's robust features are engineered to streamline your construction process, delivering results that stand out for their excellence.",
-          svg: "customer_database",
-          src: construction,
-          alt: "Gray metal building frame near tower crane during daytime",
         }
       ]}
-    />   -->
+    />  
 
     <div class="px-2">
         <PricingSection pricing={pricing}/>
     </div>
 
-    <!-- <FAQ title="Frequently<br />asked questions" faqs={faqs} /> -->
+    <FAQ title="Frequently<br />asked questions" faqs={faqs} />
 
     <HeroSectionAlt
             title="Let's Build Together"
