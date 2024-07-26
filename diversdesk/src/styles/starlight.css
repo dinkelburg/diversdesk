@@ -12,7 +12,9 @@
     --sl-color-gray-5: #383838;
     --sl-color-gray-6: #272727;
     --sl-color-white: #fff;
-    --list-marker-color: #FF7557    ;
+    --list-marker-color: #FF7557;
+    --checkmark-color: #4CAF50; /* Color for checkmarks */
+    --crossmark-color: #F44336; /* Color for cross marks */
 }
 
 /* Light mode colors. */
@@ -30,7 +32,7 @@
     --sl-color-gray-6: #eee;
     --sl-color-gray-7: #f6f6f6;
     --sl-color-white: #181818;
-    --list-marker-color: #FF7557;
+    --list-marker-color: #383838;
 }
 
 header {
@@ -41,10 +43,6 @@ header {
 select {
     background-image: none;
     box-shadow: none;
-}
-
-select:focus-visible {
-    outline: -webkit-focus-ring-color auto 1px;
 }
 
 article.card {
@@ -77,28 +75,119 @@ article.card {
     color: #fcfdfe;
 }
 
-.sl-markdown-content ul:not(:where(.not-content *)) {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.sl-markdown-content ul:not(:where(.not-content *)) > li {
-    padding-left: 1.75rem;
+/* Default bullet style restoration */
+.sl-markdown-content ul {
+    list-style-type: disc; /* Default bullet */
+    padding-left: 2rem;
     position: relative;
 }
 
-.sl-markdown-content li:not(:where(.not-content *)) > ul,
-.sl-markdown-content li + li:not(:where(.not-content *)) {
-    margin-top: 0.625rem;
+.sl-markdown-content ul > li {
+    margin-top: 0.5rem;
+    position: relative;
 }
 
-.sl-markdown-content ul:not(:where(.not-content *)) > li:before {
-    background: var(--list-marker-color);
-    border-radius: 1px;
-    content: "";
-    height: 2px;
-    left: 2px;
+/* Custom bullet styles */
+.bullet-dash ul,
+.bullet-question ul,
+.bullet-answer ul,
+.bullet-circle ul,
+.bullet-square ul,
+.bullet-checkmark ul,
+.bullet-crossmark ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 2rem; /* Space from bullet to text */
+}
+
+/* Custom bullet pseudo-elements */
+.bullet-dash ul > li::before,
+.bullet-question ul > li::before,
+.bullet-answer ul > li::before,
+.bullet-circle ul > li::before,
+.bullet-square ul > li::before,
+.bullet-checkmark ul > li::before,
+.bullet-crossmark ul > li::before {
     position: absolute;
-    top: 13px;
-    width: 0.875rem;
+    left: -1rem; /* Adjust left positioning as needed */
+    top: 0.4em; /* Align with the first line of text */
+    transform: translateY(0); /* Remove vertical centering */
+}
+
+/* Dash Bullet */
+.bullet-dash ul > li::before {
+    content: "-";
+    font-weight: bold;
+    font-size: 1.5rem; /* Adjust size as needed */
+    color: var(--list-marker-color); /* Color for dash bullet */
+}
+
+/* Question Bullet */
+.bullet-question ul > li::before {
+    content: "Q";
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--list-marker-color); /* Color for question bullet */
+}
+
+/* Answer Bullet */
+.bullet-answer ul > li::before {
+    content: "A";
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--list-marker-color); /* Color for answer bullet */
+}
+
+/* Circle Bullet */
+.bullet-circle ul > li::before {
+    content: "";
+    background: var(--sl-color-gray-3);
+    border-radius: 50%;
+    top: 0.4em; /* Align with the first line of text */
+    height: 5px;
+    width: 5px;
+}
+
+/* Square Bullet */
+.bullet-square ul > li::before {
+    content: "";
+    background: var(--sl-color-gray-4);
+    border-radius: 0;
+    top: 0.4em; /* Align with the first line of text */
+    height: 5px;
+    width: 5px;
+}
+
+/* Checkmark Bullet */
+.bullet-checkmark ul > li::before {
+    content: "\2713"; /* Checkmark character */
+    color: var(--checkmark-color);
+    font-size: 1rem;
+    font-weight: bold;
+    top: 0;
+}
+
+/* Crossmark Bullet */
+.bullet-crossmark ul > li::before {
+    content: "\2717"; /* Cross character for not done */
+    color: var(--crossmark-color);
+    font-size: 1rem;
+    font-weight: bold;
+    top: 0; /* Align with the first line of text */
+}
+
+/* Ensure consistency for nested lists */
+.bullet-square ul > li,
+.bullet-checkmark ul > li,
+.bullet-circle ul > li,
+.bullet-dash ul > li,
+.bullet-question ul > li,
+.bullet-answer ul > li,
+.bullet-crossmark ul > li {
+    margin-top: 0.625rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.tab-space {
+    margin-left: 2em; /* Adjust the value as needed */
 }
