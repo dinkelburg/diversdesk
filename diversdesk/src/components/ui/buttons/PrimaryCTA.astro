@@ -22,10 +22,12 @@ const ringClasses = "dark:ring-zinc-200";
 <!-- Link styled as a button, with dynamic title, URL, and optional arrow -->
 <a
   class={`${baseClasses} ${borderClasses} ${bgColorClasses} ${disableClasses} ${fontSizeClasses} ${ringClasses}`}
-  href={url}
+  href={url} target="_blank"
 >
   {title}
   <!-- Display the arrow based on the 'noArrow' property -->
 
   {noArrow ? null : <Icon name="arrowRight" />}
 </a>
+
+
