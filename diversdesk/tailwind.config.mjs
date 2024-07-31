@@ -4,7 +4,7 @@ import colors from 'tailwindcss/colors';
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    "./node_modules/preline/preline.js", // Add your content paths here
+    "./node_modules/preline/preline.js", // Include any other paths where Tailwind should look for classes
   ],
   darkMode: "class", // Enable dark mode if needed
   theme: {
@@ -40,6 +40,7 @@ export default {
     require("tailwindcss/nesting"),
     require("preline/plugin"),
     require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"), // Ensuring the Typography plugin is included
     // Add any other plugins you're using
   ],
 };

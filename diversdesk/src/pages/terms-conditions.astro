@@ -1,0 +1,35 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import TermsContent from "../terms/terms-conditions.mdx";
+import { SITE } from "@data/constants";
+
+const pageTitle = `Diversdesk - Terms of Service | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.diversdesk.com/terms-conditions",  // Updated URL
+    "url": "https://www.diversdesk.com/terms-conditions",  // Updated URL
+    "name": "Terms of Service | Diversdesk",
+    "description": "The Diversdesk Terms of Service outline the use of our dive center management tools, subscription plans, and payment processes.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://www.diversdesk.com",
+      "name": "Diversdesk",
+      "description": "The Diversdesk Terms of Service outline the use of our dive center management tools, subscription plans, and payment processes."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+      <article class="prose dark:prose-dark max-w-none">
+        <h1>Diversdesk - Terms of Service</h1>
+        <TermsContent />
+      </article>
+    </div>
+  </section>
+</MainLayout>

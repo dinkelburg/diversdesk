@@ -4,6 +4,7 @@ import vercel from '@astrojs/vercel/serverless';
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
+import mdx from '@astrojs/mdx';  // Import MDX integration
 
 // https://astro.build/config
 export default defineConfig({
@@ -27,7 +28,7 @@ export default defineConfig({
     tailwind(),
     sitemap({
       i18n: {
-        defaultLocale: "en", // All urls that don't contain `fr` after `https://diversdesk.com/` will be treated as default locale, i.e. `en`
+        defaultLocale: "en", // All URLs that don't contain `fr` after `https://diversdesk.com/` will be treated as default locale, i.e. `en`
         locales: {
           en: "en", // The `defaultLocale` value must present in `locales` keys
           fr: "fr",
@@ -75,15 +76,7 @@ export default defineConfig({
         {
           label: "Video Training",
           link: '/video_training'
-        },
-        {
-          label: "Tems of Service",
-          link: '/terms-conditions'
-        },
-        {
-          label: "Privacy Policy",
-          link: '/privacy-policy'
-        },
+        }
       ],
       // social: {
       //   github: "https://github.com/mearashadowfax/ScrewFast",
@@ -100,14 +93,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://diversdesk.com" + "/social.webp",
+            content: "https://diversdesk.com/social.webp",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://diversdesk.com" + "/social.webp",
+            content: "https://diversdesk.com/social.webp",
           },
         },
       ],
@@ -116,6 +109,7 @@ export default defineConfig({
       gzip: false,
       brotli: true,
     }),
+    mdx(),  // Add MDX integration
   ],
   output: "hybrid",
   experimental: {

@@ -9,9 +9,11 @@ const navBarLinks = [
 // An array of links for footer
 const footerLinks = [
   {
-    section: "Support",
+    section: "Legal & Privacy",
     links: [
-      { name: "Documentation", url: "/welcome-to-docs/" },  
+      //{ name: "Documentation", url: "/welcome-to-docs/" }, 
+      { name: "Terms of Service", url: "/terms-conditions"},
+      { name: "Privacy Policy", url: "/privacy-policy"},  
       // { name: "FAQ", url: "/products" },
       // { name: "Contact", url: "/services" },
     ],

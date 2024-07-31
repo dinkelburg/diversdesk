@@ -1,0 +1,35 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import PrivacyPolicyContent from "../terms/privacy-policy.mdx";
+import { SITE } from "@data/constants";
+
+const pageTitle = `Privacy Policy | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.diversdesk.com/privacy-policy",
+    "url": "https://www.diversdesk.com/privacy-policy",
+    "name": "Privacy Policy | Diversdesk",
+    "description": "Our Privacy Policy explains how we collect, use, and protect your personal data.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://www.diversdesk.com",
+      "name": "Diversdesk",
+      "description": "Dive Center Management Software."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+      <article class="prose dark:prose-dark max-w-none">
+        <h1>Privacy Policy</h1>
+        <PrivacyPolicyContent />
+      </article>
+    </div>
+  </section>
+</MainLayout>

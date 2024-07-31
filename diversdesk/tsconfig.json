@@ -9,7 +9,14 @@
       "@data/*": ["src/data_files/*"],
       "@images/*": ["src/images/*"],
       "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@terms/*": ["src/terms/*"]
     },
-  }
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "strict": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "src/**/*.md", "src/declarations.d.ts", "src/terms/terms-conditions.mdx", "src/terms/privacy-policy.mdx"],
+  "exclude": ["node_modules"]
 }
