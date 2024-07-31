@@ -34,6 +34,42 @@ export default {
         red: colors.red,
         zinc: colors.zinc,
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.700'),
+            a: {
+              color: theme('colors.orange.500'),
+              '&:hover': {
+                color: theme('colors.orange.600'),
+              },
+            },
+          },
+        },
+        dark: {
+          css: {
+            color: theme('colors.gray.300'),
+            a: {
+              color: theme('colors.orange.400'),
+              '&:hover': {
+                color: theme('colors.orange.500'),
+              },
+            },
+            h1: {
+              color: theme('colors.white'),
+            },
+            h2: {
+              color: theme('colors.white'),
+            },
+            h3: {
+              color: theme('colors.white'),
+            },
+            blockquote: {
+              color: theme('colors.gray.400'),
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [
