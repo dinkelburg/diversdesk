@@ -33,7 +33,8 @@ This creates a personal and professional look towards your customers.
 :::
 
 ### 3. Personalize your company page and enter activities 
-After establishing your account, you can begin personalizing your own company page and enter your activities. These activities can then be quickly selected throughout our management software.
+After establishing your account, you can begin personalizing your own company page and enter your activities. These activities can then be quickly selected throughout our management software. <br>
+[Read more](/user_manual/setup_your_environment) about setting up your environment here. 
 
 ### 4. Customize and connect the appropriate forms
 Using the Forms and Product pages you can customize and connect the desired registration and liability forms for each created product. [Read here](/articles/custom_registration_form) how to customize forms and connect the appropriate forms to each of your products. <br>
