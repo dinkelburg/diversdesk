@@ -5,16 +5,16 @@ description: Ways to onboard your customer
 
 ### Intro to Diversdesk's onboarding flexibility.
 
-From a broad perspective, you could say that we support two main customer onboarding methods:
-1. **1. Direct Booking** <br>
+From a broad perspective, you could say that Diverdesk supports two main customer onboarding methods:
+1. **1. Direct Bookings** <br>
 This method involves creating a booking and sharing a booking URL with your customer. The customer can immediately register and pay (if payment is added), and their registration will automatically appear in your calendar and dashboard.
 
-2. **2. Self-Registration (or Generic Registration)** <br>
+2. **2. Self-Registrations (or Generic Registration)** <br>
 Customers register through a so-called "Generic Customer Registration Page," which holds all the onboarding methods you've marked as "Selectable for Participant." Using this method, you can easily allow any walk-in customer to register through a QR code in your dive center, even if no one on location has access to your Diversdesk account. Self-registered customers will appear as pending in your environment and can be connected to a booking at a later stage.
 
 Both methods offer a variety of features to enhance the onboarding experience, which we will dive into below.
 
-## 1. Direct Booking
+## 1. Direct Bookings
 By adding an activity on the Planner page, and thereby creating a new booking, you can follow these paths to onboard your customer:
 1. **1.1.** [Share the Booking URL](/user_manual/customer_onboarding/#1-share-the-booking-url) <br>
 This is the most efficient way of onboarding new customers, since basically everything is taken care of for you the moment you share the Booking URL with your customer. 
