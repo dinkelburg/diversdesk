@@ -64,6 +64,9 @@ export default {
             h3: {
               color: theme('colors.white'),
             },
+            h4: {
+              color: theme('colors.white'),
+            },
             blockquote: {
               color: theme('colors.gray.400'),
             },
