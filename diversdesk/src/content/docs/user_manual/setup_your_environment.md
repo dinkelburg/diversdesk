@@ -3,7 +3,7 @@ title: Setup Your Environment
 description: Enter your company details, products and activities
 sidebar:
     label: Setup Your Environment
-    order: 2
+    order: 3
 ---
 
 ## Company Details

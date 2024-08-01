@@ -3,20 +3,21 @@ title: Create or Login to your account
 description: How to and different methods to create or login to your account
 sidebar:
     label: Login or Sign up
-    order: 1
+    order: 2
 ---
 
 ## Create an account
 You can create an account through a secure email verification link, or through an existing google account. 
 
-> Already got an account? continue reading at [Login to your account.](/user_manual/login/#login-to-your-account)
+> Already got an account? continue reading at [**Login to your account**.](/user_manual/login/#login-to-your-account)
 
 ### 1. Email verification link
-Through the sign-up button on [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signup) you can fill your email and send a verification login to create your account. 
+Signing up can be done through the sign-up button on [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signup) or, for Diversdesk white-label users, via the personal URL that we've provided to you.<br>
+The 'Send me a verification link' button will trigger an email with a verification link to the email address you provided in the email input field.
 
 ![Create an account through a verification email link](/images/Create_an_account_using_verification_email.jpg)
 
-</br>Verifying your email will automatically log you into your account. Once logged in, you can access your company page through the hamburger menu in the top-left corner.
+Verifying your email will automatically log you into your account. Once logged in, you can access your company page through the hamburger menu in the top-left corner.
 
 :::note[Note]
 Your company profile and connected pages will only show once your email is linked, and appropriate user rights are granted.
@@ -29,7 +30,7 @@ Alternatively, you can sign up using your Google account.
 ![Create an account through google](/images/Create_an_account_through_Google.jpg)
 
 ## Login to your account
-To login, you can visit [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signin) and select the login button for desktop or the profile icon on mobile phone.
+To login, you can visit [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signin) or, for Diversdesk white-label users, via the personal URL that we've provided to you, and select the login button for desktop or the profile icon on mobile phone.
 From there you can follow the prompt, and you'll be led to your account. 
 
 ![Steps to login into your environment](/images/Login_steps.jpg)
