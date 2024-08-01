@@ -35,8 +35,8 @@ Get in touch with us to [**Request your White-label**](mailto:info@diversdesk.co
 After establishing your account, you can begin personalizing your own company page and enter your activities. These activities can then be quickly selected throughout our management software. <br>
 [**Read more**](/user_manual/setup_your_environment) about setting up your environment here. 
 
-### 4. Customize and connect the appropriate forms
-Using the Forms and Product pages you can customize and connect the desired registration and liability forms for each created product. This guarantees a smooth onboarding for each one of your customers.<br>
+### 4. Create your customer onboarding journeys
+Using the Forms, Waivers and Product pages you can create, customize and connect the desired registration and liability forms for each of your created activities. This guarantees a smooth onboarding for each one of your customers.<br>
 [**Read here**](/articles/custom_registration_form) how to customize forms and connect the appropriate forms to each of your products. <br>
 ![Sign up on traveltruster](https://diversdesk.com/images/tt_hamburger_dropdown_forms_page.png)
 

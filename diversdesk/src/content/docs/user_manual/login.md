@@ -44,9 +44,13 @@ It occasionally happens that pop-ups are blocked in your browser. Pressing the b
 
 ## Login to your account
 To login, you can visit [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signin) or, for Diversdesk white-label users, via the personal URL that we've provided to you, and select the login button for desktop or the profile icon on mobile phone.
-From there you can follow the prompt, and you'll be led to your account. 
+From there you can follow the prompt, and you'll be led to your account.
+1. **1.** Login through the profile icon 
+2. **2.** After a successful login, you will find all menu items under the hamburger menu in the left top of your screen.
+3. **3.** Expand to see all the menu items.
+4. **4.** The profile icon on the right top is a good indication you are logged in. 
 
-![Steps to login into your environment](/images/Login_steps.jpg)
+![Steps to login into your environment](/images/Login_steps.png)
 
 ### 1. Email verification link
 Experience a secure passwordless login that sends you a unique and secure login URL. This URL can be opened from the device you are attempting to log in with or any other device where you can access your email
