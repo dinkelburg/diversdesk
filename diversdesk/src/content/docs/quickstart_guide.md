@@ -14,8 +14,6 @@ Making it to our quickstart guide means you've most likely already signed up or 
 
 After signing up we will get your personal, or trial environment ready and get in touch within 24 hours.<br>
 
-![Login to your environment](https://www.diversdesk.com/images/Sign_up_for_diversdesk.png) </br>
-
 :::tip[Details to your environment]
 You will receive an email from us with the URL to your environment and all the supporting documentation needed to get started. 
 :::
