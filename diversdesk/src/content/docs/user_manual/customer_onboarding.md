@@ -47,6 +47,7 @@ For returning customers you can select an existing registration from your databa
 
 ![Register customer steop 1b](/images/Register_customer_step1b.png)
 
+<a name="self-registrations"></a>
 ## 2. Self-Registrations (Generic Onboarding)
 
 A customer can select one of the options you have created on the "Generic Customer Registration Page." Depending on the onboarding journey they choose on this page, the appropriate paperwork is presented to them.
@@ -63,3 +64,4 @@ Your customer will now appear in your environment as pending, allowing you to co
 :::tip[Note]
 The Generic Onboarding method is ideal for accommodating large walk-in groups, as it can completely eliminate waiting times. It's also a great solution when someone managing the dive center doesn't have access rights to your Diversdesk environment or isn't comfortable with digital tools. From afar, you can easily manage and connect these customers to the appropriate activities.
 :::
+
