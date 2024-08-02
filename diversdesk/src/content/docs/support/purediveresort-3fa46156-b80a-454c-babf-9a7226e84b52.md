@@ -2,6 +2,7 @@
 title: Pure Dive _ Support Page 
 pagefind: false
 ---
+<a href="https://www.traveltruster.com/planning?persist_establishment_id=106723c0-ce8a-4721-bf04-d57b7c1197ae&persist_operator_id=3fa46156-b80a-454c-babf-9a7226e84b52&persist_timezone=Asia%2FMakassar" target="_blank">&#8592; Jump to planning</a>
 
 This support page contains all the on-demand videos we've created for you. We do our very best to also capture your questions and other subjects we've discussed, so you can always use this page as your reference. <br>
 On the right-hand side, you will find an index with all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.
@@ -46,8 +47,11 @@ _\*The dates above are estimates (made on 10 Jul '24) and may vary if more press
 |  | **In depth training.** | In-depth training for Ark, so he can teach the staff. | Desired |  |
 
 
-## On demand support Video's
- 
+## Support Video's (8)
+
+### Scheduling a 2nd trip in a day 
+This is a great way to schedule a 2nd trip for divers that e.g. engage in a pool session in the morning and open water dive in the afternoon. 
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/3fdb1c7d49ac44ccb98150db41b67c72?sid=ad3c780c-c783-40c7-8f02-8526449d4fb9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Canceling/Deleting an existing booking
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/324e71211b374ab180915f4e5a0f1578?sid=969ecf62-5e03-4dba-96ea-ad03a0354376" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>

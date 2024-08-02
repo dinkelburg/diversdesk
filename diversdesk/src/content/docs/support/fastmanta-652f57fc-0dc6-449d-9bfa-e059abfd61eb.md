@@ -2,7 +2,8 @@
 title: Fast Manta _ Support Page 
 pagefind: false
 ---
-[<- Jump to planning](https://fastmanta.diversdesk.com/planning?persist_establishment_id=4bba298a-df45-4349-8a7b-9999a214c2e9&persist_operator_id=652f57fc-0dc6-449d-9bfa-e059abfd61eb&persist_timezone=Asia%2FBangkok) <br><br>
+<a href="https://fastmanta.diversdesk.com/planning?persist_establishment_id=4bba298a-df45-4349-8a7b-9999a214c2e9&persist_operator_id=652f57fc-0dc6-449d-9bfa-e059abfd61eb&persist_timezone=Asia%2FBangkok" target="_blank">&#8592; Jump to planning</a>
+
 This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. </br>
 On the right-hand side, you will find an overview of all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.
 
@@ -215,7 +216,11 @@ IDC is good example because we need to re-schedule some days based on if student
 **A:** Thanks for your feedback/input. You beat us to the point with this one. This is something we're picking up as we speak. This behavior will change in the next few days. We will give the option to add a so-called 'valid term' to a waiver. That way, it won't matter when you cancel or (re)schedule those participants. If it's within the valid term after the last signature date, the waiver will still be valid (as long as the similar paperwork is needed, as you already outlined).
 
 
-## On-demand Videos
+## On-demand Videos (4)
+
+### Scheduling a 2nd trip in a day 
+This is a great way to schedule a 2nd trip for divers that e.g. engage in a pool session in the morning and open water dive in the afternoon. 
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/3fdb1c7d49ac44ccb98150db41b67c72?sid=ad3c780c-c783-40c7-8f02-8526449d4fb9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Onboarding Methods 
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/61b434e03dd74717a5d1ca5479a7c5cf?sid=44eec5fa-6fc3-41cf-94f8-b103ea6c781b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
@@ -226,4 +231,4 @@ IDC is good example because we need to re-schedule some days based on if student
 ### Cancel a booking
 <div style="position: relative; padding-bottom: 216.70428893905188%; height: 0;"><iframe src="https://www.loom.com/embed/63cb0f3cc4f04872a55350a3fc1b7732?sid=d9183241-9145-4563-a8ca-90109fea9f0a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 50%; height: 50%;"></iframe></div>
 
-### How to change a registration form
+<!-- ### How to change a registration form -->
