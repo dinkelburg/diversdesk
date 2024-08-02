@@ -13,7 +13,7 @@ On the right-hand side, you will find an index with all our contact moments, mak
 | --- |--- |--- | --- |
 | Fill out Diversdesk <a href="https://www.diversdesk.com/signup/form" target="_blank"> **Signup** </a> | Action | Pure | **Pending** | 
 | SSI Privacy policy waiver code | Action | Pure | **Pending** |
-| CSV Export file | Feature | Diversdesk | 23 Jul '24 |
+| CSV Export file | Feature | Diversdesk | **Complete** ✅ |
 | User logging info | Feature | Diversdesk | 29 Jul '24 |
 | Pre-set text templates | Feature | Diversdesk | 3 Aug '24 |
 | Payment confirmation upload | Feature | Diversdesk | Aug '24 |
@@ -37,7 +37,7 @@ _\*The dates above are estimates (made on 10 Jul '24) and may vary if more press
 | ✅ | **Customizing Registration form** |  | Must |  |
 | ✅ | **Create and add waivers** |  | Must |  |
 | ✅ | **Customer onarding journeys per activity** |  | Must |  |
-|  | **CSV Export File** | Columns desired:<br> | Must |  |
+| ✅ | **CSV Export File** | Columns desired:<br> | Must |  |
 |  | **User logging** | Ability to track who entered or chenged a booking:<br>When I’m generating a monthly report I can see who made this booking. | Must |  |
 |  | **Text templates** | Templates hat are by default added to the booking.<br>e.g. to indicate a deposit must be made to conceal the booking. | Must | Pure: That is one of the (if not the most) crucial things to have for us. A number of people who will fill out the form and consider that a booking without paying a deposit is very high. |
 |  | **Inventory module.** | The merch we sell - T-shirts, masks, sarongs etc. accounted by categories (size, colour, quantity etc.). | Desired | _Diversdesk: Currently merch is being added to booking as add-ons, and we’re about to release a merchant section which makes it a full POS system._<br><br>Pure: If I am adding a merch or lost gear into the bill as add-on, will it deduct it from an existing inventory or that function is not available yet?<br> |

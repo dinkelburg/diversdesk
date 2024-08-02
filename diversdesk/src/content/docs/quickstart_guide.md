@@ -43,5 +43,5 @@ Using the Forms, Waivers and Product pages you can create, customize and connect
 ### 5. Enter your staff members 
 Enter your staff members and allocate appropriate rights. How to do this can be read on the [**Users and rights**](/user_manual/users_and_rights) page within the user manual.
 
-#### You are now ready to start enjoying our software. 
+#### You are now ready to start enjoying our software. 🎉
 Yes! Your environment is all set up and ready to go. Head over to [**'Booking and Scheduling'**](/user_manual/booking_and_scheduling) to plan your first activity and start exploring the features!
