@@ -55,11 +55,23 @@ For returning customers you can select an existing registration from your databa
 
 A customer can select one of the options you have created on the "Generic Customer Registration Page." Depending on the onboarding journey they choose on this page, the appropriate paperwork is presented to them.
 
+This "Generic Customer Registration Page" can be found through the menu &#8594; Forms. 
+![Generic Customer Registration Page Button on Forms Page](/images/generic_customer_registration_page_button.png)
+
+On the Forms page, you can create onboarding journeys and indicate through the checkbox inside each journey if you want to display them on the "Generic Customer Registration Page."
+1. **1.** Navigate to the Forms Page.
+2. **2** Click Edit on the Customer Onboarding Journey you want to appear on your "Generic Customer Registration Page."
+3. **3** Check the box to make this Onboarding Journey visible.
+![Making an onboarding Journey selectable on generic registration page](/images/visibility_on_generic_onboarding_page.png)
+
+You can easily share the 'Generic Customer Registration Page' in the same way you would normally share a booking URL.
+![Making an onboarding Journey selectable on generic registration page](/images/sharing_generic_customer_registration_page.png)
+
+Once shared with the customer, the customer can select the correct journey and fill out the appropriate paperwork attached.
 1. **1.** A customer selects one of the options that best descibes them.
 2. **2.** They can immediately begin filling out the necessary paperwork for their chosen Onboarding Journey. 
 3. **3.** After submitting the registration form, the customer will receive an email with information. 
 4. **4.** After completing the registration form, the waivers associated with this onboarding journey must also be signed.
-
 ![Register customer steop 1b](/images/generic_onboarding.png)   
 
 Your customer will now appear in your environment as pending, allowing you to connect them to a booking.
