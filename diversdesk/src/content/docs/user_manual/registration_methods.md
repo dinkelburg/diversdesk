@@ -55,18 +55,22 @@ For returning customers you can select an existing registration from your databa
 
 ### Generic Customer Registration Page
 A customer can select one of the options you have created on the 'Generic Customer Registration Page.' You can find this page through the menu by navigating to → Forms and selecting the button shown in the image below.
+
 ![Generic Customer Registration Page Button on Forms Page](/images/generic_customer_registration_page_button.png)
 
 ### Making an Onboarding Journey Selectable for Your Customer
 On the Forms page, you can create onboarding journeys and indicate through the checkbox inside each journey if you want to display them on the "Generic Customer Registration Page."
 1. **1.** Navigate to the Forms Page.
-2. **2** Click Edit on the Customer Onboarding Journey you want to appear on your "Generic Customer Registration Page."
-3. **3** Check the box to make this Onboarding Journey visible.
+2. **2.** Click Edit on the Customer Onboarding Journey you want to appear on your "Generic Customer Registration Page."
+3. **3.** Check the box to make this Onboarding Journey visible.
 ![Making an onboarding Journey selectable on generic registration page](/images/visibility_on_generic_onboarding_page.png)
 
 ### Sharing the 'Generic Registration Page'
 You can easily share the 'Generic Customer Registration Page' in the same way you would normally share a booking URL.
+
 ![Making an onboarding Journey selectable on generic registration page](/images/sharing_generic_customer_registration_page.png)
+
+We recommend printing and displaying the QR code for this page in your Dive Center. This allows every walk-in to register immediately, letting you focus on talking to customers and other tasks while ensuring you capture their data and never miss a sale.
 
 ### Customer Registration Flow
 Once shared with the customer, the customer can select the correct journey and fill out the appropriate paperwork attached.
@@ -79,6 +83,6 @@ Once shared with the customer, the customer can select the correct journey and f
 Your customer will now appear in your environment as pending, allowing you to connect them to a booking.
 
 :::tip[Note]
-The Generic Onboarding method is ideal for accommodating large walk-in groups, as it can completely eliminate waiting times. It's also a great solution when someone managing the dive center doesn't have access rights to your Diversdesk environment or isn't comfortable with digital tools. From afar, you can easily manage and connect these customers to the appropriate activities.
+The Generic Onboarding method is not only ideal for accommodating large walk-in groups, as it can completely eliminate waiting times. It's also a great solution when someone managing the dive center doesn't have access rights to your Diversdesk environment or isn't comfortable with digital tools. From afar, you can easily manage and connect these customers to the appropriate activities.
 :::
 
