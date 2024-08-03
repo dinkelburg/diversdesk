@@ -47,26 +47,28 @@ An existing registration can also be found through the Register here button with
 
 For returning customers you can select an existing registration from your database. All fields are prefilled according to the latest registration of this particular participant.
 
-
 ![Register customer steop 1b](/images/Register_customer_step1b.png)
 
 <a name="self-registrations"></a>
+
 ## 2. Self-Registrations (Generic Onboarding)
 
-A customer can select one of the options you have created on the "Generic Customer Registration Page." Depending on the onboarding journey they choose on this page, the appropriate paperwork is presented to them.
-
-This "Generic Customer Registration Page" can be found through the menu &#8594; Forms. 
+### Generic Customer Registration Page
+A customer can select one of the options you have created on the 'Generic Customer Registration Page.' You can find this page through the menu by navigating to → Forms and selecting the button shown in the image below.
 ![Generic Customer Registration Page Button on Forms Page](/images/generic_customer_registration_page_button.png)
 
+### Making an Onboarding Journey Selectable for Your Customer
 On the Forms page, you can create onboarding journeys and indicate through the checkbox inside each journey if you want to display them on the "Generic Customer Registration Page."
 1. **1.** Navigate to the Forms Page.
 2. **2** Click Edit on the Customer Onboarding Journey you want to appear on your "Generic Customer Registration Page."
 3. **3** Check the box to make this Onboarding Journey visible.
 ![Making an onboarding Journey selectable on generic registration page](/images/visibility_on_generic_onboarding_page.png)
 
+### Sharing the 'Generic Registration Page'
 You can easily share the 'Generic Customer Registration Page' in the same way you would normally share a booking URL.
 ![Making an onboarding Journey selectable on generic registration page](/images/sharing_generic_customer_registration_page.png)
 
+### Customer Registration Flow
 Once shared with the customer, the customer can select the correct journey and fill out the appropriate paperwork attached.
 1. **1.** A customer selects one of the options that best descibes them.
 2. **2.** They can immediately begin filling out the necessary paperwork for their chosen Onboarding Journey. 
