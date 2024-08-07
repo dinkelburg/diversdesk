@@ -17,9 +17,9 @@ const isProd = import.meta.env.PROD;
 const {status, type} = Astro.params;
 
 // Define the variables that will be used in this component
-const title: string = type === 'trial' ? "Fill in the form below and start a 14 free trial" : 'Fill in the form below to sign up';
-const subTitle: string = type === 'trial' ? "We require some info from you in order to setup your environment" :
-    "Please fill your details below to get started";
+const title: string = type === 'trial' ? "Start Your 14-Day Free Trial" : 'Join Us Today';
+const subTitle: string = type === 'trial' ? "We need a few details to configure your environment.":
+    "Please fill in your details to get started";
 const formTitle: string = "Please fill in the form below to start your 14 day trial";
 const formSubTitle: string = "You will hear from us within 24 hours.";
 
