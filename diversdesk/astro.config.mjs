@@ -4,6 +4,7 @@ import vercel from '@astrojs/vercel/serverless';
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
+import starlightImageZoom from 'starlight-image-zoom'
 import mdx from '@astrojs/mdx';  // Import MDX integration
 
 // https://astro.build/config
@@ -36,6 +37,7 @@ export default defineConfig({
       },
     }),
     starlight({
+      plugins: [starlightImageZoom()],
       title: "Diversdesk Docs",
       defaultLocale: "root",
       // locales: {

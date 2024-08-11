@@ -1,6 +1,9 @@
 ---
 title: Create a custom registration form
 description: A reference page in my new Starlight docs site.
+sidebar:
+    label: Create a custom registration form
+    order: 2
 ---
 
 For each type of activity, Divers Desk has a default form. These can be found through the Forms menu item.

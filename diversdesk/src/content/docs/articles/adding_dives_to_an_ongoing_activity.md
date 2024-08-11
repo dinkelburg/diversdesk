@@ -1,6 +1,9 @@
 ---
 title: Adding dives to an ongoing activity
 description: The customer you are about to onboard does not yet know on how many dives he or she will participate.
+sidebar:
+    label: Adding Dives to an ongoing activity
+    order: 1
 ---
 
 ### Use case: 

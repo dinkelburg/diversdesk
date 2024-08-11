@@ -26,5 +26,4 @@ Directly jump to [**'Booking and Scheduling'**](/user_manual/booking_and_schedul
 <br>**Questions, Unclarities or Feedback** <br>
 If you have any questions, need assistance, or simply want to provide feedback, don’t hesitate to <a href="https://www.diversdesk.com/contact" target="_blank">**reach out**</a>. We’re usually quick to respond and are here to help you make the most of your experience with Diversdesk.
 
-
-![Diver image](/images/diver_image.png)
+<Image src="/images/diver_image.png" alt="Diver greeting" data-zoom-off />
