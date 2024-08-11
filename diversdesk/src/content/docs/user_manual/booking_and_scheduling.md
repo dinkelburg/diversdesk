@@ -25,8 +25,8 @@ The booking page is accessible via a unique URL, which you can easily share with
 </br></br>
 **Discover more about the capabilities of the booking page. Learn how to:**
 - Create and manage payments.
-- Register [new](/user_manual/customer_onboarding/#2-send-a-personalized-email) or [existing](/user_manual/customer_onboarding/#3-select-an-existing-registration) participants 
-- [Share](/user_manual/customer_onboarding/#1-share-the-booking-url) the unique booking URL with individual or multiple group members, allowing each of them to register through the same link.
+- Register [new](/user_manual/registration_methods/#12-send-a-personalized-email) or [existing](/user_manual/registration_methods/#13-select-an-existing-registration) participants 
+- [Share](/user_manual/registration_methods/#11-share-the-booking-url) the unique booking URL with individual or multiple group members, allowing each of them to register through the same link.
 
 ### Input fields
 Selecting your pre-defined activities, making the creation of a new booking lightning fast. You have the freedom to modify pre-filled information and input the following details:
