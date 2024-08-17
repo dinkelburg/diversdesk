@@ -2,7 +2,10 @@
 title: Pure Dive _ Support Page 
 pagefind: false
 ---
-<a href="https://www.traveltruster.com/planning?persist_establishment_id=106723c0-ce8a-4721-bf04-d57b7c1197ae&persist_operator_id=3fa46156-b80a-454c-babf-9a7226e84b52&persist_timezone=Asia%2FMakassar" target="_blank">&#8592; Jump to planning</a>
+<div style="text-align: right;">
+    <a href="https://www.traveltruster.com/operator/location/106723c0-ce8a-4721-bf04-d57b7c1197ae" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
+    </a>
+</div>
 
 This support page contains all the on-demand videos we've created for you. We do our very best to also capture your questions and other subjects we've discussed, so you can always use this page as your reference. <br>
 On the right-hand side, you will find an index with all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.

@@ -2,7 +2,10 @@
 title: Fast Manta _ Support Page 
 pagefind: false
 ---
-<a href="https://fastmanta.diversdesk.com/planning?persist_establishment_id=4bba298a-df45-4349-8a7b-9999a214c2e9&persist_operator_id=652f57fc-0dc6-449d-9bfa-e059abfd61eb&persist_timezone=Asia%2FBangkok" target="_blank">&#8592; Jump to planning</a>
+<div style="text-align: right;">
+    <a href="https://fastmanta.diversdesk.com/operator/location/4bba298a-df45-4349-8a7b-9999a214c2e9" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
+    </a>
+</div>
 
 This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. </br>
 On the right-hand side, you will find an overview of all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.

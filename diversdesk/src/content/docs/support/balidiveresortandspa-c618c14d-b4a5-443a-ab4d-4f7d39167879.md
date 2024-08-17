@@ -2,7 +2,10 @@
 title: Bali Dive Resort and Spa _ Support Page 
 pagefind: false
 ---
-<a href="https://balidiveresortandspa.diversdesk.com/planning?persist_flow=signin&persist_authMethod=password&persist_establishment_id=ae59e535-f180-40f4-a4a0-bedcf0041824&persist_operator_id=c618c14d-b4a5-443a-ab4d-4f7d39167879&persist_timezone=Asia%2FMakassar" target="_blank">&#8592; Jump to planning</a>
+<div style="text-align: right;">
+    <a href="https://balidiveresortandspa.diversdesk.com/operator/location/ae59e535-f180-40f4-a4a0-bedcf0041824" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
+    </a>
+</div>
 
 This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. </br>
 On the right-hand side, you will find an overview of all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.

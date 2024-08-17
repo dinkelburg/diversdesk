@@ -2,7 +2,10 @@
 title: Ocean's 11 _ Support Page
 pagefind: false
 ---
-<a href="https://oceans11.diversdesk.com/planning?persist_flow=signin&persist_authMethod=password&persist_establishment_id=9ebf3e8b-9e70-4695-99d3-f6ccec13490e&persist_operator_id=be419a4c-86c5-4774-83c6-8ab10cfb4adb&persist_timezone=Asia%2FSingapore" target="_blank">&#8592; Jump to planning</a>
+<div style="text-align: right;">
+    <a href="https://oceans11.diversdesk.com/operator/location/9ebf3e8b-9e70-4695-99d3-f6ccec13490e" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
+    </a>
+</div>
 
 This support page contains all the on-demand videos we've created for you. We do our very best to also capture your questions and other subjects we've discussed, so you can always use this page as your reference. <br>
 On the right-hand side, you will find an index with all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.

@@ -3,12 +3,11 @@
 import { Image } from "astro:assets";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 // Destructure the props passed to the Astro component
-const { title, subTitle, btnExists, btnTitle, btnURL, img, imgAlt } =
-  Astro.props;
+const { title, btnExists, btnTitle, btnURL, img, imgAlt } = Astro.props;
+
 // Define TypeScript interface for props
 interface Props {
   title: string;
-  subTitle: string;
   btnExists?: boolean;
   btnTitle?: string;
   btnURL?: string;
@@ -29,7 +28,7 @@ interface Props {
     draggable={"false"}
     format={"avif"}
   />
-  <!-- The container for title, subtitle, and optional CTA button -->
+  <!-- The container for title, content, and optional CTA button -->
   <div class="mt-4 md:mt-0">
     <!-- The title of the section -->
     <h2
@@ -37,12 +36,12 @@ interface Props {
     >
       {title}
     </h2>
-    <!-- The subtitle of the section -->
-    <p
-      class="mb-4 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg"
+    <!-- Inject the content (replaces subTitle) -->
+    <div
+      class="mb-8 max-w-prose text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-lg"
     >
-      {subTitle}
-    </p>
+      <slot /> <!-- This will render the content passed from the parent component -->
+    </div>
     <!-- Conditionally render the Primary CTA button if btnExists is true -->
     {btnExists ? <PrimaryCTA title={btnTitle} url={btnURL} /> : null}
   </div>
