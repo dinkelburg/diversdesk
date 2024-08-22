@@ -1,6 +1,6 @@
 ---
 title: "What Are the Best Bookkeeping Software Options for Dive Centers and Tour Operators in 2024?"
-description: "Best Bookeeping Software Options for Dive Centers in 2024"
+description: "Best Bookkeeping Software Options for Dive Centers in 2024"
 author: "Bart"
 role: "Co-founder & CEO of Diversdesk"
 authorImage: "@/images/blog/bart.avif"
