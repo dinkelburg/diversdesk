@@ -27,9 +27,9 @@ const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
 // Define variables for page content
-const title: string = "Your Gateway to Construction Excellence";
+const title: string = "Navigating Dive Center Management";
 const subTitle: string =
-  "Explore the latest news, tips, and insights from Diversdesk to enhance your construction projects. From product spotlights to project management strategies, our blog is your go-to resource for all things hardware and construction.";
+  "Discover news, tips, and insights from Diversdesk to enhance your dive center. From optimizing operations to exploring industry tools, our blog is your go-to resource for dive center management and tour operations.";
 const secondTitle: string = "Insights";
 const secondSubTitle: string =
   "Stay up-to-date with the latest trends and developments in the construction industry with insights from Diversdesk's team of industry experts. ";
@@ -46,70 +46,71 @@ const pageTitle: string = `Blog | ${SITE.title}`;
     url: "https://diversdesk.com/blog",
     name: "Blog | Diversdesk",
     description:
-      "Stay up-to-date with the latest trends and developments in the construction industry with insights from Diversdesk's team of industry experts.",
+      "Stay up-to-date with the latest trends and developments in the diving industry with insights from Diversdesk's team of industry experts.",
     isPartOf: {
       "@type": "WebSite",
       url: "https://diversdesk.com",
       name: "Diversdesk",
       description:
-        "Diversdesk offers top-tier hardware tools and expert construction services to meet all your project needs.",
+        "Diversdesk offers state of the art Dive Center Management Software that meets all your needs.",
     },
     inLanguage: "en-US",
   }}
 >
-  <!-- <section
-    class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
+<section
+class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
+>
+<!--Page header-->
+<div class="mx-auto max-w-3xl text-left sm:text-center">
+  <h1
+    class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
   >
-    <!-Page header--
-    <div class="mx-auto max-w-3xl text-left sm:text-center">
-      <h1
-        class="block text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl lg:text-6xl"
-      >
-        {title}
-      </h1>
+    {title}
+  </h1>
 
-      <p
-        class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
-      >
-        {subTitle}
-      </p>
-    </div>
-  </section>
+  <p
+    class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400"
+  >
+    {subTitle}
+  </p>
+</div>
+</section>
 
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+<section
+class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+<!--Blog posts grid-->
+<div class="grid gap-6 lg:grid-cols-2">
+  {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
+</div>
+</section>
+<!--Most recent blog post-->
+<section
+class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+<CardBlogRecent blogEntry={mostRecentPost} />
+</section>
+<!--Insights section-->
+<!-- <section
+class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+<div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
+  <h2
+    class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
   >
-    <!-Blog posts grid--
-    <div class="grid gap-6 lg:grid-cols-2">
-      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
-    </div>
-  </section>
-  <!-Most recent blog post--
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <CardBlogRecent blogEntry={mostRecentPost} />
-  </section>
-  <!-Insights section--
-  <section
-    class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
-  >
-    <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
-      <h2
-        class="text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
-      >
-        {secondTitle}
-      </h2>
-      <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
-        {secondSubTitle}
-      </p>
-    </div>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        insightPosts.map((insightEntry) => (
-          <CardInsight insightEntry={insightEntry} />
-        ))
-      }
-    </div>
-  </section> -->
+    {secondTitle}
+  </h2>
+  <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+    {secondSubTitle}
+  </p>
+</div>
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  {
+    insightPosts.map((insightEntry) => (
+      <CardInsight insightEntry={insightEntry} />
+    ))
+  }
+</div>
+</section> -->
 </MainLayout>
+
