@@ -52,7 +52,7 @@ QuickBooks has long been a favorite among small to medium-sized businesses, and 
 ## 3. Wave Accounting
 **User Rating:** <span style="color: #EAB308;">★★★★☆</span> (**4.1/5**) <br>
 
-"For dive centers and tour operators looking for a cost-effective solution, Wave Accounting is a great option. Wave offers a range of free features, including invoicing, receipt scanning, and basic accounting functions. While it may lack some of the advanced features of QuickBooks or Xero, Wave’s simplicity and affordability make it a viable choice for smaller dive centers or those just starting out.",
+For dive centers and tour operators looking for a cost-effective solution, Wave Accounting is a great option. Wave offers a range of free features, including invoicing, receipt scanning, and basic accounting functions. While it may lack some of the advanced features of QuickBooks or Xero, Wave’s simplicity and affordability make it a viable choice for smaller dive centers or those just starting out.
 <ul>
 <strong>Pros:</strong>
 <li> • Free to use for most basic features</li>
@@ -68,7 +68,7 @@ QuickBooks has long been a favorite among small to medium-sized businesses, and 
 ## 4. Zoho Books
 **User Rating:** <span style="color: #EAB308;">★★★★☆</span> (**4.3/5**) <br>
 
-Zoho Books is part of the larger Zoho ecosystem, which includes a wide range of business tools. This makes it particularly appealing to dive centers that may need additional tools beyond bookkeeping, such as customer relationship management (CRM) or project management software. Zoho Books offers features like automatic bank feeds, invoice management, and tax compliance, making it a comprehensive solution for managing your dive center’s finances.",
+Zoho Books is part of the larger Zoho ecosystem, which includes a wide range of business tools. This makes it particularly appealing to dive centers that may need additional tools beyond bookkeeping, such as customer relationship management (CRM) or project management software. Zoho Books offers features like automatic bank feeds, invoice management, and tax compliance, making it a comprehensive solution for managing your dive center’s finances.
 <ul>
 <strong>Pros:</strong>
 <li> • Integrated with the Zoho suite of business tools</li>
