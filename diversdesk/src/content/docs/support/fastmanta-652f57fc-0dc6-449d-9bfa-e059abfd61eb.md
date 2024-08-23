@@ -10,6 +10,71 @@ pagefind: false
 This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. </br>
 On the right-hand side, you will find an overview of all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.
 
+
+## Questions & Answers
+<br>
+
+### Q: Where can i find the details from a filled registration form? 
+**A:** Registered customers will directly end up in your planning hub. Depending on what Registration method they have followed, they will eigher show directly in your planning or as a pending registration. 
+All there is to know about registration methods can be read <a href="https://www.diversdesk.com/user_manual/registration_methods/" target="_blank">here.</a>
+
+### Q: How do we setup the registration form?
+**A:** I want to ask you to have a look at this <a href="https://doc.clickup.com/2633992/d/h/2gc88-3955/fcf0a46a215e4ab/" target="_blank">Document.</a> 
+I’ve projected the fields of your registration form onto the ones available within Diversdesk. 
+On the 2nd page you'll find an overview of how we’ve currently set up your onboarding journeys. (July 24)
+
+To get a better understanding about setting up the onboarding journeys, you can watch <a href="https://www.loom.com/share/ac3c1b550cbd4f4888116b99a29e9679?t=820" target="_blank">this chapter.</a> from the getting started video. 
+
+### Q: Can I add more form details?
+You can change the registration form and onboarding joueneys on the 'Forms' page by creating a new, or editing a new onboarding journey. Information about this can be found in this <a href="../articles/custom_registration_form" target="_blank">this article.</a>, or <a href="https://www.loom.com/share/ac3c1b550cbd4f4888116b99a29e9679?t=820" target="_blank">this chapter.</a> of the getting started video.
+
+### Q: Is an instructor not automatically scheduled for the complete course duration?
+Currently, you need to schedule an instructor for each trip or diving day within the ongoing trip. We understand that instructors are usually assigned for the full duration of a course, and we recognize this as a desired feature. We have created a ticket for this request and will keep you informed about when we will address it.
+
+### Q: How to cancel a booking?
+To cancel a booking, find the 'Cancel' button in the bottom left corner of the booking page.
+
+![Cancelling a booking at the left bottom within a booking](/images/cancel_a_booking.png)
+
+Alternatively, you you can watch <a href="https://www.loom.com/share/63cb0f3cc4f04872a55350a3fc1b7732?sid=20f03c74-78e5-4ec8-a10b-ebcbcf241483" target="_blank">this video</a> to see how to change activity dates and cancel an entire booking.
+
+### Q: Do recently scheduled participants need to sign the waivers again?
+Since 14 Aug '24, we've released an update that allows you to asign 'Waiver Valid Terms'. 
+
+<a href="https://www.loom.com/share/41c6e762dbd148329fb2da2c7a54a9a4?sid=9c2bbe72-a37b-4bce-8ae1-5f8eed8b3434" target="_blank">this on-demand video.</a>This On-demand video will explain the functionality of Valid Terms. 
+
+Alternatively, you can read everything there is to know about it in <a href="../articles/waiver_terms" target="_blank">this article.</a>
+<br>
+
+## On-demand Videos (4)
+<br>
+
+### Waiver Valid Terms
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/41c6e762dbd148329fb2da2c7a54a9a4?sid=63947400-6a11-4521-b336-fab177bb6cc8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Group Booking + Add-ons + Own Gear
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/19b05fcc23504c43b9c867c669786bf5?sid=50e0efda-5dd7-40b8-874d-e8031d9b8cfe" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Scheduling 3 Non-Consecutive Diving Days (Part 2, Package)
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/8397d7f9cdac4fe9bcdc050e85ab2223?sid=2fd5273b-f59a-41dc-bd4f-ba80645b4d32" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Scheduling 3 Non-Consecutive Diving Days (Part 1, Using Day Trips)
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/5bb8435fa7534971981b1d4d35037547?sid=c789b2ed-dcbe-4f77-8c6b-ca9715cf5b6c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Scheduling a 2nd trip in a day 
+This is a great way to schedule a 2nd trip for divers that e.g. engage in a pool session in the morning and open water dive in the afternoon. 
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/3fdb1c7d49ac44ccb98150db41b67c72?sid=ad3c780c-c783-40c7-8f02-8526449d4fb9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Onboarding Methods 
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/61b434e03dd74717a5d1ca5479a7c5cf?sid=44eec5fa-6fc3-41cf-94f8-b103ea6c781b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Schedule participants on a 2nd trip in 1 day 
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/3fdb1c7d49ac44ccb98150db41b67c72?sid=0ea48202-9dac-43ad-8e6d-197ae89fefe9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Moving an Activity and Cancelling a booking
+<div style="position: relative; padding-bottom: 150%; height: 300px;"><iframe src="https://www.loom.com/embed/63cb0f3cc4f04872a55350a3fc1b7732?sid=d9183241-9145-4563-a8ca-90109fea9f0a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 50%; height: 50%;"></iframe></div>
+
+
 ## Discussed onboarding flow 
 > At this point we do not want to keep booking forms available on our pages. We want always communicate with customer first before anyone make booking and we will sent link to them.
 
@@ -79,7 +144,8 @@ On the right-hand side, you will find an overview of all our contact moments, ma
                 </div>
                 <div class="bullet-crossmark">
                      <ul>
-                        <li>Do you hold a valid insurance that covers diving?</li>
+                        <li>Do you hold a valid insurance that covers diving? <br>
+                            (This is currently combined in 1 field)</li>
                     </ul>
                 </div>
             </td>
@@ -150,88 +216,3 @@ On the right-hand side, you will find an overview of all our contact moments, ma
         </tr>
     </tbody>
 </table>
-
-
-
-## FAQ
-### Q: Where can i find the details from a filled registration form? 
-**Q:** Can you show that to me or is there kind of demo booking form page I can test?<br>
-
-### Q: How do we setup the registration form?
-**A:** I want to ask you to have a look at this <a href="https://doc.clickup.com/2633992/d/h/2gc88-3955/fcf0a46a215e4ab/" target="_blank">Document.</a> 
-I've projected our registration fields/options and created an overview how I've set-up your Onboarding Journeys.
-
-I noticed you've created a Freediving Onboarding Journey, so that one I haven't touched. 
-To get a better understanding about setting up the onboarding journeys, you can watch <a href="https://www.loom.com/share/ac3c1b550cbd4f4888116b99a29e9679?t=820" target="_blank">this chapter.</a> from the getting started video. 
-
-
-### Q: Can I add more form details?
-**A:** **Activity date & Activity:** <br>
-Gotcha. Just to clarify, you're talking about the URL you want to use for customers signing up directly from your website, correct? <br>
-Those are not customers you've already been in touch with beforehand. <br> 
-
-**Activity Date:**
-It takes a little work on our end, but that's certainly a field we can add. 
-I've given you edit rights, so you can make comments within the [doc](https://app.clickup.com/2633992/docs/2gc88-3955). 
-
-
-**Activity:**
-Like date, also entitles some work, but can definitely be done.
-Use case: If a customer is coming from your website and already selected this here, this can already be prefilled.
-Perhaps we can 
-
-**Hotel Details:**<br>
-I thought I already added this to the DSD onboarding journey, but I'll double check. <br>
-
-**Room Number:**<br>
-Noted. They're added to your onboarding journeys.<br>
-
-**Meal Preference:**<br>
-Our current options are not sufficient? We've had requests to add actual meal options, so the actual available meals that day can be entered.
-Until we make a customizable drop-down field, I'm afraid these will be the fixed options.
-(I do realize that Gluten free is most like selected when someone has an allergy, but we've experienced some people just want to eat gluten free, hence we provided the option)
-![Meal preferences](/images/meal_preferences.png)
-
-**Allergies**<br>
-This open text field is present.<br>
-
-**Forms:** <br>
-Clear. We can implement those within 24 hours. 
-Have you got the form numbers for me by any change? 
-
-### Q: Is an instructor not automatically scheduled for the complete course duration?
-I just noted that when I activate instructor to course which continue x days, instructor is not following that course automatic and we must every day add instructor to that course.
-
-### Q: How to cancel a booking?
-**Q:** I added IDC Activity to October 4th to 12 days and selected it to 8 person, but I need to cancel it and do it little different way, but I can not way to move it away</li>
-
-**A** Please have a look at [this video](https://www.loom.com/share/63cb0f3cc4f04872a55350a3fc1b7732?sid=20f03c74-78e5-4ec8-a10b-ebcbcf241483) to see how you can change activity dates and cancel an entire booking. 
-
-### Q: Do recently scheduled participants need to sign the waivers again?
-**Q:** If I have to cancel / reschedule trip/activity and I will do it later to next days and pick same customers to same activity they need to do all liability forms again?
-
-At least it looks like that when I tested.
-
-If they do something else then for sure all forms need to do again, but same activity no in few days. We do not broke any Padi standards when activity is exact same where they have already filled forms. None of Padi standards say that those need to do every day again
-
-IDC is good example because we need to re-schedule some days based on if students are ready to pool or sea or if weather affect the days.
-
-**A:** Thanks for your feedback/input. You beat us to the point with this one. This is something we're picking up as we speak. This behavior will change in the next few days. We will give the option to add a so-called 'valid term' to a waiver. That way, it won't matter when you cancel or (re)schedule those participants. If it's within the valid term after the last signature date, the waiver will still be valid (as long as the similar paperwork is needed, as you already outlined).
-
-
-## On-demand Videos (4)
-
-### Scheduling a 2nd trip in a day 
-This is a great way to schedule a 2nd trip for divers that e.g. engage in a pool session in the morning and open water dive in the afternoon. 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/3fdb1c7d49ac44ccb98150db41b67c72?sid=ad3c780c-c783-40c7-8f02-8526449d4fb9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
-### Onboarding Methods 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/61b434e03dd74717a5d1ca5479a7c5cf?sid=44eec5fa-6fc3-41cf-94f8-b103ea6c781b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
-### Schedule participants on a 2nd trip in 1 day 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/3fdb1c7d49ac44ccb98150db41b67c72?sid=0ea48202-9dac-43ad-8e6d-197ae89fefe9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
-### Cancel a booking
-<div style="position: relative; padding-bottom: 216.70428893905188%; height: 0;"><iframe src="https://www.loom.com/embed/63cb0f3cc4f04872a55350a3fc1b7732?sid=d9183241-9145-4563-a8ca-90109fea9f0a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 50%; height: 50%;"></iframe></div>
-
-<!-- ### How to change a registration form -->
