@@ -15,11 +15,11 @@ On the right-hand side, you will find an overview of all our contact moments, ma
 <br>
 
 ### Q: Where can i find the details from a filled registration form? 
-**A:** Registered customers will directly end up in your planning hub. Depending on what Registration method they have followed, they will eigher show directly in your planning or as a pending registration. 
+Registered customers will directly end up in your planning hub. Depending on what Registration method they have followed, they will eigher show directly in your planning or as a pending registration. 
 All there is to know about registration methods can be read <a href="https://www.diversdesk.com/user_manual/registration_methods/" target="_blank">here.</a>
 
 ### Q: How do we setup the registration form?
-**A:** I want to ask you to have a look at this <a href="https://doc.clickup.com/2633992/d/h/2gc88-3955/fcf0a46a215e4ab/" target="_blank">Document.</a> 
+I want to ask you to have a look at this <a href="https://doc.clickup.com/2633992/d/h/2gc88-3955/fcf0a46a215e4ab/" target="_blank">Document.</a> 
 I’ve projected the fields of your registration form onto the ones available within Diversdesk. 
 On the 2nd page you'll find an overview of how we’ve currently set up your onboarding journeys. (July 24)
 
