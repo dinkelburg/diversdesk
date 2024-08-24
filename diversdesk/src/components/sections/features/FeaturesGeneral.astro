@@ -3,6 +3,7 @@
 import { Image } from "astro:assets";
 import IconBlock from "@components/ui/blocks/IconBlock.astro";
 import Icon from "@components/ui/icons/Icon.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 
 interface Feature {
   heading: string;
@@ -16,11 +17,12 @@ interface Props {
   features?: Feature[];
   src?: any;
   alt?: string;
+  primaryBtn?: string;
+  primaryBtnURL?: string;
 }
 // Define props from Astro
-const { title, subTitle, src, alt, features } = Astro.props;
+const { title, subTitle, src, alt, features, primaryBtn, primaryBtnURL, } = Astro.props;
 ---
-
 <section
   class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
 >
@@ -76,7 +78,12 @@ const { title, subTitle, src, alt, features } = Astro.props;
       </div>
     </div>
   </div>
-
+   <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
+   <div class="mt-12 grid w-full gap-3 sm:inline-flex">
+    {primaryBtn && 
+    <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
+    }
+  </div>
     <!-- Block to display the feature image -->
     <!-- <div class="relative mb-6 overflow-hidden md:mb-8">
       {

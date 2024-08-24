@@ -43,7 +43,7 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "All ri
                   >
                     {link.name}
                   </a>
-                  {section.section === "Company" && index === 1 ? (
+                  {section.section === "Company" && index === 2 ? (
                     <span class="ms-1 inline rounded-lg bg-orange-500 px-2 py-1 text-xs font-bold text-neutral-50">
                       We're hiring!
                     </span>
@@ -55,7 +55,7 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "All ri
         ))
       }
 
-      <!-- <div class="col-span-2">
+      <div class="col-span-2">
         <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
           {sectionThreeTitle}
         </h3>
@@ -66,7 +66,7 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "All ri
             {sectionThreeContent}
           </p>
         </form>
-      </div> -->
+      </div>
     </div>
 
     <div

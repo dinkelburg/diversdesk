@@ -7,7 +7,7 @@ import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
-import TestimonialsSectionAlt from "@components/sections/testimonials/TestimonialsSectionAlt.astro";
+import TestimonialsSectionMin from "@/components/sections/testimonials/TestimonialsSectionMinimal.astro";
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
@@ -22,43 +22,12 @@ import {Icons} from "node_modules/@astrojs/starlight/components/Icons";
 import Icon from "@/components/ui/icons/Icon.astro";
 import {YouTube} from 'astro-embed';
 
+
 const avatarSrcs: Array<string> = [
     "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
     "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
     "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80",
     "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-];
-
-// Testimonial data that will be rendered in the component
-const testimonials = [
-    // First testimonial data
-    {
-      content:
-        " \"I recently started using the dive management system from Divers Desk, and I must say it has completely transformed the way I handle my dive shop operations. The system is not only user-friendly but also incredibly efficient, allowing me to easily schedule dives, track payments, and effectively oversee and coordinate activities.\n What truly sets this system apart is the exceptional support provided by the team. Whenever I had a question or needed assistance, they were quick to respond and always went above and beyond to ensure that I had everything I needed to succeed. Their dedication to customer service is truly commendable. I can confidently say that Divers Desk, coupled with the outstanding support, has significantly improved my dive shop operations and overall experience. I highly recommend it to anyone in the diving industry looking for a reliable and supportive solution.\" ",
-      author: "TI",
-      role: "Owner | Jom Adventure",
-      avatarSrc: "/images/ti_jomadventure_avatar.png",
-      avatarAlt: "Image Description",
-    },
-    // Second testimonial data
-    {
-      content:
-        " \"We at the Bali Dive Resort and Spa were looking for a paperless registration solution for a long time before we found ‘DiversDesk’.\n'DiversDesk' Scuba Diver Planner is an outstanding tool for any dive operation. Its user-friendly interface makes it easy to navigate, while features like paperless registration and pre-booked dive management streamline operations. Divers can complete all necessary paperwork, including medical forms and liability releases, before arriving, saving time and reducing paper use. \nWe are particularly impressed with the platform’s ease of use and the responsive support team, who listen to and act on our feedback. Regular updates ensure we always have the latest features. We highly recommend ‘DiversDesk’ to dive centers and resorts looking to save time, reduce paper usage, and enhance efficiency.\" ",
-      author: "Miikka",
-      role: "Manager | Bali Dive Resort and Spa",
-      avatarSrc: "/images/miikka_bdrs_avatar.png",
-      avatarAlt: "Image Description",
-    },
-    // Third testimonial data
-    {
-      content:
-        " \"I cherish the day we started using the platform 'Diversdesk'. Since then, our booking system has improved in so many ways. We used to send our guests a Word registration form. Now, we send them a link from 'Diversdesk', and the rest practically goes by itself. Creating the booking link is now done under 2 minutes, and the response from our guests is super positive. We don't use any paperwork anymore because the medical form and liability release are filled in online. Super convenient, time saving, and most important, good for the environment!\n Last but not least, payments are much easier now. 'Diversdesk' manages our credit card payments and ensures we receive everything correctly. The service from 'Diversdesk' is exceptional. As someone who struggles with computers, I've asked for help many times, and they've always found a solution. If I can work with this platform, anyone can! Thank you 'Diversdesk' for saving the world 🌎 🫶\" ",
-      author: "Lars",
-      role: "Owner | S.E.A. Diving Bali",
-      avatarSrc:
-        "/images/lars_seadb_avatar.png",
-      avatarAlt: "Image Description",
-    },
 ];
 
 ---
@@ -97,10 +66,12 @@ const testimonials = [
             subTitle="Save Time, Streamline, and Professionalize"
             alt="Diversdesk products in floating boxes"
             features={features}
-    />
+            primaryBtn="Find Out More"
+            primaryBtnURL="../features"
+    />   
 
     <!-- Youtube Video to display below the features -->
-    <div class="relative mb-6 overflow-hidden md:mb-8 px-2">
+    <!-- <div class="relative mb-6 overflow-hidden md:mb-8 px-2">
       <div class="mx-auto max-w-[650px]">
         <YouTube id="QUUr5A2rRKw" title="Watch Diversdesk in action"/>
         <style is:inline>
@@ -109,7 +80,7 @@ const testimonials = [
                 max-width: 650;
             }
         </style>
-    </div>
+    </div> -->
 
     <!-- <TestimonialsSection
       title="Fast-Track Your Projects"
@@ -148,11 +119,37 @@ const testimonials = [
       ]}
     /> -->
 
-    <!--Testimonials section-->
-    <TestimonialsSectionAlt
-      title="What Our Customers Say"
-      testimonials={testimonials}
-    />
+    <TestimonialsSectionMin
+    title ="What Our Customers Say"
+    testimonials={[
+      {
+        content:
+          "The system is not only user-friendly but also incredibly efficient, allowing me to easily schedule dives, track payments, and effectively oversee and coordinate activities.",
+        author: "TI",
+        role: "Owner | Jom Adventure",
+        avatarSrc: "https://diversdesk.com/images/ti_jomadventure_avatar.png",
+        starCount: 5, 
+      },
+      {
+        content:
+          "We are particularly impressed with the platform’s ease of use and the responsive support team, who listen to and act on our feedback.",
+        author: "Miikka",
+        role: "Manager | Bali Dive Resort and Spa",
+        avatarSrc: "https://diversdesk.com/images/miikka_bdrs_avatar.png",
+        starCount: 5, 
+      },
+      {
+        content:
+          "We don't use any paperwork anymore because the medical form and liability release are filled in online. Super convenient, time saving, and most important, good for the environment!",
+        author: "Lars",
+        role: "Owner | S.E.A. Diving Bali",
+        avatarSrc: "https://diversdesk.com/images/lars_seadb_avatar.png",
+        starCount: 5, 
+      },
+    ]}
+    primaryBtn="Read Full Testemonials"
+    primaryBtnURL="../about#testimonials"
+/>
 
     <FeaturesNavs
       title=`Why Choose Diversdesk`

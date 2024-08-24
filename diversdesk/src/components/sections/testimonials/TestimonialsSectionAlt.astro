@@ -3,7 +3,7 @@
 import AvatarTestimonialSection from "../../ui/avatars/AvatarTestimonialSection.astro";
 
 // Define props from Astro
-const { title, testimonials } = Astro.props;
+const { title, testimonials} = Astro.props;
 
 // Define TypeScript interface for Testimonial
 interface Testimonial {
@@ -28,7 +28,7 @@ interface Props {
   <!-- Title of the testimonials section -->
   <div class="mb-6 w-3/4 max-w-2xl sm:mb-10 md:mb-16 lg:w-1/2">
     <h2
-      class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl"
+      class="text-balance text-2xl font-extrabold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl"
     >
       {title}
     </h2>

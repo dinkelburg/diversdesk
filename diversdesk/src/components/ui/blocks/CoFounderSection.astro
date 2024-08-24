@@ -1,0 +1,96 @@
+---
+const { mainTitle, leftTitle, leftSubtitle, leftContent, leftImage, rightTitle, rightSubtitle, rightContent, rightImage } = Astro.props;
+
+interface Props {
+  mainTitle?: string; // Optional main title for the page
+  leftTitle: string;
+  leftSubtitle: string; // New subtitle prop for the left section
+  leftContent: string;
+  leftImage: string; // Path to image
+  rightTitle: string;
+  rightSubtitle: string; // New subtitle prop for the right section
+  rightContent: string;
+  rightImage: string; // Path to image
+}
+---
+
+<section
+  class="mx-auto mt-10 max-w-[85rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+  {mainTitle && (
+    <div class="mb-10">
+      <!-- Main title -->
+      <h1
+        class="mb-8 text-balance text-4xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200"
+      >
+        {mainTitle}
+      </h1>
+    </div>
+  )}
+
+  <div class="grid grid-cols-1 gap-20 md:grid-cols-2">
+    <!-- Left Section -->
+    <div class="flex items-center">
+      <!-- Avatar Image -->
+      <img
+        src={leftImage}
+        alt={leftTitle}
+        class="h-32 w-32 rounded-full object-cover"
+      />
+      <!-- Section title and subtitle -->
+      <div class="ml-4 flex flex-col justify-center">
+        <h2
+          class="text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200"
+          style="line-height: 1.5; margin-bottom: 0;"
+        >
+          {leftTitle}
+        </h2>
+        <h3
+          class="text-balance text-xl font-normal text-neutral-500 dark:text-neutral-400"
+          style="line-height: 1.2; margin-top: 0;"
+        >
+          {leftSubtitle}
+        </h3>
+      </div>
+    </div>
+    <!-- Right Section -->
+    <div class="flex items-center">
+      <!-- Avatar Image -->
+      <img
+        src={rightImage}
+        alt={rightTitle}
+        class="h-32 w-32 rounded-full object-cover"
+      />
+      <!-- Section title and subtitle -->
+      <div class="ml-4 flex flex-col justify-center">
+        <h2
+          class="text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200"
+          style="line-height: 1.5; margin-bottom: 0;"
+        >
+          {rightTitle}
+        </h2>
+        <h3
+          class="text-balance text-xl font-normal text-neutral-500 dark:text-neutral-400"
+          style="line-height: 1.2; margin-top: 0;"
+        >
+          {rightSubtitle}
+        </h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-20 md:grid-cols-2 mt-8">
+    <!-- Left Section Content -->
+    <div>
+      <div class="text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        {leftContent}
+      </div>
+    </div>
+    <!-- Right Section Content -->
+    <div>
+      <div class="text-pretty font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        {rightContent}
+      </div>
+    </div>
+  </div>
+</section>
