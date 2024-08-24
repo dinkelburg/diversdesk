@@ -20,13 +20,13 @@ interface Props {
   <!-- <Icon name="quotation" class="absolute top-0 left-0 opacity-10" /> -->
   <div class="flex-grow flex items-start relative z-10">
     <!-- Content Section -->
-    <p class="text-xl italic text-neutral-800 dark:text-neutral-200 flex-grow">
+    <p class="text-pretty italic text-neutral-600 dark:text-neutral-400 sm:text-xl">
       {content}
     </p>
   </div>
 
-  <div class="mt-6">
-    <div class="flex items-center">
+  <div class="mt-4">
+    <div class="flex items-center pl-0 pr-4 py-4 rounded-lg">
       <div class="flex-shrink-0">
         <Image
           class="h-10 w-10 rounded-full"
@@ -45,7 +45,7 @@ interface Props {
             <div class="text-xs text-neutral-500">{role}</div>
           </div>
           <!-- Star Rating -->
-          <div class="flex ml-4 mr-10 gap-1.5">
+          <div class="flex ml-4 mr-6 gap-1.5">
             {Array.from({ length: starCount }).map(() => (
               <FullStar />
             ))}
