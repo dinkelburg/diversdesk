@@ -34,6 +34,19 @@ export default {
         red: colors.red,
         zinc: colors.zinc,
       },
+      animation: {
+        marquee: "marquee 50s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          from: {
+            transform: "translateX(0)",
+          },
+          to: {
+            transform: "translateX(calc(-100% - 2.5rem))",
+          },
+        },
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {
@@ -83,3 +96,4 @@ export default {
     // Add any other plugins you're using
   ],
 };
+

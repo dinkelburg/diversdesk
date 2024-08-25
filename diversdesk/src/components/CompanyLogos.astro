@@ -1,0 +1,74 @@
+---
+import Container from "@components/container.astro";
+import Review from "@components/review1.astro";
+
+const companylogos = [
+  {
+    logo: "/images/Logo_SDB.png",
+    alt: "S.E.A. Diving Bali",
+  },
+  {
+    logo: "/images/Logo_A4D.png",
+    alt: "All 4 Diving",
+  },
+  {
+    logo: "/images/Logo_JOM.png",
+    alt: "Jom Adventure Dive",
+  },
+  {
+    logo: "/images/Logo_BDR.png",
+    alt: "Bali Dive Resort and Spa",
+  },
+  {
+    logo: "/images/Logo_FM.png",
+    alt: "Fast Manta",
+  },
+  {
+    logo: "/images/Logo_Reeflex.png",
+    alt: "Reeflex Dive Resort",
+  },
+  {
+    logo: "/images/Logo_Purple.png",
+    alt: "Purple Dive",
+  },
+  {
+    logo: "/images/Logo_Pure.png",
+    alt: "Pure Dive Resort",
+  },
+  {
+    logo: "/images/Logo_Bambu.png",
+    alt: "Bambu Divers",
+  },
+];
+---
+
+<Container>
+  <div class="mt-24">
+    <h2 class="text-2xl lg:text-4xl font-bold lg:tracking-tight text-center">
+      <span class="text-neutral-800 dark:text-neutral-100">Leading the Way in Dive Center Management</span>
+    </h2>
+    <p class="text-lg mt-4 text-neutral-600 text-center dark:text-neutral-200">
+        Join top dive centers from around the world.
+    </p>
+  </div>
+</Container>
+
+<div class="mt-7 relative overflow-x-clip">
+  <div
+    class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-indigo-100 right-1/3 -top-10">
+  </div>
+  <div
+    class="absolute w-96 h-96 blur-2xl -z-10 bg-gradient-radial from-purple-100 right-1/3 translate-x-2/3 top-10">
+  </div>
+  <div class="relative md:flex gap-20 overflow-hidden py-4 group">
+    <div
+      class="md:motion-safe:animate-marquee w-auto py-4 overflow-x-auto flex flex-nowrap min-w-full shrink-0 items-stretch gap-20 snap-x snap-mandatory px-5">
+      {companylogos.map((item, index) => (
+        <Review logo={item.logo} alt={item.alt} key={`review-${index}`} />
+      ))}
+      {companylogos.map((item, index) => (
+        <Review logo={item.logo} alt={item.alt} key={`review-clone-${index}`} />
+      ))}
+    </div>
+  </div>
+</div>
