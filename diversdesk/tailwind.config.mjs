@@ -36,6 +36,7 @@ export default {
       },
       animation: {
         marquee: "marquee 50s linear infinite",
+        'marquee-mobile': "marquee 35s linear infinite", // Add this line
       },
       keyframes: {
         marquee: {
