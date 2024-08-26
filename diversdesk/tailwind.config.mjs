@@ -52,7 +52,7 @@ export default {
             transform: "translateX(0)",
           },
           to: {
-            transform: "translateX(-141%)", // Slightly reduced to test
+            transform: "translateX(-140%)", // Slightly reduced to test
           },
         },
       },
