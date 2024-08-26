@@ -11,6 +11,8 @@ import TestimonialsSectionMin from "@/components/sections/testimonials/Testimoni
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
+import {Icons} from "node_modules/@astrojs/starlight/components/Icons";
+import {YouTube} from 'astro-embed';
 import heroImage from "@images/hero-image.png";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
@@ -18,11 +20,10 @@ import pricing from "@data/pricing.json";
 import CustomerOnboarding from "@images/onboarding_scrnshot1.png";
 import CutErrors from "@images/happy_customers2.png";
 import BoostRevenue from "@images/happy_diver.jpeg";
-import {Icons} from "node_modules/@astrojs/starlight/components/Icons";
 import Icon from "@/components/ui/icons/Icon.astro";
-import {YouTube} from 'astro-embed';
 import Container from "@components/container.astro";
 import CompanyLogos from "@components/CompanyLogos.astro";
+// import JOM from "@images/ti_jomadventure_avatar.png"
 
 
 const avatarSrcs: Array<string> = [
@@ -63,7 +64,7 @@ const avatarSrcs: Array<string> = [
       subTitle="The most sophisticated scheduler in the diving industry."
     /> -->
 
-  <!-- <CompanyLogos /> -->
+  <CompanyLogos />
 
     <FeaturesGeneral
             title="Explore Our Feature-Rich Environment"
@@ -123,6 +124,7 @@ const avatarSrcs: Array<string> = [
       ]}
     /> -->
 
+
     <TestimonialsSectionMin
     title ="What Our Customers Say"
     testimonials={[
@@ -131,7 +133,7 @@ const avatarSrcs: Array<string> = [
           "\"The system is not only user-friendly but also incredibly efficient, allowing me to easily schedule dives, track payments, and effectively oversee and coordinate activities.\"",
         author: "TI",
         role: "Owner | Jom Adventure",
-        avatarSrc: "https://diversdesk.com/images/ti_jomadventure_avatar.png",
+        avatarSrc: "/images/jomadventure_avatar.png",
         starCount: 5, 
       },
       {
@@ -139,7 +141,7 @@ const avatarSrcs: Array<string> = [
           "\"We are particularly impressed with the platform’s ease of use and the responsive support team, who listen to and act on our feedback.\"",
         author: "Miikka",
         role: "Manager | Bali Dive Resort and Spa",
-        avatarSrc: "https://diversdesk.com/images/miikka_bdrs_avatar.png",
+        avatarSrc: "/images/bdrs_avatar.png",
         starCount: 5, 
       },
       {
@@ -147,7 +149,7 @@ const avatarSrcs: Array<string> = [
           "\"We don't use any paperwork anymore because the medical form and liability release are filled in online. Super convenient, time saving, and most important, good for the environment!\"",
         author: "Lars",
         role: "Owner | S.E.A. Diving Bali",
-        avatarSrc: "https://diversdesk.com/images/lars_seadb_avatar.png",
+        avatarSrc: "/images/seadb_avatar.png",
         starCount: 5, 
       },
     ]}
