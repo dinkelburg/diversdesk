@@ -52,7 +52,7 @@ export default {
             transform: "translateX(0)",
           },
           to: {
-            transform: "translateX(calc(-150% - 1.5rem))", // Mobile-specific adjustment
+            transform: "translateX(-150%)", // Mobile-specific adjustment
           },
         },
       },
