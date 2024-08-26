@@ -36,7 +36,7 @@ export default {
       },
       animation: {
         marquee: "marquee 50s linear infinite",
-        'marquee-mobile': "marqueeMobile 30s linear infinite", // Adjusted speed for mobile
+        'marquee-mobile': "marqueeMobile 22s linear infinite", // Adjusted speed for mobile
       },
       keyframes: {
         marquee: {
@@ -52,7 +52,7 @@ export default {
             transform: "translateX(0)",
           },
           to: {
-            transform: "translateX(-154%)", // Adjusted calculation for mobile
+            transform: "translateX(calc(-150% - 1.5rem))", // Mobile-specific adjustment
           },
         },
       },
