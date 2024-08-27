@@ -36,7 +36,7 @@ export default {
       },
       animation: {
         marquee: "marquee 50s linear infinite",  // For desktop
-        'marquee-mobile': "marqueeMobile 20s linear infinite",  // For mobile
+        'marquee-mobile': "marqueeMobile 30s linear infinite",  // For mobile
       },
       keyframes: {
         marquee: {
@@ -44,7 +44,7 @@ export default {
             transform: "translateX(0)",
           },
           to: {
-            transform: "translateX(-106.5%)",  // Simplified for desktop
+            transform: "translateX(-106.5%)",  // desktop
           },
         },
         marqueeMobile: {
@@ -52,7 +52,7 @@ export default {
             transform: "translateX(0)",
           },
           to: {
-            transform: "translateX(-136.75%)",  // Consistent with desktop
+            transform: "translateX(-101%)",  // mobile
           },
         },
       },      
