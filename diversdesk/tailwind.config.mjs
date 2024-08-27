@@ -35,8 +35,8 @@ export default {
         zinc: colors.zinc,
       },
       animation: {
-        marquee: "marquee 50s linear infinite",
-        'marquee-mobile': "marqueeMobile 25s linear infinite", // Adjusted speed for mobile
+        marquee: "marquee 50s linear infinite",  // For desktop
+        'marquee-mobile': "marqueeMobile 20s linear infinite",  // For mobile
       },
       keyframes: {
         marquee: {
@@ -44,7 +44,7 @@ export default {
             transform: "translateX(0)",
           },
           to: {
-            transform: "translateX(calc(-113% - 2.5rem))", 
+            transform: "translateX(-106.5%)",  // Simplified for desktop
           },
         },
         marqueeMobile: {
@@ -52,10 +52,10 @@ export default {
             transform: "translateX(0)",
           },
           to: {
-            transform: "translateX(-140%)", // Slightly reduced to test
+            transform: "translateX(-106.5%)",  // Consistent with desktop
           },
         },
-      },
+      },      
       typography: (theme) => ({
         DEFAULT: {
           css: {
