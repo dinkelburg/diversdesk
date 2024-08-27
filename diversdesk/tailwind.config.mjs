@@ -34,28 +34,7 @@ export default {
         red: colors.red,
         zinc: colors.zinc,
       },
-      animation: {
-        marquee: "marquee 50s linear infinite",  // For desktop
-        'marquee-mobile': "marqueeMobile 30s linear infinite",  // For mobile
-      },
-      keyframes: {
-        marquee: {
-          from: {
-            transform: "translateX(0)",
-          },
-          to: {
-            transform: "translateX(-106.5%)",  // desktop
-          },
-        },
-        marqueeMobile: {
-          from: {
-            transform: "translateX(0)",
-          },
-          to: {
-            transform: "translateX(-101%)",  // mobile
-          },
-        },
-      },      
+      
       typography: (theme) => ({
         DEFAULT: {
           css: {
