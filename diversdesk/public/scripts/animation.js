@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 if (viewportWidth <= 767) {
                     // Mobile: Adjust reset point for smoother scrolling
-                    return -marqueeWidth - 365; 
+                    return -marqueeWidth - 367; 
                 } else {
                     // Desktop: Different reset point to avoid overlap
-                    return -marqueeWidth - 140;
+                    return -marqueeWidth - 138;
                 }
             };
 
