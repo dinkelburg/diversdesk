@@ -4,6 +4,7 @@ import Meta from "@components/Meta.astro";
 import Navbar from "@components/sections/Navbar.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
 import { SITE } from "@data/constants";
+import googleAnalytics from "@components/googleAnalytics.astro"
 
 // Setting expected props
 const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
@@ -23,6 +24,8 @@ We set the language of the page to English and add classes for scrollbar and scr
 -->
 <html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
   <head>
+    <!--Google Analytics-->
+    <googleAnalytics/>
     <!-- Adding metadata to the HTML document -->
     <Meta meta={meta} structuredData={structuredData} />
     <!-- Define the title of the page -->
