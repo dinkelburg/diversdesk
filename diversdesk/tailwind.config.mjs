@@ -52,7 +52,7 @@ export default {
             transform: "translateX(0)",
           },
           to: {
-            transform: "translateX(-106.5%)",  // Consistent with desktop
+            transform: "translateX(-136.75%)",  // Consistent with desktop
           },
         },
       },      
