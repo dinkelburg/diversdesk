@@ -4,7 +4,6 @@ import Meta from "@components/Meta.astro";
 import Navbar from "@components/sections/Navbar.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
 import { SITE } from "@data/constants";
-import googleAnalytics from "@components/googleAnalytics.astro"
 
 // Setting expected props
 const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
@@ -24,8 +23,18 @@ We set the language of the page to English and add classes for scrollbar and scr
 -->
 <html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
   <head>
-    <!--Google Analytics-->
-    <googleAnalytics/>
+    
+     <!--Google Analytics - Google tag (gtag.js) -->
+    <script  
+      type="text/partytown" async  src="https://www.googletagmanager.com/gtag/js?id=G-XNYR7HDD7W">
+    </script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XNYR7HDD7W');
+    </script>
     <!-- Adding metadata to the HTML document -->
     <Meta meta={meta} structuredData={structuredData} />
     <!-- Define the title of the page -->
@@ -55,9 +64,8 @@ We set the language of the page to English and add classes for scrollbar and scr
       requestAnimationFrame(raf);
     </script>
   </head>
-  <body
-    class="bg-white selection:bg-orange-200 selection:text-neutral-700 dark:bg-neutral-800"
-  >
+
+  <body class="bg-white selection:bg-orange-200 selection:text-neutral-700 dark:bg-neutral-800">
     <!--
     Setting up the main structure of the page.
     The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
