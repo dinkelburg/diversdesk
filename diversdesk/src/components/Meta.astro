@@ -34,8 +34,8 @@ const socialImageRes = await getImage({
 });
 const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
 
-// Since the site only supports English, no need for alternate language links
-const alternateLanguageLinks = `<link rel="alternate" hreflang="en" href="${canonical}" />`;
+// Self-referencing hreflang tag for the current page in English
+const selfReferencingHrefLang = `<link rel="alternate" hreflang="en" href="${canonical}" />`;
 
 // Generate and optimize the favicon images
 const faviconSvg = await getImage({
@@ -70,7 +70,7 @@ const appleTouchIcon = await getImage({
 />
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <link rel="canonical" href={canonical} />
-<Fragment set:html={alternateLanguageLinks} />
+<Fragment set:html={selfReferencingHrefLang} />
 
 <!-- Facebook Meta Tags -->
 <meta property="og:locale" content="en_US" />
