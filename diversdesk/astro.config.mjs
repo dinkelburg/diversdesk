@@ -105,8 +105,13 @@ export default defineConfig({
   }), compressor({
     gzip: false,
     brotli: true
-  }), mdx() // Add MDX integration
-  , partytown()],
+  }), mdx(), // Add MDX integration
+  partytown({
+    config: {
+      forward: ['dataLayer.push'], // Forward Google Analytics events
+    },
+  }),
+  ],
   output: "hybrid",
   experimental: {
     clientPrerender: true,
