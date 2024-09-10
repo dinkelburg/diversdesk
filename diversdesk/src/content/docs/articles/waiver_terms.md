@@ -4,7 +4,6 @@ description: A guide about waiver terms. What they do and how to use them.
 sidebar:
     label: Waiver Valid Terms
     order: 3
-    badge: new
 ---
 
 ## What are Waiver Valid Terms?
