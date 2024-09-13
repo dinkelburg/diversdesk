@@ -52,7 +52,7 @@ In this step, the customer selects/books their desired activity through. This st
 
 ### Step 2 - Booking Page
 The booking page is fully customizable, giving you the freedom to streamline and personalize your self-booking functionality. You can choose to capture only the essential details or require your customers to fill out a complete registration form right away. The minimum required data on this page are:
-- Activity Date
+- Activity Start Date
 - Number of participants
 - First Name
 - Last Name
@@ -79,5 +79,6 @@ After completing the details on the booking page, your customer is lead to their
  :::tip[Furter iterations]
 The first iterations of the direct booking functionality will redirect users to your Diversdesk environment. We will continue to refine this feature, eventually offering an interactive calendar that you can embed as an iframe on your website.
 :::
+
 
 
