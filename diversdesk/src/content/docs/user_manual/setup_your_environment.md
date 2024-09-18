@@ -44,6 +44,10 @@ Editing a product can be done by clicking on the 'Edit' hyperlink within the act
 
 There is a range of fields where you can input all the information and details available for this activity, and connect any add-ons available for this particular product.
 
+:::tip[Tip] 
+Using the 'Copy' hyperlink allows you can easily copy a product and solely change the data that is different to the copied product/activity.
+:::
+
 ## Add-ons
 On the "Add-on" page, accessible through the hamburger menu, you can enter or edit your add-ons.
 

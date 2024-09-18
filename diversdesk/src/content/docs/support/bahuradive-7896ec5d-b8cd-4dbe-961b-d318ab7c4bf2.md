@@ -11,8 +11,12 @@ This support page will contain all the questions, videos, and discussed subjects
 On the right-hand side, you will find an overview of all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.
 
 ## On-Demand Videos
-No videos added yet. <br>
-Explore our our [video training page](/video_training) instead.
+
+### Insights & Headcount
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/9b6a0511b0644a678134b17d58b0a8a5?sid=76726e7a-433a-4615-808b-e2d8f9d4ab82" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Workflow for Multiple Trips
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/dc991dec3c1846ff95d7a1cd30d6dd44?sid=6e08e986-a09a-4e09-9f2e-c3dc3e6a7911" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ## Other Useful Videos 
 ### Scheduling a 2nd trip in a day 

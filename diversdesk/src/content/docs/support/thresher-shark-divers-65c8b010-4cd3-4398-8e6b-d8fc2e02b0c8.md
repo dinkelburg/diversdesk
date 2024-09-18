@@ -11,6 +11,7 @@ This support page will contain all the questions, videos, and discussed subjects
 On the right-hand side, you will find an overview of all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.
 
 ## On-Demand Videos
-No videos added yet. <br>
-Explore our [video training page](/video_training) instead.
+
+### CRM-only workflow
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/bd8c27016bb242a598416ebb1e327eeb?sid=5bf26d8f-5b54-4b9d-b1dc-7117f83fa88c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 

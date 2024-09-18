@@ -27,6 +27,23 @@ This video will walk you through all the settings and steps needed to set up you
 
     
 ## Planning & Scheduling
-
 This video will guide you through all there is to know about planning and scheduling Activities & Trips in the Diversdesk environment.
+
+**Chapters** </br>
+[0:00](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=0) Introduction</br>
+[0:55](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=55) Brief description about the different onboarding methods</br>
+[2:21](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=141) Difference in-between 'Add trip, Add Activity & Templates</br>
+[3:02](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=182) Scheduling an Activity / Booking</br>
+[9:20](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=560) Scheduling a trip</br>
+[11:58](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=560) Generic Onboarding (Pending Registration) </br>
+[16:35](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=997) Scheduling a Pending Registration</br>
+[20:25](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=1225) Create a new trip</br>
+[22:20](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=1340) Scheduling an existing participant or Prefilling specific customer details </br>
+[26:57](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=1617) Moving/re-arranging scheduled customers </br>
+[31:43](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=1903) Scheduling a multi-activity bookings </br>
+[35:51](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=2151) Customer registration for a multi-activity booking </br>
+[37:40](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=2260) Multi-day Activities </br>
+[38:06](https://www.loom.com/share/e229ccf8e50345afaadfc66f05ffa9de?t=2286) Scheduling a rest-day
+</br>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/e229ccf8e50345afaadfc66f05ffa9de?sid=6dd6022e-2ea0-4209-89d7-e47f85271662" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>

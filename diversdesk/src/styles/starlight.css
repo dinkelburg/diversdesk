@@ -175,6 +175,43 @@ article.card {
     top: 0; /* Align with the first line of text */
 }
 
+
+/* Custom Numbered Bullet Style */
+.bullet-numbered ul {
+    list-style-type: none; /* Remove default list styling */
+    padding-left: 2.5rem; /* Increase space between bullet and text */
+    position: relative;
+    counter-reset: custom-counter var(--start-count, 1); /* Default to 1 */
+}
+
+.bullet-numbered ul > li {
+    position: relative;
+    margin-bottom: 1rem; /* Space between items */
+}
+
+.bullet-numbered ul > li::before {
+    content: counter(custom-counter); /* Use the custom counter for numbers */
+    counter-increment: custom-counter; /* Increment the counter */
+    display: inline-block;
+    width: 20px; /* Bullet size */
+    height: 20px;
+    background-color: var(--sl-color-accent-high); /* Bullet background color */
+    color: white; /* Number color */
+    text-align: center; /* Center the number inside the bullet */
+    line-height: 20px; /* Vertically center the number inside the bullet */
+    border-radius: 50%; /* Make the bullet circular */
+    font-size: 10px; /* Number font size */
+    font-weight: bold;
+    position: absolute;
+    left: -2.5rem; /* Adjust the horizontal position for more space */
+    top: 0; /* Align with the first line of text */
+}
+
+/* Dynamically set the starting counter from a custom attribute */
+.bullet-numbered[data-start] ul {
+    counter-reset: custom-counter var(--start-count);
+}
+
 /* Ensure consistency for nested lists */
 .bullet-square ul > li,
 .bullet-checkmark ul > li,
@@ -191,6 +228,58 @@ article.card {
 .tab-space {
     margin-left: 2em; /* Adjust the value as needed */
 }
+  
+/* Full reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Container for the text grid */
+  .text-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    gap: 12px; /* Space between the columns */
+    width: 100%;
+    align-items: start; /* Top-align all text containers */
+    justify-items: stretch; /* Ensure equal width of columns */
+  }
+  
+  /* Style for each text container */
+  .text-item {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align text at the bottom */
+    width: 100%; /* Ensure full width for each column */
+  }
+  /* Style for the first text container (first column) */
+    .text-item:first-child p {
+    padding-top: 12px; /* Add top padding only to the first column */
+  }
 
-
+  /* Style for paragraphs */
+  .text-item p {
+    margin: 0;
+    padding: 0 2px; /* Add left and right padding (adjust value as needed) */
+    line-height: 1.5;
+    align-self: flex-start; /* Ensure the paragraph fits only the text height */
+  }
+  
+  /* Style for the image container */
+  .image-container {
+    width: 100%;
+    margin-top: -24px; /* Space between the text grid and image */
+  }
+  
+  /* Image style */
+  .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  
   
