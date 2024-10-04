@@ -1,19 +1,18 @@
 ---
-title: Diversdesk Example _ Support Page 
+title: The High Dive _ Support Page 
 pagefind: false
 ---
 <div style="text-align: right;">
-    <a href="https://example.diversdesk.com/planning?persist_previous_path=%2Fplanning&persist_operator_id=6088a8e6-a528-451b-a940-7d69332ce45f&persist_establishment_id=bfaf8edb-cff9-425f-82b4-622d8e510d7b&persist_timezone=Asia%2FBangkok" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
+    <a href="https://thehighdiveindonesia.diversdesk.com/operator/location/63e8b78b-3b01-4b33-8cb2-fcdf53bd1c2a?activity=fun-diving" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
     </a>
 </div>
-
 
 This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. </br>
 On the right-hand side, you will find an overview of all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.
 
 ## On-Demand Videos
--No videos added yet.- <br> 
-Explore our [video training page](/video_training) instead.
+No videos added yet. <br>
+Explore our our [video training page](/video_training) instead.
 
 ## Other Videos 
 ### Scheduling a 2nd trip in a day 
