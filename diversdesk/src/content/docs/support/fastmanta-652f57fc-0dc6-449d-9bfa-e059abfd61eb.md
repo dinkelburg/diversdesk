@@ -2,7 +2,13 @@
 title: Fast Manta _ Support Page 
 pagefind: false
 ---
-<div style="text-align: right;">
+<div style="display: flex; justify-content: space-between; width: 100%; padding: 0; gap: 10px;">
+    <a href="https://sharing.clickup.com/2633992/l/h/2gc88-2495/61e2d3b6136945f" style="display: inline-block; padding: 6px 20px; background-color: #333333; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
+        Diversdesk Priority Tickets &#128196;
+    </a>
+    <a href="https://sharing.clickup.com/2633992/l/h/2gc88-5095/29a1e26e803a69e" style="display: inline-block; padding: 6px 20px; background-color: #666666; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
+        My Priority Tickets &#128195;
+    </a>
     <a href="https://fastmanta.diversdesk.com/operator/location/4bba298a-df45-4349-8a7b-9999a214c2e9" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
     </a>
 </div>
@@ -10,6 +16,10 @@ pagefind: false
 This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. </br>
 On the right-hand side, you will find an overview of all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.
 
+**At the top of the page, you'll find quicklinks to:**
+- Diversdesk's top priority tickets, providing real-time insights into what has just been released, what we're currently working on, and what's coming next. 
+- Your personal priority ticket list, where you can track all the requests you've made.
+- Your Diversdesk environment 'My Page'
 
 ## Questions & Answers
 <br>
@@ -159,11 +169,11 @@ This is a great way to schedule a 2nd trip for divers that e.g. engage in a pool
                     <li>Hotel details for everyone</li>
                     <li>Room number (mandatory) for taxi driver coordination</li>
                     <li>Allergies: empty field for customers to list allergies</li>
+                    <li>Activity date to know which day customer wants to do activity</li>
+                    <li>Specific activity being booked</li>
                 </div>
                 <div class="bullet-crossmark">
                 <ul>
-                    <li>Activity date to know which day customer wants to do activity</li>
-                    <li>Specific activity being booked</li>
                     <li>Meal preference: Chicken, Vegetarian, Vegan</li>
                 </ul>
                 </div>
@@ -189,15 +199,14 @@ This is a great way to schedule a 2nd trip for divers that e.g. engage in a pool
                         <li>10086 Diver Activities Release of Liability Assumption of Risk Non-Agency Acknowledgement 
                         Form
                         <br>That form must use always when someone diving with Nitrox (this came up this spring Padi Training Bulletin)</li>
+                        <li>10077 Boat Travel and Scuba Diving Liability Release and Assumption of Risk Agreement Form</li>
                     </ul>
                 </div>
                 <div class="bullet-crossmark">
                     Note! Not all of the forms below are available in English
                     <ul>
-                        <li>10077 Boat Travel and Scuba Diving Liability Release and Assumption of Risk Agreement Form</li>
                         <li>10074 Certified Diver Experience Program</li>
-                        <li>10089 Discover Snorkeling and Skin Diving Form
-                        <br>That form must use always when someone diving with Nitrox (this came up this spring Padi Training Bulletin)</li>
+                        <li>10089 Discover Snorkeling and Skin Diving Form</li>
                     </ul>
                 </div>
             </td>
