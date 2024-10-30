@@ -29,6 +29,7 @@ You can simply use the URL to 'My Page' from any location on your website or by 
 
 ![Copy the URL to 'My Page'](/images/copy_url_to_my_page.gif)
 
+<a id="activity_cards_tip"></a>
 :::tip[Tip]
 You can share the URL to 'My Page' with a specific category expanded. to do this, you simply paste **?activity={activity-category}** behind the default URL to 'My page'. </br>
 :::
