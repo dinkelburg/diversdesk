@@ -8,7 +8,7 @@ const faviconSrc = path.resolve("src/images/icon.png");
 export const GET: APIRoute = async () => {
 
   // Resize the image to multiple sizes
-  const sizes = [16, 16];
+  const sizes = [16, 32];
 
   const buffers = await Promise.all(
     sizes.map(async (size) => {

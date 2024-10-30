@@ -3,7 +3,7 @@ title: All there is to know about Waiver Valid Terms
 description: A guide about waiver terms. What they do and how to use them.
 sidebar:
     label: Waiver Valid Terms
-    order: 3
+    order: 4
 ---
 
 ## What are Waiver Valid Terms?

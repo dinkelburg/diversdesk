@@ -1,8 +1,8 @@
 ---
-title: Create a custom registration form
+title: Create a Custom Registration Form
 description: A reference page in my new Starlight docs site.
 sidebar:
-    label: Create a custom registration form
+    label: Create a Custom Registration Form
     order: 2
 ---
 

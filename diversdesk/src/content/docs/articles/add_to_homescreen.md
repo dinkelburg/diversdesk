@@ -3,7 +3,7 @@ title: Adding an Icon to Your Mobile Home Screen
 description: A guide how to add a hyperlink icon to your mobile phone's homescreen
 sidebar:
     label: Mobile Homescreen Icon
-    order: 5
+    order: 10
 ---
 
 Adding an icon (website shortcut) to your homescreen is a great way to swiftly jump to you planner at any given time. 
