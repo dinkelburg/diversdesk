@@ -41,6 +41,9 @@ Umbrella name for this waiver. This is used for you to recognize the waiver, reg
 
 **Valid term**</br>
 The period a signed waiver remains valid or is open for signing to your customer. </br>
+  :::note[Note]
+  Leaving the valid term open only keeps this waiver valid for the current registration.
+  :::
 
 **Signature required checkbox** </br>
 Determines if this waiver is shown as a seperate signed waiver, or embedded into your registration form as a tick box.</br> 
