@@ -72,13 +72,13 @@ Keep in mind that a value is expected, leaving the input value empty as shown ab
 - *operator*
 - *Custom*
 
-Selecting both 'Insert' and **'participant'** after each other will create the following.
+Selecting both 'Input' and **'participant'** after each other will create the following.
 ```html
 {% input value=$participant /%} 
 ```
-Selecting both 'Insert' and **'operator'** after each other will create the following.
+Selecting both 'Bold' and **'operator'** after each other will create the following.
 ```html
-{% input value=**$operator** /%}
+**{% $operator %}**
 ```
 ### Additional attributes for an input field
 May you want to give your customer more freedom and seek to create an open text input field, you can use the following attributes.
@@ -101,16 +101,14 @@ To show you what's possible using the waivers we've created a few examples below
 
 #### Date Input Field + Title & Guiding Text
 ```html
-{% dive cllassname="text-m text-slate-300" %}**Input Field Title Here**{% input name="First_day" placeholder="dd-mm-yyyy"/%} 
+{% div classname="text-m text-slate-400" %}**Input Field Title Here**{% /div %} {% input name="First_day" placeholder="dd-mm-yyyy"/%} 
 ```
 #### Date Input Field + Small Title + Default Value
 ```html
-{% div className="text-xs text-slate-800" %}**Input Field Title Here**{% /div %} {% input name="start_date" placeholder="dd-mm-yyyy text-slate-300"/%} 
+{% div className="text-xs text-slate-500" %}**Input Field Title Here**{% /div %} {% input name="start_date" placeholder="dd-mm-yyyy" /%} 
 ```
-#### Write 
-{% div className="text-xs text-slate-400"%}**Input Field Title Here** 
 
-<div class="w-full md:w-3/5 mx-auto">
+<div class="w-full md:w-3/5 mx-auto text-left">
   <img 
     src="/images/input-field-example-1.png" 
     alt="Selecting the product page through the hamburger menu"
