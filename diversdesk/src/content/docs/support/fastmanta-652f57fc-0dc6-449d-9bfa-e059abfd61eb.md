@@ -59,6 +59,12 @@ Alternatively, you can read everything there is to know about it in <a href="../
 ## On-demand Videos (4)
 <br>
 
+### Connecting Add-ons to a direct booking (Workaround)
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/069b779a3a7e400ca3532dcec2b417a1?sid=d0e36562-cd01-482f-b51c-8cdb142e4ef1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Assigning multiple IS/DMs to a group booking
+<div style="position: relative; padding-bottom: 220.83333333333334%; height: 0;"><iframe src="https://www.loom.com/embed/68d29f0e2b9f4cde9c9801f6000d8222?sid=899aee7c-8e9a-4ef9-83b3-dc051936d4a9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ### Waiver Valid Terms
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/41c6e762dbd148329fb2da2c7a54a9a4?sid=63947400-6a11-4521-b336-fab177bb6cc8" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
