@@ -49,9 +49,9 @@ const startIso = new Date().toISOString();
                 <!-- Form for user input with various input fields.-->
                 <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
                 <form action={actionUrl} method="post" >
-                    <div style="top: -9999px; left: -9999px;">
-                        <label>Website</span>
-                        <input name="website" value="" />
+                    <div style="position: fixed; top: -9999px; left: -9999px;">
+                        <label for="website">Website</label>
+                        <input name="website" id="website" value="" />
                     </div>
                     <input type="hidden" name="start" value={startIso} />
                     <input name="redirect" value={redirectBaseUrl + `/signup/${type}/success`} type="hidden"/>
