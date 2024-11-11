@@ -62,24 +62,60 @@ To create an input field you can use the 'Input' hyperlink. This will create the
 ```html
 {% input value= /%} 
 ```
-A value is expected behind the compare sign =. You can fill the prefill your desired text or 'Insert' one of the available attributes.
+Behind the comparison sign "=", you can fill in the desired value or insert one of the available attributes.
 :::note[Note]
-Keep in mind that a value is expected, leaving the input value empty as shown above does not make your field appear.
+Keep in mind that a value is expected. Leaving the input value empty as shown above, will prevent your field from appearing.
 :::
 
-*Optional default values in the input field:*
-- *participant* Custom
+*Optional fixed values in the input field:*
+- *participant*
 - *operator*
-- *Custom*
+- *Custom text*
 
-Selecting both 'Input' and **'participant'** after each other will create the following.
+#### Input Field With Customer Name
+
+Selecting **'Input'** followed by **'Participant'** will create a fixed input field populated with your customer's name. This name is automatically taken from the registration form, making the filling and signing process faster and more convenient for your customer.
+
 ```html
 {% input value=$participant /%} 
 ```
+<div class="w-full md:w-9/12" style="margin-left: 0;">
+  <img 
+    src="/images/input-field-with-participant-name.png" 
+    alt="Create a new waiver through the 'Create' hyperlink"
+  />
+</div>
+
+#### Place the 'Operator Name'
+
 Selecting both 'Bold' and **'operator'** after each other will create the following.
 ```html
 **{% $operator %}**
 ```
+<div class="w-full md:w-9/12" style="margin-left: 0;">
+  <img 
+    src="/images/bold-operator-name.png" 
+    alt="Create a new waiver through the 'Create' hyperlink"
+  />
+</div>
+
+
+#### Input Field With an Edible prefilled Text
+
+After selecting **'Input'**, you can also add a fixed custom text may this be required **'Participant'** after each other will create the following.
+```html
+**{% $operator %}**
+```
+After adding the 'Input field', you can write custom text to the  to the 
+<div class="w-full md:w-9/12" style="margin-left: 0;">
+  <img 
+    src="/images/input-field-with-custom-text.png" 
+    alt="Create a new waiver through the 'Create' hyperlink"
+  />
+</div>
+
+#### Input Field With Guiding Text (placeholder)
+
 ### Additional attributes for an input field
 May you want to give your customer more freedom and seek to create an open text input field, you can use the following attributes.
 
@@ -97,20 +133,4 @@ The value the input is filled with. Fixed value Value that cannot be changed</li
 </ul>
 
 ### Examples
-To show you what's possible using the waivers we've created a few examples below which you can copy and paste into your custom waiver.
-
-#### Date Input Field + Title & Guiding Text
-```html
-{% div classname="text-m text-slate-400" %}**Input Field Title Here**{% /div %} {% input name="First_day" placeholder="dd-mm-yyyy"/%} 
-```
-#### Date Input Field + Small Title + Default Value
-```html
-{% div className="text-xs text-slate-500" %}**Input Field Title Here**{% /div %} {% input name="start_date" placeholder="dd-mm-yyyy" /%} 
-```
-
-<div class="w-full md:w-3/5 mx-auto text-left">
-  <img 
-    src="/images/input-field-example-1.png" 
-    alt="Selecting the product page through the hamburger menu"
-  />
-</div>
+We kindly refer you to our Diversdesk [Waiver Cheatsheet](/articles/waiver_cheatsheet) for code examples.

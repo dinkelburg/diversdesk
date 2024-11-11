@@ -29,11 +29,9 @@ Registered customers will directly end up in your planning hub. Depending on wha
 All there is to know about registration methods can be read <a href="https://www.diversdesk.com/user_manual/registration_methods/" target="_blank">here.</a>
 
 ### Q: How do we setup the registration form?
-I want to ask you to have a look at this <a href="https://doc.clickup.com/2633992/d/h/2gc88-3955/fcf0a46a215e4ab/" target="_blank">Document.</a> 
-I’ve projected the fields of your registration form onto the ones available within Diversdesk. 
-On the 2nd page you'll find an overview of how we’ve currently set up your onboarding journeys. (July 24)
+You can navigate to the forms page and edit any custom onboarding journeys you’ve created, allowing you to adjust which fields are displayed, which fields are mandatory, and which waivers are shown to customers going through this onboarding journey.
 
-To get a better understanding about setting up the onboarding journeys, you can watch <a href="https://www.loom.com/share/ac3c1b550cbd4f4888116b99a29e9679?t=820" target="_blank">this chapter.</a> from the getting started video. 
+To get a better understanding about setting up and managing registration forms and customer onboarding journeys, you can watch <a href="https://www.loom.com/share/42c3a2a447944de1a90bf4c0b969d863?sid=f8a8f2a3-7db7-47f0-b199-63388eb446bc" target="_blank">this on demand video</a> or <a href="https://www.loom.com/share/ac3c1b550cbd4f4888116b99a29e9679?t=820" target="_blank">this chapter.</a> from the getting started video. 
 
 ### Q: Can I add more form details?
 You can change the registration form and onboarding joueneys on the 'Forms' page by creating a new, or editing a new onboarding journey. Information about this can be found in this <a href="../articles/custom_registration_form" target="_blank">this article.</a>, or <a href="https://www.loom.com/share/ac3c1b550cbd4f4888116b99a29e9679?t=820" target="_blank">this chapter.</a> of the getting started video.
@@ -58,6 +56,9 @@ Alternatively, you can read everything there is to know about it in <a href="../
 
 ## On-demand Videos (4)
 <br>
+
+### Managing Customer Onboarding Journeys
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/42c3a2a447944de1a90bf4c0b969d863?sid=d4d55b9e-b7a0-42f1-8a92-c0d34a544dbe" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Connecting Add-ons to a direct booking (Workaround)
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/069b779a3a7e400ca3532dcec2b417a1?sid=d0e36562-cd01-482f-b51c-8cdb142e4ef1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
