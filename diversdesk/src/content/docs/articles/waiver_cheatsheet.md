@@ -143,6 +143,19 @@ This is a quick reference full of examples you can implement to create your cust
    <hr> <!-- This will render as a horizontal line -->
   </td>
 </tr>
+<!-- Line Break -->
+<tr>
+  <td class="no-border"><pre>Line Break</pre></td>
+  <td onclick="copyToClipboard(this)">
+    <span class="markdown-text">First line {% br /%} Second line
+</span>
+    <button class="copy-btn"><i class="far fa-copy"></i></button>
+    <span class="copied-message">Copied!</span>
+  </td>
+  <td>
+ First line<br />Second line
+  </td>
+</tr>
 </table>
 
 
