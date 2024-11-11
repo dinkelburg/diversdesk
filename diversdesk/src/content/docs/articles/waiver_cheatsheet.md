@@ -258,6 +258,12 @@ Footnote text that is slightly smaller and lighter in color.
 {% /div %}
 ```
 
+<div class="w-full" style="margin-left: 0;">
+  <img 
+    src="/images/custom_waiver_screens.png" 
+    alt="Create a new waiver through the 'Create' hyperlink"
+  />
+</div>
 
 <script>
   let lastCopiedMessage = null;

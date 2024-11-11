@@ -102,7 +102,7 @@ After selecting **'Input'**, you can also add a fixed custom text may this be re
 ```html
 {% input name="default_value" defaultValue="Default Value" required=true/%}
 ```
-After adding the 'Input field', you can write custom text to the  to the 
+This input field will appear to your customer as a prefilled, but editable input field.
 <div class="w-full md:w-3/5" style="margin-left: 0;">
   <img 
     src="/images/input-field-with-default-value.png" 
