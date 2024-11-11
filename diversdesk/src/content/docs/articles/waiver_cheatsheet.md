@@ -152,6 +152,17 @@ This is a quick reference full of examples you can implement to create your cust
 <table class="full-width-table">
   <tr>
     <td onclick="copyToClipboard(this)">
+      <span class="markdown-text">
+{% input value=$participant/%}</span>
+      <button class="copy-btn"><i class="far fa-copy"></i></button>
+      <span class="copied-message">Copied!</span>
+    </td>
+    <td>
+      <img src="/images/input-field-with-defaultvalue-participant.png" alt="Example Image">
+    </td>
+  </tr>
+  <tr>
+    <td onclick="copyToClipboard(this)">
       <span class="markdown-text">{% div classname="text-xs text-slate-400" %}**Start Date**{% /div %} {% input name="start_date" placeholder="dd-mm-yyyy" required=true/%}</span>
       <button class="copy-btn"><i class="far fa-copy"></i></button>
       <span class="copied-message">Copied!</span>
