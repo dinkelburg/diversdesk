@@ -86,30 +86,26 @@ Selecting **'Input'** followed by **'Participant'** will create a fixed input fi
   />
 </div>
 
-#### Place the 'Operator Name'
+Previewing this field will display it as shown in the example below. </br>
+During your customer’s onboarding process, this field is prefilled with their name.
 
-Selecting both 'Bold' and **'operator'** after each other will create the following.
-```html
-**{% $operator %}**
-```
-<div class="w-full md:w-9/12" style="margin-left: 0;">
+<div class="w-full md:w-4/6" style="margin-left: 0;">
   <img 
-    src="/images/bold-operator-name.png" 
+    src="/images/input-field-with-participant-name-2.png" 
     alt="Create a new waiver through the 'Create' hyperlink"
   />
 </div>
-
 
 #### Input Field With an Edible prefilled Text
 
 After selecting **'Input'**, you can also add a fixed custom text may this be required **'Participant'** after each other will create the following.
 ```html
-**{% $operator %}**
+{% input name="default_value" defaultValue="Default Value" required=true/%}
 ```
 After adding the 'Input field', you can write custom text to the  to the 
-<div class="w-full md:w-9/12" style="margin-left: 0;">
+<div class="w-full md:w-3/5" style="margin-left: 0;">
   <img 
-    src="/images/input-field-with-custom-text.png" 
+    src="/images/input-field-with-default-value.png" 
     alt="Create a new waiver through the 'Create' hyperlink"
   />
 </div>
