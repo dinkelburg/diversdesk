@@ -1,6 +1,6 @@
 ---
 title: "Real-Time Digital Whiteboard for Dive Centers"
-description: "A digital whiteboard that can do everything a traditional whiteboard can, and more.."
+description: "A Customizable Real-Time Digital Whiteboard for Your Dive Center"
 author: "Melissa"
 role: "Customer Success & Training Coordinator"
 authorImage: "@/images/blog/melissa.avif"
