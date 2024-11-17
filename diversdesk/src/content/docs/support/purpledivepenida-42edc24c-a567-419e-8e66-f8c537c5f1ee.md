@@ -13,7 +13,7 @@ pagefind: false
     </a>
 </div>
 
-This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. </br>
+This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. <br />
 On the right-hand side, you will find an overview of all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.
 
 **At the top of the page, you'll find quicklinks to:**
@@ -22,5 +22,22 @@ On the right-hand side, you will find an overview of all our contact moments, ma
 - Your Diversdesk environment 'My Page'
 
 ## On-Demand Videos
-No videos added yet. <br>
-Explore our our [video training page](/video_training) instead.
+
+### Multi-trip Scheduling
+This video guides you through a Multi-activity booking with multi-trip scheduling, where 3 dives activity on 2 seperate trips on 1 day. <br />
+*E.g. 1 morning trip for 2 dives and an afternoon trip after lunch for a single dive.*
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/6a5140ad3a6e437c82f35bf64c9b0600?sid=1ce6a4b6-fe52-48df-b3bf-cfd7cc18cb4a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Trip Color Coding in the Month View Explained🌊
+In this video the color Activity color coding of multi-activity trips in the month view are explained. <br />
+*E.g. Where both Fun-divers and Course Participants join a same trip*
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/5b4a68f88a63491d8da7e348304538a1?sid=6ced14cc-1822-4681-b424-f83a6df3ee99" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Feature Breakdown
+1. **1.** White Label Environment
+2. **2.** Sharing a Booking with a customer (Normal Onboarding)
+3. **3.** Generic Onboarding
+4. **4.** Setting up Customer Onboarding Journeys
+5. **5.** Changing Product Titles
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/1ceb43ab437c448aa50be68eaf419c10?sid=1806ca5f-c1e5-4f6f-beda-ce684d42cde1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+

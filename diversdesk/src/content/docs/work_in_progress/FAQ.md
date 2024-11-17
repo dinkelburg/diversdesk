@@ -23,3 +23,5 @@ If the above two points don't help you, it might be the case that you have logge
 :::tip[Tip!]
 If our email did end up in your spam folder, Be sure to mark us as safe sender to prevent this from happening again.
 :::
+
+## Q: How Can I give discount to a single Customer? 
