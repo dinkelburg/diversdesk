@@ -9,7 +9,7 @@ pubDate: 2024-11-24
 cardImage: "@/images/blog/post_6_card.png"
 cardImageAlt: "View of an accountant calculating the bookkeeping numbers"
 readTime: 2
-tags: ["Whiteboard", "realtime", "efficiency" ]
+tags: ["Saving Time", "Efficiency", "Simplification" ]
 contents: [""]
 ---
 

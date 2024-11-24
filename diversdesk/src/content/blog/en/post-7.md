@@ -9,7 +9,7 @@ pubDate: 2024-11-24
 cardImage: "@/images/blog/post-7-card.png"
 cardImageAlt: "Faster "
 readTime: 2
-tags: ["Waivers", "Digital Onboarding", "Legal" ]
+tags: ["Change", "Support", "Features" ]
 contents: [""]
 ---
 
@@ -38,12 +38,13 @@ While resistance to change may feel safer, clinging to outdated processes can ha
 - **Customer Dissatisfaction:** Modern customers expect convenience. Without streamlined systems, you risk losing them to tech-savvy competitors.
 
 ## How to Overcome Resistance to Change
-If you or your team are hesitant to adopt new systems like Diversdesk, here are strategies to make the transition smoother: <br />
-- **1. Focus on the Benefits**
-Clearly outline how the change will improve daily operations. For example:
-- **Time Savings:** Automated scheduling and payment processing reduce repetitive tasks.
-- **Improved Accuracy:** Fewer errors in bookings and invoicing.
-- **Better Customer Experience:** Faster responses and seamless booking processes attract more divers.
+
+If you or your team are hesitant to adopt new systems like Diversdesk, here are strategies to make the transition smoother: 
+- **1. Focus on the Benefits** <br />
+    - Clearly outline how the change will improve daily operations. For example:
+        + **Time Savings:** Automated scheduling and payment processing reduce repetitive tasks.
+        - **Improved Accuracy:** Fewer errors in bookings and invoicing.
+        - **Better Customer Experience:** Faster responses and seamless booking processes attract more divers.
 
 - **2. Start Small and Scale Gradually** <br />
 You don’t have to overhaul your entire operation overnight. Begin with one feature, such as online bookings or automated reminders, and expand as you gain confidence.
