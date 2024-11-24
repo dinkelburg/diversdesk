@@ -25,3 +25,6 @@ If our email did end up in your spam folder, Be sure to mark us as safe sender t
 :::
 
 ## Q: How Can I give discount to a single Customer? 
+
+## Q: How do I change the number of participants within a booking?
+
