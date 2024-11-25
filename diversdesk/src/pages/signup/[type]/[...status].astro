@@ -8,9 +8,11 @@ import { SITE } from "@data/constants";
 export function getStaticPaths() {
   return [
     { params: { type: 'form', status: 'success' } },
+    { params: { type: 'form', status: 'error' } },
     { params: { type: 'form', status: undefined } },
     { params: { type: 'trial', status: undefined } },
     { params: { type: 'trial', status: 'success' } },
+    { params: { type: 'trial', status: 'error' } },
   ];
 }
 
