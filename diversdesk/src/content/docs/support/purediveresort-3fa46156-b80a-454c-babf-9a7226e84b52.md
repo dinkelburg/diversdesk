@@ -9,7 +9,7 @@ pagefind: false
     <a href="https://sharing.clickup.com/2633992/l/h/2gc88-5295/8be6b611e15fdc9" style="display: inline-block; padding: 6px 20px; background-color: #666666; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
         My Priority Tickets &#128195;
     </a>
-    <a href="https://www.traveltruster.com/operator/location/106723c0-ce8a-4721-bf04-d57b7c1197ae" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
+    <a href="https://purediveresort.diversdesk.com/" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
     </a>
 </div>
 
