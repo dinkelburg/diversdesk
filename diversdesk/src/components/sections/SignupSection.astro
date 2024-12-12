@@ -189,8 +189,8 @@ const startIso = new Date().toISOString();
 
     if (form && submitBtn) {
         form.addEventListener('submit', async (event) => {
-            // event.preventDefault();
-            // const form = event.target;
+            event.preventDefault();
+            const form = event.target as HTMLFormElement;
 
 
             // @ts-ignore
@@ -204,7 +204,7 @@ const startIso = new Date().toISOString();
             submitBtn.setAttribute('disabled', 'true');
             submitBtn.textContent = 'Submitting...';
 
-            // form.submit();
+            return form?.submit();
         });
     }
     const errorBlock = document.getElementById('errorMessage');
