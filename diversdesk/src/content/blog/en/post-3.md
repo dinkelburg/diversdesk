@@ -7,7 +7,7 @@ authorImage: "@/images/blog/bart.avif"
 authorImageAlt: "Image of Bart, the co-founder & CEO of Diversdesk"
 pubDate: 2024-08-22
 cardImage: "@/images/blog/post_3_card.png"
-cardImageAlt: "View of an accountant calculating the bookkeeping numbers"
+cardImageAlt: "View of an accountant calculating the dive center bookkeeping numbers"
 readTime: 3
 tags: ["bookkeeping", "affordable", "efficiency" ]
 contents: [""]
@@ -17,7 +17,7 @@ In the dynamic world of dive centers and tour operators, keeping your finances i
 
 <br>
 
-## 1. QuickBooks 
+## 1. Quickbooks
 **User Rating:** <span style="color: #EAB308;">★★★★☆</span> (**4.5/5**) <br>
 
 QuickBooks has long been a favorite among small to medium-sized businesses, and for good reason. Its robust features allow you to manage invoices, track expenses, and generate detailed financial reports with ease. For dive centers, the ability to integrate with various booking and scheduling platforms makes QuickBooks a versatile choice. Additionally, its cloud-based nature ensures that you can access your financial data from anywhere, whether you’re on a boat or in the office.
@@ -31,7 +31,9 @@ QuickBooks has long been a favorite among small to medium-sized businesses, and 
 <li> • Can be expensive for smaller businesses</li>
 <li> • Steeper learning curve for beginners </li>
 </ul>
-<br>
+<!-- <br />
+Visit <a href="https://quickbooks.intuit.com/" target="_blank" style="color:#FF7557;">Quickbooks</a>
+<br /> -->
 
 ## 2. Xero
 **User Rating:** <span style="color: #EAB308;">★★★★☆</span> (**4.4/5**) <br>
@@ -110,3 +112,7 @@ When choosing bookkeeping software for your dive center or tour operation, it's 
 Diversdesk offers an all-in-one management platform tailored specifically for dive centers and tour operators. Not only does it handle bookings, scheduling, and customer management, but it also integrates seamlessly with QuickBooks and other bookkeeping software on demand. This ensures that your financial data is always accurate and up-to-date, reducing the need for manual data entry and minimizing errors.
 
 By choosing Diversdesk, you’re not just opting for a bookkeeping solution; you’re embracing a comprehensive management tool that streamlines your entire operation, allowing you to focus on what you do best—providing unforgettable diving experiences.
+
+Visit [Diversdesk](/features) 
+
+ 

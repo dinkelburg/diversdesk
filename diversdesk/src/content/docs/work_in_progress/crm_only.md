@@ -4,6 +4,7 @@ description: Everyting about the CRM-only plan you need to know. Workflow, tips 
 sidebar:
     label: CRM-only plan
     order: 5
+pagefind: false
 ---
 
 ## For who is the CRM-only plan

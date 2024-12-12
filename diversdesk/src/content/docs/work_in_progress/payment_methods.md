@@ -4,6 +4,7 @@ description: Read how to create, edit and use different payment methods.
 sidebar:
     label: Payment Methods
     order: 8
+pagefind: false
 ---
 
 By default, the following payment methods are available to you:

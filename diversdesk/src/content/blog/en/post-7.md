@@ -42,7 +42,7 @@ While resistance to change may feel safer, clinging to outdated processes can ha
 If you or your team are hesitant to adopt new systems like Diversdesk, here are strategies to make the transition smoother: 
 - **1. Focus on the Benefits** <br />
     - Clearly outline how the change will improve daily operations. For example:
-        + **Time Savings:** Automated scheduling and payment processing reduce repetitive tasks.
+        - **Time Savings:** Automated scheduling and payment processing reduce repetitive tasks.
         - **Improved Accuracy:** Fewer errors in bookings and invoicing.
         - **Better Customer Experience:** Faster responses and seamless booking processes attract more divers.
 

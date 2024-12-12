@@ -1,6 +1,6 @@
 ---
 // Importing necessary components
-import Meta from "@components/Meta.astro";
+import { SEO } from "astro-seo";
 import Navbar from "@components/sections/Navbar.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
 import { SITE } from "@data/constants";
@@ -17,16 +17,24 @@ interface Props {
 }
 ---
 
-<!--
-This is the main structure for the page.
-We set the language of the page to English and add classes for scrollbar and scroll behavior.
--->
 <html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
   <head>
-    
-     <!--Google Analytics - Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNYR7HDD7W">
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <SEO
+      title="DiversDesk: Dive Center Software, The Intuitive All-in-One Solution"
+      description="DiversDesk is leading the way in dive center operations, with planning & scheduling, advanced paperless onboarding, digital waivers, CRM, online bookings, and integrated payments. Try it today!"
+      openGraph={{
+        basic: {
+          title: "DiversDesk: Simplify Your Dive Center Operations with our All-in-One Software",
+          type: "website",
+          image: "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif"
+        }
+      }}
+    />
+
+    <!--Google Analytics - Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNYR7HDD7W"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -34,12 +42,7 @@ We set the language of the page to English and add classes for scrollbar and scr
       gtag('config', 'G-XNYR7HDD7W');
     </script>
 
-    <!-- Adding metadata to the HTML document -->
-    <Meta meta={meta} structuredData={structuredData} />
-    <!-- Define the title of the page -->
-    <title>{title}</title>
     <script is:inline>
-
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (
         localStorage.getItem("hs_theme") === "dark" ||
@@ -53,7 +56,6 @@ We set the language of the page to English and add classes for scrollbar and scr
     </script>
     <script is:inline src="/scripts/vendor/lenis/lenis.js"></script>
     <script is:inline>
-      
       // Script to handle Lenis library settings for smooth scrolling
       const lenis = new Lenis();
 

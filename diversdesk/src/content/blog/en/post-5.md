@@ -4,7 +4,7 @@ description: "Choosing the Best Software for Custom Online Waivers: A Guide for 
 author: "Bart"
 role: "Co-founder & CEO of Diversdesk"
 authorImage: "@/images/blog/bart.avif"
-authorImageAlt: "IImage of Bart, the co-founder & CEO of Diversdesk"
+authorImageAlt: "Image of Bart, the co-founder & CEO of Diversdesk"
 pubDate: 2024-11-24
 cardImage: "@/images/blog/post_1_card.png"
 cardImageAlt: "Faster "

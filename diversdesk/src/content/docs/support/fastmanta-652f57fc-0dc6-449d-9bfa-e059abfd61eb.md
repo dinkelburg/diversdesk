@@ -57,6 +57,9 @@ Alternatively, you can read everything there is to know about it in <a href="../
 ## On-demand Videos (4)
 <br>
 
+### Add-ons selected in the background
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/4141ba4a382d481eb01fa2ae37fc12ac?sid=7874221a-03d6-41b0-84c9-4c27607e7a02" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ### Managing Customer Onboarding Journeys
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/42c3a2a447944de1a90bf4c0b969d863?sid=d4d55b9e-b7a0-42f1-8a92-c0d34a544dbe" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
