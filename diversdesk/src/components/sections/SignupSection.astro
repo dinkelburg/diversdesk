@@ -18,7 +18,7 @@ const {status, type} = Astro.params;
 
 // Define the variables that will be used in this component
 const title: string = type === 'trial' ? "Start Your 14-Day Free Trial" : 'Join Us Today';
-const subTitle: string = type === 'trial' ? "We need a few details to configure your environment.":
+const subTitle: string = type === 'trial' ? "We need a few details to configure your environment." :
     "Please fill in your details to get started";
 const formTitle: string = "Please fill in the form below to start your 14 day trial";
 const formSubTitle: string = "You will hear from us within 24 hours.";
@@ -28,7 +28,9 @@ const actionUrl = isProd ? 'https://www.traveltruster.com' : 'https://test.trave
 const namePrefix = 'reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.'
 const startIso = new Date().toISOString();
 ---
-
+<script
+        is:inline
+        src='https://www.google.com/recaptcha/api.js?render=6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW'/>
 <!-- Contact Us -->
 <section class="mx-auto max-w-[50rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
     <div class="mx-auto max-w-2xl lg:max-w-5xl">
@@ -46,127 +48,132 @@ const startIso = new Date().toISOString();
                 <div class="mt-6 p-3 rounded-md text-red-500 mx-auto border border-red-500" id="errorMessage">
                     Something went wrong, please try again.
                 </div>
-         } 
+        }
         {status === 'success' ?
-                <div class="mt-6 p-3 rounded-md text-green-500 mx-auto border border-green-500">Sent Successfully</div> :
-        <div class="mt-6 grid items-center gap-6 lg:grid-cols-1 lg:gap-16">
-            <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-4">
-                <!-- Form for user input with various input fields.-->
-                <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-                <form action={actionUrl} method="post" id="signupForm">
-                    <div style="position: fixed; top: -9999px; left: -9999px;">
-                        <label for="website">Website</label>
-                        <input name="website" id="website" value="" />
-                    </div>
-                    <input type="hidden" name="start" value={startIso} />
-                    <input name="redirect" value={redirectBaseUrl + `/signup/${type}/success`} type="hidden"/>
-                    <input name="redirect_error" value={redirectBaseUrl + `/signup/${type}/error`} type="hidden"/>
-                    <div class="grid gap-4">
-                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                            <TextInput
-                                    id="hs-fullname-contacts"
-                                    label="Full Name"
-                                    name={namePrefix + "full_name"}
-                            />
-                            <TextInput
-                                    id="hs-firstname-contacts"
-                                    label="Position/Job Title"
-                                    name={namePrefix + "job_title"}
-                            />
-                        </div>
-                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                            <div>
-                                <!-- Label for the email input field, visually hidden but accessible to screen readers -->
-                                <label for={'email-input'} class="sr-only">Email (Work)</label>
-                                <!-- Email input field -->
-                                <input
-                                        type="email"
-                                        name={namePrefix + "email"}
-                                        id={'email-input'}
-                                        autocomplete="email"
-                                        class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-                                        placeholder="Email"
-                                        required
-                                />
+                <div class="mt-6 p-3 rounded-md text-green-500 mx-auto border border-green-500">Sent Successfully
+                </div> :
+                <div class="mt-6 grid items-center gap-6 lg:grid-cols-1 lg:gap-16">
+                    <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-4">
+                        <!-- Form for user input with various input fields.-->
+                        <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
+                        <form action={actionUrl} method="post" id="signupForm">
+                            <div style="position: fixed; top: -9999px; left: -9999px;">
+                                <label for="website">Website</label>
+                                <input name="website" id="website" value=""/>
                             </div>
-                            <div>
-                                <label for={'phone-input'} class="sr-only">Phone Number</label>
-                                <input
-                                        type="tel"
-                                        name={namePrefix + 'phone'}
-                                        id={'phone-input'}
-                                        class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
-                                        placeholder={'Phone Number'}
-                                        required
+                            <input type="hidden" name="start" value={startIso}/>
+                            <input name="redirect" value={redirectBaseUrl + `/signup/${type}/success`} type="hidden"/>
+                            <input name="redirect_error" value={redirectBaseUrl + `/signup/${type}/error`}
+                                   type="hidden"/>
+                            <div class="grid gap-4">
+                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                    <TextInput
+                                            id="hs-fullname-contacts"
+                                            label="Full Name"
+                                            name={namePrefix + "full_name"}
+                                    />
+                                    <TextInput
+                                            id="hs-firstname-contacts"
+                                            label="Position/Job Title"
+                                            name={namePrefix + "job_title"}
+                                    />
+                                </div>
+                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                    <div>
+                                        <!-- Label for the email input field, visually hidden but accessible to screen readers -->
+                                        <label for={'email-input'} class="sr-only">Email (Work)</label>
+                                        <!-- Email input field -->
+                                        <input
+                                                type="email"
+                                                name={namePrefix + "email"}
+                                                id={'email-input'}
+                                                autocomplete="email"
+                                                class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                                                placeholder="Email"
+                                                required
+                                        />
+                                    </div>
+                                    <div>
+                                        <label for={'phone-input'} class="sr-only">Phone Number</label>
+                                        <input
+                                                type="tel"
+                                                name={namePrefix + 'phone'}
+                                                id={'phone-input'}
+                                                class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                                                placeholder={'Phone Number'}
+                                                required
+                                        />
+                                    </div>
+                                    <TextInput
+                                            id="hs-companymame-contacts"
+                                            label="Company Name"
+                                            name={namePrefix + "company"}
+                                    />
+                                    <TextInput
+                                            id="hs-website-contacts"
+                                            label="Company Website"
+                                            name={namePrefix + "website"}
+                                    />
+                                </div>
+                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                    <TextInput
+                                            id="hs-country"
+                                            label="Country of Operation"
+                                            name={namePrefix + "country"}
+                                    />
+                                    <TextInput
+                                            id="hs-email-contacts"
+                                            label="VAT Number"
+                                            name={namePrefix + "vat_number"}
+
+                                    />
+                                </div>
+                                <TextAreaInput
+                                        id="hs-info-contacts"
+                                        label="Additional Info or Questions"
+                                        name={namePrefix + "comment"}
                                 />
+                                <div class="flex items-center">
+                                    <!-- Checkbox input -->
+                                    <div class="flex gap-2 items-center py-5">
+                                        <input
+                                                id={'agree-with'}
+                                                name="remember-me"
+                                                required
+                                                type="checkbox"
+                                                class=" mt-0.5 shrink-0 rounded border-neutral-200 text-neutral-600 focus:ring-orange-400 dark:border-neutral-700 dark:bg-neutral-800 dark:checked:border-yellow-400 dark:checked:bg-yellow-400 dark:focus:ring-offset-neutral-800"
+                                        />
+                                        <label for={'agree-with'} class="text-sm text-neutral-800 dark:text-neutral-200"
+                                        >I acknowledge that I have read, understood, and agree to the Diversdesk <a
+                                                href="https://diversdesk.com/terms-conditions"
+                                                target="_blank"
+                                                class="hover:underline text-orange-500 text-sm"
+                                        >
+                                            Terms of Service
+                                        </a> and <a
+                                                href="https://diversdesk.com/privacy-policy"
+                                                target="_blank"
+                                                class="hover:underline text-orange-500 text-sm"
+                                        >
+                                            Privacy Policy
+                                        </a>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input type="hidden" name="captcha_token" id="captcha_token"/>
+                                </div>
                             </div>
-                            <TextInput
-                                    id="hs-companymame-contacts"
-                                    label="Company Name"
-                                    name={namePrefix + "company"}
-                            />
-                            <TextInput
-                                    id="hs-website-contacts"
-                                    label="Company Website"
-                                    name={namePrefix + "website"}
-                            />
-                        </div>
-                        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                            <TextInput
-                                    id="hs-country"
-                                    label="Country of Operation"
-                                    name={namePrefix + "country"}
-                            />
-                            <TextInput
-                                    id="hs-email-contacts"
-                                    label="VAT Number"
-                                    name={namePrefix + "vat_number"}
 
-                            />
-                        </div>
-                        <TextAreaInput
-                                id="hs-info-contacts"
-                                label="Additional Info or Questions"
-                                name={namePrefix + "comment"}
-                        />
-                        <div class="flex items-center">
-                            <!-- Checkbox input -->
-                            <div class="flex gap-2 items-center py-5">
-                                <input
-                                        id={'agree-with'}
-                                        name="remember-me"
-                                        required
-                                        type="checkbox"
-                                        class=" mt-0.5 shrink-0 rounded border-neutral-200 text-neutral-600 focus:ring-orange-400 dark:border-neutral-700 dark:bg-neutral-800 dark:checked:border-yellow-400 dark:checked:bg-yellow-400 dark:focus:ring-offset-neutral-800"
-                                />
-                                <label for={'agree-with'} class="text-sm text-neutral-800 dark:text-neutral-200"
-                                >I acknowledge that I have read, understood, and agree to the Diversdesk <a
-                                        href="https://diversdesk.com/terms-conditions"
-                                         target="_blank"
-                                        class="hover:underline text-orange-500 text-sm"
-                                >
-                                    Terms of Service
-                                </a> and <a
-                                        href="https://diversdesk.com/privacy-policy"
-                                        target="_blank"
-                                        class="hover:underline text-orange-500 text-sm"
-                                >
-                                    Privacy Policy
-                                </a>
-                                </label>
+                            <div class="mt-4 grid">
+                                <AuthBtn title="Sign Up" id="submitBtn"/>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="mt-4 grid">
-                        <AuthBtn title="Sign Up" id="submitBtn"/>
+                        </form>
                     </div>
-
-                </form>
-            </div>
-            <div>
-            </div>
-        </div>
+                    <div>
+                    </div>
+                </div>
         }
         <div class="mt-3 text-center">
             <p class="text-sm text-neutral-600 dark:text-neutral-400">
@@ -175,17 +182,26 @@ const startIso = new Date().toISOString();
         </div>
     </div>
 </section>
-
 <script>
+
     const form = document.getElementById('signupForm');
     const submitBtn = document.getElementById('submitBtn');
 
     if (form && submitBtn) {
-        form.addEventListener('submit', () => {
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const form = event.target;
+
+            // Wait for reCAPTCHA token
+            const token = await grecaptcha.execute('6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW', {action: 'submit'});
+            document.getElementById('captcha_token').value = token;
+
             // Disable the button
             submitBtn.setAttribute('disabled', 'true');
             // Optionally change the text
             submitBtn.textContent = 'Submitting...';
+
+            form.submit();
         });
     }
     const errorBlock = document.getElementById('errorMessage');
