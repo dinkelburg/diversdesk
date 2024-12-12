@@ -192,13 +192,16 @@ const startIso = new Date().toISOString();
             // event.preventDefault();
             // const form = event.target;
 
-            // Wait for reCAPTCHA token
-            const token = await grecaptcha.execute('6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW', {action: 'submit'});
-            document.getElementById('captcha_token').value = token;
 
-            // Disable the button
+            // @ts-ignore
+            const token = await (grecaptcha as any).execute('6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW', {action: 'submit'});
+            const elementById = document.getElementById('captcha_token');
+            if (elementById instanceof HTMLInputElement) {
+                elementById.value = token;
+            }
+
+            // show loading
             submitBtn.setAttribute('disabled', 'true');
-            // Optionally change the text
             submitBtn.textContent = 'Submitting...';
 
             // form.submit();
