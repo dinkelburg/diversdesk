@@ -189,8 +189,8 @@ const startIso = new Date().toISOString();
 
     if (form && submitBtn) {
         form.addEventListener('submit', async (event) => {
-            event.preventDefault();
-            const form = event.target;
+            // event.preventDefault();
+            // const form = event.target;
 
             // Wait for reCAPTCHA token
             const token = await grecaptcha.execute('6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW', {action: 'submit'});
@@ -201,7 +201,7 @@ const startIso = new Date().toISOString();
             // Optionally change the text
             submitBtn.textContent = 'Submitting...';
 
-            form.submit();
+            // form.submit();
         });
     }
     const errorBlock = document.getElementById('errorMessage');
