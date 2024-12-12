@@ -1,6 +1,6 @@
 ---
 // Importing necessary components
-// import { SEO } from "astro-seo";
+import { SEO } from "astro-seo";
 import Navbar from "@components/sections/Navbar.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
 import { SITE } from "@data/constants";
@@ -21,17 +21,17 @@ interface Props {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<SEO-->
-    <!--  title="DiversDesk: Dive Center Software, The Intuitive All-in-One Solution"-->
-    <!--  description="DiversDesk is leading the way in dive center operations, with planning & scheduling, advanced paperless onboarding, digital waivers, CRM, online bookings, and integrated payments. Try it today!"-->
-    <!--  openGraph={{-->
-    <!--    basic: {-->
-    <!--      title: "DiversDesk: Simplify Your Dive Center Operations with our All-in-One Software",-->
-    <!--      type: "website",-->
-    <!--      image: "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif"-->
-    <!--    }-->
-    <!--  }}-->
-    <!--/>-->
+    <SEO
+      title="DiversDesk: Dive Center Software, The Intuitive All-in-One Solution"
+      description="DiversDesk is leading the way in dive center operations, with planning & scheduling, advanced paperless onboarding, digital waivers, CRM, online bookings, and integrated payments. Try it today!"
+      openGraph={{
+        basic: {
+          title: "DiversDesk: Simplify Your Dive Center Operations with our All-in-One Software",
+          type: "website",
+          image: "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif"
+        }
+      }}
+    />
 
     <!--Google Analytics - Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNYR7HDD7W"></script>
