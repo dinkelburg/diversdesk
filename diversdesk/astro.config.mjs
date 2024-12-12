@@ -117,7 +117,5 @@ export default defineConfig({
     clientPrerender: true,
     directRenderScript: true
   },
-  adapter: vercel({
-    edgeMiddleware: true
-  })
+  adapter: vercel()
 });
