@@ -1,5 +1,4 @@
 ---
-// export const prerender = false;
 const url = Astro.request.url;
 const redirectUrl = url.replace('/r/', '/');
 const resp = await fetch(redirectUrl);
