@@ -1,9 +1,10 @@
 ---
+// export const prerender = false;
 const url = Astro.request.url;
 const redirectUrl = url.replace('/r/', '/');
 const resp = await fetch(redirectUrl);
-if (resp.status === 200) return Astro.redirect(redirectUrl)
+if (resp.status === 200) return Astro.redirect(redirectUrl, 307)
 
-return Astro.redirect('/welcome-to-docs/')
+return Astro.redirect('/welcome-to-docs/', 307)
 ---
 <div>redirecting</div>
