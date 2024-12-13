@@ -1,14 +1,12 @@
 ---
-// Importing necessary components
 import { SEO } from "astro-seo";
+import { Schema } from "astro-seo-schema";
 import Navbar from "@components/sections/Navbar.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
 import { SITE } from "@data/constants";
 
-// Setting expected props
 const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
 
-// Interface to type-check the properties
 interface Props {
   title?: string;
   meta?: string;
@@ -21,6 +19,9 @@ interface Props {
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://www.diversdesk.com" />
+    <link rel="icon" href="/favicon.png" />
     <SEO
       title="DiversDesk: Dive Center Software, The Intuitive All-in-One Solution"
       description="DiversDesk is leading the way in dive center operations, with planning & scheduling, advanced paperless onboarding, digital waivers, CRM, online bookings, and integrated payments. Try it today!"
@@ -28,10 +29,35 @@ interface Props {
         basic: {
           title: "DiversDesk: Simplify Your Dive Center Operations with our All-in-One Software",
           type: "website",
-          image: "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif"
+          image: "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif" // best size 1200x630
         }
       }}
     />
+
+    <!-- Astro SEO Schema -->
+    <Schema
+      item={{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "DiversDesk",
+        url: "https://www.diversdesk.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.diversdesk.com/images/logo.avif",
+          alternateName: "DiversDesk Logo",
+        },
+        description: "Leading software for dive center operations with planning, scheduling, digital onboarding, and integrated payments."
+      }}
+    />
+
+    <noscript>
+      <picture>
+        <source srcset="https://www.diversdesk.com/images/logo-dark.avif" media="(prefers-color-scheme: dark)">
+        <source srcset="https://www.diversdesk.com/images/logo-dark.png" media="(prefers-color-scheme: dark)">
+        <source srcset="https://www.diversdesk.com/images/logo.avif">
+        <img src="https://www.diversdesk.com/images/logo.png" alt="DiversDesk Logo">
+      </picture>
+    </noscript>
 
     <!--Google Analytics - Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNYR7HDD7W"></script>
@@ -43,7 +69,6 @@ interface Props {
     </script>
 
     <script is:inline>
-      // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (
         localStorage.getItem("hs_theme") === "dark" ||
         (!("hs_theme" in localStorage) &&
@@ -56,7 +81,6 @@ interface Props {
     </script>
     <script is:inline src="/scripts/vendor/lenis/lenis.js"></script>
     <script is:inline>
-      // Script to handle Lenis library settings for smooth scrolling
       const lenis = new Lenis();
 
       function raf(time) {
@@ -69,10 +93,6 @@ interface Props {
   </head>
 
   <body class="bg-white selection:bg-orange-200 selection:text-neutral-700 dark:bg-neutral-800">
-    <!--
-    Setting up the main structure of the page.
-    The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.
-    -->
     <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
       <Navbar />
       <main>
@@ -81,7 +101,6 @@ interface Props {
     </div>
     <FooterSection />
     <style>
-      /* CSS rules for the page scrollbar and scrolling experience with lenis library */
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
       }
@@ -110,6 +129,29 @@ interface Props {
 
       .lenis.lenis-scrolling iframe {
         pointer-events: none;
+      }
+
+      .logo-light {
+        display: block;
+      }
+
+      .logo-dark {
+        display: none;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .logo-light {
+          display: none;
+        }
+        .logo-dark {
+          display: block;
+        }
+      }
+
+      /* Ensure images scale responsively */
+      img {
+        max-width: 100%;
+        height: auto;
       }
     </style>
   </body>
