@@ -29,10 +29,19 @@ interface Props {
         basic: {
           title: "DiversDesk: Simplify Your Dive Center Operations with our All-in-One Software",
           type: "website",
-          image: "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif" // best size 1200x630
-        }
+          image: "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif", // Main SEO image
+          },
       }}
-    />
+/>
+
+<!-- Fallback for SEO Image -->
+<noscript>
+  <picture>
+    <source srcset="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif" type="image/avif">
+    <source srcset="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.webp" type="image/webp">
+    <img src="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.png" alt="DiversDesk Overview Image">
+  </picture>
+</noscript>
 
     <!-- Astro SEO Schema -->
     <Schema
