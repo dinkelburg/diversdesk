@@ -13,30 +13,18 @@ export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://diversdesk.com",
   image: {
-    domains: ["images.unsplash.com"]
-  },
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "fr"],
-    fallback: {
-      fr: "en"
-    },
-    routing: {
-      prefixDefaultLocale: false
-    }
-  },
+    domains: ["images.unsplash.com"], // Re-add if Unsplash images are used
+  },  
   prefetch: true,
-  integrations: [tailwind(), sitemap({
-    i18n: {
-      defaultLocale: "en",
-      // All URLs that don't contain `fr` after `https://diversdesk.com/` will be treated as default locale, i.e. `en`
-      locales: {
-        en: "en",
-        // The `defaultLocale` value must present in `locales` keys
-        fr: "fr"
-      }
-    }
-  }), starlight({
+  integrations: [
+    tailwind(),
+    sitemap({
+      customPages: [
+        "https://diversdesk.com/features", // Add missing pages
+      ],
+      filter: (page) => !page.includes("/docs"), // Exclude docs pages
+    }),
+    starlight({
     plugins: [starlightImageZoom()],
     title: "Diversdesk Docs",
     defaultLocale: "root",
