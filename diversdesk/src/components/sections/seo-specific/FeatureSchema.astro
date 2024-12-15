@@ -68,21 +68,15 @@
     }
     </script>
     
-    <!-- Fallback mechanism for features image -->
-    <picture>
-      <!-- Primary AVIF format -->
-      <source srcset="https://www.diversdesk.com/images/features-image.avif" type="image/avif">
-      <!-- Fallback WebP format -->
-      <source srcset="https://www.diversdesk.com/images/features-image.webp" type="image/webp">
-      <!-- Fallback PNG or JPEG format -->
-      <img src="https://www.diversdesk.com/images/features-image.png" alt="Dive Center Management Software Features">
-    </picture>
 
-    <!-- Fallback for users with JavaScript disabled -->
-    <noscript>
+    <!-- Fallback mechanism for features image -->
+    <div style="display: none;">
       <picture>
+        <!-- Primary AVIF format -->
         <source srcset="https://www.diversdesk.com/images/features-image.avif" type="image/avif">
+        <!-- Fallback WebP format -->
         <source srcset="https://www.diversdesk.com/images/features-image.webp" type="image/webp">
+        <!-- Fallback PNG or JPEG format -->
         <img src="https://www.diversdesk.com/images/features-image.png" alt="Dive Center Management Software Features">
       </picture>
-    </noscript>
+    </div>
