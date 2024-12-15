@@ -13,7 +13,7 @@ export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
   site: "https://diversdesk.com",
   image: {
-    domains: ["images.unsplash.com"], // Re-add if Unsplash images are used
+    domains: ["images.unsplash.com"], 
   },  
   prefetch: true,
   integrations: [
