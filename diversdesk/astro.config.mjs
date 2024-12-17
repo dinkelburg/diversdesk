@@ -37,7 +37,7 @@ export default defineConfig({
     defaultLocale: "root",
     // locales: {
     //   root: {
-    //     label: "English",
+    //     label: "English",  
     //     lang: "en",
     //   },
     //   de: { label: "Deutsch", lang: "de" },

@@ -5,13 +5,14 @@ import Navbar from "@components/sections/Navbar.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
 import { SITE } from "@data/constants";
 
-const { title = SITE.title, meta, structuredData, lang = "en" } = Astro.props;
+const { title = SITE.title, meta, structuredData, lang = "en", robots = "index, follow"} = Astro.props;
 
 interface Props {
   title?: string;
   meta?: string;
   structuredData?: object;
   lang?: string;
+  robots?: string; 
 }
 ---
 
@@ -22,6 +23,7 @@ interface Props {
     <meta name="theme-color" content="#ffffff">
     <link rel="canonical" href="https://www.diversdesk.com" />
     <link rel="icon" href="/favicon.png" />
+    <meta name="robots" content={robots} /> <!-- Added meta robots tag -->
     <SEO
       title="DiversDesk: Dive Center Software, The Intuitive All-in-One Solution"
       description="DiversDesk is leading the way in dive center operations, with planning & scheduling, advanced paperless onboarding, digital waivers, CRM, online bookings, and integrated payments. Try it today!"
