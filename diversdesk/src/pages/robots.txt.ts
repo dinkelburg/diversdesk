@@ -5,7 +5,6 @@ const robotsTxt = `
 User-agent: Googlebot
 Disallow:
 Allow: /
-Crawl-delay: 10
 
 User-agent: Yandex
 Disallow:
@@ -18,7 +17,15 @@ Allow: /
 Crawl-delay: 2
 
 User-agent: *
-Disallow: /
+Disallow: /user_manual/
+Disallow: /quickstart_guide/
+Disallow: /articles/
+Disallow: /video_training/
+Disallow: /support/
+Disallow: /updates/
+Disallow: /work_in_progress/
+Disallow: /welcome-to-docs/
+Allow: /
 
 Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
 `.trim();

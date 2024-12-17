@@ -22,7 +22,14 @@ export default defineConfig({
       customPages: [
         "https://diversdesk.com/features", // Add missing pages
       ],
-      filter: (page) => !page.includes("/docs"), // Exclude docs pages
+      filter: (page) => !page.includes("/user_manual") &&
+                        !page.includes("/quickstart_guide") &&
+                        !page.includes("/articles") &&
+                        !page.includes("/video_training")&&
+                        !page.includes("/support")&&
+                        !page.includes("/updates")&&
+                        !page.includes("/work_in_progress")&&
+                        !page.includes("/welcome_to_docs"),
     }),
     starlight({
     plugins: [starlightImageZoom()],
@@ -67,9 +74,6 @@ export default defineConfig({
       label: "Video Training",
       link: '/video_training'
     }],
-    // social: {
-    //   github: "https://github.com/mearashadowfax/ScrewFast",
-    // },
     disable404Route: true,
     customCss: ["./src/styles/starlight.css"],
     favicon: "/favicon.ico",

@@ -4,6 +4,7 @@ description: How to create your first activity
 sidebar:
     label: Booking and Scheduling
     order: 5
+
 ---
 
 ## Create a booking

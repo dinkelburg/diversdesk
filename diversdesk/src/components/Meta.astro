@@ -49,7 +49,20 @@ const appleTouchIcon = await getImage({
   height: 180,
   format: "png",
 });
+
+const isDocsPage = Astro.url.pathname.startsWith('/user_manual') ||
+                   Astro.url.pathname.startsWith('/quickstart_guide') ||
+                   Astro.url.pathname.startsWith('/articles') ||
+                   Astro.url.pathname.startsWith('/video_training') ||
+                   Astro.url.pathname.startsWith('/support') ||
+                   Astro.url.pathname.startsWith('/updates') ||
+                   Astro.url.pathname.startsWith('/work_in_progress') ||
+                   Astro.url.pathname.startsWith('/welcome-to-docs');
+
 ---
+
+{isDocsPage && <meta name="robots" content="noindex, nofollow" />}
+
 
 <!-- Inject structured data into the page if provided. This data is formatted as JSON-LD, a method recommended by Google for structured data pass:
      https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data -->{

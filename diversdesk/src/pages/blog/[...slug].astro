@@ -1,5 +1,6 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import { SEO } from "astro-seo";
 import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import CardRelated from "@components/ui/cards/CardRelated.astro";
 import Bookmark from "@components/ui/buttons/Bookmark.astro";
@@ -10,30 +11,80 @@ import { capitalize, formatDate } from "@utils/utils";
 import { getCollection } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Use `getStaticPaths` to generate static routes for blog posts on build
+
+// Generate paths for all blog posts
 export async function getStaticPaths() {
   const blogPosts = await getCollection("blog", ({ id }) => id.startsWith("en/"));
-  
   return blogPosts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
   }));
 }
 
-// Get the current post's data
+// Props and content extraction
 const { post } = Astro.props;
-
-// Get all blog posts for related posts section
 const blogPosts = await getCollection("blog", ({ id }) => id.startsWith("en/"));
 const relatedPosts = blogPosts.filter((blogEntry) => blogEntry.slug !== post.slug);
-
-// Render the markdown content outside of frontmatter
 const { Content } = await post.render();
-
 const pageTitle = `${post.data.title} | ${SITE.title}`;
+const pageUrl = `https://diversdesk.com/blog/${post.slug}`;
 ---
 
 <MainLayout title={pageTitle}>
+
+  <!--Custom SEO -->
+  <SEO 
+  title={post.data.title} 
+  description={post.data.description} 
+  openGraph={{ 
+    basic: { 
+      title: post.data.title, 
+      type: "article", 
+      image: post.data.cardImage.src,
+      url: pageUrl
+    }
+  }}
+  />
+
+
+  <!-- BlogPosting Schema -->
+  <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{post.data.title}",
+  "description": "{post.data.description}",
+  "author": {
+    "@type": "Person",
+    "name": "{post.data.author}"
+  },
+"datePublished": "{post.data.pubDate}",
+  "dateModified": "{post.data.dateModified || post.data.pubDate}", 
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://diversdesk.com/blog/{post.slug}"
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": "{post.data.cardImage.src}",
+    "width": 800,
+    "height": 450
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DiversDesk",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.diversdesk.com/images/logo.avif",
+      "width": 250,
+      "height": 60
+    }
+  },
+  "url": "https://diversdesk.com/blog/{post.slug}"
+}
+</script>
+
+
   <section class="mx-auto max-w-3xl px-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pt-10">
     <div class="max-w-2xl">
       <div class="mb-6 flex items-center justify-between">
@@ -59,10 +110,12 @@ const pageTitle = `${post.data.title} | ${SITE.title}`;
           </div>
         </div>
       </div>
+
       <!--Blog post title-->
-      <h2 class="mb-3 text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-3xl">
+      <h1 class="mb-3 text-2xl font-bold text-neutral-800 dark:text-neutral-200 md:text-3xl">
         {post.data.title}
-      </h2>
+      </h1>
+
        <!-- Blog post image (cardImage) after 2nd paragraph -->
        <div class="h-64 overflow-hidden rounded-lg shadow-lg md:h-80 mb-6">
         <Image
