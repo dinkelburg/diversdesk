@@ -5,6 +5,7 @@ sidebar:
     label: Menu items & pages
     order: 7
 pagefind: false
+robots: noindex, nofollow
 ---
 
 This page descibes all the different menu items and connected pages available to you. 

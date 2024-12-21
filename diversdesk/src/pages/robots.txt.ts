@@ -17,14 +17,7 @@ Allow: /
 Crawl-delay: 2
 
 User-agent: *
-Disallow: /user_manual/
-Disallow: /quickstart_guide/
-Disallow: /articles/
-Disallow: /video_training/
-Disallow: /support/
-Disallow: /updates/
-Disallow: /work_in_progress/
-Disallow: /welcome-to-docs/
+Disallow: 
 Allow: /
 
 Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}

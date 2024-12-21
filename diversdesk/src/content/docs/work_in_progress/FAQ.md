@@ -2,6 +2,7 @@
 title: Frequently Asked Questions
 description: All the frequently asked questions listed
 pagefind: false
+robots: noindex, nofollow
 ---
 
 ## Q: Why are the menu items not visible to me? 

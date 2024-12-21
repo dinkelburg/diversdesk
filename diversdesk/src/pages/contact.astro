@@ -28,5 +28,33 @@ const pageTitle: string = `Contact | ${SITE.title}`;
     "inLanguage": "en-US"
   }}
 >
+
+  <slot name="canonical">
+    <link rel="canonical" href="https://diversdesk.com/contact" />
+  </slot>
+
+  <slot name="head">
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Contact Us | Diversdesk" />
+    <meta property="og:description" content="Reach out to our team to discuss your dive center needs and explore tailored solutions." />
+    <meta property="og:image" content="/images/contact-hero.avif" />
+    <meta property="og:url" content="https://diversdesk.com/contact" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact Us | Diversdesk" />
+    <meta name="twitter:description" content="Reach out to our team to discuss your dive center needs and explore tailored solutions." />
+    <meta name="twitter:image" content="/images/contact-hero.avif" />
+  </slot>
+
+  <!-- Hero image fallbacks -->
+  <noscript>
+    <picture>
+      <source srcset="/images/contact-hero.avif" type="image/avif" />
+      <source srcset="/images/contact-hero.webp" type="image/webp" />
+      <img src="/images/contact-hero.png" alt="A customer digitally onboarding using a mobile phone, showcasing DiversDesk's expert dive center solutions." />
+    </picture>
+  </noscript>
+
   <ContactSection />
 </MainLayout>

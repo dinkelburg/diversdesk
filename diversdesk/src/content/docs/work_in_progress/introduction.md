@@ -1,6 +1,8 @@
 ---
 title: An introduction to Divers Desk
 description: An introduction to Divers Desk.
+pagefind: false
+robots: noindex, nofollow
 ---
 
 **Divers desk** is an advanced dive center management software designed to simplify your daily operations. With a user-friendly interface, it provides visual insights into boat and trip capacity, ensuring efficient planning for each day. The integrated Customer Base offers valuable information on returning customers, allowing you to build lasting relationships.

@@ -5,6 +5,7 @@ sidebar:
     label: Payment Methods
     order: 8
 pagefind: false
+robots: noindex, nofollow
 ---
 
 By default, the following payment methods are available to you:

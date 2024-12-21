@@ -1,6 +1,7 @@
 ---
 title: Quickstart Guide
 description: Get started through a few simple settings
+robots: noindex, nofollow
 ---
 
 Hi there! <br>

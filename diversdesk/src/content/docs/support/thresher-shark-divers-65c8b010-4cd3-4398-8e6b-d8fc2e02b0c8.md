@@ -1,6 +1,7 @@
 ---
 title: Thesher Shark Divers _ Support Page 
 pagefind: false
+robots: noindex, nofollow
 ---
 <div style="display: flex; justify-content: space-between; width: 100%; padding: 0; gap: 10px;">
     <a href="https://sharing.clickup.com/2633992/l/h/2gc88-2495/61e2d3b6136945f" style="display: inline-block; padding: 6px 20px; background-color: #333333; color: white; text-decoration: none; border-radius: 5px;" target="_blank">

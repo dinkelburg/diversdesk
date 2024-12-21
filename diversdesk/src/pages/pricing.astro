@@ -9,11 +9,59 @@ import pricing from "@data/pricing.json";
 ---
 
 
-<MainLayout title="Pricing">
-    <SoftwareApplicationSchema/>
+<MainLayout
+    title="Pricing Plans | DiversDesk"
+    structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.diversdesk.com/pricing",
+    "url": "https://www.diversdesk.com/pricing",
+    "name": "Pricing Plans | DiversDesk",
+    "description": "Explore DiversDesk's affordable pricing plans for dive center management software. Choose the plan that fits your needs and streamline your operations today.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "url": "https://www.diversdesk.com",
+      "name": "DiversDesk",
+      "description": "Comprehensive Dive Center Management Software with Booking, Scheduling, Waivers, and Seamless Integration. Enhance Your Dive Operations Worldwide."
+    },
+    "inLanguage": "en-US"
+  }}
+>
+  <!-- Canonical URL -->
+  <slot name="canonical">
+    <link rel="canonical" href="https://www.diversdesk.com/pricing" />
+  </slot>
+
+  <!-- Meta Tags -->
+  <slot name="head">
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Pricing Plans | DiversDesk" />
+    <meta property="og:description" content="Explore DiversDesk's affordable pricing plans for dive center management software. Choose the plan that fits your needs and streamline your operations today!" />
+    <meta property="og:image" content="/images/Laptop-and-phone-diversdesk.avif" />
+    <meta property="og:url" content="https://www.diversdesk.com/pricing" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pricing Plans | DiversDesk" />
+    <meta name="twitter:description" content="Explore DiversDesk's affordable pricing plans for dive center management software. Choose the plan that fits your needs and streamline your operations today!" />
+    <meta name="twitter:image" content="/images/Laptop-and-phone-diversdesk.avif" />
+  </slot>
+
+  <!-- Hero image fallback -->
+  <noscript>
+    <picture>
+      <source srcset="/images/Laptop-and-phone-diversdesk.avif" type="image/avif" />
+      <source srcset="/images/Laptop-and-phone-diversdesk.webp" type="image/webp" />
+      <img src="/images/Laptop-and-phone-diversdesk.png" alt="A laptop and phone displaying DiversDesk dive center management software, showcasing scheduling and booking features." />
+    </picture>
+  </noscript>
+
     <Container >
         <!--<Sectionhead/>-->
         <PricingSection pricing={pricing}/>
         <ComparePricing/>
     </Container>
+
+    <SoftwareApplicationSchema/>
+
 </MainLayout>

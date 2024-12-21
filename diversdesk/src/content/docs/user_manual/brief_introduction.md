@@ -4,6 +4,7 @@ description: A brief introduction to our user manual.
 sidebar:
     label: Brief Introduction
     order: 1
+robots: noindex, nofollow
 ---
 
 **Welcome to the Diversdesk User Manual!** <br>

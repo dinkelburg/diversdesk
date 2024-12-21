@@ -1,6 +1,7 @@
 ---
 title: Bambu Divers _ Support Page 
 pagefind: false
+robots: noindex, nofollow
 ---
 <div style="text-align: right;">
     <a href="https://pondokbambu.diversdesk.com/operator/location/1f37bb42-5594-432e-9555-39f7c220fef1" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    

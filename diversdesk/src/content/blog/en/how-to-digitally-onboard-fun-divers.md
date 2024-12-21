@@ -1,18 +1,39 @@
 ---
-title: "How to Digitally Onboard My Fun Divers? Tips for Registration and Waivers"
+title: "Digitally Onboard Fun Divers | Tips for Waivers & Registration"
 description: "Expert tips on how to implement digital registration, official and custom waivers, ensure legal compliance and improve customer experience."
 author: "Bart"
 authorImage: "@/images/blog/bart.avif"
-authorImageAlt: "Avatar Description"
+authorImageAlt: "Bart, Co-founder and CEO of diversdesk"
 pubDate: 2024-08-20
-dateModified: 2024-12-17
+dateModified: 2024-12-21
 cardImage: "@/images/blog/post_1_card_c.png"
-cardImageAlt: "Different official and custom legaly binding waivers for fun-divers displayed on mobile phones using signature and checkbox acknoledgement"
+cardImageAlt: "Official and custom legally binding waivers for fun-divers displayed on mobile phones using signature and checkbox acknowledgment"
 readTime: 4
-tags: ["Waivers", "Registration", "Legal" ]
+tags: ["Digital Onboarding", "Waivers", "Customer Experience", "Legal Compliance", "Dive Centers"]
 contents: [""]
 
+robots: "index, follow"
+structuredData:
+  "@context": "https://schema.org"
+  "@type": "BlogPosting"
+  headline: "How to Digitally Onboard My Fun Divers? Tips for Registration and Waivers"
+  datePublished: "2024-08-20"
+  dateModified: "2024-12-17"
+  author:
+    "@type": "Person"
+    name: "Bart"
+  publisher:
+    "@type": "Organization"
+    name: "DiversDesk"
+    logo:
+      "@type": "ImageObject"
+      url: "https://www.diversdesk.com/logo.png"
+  description: "Expert tips for dive centers to streamline digital onboarding, registration, and waivers for fun divers. Enhance operations and ensure legal compliance."
+  mainEntityOfPage:
+    "@type": "WebPage"
+    "@id": "https://www.diversdesk.com/blog/en/how-to-digitally-onboard-fun-divers"
 ---
+
 <!-- Table of Contents -->
 <nav id="toc" class="mb-8">
   <h2 class="text-xl font-bold mb-3">Table of Contents</h2>

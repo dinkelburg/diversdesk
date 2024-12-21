@@ -1,5 +1,5 @@
 ---
-// Import necessary components
+// Import the necessary components  
 import MainLayout from "@/layouts/MainLayout.astro";
 import FeatureSchema from "@components/sections/seo-specific/FeatureSchema.astro"; 
 import MainSection from "@components/ui/blocks/MainSection.astro";
@@ -113,45 +113,31 @@ const articles: Article[] =
     btnTitle: "Book a Demo",
     btnURL: "https://calendly.com/diversdesk-info/demo",
   },
-  // {
-  //   isRightSection: true,
-  //   title: "White Label Functionality",
-  //   content: "text here",
-  //   single: false,
-  //   imgOne: save_time,
-  //   imgOneAlt: "Construction workers orchestrating a project",
-  //   imgTwo: save_time,
-  //   imgTwoAlt: "Aerial view of managed construction",
-  // },
-  // {
-  //   isRightSection: false,
-  //   title: "Metrics",
-  //   content:
-  //     "Our commitment to your project doesn't end at completion. Diversdesk offers ongoing maintenance and support services to ensure your construction's longevity and performance. From regular check-ups to emergency assistance, our responsive team is there to provide seamless support.",
-  //   img: save_time,
-  //   imgAlt:
-  //     "Man in orange and black vest wearing white helmet holding yellow and black power tool",
-  // },
-  // {
-  //   isRightSection: true,
-  //   title: "Multi-Location Support",
-  //   content:
-  //     "For our larger enterprise clients, Diversdesk offers custom solutions designed to meet specific industry challenges. By understanding your unique needs, we engineer tailored strategies aimed at optimizing your operations, enhancing efficiency, and driving your business forward.",
-  //   single: false,
-  //   imgOne: save_time,
-  //   imgOneAlt: "In progress building structure",
-  //   imgTwo: save_time,
-  //   imgTwoAlt: "Brown and gray building under construction",
-  //   btnExists: true,
-  //   btnTitle: "Read more",
-  //   btnURL: "#",
-  // },
 ];
 
 const pageTitle: string = `Features | ${SITE.title}`;
 ---
 
 <MainLayout title={pageTitle} robots="index, follow">
+  
+  <slot name="canonical">
+    <link rel="canonical" href="https://www.diversdesk.com/features" />
+  </slot>
+
+  <slot name="head">  
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Features | DiversDesk" />
+    <meta property="og:description" content="Discover DiversDesk's powerful features for dive center management: streamlined planning, scheduling, CRM, and paperless onboarding." />
+    <meta property="og:image" content="https://www.diversdesk.com/images/features-image.avif" />
+    <meta property="og:url" content="https://www.diversdesk.com/features" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Features | DiversDesk" />
+    <meta name="twitter:description" content="Explore DiversDesk's software features: planning, scheduling, CRM, and customer onboarding." />
+    <meta name="twitter:image" content="https://www.diversdesk.com/images/features-image.avif" />
+  </slot>
+
   <FeatureSchema />
 
   <!-- MainSection is the introductory section of the page, it also contains a CTA button-->
@@ -200,7 +186,7 @@ const pageTitle: string = `Features | ${SITE.title}`;
         </LeftSection>
       );
     })
-  }
+  }   
   <!--FeaturesStats section showcases essential stats valuable to users-->
   <!-- <FeaturesStats
     title="By the Numbers"
@@ -221,5 +207,5 @@ const pageTitle: string = `Features | ${SITE.title}`;
         description: "client growth year-over-year",
       },
     ]}
-   /> -->
+  /> -->
 </MainLayout> 

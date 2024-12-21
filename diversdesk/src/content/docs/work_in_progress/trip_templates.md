@@ -5,4 +5,5 @@ sidebar:
     label: Trip templates
     order: 5
 pagefind: false
+robots: noindex, nofollow
 ---

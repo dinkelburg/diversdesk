@@ -26,18 +26,28 @@ import Container from "@components/container.astro";
 import CompanyLogos from "@components/CompanyLogos.astro";
 // import JOM from "@images/ti_jomadventure_avatar.png"
 
-
-const avatarSrcs: Array<string> = [
-    "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-    "https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-    "https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80",
-    "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-];
-
 ---
 
 <MainLayout>
-  <SoftwareApplicationSchema/>
+    <slot name="canonical">
+      <link rel="canonical" href="https://www.diversdesk.com" />
+    </slot>
+    <slot name="head">
+      <link rel="sitemap" href="/sitemap-index.xml" />
+      <meta name="robots" content="index, follow" />
+      <meta property="og:title" content="Effortless Dive Center Management | DiversDesk" />
+      <meta property="og:description" content="Streamline your dive center operations with DiversDesk's all-in-one software. Features include planning, scheduling, onboarding, and more." />
+      <meta property="og:image" content="/images/Laptop-and-phone-diversdesk.avif" />
+      <meta property="og:url" content="https://www.diversdesk.com" />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Effortless Dive Center Management | DiversDesk" />
+      <meta name="twitter:description" content="Streamline your dive center operations with DiversDesk's all-in-one software. Features include planning, scheduling, onboarding, and more." />
+      <meta name="twitter:image" content="/images/Laptop-and-phone-diversdesk.avif" />
+    </slot>
+    
+    <SoftwareApplicationSchema/>
+
     <!-- <AnnouncementBanner
       btnId="dismiss-button"
       btnTitle="Schedule a demo here"
@@ -52,14 +62,21 @@ const avatarSrcs: Array<string> = [
             primaryBtnURL="https://calendly.com/diversdesk-info/demo"
             secondaryBtn="Start a Free Trial"
             secondaryBtnURL="/signup/trial"
-            withReview={false}
-            avatars={avatarSrcs}
-            rating=`<span class="font-bold">4.8</span> / 5`
-            starCount={4}
+            withReview={false}  
+            rating=`<span class="font-bold">5</span> / 5`
+            starCount={5}
             reviews=`From Over <span class="font-bold">12.8k</span> Reviews`
             src={heroImage}
             alt="Diversdesk its Dive Center Management tool displayed on a laptop and a phone. The planning page is shown on the screens"
-    />
+    >
+      <noscript>
+        <picture>
+          <source srcset="/images/Laptop-and-phone-diversdesk.avif" type="image/avif" />
+          <source srcset="/images/Laptop-and-phone-diversdesk.webp" type="image/webp" />
+          <img src="/images/Laptop-and-phone-diversdesk.png" alt="Diversdesk Dive Center Management tool displayed on a laptop and a phone. The planning page is shown on the screens" />
+        </picture>
+      </noscript>
+    </HeroSection>
 
     <!-- <ClientsSection
       title="Trusted by Centers Worldwide"

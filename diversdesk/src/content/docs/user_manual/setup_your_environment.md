@@ -4,6 +4,7 @@ description: Enter your company details, products and activities
 sidebar:
     label: Setup Your Environment
     order: 3
+robots: noindex, nofollow
 ---
 
 ## Company Details

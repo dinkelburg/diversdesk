@@ -4,6 +4,7 @@ description: How to create and connect customer onboarding journeys.
 sidebar:
     label: Creating Onboarding Journeys
     order: 6
+robots: noindex, nofollow
 ---
 
 ## Creating an onboarding Journey

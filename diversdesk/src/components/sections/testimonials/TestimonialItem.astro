@@ -28,12 +28,17 @@ interface Props {
   <div class="mt-4">
     <div class="flex items-center pl-0 pr-4 py-4 rounded-lg">
       <div class="flex-shrink-0">
-        <img
-          class="h-10 w-10 rounded-full"
-          src={avatarSrc}
-          alt="Avatar Description"
-          loading={"eager"}
-        />
+        <!-- Optimized Image with fallbacks -->
+        <picture>
+          <source srcset={`${avatarSrc.replace('.png', '.avif')}`} type="image/avif" />
+          <source srcset={`${avatarSrc.replace('.png', '.webp')}`} type="image/webp" />
+          <img
+            class="h-10 w-10 rounded-full"
+            src={avatarSrc}
+            alt={`Avatar of ${author}, ${role}`}
+            loading="lazy"
+          />
+        </picture>
       </div>
       <div class="ms-4 grow">
         <div class="flex items-center justify-between">

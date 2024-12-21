@@ -4,6 +4,7 @@ description: Ways to onboard your customer
 sidebar:
     label: Customer Registration/Booking Methods
     order: 5
+robots: noindex, nofollow
 ---
 
 ### Intro to Diversdesk’s Onboarding Flexibility

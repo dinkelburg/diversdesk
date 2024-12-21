@@ -21,7 +21,9 @@ interface Props {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
-    <link rel="canonical" href="https://www.diversdesk.com" />
+    <slot name="canonical">
+      <link rel="canonical" href="https://www.diversdesk.com" />
+    </slot>
     <link rel="icon" href="/favicon.png" />
     <meta name="robots" content={robots} /> <!-- Added meta robots tag -->
     <SEO
@@ -31,19 +33,21 @@ interface Props {
         basic: {
           title: "DiversDesk: Simplify Your Dive Center Operations with our All-in-One Software",
           type: "website",
-          image: "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif", // Main SEO image
+          image: "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif", 
           },
       }}
-/>
+    />
+    <!-- Allow page-specific head content -->
+    <slot name="head" />
 
-<!-- Fallback for SEO Image -->
-<noscript>
-  <picture>
-    <source srcset="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif" type="image/avif">
-    <source srcset="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.webp" type="image/webp">
-    <img src="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.png" alt="DiversDesk Overview Image">
-  </picture>
-</noscript>
+    <!-- Fallback for SEO Image -->
+    <noscript>
+      <picture>
+        <source srcset="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif" type="image/avif">
+        <source srcset="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.webp" type="image/webp">
+        <img src="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.png" alt="DiversDesk Overview Image">
+      </picture>
+    </noscript>
 
     <!-- Astro SEO Schema -->
     <Schema

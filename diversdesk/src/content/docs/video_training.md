@@ -1,5 +1,6 @@
 ---
 title: Diversdesk video training
+robots: noindex, nofollow
 
 ---
 

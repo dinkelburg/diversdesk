@@ -5,6 +5,7 @@ sidebar:
     label: CRM-only plan
     order: 5
 pagefind: false
+robots: noindex, nofollow
 ---
 
 ## For who is the CRM-only plan

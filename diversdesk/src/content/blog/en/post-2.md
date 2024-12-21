@@ -9,9 +9,7 @@ cardImage: "@/images/blog/post_2_card.png"
 cardImageAlt: ""
 readTime: 5
 tags: ["Planning", "Scheduling", "Booking" ]
-contents: [
-""
-]
+contents: [""]
 ---
 
 In the fast-paced world of dive centers, where every day is an adventure filled with unique challenges, having a flexible and efficient planning and scheduling system in place is therefore crucial. Dive centers are often located in dynamic, tourism-driven areas where demand can fluctuate rapidly, and the ability to adapt is key to success. But what exactly makes a planner and scheduler flexible enough to meet the needs of a modern dive center? Let's explore the key features and how they address common pain points in the industry.
