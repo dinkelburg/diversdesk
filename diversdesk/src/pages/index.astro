@@ -44,6 +44,21 @@ import CompanyLogos from "@components/CompanyLogos.astro";
       <meta name="twitter:title" content="Effortless Dive Center Management | DiversDesk" />
       <meta name="twitter:description" content="Streamline your dive center operations with DiversDesk's all-in-one software. Features include planning, scheduling, onboarding, and more." />
       <meta name="twitter:image" content="/images/Laptop-and-phone-diversdesk.avif" />
+
+      <script type="application/ld+json" is:inline>
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.diversdesk.com"
+            }
+          ]
+        }
+      </script>
     </slot>
     
     <SoftwareApplicationSchema/>
