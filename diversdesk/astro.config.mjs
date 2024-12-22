@@ -18,19 +18,23 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      customPages: [
-        'https://diversdesk.com/features', 
-      ],
-      filter: (page) => !page.includes('/user_manual') &&
-                        !page.includes('/quickstart_guide') &&
-                        !page.includes('/articles') &&
-                        !page.includes('/video_training')&&
-                        !page.includes('/support')&&
-                        !page.includes('/updates')&&
-                        !page.includes('/work_in_progress')&&
-                        !page.includes('/welcome_to_docs')&&
-                        !page.includes('/terms-conditions')&&
-                        !page.includes('/privacy-policy'),
+      // Enhanced filter to exclude unwanted pages
+      filter: (page) => !(
+        page.includes('/signup/form/error') ||
+        page.includes('/signup/form/success') ||
+        page.includes('/signup/trial/error') ||
+        page.includes('/signup/trial/success') ||
+        page.includes('/welcome-to-docs') ||
+        page.includes('/user_manual') ||
+        page.includes('/quickstart_guide') ||
+        page.includes('/articles') ||
+        page.includes('/video_training') ||
+        page.includes('/support') ||
+        page.includes('/updates') ||
+        page.includes('/work_in_progress') ||
+        page.includes('/terms-conditions') ||
+        page.includes('/privacy-policy')
+      ),
     }),
     starlight({
     plugins: [starlightImageZoom()],
