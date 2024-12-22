@@ -13,6 +13,7 @@ tags: ["Digital Onboarding", "Waivers", "Customer Experience", "Legal Compliance
 contents: [""]
 
 robots: "index, follow"
+canonical: "https://www.diversdesk.com/blog/en/how-to-digitally-onboard-fun-divers"
 structuredData:
   "@context": "https://schema.org"
   "@type": "BlogPosting"
