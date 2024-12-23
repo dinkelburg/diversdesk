@@ -4,6 +4,7 @@ description: An explanation of what tags are and how to use them effectively.
 sidebar:
     label: Guide to Using Categories & Tags
     order: 7
+robots: noindex
 ---
 
 To more efficiently filter specific products in your product/activity list, we have introduced Tags. Tags allow you to quickly jump to a specific product/activity. In addition to tags, there are default sub-categories for each activity type made available to you. These can be found on the 'Products' page and during activity creation.

@@ -4,6 +4,7 @@ description: A reference page in my new Starlight docs site.
 sidebar:
     label: Create a Custom Registration Form
     order: 2
+robots: noindex
 ---
 
 For each type of activity, Divers Desk has a default form. These can be found through the Forms menu item.

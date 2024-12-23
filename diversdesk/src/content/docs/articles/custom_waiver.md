@@ -4,7 +4,7 @@ description: In depth guide to create a custom waiver that meets your needs.
 sidebar:
     label: Create a Custom Waiver
     order: 3
-    # badge: melissa
+robots: noindex
 ---
 
 The Waiver page offers all the functionality you need to create a custom, well-designed waiver that goes beyond legal protection. This tool is designed to help you build trust with your customers by setting clear expectations, reinforcing transparency, and showing attention to detail in every aspect of your business.

@@ -4,7 +4,7 @@ description: How to and different methods to create or login to your account
 sidebar:
     label: Login or Sign up
     order: 2
-robots: noindex, nofollow
+robots: noindex
 ---
 
 ## Create an account

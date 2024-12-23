@@ -4,6 +4,7 @@ description: How to setup and use direct bookings or Self-bookings.
 sidebar:
     label: Direct Bookings
     order: 5
+robots: noindex
 ---
 
 Below, you will find the details of Diversdesk's first self-booking version, which involves a redirect from your website or a link you can share with your customers. This link directs them to either **'My Page'**, the desired **activity**, or directly to **step 1 of the registration process** within your Diversdesk environment.

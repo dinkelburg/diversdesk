@@ -5,7 +5,7 @@ export const SITE = {
   tagline: "Intutitive Dive Center Management Software",
   description: "Diversdesk offers state of the art Dive Center Management Software. Contact our sales team for fitting solution for your business.",
   description_short: "Intuitive Dive Center Management Software by Diversdesk.",
-  url: "https://diversdesk.com",
+  url: "https://www.diversdesk.com",
   author: "Bart Klein Goldewijk",
 };
 

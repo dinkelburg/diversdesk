@@ -1,7 +1,7 @@
 ---
 title: Menu and Navigation
 description: Know your way around the platform
-robots: noindex, nofollow
+robots: noindex
 ---
 
 After logging into your account, all navigation through the platform starts with the hamburger menu in the top-left corner of your screen.

@@ -1,7 +1,7 @@
 ---
 title: Customer Base
 description: Customer base
-robots: noindex, nofollow
+robots: noindex
 ---
 
 Through the customer base you can keep track of your new and returning customers.

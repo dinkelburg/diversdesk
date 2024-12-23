@@ -4,6 +4,7 @@ description: The customer you are about to onboard does not yet know on how many
 sidebar:
     label: Adding Dives to an ongoing activity
     order: 1
+robots: "noindex"
 ---
 
 ### Use case: 

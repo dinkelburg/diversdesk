@@ -4,6 +4,7 @@ description: In depth guide to create a custom waiver that meets your needs.
 sidebar:
     label: Waiver Cheatsheet 
     order: 4
+robots: noindex
 ---
 
 ## Diversdesk Waiver Cheat Sheet

@@ -4,7 +4,7 @@ description: Allocate different rights to your staff members
 sidebar:
     label: Users and Rights
     order: 3
-robots: noindex, nofollow
+robots: noindex
 ---
 
 On the user page you can create users accounts and assign the appropriate rights to your staff members.

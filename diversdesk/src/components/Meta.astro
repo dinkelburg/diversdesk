@@ -59,9 +59,16 @@ const isDocsPage = Astro.url.pathname.startsWith('/user_manual') ||
                    Astro.url.pathname.startsWith('/work_in_progress') ||
                    Astro.url.pathname.startsWith('/welcome-to-docs');
 
+const isNoFollowPage = Astro.url.pathname.startsWith('/support');
+
 ---
 
-{isDocsPage && <meta name="robots" content="noindex, nofollow" />}
+{isDocsPage && (
+  <meta
+    name="robots"
+    content={`noindex${isNoFollowPage ? ', nofollow' : ''}`}
+  />
+)}
 
 
 <!-- Inject structured data into the page if provided. This data is formatted as JSON-LD, a method recommended by Google for structured data pass:
