@@ -18,7 +18,8 @@
       "Support (office hours)"
     ],
     "purchaseBtnTitle": "Read more",
-    "purchaseLink": "/pricing/#Compare_Plans"
+    "purchaseLink": "/pricing/#Compare_Plans",
+    "linkAlt": "Read more about the CRM Only plan"
   },
 
   "Starter": {
@@ -34,7 +35,8 @@
       "Support (office hours)"
     ],
     "purchaseBtnTitle": "Read more",
-    "purchaseLink": "/pricing/#Compare_Plans"
+    "purchaseLink": "/pricing/#Compare_Plans",
+    "linkAlt": "Read more about the Starter plan"
   },
   "Pro": {
     "name": "Pro",
@@ -49,7 +51,8 @@
       "Priority 24/7 support"
     ],
     "purchaseBtnTitle": "Read more",
-    "purchaseLink": "/pricing/#Compare_Plans"
+    "purchaseLink": "/pricing/#Compare_Plans",
+    "linkAlt": "Read more about the Pro plan"
   },
   "Enterprise": {
     "name": "Enterprise",
@@ -62,6 +65,7 @@
       "Priority 24/7 support"
     ],
     "purchaseBtnTitle": "Read more",
-    "purchaseLink": "/pricing/#Compare_Plans"
+    "purchaseLink": "/pricing/#Compare_Plans",
+    "linkAlt": "Read more about the Enterprise plan"
   }
 }

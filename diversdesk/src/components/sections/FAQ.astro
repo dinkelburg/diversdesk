@@ -11,6 +11,7 @@ interface Faq {
   answer: string;
   linkText?: string; // Optional, as not all answers may have links
   url?: string;      // Optional, as not all answers may have links
+  linkAlt?: string; // Optional, link alt text
   answer2?: string;  // Optional, the second part of the answer after the link
 }
 
@@ -55,7 +56,11 @@ const makeId = (base: string, index: number) => `${base}${index + 1}`;
               {faq.answer}
               {faq.linkText && faq.url && (
                 <>
-                  <a href={faq.url} target="_blank" rel="noopener noreferrer" class="text-orange-500 font-bold">
+                  <a href={faq.url} 
+                     target="_blank" 
+                     rel="noopener noreferrer" 
+                     class="text-orange-500 font-bold"
+                     aria-label={faq.linkAlt || faq.linkText} >
                     {faq.linkText}
                   </a>
                 </>
