@@ -11,10 +11,10 @@
     },
     {
       "question": "How does the free trial work?",
-      "answer": "Our free trial gives you full access to Diversdesk’s features for a limited period. After the trial, you can choose a plan that best fits your needs and convert to a paid plan, unless you decide to end our journey together. No strings attached. Rest assured, we'll notify you when the end of your trial is approaching. Sign up",
-      "linkText": "here",
+      "answer": "Our free trial gives you full access to Diversdesk’s features for a limited period. After the trial, you can choose a plan that best fits your needs and convert to a paid plan, unless you decide to end our journey together. No strings attached. Rest assured, we'll notify you when the end of your trial is approaching.",
+      "linkText": "Sign Up",
       "url": "https://www.diversdesk.com/signup/trial",
-      "linkAlt": "Sign up here to start your free trial",
+      "linkAlt": "to start your free trial",
       "answer2": " to start your free trial."
     },
     {
@@ -23,8 +23,8 @@
     },
     {
       "question": "How do we start?",
-      "answer": "Fantastic choice! We're thrilled to have you join the Diversdesk community. To get started, please fill out our signup form",
-      "linkText": "here",
+      "answer": "Fantastic choice! We're thrilled to have you join the Diversdesk community. To get started, please fill out our",
+      "linkText": "Signup Form",
       "url": "https://www.diversdesk.com/signup/form",
       "linkAlt": "Fill out the signup form to get started",
       "answer2": " and our team will right away set up your personal Diversdesk environment."

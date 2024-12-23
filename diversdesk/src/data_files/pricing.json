@@ -17,7 +17,7 @@
       "Max 2 manager roles",
       "Support (office hours)"
     ],
-    "purchaseBtnTitle": "Read more",
+    "purchaseBtnTitle": "CRM-Only Details",
     "purchaseLink": "/pricing/#Compare_Plans",
     "linkAlt": "Read more about the CRM Only plan"
   },
@@ -34,7 +34,7 @@
       "Max 2 Manager roles",
       "Support (office hours)"
     ],
-    "purchaseBtnTitle": "Read more",
+    "purchaseBtnTitle": "Starter Details",
     "purchaseLink": "/pricing/#Compare_Plans",
     "linkAlt": "Read more about the Starter plan"
   },
@@ -50,7 +50,7 @@
       "Max 5 manager roles",
       "Priority 24/7 support"
     ],
-    "purchaseBtnTitle": "Read more",
+    "purchaseBtnTitle": "Pro Details",
     "purchaseLink": "/pricing/#Compare_Plans",
     "linkAlt": "Read more about the Pro plan"
   },
@@ -64,7 +64,7 @@
       "Max 20 manager roles",
       "Priority 24/7 support"
     ],
-    "purchaseBtnTitle": "Read more",
+    "purchaseBtnTitle": "Enterprise Details",
     "purchaseLink": "/pricing/#Compare_Plans",
     "linkAlt": "Read more about the Enterprise plan"
   }
