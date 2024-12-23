@@ -24,7 +24,15 @@ interface Props {
     <slot name="canonical">
       <link rel="canonical" href="https://www.diversdesk.com" />
     </slot>
-    <link rel="icon" href="/favicon.png" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/imagesfavicon_16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_32x32.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon_512x512.png">
+    <link rel="icon" href="/images/favicon.ico"> 
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
     <meta name="robots" content={robots} /> <!-- Added meta robots tag -->
     <SEO
       title="DiversDesk: Dive Center Software, The Intuitive All-in-One Solution"
@@ -33,7 +41,7 @@ interface Props {
         basic: {
           title: "DiversDesk: Simplify Your Dive Center Operations with our All-in-One Software",
           type: "website",
-          image: "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif", 
+          image: "/images/Laptop-and-phone-diversdesk.avif", 
           },
       }}
     />
@@ -43,9 +51,9 @@ interface Props {
     <!-- Fallback for SEO Image -->
     <noscript>
       <picture>
-        <source srcset="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.avif" type="image/avif">
-        <source srcset="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.webp" type="image/webp">
-        <img src="https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.png" alt="DiversDesk Overview Image">
+        <source srcset="/images/Laptop-and-phone-diversdesk.avif" type="image/avif">
+        <source srcset="/images/Laptop-and-phone-diversdesk.webp" type="image/webp">
+        <img src="/images/Laptop-and-phone-diversdesk.png" alt="DiversDesk Overview Image">
       </picture>
     </noscript>
 

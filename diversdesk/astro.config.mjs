@@ -10,7 +10,7 @@ import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://diversdesk.com',
+  site: 'https://www.diversdesk.com',
   image: {
     domains: ['images.unsplash.com'], 
   },  

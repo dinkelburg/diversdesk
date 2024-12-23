@@ -14,7 +14,9 @@ import { SITE } from "@data/constants";
 
 // Generate paths for all blog posts
 export async function getStaticPaths() {
-  const blogPosts = await getCollection("blog", ({ id }) => id.startsWith("en/"));
+  const blogPosts = await getCollection("blog", ({ id }) => {
+    return id.startsWith("en/");
+  });
   return blogPosts.map((post) => ({
     params: { slug: post.slug },
     props: { post },
@@ -49,40 +51,40 @@ const pageUrl = `https://diversdesk.com/blog/${post.slug}`;
 
   <!-- BlogPosting Schema -->
   <script type="application/ld+json" is:inline>
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "{post.data.title}",
-  "description": "{post.data.description}",
-  "author": {
-    "@type": "Person",
-    "name": "{post.data.author}"
-  },
-"datePublished": "{post.data.pubDate}",
-  "dateModified": "{post.data.dateModified || post.data.pubDate}", 
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://diversdesk.com/blog/{post.slug}"
-  },
-  "image": {
-    "@type": "ImageObject",
-    "url": "{post.data.cardImage.src}",
-    "width": 800,
-    "height": 450
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "DiversDesk",
-    "logo": {
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{post.data.title}",
+    "description": "{post.data.description}",
+    "author": {
+      "@type": "Person",
+      "name": "{post.data.author}"
+    },
+  "datePublished": "{post.data.pubDate}",
+    "dateModified": "{post.data.dateModified || post.data.pubDate}", 
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.diversdesk.com/blog/{post.slug}"
+    },
+    "image": {
       "@type": "ImageObject",
-      "url": "https://www.diversdesk.com/images/logo.avif",
-      "width": 250,
-      "height": 60
-    }
-  },
-  "url": "https://diversdesk.com/blog/{post.slug}"
-}
-</script>
+      "url": "{post.data.cardImage.src}",
+      "width": 800,
+      "height": 450
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DiversDesk",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.diversdesk.com/images/logo.avif",
+        "width": 250,
+        "height": 60
+      }
+    },
+    "url": "https://www.diversdesk.com/blog/{post.slug}"
+  }
+  </script>
 
 
   <section class="mx-auto max-w-3xl px-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pt-10">
