@@ -1,13 +1,13 @@
 {
   "title": "A Commitment to Clear and Straightforward Pricing",
   "subTitle": "Boost efficiency with Diversdesk's clear, value-driven plans.",
-  "badge": "Most Popular",
   "thirdOption": "Enterprise Solutions?",
   "btnText": "Get a Custom Quote",
 
-  "CRM_only": {
-    "name": "CRM Only",
-    "description": "No planner functionalities",
+  "CRM_Go": {
+    "name": "CRM Go",
+    "description": "Streamlined Onboarding |",
+    "descriptionSecondary": "No Planner Tools",
     "price": "$27",
     "cents": ".00",
     "billingFrequency": "USD / mo",
@@ -17,14 +17,15 @@
       "Max 2 manager roles",
       "Support (office hours)"
     ],
-    "purchaseBtnTitle": "CRM Only Details",
+    "purchaseBtnTitle": "CRM Go Details",
     "purchaseLink": "/pricing/#Compare_Plans",
-    "linkAlt": "Read more about the CRM Only plan"
+    "linkAlt": "Read more about the CRM Go Only plan"
   },
 
   "Starter": {
     "name": "Starter",
-    "description": "Best for small businesses",
+    "description": "Best for Small Businesses |",
+    "descriptionSecondary": "Essential Management + Planner Features",
     "price": "$42",
     "cents": ".00",
     "billingFrequency": "USD / mo",
@@ -40,7 +41,8 @@
   },
   "Pro": {
     "name": "Pro",
-    "description": "Best for medium sized businesses",
+    "description": "Best for medium-sized businesses |",
+    "descriptionSecondary": "Advanced Features & Priority Support",
     "price": "$64",
     "cents": ".00",
     "billingFrequency": "USD / mo",
@@ -56,7 +58,8 @@
   },
   "Enterprise": {
     "name": "Enterprise",
-    "description": "Best for large and multi-location businesses",
+    "description": "The Ultimate Plan for Large and Multi-Location Businesses |",
+    "descriptionSecondary": "Fully Scalable",
     "price": "Custom",
     "billingsubtitle": "Billed annually",
     "features": [
