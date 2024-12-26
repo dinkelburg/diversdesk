@@ -13,11 +13,6 @@ const {
   primaryBtnURL,
   secondaryBtn,
   secondaryBtnURL,
-  withReview,
-  avatars,
-  starCount,
-  rating,
-  reviews,
   src,
   alt
 } = Astro.props;
@@ -32,11 +27,6 @@ interface Props {
   secondaryBtn?: string;
   secondaryBtnURL?: string;
   secondaryBtnAlt?: string;
-  withReview?: boolean;
-  avatars?: Array<string>;
-  starCount?: number;
-  rating?: string;
-  reviews?: string;
   src?: any;
   alt?: string;
 }
@@ -71,11 +61,6 @@ interface Props {
       <SecondaryCTA title={secondaryBtn} url={secondaryBtnURL} />
       }
     </div>
-
-    <!-- Review Section: This section presents avatars, review ratings and the number of reviews -->
-    { withReview ? (
-    <ReviewComponent avatars={avatars} starCount={starCount} rating={rating} reviews={reviews} />
-    ) : "" }
 
   </div>
   <!-- Hero Image Section -->
