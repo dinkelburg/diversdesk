@@ -1,5 +1,5 @@
 ---
-title: "New example blog"
+title: "How to Increase Foot Traffic to Your Dive Center in 2025"
 description: "Explore how dive centers can tackle resistance to change and adopt modern systems to enhance efficiency, boost growth, and stay competitive."
 author: "Bart"
 role: "Co-founder & CEO of Diversdesk"
@@ -17,5 +17,3 @@ pagefind: false
 # How Climate Change is Reshaping Dive Spots World Wide
 
 ## Heading 2
-
-### Heading 3
