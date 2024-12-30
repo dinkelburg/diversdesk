@@ -1,5 +1,5 @@
 ---
-title: VAlm Divers Bohol _ Support Page 
+title: VALM Divers Bohol _ Support Page 
 pagefind: false
 robots: noindex, nofollow
 ---
