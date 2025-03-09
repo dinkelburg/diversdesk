@@ -3,7 +3,7 @@ title: "Bali's Secret Underwater Paradise: Why Diving Here Will Surprise You"
 pubDate: "2025.03.09"
 slug: "bali-secret-diving-paradise"
 description: "Discover Bali's unexpectedly amazing diving. It's not just beaches! Learn why Bali is a hidden gem for divers, with personal insights and tips."
-hero: "/images/bali_underwater_coral.png"
+hero: "/images/happy_diver.jpeg"
 tags: ["scuba", "bali", "diving", "travel"]
 layout: "../../layouts/BlogPostLayout.astro"
 ---
@@ -14,7 +14,7 @@ I've traveled the world, exploring some of the most famous dive sites, and I hav
 
 ### What Awaits You Beneath the Surface
 
-![Diver with Mola Mola](/images//images/Mola_mola_at_crystal_bay.png)
+![Diver with Mola Mola](/images/Mola_mola_at_crystal_bay.png)
 
 You might be thinking, "Bali? Really? Is it *that* good?" Let me tell you, it is. From the iconic USAT Liberty wreck in Tulamben to the manta rays of Nusa Penida, Bali offers a diving experience that rivals some of the world's top spots.
 
