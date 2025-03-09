@@ -20,8 +20,13 @@ On the right-hand side, you will find an overview of all our contact moments, ma
 - Your Diversdesk environment 'My Page'
 
 ## On-Demand Videos
-No videos added yet. <br>
-Explore our our [video training page](/video_training) instead.
+On-demand videos are listed below, or explore our [video training page](/video_training) here.
+
+### Tier Pricing with Product Duplicates & Tags
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/666ce3d490db4616b738a3045bf1e857?sid=e863f2f7-efc4-425f-810e-cd6da71dd9b4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### Trip Templates & Default Sites
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/a520470c56d54bd1961a9020ec957c78?sid=50d2e433-4fa1-4504-b602-83983934ec30" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ## Other Videos 
 ### Scheduling a 2nd trip in a day 

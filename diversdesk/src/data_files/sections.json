@@ -1,0 +1,36 @@
+[
+    {
+      "isRightSection": false,
+      "title": "Seamless Planning & Scheduling",
+      "content": "Diversdesk presents the industry's most flexible planner, offering multi-activity bookings, cross-location, and multi-trip scheduling capabilities. Last-minute booking changes and boat swaps are now done in just a few clicks. Real-time visual insights into trip capacity provide lightning-fast updates and prevent overbookings.",
+      "imgKey": "feature1",
+      "imgAlt": "A macbook and phone running on the diversdesk dive center management software",
+      "btnExists": true,
+      "btnTitle": "Book a Demo",
+      "btnURL": "https://calendly.com/diversdesk-info/demo"
+    },
+    {
+      "isRightSection": true,
+      "title": "Paperless Onboarding",
+      "content": "Experience seamless customer registration with Diversdesk's 100% paperless approach. Utilize our built-in custom registration forms, official waivers, and Diver Medical that guarantee a professional appearance, and a commitment to environmental sustainability.",
+      "imgOneKey": "feature2",
+      "imgOneAlt": "Digital registration form on a phone",
+      "imgTwoKey": "feature3",
+      "imgTwoAlt": "Dive center digital waivers and diver medical",
+      "btnExists": true,
+      "btnTitle": "Learn More",
+      "btnURL": "https://calendly.com/diversdesk-info/demo",
+      "single": true
+    },
+    {
+      "isRightSection": false,
+      "title": "Custom Waiver Creation",
+      "content": "Create waivers that are personalized, professional, and tailored...",
+      "imgKey": "feature4",
+      "imgAlt": "Custom waivers created with Diversdesk",
+      "btnExists": true,
+      "btnTitle": "Explore Features",
+      "btnURL": "https://calendly.com/diversdesk-info/demo"
+    }
+  ]
+  

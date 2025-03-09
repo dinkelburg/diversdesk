@@ -1,28 +1,58 @@
 ---
-// Get heading and content from Astro props
-const { heading, content } = Astro.props;
+// Get heading, content, and bullets from Astro props
+const { heading, content, bullets,  primaryBtn, primaryBtnURL} = Astro.props;
+import CheckmarkSvg from "@images/checkmarksvg.svg" 
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+
+
 // Define TypeScript interface for props
 interface Props {
   heading?: string;
-  content?: string;
+  content?: string; // Content can contain HTML
+  bullets?: string[]; // List of bullet points
+  primaryBtn?: string; // Button text
+  primaryBtnURL?: string; // Button URL
 }
-// Define classes for heading and content
-const headingClasses =
-  "text-balance text-lg font-bold text-neutral-800 dark:text-neutral-200";
-const contentClasses =
-  "mt-1 text-pretty text-neutral-700 dark:text-neutral-300";
+
+// Define classes for heading, content, and bullets
+const headingClasses = "text-lg font-bold text-neutral-800 dark:text-neutral-200 mb-2";
+const contentClasses = "text-neutral-700 dark:text-neutral-300 mb-4";
+const bulletContainerClasses = "list-none mt-2";
+const bulletItemClasses = "flex items-start gap-2 mb-2";
+const bulletIconClasses = "text-green-500 font-bold";
 ---
 
-<!-- The root container that arranges your slot and the heading/content -->
-<div class="flex gap-x-5">
-  <!-- Slot to allow for extensibility of the component -->
+<div class="flex items-start gap-x-4">
+  <!-- Slot for the icon -->
   <slot />
+
   <div class="grow">
-    <!-- Heading of the section -->
-    <h3 class={headingClasses}>
-      {heading}
-    </h3>
-    <!-- Content text of the section -->
-    <p class={contentClasses}>{content}</p>
+    <!-- Heading -->
+    {heading && <h3 class="text-lg lg:text-xl mt-1.5 font-semibold text-neutral-700 dark:text-neutral-200 mb-2">{heading}</h3>}
+
+    <!-- Content -->
+    {content && <div class="text-neutral-700 dark:text-neutral-300 mb-4" set:html={content}></div>}
+
+    <!-- Bullets (hidden on mobile) -->
+    {bullets && (
+      <ul class="list-none mt-2 hidden lg:block">
+        {bullets.map((bullet) => (
+          <li class="flex items-start gap-2 mb-2">
+            <!-- Inline SVG -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="#4BB97C"
+              width="20px"
+              height="20px"
+            >
+              <path d="M20.29 5.71a1 1 0 0 0-1.42 0L9 15.59 5.12 11.71a1 1 0 0 0-1.41 1.41l4.59 4.59a1 1 0 0 0 1.41 0l10-10a1 1 0 0 0 0-1.41z"></path>
+            </svg>
+            <span class="text-pretty text-neutral-500 font-medium"> {bullet}</span>
+          </li>
+        ))}
+      </ul>
+    )}
   </div>
 </div>
+

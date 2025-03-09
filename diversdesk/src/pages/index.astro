@@ -6,6 +6,7 @@ import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+import LeftAndRightSectoins from "@components/sections/features/LeftAndRightSections.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import TestimonialsSectionMin from "@/components/sections/testimonials/TestimonialsSectionMinimal.astro";
@@ -24,6 +25,11 @@ import BoostRevenue from "@images/happy_diver.jpeg";
 import Icon from "@/components/ui/icons/Icon.astro";
 import Container from "@components/container.astro";
 import CompanyLogos from "@components/CompanyLogos.astro";
+import LeftAndRightSections from "@components/sections/features/LeftAndRightSections.astro";
+import FeatureBanner from "@components/sections/features/FeatureBanner.astro";
+import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
+import WaiversImage from "@images/custom_waivers_2.avif";
+import IpadDetaildDayView from "@images/iPad_pro_detailed_day.avif";
 
 ---
 
@@ -76,15 +82,14 @@ import CompanyLogos from "@components/CompanyLogos.astro";
     /> -->
 
     <HeroSection
-            title=`Seamless Dive Center Management, Anytime, Anywhere with <span
-        class="text-orange-400 dark:text-orange-400">Diversdesk</span>`
-            subTitle="Intuitive Dive Center Management Software"
+            title=`Effortless Dive Center Management at Your Fingertips`
+            subTitle="The all-in-one software designed to simplify operations, automate tasks, and grow your dive shop effortlessly."
             primaryBtn="Book a demo"
             primaryBtnURL="https://calendly.com/diversdesk-info/demo"
             primaryBtnAlt="Schedule a demo of DiversDesk software"
             secondaryBtn="Start a Free Trial"
             secondaryBtnURL="/signup/trial"
-            secondaryBtnAlt="Sign up for a free trial of DiversDesk" 
+            secondaryBtnAlt="Sign up for a free trial of DiversDek's Dive Center Management Software" 
             src={heroImage}
             alt="DiversDesk Dive Center Management Software displayed on a laptop and phone with the planning and scheduling dashboard"
     >
@@ -97,24 +102,61 @@ import CompanyLogos from "@components/CompanyLogos.astro";
       </noscript>
     </HeroSection>
 
-    <!-- <ClientsSection
-      title="Trusted by Centers Worldwide"
-      subTitle="The most sophisticated scheduler in the diving industry."
-    /> -->
-
     <CompanyLogos
-    title="Leading the Way in Dive Center Management"
-    subTitle="Join top dive centers from around the world."
+    title="Leading the Way in Dive Shop Management"
+    subTitle="Join top dive centers that trusted Diversdesk"
+    alt="Logos of Top dive centers using Diversdesk's dive shop management software and solutions"    
     />
 
-    <FeaturesGeneral
-            title="Explore Our Feature-Rich Environment"
-            subTitle="Save Time, Streamline, and Professionalize"
-            alt="Diversdesk products in floating boxes"
-            features={features}
-            primaryBtn="Find Out More"
-            primaryBtnURL="../features"
-    />   
+    <FeatureBanner 
+    title="Management That Just Works"
+    subTitle="Designed specifically for and in collaboration with dive centers, Diversdesk streamlines every aspect of your business, automates tasks, boosts efficiency, and helps you focus on delivering exceptional dive experiences."
+    alt="Promoting Diversdesk's dive center management software with features like automation, efficiency, and streamlined operations"
+    />
+
+    <FeaturesStatsAlt
+    title="Planning & Scheduling in just a few clicks"
+    subTitle="Never lack insights with the industry's most flexible planner and scheduler. Say goodbye to error-prone spreadsheets and enjoy effortless scheduling and instant access across devices. Making daily planning fast and fun."
+    benefits={[
+      "One view capacity insights in trips, staff, fleet and more",
+      "Seamless multi-trip and cross-location scheduling",
+      "Effortless boat and group swaps",
+    ]}
+      image = {IpadDetaildDayView}
+      imagePosition="left"
+      showButton={true}
+      buttonTitle="Find Out More"
+      buttonURL="/features"
+    />
+
+    <FeaturesStatsAlt
+    title="Flawless Paperless Customer Onboarding"
+    subTitle="Experience seamless customer registration with Diversdesk's 100% paperless approach. Utilize our built-in custom registration forms, official waivers, and Diver Medical that guarantee a professional appearance, and a commitment to environmental sustainability."
+    benefits={[
+      "Registration, Waivers & Diver Medical.",
+      "Customizable and Multi-Language",
+      "Pre-Payments, Billing & Invoicing",
+    ]}
+    image = {WaiversImage}
+    imagePosition="right"
+    showButton={true}
+    buttonTitle="Find Out More"
+    buttonURL="/features"
+    /> 
+
+    <FeaturesStatsAlt
+    title="Insights and Tools to Help Your Dive Center Thrive"
+    subTitle="Useful metrics to monitor your revenue stream, top trips by numbers and revenue, and customer trends, with multiple export options for seamless analysis and reporting."
+    benefits={[
+      "Metrics & Insights",
+      "Data Exports",
+      "Automations",
+    ]}
+    imagePosition="left"
+    showButton={true}
+    buttonTitle="Find Out More"
+    buttonURL="/features"
+    />
 
     <!-- Youtube Video to display below the features -->
     <!-- <div class="relative mb-6 overflow-hidden md:mb-8 px-2">
@@ -127,6 +169,100 @@ import CompanyLogos from "@components/CompanyLogos.astro";
             }
         </style>
     </div> -->
+
+    <TestimonialsSectionMin
+    title ="What Our Customers Say"
+    testimonials={[
+      {
+        content:
+          "\"The system is not only user-friendly but also incredibly efficient, allowing me to easily schedule dives, track payments, and effectively oversee and coordinate activities.\"",
+        author: "TI",
+        role: "Owner | Jom Adventure",
+        avatarSrc: "/images/jomadventure_avatar.png",
+        starCount: 5, 
+      },
+      {
+        content:
+          "\"We are particularly impressed with the platform’s ease of use and the responsive support team, who listen to and act on our feedback.\"",
+        author: "Miikka",
+        role: "Manager | Bali Dive Resort and Spa",
+        avatarSrc: "/images/bdrs_avatar.png",
+        starCount: 5, 
+      },
+      {
+        content:
+          "\"We don't use any paperwork anymore because the medical form and liability release are filled in online. Super convenient, time saving, and most important, good for the environment!\"",
+        author: "Lars",
+        role: "Owner | S.E.A. Diving Bali",
+        avatarSrc: "/images/seadb_avatar.png",
+        starCount: 5, 
+      },
+      {
+        content:
+          "\"The user-friendly interface makes it incredibly easy to navigate, even for those who aren't tech-savvy. Setting up schedules, managing bookings has never been simpler.\"",
+        author: "Yves",
+        role: "Owner | Mantastic Scuba Paradise",
+        avatarSrc: "/images/mantastic_scuba_avatar.png",
+        starCount: 5, 
+      },
+      {
+        content:
+          "\"The transition from our previous platform to DiversDesk was extremely smooth thanks to the intuitiveness of the tool. Our guests are also extremely happy.\"",
+        author: "Louis",
+        role: "Manager | Reeflex Divers",
+        avatarSrc: "/images/louis_avatar.png",
+        starCount: 5, 
+      },
+    ]}
+    primaryBtn="Read Full Testimonials"
+    primaryBtnURL="../about#testimonials"
+/>
+
+<FeaturesGeneral  
+title="Explore Our Feature-Rich Environment"
+subTitle="Save Time, Streamline, and Professionalize"
+alt="Diversdesk products in floating boxes" 
+features={features}
+/>   
+
+  <FeaturesNavs
+    title=`Why Choose Diversdesk`
+    tabs={[
+      {
+        heading: "Customer onboarding in Record Time",
+        content:
+          "Streamline customer onboarding by sharing a single booking URL that handles registration, waivers, and payments. Everything is managed seamlessly in a fraction of the time, presenting a pleasant experience and professional appearance to your customers.",
+        svg: "save_time",
+        src: CustomerOnboarding,
+        alt: "Yellow and black heavy equipment on brown grass field",
+        first: true,
+      },
+      {
+        heading: "Cut Errors and System Complexity",
+        content:
+          "Eliminate the need for multiple systems, double and manual data entries. Customer registrations become directly visible in your environment. Visual trip insights also remove the need for manual participant counts, making your operation less prone to overbookings and human errors.",
+        svg: "boost_revenue",
+        src: CutErrors,
+        alt: "A screenshot or graphic representation of the intuitive dashboard",
+        second: true,
+      },
+      {
+        heading: "Boost revenue",
+        content:
+          "Through unique insights from DiversDesk, your center can reduce overhead, make data-driven decisions, and leverage upsell opportunities. Understand preferences and key trends to optimize marketing efficiency and tailor offerings, ultimately enhancing customer experience and boosting revenue.",
+        svg: "boost_revenue",
+        src: BoostRevenue,
+        alt: "A screenshot or graphic representation of the intuitive dashboard",
+        second: true,
+      }
+    ]}
+  />  
+
+    <div class="px-2">
+        <PricingSection pricing={pricing}/>
+    </div>
+
+   
 
     <!-- <TestimonialsSection
       title="Fast-Track Your Projects"
@@ -163,87 +299,18 @@ import CompanyLogos from "@components/CompanyLogos.astro";
           description: "quicker assembly using innovative fastening solutions",
         },
       ]}
-    /> -->
-
-
-    <TestimonialsSectionMin
-    title ="What Our Customers Say"
-    testimonials={[
-      {
-        content:
-          "\"The system is not only user-friendly but also incredibly efficient, allowing me to easily schedule dives, track payments, and effectively oversee and coordinate activities.\"",
-        author: "TI",
-        role: "Owner | Jom Adventure",
-        avatarSrc: "/images/jomadventure_avatar.png",
-        starCount: 5, 
-      },
-      {
-        content:
-          "\"We are particularly impressed with the platform’s ease of use and the responsive support team, who listen to and act on our feedback.\"",
-        author: "Miikka",
-        role: "Manager | Bali Dive Resort and Spa",
-        avatarSrc: "/images/bdrs_avatar.png",
-        starCount: 5, 
-      },
-      {
-        content:
-          "\"We don't use any paperwork anymore because the medical form and liability release are filled in online. Super convenient, time saving, and most important, good for the environment!\"",
-        author: "Lars",
-        role: "Owner | S.E.A. Diving Bali",
-        avatarSrc: "/images/seadb_avatar.png",
-        starCount: 5, 
-      },
-    ]}
-    primaryBtn="Read Full Testimonials"
-    primaryBtnURL="../about#testimonials"
-/>
-
-    <FeaturesNavs
-      title=`Why Choose Diversdesk`
-      tabs={[
-        {
-          heading: "Customer onboarding in Record Time",
-          content:
-            "Streamline customer onboarding by sharing a single booking URL that handles registration, waivers, and payments. Everything is managed seamlessly in a fraction of the time, presenting a pleasant experience and professional appearance to your customers.",
-          svg: "save_time",
-          src: CustomerOnboarding,
-          alt: "Yellow and black heavy equipment on brown grass field",
-          first: true,
-        },
-        {
-          heading: "Cut Errors and System Complexity",
-          content:
-            "Eliminate the need for multiple systems, double and manual data entries. Customer registrations become directly visible in your environment. Visual trip insights also remove the need for manual participant counts, making your operation less prone to overbookings and human errors.",
-          svg: "boost_revenue",
-          src: CutErrors,
-          alt: "A screenshot or graphic representation of the intuitive dashboard",
-          second: true,
-        },
-        {
-          heading: "Boost revenue",
-          content:
-            "Through unique insights from DiversDesk, your center can reduce overhead, make data-driven decisions, and leverage upsell opportunities. Understand preferences and key trends to optimize marketing efficiency and tailor offerings, ultimately enhancing customer experience and boosting revenue.",
-          svg: "boost_revenue",
-          src: BoostRevenue,
-          alt: "A screenshot or graphic representation of the intuitive dashboard",
-          second: true,
-        }
-      ]}
-    />  
-
-    <div class="px-2">
-        <PricingSection pricing={pricing}/>
-    </div>
+    />  -->
 
     <section id="faq">
       <FAQ title="Frequently<br />Asked Questions" faqs={faqs} />
     </section>
-   
 
     <HeroSectionAlt
             title="Let's Build Together"
             subTitle="Diversdesk is committed to continuously improving our services based on your insights and feedback."
     />
+
+
 
 
 </MainLayout>

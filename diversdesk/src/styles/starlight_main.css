@@ -69,3 +69,13 @@ select {
     box-sizing: border-box;
   }
   
+
+  .flex.items-center.gap-2 li span {
+    background-color: #4BB97C;
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+  }
+  
+  

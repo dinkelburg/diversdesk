@@ -22,7 +22,7 @@ type Testimonial = {
   author: string;
   role: string;
   avatarSrc: string;
-  starCount: number;
+  starCount?: number;
 };
 
 // TypeScript type for stats.
@@ -33,7 +33,7 @@ type StatProps = {
 ---
 
 <section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  class="mx-auto max-w-[90rem] px-4 py-10 sm:px-12 lg:px-16 lg:py-14 2xl:max-w-full overflow-x-hidden"
 >
   <!-- Container for the testimonials -->
   <div
@@ -57,7 +57,12 @@ type StatProps = {
       <!-- Generate a blockquote for each testimonial in the testimonials array by mapping over the array. -->
       { testimonials &&
         testimonials.map((testimonial) => (
-        <TestimonialItem content={testimonial.content} author={testimonial.author} role={testimonial.role} avatarSrc={testimonial.avatarSrc} starCount={testimonial.starCount}/>
+        <TestimonialItem 
+        content={testimonial.content} 
+        author={testimonial.author} 
+        role={testimonial.role} 
+        avatarSrc={testimonial.avatarSrc} 
+        starCount={testimonial.starCount ?? 0}/>
         ))
       }
     </div>

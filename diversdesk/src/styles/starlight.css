@@ -160,11 +160,13 @@ article.card {
 /* Checkmark Bullet */
 .bullet-checkmark ul > li::before {
     content: "\2713"; /* Checkmark character */
-    color: var(--checkmark-color);
-    font-size: 1rem;
+    color: var(--checkmark-color, #4CAF50); /* Use the checkmark color or default green */
+    font-size: 1rem; /* Adjust size as needed */
     font-weight: bold;
-    top: 0;
-}
+    position: absolute;
+    left: 0; /* Place the checkmark to the left of the text */
+    top: 0.1rem; /* Adjust vertical alignment */
+  }
 
 /* Crossmark Bullet */
 .bullet-crossmark ul > li::before {
@@ -281,5 +283,31 @@ article.card {
     display: block;
   }
   
-  
-  
+.swiper {
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 3rem;
+  height: 3rem;
+  background: var(--neutral-200);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--neutral-800);
+}
+
+.swiper-pagination {
+  margin-top: 1rem;
+  text-align: center;
+}
+

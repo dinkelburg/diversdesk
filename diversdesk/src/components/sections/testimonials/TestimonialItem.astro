@@ -14,21 +14,18 @@ interface Props {
 }
 ---
 
-<!-- Commented out blockquote -->
-<blockquote class="relative flex flex-col h-full"> 
-  <!-- Position the icon as a background element -->
-  <!-- <Icon name="quotation" class="absolute top-0 left-0 opacity-10" /> -->
+<blockquote class="testimonial-container">
+  <!-- Content Section -->
   <div class="flex-grow flex items-start relative z-10">
-    <!-- Content Section -->
     <p class="text-pretty italic text-neutral-600 dark:text-neutral-400 sm:text-xl">
       {content}
     </p>
   </div>
 
-  <div class="mt-4">
+  <!-- Avatar and Details Section -->
+  <div class="mt-4 flex flex-col justify-between avatar-section">
     <div class="flex items-center pl-0 pr-4 py-4 rounded-lg">
       <div class="flex-shrink-0">
-        <!-- Optimized Image with fallbacks -->
         <picture>
           <source srcset={`${avatarSrc.replace('.png', '.avif')}`} type="image/avif" />
           <source srcset={`${avatarSrc.replace('.png', '.webp')}`} type="image/webp" />
@@ -48,7 +45,6 @@ interface Props {
             </div>
             <div class="text-xs text-neutral-500">{role}</div>
           </div>
-          <!-- Star Rating -->
           <div class="flex ml-4 mr-6 gap-1.5">
             {Array.from({ length: starCount }).map(() => (
               <FullStar />
@@ -59,3 +55,40 @@ interface Props {
     </div>
   </div>
 </blockquote>
+
+<style>
+/* General styling for the testimonial container */
+.testimonial-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Ensure the content takes up available space */
+.testimonial-container .flex-grow {
+  flex-grow: 1;
+  min-height: 8rem; /* Adjust as needed */
+}
+
+/* Default spacing for the avatar/role/star section */
+.avatar-section {
+  margin-top: auto;
+}
+
+/* Reduce spacing between sections for small screens */
+@media (max-width: 768px) {
+  .testimonial-container {
+    padding: 0.75rem; /* Reduce padding on smaller screens */
+  }
+  .avatar-section {
+    margin-top: 0.5rem; /* Reduce space between content and avatar section */
+  }
+  .testimonial-container .flex-grow {
+    min-height: 6rem; /* Adjust minimum height for smaller screens */
+  }
+}
+</style>

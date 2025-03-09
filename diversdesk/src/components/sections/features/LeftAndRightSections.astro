@@ -1,0 +1,74 @@
+---
+import LeftSection from "@components/ui/blocks/LeftSection.astro";
+import RightSection from "@components/ui/blocks/RightSection.astro";
+
+// Import images
+import Feature1 from "@images/Apple-Set.png";
+import Feature2 from "@images/Apple-Set.png";
+import Feature3 from "@images/Apple-Set.png";
+import Feature4 from "@images/Apple-Set.png";
+
+// Import the JSON file
+import sections from "@data/sections.json";
+
+// Map image keys to imported images
+const imageMap = {
+  feature1: Feature1,
+  feature2: Feature2,
+  feature3: Feature3,
+  feature4: Feature4,
+} as const;
+
+// Define the allowed keys for the imageMap
+type ImageKey = keyof typeof imageMap;
+
+interface Article {
+  isRightSection: boolean;
+  title: string;
+  content: string;
+  benefits?: Array<string>;
+  btnExists?: boolean;
+  btnTitle?: string;
+  btnURL?: string;
+  single?: boolean;
+  imgKey?: ImageKey; // Must match imageMap keys
+  imgAlt?: string;
+  imgOneKey?: ImageKey;
+  imgOneAlt?: string;
+  imgTwoKey?: ImageKey;
+  imgTwoAlt?: string;
+}
+---
+
+<section class="mx-auto max-w-[90rem] px-6 pt-10 sm:px-12 lg:px-16 lg:pt-10 2xl:max-w-full">
+  {sections.map((article, index) => {
+    const resolvedImg = article.imgKey ? imageMap[article.imgKey as ImageKey] : undefined;
+
+    return article.isRightSection ? (
+      <RightSection
+        title={article.title} 
+        single={article.single}
+        imgOne={article.imgOneKey ? imageMap[article.imgOneKey as ImageKey] : undefined}
+        imgOneAlt={article.imgOneAlt}
+        imgTwo={article.imgTwoKey ? imageMap[article.imgTwoKey as ImageKey] : undefined}
+        imgTwoAlt={article.imgTwoAlt}
+        btnExists={article.btnExists}
+        btnTitle={article.btnTitle}
+        btnURL={article.btnURL}
+      >
+        <div set:html={article.content}></div>
+      </RightSection>
+    ) : (
+      <LeftSection
+        title={article.title}
+        img={resolvedImg}
+        imgAlt={article.imgAlt}
+        btnExists={article.btnExists}
+        btnTitle={article.btnTitle}
+        btnURL={article.btnURL}
+      >
+        <div set:html={article.content}></div>
+      </LeftSection>
+    );
+  })}
+</section>

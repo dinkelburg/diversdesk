@@ -115,8 +115,8 @@ interface Props {
     </script>
   </head>
 
-  <body class="bg-white selection:bg-orange-200 selection:text-neutral-700 dark:bg-neutral-800">
-    <div class="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+  <body class="bg-white selection:bg-orange-200 selection:text-neutral-700 dark:bg-neutral-800 overflow-x-hidden">
+    <div class="mx-auto max-w-screen-2xl px-0 sm:px-0 lg:px-0">
       <Navbar />
       <main>
         <slot />
@@ -176,6 +176,7 @@ interface Props {
         max-width: 100%;
         height: auto;
       }
+
     </style>
   </body>
 </html>

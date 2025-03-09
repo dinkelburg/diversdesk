@@ -4,15 +4,12 @@ import Container from "@components/container.astro";
 interface Props {
   title?: string;
   subTitle?: string;
+  alt?: string;
 }
 
 const { title, subTitle } = Astro.props;
 
 const companylogos = [
-  {
-    logo: "/images/Logo_A4D.png",
-    alt: "All 4 Diving, Bali, Indonesia",
-  },
   {
     logo: "/images/Logo_JOM.png",
     alt: "Jom Adventure Dive, Tioman, Malaysia",
@@ -45,32 +42,50 @@ const companylogos = [
     logo: "/images/Logo_DI.png",
     alt: "Diving Indo, Bali, Indonesia",
   },
+  {
+    logo: "/images/Logo_FM.png",
+    alt: "Fast Manta Diving, Thailand",
+  },
+  {
+    logo: "/images/logo_MantasticScuba.png",
+    alt: "Logo Mantastic Scuba Paradise, Indonesia",
+  },
+  {
+    logo: "/images/logo-bahura-dive.png",
+    alt: "Logo Bahura Dive, Philippines",
+  }
 ];
 ---
 
-<div class="mx-auto max-w-[85rem] mt-24 px-2 sm:px-2 lg:px-8">
+<section class="mx-auto max-w-[90rem] px-4 pt-10 sm:px-12 lg:px-16 lg:pt-10 2xl:max-w-full overflow-x-hidden">
+  <div class="mb-6 max-w-full lg:w-4xl">
+  <!-- Title -->
   {title && (
-    <h2 class="text-2xl lg:text-4xl font-bold lg:tracking-tight text-left">
-      <span class="text-neutral-800 dark:text-neutral-100">{title}</span>
+    <h2 class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl">
+      {title}
     </h2>
   )}
   {subTitle && (
-    <p class="text-lg mt-4 mb-7 text-neutral-600 dark:text-neutral-200 text-left">
+    <p class="text-lg mt-4 mb-7 text-neutral-600 dark:text-neutral-200">
       {subTitle}
     </p>
   )}
 </div>
+</section>
 
-<div class="relative flex overflow-hidden py-5">
-  <div class="animate-marquee-mobile md:animate-marquee w-auto flex flex-nowrap items-center gap-10 md:gap-20">
-    {companylogos.concat(companylogos).map((item, index) => (
-      <div class="flex justify-center items-center shrink-0 h-10 md:h-14 mx-4 md:mx-10">
-        <img class="h-full object-contain" src={item.logo} alt={item.alt} loading="lazy" />
+  <!-- Logo marquee container -->
+  <div class="overflow-x-hidden">
+  <div class="-mx-2 sm:-mx-6 lg:-mx-8 pb-20">
+    <div class="relative flex overflow-hidden py-5">
+      <div class="animate-marquee-mobile md:animate-marquee w-auto flex flex-nowrap items-center gap-10 md:gap-20">
+        {companylogos.concat(companylogos).map((item, index) => (
+          <div class="flex justify-center items-center shrink-0 h-10 md:h-14 mx-4 md:mx-10">
+            <img class="h-full object-contain" src={item.logo} alt={item.alt} loading="lazy" />
+          </div>
+        ))}
       </div>
-    ))}
+    </div>
   </div>
-</div>
+  </div>
 
-<script src="/scripts/animation.js" is:inline></script>
-
-
+  <script src="/scripts/animation.js" is:inline></script>

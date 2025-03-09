@@ -20,8 +20,10 @@ On the right-hand side, you will find an overview of all our contact moments, ma
 - Your Diversdesk environment 'My Page'
 
 ## On-Demand Videos
-No videos added yet. <br>
-Explore our our [video training page](/video_training) instead.
+On-demand videos are listed below, or explore our [video training page](/video_training) here.
+
+Onboarding Journeys Explained
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/a04fed40ddde443f9386bcf5436c7e23?sid=39c15527-ca0a-46cd-8a68-abe08357d177" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ## Other Videos 
 ### Scheduling a 2nd trip in a day 

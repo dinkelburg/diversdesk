@@ -1,30 +1,31 @@
 ---
-import TestimonialItem from "./TestimonialItem.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import TestimonialItem from './TestimonialItem.astro';
+import PrimaryCTA from '@components/ui/buttons/PrimaryCTA.astro';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-const { title, testimonials, primaryBtn, primaryBtnURL} = Astro.props;
+const { title, testimonials, primaryBtn, primaryBtnURL } = Astro.props;
 
-interface Props {
-  title?: string;
-  testimonials?: Testimonial[];
-  primaryBtn?: string;
-  primaryBtnURL?: string;
-}
-
-// TypeScript type for testimonials
-type Testimonial = {
+// Define type for testimonials
+interface Testimonial {
   content: string;
   author: string;
   role: string;
   avatarSrc: string;
   starCount: number;
-};
+}
+
+interface Props {
+  title?: string;
+  testimonials: Testimonial[];
+  primaryBtn?: string;
+  primaryBtnURL?: string;
+}
 ---
 
-
-<section class="mx-auto max-w-[85rem] px-2 py-10 sm:px-2 lg:px-8 lg:py-14 2xl:max-w-full">
-
-  <!-- Title of the testimonials section -->
+<section class="relative overflow-x-hidden">
+<div class="mx-auto max-w-[90rem] px-4 py-10 sm:px-12 lg:px-16 lg:py-14 2xl:max-w-full relative">
   <div class="mb-6 w-3/4 max-w-2xl sm:mb-10 md:mb-16 lg:w-1/2">
     <h2
       class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl"
@@ -33,25 +34,165 @@ type Testimonial = {
     </h2>
   </div>
 
-  <!-- Container for the testimonials -->
-  <div class="px-1 grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3">
-    {testimonials &&
-      testimonials.map((testimonial) => (
-        <div class="flex flex-col h-full">
-          <TestimonialItem
-            content={testimonial.content}
-            author={testimonial.author}
-            role={testimonial.role}
-            avatarSrc={testimonial.avatarSrc}
-            starCount={testimonial.starCount} 
-          />
+  <!-- Testimonial Carousel Container -->
+  <div class="relative">
+    <!-- Arrows Positioned Overlapping -->
+    <div class="swiper-button-prev outside-arrows"></div>
+    <div class="swiper-button-next outside-arrows"></div>
+
+    <!-- Testimonial Carousel -->
+    <div class="testimonial-wrapper px-2 sm:px-16 md:px-16">
+      <div class="swiper" id="testimonials-carousel">
+        <div class="swiper-wrapper">
+          {testimonials.map((testimonial: Testimonial, index: number) => (
+            <div class="swiper-slide">
+              <!-- Added flex and height utilities to ensure equal heights -->
+              <div class="testimonial-container flex flex-col justify-between h-full">
+                <TestimonialItem {...testimonial} />
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination mt-8"></div>
   </div>
-  <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
-  <div class="mt-12 grid w-full gap-3 sm:inline-flex">
-    {primaryBtn && 
-    <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />
-    }
+
+  <!-- Primary CTA Button -->
+  <div class="mt-6 grid w-full gap-3 sm:inline-flex">
+    {primaryBtn && <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />}
+  </div>
+
+  <script>
+    import Swiper from 'swiper';
+    import { Navigation, Pagination } from 'swiper/modules';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      new Swiper('#testimonials-carousel', {
+        modules: [Navigation, Pagination],
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        slidesPerView: 3,
+        spaceBetween: 20,
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        },
+      });
+    });
+  </script>
   </div>
 </section>
+
+<style>
+/* Ensure Swiper slides stretch to the same height */
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Ensure testimonial container uses full height */
+.testimonial-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Swiper Styling */
+.swiper {
+  position: relative;
+}
+
+/* Arrows Styling */
+.outside-arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4rem;
+  height: 5rem; /* Oval shape */
+  background-color: var(--arrow-bg-light, #f0f0f0); /* Default for light mode */
+  color: var(--arrow-color-light, #333333); /* Arrow color for light mode */
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark .outside-arrows {
+  background-color: var(--arrow-bg-dark, #555555); /* Default for dark mode */
+  color: var(--arrow-color-dark, #f0f0f0); /* Arrow color for dark mode */
+}
+
+.outside-arrows:hover {
+  background-color: var(--arrow-hover-bg-light, #e0e0e0); /* Hover for light mode */
+  color: var(--arrow-hover-color-light, #000000);
+}
+
+body.dark .outside-arrows:hover {
+  background-color: var(--arrow-hover-bg-dark, #666666); /* Hover for dark mode */
+  color: var(--arrow-hover-color-dark, #ffffff);
+}
+
+.swiper-button-prev {
+  left: -1.5rem;
+}
+
+.swiper-button-next {
+  right: -1.5rem;
+}
+
+/* Hide arrows on very small screens */
+@media (max-width: 640px) {
+  .outside-arrows {
+    display: none;
+  }
+}
+
+/* Pagination Styling */
+.swiper-pagination {
+  margin-top: 2.5rem;
+  text-align: center;
+  display: none; /* Hidden by default */
+}
+
+/* Show pagination only on small screens */
+@media (max-width: 640px) {
+  .swiper-pagination {
+    display: block;
+    position: relative; /* Ensure it stays within the flow */
+  }
+}
+
+/* Gap Between Testimonials */
+.swiper-wrapper .swiper-slide {
+  margin-right: 1rem; /* Adjust for gap between testimonials */
+}
+</style>

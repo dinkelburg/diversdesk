@@ -1,32 +1,66 @@
 [
   {
-    "heading": "Planning and Scheduling",
-    "content": "Diversdesk presents you industry's most flexible planner, offering multi-booking, multi-activity, and cross-location scheduling capabilities. Ensuring smooth operations and satisfied clients.",
-    "svg": "calendar_orange"
+    "heading": "Effortless Dive Center Operations",
+    "svg": "calendar_orange",
+    "bullets": [
+      "Planning and scheduling",
+      "Staff calendars",
+      "Capacity insights",
+      "Digital whiteboard"
+    ],
+    "primaryBtnURL": "/features"
   },
   {
-    "heading": "Paperless Onboarding",
-    "content": "Operate 100% paperless. Utilize embedded Diver Medical forms and official waivers, or create custom waivers from scratch. Secure, professional, and environmentally friendly.",
-    "svg": "signature_orange"
+    "heading": "Seamless Customer Experience",
+    "svg": "signature_orange",
+    "bullets": [
+      "Paperless multi-language onboarding",
+      "Digital waivers & Diver Medical",
+      "Instant bookings",
+      "Secure customer database"
+    ],
+    "primaryBtnURL": "/features"
   },
   {
-    "heading": "Secure Customer Database",
-    "content": "Keep track of past activities and notes for each customer in your secure database, enabling unique insights and easy follow-ups with your clientele.",
-    "svg": "customer_database_orange"
+    "heading": "Payment Management Tools",
+    "svg": "customer_database_orange",
+    "bullets": [
+      "Pre-payments",
+      "Billing & Invoicing",
+      "Bookkeeping Integration",
+      "Data exports"
+    ],
+    "primaryBtnURL": "/features"
   },
   {
-    "heading": "Staff Calendars and Workload Insights",
-    "content": "Calendars and workload insights offer a clear view of activity distribution. Schedule off-days and allocate rights per member, optimizing resource use without the need for multiple tools.",
-    "svg": "diver_orange"
+    "heading": "Actionable Analytics and Insights",
+    "svg": "diver_orange",
+    "bullets": [
+      "Metrics dashboard",
+      "Workdays, trips, and tank usage",
+      "Data exports"
+    ],
+    "primaryBtnURL": "/features"
+
   },
   {
-    "heading": "Metrics",
-    "content": "Custom CSV export files, combined with our easy-to-use templates, provide the desired insights into your clientele, Activities, Trips and Cashflow",
-    "svg": "metrics_orange"
+    "heading": "Branding and Marketing Tools",
+    "svg": "metrics_orange",
+    "bullets": [
+      "White label branding",
+      "Pre-set Messages & Notes",
+      "Filters & Exports for Email Marketing."
+    ],
+    "primaryBtnURL": "/features"
   },
   {
-    "heading": "White Label Functionality",
-    "content": "Boost your brand's visibility with custom branding on every page and URL you share with customers, ensuring a consistent and professional appearance.",
-    "svg": "features_orange"
+    "heading": "Automations and Integrations",
+    "svg": "features_orange",
+    "bullets": [
+      "Payment Gateway Integration",
+      "Bookkeeping Integration",
+      "Email Notifications"
+    ],
+    "primaryBtnURL": "/features"
   }
 ]

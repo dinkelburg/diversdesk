@@ -25,6 +25,9 @@ On the right-hand side, you will find an overview of all our contact moments, ma
 ## On-Demand Videos
 On-demand videos are listed below, or explore our [video training page](/video_training) here.
 
+### Connecting an Existing Participant to a Booking
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/a849462445af41909806e7db0c99d621?sid=6d9ad13b-3638-43df-b0bc-c2024c6f4c4a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ### Customizing the Detailed Day View
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/3158852accef47209fd26f2fcd0c9af8?sid=ec5a2103-c5ba-4594-98fb-13d676135a1c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
