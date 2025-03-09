@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-// import fallbackImage from "@images/apple-set.avif";
+import fallbackImage from "@images/Apple-Set.avif";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 
 // Define props from Astro
@@ -29,7 +29,9 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
     <div
       class={`w-full lg:col-span-7 ${imagePosition === "right" ? "order-first md:order-last lg:order-last" : "order-first md:order-first lg:order-first"}`}
     >
-      {image && <Image class="rounded-xl" src={image} alt="Mockup of floating boxes" />}
+    <Image class="rounded-xl" src={image || fallbackImage} alt="Macbook, ipad and iphone displaying dive center metrics using diversdesk dive shop management software" />
+
+      <!-- {image && <Image class="rounded-xl" src={image} alt="Mockup of floating boxes" />} -->
     </div>
 
     <!-- Text Section -->
