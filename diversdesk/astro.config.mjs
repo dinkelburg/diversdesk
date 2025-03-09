@@ -11,6 +11,21 @@ import partytown from '@astrojs/partytown';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.diversdesk.com',
+
+  redirects: {
+    "/blog/en/how-to-digitally-onboard-fun-divers": "/blog/en/blog1-how-to-digitally-onboard-fun-divers",
+    "/blog/en/post-2": "/blog/en/blog2-digital-whiteboard-for-dive-centers",
+    "/blog/en/post-3": "/blog/en/blog3-what-makes-the-most-flexible-planner-and-scheduler",
+    "/blog/en/dive-center-bookkeeping": "/blog/en/blog4-dive-center-bookkeeping",
+    "/blog/en/post-5": "/blog/en/blog5-best-software-digital-waivers",
+    "/blog/en/post-6": "/blog/en/blog6-time-saving-tips-for-dive-centers",
+    "/blog/en/post-7": "/blog/en/blog7-overcoming-change-fear-in-dive-centers",
+    "/insights/insight-1": "/insights/insight1-environmental-impact-printed-paperwork-diving",
+    "/insights/insight-2": "/insights/insight2-measures-to-protect-coral-reef",
+    "/insights/insight-3": "/insights/insight3-2024-trends-diving-industry",
+    "/insights/insight-4": "/insights/insight4-combating-plastic-polution"
+  },
+  
   image: {
     domains: ['images.unsplash.com'], 
   },  
