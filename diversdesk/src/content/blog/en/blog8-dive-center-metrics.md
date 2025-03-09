@@ -33,7 +33,7 @@ structuredData:
   description: "Dive center management: Use metrics to measure success. Track financial health, customer trends, and sales to grow your dive business effectively"
   mainEntityOfPage:
     "@type": "WebPage"
-    "@id": "https://www.diversdesk.com/blog/en/how-to-digitally-onboard-fun-divers"
+    "@id": "https://www.diversdesk.com/blog/en/blog8-dive-center-metrics"
 ---
 
 <!-- Table of Contents -->
