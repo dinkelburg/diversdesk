@@ -2,9 +2,9 @@
 title: "Bali's Top 10 Dive Sites: A Must-See for Scuba Divers"
 pubDate: "2025.03.16"
 slug: "top-10-dive-sites-in-bali"
-description: "Discover the Bali top 10 Dive sites that every diver should check out!"
+description: "Discover the Bali top 10 Dive sites that every scuba diver should check out!"
 hero: "/images/diver-at-divesite.avif"
-tags: ["scuba", "bali", "diving", "dive sites", "top 10"]
+tags: ["scuba", "bali", "scuba diving", "dive sites", "top 10"]
 layout: "../../layouts/BlogPostLayout.astro"
 ---
 
