@@ -3,11 +3,12 @@ title: "Bali's Top 10 Dive Sites: A Must-See for Scuba Divers"
 pubDate: "2025.03.16"
 slug: "top-10-dive-sites-in-bali"
 description: "Discover the Bali top 10 Dive sites that every scuba diver should check out!"
-hero: "/images/diver-at-divesite.avif"
+hero: "/images/diver-at-divesite.jpg"
 tags: ["scuba", "bali", "scuba diving", "dive sites", "top 10"]
 layout: "../../layouts/BlogPostLayout.astro"
 ---
 
+<h2>Intro</h2>
 <p>Bali is not just a tropical paradise on land; it also boasts some of the most stunning dive sites in the world. With its warm waters, diverse marine life, and unique underwater landscapes, Bali is a haven for divers of all skill levels. Here’s a look at the top 10 dive sites in Bali that offer unforgettable underwater adventures.</p>
 
 <h2>1. Tulamben – USS Liberty Wreck</h2>
