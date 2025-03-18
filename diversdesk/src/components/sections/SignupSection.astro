@@ -61,6 +61,7 @@ const startIso = new Date().toISOString();
                                 <label for="website">Website</label>
                                 <input name="website" id="website" value=""/>
                             </div>
+                            <input type="hidden" name={namePrefix + 'type'} value={type} />
                             <input type="hidden" name="start" value={startIso}/>
                             <input name="redirect" value={redirectBaseUrl + `/signup/${type}/success`} type="hidden"/>
                             <input name="redirect_error" value={redirectBaseUrl + `/signup/${type}/error`}
