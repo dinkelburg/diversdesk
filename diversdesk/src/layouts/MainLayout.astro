@@ -5,15 +5,28 @@ import Navbar from "@components/sections/Navbar.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
 import { SITE } from "@data/constants";
 
-const { title = SITE.title, meta, structuredData, lang = "en", robots = "index, follow"} = Astro.props;
-
 interface Props {
   title?: string;
+  description?: string; 
+  image?: string;     
+  url?: string;       
   meta?: string;
   structuredData?: object;
   lang?: string;
   robots?: string; 
+  canonical?: string;
 }
+
+const {
+  title = SITE.title,
+  description = Astro.props.description || "DiversDesk is leading the way in dive center operations, with planning & scheduling, advanced paperless onboarding, digital waivers, CRM, online bookings, and integrated payments. Try it today!",
+  image = "/images/Laptop-and-phone-diversdesk.avif",
+  url = "https://www.diversdesk.com",
+  meta = "",
+  structuredData,
+  lang = "en",
+  robots = "index, follow", 
+} = Astro.props;
 ---
 
 <html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
@@ -21,9 +34,7 @@ interface Props {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
-    <slot name="canonical">
-      <link rel="canonical" href="https://www.diversdesk.com" />
-    </slot>
+    <!-- <link rel="canonical" href={canonical} /> -->
     
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
@@ -35,14 +46,15 @@ interface Props {
 
     <meta name="robots" content={robots} /> <!-- Added meta robots tag -->
     <SEO
-      title="DiversDesk: Dive Center Software, The Intuitive All-in-One Solution"
-      description="DiversDesk is leading the way in dive center operations, with planning & scheduling, advanced paperless onboarding, digital waivers, CRM, online bookings, and integrated payments. Try it today!"
+      title={title}
+      description={description}
       openGraph={{
         basic: {
-          title: "DiversDesk: Simplify Your Dive Center Operations with our All-in-One Software",
+          title: title,
           type: "website",
-          image: "/images/Laptop-and-phone-diversdesk.avif", 
-          },
+          image: image,
+          url: url,
+        },
       }}
     />
     <!-- Allow page-specific head content -->
@@ -113,6 +125,9 @@ interface Props {
 
       requestAnimationFrame(raf);
     </script>
+
+    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+    {meta && <Fragment set:html={meta} />}
   </head>
 
   <body class="bg-white selection:bg-orange-200 selection:text-neutral-700 dark:bg-neutral-800 overflow-x-hidden">

@@ -30,6 +30,7 @@ const relatedPosts = blogPosts.filter((blogEntry) => blogEntry.slug !== post.slu
 const { Content } = await post.render();
 const pageTitle = `${post.data.title} | ${SITE.title}`;
 const pageUrl = `https://diversdesk.com/blog/${post.slug}`;
+
 ---
 
 <MainLayout title={pageTitle}>
@@ -46,8 +47,8 @@ const pageUrl = `https://diversdesk.com/blog/${post.slug}`;
       url: pageUrl
     }
   }}
+  canonical={pageUrl}
   />
-
 
   <!-- BlogPosting Schema -->
   <script type="application/ld+json" is:inline>

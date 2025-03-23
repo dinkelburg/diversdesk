@@ -31,6 +31,21 @@ import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.ast
 import WaiversImage from "@images/custom_waivers_2.avif";
 import IpadDetaildDayView from "@images/iPad_pro_detailed_day.avif";
 import AppleSet from "@images/Apple-Set.avif";
+
+const faqItems = faqs.faqs.map((faq) => ({
+  "@type": "Question",
+  "name": faq.question,
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": faq.answer,
+  },
+}));
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqItems,
+};
 ---
 
 <MainLayout>
@@ -305,6 +320,10 @@ features={features}
     <section id="faq">
       <FAQ title="Frequently<br />Asked Questions" faqs={faqs} />
     </section>
+
+    <script type="application/ld+json" is:inline>
+      <raw>{JSON.stringify(faqSchema)}</raw>
+    </script>
 
     <HeroSectionAlt
             title="Let's Build Together"
