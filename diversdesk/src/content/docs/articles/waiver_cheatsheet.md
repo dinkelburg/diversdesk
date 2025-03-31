@@ -205,8 +205,8 @@ This is a quick reference full of examples you can implement to create your cust
     <td onclick="copyToClipboard(this)">
       <span class="markdown-text">Checkbox example where multiple choice is possible.  
 <br>
-{% label %}{% input type="checkbox"  name="box1" value="yes" /%} Option A {% /label %} &nbsp;  
-{% label %}{% input type="checkbox"  name="box2" value="yes" /%} Option B {% /label %} &nbsp;  
+{% label %}{% input type="checkbox"  name="box1" value="yes" /%} Option A {% /label %} &nbsp; 
+{% label %}{% input type="checkbox"  name="box2" value="yes" /%} Option B {% /label %} &nbsp; 
 {% label %}{% input type="checkbox"  name="box3" value="yes" /%} Option C {% /label %} </span>
       <button class="copy-btn"><i class="far fa-copy"></i></button>
       <span class="copied-message">Copied!</span>
@@ -219,7 +219,7 @@ This is a quick reference full of examples you can implement to create your cust
     <td onclick="copyToClipboard(this)">
       <span class="markdown-text">Radio button example where only 1 choice is possible.
 <br>
-{% label %}{% input type="radio" required=true name="infection"  value="yes"/%} Option 1 {% /label %} &nbsp;  
+{% label %}{% input type="radio" required=true name="infection"  value="yes"/%} Option 1 {% /label %} &nbsp; 
 {% label %}{% input type="radio" required=true name="infection" value="no" /%} Option 2 {% /label %}</span>
       <button class="copy-btn"><i class="far fa-copy"></i></button>
       <span class="copied-message">Copied!</span>
