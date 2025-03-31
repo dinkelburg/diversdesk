@@ -197,6 +197,39 @@ This is a quick reference full of examples you can implement to create your cust
   </tr>
 </table>
 
+## Checkboxes & Radio Buttons
+
+<!-- Second Table with Two Columns -->
+<table class="full-width-table">
+  <tr>
+    <td onclick="copyToClipboard(this)">
+      <span class="markdown-text">Checkbox example where multiple choice is possible.  
+<br>
+{% label %}{% input type="checkbox"  name="box1" value="yes" /%} Option A {% /label %} &nbsp; 
+{% label %}{% input type="checkbox"  name="box2" value="yes" /%} Option B {% /label %} &nbsp; 
+{% label %}{% input type="checkbox"  name="box3" value="yes" /%} Option C {% /label %} </span>
+      <button class="copy-btn"><i class="far fa-copy"></i></button>
+      <span class="copied-message">Copied!</span>
+    </td>
+    <td>
+      <img src="/images/checkbox-example.png" alt="Example Image">
+    </td>
+  </tr>
+  <tr>
+    <td onclick="copyToClipboard(this)">
+      <span class="markdown-text">Radio button example where only 1 choice is possible.
+<br>
+{% label %}{% input type="radio" required=true name="infection"  value="yes"/%} Option 1 {% /label %} &nbsp; 
+{% label %}{% input type="radio" required=true name="infection" value="no" /%} Option 2 {% /label %}</span>
+      <button class="copy-btn"><i class="far fa-copy"></i></button>
+      <span class="copied-message">Copied!</span>
+    </td>
+    <td>
+      <img src="/images/radiobutton-example.png" alt="Example Image">
+    </td>
+  </tr>
+</table>
+
 ## Image attributes
 
 <!-- 3rd Table with Two Columns -->
@@ -293,24 +326,35 @@ Footnote text that is slightly smaller and lighter in color.
 <script>
   let lastCopiedMessage = null;
 
-function copyToClipboard(element) {
-  // Extract the text content from the cell and replace <br> with real newlines
-  const text = element.querySelector('.markdown-text').innerHTML.replace(/<br\s*\/?>/gi, '\n');
-  navigator.clipboard.writeText(text).then(() => {
-    // Hide the previous "Copied!" message if it's still visible
-    if (lastCopiedMessage) {
-      lastCopiedMessage.style.display = 'none';
-    }
-    // Display the new "Copied!" message
-    const copiedMessage = element.querySelector('.copied-message');
-    copiedMessage.style.display = 'inline';
-    lastCopiedMessage = copiedMessage;
+  function copyToClipboard(element) {
+    const markdownSpan = element.querySelector('.markdown-text');
+    if (markdownSpan) {
+      let textToCopy = markdownSpan.textContent;
 
-    setTimeout(() => {
-      copiedMessage.style.display = 'none';
-    }, 2000);
-  });
-}
+      // Replace non-breaking space character with &nbsp;
+      const processedTextWithNbsp = textToCopy.replace(/\u00A0/g, '&nbsp;');
+
+      // Remove the "Copied!" text if it's present
+      const finalProcessedText = processedTextWithNbsp.replace('Copied!', '').trim();
+
+      console.log("Text being copied:", finalProcessedText);
+
+      navigator.clipboard.writeText(finalProcessedText).then(() => {
+        if (lastCopiedMessage) {
+          lastCopiedMessage.style.display = 'none';
+        }
+        const copiedMessage = element.querySelector('.copied-message');
+        copiedMessage.style.display = 'inline';
+        lastCopiedMessage = copiedMessage;
+
+        setTimeout(() => {
+          copiedMessage.style.display = 'none';
+        }, 2000);
+      }).catch((err) => {
+        console.error('Failed to copy!', err);
+      });
+    }
+  }
 </script>
 
 
