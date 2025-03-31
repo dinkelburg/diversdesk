@@ -251,7 +251,7 @@ This is a quick reference full of examples you can implement to create your cust
     <td onclick="copyToClipboard(this)">
       <span class="markdown-text">{% div className="flex gap-3" style="align-items: center;"%}
 {% div className="w-24" %}
-![diversdesklogo](https://www.diversdesk/images/icon_example.png)
+![diversdesklogo](https://www.diversdesk.com/images/icon-example.png)
 {% /div %}
 {% div %}
 # Example Waiver Header
