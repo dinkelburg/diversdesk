@@ -238,7 +238,7 @@ This is a quick reference full of examples you can implement to create your cust
   <tr>
     <td onclick="copyToClipboard(this)">
       <span class="markdown-text">
-![Alt text](https://example.com/example-image.png "Optional Title")</span>
+![Alt text](https://www.diversdesk.com/images/example-image.png "Optional Title")</span>
       <button class="copy-btn"><i class="far fa-copy"></i></button>
       <span class="copied-message">Copied!</span>
     </td>
@@ -249,9 +249,9 @@ This is a quick reference full of examples you can implement to create your cust
 <!-- Image and Header -->
     <tr>
     <td onclick="copyToClipboard(this)">
-      <span class="markdown-text">{% div className="flex gap-3" %}
+      <span class="markdown-text">{% div className="flex gap-3" style="align-items: center;"%}
 {% div className="w-24" %}
-![diversdesklogo](/images/ddlogo.png)
+![diversdesklogo](https://www.diversdesk/images/icon_example.png)
 {% /div %}
 {% div %}
 # Example Waiver Header
