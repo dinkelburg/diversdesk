@@ -24,6 +24,9 @@ On the right-hand side, you will find an overview of all our contact moments, ma
 
 ## On-Demand Videos
 
+### Adding a Ts & Cs tickbox to the registration form
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/9b08c366cb804bb2a1f5f50fa73ccfa3?sid=2cd46d0c-9e44-434a-8624-d0eeba6f2f8f" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ### Insights & Headcount
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/9b6a0511b0644a678134b17d58b0a8a5?sid=76726e7a-433a-4615-808b-e2d8f9d4ab82" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
