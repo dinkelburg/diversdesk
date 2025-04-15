@@ -22,6 +22,14 @@ Imagine a spa day, but for manta rays! That's essentially what Manta Point is. I
 
 Get ready to be awestruck by the sheer size and grace of these animals. Manta rays here can measure a whopping **3 to 5 meters across**, making them the largest in Bali. Watching them "fly" through the water is an absolutely breathtaking experience. The best part? You've got a really high chance of spotting them – a truly remarkable **95% possibility** throughout the year! Not bad, right? They often hang out in the **shallower waters**, between 2 and 10 meters deep, right around those cleaning stations.
 
+<div style="text-align: center;">
+  <img 
+    src="/images/manta-ray-at-manta-point-nusa-penida.avif" 
+    alt="A manta ray hovering over divers at manta point, Nusa Penida, Bali"
+    class="w-full md:w-full mx-auto"
+  />
+</div>
+
 ### A Site for All Levels
 
 Whether you're a seasoned diver or just love to snorkel, Manta Point has something for you. You can have incredible encounters with manta rays whether you're below the surface with a tank or floating above with a snorkel. Even from the boat, you might get lucky and spot them.
@@ -41,6 +49,14 @@ Not a diver? No worries! Snorkeling at Manta Point can be **much better and safe
 ### Choosing Your Experience: Dive vs. Snorkel
 
 Both diving and snorkeling offer amazing ways to see manta rays. **Snorkeling** is perfect if you prefer to stay near the surface and is super accessible for beginners. You still get that thrilling glimpse of these gentle giants swimming below. On the other hand, **scuba diving** provides a more immersive experience, allowing you to get closer to the mantas at their cleaning stations and explore the broader marine life.
+
+<div style="text-align: center;">
+  <img 
+    src="/images/manta-ray-at-manta-point-nusa-penida-bali.avif" 
+    alt="A manta ray gliding through the water at Manta Point, Nusa Penida, Bali"
+    class="w-full md:w-full mx-auto"
+  />
+</div>
 
 ## Beyond the Giants: Encountering Diverse Marine Life
 
