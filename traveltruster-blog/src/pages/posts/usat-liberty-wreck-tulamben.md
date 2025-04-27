@@ -1,18 +1,31 @@
 ---
-title: "Diving into History: Exploring the Legendary USAT Liberty Wreck in Bali"
-description: "A desciption of marine life you will likely encounter in Bali and what our top 5 major marine life is to check out in Bali"
-pubDate: "2024-03-08"
+title: "Dive the USAT Liberty Wreck in Bali: History, Marine Life & Dive Guide"
+description: "Explore the legendary USAT Liberty shipwreck in Tulamben, Bali! Discover its fascinating WWII history, incredible marine biodiversity, and get essential tips for planning your unforgettable dive."
+pubDate: "2025-04-21"
 hero: "/images/manta_ray_header.png"
 tags: ["astro"]
 layout: "../../layouts/BlogPostLayout.astro"
 ---
 
+<p>
 Ever wondered what it's like to explore a real-life piece of history, teeming with vibrant marine life? Well, in Tulamben, Bali, you can do just that! The USAT Liberty shipwreck isn't just another dive site; it's a captivating blend of historical significance and breathtaking underwater beauty. Divers from all corners of the globe flock here, drawn by the promise of exploring one of Indonesia's most famous and easily accessible wrecks. So, grab a cuppa and let's dive into what makes the Liberty so special!
-A Tale of Two Worlds: The History of the USAT Liberty
-The story of the USAT Liberty is a fascinating one, spanning across two world wars and a dramatic volcanic eruption. Originally named the SS Liberty Glo, she was the first ship built by Federal Shipbuilding of New Jersey. Launched on June 19, 1918, by Federal Shipbuilding Kearny in New Jersey, she was soon acquired by the United States Navy and commissioned as part of the United States shipping board during World War I.
-Her initial task was quite different from her wartime duties, transporting horses from New York to France in October 1918. Over the next six months, she made two more voyages carrying general cargo and even live animals. Before being decommissioned, she transported a hefty amount of US Army cargo and steel rails, arriving back in Virginia in April 1919. She was officially decommissioned on May 7, 1919, and returned to the United States Shipping Board.
-But the Liberty's sailing days weren't over just yet! Between World War I and World War II, she continued to sail. However, she had a bit of a clumsy streak, unfortunately colliding with other vessels twice. First, in 1929, she tangled with a French tug, the Dogue, in France, sadly causing the tug to sink and the loss of two crew members. Then, in 1933, she collided with an American cargo ship, the Ohioan, near New York. Despite these mishaps, the Liberty soldiered on.
-Then came World War II, and in 1939, the Liberty, still owned by the United States Maritime Commission, was operated by the Southgate-Nelson Corporation. By November 1940, the United States Army took her over for defense service, re-designating her the USAT Liberty (United States Army Transport) and arming her with two cannons. When the US entered WWII in December 1941, the Liberty was serving in the Pacific.
+</p>
+
+<h2>A Tale of Two Worlds: The History of the USAT Liberty</h2>
+<p>
+The story of the USAT Liberty is a fascinating one, spanning across two world wars and a dramatic volcanic eruption. Originally named the SS Liberty Glo
+</p>
+
+* **World War I Service:** Launched on June 19, 1918, by Federal Shipbuilding Kearny in New Jersey, she was soon acquired by the       
+United States Navy and commissioned as part of the United States shipping board during World War I.
+Her initial task was quite different from her wartime duties, transporting horses from New York to France in October 1918. Over the next six months, she made two more voyages carrying general cargo and even live animals. Before being decommissioned, she transported a hefty amount of US Army cargo and steel rails, arriving back in Virginia in April 1919. She was officially decommissioned on May 7, 1919, and returned to the United States Shipping Board.  
+<br>
+
+* **Interwar Years:** But the Liberty's sailing days weren't over just yet! Between World War I and World War II, she continued to sail. However, she had a bit of a clumsy streak, unfortunately colliding with other vessels twice.
+    * In 1929, she tangled with a French tug, the Dogue, in France, sadly causing the tug to sink and the loss of two crew members. 
+    * Then, in 1933, she collided with an American cargo ship, the Ohioan, near New York. Despite these mishaps, the Liberty soldiered on.
+    
+* **World War II and the Torpedo Strike:** Then came world war II, and in 1939, the Liberty, still owned by the United States Maritime Commission, was operated by the Southgate-Nelson Corporation. By November 1940, the United States Army took her over for defense service, re-designating her the USAT Liberty (United States Army Transport) and arming her with two cannons. When the US entered WWII in December 1941, the Liberty was serving in the Pacific.
 Tragedy struck on January 11, 1942, while she was en route from Australia to the Philippines, carrying crucial materials like railway parts and rubber. About ten nautical miles southwest of the Lombok Strait, near Bali, she was hit by two torpedoes from the Japanese submarine I-166. Luckily, she didn't sink immediately.
 The US destroyer Paul Jones and the Dutch destroyer Van Ghent tried their best to tow the damaged Liberty to a safe harbor in Singaraja, on Bali's northern coast. However, she had taken on too much water and had to be beached on the east coast of Bali in Tulamben. Thankfully, the cargo and equipment were salvaged.
 For 21 long years, the Liberty rested on the beach. Locals even took some of the valuable items and parts of the ship's deck. But the final chapter of her journey came in 1963, with the devastating eruption of Mount Agung. The earthquakes accompanying the eruption pushed the wreck about 25 meters (some sources say 50 meters) offshore and caused her hull to break into two pieces. She now lies on a sandy slope at depths ranging from 5 to 30 meters, roughly 40-50 meters from the shore, with her bow pointing north and lying on her side. It wasn't until the 1970s that Tulamben's residents rediscovered the wreck, and it soon became a sensation among divers.
