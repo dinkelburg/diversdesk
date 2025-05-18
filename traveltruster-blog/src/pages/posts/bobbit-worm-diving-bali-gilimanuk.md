@@ -1,6 +1,6 @@
 ---
 title: "Bali's Secret Underwater Paradise: Why Diving Here Will Surprise You"
-pubDate: "2025.03.09"
+pubDate: "2025.05.11"
 slug: "bobbit-worm-diving-bali-gilimanuk"
 description: "Think you know Bali diving? Prepare for a surprise! Discover the bizarre Bobbit worm in Gilimanuk – an encounter you won't forget."
 hero: "/images/bobbit-worm.avif"
@@ -52,7 +52,7 @@ While Bobbit worms are not known to be aggressive or to strike divers, they are 
 
 Their body is covered in bristles, which are used for defence and to help them grip the substrate. These bristles can deliver a nasty sting. If handled, this sting can potentially result in permanent nerve damage.
 
-Furthermore, their bite is venomous. They inject a toxin used to stun their prey. Because of the potential for a nasty fight and a serious wound, it is strongly advised to **stay clear** of Bobbit worms when diving. (Note: The sources do not provide specific details on the venom's composition or treatment beyond mentioning its stunning effect on prey and potential harm to humans).
+Furthermore, their bite is venomous. They inject a toxin used to stun their prey. Because of the potential for a nasty fight and a serious wound, it is strongly advised to **stay clear** of Bobbit worms when diving.
 
 ## Life Cycle and Remarkable Regeneration
 
@@ -61,16 +61,6 @@ The lifespan of *Eunice aphroditois* is believed to be relatively short, typical
 Bobbit worms reproduce sexually. They are broadcast spawners; when ready to mate, females release pheromones to attract males, and both sexes release sperm and eggs into the water column for external fertilisation. As the fertilised eggs are unprotected, they have a low survival rate, with many being eaten by fish. Scientists believe they reach sexual maturity when they are around 100mm (approx 4 inches) in length. (Note: The sexual reproduction organs of *E. aphroditois* are not fully studied in the provided sources).
 
 Like many bristle worm species, Bobbit worms also possess a remarkable ability: **regeneration**. They can reproduce asexually by splitting into segments. They are capable of regenerating body parts, such as the head or tail. This regenerative capability is a survival benefit, helping them recover from attacks by predators. (Note: The sources do not detail the full process or extent of this regeneration).
-
-## The Aquarium Invader
-
-While not intentionally kept, Bobbit worms have gained notoriety in the aquarium hobby as unwanted guests. They are occasionally introduced accidentally into home aquaria or public tanks via live rock collected from reefs. Juvenile Bobbit worms can be small enough to evade detection among the rocks.
-
-Once in an aquarium, their large appetite and hidden nature can cause problems. They can **decimate the fish stock unnoticed** due to their predatory nature. They can also cause damage to corals.
-
-Removing a Bobbit worm from an aquarium is notoriously difficult. Their ability to split and regenerate means cutting them in half is often ineffective. They also dig holes into rocks and can curl up and hide in small spaces despite their length.
-
-A famous case involved a specimen named 'Barry' at a public aquarium in Newquay, England. Barry was eventually discovered after years of mysterious disappearances and damage in the tank before being moved to his own enclosure.
 
 ## Where and How to Find a Bobbit Worm While Diving
 
@@ -82,7 +72,7 @@ For divers, the best time to see Bobbit worms is **at night during night dives**
 
 Specific Indonesian hotspots mentioned in the sources include:
 
-*   **The Lembeh Strait:** A famous muck diving destination. Bobbit worms are commonly found here. Air Prang and the Lembeh Resort House Reef are specifically noted as great sites for sightings during night dives throughout the year. Two Fish Divers in Lembeh is also mentioned in the context of diving with them.
+*   **The Lembeh Strait:** A famous muck diving destination. Bobbit worms are commonly found here. Air Prang and the Lembeh Resort House Reef are specifically noted as great sites for sightings during night dives throughout the year. 
 *   **Bali:** Bobbit worms are found throughout the country, including Bali. **Secret Bay** near Gilimanuk is highlighted as a best place to encounter them, particularly at night. Gilimanuk is a renowned muck diving destination with silty bottoms that provide suitable habitat. Bunaken Marine Park muck diving slopes are also mentioned as a place to see them. Two Fish Divers has centres in Bali locations like Amed, Nusa Penida, and Sanur, offering diving opportunities where Bobbit worms *might* be encountered, though Secret Bay is the specific site called out for them.
 *   **Komodo:** Mentioned as a spot where Bobbit worms can be found.
 *   **Bunaken:** Muck diving slopes in Bunaken Marine Park are mentioned as a place where Bobbit worms are commonly encountered, usually at night. Two Fish Divers also has a center in Bunaken.
