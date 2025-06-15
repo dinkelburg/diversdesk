@@ -1,6 +1,6 @@
 ---
 title: "Snorkelling with Turtles in Nusa Penida: Your Ultimate Guide"
-pubDate: "2025.03.16"
+pubDate: "2025.06.15"
 slug: "snorkeling-with-turtles-in-nusa-penida-bali"
 description: "Swim alongside sea turtles in crystal-clear waters – the ultimate snorkelling adventure in Bali’s Nusa Penida"
 hero: "/images/sea-turtle-nusa-penida.avif"
