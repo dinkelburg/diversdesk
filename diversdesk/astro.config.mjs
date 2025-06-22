@@ -23,7 +23,8 @@ export default defineConfig({
     "/insights/insight-1": "/insights/insight1-environmental-impact-printed-paperwork-diving",
     "/insights/insight-2": "/insights/insight2-measures-to-protect-coral-reef",
     "/insights/insight-3": "/insights/insight3-2024-trends-diving-industry",
-    "/insights/insight-4": "/insights/insight4-combating-plastic-polution"
+    "/insights/insight-4": "/insights/insight4-combating-plastic-polution",
+    "/blog/en/top-features-in-dive-center-management-softward": "/blog/en/top-features-in-dive-center-management-software"
   },
   
   image: {
