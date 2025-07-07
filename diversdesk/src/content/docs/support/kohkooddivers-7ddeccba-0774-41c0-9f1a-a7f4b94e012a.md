@@ -28,6 +28,15 @@ On the left, you can access all documents in our documentation hub.
 
 ## View Your Subscription
 You can view current subscription, invoices and billing term using <a href="https://billing.stripe.com/p/login/5kQ14n3Ve7gkgcYcll0VO00" target="_blank" rel="noopener noreferrer">This URL</a>
+<em>Please note: You will have to login using the email you provided during sign-up to access your account.</em>
+
+<div style="text-align: center;">
+  <img 
+    src="/images/subscription-login-screen.avif" 
+    alt="A phone showing the google search page"
+    class="w-full md:w-10/12 mx-auto"
+  />
+</div>
 
 ## On-Demand Videos
 No videos added yet. <br>
