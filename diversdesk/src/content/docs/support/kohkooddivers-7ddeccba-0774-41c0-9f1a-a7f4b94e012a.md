@@ -3,6 +3,14 @@ title: Koh Kood Divers _ Support Page
 pagefind: false
 robots: noindex, nofollow
 ---
+
+This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. <br>
+
+On the right, you'll find page navigation, making it easy to jump to any desired section on this page. 
+<br>
+On the left, you can access all documents in our documentation hub.
+
+**Navigation buttons to quickly navigate to:**
 <div style="display: flex; justify-content: space-between; width: 100%; padding: 0; gap: 10px;">
     <a href="https://sharing.clickup.com/2633992/l/h/2gc88-2495/61e2d3b6136945f" style="display: inline-block; padding: 6px 20px; background-color: #333333; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
         Diversdesk Priority Tickets &#128196;
@@ -14,13 +22,12 @@ robots: noindex, nofollow
     </a>
 </div>
 
-This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. </br>
-On the right-hand side, you will find an overview of all our contact moments, making it easy for you to jump back and review any solution that needs more repetition for you or one of your team members.
-
-**At the top of the page, you'll find quicklinks to:**
 - Diversdesk's top priority tickets, providing real-time insights into what has just been released, what we're currently working on, and what's coming next. 
 - Your personal priority ticket list, where you can track all the requests you've made. (Becomes avaialble when there's pending requests)
 - Your Diversdesk environment 'My Page'
+
+## View Your Subscription
+You can view current subscription, invoices and billing term using <a href="https://billing.stripe.com/p/login/5kQ14n3Ve7gkgcYcll0VO00" target="_blank" rel="noopener noreferrer">This URL</a>
 
 ## On-Demand Videos
 No videos added yet. <br>
