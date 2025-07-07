@@ -23,11 +23,11 @@ On the left, you can access all documents in our documentation hub.
 </div>
 
 - Diversdesk's top priority tickets, providing real-time insights into what has just been released, what we're currently working on, and what's coming next. 
-- Your personal priority ticket list, where you can track all the requests you've made. (Becomes avaialble when there's pending requests)
+- Your personal priority ticket list, where you can track all the requests you've made. 
 - Your Diversdesk environment 'My Page'
 
-## View Your Subscription
-You can view current subscription, invoices and billing term using <a href="https://billing.stripe.com/p/login/5kQ14n3Ve7gkgcYcll0VO00" target="_blank" rel="noopener noreferrer">This URL</a>
+## Your Subscription
+You can view current subscription, invoices and billing term using <a href="https://billing.stripe.com/p/login/5kQ14n3Ve7gkgcYcll0VO00" target="_blank" rel="noopener noreferrer">this URL</a>
 <em>Please note: You will have to login using the email you provided during sign-up to access your account.</em>
 
 <div style="text-align: center;">
@@ -37,6 +37,9 @@ You can view current subscription, invoices and billing term using <a href="http
     class="w-full md:w-10/12 mx-auto"
   />
 </div>
+
+### Complementary training
+Use <a href="https://calendly.com/diversdesk-info/demo" target="_blank" rel="noopener noreferrer">this link</a> to schedule your 2-hour complimentary training. 
 
 ## On-Demand Videos
 No videos added yet. <br>
