@@ -63,6 +63,9 @@ This support page will contain all the questions, videos, and discussed subjects
 ### 9. Trip Templates
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/72e67cdc5e3543438e4e8d3899f2222d?sid=be216f2b-44f1-42c5-9a81-5cfa3b74676a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
+### 10 How to View Unpaid Bookings
+<div style="position: relative; padding-bottom: 59.4059405940594%; height: 0;"><iframe src="https://www.loom.com/embed/1b8e36fdf5174fa4a48f2735fa2c3b20?sid=d7455f80-ddf0-40de-aa79-3242d7983032" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ## Other Videos 
 
 ### Diversdesk in 10 minutes

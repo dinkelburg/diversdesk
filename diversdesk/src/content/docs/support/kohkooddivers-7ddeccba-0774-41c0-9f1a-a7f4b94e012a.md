@@ -57,8 +57,9 @@ You'll receive 2 hours of complimentary training from us. You're welcome to use 
 </div>
 
 ## On-Demand Videos
-No videos added yet. <br>
-Explore our our [video training page](/video_training) instead.
+
+### How to Use Trip Templates
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/8d803dcecef84101b15b67e399f6d5d1?sid=71c518ab-71fc-4360-a0f6-7c076597d5b7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ## Other Videos 
 

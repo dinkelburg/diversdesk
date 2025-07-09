@@ -16,6 +16,9 @@ On the right-hand side, you will find an overview of all our contact moments, ma
 
 ## On-Demand Videos
 
+### Onboarding Journeys and Multi-Activity Bookings
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/c05c7179195b4016a1393690c9fd2313?sid=9277db65-b2de-4774-85b3-81fb0be8bfa4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ### CRM-only workflow
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/bd8c27016bb242a598416ebb1e327eeb?sid=5bf26d8f-5b54-4b9d-b1dc-7117f83fa88c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
