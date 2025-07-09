@@ -25,14 +25,20 @@ This support page will contain all the questions, videos, and discussed subjects
 - Your Diversdesk environment 'My Page'
 
 ## On-Demand Videos
-### How to Create and Use Trip Templates
-<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/33d37e6700b14a59930d3f18f0114b51?sid=fc002bee-1762-4018-ae4b-21648f8b6b47" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-### Connecting and Updating Onboarding Journeys
+### 1. Connecting a Pending Participent to an Existing Booking
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/d803e4e6728a4277a29303af9504316c?sid=09b3691d-b0f3-4a93-8f0d-5001a1ec03f0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### 2. Connecting and Updating Onboarding Journeys
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/c0056ecff992449c9d6cc86a9d82ef45?sid=4dfae36c-66b2-4916-a4ab-16f816bdbdcc" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-### Connecting a Pending Participent to an Existing Booking
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/d803e4e6728a4277a29303af9504316c?sid=09b3691d-b0f3-4a93-8f0d-5001a1ec03f0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+### 3. How to Create and Use Trip Templates
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/33d37e6700b14a59930d3f18f0114b51?sid=fc002bee-1762-4018-ae4b-21648f8b6b47" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### 4. Filter for Courses using the Booking Page CSV Export
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/e2f828db39ea4cd29568e80c7d12c3d4?sid=a5909084-4fe1-4065-82de-94c8fd4889cb" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+
 
 ## Video training in Bahasa Indonesia
 
