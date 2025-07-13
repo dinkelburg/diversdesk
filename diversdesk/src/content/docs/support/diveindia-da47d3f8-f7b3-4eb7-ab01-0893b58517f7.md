@@ -1,8 +1,9 @@
 ---
-title: Ocean Tribe _ Support Page 
+title: Dive India _ Support Page 
 pagefind: false
 robots: noindex, nofollow
 ---
+
 This support page will contain all the questions, videos, and discussed subjects from the moment you started using our platform. Every recording or point of unclarity will be added here, so you can always use this page as your reference. <br>
 
 On the right, you'll find page navigation, making it easy to jump to any desired section on this page. 
@@ -14,27 +15,23 @@ On the left, you can access all documents in our documentation hub.
     <a href="https://sharing.clickup.com/2633992/l/h/2gc88-2495/61e2d3b6136945f" style="display: inline-block; padding: 6px 20px; background-color: #333333; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
         Diversdesk Priority Tickets &#128196;
     </a>
-    <a href="https://sharing.clickup.com/2633992/l/h/2gc88-6195/b76e2dfca91c40a" style="display: inline-block; padding: 6px 20px; background-color: #666666; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
-    My Priority Tickets &#128195;
-    </a>
-    <a href="https://oceantribe.diversdesk.com/" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
+    <a href="https://diveindia.diversdesk.com/" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
     </a>
 </div>
 
 - Diversdesk's top priority tickets, providing real-time insights into what has just been released, what we're currently working on, and what's coming next. 
-- Your personal priority ticket list, where you can track all the requests you've made. (Becomes avaialble when there's pending requests)
+- Your personal priority ticket list, where you can track all the requests you've made. (Will appear after requests are made)
 - Your Diversdesk environment 'My Page'
 
 ## Your Subscription
-You can view current subscription, invoices and billing term using <a href="https://billing.stripe.com/p/login/5kQ14n3Ve7gkgcYcll0VO00" target="_blank" rel="noopener noreferrer">This URL</a> <br>
+You can view current subscription, invoices and billing term using <a href="https://billing.stripe.com/p/login/5kQ14n3Ve7gkgcYcll0VO00" target="_blank" rel="noopener noreferrer">this URL</a>
 <em>Please note: You will have to login using the email you provided during sign-up to access your account.</em>
 
 <div style="text-align: center;">
-  <img
-    src="/images/subscription-login-screen.avif"
+  <img 
+    src="/images/subscription-login-screen.avif" 
     alt="A phone showing the google search page"
     class="w-full md:w-full mx-auto"
-    style="border: 1px solid #e0e0e0; border-radius: 3px;"
   />
 </div>
 
@@ -49,7 +46,7 @@ You'll receive 2 hours of complimentary training from us. You're welcome to use 
   <div style="display: flex; justify-content: flex-start; width: 100%; padding: 0; gap: 10px;">
     <!-- The Schedule Training button -->
     <a href="#"
-       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/diversdesk-info/diversdesk-demo'}); return false;"
+       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/diversdesk-info/demo'}); return false;"
        style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px; cursor: pointer;">
       Schedule Your Training
     </a>
@@ -57,12 +54,8 @@ You'll receive 2 hours of complimentary training from us. You're welcome to use 
 </div>
 
 ## On-Demand Videos
-
-### 1. Creating Multi-Language Terms & Conditions
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/c35655ce314d4bd1881f0ffbd27abbc9?sid=ea677ee1-2249-4fb7-a6b3-4b554948f45a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
-### 2. Customizing Onboarding Journeys
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/2102e29c6f98488ba8590e979ca8b5a2?sid=5f37fc1e-c3d0-499f-9dd0-8605338e23d2" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+No videos added yet. <br>
+Explore our our [video training page](/video_training) instead.
 
 ## Other Videos 
 
