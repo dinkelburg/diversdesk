@@ -23,9 +23,9 @@ Entered rental categories will automatically appear as filter buttons in the top
   />
 </div>
 
-## Add a New Rental Item
+## Create a Rental Item
 
-To create a rental item, click the '+ Create a Rental Item' button in the top right of your screen.
+To create a rental item, click the '+ Create Rental Item' button in the top right of your screen.
 
 <div style="text-align: center;">
   <img 
@@ -79,16 +79,16 @@ Speed up rental item entry using the **Copy button**. This button appears when y
 To speed up rental items entry, you can copy an existing rental item. When copying this, the ID number is duplicated with an added (copy) text behind the existing ID. When you're entering similar items, this will signifcantly speed up the entry process. 
 
 <div class="text-grid" style="grid-template-columns: repeat(4, 1fr);">
-  <div class="text-item">
+  <div class="text-item text-sm md:text-base">
     <p>Tab/click on an existing rental item to open its details.</p>
   </div>
-  <div class="text-item">
+  <div class="text-item text-sm md:text-base">
     <p>Press the Copy button to duplicate all its information.</p>
   </div>
-  <div class="text-item">
+  <div class="text-item text-sm md:text-base">
     <p>Change the unique ID/URL for the new item.</p>
   </div>
-    <div class="text-item">
+    <div class="text-item text-sm md:text-base">
     <p>Save the new rental item to add it to your inventory.</p>
   </div>
 </div>
@@ -113,4 +113,76 @@ Clicking on the customer name will open a side panel with Customer information, 
     class="w-full md:w-full mx-auto"
   />
 </div>
+
+From the expanded Gear & Sizes section, you can start assigning gear to the selected participant. The sizes filled in the registration form are summarized above the rental categories for easy reference.
+
+<div class="text-grid" style="grid-template-columns: repeat(4, 1fr);">
+  <div class="text-item text-sm md:text-base">
+    <p>Select one of the categories to start assigning gear.</p>
+  </div>
+  <div class="text-item text-sm md:text-base">
+    <p>Select a retail item from the drop-down list. </p>
+  </div>
+  <div class="text-item text-sm md:text-base">
+    <p>Select the next rental category you want to assign.</p>
+  </div>
+    <div class="text-item text-sm md:text-base">
+    <p>When finished, mark 'Gear Check Complete' and save.</p>
+  </div>
+</div>
+<div style="text-align: center;">
+  <img 
+    src="/images/user_manual/assigning-gear-steps.avif" 
+    alt="Steps to copy an existing rental item"
+    class="w-full md:w-full mx-auto"
+  />
+</div>
+
+### Assigned Gear indication
+When selecting gear, any items already assigned for the selected day will appear at the bottom of the drop-down list. This view also includes the trip information for that rented gear, helping you quickly see if the item can be rented out a second time that day.
+<div style="text-align: center;">
+  <img 
+    src="/images/user_manual/assigned-gear-status.avif" 
+    alt="Steps to copy an existing rental item"
+    class="w-3/4 md:w-1/2 mx-auto"
+  />
+</div>
+
+:::note[Note]
+It's possible to assign gear a second time in a day. If you do, a warning will be issued, and a badge will indicate this in the gear overview.
+:::
+
+
+### Gear Check Status
+If for whatever reason you can't complete the gear check, you can leave the 'Gear Check Complete' check box open to continue the assignment at a later stage. At a higher level, you and your colleagues can see there's gear assigned to this customer, but the gear check hasn't been marked complete. 
+<br>
+
+<div style="display: flex; align-items: center;">
+  <div class="w-1/2 md:w-1/2 mx-auto" style="margin-right: 20px;">
+    <img
+      src="/images/user_manual/gear-check-indication.avif"
+      alt="Available entry fields for rental items"
+      style="max-width: 100%; height: auto; display: block;"
+    />
+  </div>
+  <div class="description-text">
+    <p>The Gear Check column on the Day Manifest page indicates the gear check status. In the image on the left, the bottom check is complete, while the top participant has some assigned gear but the check isn't yet marked as complete.</p>
+  </div>
+</div>
+
+:::tip[Tip]
+Clicking a cell in the Gear Check column on the Day Manifest page will immediately open the gear rental section in the side panel.
+:::
+
+## Adding the Gear Check Column
+
+To add the Gear Check column to the Day Manifest page, just click the 'Customize' button in the desired tab. From there, find and select the 'Gear Check' checkbox, then press Ok to save your view.
+<div style="text-align: center;">
+  <img 
+    src="/images/user_manual/day-manifest-adding-gear-check-column.avif" 
+    alt="Steps to copy an existing rental item"
+    class="w-full md:w-full mx-auto"
+  />
+</div>
+
 
