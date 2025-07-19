@@ -1,0 +1,10 @@
+name,country,age,diving_certificate_organization,level,dives,last_dive_within_months,instructor,height,weight,wetsuit,bcd_size,boots,my_gear,weightbelt,participant_comment,gear_check
+Bart Klein Goldewijk,NL,34,PADI,AOW+DEEP,40-49,3,-,190cm,86kg,L,M,45 EU,mask,4kg,I descent fairly slow,Yes
+Dir Groot Goldewijk,AU,34,SSI,OW+DEEP,50-69,3,-,190cm,86kg,L,-,45 UK,-,3kg,I descent fairly slow,No
+John Groot Goldewijk,AU,34,SSI,OW+DEEP,50-69,3,-,190cm,86kg,L,-,45 UK,-,3kg,I descent fairly slow,Yes
+Erben Wennemars,NL,42,SDI,OW,10-19,3,-,178cm,80kg,M,M,42 EU,"mask, BCD",3kg,-,No
+Bart Klein Goldewijk,AU,38,PADI,OW,100-299,3,-,190cm,86kg,L,-,45 UK,mask,3kg,-,No
+Willem Tillas,NL,34,CMAS,OW,300-499,3,-,178cm,88kg,M,-,42 EU,"mask, regulator",5kg,-,No
+-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,No
+-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,No
+-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,No

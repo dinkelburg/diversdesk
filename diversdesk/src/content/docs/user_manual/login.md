@@ -1,33 +1,43 @@
 ---
-title: Create or Login to your account
+title: Sign Up or Log In
 description: How to and different methods to create or login to your account
 sidebar:
-    label: Login or Sign up
+    label: Sign Up or Login
     order: 2
 robots: noindex
 ---
 
+Through the 'Sign up' or 'Login' buttons in the right top corner of your screen, you can setup your own account, or login to your account. Below we'll walk you both creating an account and logging into your account.  
+
+<div style="text-align: center;">
+  <img 
+    src="/images/desktop-or-mobile-login-buttons.avif" 
+    alt="A phone showing the google search page"
+    class="w-4/6 md:w-1/2 mx-auto"
+  />
+</div>
+
 ## Create an account
+
 You can create an account through a secure email verification link, or through an existing google account. 
 
 > Already got an account? continue reading at [**Login to your account**.](/user_manual/login/#login-to-your-account)
 
-### 1. Email verification link
+### 1. One Time Password (OTP)
 Signing up can be done through the sign-up button on [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signup) or, for Diversdesk white-label users, via the personal URL that we've provided to you.<br>
 
-The 'Send me a verification link' button will trigger an email with a verification link to the email address you provided in the email input field.
-1. **1.** Send the verification link.
-2. **2.** Follow the url to verify your email.
-3. **3.** Create a password, or continue to your account.
-4. **4.** The icon color indicates you’re logged in.
+The 'Send a One Time Password' button will trigger an email with time limited 6 digit password to the email address you provided in the email input field.
+1. **1.** Fill your email and press 'send the the OTP password'.
+2. **2.** Fill the OTP password that's sent to your email. 
+3. **4.** You are now logged in. The icon color indicates your logged in status.
 
-![Create an account through a verification email link](/images/Create_an_account_using_verification_email.png)
+![Create an account through a verification email link](/images/sign-up-steps.avif)
 
 Verifying your email will automatically log you into your account. Once logged in, you can access your company page through the hamburger menu in the top-left corner.
 
 :::note[Note]
-Your company profile and connected pages will only show once your email is linked, and appropriate user rights are granted.
-</br>Please [**Contact us**](mailto:info@traveltruster.com?subject=Issues%20viewing%20my%20company%20page)  if you experience any difficulty viewing your company pages.
+The hamburger menu and its associated pages will only appear once your email is linked and you've been granted appropriate user rights.
+</br>Please [**Contact us**](mailto:info@traveltruster.com?subject=Issues%20viewing%20my%20company%20page) if you experience any difficulty viewing your company pages.
 :::
 
 ### 2. Google 
