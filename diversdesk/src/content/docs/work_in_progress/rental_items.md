@@ -166,7 +166,7 @@ If for whatever reason you can't complete the gear check, you can leave the 'Gea
     />
   </div>
   <div class="description-text">
-    <p>The Gear Check column on the Day Manifest page indicates the gear check status. In the image on the left, the bottom check is complete, while the top participant has some assigned gear but the check isn't yet marked as complete.</p>
+    <p>The image on the left displays the gear check column on the Day Manifest page. The bottom check is complete, whereas the top participant has assigned gear but the check is not yet marked as complete.</p>
   </div>
 </div>
 
