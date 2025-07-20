@@ -8,6 +8,10 @@ robots: noindex, nofollow
     <a href="https://sharing.clickup.com/2633992/l/h/2gc88-2495/61e2d3b6136945f" style="display: inline-block; padding: 6px 20px; background-color: #333333; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
         Diversdesk Priority Tickets &#128196;
     </a>
+    </a>
+    <a href="https://sharing.clickup.com/2633992/l/h/2gc88-6295/d7f0b5d36cca52a" style="display: inline-block; padding: 6px 20px; background-color: #666666; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
+        My Priority Tickets &#128195;
+    </a>
     <a href="https://ganggadivers.diversdesk.com/" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
     </a>
 </div>
