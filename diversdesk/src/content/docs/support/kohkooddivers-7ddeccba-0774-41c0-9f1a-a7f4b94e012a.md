@@ -58,8 +58,11 @@ You'll receive 2 hours of complimentary training from us. You're welcome to use 
 
 ## On-Demand Videos
 
-### How to Use Trip Templates
+### 1. How to Use Trip Templates
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/8d803dcecef84101b15b67e399f6d5d1?sid=71c518ab-71fc-4360-a0f6-7c076597d5b7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+### 2. Setting and Connecting Customer Onboarding Journeys
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/5655714bae324fa3bbfe30e28161931a?sid=0883e015-356d-41f7-93ee-31bcb8491b81" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ## Other Videos 
 
