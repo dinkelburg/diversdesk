@@ -4,8 +4,10 @@ description: Read how to create rental items, setup service triggers and assign 
 sidebar:
     label: Rental Items
     order: 8
+    badge: New
 pagefind: false
 robots: noindex, nofollow
+
 ---
 
 The Rental Items page shows you an overview of all your entered rental items. On this page you can:
