@@ -1,5 +1,5 @@
 ---
-title: Scubaholics Scubic _ Support Page 
+title: Alonisss Triton _ Support Page 
 pagefind: false
 robots: noindex, nofollow
 ---
@@ -8,10 +8,11 @@ robots: noindex, nofollow
     <a href="https://sharing.clickup.com/2633992/l/h/2gc88-2495/61e2d3b6136945f" style="display: inline-block; padding: 6px 20px; background-color: #333333; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
         Diversdesk Priority Tickets &#128196;
     </a>
-    <a href="https://sharing.clickup.com/2633992/l/h/2gc88-6335/312f53a0f34bd66" style="display: inline-block; padding: 6px 20px; background-color: #666666; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
-    My Priority Tickets &#128195;
+        </a>
+    <a href="https://sharing.clickup.com/2633992/l/h/2gc88-6075/33e99f3ec93b374" style="display: inline-block; padding: 6px 20px; background-color: #666666; color: white; text-decoration: none; border-radius: 5px;" target="_blank">
+        My Priority Tickets &#128195;
     </a>
-    <a href="https://scubaholicssubic.diversdesk.com/" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
+    <a href="https://bestdivingingreece.diversdesk.com/" style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px;" target="_blank">    To 'My Page' &#8594;    
     </a>
 </div>
 
@@ -33,7 +34,7 @@ At the top of this page, you will find Navigation buttons to quickly navigate to
 
 ## Your Subscription
 
-You are currently on a **14-day trial** period, which runs **from July 17, 2025 – August 1, 2025**.
+You are currently on a **14-day trial** period, which runs **from July 18, 2025 – August 2, 2025**.
 
 You can view current subscription, invoices and billing term using <a href="https://billing.stripe.com/p/login/5kQ14n3Ve7gkgcYcll0VO00" target="_blank" rel="noopener noreferrer">this URL</a>
 <em>Please note: You will have to login using the email you provided during sign-up to access your account.</em>
