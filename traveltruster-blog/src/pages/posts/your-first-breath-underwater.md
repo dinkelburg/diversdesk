@@ -1,6 +1,6 @@
 ---
 title: "Your First Breath Underwater: Discover Scuba Diving vs. Open Water Diver"
-pubDate: "2025.05.27"
+pubDate: "2025.07.27"
 dateModified: 2025-07-27
 slug: "your-ultimate-guide-to-scuba-diving-in-bali"
 description: "Confused between Discover Scuba Diving and the Open Water Diver course? Here’s a simple guide to help you choose your scuba diving starting point"
