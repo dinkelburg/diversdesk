@@ -37,7 +37,7 @@ structuredData:
 ---
 
 <p>
-    Tired of shuffling through stacks of paperwork and chasing down customers for medical forms? Managing a dive center is challenging enough without administrative tasks eating up your time and energy. You want to focus on what you do best—creating amazing underwater experiences—not on data entry and filing.
+    Tired of shuffling through stacks of paperwork and chasing down customers for medical forms? Managing a dive center is challenging enough without administrative tasks eating up your time and energy. You want to focus on what you do best, creating amazing underwater experiences, not on data entry and filing.
     That's where Diversdesk's CRM-Go Plan comes in. Designed specifically for the dive industry, this plan is the ideal solution for dive centers and dive professionals looking to streamline their operations, go completely paperless, and deliver a professional, seamless experience from the very first contact.
 </p>
 
@@ -70,7 +70,10 @@ structuredData:
 <p>
     Every customer is different, and their paperwork should be too. With CRM-Go, you can create tailored onboarding experiences by customizing registration forms, waivers, contracts, and terms. This flexibility applies to both certified divers and non-divers, ensuring the right documents are provided every time. This not only keeps you compliant but also shows your customers you're organized and professional.
 </p>
-
+<p>
+    To see how these flexible options can transform your guest experience, read our blog post <a href="/blog/en/available-onboarding-journeys/" target="_blank" rel="noopener noreferrer" style="color:#F86545">3 Ways to Onboard Every Dive Center Customer.</a>
+</p>
+<br>
 <div style="text-align: center;">
   <img 
     src="/images/blog12-Signing-digital-waiver.avif" 
@@ -95,7 +98,13 @@ structuredData:
 
 <h2 id="Custom-forms-and-automation" class="section-heading">Custom Forms & Paperwork Automation</h2>
 <p>
-    Draft your ideal custom waivers, terms, and contracts, reducing human error and ensuring brand consistency. The system even helps with paperwork automation: signed waivers remain valid for the specified term, so returning divers don’t need to repeat the entire process. This simple feature saves you and your repeat customers a lot of time.
+    Draft your ideal custom waivers, terms, and contracts, reducing human error and ensuring brand consistency. Our library includes pre-configured templates that match industry-standard waivers from major certification agencies like <a href="https://www.padi.com/" target="_blank" rel="noopener noreferrer" style="color:#F86545">PADI</a>, <a href="https://www.divessi.com/" target="_blank" rel="noopener noreferrer" style="color:#F86545">SSI</a> and <a href="https://www.tdisdi.com/" target="_blank" rel="noopener noreferrer" style="color:#F86545">SDI/TDI</a>, giving you a powerful starting point.
+</p>
+<p>
+    For protection and security, every signed waiver comes with a secure audit trail, and you have the flexibility to add a second layer of security with optional OTP (One-Time Password) verification. This helps ensure your paperwork is not only compliant with data protection regulations like <a href="https://gdpr.eu/" target="_blank" rel="noopener noreferrer" style="color:#F86545">GDPR</a>, but also fully secure.
+</p>
+<p>
+    The system also creates an extremely pleasant experience for frequent and returning divers. With our smart paperwork automation, signed waivers remain valid for the specified term, so customers don’t need to repeat the entire process every time they visit. This simple feature saves both you and your most loyal customers a lot of time and hassle.
 </p>
 
 <h2 id="who-is-the-crm-go-plan-for" class="section-heading">Who is the CRM-Go Plan For?</h2>
@@ -113,6 +122,9 @@ structuredData:
   <div class="text-content">
     <p>
       Our CRM-Go Plan is available for just $27.00 USD per month, billed annually. This straightforward pricing gives you full access to all the features and benefits of the plan, ensuring you get the most value for your investment without any hidden costs.
+    </p>
+    <p>
+        You can find more information on all our available plans and pricing on our <a href="/pricing/" target="_blank" rel="noopener noreferrer" style="color:#F86545">pricing page</a>.
     </p>
   </div>
   <div class="image-content">
@@ -136,7 +148,7 @@ structuredData:
     <li>Bookkeeping & Advanced Metrics: Connect your data for deeper financial insights and performance tracking.</li>
 </ul>
 <p>
-    By starting with CRM-Go, you build the foundation, and as your needs grow, we have a plan ready to scale with you.
+    By starting with CRM-Go, you build the foundation, and as your needs grow, we have <a href="/pricing/" target="_blank" rel="noopener noreferrer" style="color:#F86545">a plan</a> ready to scale with you.
 </p>
 
 <h2 id="ready-to-simplify-your-dive-business" class="section-heading">Ready to Simplify Your Dive Business?</h2>
@@ -145,7 +157,8 @@ structuredData:
 </p>
 
 <p>
-See for yourself how the Diversdesk CRM-Go Plan can transform your business. Book a demo today!
+    See for yourself how the Diversdesk CRM-Go Plan can transform your business. <br>
+    <a href="https://calendly.com/diversdesk-info/demo" target="_blank" rel="noopener noreferrer" style="color:#F86545"><strong>Book a demo</strong></a> today!
 </p>
 
 <style>
