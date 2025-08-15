@@ -165,8 +165,8 @@ If for whatever reason you can't complete the gear check, you can leave the 'Gea
 Clicking a cell in the Gear Check column on the Day Manifest page will immediately open the gear rental section in the side panel.
 :::
 
-### Adding Actionalble Notes
-Adding actionable notes can be done from the rental items page.
+### Adding Actionable Notes
+Adding actionable notes can be done from the rental items page, by pressing on the hyperlink of one of the rental items in the title column. This will open a side panel where you can view and add notes.
 
 ## Adding the Gear Check Column
 
