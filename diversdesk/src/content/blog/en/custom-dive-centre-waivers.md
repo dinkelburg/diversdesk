@@ -61,11 +61,11 @@ That’s why you need a customized waivers. In my view, in today’s environment
 </p>
 
 <div style="text-align: center;">
-  <img 
-    src="/images/customer-signed-digital-waivers.avif" 
-    alt="A customer signing a digital waiver on his phone while standing in front of the counter talking to a dive center staff member"
-    class="w-full md:w-full mx-auto"
-  />
+  <img 
+    src="/images/customer-signed-digital-waivers.avif" 
+    alt="A customer signing a digital waiver on his phone while standing in front of the counter talking to a dive center staff member"
+    class="w-full md:w-full mx-auto"
+  />
 </div>
 
 <h2 id="the-role-of-standard-waivers" class="section-heading">The role of standard waivers</h2>

@@ -58,11 +58,14 @@ structuredData:
 </ul>
 
 <div style="text-align: center;">
-  <img 
-    src="/images/common-dive-shop-errors.avif" 
-    alt="A graphic showing the streamlined process of a customer booking a dive and the dive shop team managing it through the DiversDesk platform."
-    class="w-full md:w-9/12 mx-auto"
-  />
+  <picture>
+    <source srcset="/images/common-dive-shop-errors.avif" type="image/avif">
+    <img 
+      src="/images/common-dive-shop-errors.avif" 
+      alt="A graphic showing the streamlined process of a customer booking a dive and the dive shop team managing it through the DiversDesk platform."
+      class="w-full md:w-9/12 mx-auto"
+    />
+  </picture>
 </div>
 
 <h2 id="how-diversdesk-eliminates-planning-errors" class="section-heading">2. How DiversDesk Eliminates Planning Errors</h2>
