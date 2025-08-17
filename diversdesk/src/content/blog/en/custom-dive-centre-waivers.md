@@ -60,14 +60,6 @@ Think about it. Does the standard forms cover what happens if a customer damages
 That’s why you need a customized waivers. In my view, in today’s environment, where customers expect transparency and businesses face greater scrutiny, relying solely on broad agency forms isn’t enough. You need both: the foundation of a trusted standard waiver, and the added protection of documents that reflect your operations. Together, they give your dive center a stronger legal footing and reassure your guests that you’ve thought carefully about their safety and experience.
 </p>
 
-<div style="text-align: center;">
-  <img 
-    src="/images/customer-signed-digital-waivers.avif" 
-    alt="A customer signing a digital waiver on his phone while standing in front of the counter talking to a dive center staff member"
-    class="w-full md:w-full mx-auto"
-  />
-</div>
-
 <h2 id="the-role-of-standard-waivers" class="section-heading">The role of standard waivers</h2>
 <p>
 Standard waivers from organizations exist for a reason. They’ve been refined over decades, tested in courts, and recognized across the global dive community. These documents are the bedrock of liability management. They clearly spell out the risks that come with scuba diving and make sure divers acknowledge those risks before ever stepping into the water.
