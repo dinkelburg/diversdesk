@@ -25,7 +25,6 @@ import BoostRevenue from "@images/happy_diver.jpeg";
 import Icon from "@/components/ui/icons/Icon.astro";
 import Container from "@components/container.astro";
 import CompanyLogos from "@components/CompanyLogos.astro";
-import LeftAndRightSections from "@components/sections/features/LeftAndRightSections.astro";
 import FeatureBanner from "@components/sections/features/FeatureBanner.astro";
 import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.astro";
 import WaiversImage from "@images/custom_waivers_2.avif";
@@ -97,7 +96,7 @@ const faqSchema = {
     /> -->
 
     <HeroSection
-            title=`Effortless Dive Center Management at Your Fingertips`
+            title="Effortless Dive Center Management at Your Fingertips"
             subTitle="The all-in-one software designed to simplify operations, automate tasks, and grow your dive shop effortlessly."
             primaryBtn="Book a demo"
             primaryBtnURL="https://meet.brevo.com/diversdesk-demo/demo-with-diversdesk"
@@ -242,7 +241,7 @@ features={features}
 />   
 
   <FeaturesNavs
-    title=`Why Choose Diversdesk`
+    title="Why Choose Diversdesk"
     tabs={[
       {
         heading: "Customer onboarding in Record Time",
@@ -330,7 +329,19 @@ features={features}
             subTitle="Diversdesk is committed to continuously improving our services based on your insights and feedback."
     />
 
-
-
+  <!-- Brevo conversations widget -->
+  <script is:inline>
+    // @ts-nocheck
+    (function(d, w, c) {
+        w.BrevoConversationsID = '689062179c3dcc470108fa25';
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'BrevoConversations');
+</script>
 
 </MainLayout>
