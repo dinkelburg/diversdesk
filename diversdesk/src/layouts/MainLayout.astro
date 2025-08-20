@@ -215,6 +215,20 @@ const {
   <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
 
   <script>
+    // Function to load Brevo widget - defined globally
+    (window as any).loadBrevoWidget = function() {
+      (function(d: Document, w: any, c: string) {
+        (w as any).BrevoConversationsID = '689062179c3dcc470108fa25';
+        (w as any)[c] = (w as any)[c] || function() {
+          ((w as any)[c].q = (w as any)[c].q || []).push(arguments);
+        };
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+        if (d.body) d.body.appendChild(s);
+      })(document, window, 'BrevoConversations');
+    };
+
     window.addEventListener("load", function(){
       // @ts-ignore
       window.cookieconsent.initialise({
@@ -234,27 +248,19 @@ const {
           link: "Learn more",
           href: "/privacy-policy"
         },
-        onStatus: function(status: any) {
-          // @ts-ignore
+
+        onInitialise: function(status: any) {
           if (this.hasConsented()) {
-            // @ts-ignore
-            // Load Brevo widget after consent
-            (function(d, w, c) {
-              // @ts-ignore
-              w.BrevoConversationsID = '689062179c3dcc470108fa25';
-              // @ts-ignore
-              w[c] = w[c] || function() {
-                // @ts-ignore
-                (w[c].q = w[c].q || []).push(arguments);
-              };
-              var s = d.createElement('script');
-              s.async = true;
-              s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
-              if (d.body) d.body.appendChild(s);
-            })(document, window, 'BrevoConversations');
+            (window as any).loadBrevoWidget();
+          }
+        },
+        onPopupClose: function() {
+          if (this.hasConsented()) {
+            (window as any).loadBrevoWidget();
           }
         }
       });
+      
     });
   </script>
   </body>
