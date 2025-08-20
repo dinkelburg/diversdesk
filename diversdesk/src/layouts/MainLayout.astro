@@ -113,7 +113,7 @@ const {
       } else {
         document.documentElement.classList.remove("dark");
       }
-    </script>
+    </script> 
     <script is:inline src="/scripts/vendor/lenis/lenis.js"></script>
     <script is:inline>
       const lenis = new Lenis();
@@ -128,6 +128,8 @@ const {
 
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     {meta && <Fragment set:html={meta} />}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 
   </head>
 
@@ -195,19 +197,50 @@ const {
 
     </style>
 
-    <!-- Brevo conversations widget -->
-    <script is:inline>
-      // @ts-nocheck
-      (function(d, w, c) {
-          w.BrevoConversationsID = '689062179c3dcc470108fa25';
-          w[c] = w[c] || function() {
-              (w[c].q = w[c].q || []).push(arguments);
-          };
-          var s = d.createElement('script');
-          s.async = true;
-          s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
-          if (d.body) d.body.appendChild(s);
-      })(document, window, 'BrevoConversations');
-    </script>
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+
+  <script>
+    window.addEventListener("load", function(){
+      // @ts-ignore
+      window.cookieconsent.initialise({
+        palette: {
+          popup: { background: "#444" },
+          button: { background: "#FF7557"}
+        },
+        theme: "custom",
+        elements: {
+            messagelink: '<span id="cookieconsent:desc" class="cc-message">{{message}} <a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="{{href}}" target="_blank">{{link}}</a></span>',
+            dismiss: '<a aria-label="dismiss cookie message" tabindex="0" class="cc-btn cc-dismiss">{{dismiss}}</a>'
+          },
+        position: "bottom",
+        content: {
+          message: "We use cookies to ensure you get the best experience on our website.",
+          dismiss: "Accept",
+          link: "Learn more",
+          href: "/privacy-policy"
+        },
+        onStatus: function(status: any) {
+          // @ts-ignore
+          if (this.hasConsented()) {
+            // @ts-ignore
+            // Load Brevo widget after consent
+            (function(d, w, c) {
+              // @ts-ignore
+              w.BrevoConversationsID = '689062179c3dcc470108fa25';
+              // @ts-ignore
+              w[c] = w[c] || function() {
+                // @ts-ignore
+                (w[c].q = w[c].q || []).push(arguments);
+              };
+              var s = d.createElement('script');
+              s.async = true;
+              s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+              if (d.body) d.body.appendChild(s);
+            })(document, window, 'BrevoConversations');
+          }
+        }
+      });
+    });
+  </script>
   </body>
 </html>
