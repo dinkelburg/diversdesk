@@ -239,13 +239,14 @@ const {
         theme: "custom",
         elements: {
           messagelink: '<span id="cookieconsent:desc" class="cc-message">{{message}} <a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="{{href}}" target="_blank">{{link}}</a></span>',
-          dismiss: '<a aria-label="dismiss cookie message" tabindex="0" class="cc-btn cc-dismiss">{{dismiss}}</a>'
+          dismiss: '<button type="button" aria-label="dismiss cookie message" tabindex="0" class="cc-btn cc-dismiss">{{dismiss}}</button>'
         },
         position: "bottom",
         content: {
           message: "We use cookies to ensure you get the best experience on our website.",
           dismiss: "Accept",
-          link: "Learn more",
+          ariaLabel: "Privacy Policy",
+          link: "Read our Privacy Policy",
           href: "/privacy-policy"
         },
 
