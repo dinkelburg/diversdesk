@@ -128,6 +128,7 @@ const {
 
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     {meta && <Fragment set:html={meta} />}
+
   </head>
 
   <body class="bg-white selection:bg-orange-200 selection:text-neutral-700 dark:bg-neutral-800 overflow-x-hidden">
@@ -193,5 +194,20 @@ const {
       }
 
     </style>
+
+    <!-- Brevo conversations widget -->
+    <script is:inline>
+      // @ts-nocheck
+      (function(d, w, c) {
+          w.BrevoConversationsID = '689062179c3dcc470108fa25';
+          w[c] = w[c] || function() {
+              (w[c].q = w[c].q || []).push(arguments);
+          };
+          var s = d.createElement('script');
+          s.async = true;
+          s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+          if (d.body) d.body.appendChild(s);
+      })(document, window, 'BrevoConversations');
+    </script>
   </body>
 </html>
