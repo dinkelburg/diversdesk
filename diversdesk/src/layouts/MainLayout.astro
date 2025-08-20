@@ -129,8 +129,23 @@ const {
     {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     {meta && <Fragment set:html={meta} />}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<style>
+  /* Make the cookie bar text and button smaller and reduce height */
+  .cc-window.cc-banner {
+    font-size: 0.85em !important;
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+    min-height: 2.2em !important;
+  }
+  .cc-message {
+    font-size: 0.95em !important;
+  }
+  .cc-btn {
+    font-size: 0.95em !important;
+    padding: 0.4em 2.5em !important;
+  }
+</style>
   </head>
 
   <body class="bg-white selection:bg-orange-200 selection:text-neutral-700 dark:bg-neutral-800 overflow-x-hidden">
@@ -209,9 +224,9 @@ const {
         },
         theme: "custom",
         elements: {
-            messagelink: '<span id="cookieconsent:desc" class="cc-message">{{message}} <a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="{{href}}" target="_blank">{{link}}</a></span>',
-            dismiss: '<a aria-label="dismiss cookie message" tabindex="0" class="cc-btn cc-dismiss">{{dismiss}}</a>'
-          },
+          messagelink: '<span id="cookieconsent:desc" class="cc-message">{{message}} <a aria-label="learn more about cookies" tabindex="0" class="cc-link" href="{{href}}" target="_blank">{{link}}</a></span>',
+          dismiss: '<a aria-label="dismiss cookie message" tabindex="0" class="cc-btn cc-dismiss">{{dismiss}}</a>'
+        },
         position: "bottom",
         content: {
           message: "We use cookies to ensure you get the best experience on our website.",
