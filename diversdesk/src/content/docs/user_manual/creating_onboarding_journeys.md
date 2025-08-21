@@ -3,13 +3,13 @@ title: Creating Customer Onboarding Journeys
 description: How to create and connect customer onboarding journeys.
 sidebar:
     label: Creating Onboarding Journeys
-    order: 6
+    order: 5
 robots: noindex
 ---
 
 ## Creating an onboarding Journey
 To successfully create an Onboarding Journey we will walk through a few steps. Below you'll find the steps for best practice.
-<!-- 1. **1.** Setup your Custom Waivers
+<!--1. **1.** Setup your Custom Waivers
 2. **2.** Set out the different journeys (and customize registration forms)
 3. **3.** Connect the desired waivers to each Journey  -->
 

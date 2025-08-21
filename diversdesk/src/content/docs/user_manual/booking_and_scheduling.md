@@ -3,7 +3,7 @@ title: Booking and scheduling
 description: How to create your first activity
 sidebar:
     label: Booking and Scheduling
-    order: 5
+    order: 6
 robots: noindex
 ---
 

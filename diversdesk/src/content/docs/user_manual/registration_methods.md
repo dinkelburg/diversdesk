@@ -3,7 +3,7 @@ title: Customer Registration/Booking Methods
 description: Ways to onboard your customer
 sidebar:
     label: Customer Registration/Booking Methods
-    order: 5
+    order: 7
 robots: noindex
 ---
 

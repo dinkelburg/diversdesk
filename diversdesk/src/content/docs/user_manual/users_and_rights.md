@@ -3,7 +3,7 @@ title: Users and Rights
 description: Allocate different rights to your staff members
 sidebar:
     label: Users and Rights
-    order: 3
+    order: 4
 robots: noindex
 ---
 
