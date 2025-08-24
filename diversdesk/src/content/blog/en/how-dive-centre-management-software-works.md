@@ -65,6 +65,16 @@ structuredData:
 <h2 id="is-it-difficult-to-set-up" class="section-heading">Q: Is it difficult to set up?</h2>
 <p><strong>A:</strong> Not at all. In my experience, most dive centres are up and running quickly to use the system. As mentioned in this <a href="https://quickbooks.intuit.com/global/" target="_blank" rel="noopener" style="color: #F86545"><strong>blog</strong></a>, we provide a two-hour complimentary training session, split into two parts so you can learn, try the system, and then come back with questions. There’s also a full library of video tutorials and written guides. For larger operations or those with specific requirements, we also can arrange tailored onboarding.</p>
 
+<div style="text-align: center;">
+  <img 
+    src="/images/digital-waivers.avif" 
+    alt="A diver signing a digital waiver on his mobile phone" 
+    class="w-full md:w-4/5 mx-auto"
+  />
+  <!-- <p style="font-size: 1em; color: #888;"> Nudibranch shot during a muck dive in Padangbai.</p> -->
+</div>
+
+
 <h2 id="what-about-waivers-and-forms-do-i-still-need-paperwork" class="section-heading">Q: What about waivers and forms? Do I still need paperwork?</h2>
 <p><strong>A:</strong> No more stacks of paper. Diversdesk enables you to use digital waivers, medical questionnaires, and liability releases that customers can complete online before arriving at your dive centre. These digital waivers are stored securely in the system, automatically linked to each customer profile, and can be accessed instantly from any device. This not only saves time but also reduces errors, especially when dealing with high-traffic seasons.</p>
 
@@ -86,6 +96,15 @@ structuredData:
 
 <h2 id="how-does-it-scale-if-my-dive-centre-grows" class="section-heading">Q: How does it scale if my dive centre grows?</h2>
 <p><strong>A:</strong> Diversdesk is designed to adapt as your operation expands. Whether you are running a single shop, opening additional locations, or adding liveaboards, the platform scales with your needs. You can upgrade plans, increase the number of users, or enable additional features as required. Many dive centres begin with a smaller plan and grow into more advanced functionality over time, ensuring the system continues to support you at every stage of your development. Check more about our package <a href="https://www.diversdesk.com/pricing" target="_blank" rel="noopener" style="color: #F86545"><strong>here</strong></a></p>
+
+<div style="text-align: center;">
+  <img 
+    src="/images/dive-centre-management-software.avif" 
+    alt="A laptop displaying the planning hub of Diversdesk dive center management software" 
+    class="w-full md:w-4/5 mx-auto"
+  />
+  <!-- <p style="font-size: 1em; color: #888;"> Nudibranch shot during a muck dive in Padangbai.</p> -->
+</div>
 
 <h2 id="conclusion" class="section-heading">Conclusion</h2>
 <p>Managing a dive centre involves far more than just guiding divers underwater. From bookings and waivers to gear tracking, payments, and marketing, every detail matters in keeping your operation running smoothly. Dive centre management software brings these elements together in one system, helping you save time, reduce errors, and create a better experience for both staff and customers.</p>
