@@ -67,6 +67,9 @@ You'll receive 2 hours of complimentary training from us. You're welcome to use 
 ### 3. Setting up Direct Bookings (Self-Bookings)
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/35b79114a6e34a47a59fcff5f5b2381b?sid=9a7f0746-451b-4cc4-a08f-78bd2153a2f6" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
+### 4. Including Trip Info in the Detailed Day Export
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/b33c97854a8a4523a2b75f810499996f?sid=7671ce9a-0d67-4999-a5e0-478454dca48a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 ## Other Videos 
 
 ### Diversdesk in 10 minutes
