@@ -1,6 +1,6 @@
 ---
 title: "How Diversdesk Helps Dive Centres Handle International Customers with Ease"
-description: ""
+description: "Managing international divers? Discover how Diversdesk software simplifies operations with multi-language digital waivers, easy currency handling, and automated measurement conversions."
 author: "Melissa"
 role: "Customer Success & Training Coordinator"
 authorImage: "@/images/blog/melissa.avif"
