@@ -1,0 +1,64 @@
+---
+// Import the necessary components
+import { Image } from 'astro:assets'; 
+import MainLayout from "@/layouts/MainLayout.astro";
+import MainSection from "@components/ui/blocks/MainSection.astro";
+import { SITE } from "@data/constants";
+
+// Import your new banner image for the show
+import GoDivingBanner from "@images/go-diving-banner.avif"; 
+
+const pageTitle: string = `Go Diving Sydney Show Offer | ${SITE.title}`;
+---
+
+<MainLayout title={pageTitle} robots="noindex, nofollow">
+  <slot name="canonical">
+    <link rel="canonical" href="https://www.diversdesk.com/go-diving-sydney-offer" />
+  </slot>
+
+  <slot name="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content="Exclusive Trial & Offer for Go Diving Sydney Exhibitors | DiversDesk" />
+    <meta property="og:description" content="Start a free trial and get 30% off DiversDesk! This exclusive offer for Go Diving Show exhibitors expires 21 September 2025." />
+    <meta property="og:image" content="/images/go-diving-banner.avif" />
+    <meta property="og:url" content="https://www.diversdesk.com/go-diving-sydney-offer" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Exclusive Trial & Offer for Go Diving Sydney Exhibitors | DiversDesk" />
+    <meta name="twitter:description" content="Start a free trial and get 30% off DiversDesk! This exclusive offer for Go Diving Show exhibitors expires 21 September 2025." />
+    <meta name="twitter:image" content="/images/go-diving-banner.avif" />
+  </slot>
+
+  <div class="mx-auto max-w-3xl px-4 pt-12 sm:px-6 lg:px-8">
+      <Image 
+          src={GoDivingBanner} 
+          alt="An underwater scene with a scuba diver and a subtle Australian flag, representing the Sydney Go Diving Show."
+          class="w-full rounded-lg object-cover shadow-lg"
+          loading="eager"
+      />
+  </div>
+
+  <MainSection
+    title="Claim your Sydney Go Diving Show Discount!"
+    subTitle="Because we're bummed we couldn't be there, we have an exclusive offer just for exhibitors. Start a free trial, and if you subscribe before 21 September 2025, you'll get 30% off! Use code GODIVINGSYD when you're signing up and you'll automatically receive your discount."
+    btnExists={true}
+    btnTitle="Start Your Free Trial"
+    btnURL="https://www.diversdesk.com/signup/trial"
+  />
+
+  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+    <h2 class="text-center text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+      See DiversDesk in Action
+    </h2>
+    <p class="mt-4 text-center text-neutral-600 dark:text-neutral-400">
+      Watch this short video to see how we can help streamline your dive center.
+    </p>
+
+    <div class="mt-8 w-full overflow-hidden rounded-lg shadow-lg">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/7f321b4bc2484ec4a4358ed143da9460?sid=67f0c4c7-b168-462d-a26c-cde638789c9f" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+    </div>
+  </section>
+
+  
+
+</MainLayout>

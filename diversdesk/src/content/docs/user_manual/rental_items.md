@@ -4,7 +4,6 @@ description: Read how to create rental items, setup service triggers and assign 
 sidebar:
     label: Rental Items
     order: 8
-    badge: New
 pagefind: false
 robots: noindex, nofollow
 

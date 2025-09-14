@@ -30,7 +30,13 @@ At the top of this page, you will find Navigation buttons to quickly navigate to
 
 ## Your Subscription
 
-You are currently on a **14-day trial** period, which runs **from July 18, 2025 – August 2, 2025**.
+:::caution[Note]
+Your trial has ended trial. Your trail ran **from July 18, 2025 – August 2, 2025**. 
+
+Start your diversdesk Subscription [**here**](https://www.diversdesk.com/signup/form).
+
+Need more time? or still got questions, please [**schedule an appointment**](https://meet.brevo.com/diversdesk-demo/demo-with-diversdesk) with us. 
+:::
 
 You can view current subscription, invoices and billing term using <a href="https://billing.stripe.com/p/login/5kQ14n3Ve7gkgcYcll0VO00" target="_blank" rel="noopener noreferrer">this URL</a>
 <em>Please note: You will have to login using the email you provided during sign-up to access your account.</em>
