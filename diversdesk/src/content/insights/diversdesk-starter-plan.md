@@ -56,12 +56,13 @@ structuredData:
     No more manual spreadsheets or overbookings. Our Starter Plan includes a robust <strong>booking engine</strong> that allows customers to book your services directly through your website, social media, or a unique booking link. This makes it easy for them to reserve their spot, and for you to manage your calendar. In the background, our intuitive <strong>planning and scheduling</strong> tools help you manage trips, courses, and daily activities with ease, ensuring you always have a clear view of your capacity and staff availability.
 </p>
 
+<br>
 <div style="text-align: center;">
-  <img 
-    src="/images/planning-screens-diversdesk.avif" 
-    alt="Phones displaying personalized onboarding journeys"
-    class="w-3/4 md:w-4/5 mx-auto"
-  />
+  <img 
+    src="/images/planning-screens-diversdesk.avif" 
+    alt="Laptop and phone displaying the diversdesk planning and calendar views"
+    class="w-full md:w-4/5 mx-auto"
+  />
 </div>
 
 <h2 id="crm-and-paperless-registration" class="section-heading">CRM & Paperless Registration</h2>
@@ -71,11 +72,11 @@ structuredData:
 
 <br>
 <div style="text-align: center;">
-  <img 
-    src="/images/diversdesk-customer-booking-process.avif" 
-    alt="A diver signing a waiver using their own mobile phone"
-    class="w-full md:w-full mx-auto"
-  />
+  <img 
+    src="/images/diversdesk-customer-booking-process.avif" 
+    alt="A diver signing a waiver using their own mobile phone"
+    class="w-full md:w-full mx-auto"
+  />
 </div>
 
 <h2 id="automated-payment-gateway" class="section-heading">Automated Payment Gateway</h2>
@@ -94,11 +95,11 @@ structuredData:
 </p>
 
 <div style="text-align: center;">
-  <img 
-    src="/images/retail-pos.avif" 
-    alt="A dive center manager displaying a mask on a laptop using the diversdesk inventory management module"
-    class="w-3/4 md:w-5/6 mx-auto"
-  />
+  <img 
+    src="/images/retail-pos.avif" 
+    alt="A dive center manager displaying a mask on a laptop using the diversdesk inventory management module"
+    class="w-full md:w-5/6 mx-auto"
+  />
 </div>
 
 <h2 id="automated-guest-communication" class="section-heading">Automated Guest Communication</h2>
