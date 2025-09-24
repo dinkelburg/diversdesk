@@ -14,12 +14,23 @@ robots: noindex, nofollow
 
 The Retail Module allows you to:
 Build your webshop: Create and customize your online storefront, making your products accessible to a wider audience.
+
 Build your catalog and manage stock: Organize your product inventory, track stock levels, and ensure you always know what's available for sale.
+
 Process over-the-counter sales: Quickly and efficiently handle direct sales to customers in your physical location.
 
 Below you will find instructions and guidance on how to effectively use each feature of the Diver's Desk Retail Module.
 
+If you prefer to view a video tutorial, we have attached a video recording at the bottom of this page. 
+
 <h2>2. Getting Started / Initial Setup</h2>
+There are two pages available to manage your retail items. <br>
+Under the Resources section in the hamburger menu you can find: 
+
+- Retail Items (Webshop), and
+- Retail Stock
+
+We recommend starting from the webshop to setup your desired categories and products. 
 
 
 
