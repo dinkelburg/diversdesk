@@ -13,15 +13,23 @@ robots: noindex, nofollow
 <h2>1. Introduction</h2>
 
 The Retail Module allows you to:
-Build your webshop: Create and customize your online storefront, making your products accessible to a wider audience.
+<ul>
+<li><strong>Build your webshop:</strong> Create and customize your online storefront to make your products accessible to a wider audience.</li>
+<li><strong>Build your catalog and manage stock:</strong> Organize your product inventory, track stock levels, and ensure you always know what’s available for sale.</li>
+<li><strong>Process over-the-counter sales:</strong> Quickly and efficiently handle direct sales to customers in your physical location.</li>
+</ul>
 
-Build your catalog and manage stock: Organize your product inventory, track stock levels, and ensure you always know what's available for sale.
-
-Process over-the-counter sales: Quickly and efficiently handle direct sales to customers in your physical location.
+<div style="text-align: center;">
+  <img 
+    src="/images/retail-pos.avif" 
+    alt="Diversdesk Retail Webshop"
+    class="w-full md:w-4/5 mx-auto"
+  />
+</div>
 
 Below you will find instructions and guidance on how to effectively use each feature of the Diver's Desk Retail Module.
 
-If you prefer to view a video tutorial, we have attached a video recording at the bottom of this page. 
+<!-- If you prefer to view a <a href="#video-tutorial" target="_blank" style="color:#FF7557;"><strong>video tutorial</strong></a>, we have attached a video recording at the bottom of this page. 
 
 <h2>2. Getting Started / Initial Setup</h2>
 There are two pages available to manage your retail items. <br>
@@ -101,4 +109,7 @@ Click "Save Changes".
 
 <h2>6. Future Functionality</h2>
 
-<h2>7. Troubleshooting and Support</h2>
+<h2>7. Troubleshooting and Support</h2> -->
+
+<h2>Video Tutorial</h2>
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/ba28721ef5be42b798eb369496f90e2e?sid=9cc9485e-7948-4ff3-927a-fede31aaa410" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>

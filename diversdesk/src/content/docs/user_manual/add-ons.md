@@ -3,8 +3,7 @@ title: Add-ons
 description: Learn how to create and utilize add-ons to streamline your workflow and drive upselling opportunities.
 sidebar:
     label: Add-ons
-    order: 9
-    badge: New
+    order: 10
 robots: noindex
 ---
 
