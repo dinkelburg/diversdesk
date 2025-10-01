@@ -22,6 +22,10 @@ import FeaturesStatsAlt from "@components/sections/features/FeaturesStatsAlt.ast
 import WaiversImage from "@images/custom_waivers_2.avif";
 import IpadDetaildDayView from "@images/iPad_pro_detailed_day.avif";
 import AppleSet from "@images/Apple-Set.avif";
+import NormalContent from "@/components/ui/blocks/NormalContent.astro";
+import PartnersSection from "@/components/sections/landing/PartnersSection.astro";
+import greenFinsLogo from "@images/partners/RWF_GF_CombinedLogo_FullColour.avif"; 
+// import AnnouncementBanner from "@components/sections/AnnouncementBanner.astro";
 
 const faqItems = faqs.faqs.map((faq) => ({
   "@type": "Question",
@@ -37,6 +41,14 @@ const faqSchema = {
   "@type": "FAQPage",
   "mainEntity": faqItems,
 };
+
+const partnersData = [
+    {
+        imageSrc: greenFinsLogo.src,
+        altText: "Green Fins Environmental Logo",
+        url: "https://www.greenfins.net/",
+    }
+];
 ---
 
 <MainLayout title="DiversDesk: Dive Center Software, The Intuitive All-in-One Solution">
@@ -269,7 +281,7 @@ features={features}
         <PricingSection pricing={pricing}/>
     </div>
 
-   
+  
 
     <!-- <TestimonialsSection
       title="Fast-Track Your Projects"
@@ -315,6 +327,12 @@ features={features}
     <script type="application/ld+json" is:inline>
       <raw>{JSON.stringify(faqSchema)}</raw>
     </script>
+
+    <PartnersSection
+        title="Our Partner in Sustainability"
+        subTitle="Diversdesk is official partner with The World Reef Foundation,  the International coordinator of the Green Fins initiative."
+        partners={partnersData}
+    />
 
     <HeroSectionAlt
             title="Let's Build Together"

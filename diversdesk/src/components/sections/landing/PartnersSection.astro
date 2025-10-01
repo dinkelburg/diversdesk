@@ -1,0 +1,106 @@
+---
+// src/components/sections/PartnersSection.astro
+
+// Define the structure for a single partner
+interface Partner {
+  imageSrc: string;
+  altText: string;
+  url: string;
+}
+
+// Define the component's props
+interface Props {
+  title: string;
+  subTitle: string;
+  partners: Partner[];
+}
+
+// Destructure the props
+const { title, subTitle, partners } = Astro.props;
+
+// Determine partner count
+const partnerCount = partners.length;
+const isSinglePartner = partnerCount === 1;
+const isTwoPartners = partnerCount === 2;
+const isThreeOrMore = partnerCount >= 3;
+
+// Base class for image sizing and styles
+const imageBaseClass = "mx-auto h-auto w-auto max-w-full object-contain transition-all duration-300"; 
+---
+
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="mb-10 text-center">
+        <h2 class="text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl">
+            {title}
+        </h2>
+        <p class="mt-2 text-pretty text-lg font-light text-neutral-600 dark:text-neutral-400">
+            {subTitle}
+        </p>
+    </div>
+
+    {partnerCount > 0 && (
+        <div class="mt-8">
+            {/* 1. SINGLE LOGO */}
+            {isSinglePartner && (
+                <div class="flex justify-center">
+                    {partners.map((partner) => (
+                        <div class="flex h-full w-full max-w-sm items-center justify-center p-4">
+                            <a href={partner.url} target="_blank" rel="noopener noreferrer" aria-label={partner.altText}>
+                                <img 
+                                    class={`${imageBaseClass} max-h-32 sm:max-h-40`} 
+                                    src={partner.imageSrc} 
+                                    alt={partner.altText} 
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            {/* 2. TWO LOGOS */}
+            {isTwoPartners && (
+                <div class="grid grid-cols-2 place-items-center gap-x-6 gap-y-8 lg:grid-cols-4 lg:gap-x-10">
+                    {partners.map((partner, index) => (
+                        <div 
+                            class:list={[
+                                'flex h-full w-full items-center justify-center p-4',
+                                index === 0 && 'lg:col-start-2',
+                            ]}
+                        >
+                            <a href={partner.url} target="_blank" rel="noopener noreferrer" aria-label={partner.altText}>
+                                <img 
+                                    class={`${imageBaseClass} max-h-12`}
+                                    src={partner.imageSrc} 
+                                    alt={partner.altText} 
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            )}
+            
+            {/* 3. THREE OR MORE LOGOS */}
+            {isThreeOrMore && (
+                <div class="grid grid-cols-2 place-items-center gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-3">
+                    {partners.map((partner) => (
+                        <div class="flex h-full w-full items-center justify-center p-4">
+                            <a href={partner.url} target="_blank" rel="noopener noreferrer" aria-label={partner.altText}>
+                                <img 
+                                    class={`${imageBaseClass} max-h-12`}
+                                    src={partner.imageSrc} 
+                                    alt={partner.altText} 
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </a>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    )}
+</section>
