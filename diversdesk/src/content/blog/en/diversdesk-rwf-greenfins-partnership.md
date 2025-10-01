@@ -48,7 +48,8 @@ structuredData:
 
 <h2 id="diversdesk-partners-with-green-fins-to-support-sustainable-diving" class="section-heading">Diversdesk Partners with Green Fins to Support Sustainable Diving</h2>
 <p>
-We are proud to announce a new partnership between <a href="https://www.diversdesk.com/" target="_blank" rel="noopener noreferrer" style="color:#F86545">Diversdesk</a> and <a href="https://reef-world.org/" target="_blank" rel="noopener noreferrer" style="color:#F86545">The Reef-World Foundation</a>, the International coordinator of the<a href="https://greenfins.net/" target="_blank" rel="noopener noreferrer" style="color:#F86545">Green Fins</a> initiative. This collaboration brings together two organisations committed to improving sustainability within the global diving community.
+We are proud to announce a new partnership between <a href="https://www.diversdesk.com/" target="_blank" rel="noopener noreferrer" style="color:#F86545">Diversdesk</a> and <a href="https://reef-world.org/" target="_blank" rel="noopener noreferrer" style="color:#F86545">The Reef-World Foundation</a>, the International coordinator of the <a href="https://greenfins.net/" target="_blank" rel="noopener noreferrer" style="color:#F86545">Green Fins</a> initiative. <br>
+This collaboration brings together two organisations committed to improving sustainability within the global diving community.
 </p>
 
 <div style="text-align: center;">
@@ -72,7 +73,8 @@ The partnership reflects our shared commitment to environmental responsibility. 
 
 <h2 id="exclusive-discount-for-green-fins-members" class="section-heading">Exclusive Discount for Green Fins Members</h2>
 <p>
-As part of this collaboration, Green Fins Members will receive an exclusive 10% discount on Diversdesk’s management system. In addition, Diversdesk will contribute to reef conservation by donating to The Reef-World Foundation for every new Green Fins Member that joins through the platform. This means dive centres can support reef protection simply by improving their administrative processes with Diversdesk. Claiming the discount is simple. Members only need to enter their valid Green Fins membership code during registration on the Diversdesk website. Once verified, the discount will be automatically applied.
+As part of this collaboration, Green Fins Members will receive an exclusive <strong>10% discount on Diversdesk’s management system</strong>. In addition, Diversdesk will contribute to reef conservation by donating to The Reef-World Foundation for every new Green Fins Member that joins through the platform. This means dive centres can support reef protection simply by improving their administrative processes with Diversdesk. <br>
+<strong>Claiming the discount is simple</strong>. Members only need to enter their valid Green Fins membership code during registration on the Diversdesk website. Once verified, the discount will be automatically applied.  
 </p>
 <p>
 <blockquote>
