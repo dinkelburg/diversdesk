@@ -24,7 +24,8 @@ import IpadDetaildDayView from "@images/iPad_pro_detailed_day.avif";
 import AppleSet from "@images/Apple-Set.avif";
 import NormalContent from "@/components/ui/blocks/NormalContent.astro";
 import PartnersSection from "@/components/sections/landing/PartnersSection.astro";
-import greenFinsLogo from "@images/partners/RWF_GF_CombinedLogo_FullColour.avif"; 
+import greenFinsLogo from "@images/partners/GF_Logo_FullColour.avif"; 
+import ReefWorldLogo from "@images/partners/TheReef-WorldFoundation_horizontal_logo_FullColour.avif";
 // import AnnouncementBanner from "@components/sections/AnnouncementBanner.astro";
 
 const faqItems = faqs.faqs.map((faq) => ({
@@ -44,6 +45,11 @@ const faqSchema = {
 
 const partnersData = [
     {
+        imageSrc: ReefWorldLogo.src,
+        altText: "The Reef World Foundation Logo",
+        url: "https://www.greenfins.net/",
+    },
+       {
         imageSrc: greenFinsLogo.src,
         altText: "Green Fins Environmental Logo",
         url: "https://www.greenfins.net/",
@@ -232,6 +238,22 @@ const partnersData = [
         avatarSrc: "/images/louis_avatar.png",
         starCount: 5, 
       },
+      {
+        content:
+          "\"Diversdesk made our day to day work so much easier and efficient. Highly recommended to every other dive center that is thinking about new software.\"",
+        author: "Jasmin",
+        role: "Manager | Tarzan Divers",
+        avatarSrc: "/images/...png",
+        starCount: 5, 
+      },
+      {
+        content:
+          "\"Diversdesk has truly transformed the way we manage our dive operations. Our customers often comment on how intuitive and easy to navigate our booking platform is.\"",
+        author: "Cheryl",
+        role: "Owner | HGL Tours",
+        avatarSrc: "/images/...png",
+        starCount: 5, 
+      }
     ]}
     primaryBtn="Read Full Testimonials"
     primaryBtnURL="../about#testimonials"

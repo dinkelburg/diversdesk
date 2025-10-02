@@ -28,7 +28,7 @@ const isThreeOrMore = partnerCount >= 3;
 const imageBaseClass = "mx-auto h-auto w-auto max-w-full object-contain transition-all duration-300"; 
 ---
 
-<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
+<section class="mx-auto max-w-[90rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
     <div class="mb-10 text-center">
         <h2 class="text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl">
             {title}
@@ -61,7 +61,7 @@ const imageBaseClass = "mx-auto h-auto w-auto max-w-full object-contain transiti
 
             {/* 2. TWO LOGOS */}
             {isTwoPartners && (
-                <div class="grid grid-cols-2 place-items-center gap-x-6 gap-y-8 lg:grid-cols-4 lg:gap-x-10">
+                <div class="grid grid-cols-2 place-items-center gap-x-4 gap-y-8 lg:grid-cols-4 lg:gap-x-10">
                     {partners.map((partner, index) => (
                         <div 
                             class:list={[
@@ -71,7 +71,7 @@ const imageBaseClass = "mx-auto h-auto w-auto max-w-full object-contain transiti
                         >
                             <a href={partner.url} target="_blank" rel="noopener noreferrer" aria-label={partner.altText}>
                                 <img 
-                                    class={`${imageBaseClass} max-h-12`}
+                                    class={`${imageBaseClass} max-h-14`}
                                     src={partner.imageSrc} 
                                     alt={partner.altText} 
                                     loading="lazy"
