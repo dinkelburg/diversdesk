@@ -243,7 +243,7 @@ const partnersData = [
           "\"Diversdesk made our day to day work so much easier and efficient. Highly recommended to every other dive center that is thinking about new software.\"",
         author: "Jasmin",
         role: "Manager | Tarzan Divers",
-        avatarSrc: "/images/...png",
+        avatarSrc: "/images/avatar-default.png",
         starCount: 5, 
       },
       {
@@ -251,7 +251,7 @@ const partnersData = [
           "\"Diversdesk has truly transformed the way we manage our dive operations. Our customers often comment on how intuitive and easy to navigate our booking platform is.\"",
         author: "Cheryl",
         role: "Owner | HGL Tours",
-        avatarSrc: "/images/...png",
+        avatarSrc: "/images/avatar-default.png",
         starCount: 5, 
       }
     ]}
@@ -352,8 +352,12 @@ features={features}
 
     <PartnersSection
         title="Our Partner in Sustainability"
-        subTitle="Diversdesk is official partner with The World Reef Foundation,  the International coordinator of the Green Fins initiative."
+        subTitleLine1="Operational efficiency meets environmental responsibility. Diversdesk is proud to partner with The Reef-World Foundation and the Green Fins initiative."
+        subTitleLine2="To support a sustainable future, we offer all Green Fins members a perpetual 10% discount on their Diversdesk subscription. Claim Your Discount through the button below."
         partners={partnersData}
+        ctaExists={true} 
+        ctaTitle="Claim your Green Fins Membership Discount"
+        ctaURL="/greenfins-membership-discount"
     />
 
     <HeroSectionAlt
