@@ -21,14 +21,15 @@ interface Props {
   ctaExists?: boolean; 
   ctaTitle?: string;
   ctaURL?: string;
+  id?: string;
 }
 
 // Destructure the props (Updated to include new CTA props)
-const { title, subTitleLine1,subTitleLine2, partners, ctaExists, ctaTitle, ctaURL } = Astro.props;
+const { title, subTitleLine1,subTitleLine2, partners, ctaExists, ctaTitle, ctaURL, id} = Astro.props;
 
 // Determine partner count
 const partnerCount = partners.length;
-const isSinglePartner = partnerCount === 1;
+const isSinglePartner = partnerCount === 1; 
 const isTwoPartners = partnerCount === 2;
 const isThreeOrMore = partnerCount >= 3;
 
@@ -36,22 +37,23 @@ const isThreeOrMore = partnerCount >= 3;
 const imageBaseClass = "mx-auto h-auto w-auto max-w-full object-contain transition-all duration-300"; 
 ---
 
-<section class="mx-auto max-w-[90rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full">
+<section class="mx-auto max-w-[90rem] px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-14 2xl:max-w-full" id={id}> 
     <div class="mb-10 text-center">
         <h2 class="text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-4xl">
             {title}
         </h2>
         
-                <p class="mt-2 text-pretty text-lg font-light text-neutral-600 dark:text-neutral-400">
+                <p class="mt-2 text-pretty text-lg text-neutral-600 dark:text-neutral-400">
             {subTitleLine1}
         </p>
         
         {subTitleLine2 && (
-            <p class="mt-4 text-pretty text-lg font-light text-neutral-600 dark:text-neutral-400">
+            <p class="mt-4 text-pretty text-lg text-neutral-600 dark:text-neutral-400">
                 {subTitleLine2}
             </p>
         )}
     </div>
+
 
 
     {partnerCount > 0 && (
