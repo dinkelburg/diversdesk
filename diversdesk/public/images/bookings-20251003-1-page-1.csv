@@ -1,0 +1,2 @@
+Booking Id,Booking Ref,Book Date,Booked by,Booked Source,Pax,Payment status,Registration,Currency,Total amount,Outstanding Balance,Items,From,To
+k386,Example Trip,2025-10-03,Bart EDITOR (DD Support),Company A,2,Not Paid,Pending,THB,7900,7900,"""fun-diving, 2 Fun Dives""",2025-10-04,2025-10-04
