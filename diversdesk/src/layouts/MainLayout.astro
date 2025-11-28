@@ -4,7 +4,7 @@ import { Schema } from "astro-seo-schema";
 import Navbar from "@components/sections/Navbar.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
 import { SITE } from "@data/constants";
-import BlackFridayBanner from "@components/ui/banners/BlackFridayBanner.astro";
+// import BlackFridayBanner from "@components/ui/banners/BlackFridayBanner.astro";
 
 interface Props {
   title?: string;
@@ -16,7 +16,7 @@ interface Props {
   lang?: string;
   robots?: string; 
   canonical?: string;
-  showBanner?: boolean;
+  // showBanner?: boolean;
 }
 
 const {
@@ -28,7 +28,6 @@ const {
   structuredData,
   lang = "en",
   robots = "index, follow", 
-  showBanner = false,
 } = Astro.props;
 ---
 
@@ -153,7 +152,6 @@ const {
 
   <body class="bg-white selection:bg-orange-200 selection:text-neutral-700 dark:bg-neutral-800 overflow-x-hidden">
     <div class="mx-auto max-w-screen-2xl px-0 sm:px-0 lg:px-0">
-      {showBanner && <BlackFridayBanner />}
       <Navbar />
       <main>
         <slot />
