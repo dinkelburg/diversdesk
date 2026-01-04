@@ -74,6 +74,7 @@ const blogCollection = defineCollection({
   cardImageAlt: z.string(),
   readTime: z.number(),
   tags: z.array(z.string()).optional(),
+  showInFeed: z.boolean().default(true),
   }),
 });
 
@@ -85,6 +86,7 @@ const insightsCollection = defineCollection({
   // contents: z.array(z.string()),
   cardImage: image(),
   cardImageAlt: z.string(),
+  showInFeed: z.boolean().default(true),
   }),
 });
 

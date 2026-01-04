@@ -1,0 +1,99 @@
+---
+// Import the necessary components
+import { Image } from 'astro:assets'; 
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro"; 
+
+
+// Corrected import name for clarity
+import GreenFinsBanner from "@images/partners/diversdesk-rwf-greenfins-partnership.avif"; 
+
+// Using the recommended canonical slug
+const canonicalSlug: string = "greenfins-partner";
+const pageTitle: string = `Green Fins Membership Discount | ${SITE.title}`;
+---
+
+<MainLayout title={pageTitle} robots="noindex, nofollow">
+  <slot name="canonical">
+    <link rel="canonical" href={`https://www.diversdesk.com/${canonicalSlug}`} />
+  </slot>
+
+  <slot name="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content="Exclusive Discount for Green Fins Members | DiversDesk" />
+    <meta property="og:description" content="Claim your 10% lifetime discount on DiversDesk subscription for Green Fins members. Paperless for a purpose!" />
+    <meta property="og:image" content="/images/partners/diversdesk-rwf-greenfins-partnership.avif" />
+    <meta property="og:url" content={`https://www.diversdesk.com/${canonicalSlug}`} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Exclusive Green Fins Discount | DiversDesk" />
+    <meta name="twitter:description" content="Claim your 10% lifetime discount on DiversDesk subscription for Green Fins members. Paperless for a purpose!" />
+    <meta name="twitter:image" content="/images/partners/diversdesk-rwf-greenfins-partnership.avif" />
+  </slot>
+
+  <div class="mx-auto max-w-3xl px-4 pt-12 sm:px-6 lg:px-8">
+      <Image 
+          src={GreenFinsBanner} // 
+          alt="An underwater scene with a tablet showing the Diversdesk interface, representing the Green Fins partnership."
+          class="w-full rounded-lg object-cover shadow-lg"
+          loading="eager"
+      />
+  </div>
+
+  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+    <h2 class="text-center text-3xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+        How to Claim Your Exclusive Green Fins Discount
+    </h2>
+    
+    <p class="mt-4 text-center font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        We are thrilled to offer all Green Fins members—both new sign-ups and existing customers—an exclusive benefit. You will receive a <strong>10% discount on your Diversdesk subscription for life</strong>, as long as your Green Fins membership remains active.
+    </p>
+    
+    <h3 class="mt-8 text-center text-xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+        For New Subscribers: Schedule a Demo
+    </h3>
+    <p class="mt-2 text-center font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        We strongly recommend <strong>scheduling a personalized demo</strong>. This is the best way for us to show you how to tailor Diversdesk to your exact operational needs.
+    </p>
+
+    <div class="mt-8 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 justify-center">
+        <PrimaryCTA title="Schedule Your Personalized Demo" url="https://meet.brevo.com/diversdesk-demo/demo-with-diversdesk" />
+    </div>
+
+    <p class="mt-4 text-center text-sm font-medium text-neutral-600 dark:text-neutral-400">
+        Prefer to dive right in? <a href="https://www.diversdesk.com/signup/trial" class="text-blue-600 hover:text-blue-500 font-medium underline">Start your free trial here</a>.
+    </p>
+
+    <p class="mt-4 text-center font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        <strong>Discount Application:</strong> When starting your subscription, enter your Green Fins membership number into the designated discount field. The 10% discount will be automatically deducted.
+    </p>
+    
+    <h3 class="mt-8 text-center text-xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+        For Existing Diversdesk Customers
+    </h3>
+    <p class="mt-2 text-center font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        Contact your dedicated account manager or reply to your last billing email and provide proof of your current Green Fins membership. We will process the discount immediately and adjust your future invoices.
+    </p>
+    <h3 class="mt-8 text-center text-xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+        Where to find your Green Fins Membership Number
+    </h3>
+        <p class="mt-4 text-center font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        Your Green Fins <strong>membership number</strong> can be found in the URL when you access your Green Fins membership page. The brief YouTube instructions below guide you through the process.
+    </p>
+    <div class="mt-8 w-full overflow-hidden rounded-lg shadow-lg">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe width="560" height="315" src="https://www.youtube.com/embed/rkc8wZBhXe0?si=vSmY0q7TsCYzuvBe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
+</section>
+
+<section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">     
+  <h2 class="text-center text-3xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">Hear From the Leadership</h2> 
+  <p class="mt-4 text-center font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">Hear what the Director of The Reef-World Foundation and the CEO of Diversdesk have to say about this exciting collaboration.
+  </p>         
+  <div class="mt-8 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0 justify-center">         
+  <PrimaryCTA title="Read the Full Blog Post" url="/blog/en/diversdesk-rwf-greenfins-partnership/" />     
+  </div>   
+</section>
+
+
+</MainLayout>

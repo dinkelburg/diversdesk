@@ -118,7 +118,7 @@ const articles: Article[] =
 const pageTitle: string = `Features | ${SITE.title}`;
 ---
 
-<MainLayout title={pageTitle} robots="index, follow">
+<MainLayout title={pageTitle} robots="index, follow" showBanner={false}>
   
   <slot name="canonical">
     <link rel="canonical" href="https://www.diversdesk.com/features" />

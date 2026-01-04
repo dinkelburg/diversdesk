@@ -1,0 +1,175 @@
+---
+// Import the necessary components
+import { Image } from 'astro:assets'; 
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro"; 
+
+// Images
+import BlackFridayBanner from "@images/black-friday-banner.avif"; 
+
+// Page Configuration
+const canonicalSlug: string = "greenfins-partner";
+const pageTitle: string = `Get 40% off Diversdesk | ${SITE.title}`;
+const metaDescription: string = "Exclusive Black Friday Offer: Save 40% on your Diversdesk subscription. Limited time offer for Green Fins members.";
+---
+
+<MainLayout title={pageTitle} robots="noindex, nofollow">
+  <slot name="canonical">
+    <link rel="canonical" href={`https://www.diversdesk.com/${canonicalSlug}`} />
+  </slot>
+
+  <slot name="head">
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content="/images/partners/diversdesk-rwf-greenfins-partnership.avif" />
+    <meta property="og:url" content={`https://www.diversdesk.com/${canonicalSlug}`} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content="/images/partners/diversdesk-rwf-greenfins-partnership.avif" />
+  </slot>
+
+  <div class="mx-auto max-w-3xl px-4 pt-12 sm:px-6 lg:px-8">
+      <Image 
+          src={BlackFridayBanner} 
+          alt="Diversdesk Black Friday Promotion"
+          class="w-full rounded-lg object-cover shadow-lg"
+          loading="eager"
+      />
+  </div>    
+
+  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+    <h2 class="text-center text-3xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+        Black Friday Exclusive: Save 40% on Your Subscription
+    </h2>
+
+    <div class="mt-8 mb-8 rounded-xl bg-orange-50 p-6 dark:bg-neutral-800 border border-orange-100 dark:border-neutral-700">
+        <p class="mb-4 text-center text-sm font-bold uppercase tracking-widest text-orange-600 dark:text-orange-400">
+            Offer Ends In
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 text-center sm:gap-8">
+            <div class="flex flex-col rounded-md bg-white p-3 shadow-sm dark:bg-neutral-900 min-w-[70px]">
+                <span class="text-3xl font-black text-neutral-800 dark:text-neutral-100" id="days">00</span>
+                <span class="text-xs text-neutral-500">Days</span>
+            </div>
+            <div class="flex flex-col rounded-md bg-white p-3 shadow-sm dark:bg-neutral-900 min-w-[70px]">
+                <span class="text-3xl font-black text-neutral-800 dark:text-neutral-100" id="hours">00</span>
+                <span class="text-xs text-neutral-500">Hours</span>
+            </div>
+            <div class="flex flex-col rounded-md bg-white p-3 shadow-sm dark:bg-neutral-900 min-w-[70px]">
+                <span class="text-3xl font-black text-neutral-800 dark:text-neutral-100" id="minutes">00</span>
+                <span class="text-xs text-neutral-500">Mins</span>
+            </div>
+            <div class="flex flex-col rounded-md bg-white p-3 shadow-sm dark:bg-neutral-900 min-w-[70px]">
+                <span class="text-3xl font-black text-orange-600 dark:text-orange-500" id="seconds">00</span>
+                <span class="text-xs text-neutral-500">Secs</span>
+            </div>
+        </div>
+    </div>
+
+    <p class="mt-4 text-center font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        Unlock the full power of Diversdesk for nearly half the price! Upgrade now to streamline your bookings, customers, and boat management for the year ahead.
+    </p>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
+    <h3 class="text-center text-xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+        Talk to our Sales Team
+    </h3>
+    <p class="mt-2 text-center font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        Claim your 40% discount by scheduling a demo with our team. We'll walk you through the platform and help you get started.
+    </p>
+    <div class="mt-8 flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+        <PrimaryCTA title="Schedule a Call" url="https://meet.brevo.com/diversdesk-demo/demo-with-diversdesk" />
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
+    <h3 class="text-center text-xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+        Claim Your Deal and Start Today
+    </h3>
+    <p class="mt-2 text-center font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        Ready to get started today? Sign up here to claim your discount immediately!
+    </p>
+    <div class="mt-8 flex flex-col justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+        <PrimaryCTA title="Sign Up Now" url="https://4a2ad952.sibforms.com/serve/MUIFADJzX8TDVpksPKB1APsWu2d62H_gt2FRzvDY5jm_8yLj2dhepujpkmZG9yIjClY8rIEmrxGNnKCByPwCTpbJkjgFE44RiiEpThpLfDP1KrGmIuC1EGE_2UZxoj9lzmJpt53YN8rhfEhOtHc0n9C1T5tauF8qHFitnIOgdWPdE7-ifQ2FvSVWpClDebYYk9ksKy8G8GNo129I" />
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">    
+    <h2 class="text-center text-3xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-200">
+        Watch our Intro Video
+    </h2>
+    <p class="mt-4 text-center font-light text-neutral-600 dark:text-neutral-400 sm:text-xl">
+        Watch what Diversdesk can do for your dive center in just 2 minutes.
+    </p>
+    
+    <div class="mt-8 w-full overflow-hidden rounded-lg shadow-lg">
+        <iframe 
+            class="aspect-video w-full" 
+            src="https://www.youtube.com/embed/d7PkDQr4Dpw?si=ujQbwMVRkFQHm06R" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+        ></iframe>
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-3xl px-4 pb-12 sm:px-6 lg:px-8">
+    <div class="rounded-lg bg-neutral-50 p-4 border border-neutral-100 dark:bg-neutral-800 dark:border-neutral-700">
+      <p class="text-center text-xs leading-relaxed text-neutral-500 dark:text-neutral-400">
+        <span class="font-bold text-neutral-700 dark:text-neutral-300">Terms & Conditions:</span> 
+        The 40% Black Friday deal applies only to the purchase (acceptance of terms and fulfillment of financial commitment) of an <strong>annual plan</strong> before 
+        <span class="font-semibold text-red-600 dark:text-red-400">Monday, December 1, 11:59 PM</span>. 
+        Payment must be made in full by this time to secure the discount.
+      </p>
+    </div>
+  </div>
+
+</MainLayout>
+
+<script>
+  // Set the date we're counting down to
+  const countDownDate = new Date("Dec 1, 2025 23:59:59").getTime();
+
+  // Update the count down every 1 second
+  const x = setInterval(function() {
+
+    // Get today's date and time
+    const now = new Date().getTime();
+
+    // Find the distance between now and the count down date
+    const distance = countDownDate - now;
+
+    // Time calculations
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Get Elements
+    const elDays = document.getElementById("days");
+    const elHours = document.getElementById("hours");
+    const elMinutes = document.getElementById("minutes");
+    const elSeconds = document.getElementById("seconds");
+
+    // Check if elements exist to avoid errors
+    if (elDays && elHours && elMinutes && elSeconds) {
+        // FIX: We specifically convert the numbers to strings here to satisfy TypeScript
+        elDays.innerHTML = days < 10 ? '0' + days : days.toString();
+        elHours.innerHTML = hours < 10 ? '0' + hours : hours.toString();
+        elMinutes.innerHTML = minutes < 10 ? '0' + minutes : minutes.toString();
+        elSeconds.innerHTML = seconds < 10 ? '0' + seconds : seconds.toString();
+    }
+
+    // If the count down is finished
+    if (distance < 0) {
+      clearInterval(x);
+      // Optional: hide the countdown or show a message
+    }
+  }, 1000);
+</script>

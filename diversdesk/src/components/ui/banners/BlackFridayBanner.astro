@@ -1,0 +1,105 @@
+---
+// src/components/ui/banners/BlackFridayBanner.astro
+const { url = "/black-friday-deal" } = Astro.props; // Link to your deal page
+---
+
+<div 
+  id="bf-sticky-banner" 
+  class="sticky top-0 z-[100] hidden w-full bg-neutral-900 text-white shadow-md dark:bg-orange-900"
+>
+  <div class="mx-auto flex max-w-[85rem] items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+    
+    <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
+      <span class="font-bold text-orange-400">BLACK FRIDAY</span>
+      
+      <div class="hidden h-4 w-px bg-neutral-700 sm:block"></div>
+      
+      <p class="text-sm font-medium sm:text-base">
+        Get 40% OFF Annual Plans
+      </p>
+
+      <div class="flex gap-3 text-xs font-mono font-bold text-orange-300 sm:text-sm">
+        <div class="flex gap-1">
+          <span id="bf-days">00</span><span>d</span>
+        </div>
+        <div class="flex gap-1">
+          <span id="bf-hours">00</span><span>h</span>
+        </div>
+        <div class="flex gap-1">
+          <span id="bf-mins">00</span><span>m</span>
+        </div>
+        <div class="flex gap-1">
+          <span id="bf-secs">00</span><span>s</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <a 
+        href={url}
+        class="rounded-full bg-orange-500 px-4 py-1.5 text-xs font-bold text-white transition hover:bg-orange-600 sm:text-sm"
+      >
+        Claim Now
+      </a>
+
+      <button 
+        type="button" 
+        id="close-bf-banner"
+        class="inline-flex rounded-lg p-1.5 text-neutral-400 hover:bg-neutral-800 hover:text-white"
+      >
+        <span class="sr-only">Dismiss</span>
+        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 1. Handle Closing Logic (Save to LocalStorage)
+  const banner = document.getElementById('bf-sticky-banner');
+  const closeBtn = document.getElementById('close-bf-banner');
+  const bannerClosed = sessionStorage.getItem('bf-banner-closed');
+
+  // Only show if user hasn't closed it yet
+  if (banner && !bannerClosed) {
+    banner.classList.remove('hidden');
+  }
+
+  if (closeBtn && banner) {
+    closeBtn.addEventListener('click', () => {
+      banner.classList.add('hidden');
+      sessionStorage.setItem('bf-banner-closed', 'true');
+    });
+  }
+
+  // 2. Countdown Logic (Browser Timezone)
+  const countDownDate = new Date("Dec 1, 2025 23:59:59").getTime();
+
+  const updateTimer = () => {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const elDays = document.getElementById("bf-days");
+    const elHours = document.getElementById("bf-hours");
+    const elMins = document.getElementById("bf-mins");
+    const elSecs = document.getElementById("bf-secs");
+
+    if (elDays && elHours && elMins && elSecs) {
+      elDays.innerText = days < 10 ? '0' + days : days.toString();
+      elHours.innerText = hours < 10 ? '0' + hours : hours.toString();
+      elMins.innerText = minutes < 10 ? '0' + minutes : minutes.toString();
+      elSecs.innerText = seconds < 10 ? '0' + seconds : seconds.toString();
+    }
+  };
+
+  // Run immediately and then every second
+  if (!bannerClosed) {
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  }
+</script>

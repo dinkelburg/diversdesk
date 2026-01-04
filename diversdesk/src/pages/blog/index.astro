@@ -12,17 +12,21 @@ import { SITE } from "@data/constants";
 
 // Get all blogs post in English and sort them based on publish date
 
-const englishBlogEntries = await getCollection("blog", ({ id }) => {
-  return id.startsWith("en/");
+const englishBlogEntries = await getCollection("blog", ({ id, data }) => {
+  const isEnglish = id.startsWith("en/");
+  const isVisible = import.meta.env.PROD ? data.showInFeed !== false : true;
+  return isEnglish && isVisible;
 });
 
 const blogPosts: CollectionEntry<"blog">[] = englishBlogEntries.sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-// Get all insights posts
+// Get all insights posts. Hide the posts that are marked as not to show in feed
 const insightPosts: CollectionEntry<"insights">[] =
-  await getCollection("insights");
+  await getCollection("insights", ({ data }) => {
+    return data.showInFeed !== false;
+  });
 
 // Separate the most recent post from others
 const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
@@ -42,9 +46,9 @@ const pageDescription: string =
 
 ---
 
-<MainLayout title={pageTitle}>
+<MainLayout title={pageTitle} showBanner={false}>
 
-  <SEO 
+  <SEO  
   title={pageTitle} 
   description={pageDescription} 
   openGraph={{
