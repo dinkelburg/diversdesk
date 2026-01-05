@@ -1,0 +1,264 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
+import TextInput from "@components/ui/forms/input/TextInput.astro";
+import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
+import { SITE } from "@data/constants";
+
+export const prerender = false;
+
+const { status } = Astro.params;
+const isProd = import.meta.env.PROD;
+
+const title: string = "Start Your 14-Day Free Trial";
+const subTitle: string = "We need a few details to configure your environment.";
+const formSubTitle: string = "You will hear from us within 24 hours.";
+
+const redirectBaseUrl = isProd ? "https://www.diversdesk.com" : "http://localhost:4321";
+const actionUrl = "/api/signup";
+const startIso = new Date().toISOString();
+
+const pageTitle: string = `Sign Up for Trial | ${SITE.title}`;
+---
+
+<script
+  is:inline
+  src="https://www.google.com/recaptcha/api.js?render=6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW"
+></script>
+
+<MainLayout
+  title={pageTitle}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://diversdesk.com/signup2-trial",
+    url: "https://diversdesk.com/signup2-trial",
+    name: "Sign Up for Trial | Diversdesk",
+    description:
+      "Start your 14-day free trial of Diversdesk dive center management software.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://diversdesk.com",
+      name: "Diversdesk",
+      description:
+        "Diversdesk offers a state of the art Dive Center Management tool to meet all your operational needs.",
+    },
+    inLanguage: "en-US",
+  }}
+>
+  <section class="mx-auto max-w-[50rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="mx-auto max-w-2xl lg:max-w-5xl">
+      <div class="text-center">
+        <h1
+          class="text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-4xl md:leading-tight"
+        >
+          {title}
+        </h1>
+        <p class="mt-1 text-pretty text-neutral-600 dark:text-neutral-400">
+          {subTitle}
+        </p>
+      </div>
+      {
+        status === "error" && (
+          <div
+            class="mt-6 p-3 rounded-md text-red-500 mx-auto border border-red-500"
+            id="errorMessage"
+          >
+            Something went wrong, please try again.
+          </div>
+        )
+      }
+      {
+        status === "success" ? (
+          <div class="mt-6 p-3 rounded-md text-green-500 mx-auto border border-green-500">
+            Sent Successfully
+          </div>
+        ) : (
+          <div class="mt-6 grid items-center gap-6 lg:grid-cols-1 lg:gap-16">
+            <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-4">
+              <form action={actionUrl} method="post" id="signupForm">
+                <!-- Honeypot field - hidden from users, bots will fill it -->
+                <div style="position: fixed; top: -9999px; left: -9999px;">
+                  <label for="website">Website</label>
+                  <input name="website" id="website" value="" />
+                </div>
+
+                <!-- Hidden fields for bot prevention and redirects -->
+                <input type="hidden" name="start" value={startIso} />
+                <input
+                  name="redirect"
+                  value={redirectBaseUrl + "/signup2-trial/success"}
+                  type="hidden"
+                />
+                <input
+                  name="redirect_error"
+                  value={redirectBaseUrl + "/signup2-trial/error"}
+                  type="hidden"
+                />
+
+                <div class="grid gap-4">
+                  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <TextInput
+                      id="hs-fullname-contacts"
+                      label="Full Name"
+                      name="full_name"
+                    />
+                    <TextInput
+                      id="hs-firstname-contacts"
+                      label="Position/Job Title"
+                      name="job_title"
+                    />
+                  </div>
+                  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div>
+                      <label for="email-input" class="sr-only">
+                        Email (Work)
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email-input"
+                        autocomplete="email"
+                        class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                        placeholder="Email"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label for="phone-input" class="sr-only">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        id="phone-input"
+                        class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1"
+                        placeholder="Phone Number"
+                        required
+                      />
+                    </div>
+                    <TextInput
+                      id="hs-companymame-contacts"
+                      label="Company Name"
+                      name="company"
+                    />
+                    <TextInput
+                      id="hs-website-contacts"
+                      label="Company Website"
+                      name="company_website"
+                    />
+                  </div>
+                  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <TextInput
+                      id="hs-country"
+                      label="Country of Operation"
+                      name="country"
+                    />
+                    <TextInput
+                      id="hs-email-contacts"
+                      label="Discount Code (Optional)"
+                      name="discount_code"
+                      required={false}
+                    />
+                  </div>
+                  <TextAreaInput
+                    id="hs-info-contacts"
+                    label="Additional Info or Questions"
+                    name="comment"
+                  />
+                  <div class="flex items-center">
+                    <div class="flex gap-2 items-center py-5">
+                      <input
+                        id="agree-with"
+                        name="remember-me"
+                        required
+                        type="checkbox"
+                        class="mt-0.5 shrink-0 rounded border-neutral-200 text-neutral-600 focus:ring-orange-400 dark:border-neutral-700 dark:bg-neutral-800 dark:checked:border-yellow-400 dark:checked:bg-yellow-400 dark:focus:ring-offset-neutral-800"
+                      />
+                      <label
+                        for="agree-with"
+                        class="text-sm text-neutral-800 dark:text-neutral-200"
+                      >
+                        I acknowledge that I have read, understood, and agree to
+                        the Diversdesk{" "}
+                        <a
+                          href="https://diversdesk.com/terms-conditions"
+                          target="_blank"
+                          class="hover:underline text-orange-500 text-sm"
+                        >
+                          Terms of Service
+                        </a>{" "}
+                        and{" "}
+                        <a
+                          href="https://diversdesk.com/privacy-policy"
+                          target="_blank"
+                          class="hover:underline text-orange-500 text-sm"
+                        >
+                          Privacy Policy
+                        </a>
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <input
+                      type="hidden"
+                      name="captcha_token"
+                      id="captcha_token"
+                    />
+                  </div>
+                </div>
+
+                <div class="mt-4 grid">
+                  <AuthBtn title="Sign Up" id="submitBtn" />
+                </div>
+              </form>
+            </div>
+          </div>
+        )
+      }
+      <div class="mt-3 text-center">
+        <p class="text-sm text-neutral-600 dark:text-neutral-400">
+          {formSubTitle}
+        </p>
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  const form = document.getElementById("signupForm");
+  const submitBtn = document.getElementById("submitBtn");
+
+  if (form && submitBtn) {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const formElement = event.target as HTMLFormElement;
+
+      // Get reCAPTCHA token
+      // @ts-ignore
+      const token = await (grecaptcha as any).execute(
+        "6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW",
+        { action: "submit" }
+      );
+      const captchaInput = document.getElementById("captcha_token");
+      if (captchaInput instanceof HTMLInputElement) {
+        captchaInput.value = token;
+      }
+
+      // Show loading state
+      submitBtn.setAttribute("disabled", "true");
+      submitBtn.textContent = "Submitting...";
+
+      return formElement?.submit();
+    });
+  }
+
+  // Display error message from URL if present
+  const errorBlock = document.getElementById("errorMessage");
+  const errorMsg = new URL(window.location.href).searchParams.get(
+    "response_error"
+  );
+  if (errorBlock) {
+    errorBlock.textContent = errorMsg || "Something went wrong, please try again.";
+  }
+</script>
