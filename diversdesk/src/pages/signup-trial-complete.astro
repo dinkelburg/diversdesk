@@ -1,0 +1,187 @@
+---
+import { Image } from 'astro:assets'; 
+import LandingLayout from "@/layouts/LandingLayout.astro";
+import { SITE } from "@data/constants";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro"; 
+import BlackFridayBanner from "@images/bannera.avif"; 
+
+const pageTitle = `Exclusive 40% Off Diversdesk | ${SITE.title}`;
+---
+
+<LandingLayout title={pageTitle} robots="noindex, nofollow">
+  
+  <!-- <div class="relative w-full overflow-hidden" style="padding-top: 80px; margin-bottom: 40px;">
+      <Image 
+          src={BlackFridayBanner} 
+          alt="Diversdesk Black Friday Promotion"
+          class="w-full h-auto object-cover"
+          loading="eager"
+      />
+  </div> -->
+
+<section class="w-full bg-white dark:bg-neutral-800" style="padding-top: 80px; padding-bottom: 60px;">
+  <div class="mx-auto max-w-4xl px-4">
+    
+    <h2 class="flex items-center justify-center gap-x-4 text-center text-3xl font-extrabold tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-4xl">
+      <svg class="h-10 w-10 shrink-0 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="4" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+      </svg>
+      <span>Success! We're building your workspace.</span>
+    </h2>
+
+    <p class="mx-auto mt-8 max-w-2xl text-center text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">
+      Hang tight! We are currently configuring your personalized trial environment. 
+      <br><br>
+      If we need any specific details about your operations to finish the setup, one of our experts will reach out to you directly.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="bg-neutral-50 dark:bg-neutral-900/30 w-full" style="padding-top: 50px; padding-bottom: 50px;">
+  <div class="mx-auto max-w-4xl px-4 text-center"> 
+    <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-100">See what's possible in 2 minutes</h2>
+    
+    <p class="mt-4 text-neutral-600 dark:text-neutral-400">
+      Take a quick tour of how Diversdesk streamlines your bookings and inventory management.
+    </p>
+
+    <div class="overflow-hidden rounded-2xl shadow-2xl border-4 border-white dark:border-neutral-800" style="margin-top: 30px;">
+        <iframe 
+            class="aspect-video w-full" 
+            src="https://www.youtube.com/embed/d7PkDQr4Dpw" 
+            title="Diversdesk Intro" 
+            frameborder="0" 
+            allowfullscreen
+        ></iframe>
+    </div>
+  </div>
+</section>
+
+  <section class="mx-auto max-w-3xl px-4 text-center" style="padding-top: 50px; padding-bottom: 50px;">
+    <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-100">
+      Maximize Your Experience
+    </h2>
+
+    <p class="mt-8 text-lg text-neutral-600 dark:text-neutral-400">
+      Diversdesk is powerful and flexible. To help you get the absolute most out of your trial, we recommend a 15-minute jumpstart call with our team.
+    </p>
+
+    <div class="mt-12">
+      <PrimaryCTA title="Schedule Your Onboarding Call" url="https://meet.brevo.com/diversdesk-demo/demo-with-diversdesk" />
+    </div>
+  </section>
+
+<!-- <section class="w-full bg-neutral-50 dark:bg-neutral-900/30" style="padding-top: 100px; padding-bottom: 100px;">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-neutral-800 dark:text-neutral-100">While we prepare your workspace...</h2>
+      <p class="mt-4 text-neutral-600 dark:text-neutral-400">Here are the first three things you'll want to do once you're inside.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white dark:bg-neutral-800 rounded-2xl shadow-sm border border-neutral-200 dark:border-neutral-700 overflow-hidden">
+        <div class="aspect-video bg-neutral-200">
+           <img src="/images/setup-business.avif" alt="Business Setup" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <span class="text-orange-500 font-bold text-sm uppercase tracking-widest">Step 1</span>
+          <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-100 mt-2 mb-2">Brand Your Center</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">Upload your logo and set your colors so your digital waivers and emails look professional from day one.</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-2xl shadow-sm border border-neutral-200 dark:border-neutral-700 overflow-hidden">
+        <div class="aspect-video bg-neutral-200">
+           <img src="/images/add-boats.avif" alt="Adding Boats and Staff" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <span class="text-orange-500 font-bold text-sm uppercase tracking-widest">Step 2</span>
+          <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-100 mt-2 mb-2">Build Your Fleet</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">Input your boats and staff capacity to see how our automated scheduling prevents overbooking.</p>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-neutral-800 rounded-2xl shadow-sm border border-neutral-200 dark:border-neutral-700 overflow-hidden">
+        <div class="aspect-video bg-neutral-200">
+           <img src="/images/create-schedule.avif" alt="First Schedule" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-6">
+          <span class="text-orange-500 font-bold text-sm uppercase tracking-widest">Step 3</span>
+          <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-100 mt-2 mb-2">Run a Test Booking</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm">Create a "dummy" booking to experience exactly how easy the check-in process is for your divers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+<!-- <section class="mx-auto max-w-3xl px-4 py-20">
+  <h2 class="text-2xl font-bold text-neutral-800 dark:text-neutral-100 mb-8 text-center">Common Questions</h2>
+  <div class="space-y-6">
+    <div class="border-b border-neutral-200 dark:border-neutral-700 pb-4">
+      <h4 class="font-bold text-neutral-800 dark:text-neutral-200">What happens to my data after the trial?</h4>
+      <p class="text-neutral-600 dark:text-neutral-400 mt-2">Everything you’ve set up—divers, bookings, and gear—stays exactly where it is when you upgrade to a full plan.</p>
+    </div>
+    <div class="border-b border-neutral-200 dark:border-neutral-700 pb-4">
+      <h4 class="font-bold text-neutral-800 dark:text-neutral-200">How do I claim the 40% discount?</h4>
+      <p class="text-neutral-600 dark:text-neutral-400 mt-2">Simply choose an annual plan in your billing settings before the deadline. The discount will be applied automatically at checkout.</p>
+    </div>
+  </div>
+</section>
+
+<section class="w-full bg-neutral-50 dark:bg-neutral-900/30" style="padding-top: 100px; padding-bottom: 100px;">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-3xl font-bold text-neutral-800 dark:text-neutral-100 mb-16">
+      Interesting articles you might want to read
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="group flex flex-col bg-white dark:bg-neutral-800 rounded-2xl shadow-sm border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-xl transition-all duration-300">
+        <div class="aspect-video overflow-hidden">
+          <img src="/images/article-plans.avif" alt="Diversdesk Plans" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-100 mb-2">Choosing the Right Plan</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">Compare Basic, Pro, and Enterprise to see which fits your boat and staff size.</p>
+          <a href="/blog/choosing-plans" class="text-orange-500 font-semibold text-sm inline-flex items-center">
+            Read More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="group flex flex-col bg-white dark:bg-neutral-800 rounded-2xl shadow-sm border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-xl transition-all duration-300">
+        <div class="aspect-video overflow-hidden">
+          <img src="/images/article-onboarding.avif" alt="Paperless Onboarding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-100 mb-2">Mastering Onboarding</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">How to set up digital waivers so your divers are ready before they arrive.</p>
+          <a href="/blog/onboarding-guide" class="text-orange-500 font-semibold text-sm inline-flex items-center">
+            Read More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="group flex flex-col bg-white dark:bg-neutral-800 rounded-2xl shadow-sm border border-neutral-200 dark:border-neutral-700 overflow-hidden hover:shadow-xl transition-all duration-300">
+        <div class="aspect-video overflow-hidden">
+          <img src="/images/article-automation.avif" alt="Automation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-bold text-neutral-800 dark:text-neutral-100 mb-2">Trial to Pro Guide</h3>
+          <p class="text-neutral-600 dark:text-neutral-400 text-sm mb-4">A simple checklist to ensure your transition to a full account is seamless.</p>
+          <a href="/blog/trial-transition" class="text-orange-500 font-semibold text-sm inline-flex items-center">
+            Read More <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+</LandingLayout>

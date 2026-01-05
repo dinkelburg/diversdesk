@@ -10,8 +10,7 @@ const subTitle: string = "We need a few details to configure your environment.";
 const formSubTitle: string = "You will hear from us within 24 hours.";
 
 // Build Zoho form HTML string to bypass TypeScript errors
-const zohoFormHTML = `<!--Zoho Campaigns Web-Optin Form Starts Here-->
-<div id="sf3z3148a715cb0f7201dddd29e359ab6f9fafac4a3870c7be3336d6c7c0d319edaf" data-type="signupform">
+const zohoFormHTML = `<div id="sf3z3148a715cb0f7201dddd29e359ab6f9fafac4a3870c7be3336d6c7c0d319edaf" data-type="signupform">
     <div id="customForm">
         <input type="hidden" id="recapTheme" value="2">
         <input type="hidden" id="isRecapIntegDone" value="false">
@@ -53,15 +52,22 @@ const zohoFormHTML = `<!--Zoho Campaigns Web-Optin Form Starts Here-->
                                                                 <span class="hidden" id="dt_CONTACT_CF1">1,true,1,Full Name,2</span>
                                                             </div>
                                                         </div>
-                                                        <div class="zcsffield" fieldid="112354000000000015">
+                                                        <div class="zcsffield" fieldid="112354000000000017">
+                                                            <div>
+                                                                <label for="TITLE" class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-1">Position or Job Title</label>
+                                                                <input name="TITLE" changeitem="SIGNUP_FORM_FIELD" id="TITLE" class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1" placeholder="Position or Job Title" maxlength="20" type="text" value="">
+                                                                <span class="hidden" id="dt_TITLE">1,false,1,Title,2</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                                         <div class="zcsffield" fieldid="112354000000000015">
                                                             <div>
                                                                 <label for="CONTACT_EMAIL" class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-1">Contact Email <span name="SIGNUP_REQUIRED" class="text-red-500 text-xs">*</span></label>
                                                                 <input name="CONTACT_EMAIL" changeitem="SIGNUP_FORM_FIELD" id="CONTACT_EMAIL" class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1" placeholder="Contact Email" maxlength="100" type="email" required="true" value="">
                                                                 <span class="hidden" id="dt_CONTACT_EMAIL">1,true,6,Contact Email,2</span>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                                         <div class="zcsffield" fieldid="112354000000000027">
                                                             <div>
                                                                 <label for="PHONE" class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-1">Phone <span name="SIGNUP_REQUIRED" class="text-red-500 text-xs">*</span></label>
@@ -69,6 +75,8 @@ const zohoFormHTML = `<!--Zoho Campaigns Web-Optin Form Starts Here-->
                                                                 <span class="hidden" id="dt_PHONE">1,true,1,Phone,2</span>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                                         <div class="zcsffield" fieldid="112354000000000025">
                                                             <div>
                                                                 <label for="COMPANYNAME" class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-1">Company Name <span name="SIGNUP_REQUIRED" class="text-red-500 text-xs">*</span></label>
@@ -76,20 +84,11 @@ const zohoFormHTML = `<!--Zoho Campaigns Web-Optin Form Starts Here-->
                                                                 <span class="hidden" id="dt_COMPANYNAME">1,true,1,Company Name,2</span>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                                         <div class="zcsffield" fieldid="112354000000000043">
                                                             <div>
                                                                 <label for="WEBSITE" class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-1">Company Website <span name="SIGNUP_REQUIRED" class="text-red-500 text-xs">*</span></label>
                                                                 <input name="WEBSITE" changeitem="SIGNUP_FORM_FIELD" id="WEBSITE" class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1" placeholder="Company Website" maxlength="250" type="url" required="true" value="">
                                                                 <span class="hidden" id="dt_WEBSITE">1,true,1,Website Address,2</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="zcsffield" fieldid="112354000000000017">
-                                                            <div>
-                                                                <label for="TITLE" class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-1">Position or Job Title</label>
-                                                                <input name="TITLE" changeitem="SIGNUP_FORM_FIELD" id="TITLE" class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1" placeholder="Position or Job Title" maxlength="20" type="text" value="">
-                                                                <span class="hidden" id="dt_TITLE">1,false,1,Title,2</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -101,31 +100,38 @@ const zohoFormHTML = `<!--Zoho Campaigns Web-Optin Form Starts Here-->
                                                                 <span class="hidden" id="dt_COUNTRY">1,true,1,Country,2</span>
                                                             </div>
                                                         </div>
+                                                        <div class="zcsffield" fieldid="112354000004764051">
+                                                            <div>
+                                                                <label for="CONTACT_CF11" class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-1">Promo Code</label>
+                                                                <input name="CONTACT_CF11" changeitem="SIGNUP_FORM_FIELD" id="CONTACT_CF11" class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1" placeholder="Promo Code" maxlength="20" type="text" value="">
+                                                                <span class="hidden" id="dt_CONTACT_CF11">1,false,1,Discount/Promo Code,2</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="zcsffield" fieldid="112354000004764045">
+                                                        <div>
+                                                            <label for="CONTACT_CF10" class="block text-sm font-medium text-neutral-800 dark:text-neutral-200 mb-1">Additional Info or Questions</label>
+                                                            <textarea name="CONTACT_CF10" id="CONTACT_CF10" changeitem="SIGNUP_FORM_FIELD" class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1" placeholder="Additional Info or Questions" rows="3" maxlength="2000"></textarea>
+                                                            <span class="hidden" id="dt_CONTACT_CF10">1,false,5,Additional Info or Questions,2</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Captcha for Signup -->
-                                            <div class="recaptcha py-2.5 pl-2.5" id="captchaOld" name="captchaContainer">
+                                            <div class="recaptcha pt-10 pb-6 pl-2.5" id="captchaOld" name="captchaContainer">
                                                 <div>
                                                     <div class="w-[59%] float-left min-w-[170px] max-w-[70%]" id="captchaParent">
                                                         <img src="//campaigns.zoho.eu/images/refresh_icon.png" class="cursor-pointer float-right mr-1" onclick="loadCaptcha('https://campaigns.zoho.eu/campaigns/CaptchaVerify.zc?mode=generate',this,'#sf3z3148a715cb0f7201dddd29e359ab6f9fafac4a3870c7be3336d6c7c0d319edaf');" id="relCaptcha">
                                                         <div id="captchaDiv" captcha="true" name="" class="p-5 bg-white border border-neutral-300 w-[98.8%]"></div>
-                                                        <input placeholder="Captcha" id="captchaText" name="captchaText" changeitem="SIGNUP_FORM_FIELD" class="mt-1.5 block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1" maxlength="100" type="text">
-                                                        <span name="SIGNUP_REQUIRED" id="capRequired" class="text-red-500 text-xs float-right -mt-4 -mr-0.5">*</span>
+                                                        
+                                                        <div class="relative mt-1.5">
+                                                            <label class="block text-[10px] font-medium text-neutral-500 mb-0.5">Captcha <span name="SIGNUP_REQUIRED" class="text-red-500">*</span></label>
+                                                            <input placeholder="Enter Captcha" id="captchaText" name="captchaText" changeitem="SIGNUP_FORM_FIELD" class="block w-full rounded-lg border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-neutral-400 disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-600 dark:bg-neutral-700/30 dark:text-neutral-300 dark:placeholder:text-neutral-400 dark:focus:ring-1" maxlength="100" type="text">
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="clear-both"></div>
                                             </div>
                                             <input type="hidden" id="secretid" value="6LdNeDUUAAAAAG5l7cJfv1AA5OKLslkrOa_xXxLs">
-                                            <!-- Captcha for Signup End-->
-                                            <!-- Other Lists Subscription Start-->
-                                            <div class="mt-5" id="selectMailingLists" identity="mailingLists">
-                                                <div name="SIGNUP_FORM_LIST" changetype="SIGNUP_FORM_LIST" class="hidden">You can sign up to receive email updates from topics that may interest you.</div>
-                                                <table width="96%" border="0" cellspacing="0" id="listRelTable" cellpadding="0" class="mt10">
-                                                    <tbody></tbody>
-                                                </table>
-                                            </div>
-                                            <!-- Other Lists Subscription End-->
                                             <div class="border-b border-dotted border-neutral-300 mt-2.5 clear-both"></div>
                                             <div id="REQUIRED_FIELD_TEXT" changetype="REQUIRED_FIELD_TEXT" name="SIGNUP_REQUIRED" class="text-red-500 text-xs py-2.5 pr-2.5">*Required Fields</div>
                                             <div name="privacyPolicy" class="p-2.5 w-full relative">
@@ -140,7 +146,6 @@ const zohoFormHTML = `<!--Zoho Campaigns Web-Optin Form Starts Here-->
                                             <div class="p-2.5 text-center">
                                                 <input type="button" action="Save" id="zcWebOptin" name="SIGNUP_SUBMIT_BUTTON" changetype="SIGNUP_SUBMIT_BUTTON_TEXT" class="inline-flex w-full items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-white focus-visible:ring outline-none transition duration-300 border border-transparent bg-orange-300 hover:bg-orange-500 disabled:pointer-events-none disabled:opacity-50 ring-zinc-500 dark:ring-zinc-200 dark:focus:outline-none cursor-pointer" value="Sign Up">
                                             </div>
-                                            <!-- Do not edit the below Zoho Campaigns hidden tags -->
                                             <input type="hidden" id="fieldBorder" value="">
                                             <input type="hidden" name="zc_trackCode" id="zc_trackCode" value="ZCFORMVIEW" onload="">
                                             <input type="hidden" name="viewFrom" id="viewFrom" value="URL_ACTION">
@@ -158,7 +163,6 @@ const zohoFormHTML = `<!--Zoho Campaigns Web-Optin Form Starts Here-->
                                             <input type="hidden" id="new_optin_response_in" value="0">
                                             <input type="hidden" id="duplicate_optin_response_in" value="0">
                                             <input type="hidden" id="zc_formIx" name="zc_formIx" value="3z3148a715cb0f7201dddd29e359ab6f9fafac4a3870c7be3336d6c7c0d319edaf">
-                                            <!-- End of the campaigns hidden tags -->
                                         </div>
                                     </div>
                                     <input type="hidden" id="isCaptchaNeeded" value="true">
@@ -180,7 +184,7 @@ const zohoFormHTML = `<!--Zoho Campaigns Web-Optin Form Starts Here-->
     </span>
     <div id="zcOptinSuccessPanel"></div>
 </div>
-<!--Zoho Campaigns Web-Optin Form Ends Here-->`;
+`;
 
 export function getStaticPaths() {
   return [

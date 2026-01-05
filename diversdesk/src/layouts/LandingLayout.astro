@@ -1,0 +1,27 @@
+---
+// Import everything you already use
+import MainLayout from "./MainLayout.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  robots?: string;
+}
+
+const { title, description, robots } = Astro.props;
+---
+
+<MainLayout title={title} description={description} robots={robots}>
+  <div class="w-full">
+    <slot />
+  </div>
+</MainLayout>
+
+<style is:global>
+  /* This override ensures the MainLayout's internal container doesn't restrict us */
+  .max-w-screen-2xl {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+</style>
