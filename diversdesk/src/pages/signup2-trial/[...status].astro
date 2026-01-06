@@ -19,6 +19,7 @@ const actionUrl = "/api/signup";
 const startIso = new Date().toISOString();
 
 const pageTitle: string = `Sign Up for Trial | ${SITE.title}`;
+
 ---
 
 <script
@@ -261,4 +262,33 @@ const pageTitle: string = `Sign Up for Trial | ${SITE.title}`;
   if (errorBlock) {
     errorBlock.textContent = errorMsg || "Something went wrong, please try again.";
   }
+
+
+const phoneInput = document.getElementById("phone-input") as HTMLInputElement;
+
+if (phoneInput) {
+  phoneInput.addEventListener("input", () => {
+    const val = phoneInput.value.trim();
+
+    if (val === "") {
+      phoneInput.setCustomValidity(""); 
+    } else if (!val.startsWith("+")) {
+      // Missing the plus sign
+      phoneInput.setCustomValidity("Please start with + (e.g., +61)");
+    } else if (val.length < 8) {
+      // Has the plus, but not enough digits yet
+      phoneInput.setCustomValidity("Number is too short. Please ensure it is a valid number");
+    } else {
+      // Everything is perfect
+      phoneInput.setCustomValidity(""); 
+    }
+  });
+
+  phoneInput.addEventListener("blur", () => {
+    // Only show the bubble if there is actually an error
+    if (phoneInput.validationMessage !== "") {
+      phoneInput.reportValidity();
+    }
+  });
+}
 </script>
