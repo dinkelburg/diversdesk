@@ -142,11 +142,13 @@ const pageTitle: string = `Sign Up for Trial | ${SITE.title}`;
                       id="hs-companymame-contacts"
                       label="Company Name"
                       name="company"
+                      required
                     />
                     <TextInput
                       id="hs-website-contacts"
                       label="Company Website"
                       name="company_website"
+                      required
                     />
                   </div>
                   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -227,67 +229,127 @@ const pageTitle: string = `Sign Up for Trial | ${SITE.title}`;
 </MainLayout>
 
 <script>
-  const form = document.getElementById("signupForm");
-  const submitBtn = document.getElementById("submitBtn");
+  // const form = document.getElementById("signupForm");
+  // const submitBtn = document.getElementById("submitBtn");
 
-  if (form && submitBtn) {
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-      const formElement = event.target as HTMLFormElement;
+  // if (form && submitBtn) {
+  //   form.addEventListener("submit", async (event) => {
+  //     event.preventDefault();
+  //     const formElement = event.target as HTMLFormElement;
 
-      // Get reCAPTCHA token
+  //     // Get reCAPTCHA token
+  //     // @ts-ignore
+  //     const token = await (grecaptcha as any).execute(
+  //       "6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW",
+  //       { action: "submit" }
+  //     );
+  //     const captchaInput = document.getElementById("captcha_token");
+  //     if (captchaInput instanceof HTMLInputElement) {
+  //       captchaInput.value = token;
+  //     }
+
+  //     // Show loading state
+  //     submitBtn.setAttribute("disabled", "true");
+  //     submitBtn.textContent = "Submitting...";
+
+  //     return formElement?.submit();
+  //   });
+  // }
+
+  // // Display error message from URL if present
+  // const errorBlock = document.getElementById("errorMessage");
+  // const errorMsg = new URL(window.location.href).searchParams.get(
+  //   "response_error"
+  // );
+  // if (errorBlock) {
+  //   errorBlock.textContent = errorMsg || "Something went wrong, please try again.";
+  // }
+
+
+
+
+const form = document.getElementById("signupForm") as HTMLFormElement;
+const submitBtn = document.getElementById("submitBtn");
+
+const phoneInput = document.getElementById("phone-input") as HTMLInputElement;
+const emailInput = document.getElementById("email-input") as HTMLInputElement;
+const websiteInput = document.getElementById("hs-website-contacts") as HTMLInputElement;
+
+// 1. THE VALIDATION BRAINS
+function validateAllFields() {
+  if (!phoneInput || !emailInput || !websiteInput) return;
+
+  // PHONE: + and 8+ digits
+  const phoneVal = phoneInput.value.trim().replace(/\s/g, "");
+  if (phoneVal !== "" && (!phoneVal.startsWith("+") || phoneVal.length < 8)) {
+    phoneInput.setCustomValidity("Please start with + and include at least 8 digits.");
+  } else {
+    phoneInput.setCustomValidity("");
+  }
+
+  // EMAIL: standard format
+  const emailVal = emailInput.value.trim();
+  if (emailVal !== "" && !/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(emailVal)) {
+    emailInput.setCustomValidity("Please enter a valid email address.");
+  } else {
+    emailInput.setCustomValidity("");
+  }
+
+  // WEBSITE: Must end in .XX or .XXXXXX (e.g., .com, .nl)
+  const webVal = websiteInput.value.trim();
+  // This regex specifically looks for a dot followed by 2 to 6 letters at the END of the string
+  const strictUrlPattern = /^([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,6}$/;
+
+  if (webVal !== "") {
+    if (!strictUrlPattern.test(webVal)) {
+      websiteInput.setCustomValidity("Please enter a valid domain (e.g., company.com).");
+    } else {
+      websiteInput.setCustomValidity("");
+    }
+  }
+}
+
+// 2. THE HUMAN-FRIENDLY LISTENERS
+if (form && submitBtn) {
+  // Update logic quietly as they type
+  form.addEventListener("input", validateAllFields);
+
+  // Show bubbles ONLY when they leave a field (Blur)
+  [phoneInput, emailInput, websiteInput].forEach((input) => {
+    input?.addEventListener("blur", () => {
+      if (input.value !== "" && !input.checkValidity()) {
+        input.reportValidity();
+      }
+    });
+  });
+
+  // 3. THE SUBMIT GATEKEEPER
+  form.addEventListener("submit", async (event) => {
+    validateAllFields(); // One last check
+    
+    if (!form.checkValidity()) {
+      return; // Stop here if any field is invalid
+    }
+
+    event.preventDefault();
+    submitBtn.setAttribute("disabled", "true");
+    submitBtn.textContent = "Submitting...";
+
+    try {
       // @ts-ignore
-      const token = await (grecaptcha as any).execute(
+      const token = await grecaptcha.execute(
         "6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW",
         { action: "submit" }
       );
-      const captchaInput = document.getElementById("captcha_token");
-      if (captchaInput instanceof HTMLInputElement) {
-        captchaInput.value = token;
-      }
+      
+      const captchaInput = document.getElementById("captcha_token") as HTMLInputElement;
+      if (captchaInput) captchaInput.value = token;
 
-      // Show loading state
-      submitBtn.setAttribute("disabled", "true");
-      submitBtn.textContent = "Submitting...";
-
-      return formElement?.submit();
-    });
-  }
-
-  // Display error message from URL if present
-  const errorBlock = document.getElementById("errorMessage");
-  const errorMsg = new URL(window.location.href).searchParams.get(
-    "response_error"
-  );
-  if (errorBlock) {
-    errorBlock.textContent = errorMsg || "Something went wrong, please try again.";
-  }
-
-
-const phoneInput = document.getElementById("phone-input") as HTMLInputElement;
-
-if (phoneInput) {
-  phoneInput.addEventListener("input", () => {
-    const val = phoneInput.value.trim();
-
-    if (val === "") {
-      phoneInput.setCustomValidity(""); 
-    } else if (!val.startsWith("+")) {
-      // Missing the plus sign
-      phoneInput.setCustomValidity("Please start with + (e.g., +61)");
-    } else if (val.length < 8) {
-      // Has the plus, but not enough digits yet
-      phoneInput.setCustomValidity("Number is too short. Please ensure it is a valid number");
-    } else {
-      // Everything is perfect
-      phoneInput.setCustomValidity(""); 
-    }
-  });
-
-  phoneInput.addEventListener("blur", () => {
-    // Only show the bubble if there is actually an error
-    if (phoneInput.validationMessage !== "") {
-      phoneInput.reportValidity();
+      form.submit();
+    } catch (error) {
+      console.error("Submission error:", error);
+      submitBtn.removeAttribute("disabled");
+      submitBtn.textContent = "Sign Up";
     }
   });
 }
