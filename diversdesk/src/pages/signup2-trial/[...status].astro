@@ -265,29 +265,34 @@ const pageTitle: string = `Sign Up for Trial | ${SITE.title}`;
   //   errorBlock.textContent = errorMsg || "Something went wrong, please try again.";
   // }
 
-
-
-
 const form = document.getElementById("signupForm") as HTMLFormElement;
 const submitBtn = document.getElementById("submitBtn");
-
 const phoneInput = document.getElementById("phone-input") as HTMLInputElement;
 const emailInput = document.getElementById("email-input") as HTMLInputElement;
 const websiteInput = document.getElementById("hs-website-contacts") as HTMLInputElement;
 
-// 1. THE VALIDATION BRAINS
-function validateAllFields() {
-  if (!phoneInput || !emailInput || !websiteInput) return;
+// 1. THE "WHILE TYPING" LOGIC (Input Event)
+if (phoneInput) {
+  phoneInput.addEventListener("input", () => {
+    const value = phoneInput.value;
+    
+    // ONLY check for the '+' here. 
+    // We do NOT check length here so the "too short" message stays hidden.
+    if (value.length > 0 && !value.startsWith("+")) {
+      phoneInput.setCustomValidity("Please include your dial code starting with + (e.g., +61)");
+      phoneInput.reportValidity();
+    } else {
+      // As soon as there is a + (or it's empty), clear the error immediately.
+      phoneInput.setCustomValidity("");
+    }
+  });
+}
 
-  // PHONE: + and 8+ digits
-  const phoneVal = phoneInput.value.trim().replace(/\s/g, "");
-  if (phoneVal !== "" && (!phoneVal.startsWith("+") || phoneVal.length < 8)) {
-    phoneInput.setCustomValidity("Please start with + and include at least 8 digits.");
-  } else {
-    phoneInput.setCustomValidity("");
-  }
+// 2. THE "QUIET" VALIDATION (For Website and Email state)
+function validateBackgroundFields() {
+  if (!emailInput || !websiteInput) return;
 
-  // EMAIL: standard format
+  // Email check
   const emailVal = emailInput.value.trim();
   if (emailVal !== "" && !/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(emailVal)) {
     emailInput.setCustomValidity("Please enter a valid email address.");
@@ -295,27 +300,38 @@ function validateAllFields() {
     emailInput.setCustomValidity("");
   }
 
-  // WEBSITE: Must end in .XX or .XXXXXX (e.g., .com, .nl)
+  // Website check (Strictly blocking www.diversdesk)
   const webVal = websiteInput.value.trim();
-  // This regex specifically looks for a dot followed by 2 to 6 letters at the END of the string
   const strictUrlPattern = /^([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,6}$/;
-
-  if (webVal !== "") {
-    if (!strictUrlPattern.test(webVal)) {
-      websiteInput.setCustomValidity("Please enter a valid domain (e.g., company.com).");
-    } else {
-      websiteInput.setCustomValidity("");
-    }
+  if (webVal !== "" && !strictUrlPattern.test(webVal)) {
+    websiteInput.setCustomValidity("Please enter a full domain (e.g., company.com)");
+  } else {
+    websiteInput.setCustomValidity("");
   }
 }
 
-// 2. THE HUMAN-FRIENDLY LISTENERS
+// 3. THE "EXITING FIELD" LOGIC (Blur Event)
 if (form && submitBtn) {
-  // Update logic quietly as they type
-  form.addEventListener("input", validateAllFields);
+  // Website and Email update state quietly while typing
+  form.addEventListener("input", validateBackgroundFields);
 
-  // Show bubbles ONLY when they leave a field (Blur)
-  [phoneInput, emailInput, websiteInput].forEach((input) => {
+  // Phone Blur: THIS is where the length check finally happens
+  phoneInput?.addEventListener("blur", () => {
+    const phoneVal = phoneInput.value.trim().replace(/\s/g, "");
+    if (phoneVal !== "") {
+      if (!phoneVal.startsWith("+")) {
+        phoneInput.setCustomValidity("Please include your dial code starting with + (e.g., +61)");
+        phoneInput.reportValidity();
+      } else if (phoneVal.length < 8) {
+        // Only now do we show the "too short" message
+        phoneInput.setCustomValidity("Number is too short. Please include your full number.");
+        phoneInput.reportValidity();
+      }
+    }
+  });
+
+  // Email and Website Blur: Show bubbles when leaving
+  [emailInput, websiteInput].forEach((input) => {
     input?.addEventListener("blur", () => {
       if (input.value !== "" && !input.checkValidity()) {
         input.reportValidity();
@@ -323,13 +339,16 @@ if (form && submitBtn) {
     });
   });
 
-  // 3. THE SUBMIT GATEKEEPER
+  // 4. SUBMIT GATEKEEPER
   form.addEventListener("submit", async (event) => {
-    validateAllFields(); // One last check
-    
-    if (!form.checkValidity()) {
-      return; // Stop here if any field is invalid
+    // Final check for everyone
+    validateBackgroundFields();
+    const phoneVal = phoneInput.value.trim().replace(/\s/g, "");
+    if (phoneVal !== "" && (phoneVal.length < 8 || !phoneVal.startsWith("+"))) {
+        phoneInput.setCustomValidity("Please check your phone number.");
     }
+
+    if (!form.checkValidity()) return;
 
     event.preventDefault();
     submitBtn.setAttribute("disabled", "true");
@@ -337,14 +356,9 @@ if (form && submitBtn) {
 
     try {
       // @ts-ignore
-      const token = await grecaptcha.execute(
-        "6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW",
-        { action: "submit" }
-      );
-      
+      const token = await grecaptcha.execute("6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW", { action: "submit" });
       const captchaInput = document.getElementById("captcha_token") as HTMLInputElement;
       if (captchaInput) captchaInput.value = token;
-
       form.submit();
     } catch (error) {
       console.error("Submission error:", error);
