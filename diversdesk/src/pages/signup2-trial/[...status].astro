@@ -300,13 +300,19 @@ function validateBackgroundFields() {
     emailInput.setCustomValidity("");
   }
 
-  // Website check (Strictly blocking www.diversdesk)
+// Website Validation
   const webVal = websiteInput.value.trim();
-  const strictUrlPattern = /^([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,6}$/;
-  if (webVal !== "" && !strictUrlPattern.test(webVal)) {
-    websiteInput.setCustomValidity("Please enter a full domain (e.g., company.com)");
-  } else {
-    websiteInput.setCustomValidity("");
+  
+  // This regex handles: 
+  // (Optional protocol) + (Domain) + (Dot) + (2-6 letter TLD)
+  const universalUrlPattern = /^(?:https?:\/\/)?(?:[a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,6}(?:\/\S*)?$/;
+
+  if (webVal !== "") {
+    if (!universalUrlPattern.test(webVal)) {
+      websiteInput.setCustomValidity("Please enter a valid domain (e.g., company.com)");
+    } else {
+      websiteInput.setCustomValidity("");
+    }
   }
 }
 

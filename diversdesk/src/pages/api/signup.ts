@@ -5,68 +5,52 @@ export const prerender = false;
 export const POST: APIRoute = async ({ request, redirect }) => {
   const formData = await request.formData();
 
-  // Get redirect URLs from form
+  // 1. Setup Redirects and URLs
   const successUrl = formData.get("redirect") as string || "/signup2-trial/success";
   const errorUrl = formData.get("redirect_error") as string || "/signup2-trial/error";
+  
+  const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/ar41zuw1ke0a2m5fwk7pnrxo67284s1q";
+  const SECOND_WEBHOOK_URL = "https://hook.eu1.make.com/9xvwjor89g3e9r1q5kptvpf1tomh5hbw"; 
 
-  // 1. Honeypot check - if filled, it's likely a bot
+  // 2. Bot Prevention: Honeypot & Timing
   const honeypot = formData.get("website");
-  if (honeypot) {
-    console.error("Bot prevention: honeypot field was filled");
+  const startTime = formData.get("start") as string;
+  const now = new Date();
+
+  if (honeypot || (startTime && now.getTime() - new Date(startTime).getTime() < 3000)) {
+    console.error("Bot prevention: Honeypot or Timing triggered");
     return redirect(errorUrl, 302);
   }
 
-  // 2. Time validation - form submitted in less than 3 seconds is likely a bot
-  const startTime = formData.get("start") as string;
-  if (startTime) {
-    const formStartDate = new Date(startTime);
-    const now = new Date();
-    if (now.getTime() - formStartDate.getTime() < 3000) {
-      console.error("Bot prevention: form submitted too quickly (< 3 seconds)");
-      return redirect(errorUrl, 302);
-    }
-  }
-
-  // 3. reCAPTCHA v3 verification
+  // 3. Bot Prevention: reCAPTCHA v3 (Fail-Open)
   const captchaToken = formData.get("captcha_token") as string;
   const secretKey = import.meta.env.GOOGLE_RECAPTCHA_SECRET_KEY;
 
   if (captchaToken && secretKey) {
     try {
-      const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      const captchaResponse = await fetch("https://www.google.com/recaptcha/api/siteverify", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams({
           secret: secretKey,
           response: captchaToken,
         }).toString(),
       });
 
-      const body = await response.json();
+      const captchaBody = await captchaResponse.json();
 
-      if (typeof body.score === "number") {
-        console.log("reCAPTCHA score:", body.score);
-        // Score ranges from 0.0 to 1.0, where 1.0 is very likely a human
-        // Typically, scores below 0.5 are considered suspicious
-        if (body.score < 0.3) {
-          console.error("Bot prevention: reCAPTCHA score too low:", body.score);
-          return redirect(errorUrl, 302);
-        }
-      } else {
-        console.error("Invalid reCAPTCHA response:", body);
+      // Only block if we have a definitive low score
+      if (captchaBody.success && typeof captchaBody.score === "number" && captchaBody.score < 0.3) {
+        console.error("Bot prevention: reCAPTCHA score too low:", captchaBody.score);
+        return redirect(errorUrl, 302);
       }
     } catch (error) {
-      console.error("reCAPTCHA verification failed:", error);
-      // Continue anyway - don't block users if reCAPTCHA fails
+      // If Google is down, we log it but continue so we don't lose the trial user
+      console.warn("reCAPTCHA verification failed/timed out, proceeding anyway.");
     }
   }
 
-  // All validations passed - forward form data to Make webhook
-  const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/ar41zuw1ke0a2m5fwk7pnrxo67284s1q";
-
-  // Convert form data to JSON object (excluding internal fields)
+  // 4. Data Preparation
   const formDataObj: Record<string, string> = {};
   const excludeFields = ["website", "start", "redirect", "redirect_error", "captcha_token", "remember-me"];
 
@@ -76,23 +60,36 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     }
   });
 
+  // 5. Execute Webhooks in Parallel
   try {
-    const webhookResponse = await fetch(MAKE_WEBHOOK_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formDataObj),
-    });
+    const results = await Promise.allSettled([
+      fetch(MAKE_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formDataObj),
+      }),
+      fetch(SECOND_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formDataObj),
+      }),
+    ]);
 
-    if (!webhookResponse.ok) {
-      console.error("Make webhook error:", webhookResponse.status, await webhookResponse.text());
+    // Check the Primary Webhook (Make)
+    const makeResult = results[0];
+    if (makeResult.status === "rejected" || !makeResult.value.ok) {
+      console.error("Primary Webhook (Make) failed");
       return redirect(errorUrl, 302);
     }
 
-    console.log("Form submission sent to Make webhook successfully");
+    // Check the Secondary Webhook (Optional)
+    const secondResult = results[1];
+    if (secondResult.status === "rejected" || !secondResult.value.ok) {
+      console.warn("Secondary Webhook failed, but proceeding to success page.");
+    }
+
   } catch (error) {
-    console.error("Failed to send to Make webhook:", error);
+    console.error("Critical error in webhook processing:", error);
     return redirect(errorUrl, 302);
   }
 
