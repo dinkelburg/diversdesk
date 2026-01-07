@@ -47,7 +47,7 @@ const pageTitle: string = `Sign Up for Trial | ${SITE.title}`;
     inLanguage: "en-US",
   }}
 >
-  <section class="mx-auto max-w-[50rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+  <section class="mx-auto max-w-[50rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 min-h-[70vh]">
     <div class="mx-auto max-w-2xl lg:max-w-5xl">
       <div class="text-center">
         <h1
@@ -229,42 +229,6 @@ const pageTitle: string = `Sign Up for Trial | ${SITE.title}`;
 </MainLayout>
 
 <script>
-  // const form = document.getElementById("signupForm");
-  // const submitBtn = document.getElementById("submitBtn");
-
-  // if (form && submitBtn) {
-  //   form.addEventListener("submit", async (event) => {
-  //     event.preventDefault();
-  //     const formElement = event.target as HTMLFormElement;
-
-  //     // Get reCAPTCHA token
-  //     // @ts-ignore
-  //     const token = await (grecaptcha as any).execute(
-  //       "6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW",
-  //       { action: "submit" }
-  //     );
-  //     const captchaInput = document.getElementById("captcha_token");
-  //     if (captchaInput instanceof HTMLInputElement) {
-  //       captchaInput.value = token;
-  //     }
-
-  //     // Show loading state
-  //     submitBtn.setAttribute("disabled", "true");
-  //     submitBtn.textContent = "Submitting...";
-
-  //     return formElement?.submit();
-  //   });
-  // }
-
-  // // Display error message from URL if present
-  // const errorBlock = document.getElementById("errorMessage");
-  // const errorMsg = new URL(window.location.href).searchParams.get(
-  //   "response_error"
-  // );
-  // if (errorBlock) {
-  //   errorBlock.textContent = errorMsg || "Something went wrong, please try again.";
-  // }
-
 const form = document.getElementById("signupForm") as HTMLFormElement;
 const submitBtn = document.getElementById("submitBtn");
 const phoneInput = document.getElementById("phone-input") as HTMLInputElement;
@@ -374,3 +338,5 @@ if (form && submitBtn) {
   });
 }
 </script>
+
+
