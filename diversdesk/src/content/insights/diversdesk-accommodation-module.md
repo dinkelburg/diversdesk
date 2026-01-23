@@ -46,7 +46,7 @@ structuredData:
 </p>
 
 <ul style="list-style-type: disc; margin-left: 20px; margin-top: 8px;">
-    <li><strong>True "Dive & Stay" Integration:</strong> When a guest books a package, the system doesn’t just record the dives—it automatically locks in the room. Real-time availability means you can sell with confidence.</li>
+    <li><strong>True "Dive & Stay" Integration:</strong> When a guest books a package, the system doesn’t just record the dives, it automatically locks in the room. Real-time availability means you can sell with confidence.</li>
     <li><strong>A PMS Built for Divers:</strong> View your entire resort at a glance. Manage room assignments, bed configurations, and guest preferences without leaving the platform.</li>
     <li><strong>The "One-Bill" Experience:</strong> Your guests receive a single, professional summary that covers their room, dives, equipment rentals, and even airport transfers.</li>
     <li><strong>Modular & Flexible:</strong> We separate "Accommodation Details" from "Travel Details," letting you track flight info without cluttering your room management.</li>
