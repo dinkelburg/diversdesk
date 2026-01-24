@@ -114,7 +114,10 @@ structuredData:
 <div class="mt-10 mb-10 p-8 bg-gray-50 rounded-xl border border-gray-200 text-center">
     <h4 class="text-xl font-bold mb-2 text-gray-800">Ready to see it in action?</h4>
     <p class="mb-6 text-gray-600">Let us show you how the Accommodation Module and Unified Webshop can streamline your specific resort operations.</p>
-    <a href="/schedule-demo" class="inline-block bg-[#FF7557] text-white px-10 py-4 rounded-full font-bold hover:opacity-90 transition-all shadow-lg">
+    <a href="https://calendly.com/diversdesk-info/demo" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="inline-block bg-[#FF7557] text-white px-10 py-4 rounded-full font-bold hover:opacity-90 transition-all shadow-lg">
         Schedule a Demo
     </a>
 </div>
