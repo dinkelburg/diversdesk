@@ -1,0 +1,165 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+
+const pricingPlans = [
+  {
+    name: "CRM-Go",
+    tagline: "Secure Your Digital Onboarding",
+    description: "Ensure your paperless registration stays active. Keep your digital waivers and customer database running without interruption.",
+    price: "27",
+    billing: "USD / mo, billed annually",
+    features: [
+      "Keep your Digital Waivers & Medicals",
+      "Continue Personalized Onboarding",
+      "Full CRM & Database Access",
+      "Multi-Language Support Included",
+      "Standard Support"
+    ],
+    detailsLink: "/insights/crm-go/",
+    checkoutUrl: "https://buy.stripe.com/5kQ4gzajC1W09OAett0VO01",
+    featured: false,
+    cta: "Commit to CRM-Go"
+  },
+  {
+    name: "Starter",
+    tagline: "Essential Management Tools",
+    description: "Maintain your daily manifest and booking engine. Includes full inventory and rental management for your center.",
+    price: "42",
+    billing: "USD / mo, billed annually",
+    features: [
+      "Everything in CRM-Go",
+      "Live Planner & Booking Engine",
+      "Rental & Retail Inventory Module",
+      "Automated Payment Gateway",
+      "Accounting Integration"
+    ],
+    detailsLink: "/insights/diversdesk-starter-plan/",
+    checkoutUrl: "https://buy.stripe.com/00w9AT63m58c4ug0CD0VO02",
+    featured: true,
+    cta: "Commit to Starter"
+  },
+  {
+    name: "Pro",
+    tagline: "Advanced Automation Suite",
+    description: "For centers ready to scale. Connect to external tools, automate guest follow-ups, and gain deep business insights.",
+    price: "64",
+    billing: "USD / mo, billed annually",
+    features: [
+      "Everything in Starter",
+      "External Automation (Zapier/Make/Webhooks)",
+      "Automated Guest Follow-ups",
+      "Staff Calendars & Workload",
+      "Advanced Business Analytics",
+      "Priority 24/7 Support"
+    ],
+    detailsLink: "/insights/diversdesk-pro-plan/",
+    checkoutUrl: "https://buy.stripe.com/9B6dR90J2eIM2m85WX0VO04",
+    featured: false,
+    cta: "Commit to Pro"
+  },
+];
+
+const pageTitle = `Activate Your Subscription | ${SITE.title}`;
+---
+
+<MainLayout 
+  title={pageTitle}
+  description="Ensure uninterrupted access to your DiversDesk environment. Activate your subscription today and keep your dive operations running smoothly."
+>
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <div class="mx-auto mb-10 max-w-3xl text-center lg:mb-14">
+      <h2 class="text-3xl font-bold md:text-5xl md:leading-tight dark:text-white text-neutral-800">
+        Ready to Make it Official?
+      </h2>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
+        Your trial is coming to an end. <strong>Activate your subscription today</strong> to ensure your environment stays live with no downtime or data loss.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {pricingPlans.map((plan) => (
+        <div class={`relative flex flex-col border p-8 rounded-2xl bg-white dark:bg-neutral-800 transition-all duration-300 ${plan.featured ? 'border-orange-500 shadow-2xl scale-105 z-10' : 'border-neutral-200 dark:border-neutral-700 hover:shadow-lg'}`}>
+          
+          {plan.featured && (
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
+              {/* Most Popular Choice */}
+            </div>
+          )}
+
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200">{plan.name}</h3>
+            <p class="text-orange-500 font-medium text-sm mt-1 uppercase tracking-wider">{plan.tagline}</p>
+          </div>
+
+          <div class="mb-6">
+            <span class="text-4xl font-bold text-neutral-800 dark:text-white">${plan.price}</span>
+            <span class="text-neutral-500 dark:text-neutral-400 text-sm ml-1">{plan.billing}</span>
+          </div>
+          
+          <p class="text-neutral-600 dark:text-neutral-400 mb-8 leading-relaxed italic">
+            "{plan.description}"
+          </p>
+
+          <hr class="border-neutral-100 dark:border-neutral-700 mb-8" />
+
+          <ul class="space-y-4 mb-10 flex-grow text-sm">
+            {plan.features.map((feature) => (
+              <li class="flex items-start gap-x-3 text-neutral-700 dark:text-neutral-300">
+                <svg class="flex-shrink-0 size-5 text-orange-500 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <div class="space-y-4">
+            <a 
+              href={plan.checkoutUrl} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class={`block w-full py-4 px-4 text-center font-bold rounded-xl transition-all ${plan.featured ? 'bg-orange-500 hover:bg-orange-600 text-white shadow-md' : 'bg-neutral-100 hover:bg-neutral-200 text-neutral-800 dark:bg-neutral-700 dark:text-white dark:hover:bg-neutral-600'}`}
+            >
+              {plan.cta}
+            </a>
+            <a 
+              href={plan.detailsLink} 
+              target="_blank"
+              rel="noopener noreferrer"
+              class="group block w-full text-center text-sm font-semibold text-neutral-500 hover:text-orange-500 transition-colors"
+            >
+              View Full {plan.name} Details 
+              <span class="inline-block transition-transform group-hover:translate-x-1">→</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-24 border-t border-neutral-200 dark:border-neutral-700 pt-16">
+        <h3 class="text-center text-2xl font-bold text-neutral-800 dark:text-white mb-12">Commitment to Your Success</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+                <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-2 10h3L10 22l2-10H9l4-10z"/></svg>
+                </div>
+                <h4 class="font-bold dark:text-white">Seamless Transition</h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">Your environment stays live exactly as you've set it up. No data resets or lost settings.</p>
+            </div>
+            <div>
+                <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </div>
+                <h4 class="font-bold dark:text-white">Personal 2h Training</h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">Receive a 2-hour specialized training session to ensure your team is getting the most out of your tools.</p>
+            </div>
+            <div>
+                <div class="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 text-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/></svg>
+                </div>
+                <h4 class="font-bold dark:text-white">Instant Invoicing</h4>
+                <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">Secure checkout via Stripe with immediate digital invoices sent to your email.</p>
+            </div>
+        </div>
+    </div>
+  </section>
+</MainLayout>
