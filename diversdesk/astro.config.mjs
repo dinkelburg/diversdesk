@@ -56,23 +56,34 @@ export default defineConfig({
     plugins: [starlightImageZoom()],
     title: 'Diversdesk Docs',
     defaultLocale: "root",
-    sidebar: [{
-      label: 'Quick Start Guide',
-      link: '/quickstart_guide'
-    }, {
-      label: 'User Manual',
-      autogenerate: {
-        directory: "user_manual"
-      }
-    }, {
-      label: 'Articles',
-      autogenerate: {
-        directory: "articles"
-      }
-    }, {
-      label: 'Video Training',
-      link: '/video_training'
-    }],
+    sidebar: [
+      {
+        label: 'Quick Start Guide',
+        link: '/quickstart_guide'
+      }, 
+      {
+        label: 'User Manual',
+        collapsed: true, // This will collapse the group by default
+        autogenerate: {
+          directory: "user_manual"
+        }
+      }, 
+      {
+        label: 'Articles',
+        collapsed: true, // This will collapse the group by default
+        autogenerate: {
+          directory: "articles"
+        }
+      }, 
+      {
+        label: 'Video Training',
+        link: '/video_training'
+      }, 
+      {
+        label: 'Updates',
+        link: '/updates'
+      },
+    ],
     disable404Route: true,
     customCss: ['./src/styles/starlight.css'],
     favicon: '/favicon.ico',
