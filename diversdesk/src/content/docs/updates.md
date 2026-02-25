@@ -14,7 +14,7 @@ We’ve performed a major UX overhaul to make your daily operations faster and m
 
 ---
 
-<div class="video-container">
+<!-- <div class="video-container">
   <iframe 
     width="100%" 
     height="400" 
@@ -24,7 +24,14 @@ We’ve performed a major UX overhaul to make your daily operations faster and m
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen>
   </iframe>
+</div> -->
+
+<div style="flex: 1; text-align: left;">
+  <img src="/images/webshop_image.avif" 
+       alt="Activity card on the booking page" 
+       style="display: block; margin-left: 0; margin-right: auto; max-width: 100%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
 </div>
+
 
 ## The New All-in-One Webshop
 We’ve completely renewed the webshop to provide a seamless checkout experience for your customers and increase your conversions.
@@ -51,38 +58,47 @@ The heart of your daily operations has a brand-new look and feel, designed to re
 **⚡ New Quick-Action Button**
 Located at the right top of the page, this new command center holds the most common actions you perform. In one click, you can now:
 * Add a new **Activity** or **Accommodation**.
-* Log a **Retail Item** or a custom **Invoice Line Item**.
+* Add a **Retail Item** or a custom **Invoice Line Item**.
 * Process a **Payment** instantly.
 
-**🎯 Context-Specific Menus**
+**Context-Specific Menus**
 The individual cards on the page now feature an **Ellipsis (⋮)** menu. This allows you to perform specific actions—like editing, cancelling, or reassigning—directly on an individual activity or item without leaving your current view.
 
-**📊 Enhanced Visibility**
-* **Granular Tax Control:** Add specific tax rates per Activity Category or Product Type directly within the booking.
+**Enhanced Visibility**
+* **Granular Tax Control:** Add specific tax rates per Activity Category or Product Type.
 * **Cleaner Interface:** See guest details and trip information at a glance with significantly less clutter.
 
-[read more on this page](/new_booking_page)
+<a href="/new_booking_page" style="
+    display: inline-block;
+    background-color: #FF7557;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: sans-serif;
+    text-align: center;
+    transition: background-color 0.3s ease;
+">
+    Full Booking Page Guide
+</a>
 
-### Multi-Day Gear Selection**
+### Multi-Day Gear Selection
 We’ve refined the logic for guests booking gear across multiple days, making equipment assignment faster and reducing errors for your rental team.
 
-**Simplified Chinese Support**
+### Simplified Chinese Support
+
 Expand your reach! We’ve added Simplified Chinese for all guest forms and waivers, complementing our existing Traditional Chinese support.
 
----
-
-## ⚙️ Automation & Control
-
-### Smart Notifications
-Stay on top of self-bookings with **Application-wide Notifications**. 
+### Smart Notifications 
+Stay on top of self-bookings with **Application-wide Notifications** 🔔 . 
 * **Auto-Actions:** Set your own rules to auto-accept or auto-decline bookings if they aren't answered within $x$ minutes.
 
 ### Advanced Tax Management
 * **Granular Tax Control:** You can now add specific tax rates per **Activity Category** or **Product Type** for more accurate accounting.
 
----
 
-## 📊 Enhanced Insights & Reporting
+### Enhanced Insights & Reporting
 Our reporting pages are now cleaner and more data-rich, giving you better insights into your business health.
 
 * **Sales & Payments:** Both pages now feature additional data points for better tracking.
@@ -90,12 +106,16 @@ Our reporting pages are now cleaner and more data-rich, giving you better insigh
 * **Renewed Booking Page:** A fresh look at your booking data for better readability.
 
 ---
+## Coming Soon
+We've hold off 2 major featues that are very close to releasing:
 
-### 🚧 Coming Soon: The New Planner
+### The New Planner
 While we’ve updated almost every part of the app, we are still putting the finishing touches on the **Brand New Planner**. It’s not quite ready for this release, but stay tuned—it’s going to make scheduling your days faster than ever!
+
+### Price Rules
 
 ---
 
-<Aside type="caution" title="Approaching the end of your trial?">
+<!-- <Aside type="caution" title="Approaching the end of your trial?">
 With these new tools live, there's never been a better time to lock in your Diversdesk subscription. Check your account settings to ensure you don't lose access to your new "Face-lifted" dashboard once your trial concludes!
-</Aside>
+</Aside> -->
