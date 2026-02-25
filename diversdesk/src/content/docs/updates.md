@@ -92,11 +92,11 @@ Located at the right top of the page, this new command center holds the most com
 * Add a **Retail Item** or a custom **Invoice Line Item**.
 * Process a **Payment** instantly.
 
-  <div style="flex: 1; text-align: right;">
-    <img src="/images/booking-page-central-add-button.avif" 
-         alt="Updated Booking Page" 
-         style="max-width: 70%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-  </div>
+<div style="flex: 1; text-align: right;">
+  <img src="/images/booking-page-central-add-button.avif" 
+        alt="Updated Booking Page" 
+        style="max-width: 70%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+</div>
 
 **Context-Specific Menus**
 The individual cards on the page now feature an **Ellipsis (⋮)** menu. This allows you to perform specific actions—like editing, cancelling, or reassigning—directly on an individual activity or item without leaving your current view.
