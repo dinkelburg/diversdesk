@@ -26,11 +26,18 @@ We’ve performed a major UX overhaul to make your daily operations faster and m
   </iframe>
 </div> -->
 
-<div style="flex: 1; text-align: left;">
+<!-- <div style="flex: 1; text-align: left;">
   <img src="/images/webshop_image.avif" 
        alt="Activity card on the booking page" 
        style="display: block; margin-left: 0; margin-right: auto; max-width: 100%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+</div> -->
+
+<div style="text-align: center; margin: 20px 0;">
+  <img src="/images/webshop-checkout.gif" 
+       alt="Description of the feature" 
+       style="max-width: 80%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
 </div>
+
 
 
 ## The New All-in-One Webshop
@@ -46,20 +53,50 @@ We’ve completely renewed the webshop to provide a seamless checkout experience
 
 ---
 
+
 ## 📅 Platform & UX Enhancements
 The core platform received a face-lift to improve your professional workflow.
 
 ### Renewed Menu
-A modernized navigation system to get you where you need to go instantly. We've optimized the layout to put your most-used tools front and center.
+
+<div style="display: flex; align-items: flex-start; gap: 24px; padding: 10px;">
+  
+  <div style="flex: 1;">
+  A modernized navigation system to get you where you need to go instantly. <br>
+
+  We’ve optimized and rearranged the menu layout to put your most-used tools front and center, adding recognizable icons for extra clarity. <br>
+
+  **Note:** The onboarding section can now be found under Settings.
+  </div>
+
+  <div style="flex: 1; text-align: right;">
+    <img src="/images/renewed-menu.avif" 
+         alt="Renewed Menu" 
+         style="max-width: 60%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  </div>
+
+</div>
 
 ### Renewed Booking Page
 The heart of your daily operations has a brand-new look and feel, designed to reduce clicks and keep you organized.
+
+<div style="flex: 1; text-align: right;">
+  <img src="/images/updated-booking-page.avif" 
+        alt="Updated Booking Page" 
+        style="max-width: 80%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+</div>
 
 **⚡ New Quick-Action Button**
 Located at the right top of the page, this new command center holds the most common actions you perform. In one click, you can now:
 * Add a new **Activity** or **Accommodation**.
 * Add a **Retail Item** or a custom **Invoice Line Item**.
 * Process a **Payment** instantly.
+
+  <div style="flex: 1; text-align: right;">
+    <img src="/images/booking-page-central-add-button.avif" 
+         alt="Updated Booking Page" 
+         style="max-width: 70%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  </div>
 
 **Context-Specific Menus**
 The individual cards on the page now feature an **Ellipsis (⋮)** menu. This allows you to perform specific actions—like editing, cancelling, or reassigning—directly on an individual activity or item without leaving your current view.
@@ -106,7 +143,7 @@ Our reporting pages are now cleaner and more data-rich, giving you better insigh
 * **Renewed Booking Page:** A fresh look at your booking data for better readability.
 
 ---
-## Coming Soon
+## 🚀 Coming Soon
 We've hold off 2 major featues that are very close to releasing:
 
 ### The New Planner
