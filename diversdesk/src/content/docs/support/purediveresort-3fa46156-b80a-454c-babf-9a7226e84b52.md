@@ -23,41 +23,6 @@ On the right-hand side, you will find an index with all our contact moments, mak
 - Your Diversdesk environment 'My Page'
 </br>
 
-## Pending actions:
-
-| **Description** | **Type** | **By** | **Est compl date** |
-| --- |--- |--- | --- |
-| Fill out Diversdesk <a href="https://www.diversdesk.com/signup/form" target="_blank"> **Signup** </a> | Action | Pure | **Pending** | 
-| SSI Privacy policy waiver code | Action | Pure | **Pending** |
-| CSV Export file | Feature | Diversdesk | **Complete** ✅ |
-| User logging info | Feature | Diversdesk | **Complete** ✅ |
-| Pre-set text templates | Feature | Diversdesk | **Complete** ✅ |
-| Payment confirmation upload | Feature | Diversdesk | Pending |
-| In depth training for Ark | Action | Pure + Diversdesk | 18 Dec 2024 |
-
-
-## Requirements/features discussed:
-
-| **Supported/**<br>**not supported** | **Requirement** |  | **Weight** | **Comments** |
-| ---| ---| ---| ---| --- |
-| ✅ | **Database module.** | While booking the customer fills up some kind of form with contacts, certs, dives etc. | Must |  |
-| ✅ | **Accounting module.** | Using the entry fron the previous module we mark how the deposit was paid (swift, wise, paypal, card etc.) and upon arrival of the guest and settling the bill we can print a receipt. | Must |  |
-| ✅ |  | Ability to generate monthly, quarterly and yearly reports. | Must | _Diversdesk: We offer you the option to export a csv file in combination with Google sheets or Excel templates provided by us._ |
-| ✅ | **Customer data entry** | Either done by the customer and reviewed by my staff or done by my staff manually | Must |  |
-| ✅ | **Transaction input** | How the deposit was paid and how the bill was settled for the certain guest. Done manually by my staff. | Must | <br> |
-| ✅ | **Generate Bill & Invoice** |  | Must | _Diversdesk:_<br>**_Bill_** _Is generated during booking creation and displayed within the booking._<br>**_Invoice_** _Invoice can be generated once payment is completed._ |
-| ✅ | **Overview screen/Itinerary** |  | Must | _Diversdesk: We've created our detailed day view page for this_. Like done by you through google, you can use the comment section for any additional info. |
-| ✅ | **Customizing Registration form** |  | Must |  |
-| ✅ | **Create and add waivers** |  | Must |  |
-| ✅ | **Customer onarding journeys per activity** |  | Must |  |
-| ✅ | **CSV Export File** | Columns desired:<br> | Must |  |
-|  | **User logging** | Ability to track who entered or chenged a booking:<br>When I’m generating a monthly report I can see who made this booking. | Must |  |
-| ✅ | **Text templates** | Templates hat are by default added to the booking.<br>e.g. to indicate a deposit must be made to conceal the booking. | Must | Pure: That is one of the (if not the most) crucial things to have for us. A number of people who will fill out the form and consider that a booking without paying a deposit is very high. |
-|  | **Inventory module.** | The merch we sell - T-shirts, masks, sarongs etc. accounted by categories (size, colour, quantity etc.). | Desired | _Diversdesk: Currently merch is being added to booking as add-ons, and we’re about to release a merchant section which makes it a full POS system._<br><br>Pure: If I am adding a merch or lost gear into the bill as add-on, will it deduct it from an existing inventory or that function is not available yet?<br> |
-|  | **Payment confirmation upload** | Upload payment confirmation button | Desired |  |
-| ✅ | **Sales Channel** | Ability to enter a sales channel | Desired | Intermediate solution: Use of either the booking internal comment, or the comment sectoin in the detailed day view. |
-|  | **Ability to hide product Categories.** | Can the hide the freediving Product category |  |  |
-|  | **In depth training.** | In-depth training for Ark, so he can teach the staff. | Desired |  |
 
 
 ## Support Video's (8)
@@ -70,7 +35,9 @@ This is a great way to schedule a 2nd trip for divers that e.g. engage in a pool
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/324e71211b374ab180915f4e5a0f1578?sid=969ecf62-5e03-4dba-96ea-ad03a0354376" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### How to use notes
-In this video we the following subjects are discussed:
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/889a74cbb5e44885b064d6b889ee11e5?sid=c07344ab-809b-41ed-b43a-a6910807ac03" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+Chapters in this video:
 </br>**1.** **Notes booking wide** 
 </br> We will talk siscuss notes for:
 </br>a. Sales channels
@@ -79,20 +46,20 @@ In this video we the following subjects are discussed:
 <br>**2.** **Notes per participant**
 </br>a. Info about the participant during diving day
 </br>**3.** Sneak preview about user logging
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/889a74cbb5e44885b064d6b889ee11e5?sid=c07344ab-809b-41ed-b43a-a6910807ac03" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Adding a message to a booking
 In this video we will discuss how to add a message that holds any additional info or message to the booking.
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/9e405c41bd714880add425d471d9072c?sid=3787c319-5fd7-4abf-a7ab-66f48fe28f15" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Setting up your customer registration and onboarding journeys
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/270be82c26824ccc8675f5fdeaf6dad4?sid=2963317e-f265-4fef-b243-f87e2b5141c0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
 In this video we will discuss:
 1. Editiing registration forms and onboarding journeys
 2. Connecting onboarding journeys to activities
 3. Creating a custom waiver and connect this as:
     1. Signed waiver
     2. Tickbox within the registration form
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/270be82c26824ccc8675f5fdeaf6dad4?sid=2963317e-f265-4fef-b243-f87e2b5141c0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Use of the payment methods and payment gateway
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/76ee8e88f63b403bbad1db00f64631af?sid=a987fa54-34a1-4080-9a2c-aba2f95c61e7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
@@ -210,7 +177,11 @@ Here is what I’m talking about.
 I can see from this screen that there are 3 packages ongoing. If I click on any of them - I will have an itinerary, pick up and drop off locations, all divers info, payment info, whether transfers has been booked and confirmed.
 Same people who are in those packages are entered into the calendar as divers. As a separate entry, showing me the group they are at etc.
 In diverdesk I don’t see the package in the calendar.
-![](https://t2633992.p.clickup-attachments.com/t2633992/8df8956f-a9f7-461c-b20f-70f1d6988bad/WhatsApp%20Image%202024-06-19%20at%2014.10.16_aca1e566.jpg)
+<div style="flex: 1; text-align: left;">
+  <img src="https://t2633992.p.clickup-attachments.com/t2633992/8df8956f-a9f7-461c-b20f-70f1d6988bad/WhatsApp%20Image%202024-06-19%20at%2014.10.16_aca1e566.jpg" 
+       alt="Activity card on the booking page" 
+       style="display: block; margin-left: 0; margin-right: auto; max-width: 40%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+</div>
 
 **A:** All the info you mention is shown in 1 screen, and this view can be customized. Summary what can be seen:
 </br> ✅ what is ongoing
@@ -221,7 +192,11 @@ In diverdesk I don’t see the package in the calendar.
 </br> ✅ Payment info
 ![](https://t2633992.p.clickup-attachments.com/t2633992/4ba0802c-e7c1-405b-928a-7c6e346a3985/WhatsApp%20Image%202024-06-19%20at%2014.16.43_ad1a7820.jpg)
 ![](https://t2633992.p.clickup-attachments.com/t2633992/f2a37b02-4af0-4b6e-8e2b-f3d82e7c69d6/WhatsApp%20Image%202024-06-19%20at%2014.16.57_d937a0f3.jpg)
-![](https://t2633992.p.clickup-attachments.com/t2633992/4f75612a-9b96-4c04-b625-acd63b4e5c97/WhatsApp%20Image%202024-06-19%20at%2014.23.25_76ca1494.jpg)
+<div style="flex: 1; text-align: left;">
+  <img src="https://t2633992.p.clickup-attachments.com/t2633992/4f75612a-9b96-4c04-b625-acd63b4e5c97/WhatsApp%20Image%202024-06-19%20at%2014.23.25_76ca1494.jpg" 
+       alt="Activity card on the booking page" 
+       style="display: block; margin-left: 0; margin-right: auto; max-width: 50%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+</div>
 
 ### Q: ⁠Booking notifications ➝ 1mo, 2wk, 1wk, 2d
 **Q:** We use a system of notifications for the bookings made with us in advance (Dive and Stay and Learn and Stay packages). We have an alert a month, two weeks, a week and 2 days in advance. Which allows us to avoid any mistakes (not assigned materials, transfers and accommodation bookings)
