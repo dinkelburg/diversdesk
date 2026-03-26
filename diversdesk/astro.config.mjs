@@ -116,5 +116,8 @@ export default defineConfig({
     },
   }),
   ],
-  adapter: vercel()
+  adapter: vercel(),
+  security: {
+    checkOrigin: false,
+  },
 });
