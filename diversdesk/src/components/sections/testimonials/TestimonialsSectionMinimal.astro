@@ -24,7 +24,7 @@ interface Props {
 }
 ---
 
-<section class="relative overflow-x-hidden">
+<section id="testimonials-minimal" class="relative overflow-x-hidden">
 <div class="mx-auto max-w-[90rem] px-4 py-10 sm:px-12 lg:px-16 lg:py-14 2xl:max-w-full relative">
   <div class="mb-6 w-3/4 max-w-2xl sm:mb-10 md:mb-16 lg:w-1/2">
     <h2
@@ -37,14 +37,14 @@ interface Props {
   <!-- Testimonial Carousel Container -->
   <div class="relative">
     <!-- Arrows Positioned Overlapping -->
-    <div class="swiper-button-prev outside-arrows"></div>
-    <div class="swiper-button-next outside-arrows"></div>
+    <div class="swiper-button-prev testimonials-swiper-prev outside-arrows"></div>
+    <div class="swiper-button-next testimonials-swiper-next outside-arrows"></div>
 
     <!-- Testimonial Carousel -->
     <div class="testimonial-wrapper px-2 sm:px-16 md:px-16">
       <div class="swiper" id="testimonials-carousel">
         <div class="swiper-wrapper">
-          {testimonials.map((testimonial: Testimonial, index: number) => (
+          {testimonials.map((testimonial: Testimonial) => (
             <div class="swiper-slide">
               <!-- Added flex and height utilities to ensure equal heights -->
               <div class="testimonial-container flex flex-col justify-between h-full">
@@ -57,7 +57,7 @@ interface Props {
     </div>
 
     <!-- Pagination -->
-    <div class="swiper-pagination mt-8"></div>
+    <div class="swiper-pagination testimonials-swiper-pagination mt-8"></div>
   </div>
 
   <!-- Primary CTA Button -->
@@ -69,16 +69,36 @@ interface Props {
     import Swiper from 'swiper';
     import { Navigation, Pagination } from 'swiper/modules';
 
-    document.addEventListener('DOMContentLoaded', () => {
-      new Swiper('#testimonials-carousel', {
+    let testimonialsSwiper:
+      | {
+          destroy: (deleteInstance?: boolean, cleanStyles?: boolean) => void;
+        }
+      | undefined;
+
+    const initTestimonialsCarousel = () => {
+      const section = document.querySelector<HTMLElement>('#testimonials-minimal');
+      if (!section) return;
+
+      const carousel = section.querySelector<HTMLElement>('#testimonials-carousel');
+      const nextEl = section.querySelector<HTMLElement>('.testimonials-swiper-next');
+      const prevEl = section.querySelector<HTMLElement>('.testimonials-swiper-prev');
+      const paginationEl = section.querySelector<HTMLElement>('.testimonials-swiper-pagination');
+
+      if (!carousel || !nextEl || !prevEl || !paginationEl) return;
+
+      if (testimonialsSwiper) {
+        testimonialsSwiper.destroy(true, true);
+      }
+
+      testimonialsSwiper = new Swiper(carousel, {
         modules: [Navigation, Pagination],
         loop: true,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl,
+          prevEl,
         },
         pagination: {
-          el: '.swiper-pagination',
+          el: paginationEl,
           clickable: true,
         },
         slidesPerView: 3,
@@ -98,7 +118,11 @@ interface Props {
           },
         },
       });
-    });
+    };
+
+    document.addEventListener('astro:page-load', initTestimonialsCarousel);
+    document.addEventListener('astro:after-swap', initTestimonialsCarousel);
+    initTestimonialsCarousel();
   </script>
   </div>
 </section>

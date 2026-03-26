@@ -1,11 +1,11 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import vercel from '@astrojs/vercel/serverless';
+import vercel from '@astrojs/vercel';
 import sitemap from '@astrojs/sitemap';
 import compressor from 'astro-compressor';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom';
-import mdx from '@astrojs/mdx'; // Import MDX integration
+import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
@@ -32,7 +32,9 @@ export default defineConfig({
   },  
   prefetch: true,
   integrations: [
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     sitemap({
       // Enhanced filter to exclude unwanted pages
       filter: (page) => !(
@@ -88,8 +90,8 @@ export default defineConfig({
     customCss: ['./src/styles/starlight.css'],
     favicon: '/favicon.ico',
     components: {
-      SiteTitle: './src/components/ui/starlight/SiteTitle.astro',
-      Head: './src/components/ui/starlight/Head.astro'
+      Head: './src/components/ui/starlight/Head.astro',
+      SiteTitle: './src/components/ui/starlight/SiteTitle.astro'
     },
     head: [{
       tag: 'meta',
@@ -107,17 +109,12 @@ export default defineConfig({
   }), compressor({
     gzip: false,
     brotli: true
-  }), mdx(), // Add MDX integration
+  }), mdx(),
   partytown({
     config: {
-      forward: ['dataLayer.push'], // Forward Google Analytics events
+      forward: ['dataLayer.push'],
     },
   }),
   ],
-  output: 'hybrid',
-  experimental: {
-    clientPrerender: true,
-    directRenderScript: true
-  },
   adapter: vercel()
 });

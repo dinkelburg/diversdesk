@@ -10,6 +10,8 @@ const pageTitle: string = `Contact | ${SITE.title}`;
 <!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
 <MainLayout
   title={pageTitle}
+  description="Reach out to our team to discuss your dive center needs and explore tailored solutions."
+  image="/images/contact-hero.avif"
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -29,24 +31,6 @@ const pageTitle: string = `Contact | ${SITE.title}`;
   }}
   showBanner={false}
 >
-
-  <slot name="canonical">
-    <link rel="canonical" href="https://www.diversdesk.com/contact" />
-  </slot>
-
-  <slot name="head">
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Contact Us | Diversdesk" />
-    <meta property="og:description" content="Reach out to our team to discuss your dive center needs and explore tailored solutions." />
-    <meta property="og:image" content="/images/contact-hero.avif" />
-    <meta property="og:url" content="https://www.diversdesk.com/contact" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Contact Us | Diversdesk" />
-    <meta name="twitter:description" content="Reach out to our team to discuss your dive center needs and explore tailored solutions." />
-    <meta name="twitter:image" content="/images/contact-hero.avif" />
-  </slot>
 
   <!-- Hero image fallbacks -->
   <noscript>

@@ -3,7 +3,7 @@ import rss from "@astrojs/rss";
 // const postImportResult = import.meta.globEager("./posts/*.md");
 // const posts = Object.values(postImportResult);
 
-export const get = () =>
+export const GET = () =>
   rss({
     title: "Astro Theme",
     description: "A Theme for Astro",

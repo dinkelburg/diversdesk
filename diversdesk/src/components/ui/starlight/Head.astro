@@ -1,9 +1,5 @@
 ---
 import StarlightHead from "@astrojs/starlight/components/Head.astro";
-import {
-  default as VtbotStarlight,
-  type Props,
-} from "astro-vtbot/components/starlight/Base.astro";
 
 Astro.props.viewTransitionsFallback = "animate";
 
@@ -23,10 +19,8 @@ const robotsDirective = Astro.url.pathname.startsWith('/support')
   : null;
 ---
 
-<VtbotStarlight {...Astro.props}>
-  <StarlightHead {...Astro.props} />
-  {isDocsPage && <meta name="robots" content={robotsDirective}/>}
-</VtbotStarlight>
+<StarlightHead {...Astro.props} />
+{isDocsPage && <meta name="robots" content={robotsDirective}/>}
 
 <style is:global>
   /* Slow down Chrome's default animation */

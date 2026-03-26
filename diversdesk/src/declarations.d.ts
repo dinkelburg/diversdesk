@@ -5,4 +5,15 @@ declare module "*.mdx" {
   export { attributes };
   export default defaultExport;
 }
+
+declare module "astro-seo";
+declare module "astro-seo-schema";
+declare module "swiper";
+declare module "swiper/modules";
+
+// Starlight component declarations
+declare module "@astrojs/starlight/components/Head.astro" {
+  const component: any;
+  export default component;
+}
   

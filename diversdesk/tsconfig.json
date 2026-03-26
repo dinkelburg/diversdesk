@@ -10,7 +10,9 @@
       "@images/*": ["src/images/*"],
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"],
-      "@terms/*": ["src/terms/*"]
+      "@terms/*": ["src/terms/*"],
+      "gsap": ["node_modules/gsap/types/index.d.ts"],
+      "gsap/ScrollTrigger": ["node_modules/gsap/types/scroll-trigger.d.ts"]
     },
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
@@ -18,5 +20,5 @@
     "strict": true
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "src/**/*.md", "src/declarations.d.ts", "src/terms/terms-conditions.mdx", "src/terms/privacy-policy.mdx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "src/pages/diversdesk-checkout-v2.astro"]
 }

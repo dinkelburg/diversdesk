@@ -1,9 +1,7 @@
 ---
-import { Image } from 'astro:assets'; 
 import LandingLayout from "@/layouts/LandingLayout.astro";
 import { SITE } from "@data/constants";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro"; 
-import BlackFridayBanner from "@images/bannera.avif"; 
 
 const pageTitle = `Welcome Back to Diversdesk | ${SITE.title}`;
 ---
@@ -57,7 +55,6 @@ const pageTitle = `Welcome Back to Diversdesk | ${SITE.title}`;
             class="aspect-video w-full" 
             src="https://www.youtube.com/embed/d7PkDQr4Dpw" 
             title="Diversdesk Intro" 
-            frameborder="0" 
             allowfullscreen
         ></iframe>
     </div>

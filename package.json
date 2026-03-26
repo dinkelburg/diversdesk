@@ -1,4 +1,11 @@
 {
+  "name": "diversdesk",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:diversdesk && npm run build:traveltruster-blog",
+    "build:diversdesk": "npm --prefix diversdesk run build",
+    "build:traveltruster-blog": "npm --prefix traveltruster-blog run build"
+  },
   "dependencies": {
     "astro-seo-schema": "^5.0.0",
     "schema-dts": "^1.1.2"

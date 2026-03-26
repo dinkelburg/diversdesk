@@ -17,25 +17,12 @@ import IpadDetaildDayView from "@images/iPad_pro_detailed_day.avif";
 const pageTitle: string = `Features | ${SITE.title}`;
 ---
 
-<MainLayout title={pageTitle} robots="index, follow">
-  
-  <slot name="canonical">
-    <link rel="canonical" href="https://www.diversdesk.com/features" />
-  </slot>
-
-  <slot name="head">  
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Features | DiversDesk" />
-    <meta property="og:description" content="Discover DiversDesk's powerful features for dive center management: streamlined planning, scheduling, CRM, and paperless onboarding." />
-    <meta property="og:image" content="/images/features-image.avif" />
-    <meta property="og:url" content="https://www.diversdesk.com/features" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Features | DiversDesk" />
-    <meta name="twitter:description" content="Explore DiversDesk's software features: planning, scheduling, CRM, and customer onboarding." />
-    <meta name="twitter:image" content="/images/features-image.avif" />
-  </slot>
+<MainLayout
+  title={pageTitle}
+  description="Discover DiversDesk's powerful features for dive center management: streamlined planning, scheduling, CRM, and paperless onboarding."
+  image="/images/features-image.avif"
+  canonical="https://www.diversdesk.com/features"
+>
 
   <FeatureSchema />
 

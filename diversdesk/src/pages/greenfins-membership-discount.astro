@@ -14,31 +14,21 @@ const canonicalSlug: string = "greenfins-partner";
 const pageTitle: string = `Green Fins Membership Discount | ${SITE.title}`;
 ---
 
-<MainLayout title={pageTitle} robots="noindex, nofollow">
-  <slot name="canonical">
-    <link rel="canonical" href={`https://www.diversdesk.com/${canonicalSlug}`} />
-  </slot>
-
-  <slot name="head">
-    <meta name="robots" content="noindex, nofollow" />
-    <meta property="og:title" content="Exclusive Discount for Green Fins Members | DiversDesk" />
-    <meta property="og:description" content="Claim your 10% lifetime discount on DiversDesk subscription for Green Fins members. Paperless for a purpose!" />
-    <meta property="og:image" content="/images/partners/diversdesk-rwf-greenfins-partnership.avif" />
-    <meta property="og:url" content={`https://www.diversdesk.com/${canonicalSlug}`} />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Exclusive Green Fins Discount | DiversDesk" />
-    <meta name="twitter:description" content="Claim your 10% lifetime discount on DiversDesk subscription for Green Fins members. Paperless for a purpose!" />
-    <meta name="twitter:image" content="/images/partners/diversdesk-rwf-greenfins-partnership.avif" />
-  </slot>
+<MainLayout
+    title={pageTitle}
+    description="Claim your 10% lifetime discount on DiversDesk subscription for Green Fins members. Paperless for a purpose!"
+    image="/images/partners/diversdesk-rwf-greenfins-partnership.avif"
+    canonical={`https://www.diversdesk.com/${canonicalSlug}`}
+    robots="noindex, nofollow"
+>
 
   <div class="mx-auto max-w-3xl px-4 pt-12 sm:px-6 lg:px-8">
-      <Image 
-          src={GreenFinsBanner} // 
-          alt="An underwater scene with a tablet showing the Diversdesk interface, representing the Green Fins partnership."
-          class="w-full rounded-lg object-cover shadow-lg"
-          loading="eager"
-      />
+      <div class="w-full overflow-hidden rounded-lg shadow-lg">
+          <Image 
+              src={GreenFinsBanner} // 
+              alt="An underwater scene with a tablet showing the Diversdesk interface, representing the Green Fins partnership."
+          />
+      </div>
   </div>
 
   <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">

@@ -1,7 +1,6 @@
 ---
 // Import necessary components, modules and types
 import MainLayout from "@/layouts/MainLayout.astro";
-import { SEO } from "astro-seo";
 import CardBlog from "@components/ui/cards/CardBlog.astro";
 import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
 import CardInsight from "@components/ui/cards/CardInsight.astro";
@@ -43,37 +42,35 @@ const secondSubTitle: string =
 const pageTitle: string = `Blog | ${SITE.title}`;
 const pageDescription: string =
   "Stay up-to-date with the latest trends, tips, and insights from Diversdesk to enhance your dive center operations.";
+const pageUrl = "https://www.diversdesk.com/blog/";
+const pageImage = "https://www.diversdesk.com/images/blog-index-cover.png";
+const blogIndexSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Blog | Diversdesk",
+  "description": pageDescription,
+  "url": pageUrl,
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": pageImage,
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": "https://www.diversdesk.com",
+    "name": "Diversdesk",
+  },
+};
 
 ---
 
-<MainLayout title={pageTitle} showBanner={false}>
-
-  <SEO  
-  title={pageTitle} 
-  description={pageDescription} 
-  openGraph={{
-    basic: { 
-      title: pageTitle, 
-      type: "website", 
-      image: "/images/blog-index-cover.png"
-    }
-  }}
-/>
-
-<script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Blog | Diversdesk",
-    "description": "{pageDescription}",
-    "url": "https://www.diversdesk.com/blog",
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://www.diversdesk.com",
-      "name": "Diversdesk"
-    }
-  }
-  </script>
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  image={pageImage}
+  canonical={pageUrl}
+  structuredData={blogIndexSchema}
+  showBanner={false}
+>
 
 <section
 class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"

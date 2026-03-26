@@ -20,9 +20,36 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 
 const pageTitle: string = `${post.data.title} | ${SITE.title}`;
+const pageDescription: string = post.data.description;
+const siteOrigin = "https://www.diversdesk.com";
+const pageUrl = `${siteOrigin}/insights/${post.slug}/`;
+const pageImage = new URL(post.data.cardImage.src, siteOrigin).toString();
+const insightSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": pageTitle,
+  "description": pageDescription,
+  "url": pageUrl,
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": pageImage,
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "url": siteOrigin,
+    "name": "DiversDesk",
+  },
+};
 ---
 
-<MainLayout title={pageTitle}>
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  image={pageImage}
+  canonical={pageUrl}
+  ogType="article"
+  structuredData={insightSchema}
+>
   <section class="py-6 sm:py-8 lg:py-12">
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
       <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
@@ -151,15 +178,15 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
     if (!article) return;
 
     const articleHeight = article.offsetHeight;
-    const articleOffsetTop = article.offsetTop;
+    const articleOffsetTop =
+      article.getBoundingClientRect().top + window.scrollY;
 
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    if (articleHeight && articleOffsetTop && scrollTop) {
-      const progress =
-        ((scrollTop - articleOffsetTop) /
-          (articleHeight - window.innerHeight)) *
-        100;
+    if (articleHeight) {
+      const maxScrollable = Math.max(1, articleHeight - window.innerHeight);
+      const rawProgress = ((scrollTop - articleOffsetTop) / maxScrollable) * 100;
+      const progress = Math.min(100, Math.max(0, rawProgress));
 
       const progressBar = document.getElementById("progress");
       const progressBarMobile = document.getElementById("progress-mobile");
@@ -171,10 +198,10 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
     }
   };
 
-  document.addEventListener("DOMContentLoaded", (event) => {
-    window.onscroll = onScroll;
+  const initProgress = (): void => {
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
-    // Set initial width of progress bar
     const progressBar = document.getElementById("progress");
     const progressBarMobile = document.getElementById("progress-mobile");
 
@@ -182,7 +209,17 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
       progressBar.style.width = "0%";
       progressBarMobile.style.width = "0%";
     }
-  });
+
+    onScroll();
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initProgress, { once: true });
+  } else {
+    initProgress();
+  }
+
+  document.addEventListener("astro:page-load", initProgress);
 </script>
 <script>
   import { gsap } from "gsap";
@@ -190,16 +227,8 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.timeline({
-    scrollTrigger: {
-      scrub: 1,
-      pin: true,
-      trigger: "#pin",
-      start: "top 20%",
-      endTrigger: "footer",
-      end: "top bottom",
-    },
-  });
+  let pinTimeline: gsap.core.Timeline | null = null;
+  const tocScrollTriggers: ScrollTrigger[] = [];
 
   const SVG_HTML_STRING =
     '<svg class="w-0 h-0 flex-none" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fa5a15"><path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></svg>';
@@ -218,11 +247,34 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
     listItem?.classList.add("selected");
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function initToc(): void {
+    if (pinTimeline) {
+      pinTimeline.scrollTrigger?.kill();
+      pinTimeline.kill();
+      pinTimeline = null;
+    }
+
+    tocScrollTriggers.forEach((trigger) => trigger.kill());
+    tocScrollTriggers.length = 0;
+
+    pinTimeline = gsap.timeline({
+      scrollTrigger: {
+        scrub: 1,
+        pin: true,
+        trigger: "#pin",
+        start: "top 20%",
+        endTrigger: "footer",
+        end: "top bottom",
+      },
+    });
+
     // The article element that contains the Markdown content
     const article: HTMLElement | null = document.querySelector("article");
     // The ToC container <ul> element
     const tocList: HTMLElement | null = document.querySelector("#toc ul");
+    if (!tocList) return;
+
+    tocList.innerHTML = "";
 
     const headings: NodeListOf<HTMLElement> | [] = article
       ? article.querySelectorAll("h1, h2, h3, h4, h5, h6")
@@ -246,7 +298,7 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
 
         tocList?.appendChild(listItem);
 
-        gsap.timeline({
+        const timeline = gsap.timeline({
           scrollTrigger: {
             trigger: heading,
             start: "top 20%",
@@ -257,7 +309,21 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
               setActiveLinkById((headings[i - 1] as HTMLElement)?.id),
           },
         });
+
+        if (timeline.scrollTrigger) {
+          tocScrollTriggers.push(timeline.scrollTrigger);
+        }
       }
     });
-  });
+
+    ScrollTrigger.refresh();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initToc, { once: true });
+  } else {
+    initToc();
+  }
+
+  document.addEventListener("astro:page-load", initToc);
 </script>

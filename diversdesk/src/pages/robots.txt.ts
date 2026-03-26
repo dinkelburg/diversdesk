@@ -3,13 +3,26 @@ import type { APIRoute } from 'astro';
 
 const robotsTxt = `
 User-agent: Googlebot
-Disallow:
+Disallow: /admin
+Disallow: /*.json$
+Disallow: /api/
 Allow: /
+Crawl-delay: 0.5
+Request-rate: 30/60
+
+User-agent: Bingbot
+Disallow: /admin
+Disallow: /*.json$
+Disallow: /api/
+Allow: /
+Crawl-delay: 1
 
 User-agent: Yandex
-Disallow:
+Disallow: /admin
+Disallow: /*.json$
+Disallow: /api/
 Allow: /
-Crawl-delay: 2
+Crawl-delay: 1
 
 User-agent: archive.org_bot
 Disallow:
@@ -17,8 +30,11 @@ Allow: /
 Crawl-delay: 2
 
 User-agent: *
-Disallow: 
+Disallow: /admin
+Disallow: /*.json$
+Disallow: /api/
 Allow: /
+Crawl-delay: 1
 
 Sitemap: ${new URL('sitemap-index.xml', import.meta.env.SITE).href}
 `.trim();

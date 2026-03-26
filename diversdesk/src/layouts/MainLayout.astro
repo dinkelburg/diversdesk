@@ -5,6 +5,7 @@ import Navbar from "@components/sections/Navbar.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
 import { SITE } from "@data/constants";
 import BlackFridayBanner from "@components/ui/banners/BlackFridayBanner.astro";
+import "@styles/site-tailwind.css";
 
 interface Props {
   title?: string;
@@ -16,6 +17,7 @@ interface Props {
   lang?: string;
   robots?: string; 
   canonical?: string;
+  ogType?: "website" | "article";
   showBanner?: boolean;
 }
 
@@ -23,13 +25,29 @@ const {
   title = SITE.title,
   description = Astro.props.description || "DiversDesk is leading the way in dive center operations, with planning & scheduling, advanced paperless onboarding, digital waivers, CRM, online bookings, and integrated payments. Try it today!",
   image = "/images/Laptop-and-phone-diversdesk.avif",
-  url = "https://www.diversdesk.com",
+  url,
   meta = "",
   structuredData,
   lang = "en",
   robots = "index, follow", 
+  canonical = Astro.url.href,
+  ogType = "website",
   showBanner = false,
 } = Astro.props;
+
+const pageUrl = url || canonical;
+const pageImage = image.startsWith("http")
+  ? image
+  : new URL(image, Astro.site ?? Astro.url.origin).href;
+const robotDirectives = robots
+  .split(",")
+  .map((directive: string) => directive.trim().toLowerCase())
+  .filter(Boolean);
+const noindex = robotDirectives.includes("noindex");
+const nofollow = robotDirectives.includes("nofollow");
+const robotsExtras = robotDirectives
+  .filter((directive: string) => directive !== "index" && directive !== "follow" && directive !== "noindex" && directive !== "nofollow")
+  .join(", ");
 ---
 
 <html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
@@ -37,29 +55,43 @@ const {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
-    <!-- <link rel="canonical" href={canonical} /> -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    
+    <!-- Performance & SEO Resource Hints -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://calendly.com">
     
     <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-    <link rel="icon" type="image/png" sizes="16x16" href="/imagesfavicon_16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_32x32.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/images/favicon_512x512.png">
     <link rel="icon" href="/images/favicon.ico"> 
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
-    <meta name="robots" content={robots} /> <!-- Added meta robots tag -->
     <SEO
       title={title}
       description={description}
+      canonical={canonical}
+      noindex={noindex}
+      nofollow={nofollow}
+      robotsExtras={robotsExtras || undefined}
       openGraph={{
         basic: {
           title: title,
-          type: "website",
-          image: image,
-          url: url,
+          type: ogType,
+          image: pageImage,
+          url: pageUrl,
         },
       }}
     />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={pageImage} />
     <!-- Allow page-specific head content -->
     <slot name="head" />
 
@@ -98,7 +130,7 @@ const {
     </noscript>
 
     <!--Google Analytics - Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XNYR7HDD7W"></script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XNYR7HDD7W"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -129,7 +161,7 @@ const {
       requestAnimationFrame(raf);
     </script>
 
-    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
+    {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     {meta && <Fragment set:html={meta} />}
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />

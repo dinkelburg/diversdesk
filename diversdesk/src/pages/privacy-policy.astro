@@ -8,11 +8,8 @@ const pageTitle = `Privacy Policy | ${SITE.title}`;
 
 <MainLayout
   title={pageTitle}
+  robots="noindex, nofollow"
 >
-  <slot name="head">
-    <!-- Prevent indexing of the Terms and Conditions page -->
-    <meta name="robots" content="noindex, nofollow" />
-  </slot>
   <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
     <div class="mx-auto max-w-2xl lg:max-w-5xl">
       <article class="prose dark:prose-dark max-w-none">

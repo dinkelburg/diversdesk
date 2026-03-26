@@ -1,11 +1,9 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
-import { SEO } from "astro-seo";
 import AvatarBlogLarge from "@components/ui/avatars/AvatarBlogLarge.astro";
 import CardRelated from "@components/ui/cards/CardRelated.astro";
 import Bookmark from "@components/ui/buttons/Bookmark.astro";
 import SocialShare from "@components/ui/buttons/SocialShare.astro";
-import PostFeedback from "@components/ui/feedback/PostFeedback.astro";
 import { Image } from "astro:assets";
 import { capitalize, formatDate } from "@utils/utils";
 import { getCollection } from "astro:content";
@@ -28,66 +26,56 @@ const { post } = Astro.props;
 const blogPosts = await getCollection("blog", ({ id }) => id.startsWith("en/"));
 const relatedPosts = blogPosts.filter((blogEntry) => blogEntry.slug !== post.slug);
 const { Content } = await post.render();
+const postData = post.data as typeof post.data & { dateModified?: Date };
 const pageTitle = `${post.data.title} | ${SITE.title}`;
-const pageUrl = `https://diversdesk.com/blog/${post.slug}`;
+const siteOrigin = "https://www.diversdesk.com";
+const pageUrl = `${siteOrigin}/blog/${post.slug}/`;
+const pageImage = new URL(post.data.cardImage.src, siteOrigin).toString();
+const blogPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.data.title,
+  "description": post.data.description,
+  "author": {
+    "@type": "Person",
+    "name": post.data.author,
+  },
+  "datePublished": postData.pubDate.toISOString(),
+  "dateModified": (postData.dateModified || postData.pubDate).toISOString(),
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": pageUrl,
+  },
+  "image": {
+    "@type": "ImageObject",
+    "url": pageImage,
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "DiversDesk",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${siteOrigin}/images/logo.avif`,
+    },
+  },
+  "url": pageUrl,
+};
 
 ---
 
-<MainLayout title={pageTitle} description={post.data.description}>
-
-  <!--Custom SEO -->
-  <SEO 
-  title={post.data.title} 
-  description={post.data.description} 
-  openGraph={{ 
-    basic: { 
-      title: post.data.title, 
-      type: "article", 
-      image: post.data.cardImage.src,
-      url: pageUrl
-    }
-  }}
+<MainLayout
+  title={pageTitle}
+  description={post.data.description}
+  image={pageImage}
   canonical={pageUrl}
-  />
-
-  <!-- BlogPosting Schema -->
-  <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "{post.data.title}",
-    "description": "{post.data.description}",
-    "author": {
-      "@type": "Person",
-      "name": "{post.data.author}"
-    },
-  "datePublished": "{post.data.pubDate}",
-    "dateModified": "{post.data.dateModified || post.data.pubDate}", 
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.diversdesk.com/blog/{post.slug}"
-    },
-    "image": {
-      "@type": "ImageObject",
-      "url": "{post.data.cardImage.src}",
-      "width": 800,
-      "height": 450
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "DiversDesk",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.diversdesk.com/images/logo.avif",
-        "width": 250,
-        "height": 60
-      }
-    },
-    "url": "https://www.diversdesk.com/blog/{post.slug}"
-  }
-  </script>
-
-
+  ogType="article"
+  structuredData={blogPostingSchema}
+>
+  {post.data.additionalSchema && (
+    <Fragment slot="head">
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(post.data.additionalSchema)} />
+    </Fragment>
+  )}
   <section class="mx-auto max-w-3xl px-4 pb-12 pt-6 sm:px-6 lg:px-8 lg:pt-10">
     <div class="max-w-2xl">
       <div class="mb-6 flex items-center justify-between">
@@ -122,10 +110,8 @@ const pageUrl = `https://diversdesk.com/blog/${post.slug}`;
        <!-- Blog post image (cardImage) after 2nd paragraph -->
        <div class="h-64 overflow-hidden rounded-lg shadow-lg md:h-80 mb-6">
         <Image
-          class="h-full w-full object-cover object-center"
           src={post.data.cardImage}
           alt={post.data.cardImageAlt}
-          draggable="false"
           format="avif"
         />
       </div>

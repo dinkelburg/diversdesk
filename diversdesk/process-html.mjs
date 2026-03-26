@@ -16,7 +16,7 @@ await Promise.all(
    		 removeComments: true,
    		 preserveLineBreaks: true,
    		 collapseWhitespace: true,
-		 minifyJS: true
+		 minifyJS: false
    	 })
    	 await fs.writeFile(file, html)
     })

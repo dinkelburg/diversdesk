@@ -32,7 +32,7 @@ const faqItems = faqs.faqs.map((faq) => ({
   "name": faq.question,
   "acceptedAnswer": {
     "@type": "Answer",
-    "text": faq.answer,
+    "text": [faq.answer, faq.linkText, faq.answer2].filter(Boolean).join(" "),
   },
 }));
 
@@ -56,13 +56,13 @@ const partnersData = [
 ];
 ---
 
-<MainLayout title="DiversDesk: Dive Center Software, The Intuitive All-in-One Solution" showBanner={false}>
-    <slot name="canonical">
-      <link rel="canonical" href="https://www.diversdesk.com" />
-    </slot>
-    <slot name="head">
-      <link rel="sitemap" href="/sitemap-index.xml" />
-      <meta name="robots" content="index, follow" />
+<MainLayout
+  title="DiversDesk: Dive Center Software, The Intuitive All-in-One Solution"
+  description="Discover DiversDesk: the ultimate dive center management software. Simplify scheduling, streamline operations, and grow your dive shop effortlessly."
+  image="/images/Laptop-and-phone-diversdesk.avif"
+  showBanner={false}
+>
+    <Fragment slot="head">
 
       <link
         rel="preload"
@@ -70,31 +70,23 @@ const partnersData = [
         href={heroImage.src}
       />
 
-      <meta property="og:title" content="Dive Center Management Software | All-in-One Dive Shop Software | DiversDesk" />
-      <meta property="og:description" content="Discover DiversDesk: the ultimate Dive Center Management Software. Simplify scheduling, streamline operations, and grow your dive shop effortlessly." />
-      <meta property="og:image" content="/images/Laptop-and-phone-diversdesk.avif" />
-      <meta property="og:url" content="https://www.diversdesk.com" />
-      <meta property="og:type" content="website" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Effortless Dive Center Management | DiversDesk" />
-      <meta name="twitter:description" content="Streamline your dive center operations with DiversDesk's all-in-one software. Features include planning, scheduling, onboarding, and more." />
-      <meta name="twitter:image" content="/images/Laptop-and-phone-diversdesk.avif" />
-
-      <script type="application/ld+json" is:inline>
-        {
+      <script
+        is:inline
+        type="application/ld+json"
+        set:html={JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          "itemListElement": [
+          itemListElement: [
             {
               "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.diversdesk.com"
-            }
-          ]
-        }
-      </script>
-    </slot>
+              position: 1,
+              name: "Home",
+              item: "https://www.diversdesk.com",
+            },
+          ],
+        })}
+      />
+    </Fragment>
     
     <SoftwareApplicationSchema/>
 
@@ -345,9 +337,7 @@ features={features}
       <FAQ title="Frequently<br />Asked Questions" faqs={faqs} />
     </section>
 
-    <script type="application/ld+json" is:inline>
-      <raw>{JSON.stringify(faqSchema)}</raw>
-    </script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
     <PartnersSection
         title="Our Partner in Sustainability"

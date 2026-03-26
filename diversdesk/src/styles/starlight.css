@@ -230,15 +230,8 @@ article.card {
 .tab-space {
     margin-left: 2em; /* Adjust the value as needed */
 }
-  
-/* Full reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Container for the text grid */
+
+/* Container for the text grid */
   .text-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */

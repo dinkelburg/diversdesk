@@ -1,0 +1,196 @@
+---
+// Import the necessary components  
+import MainLayout from "@/layouts/MainLayout.astro";
+import FeatureSchema from "@components/sections/seo-specific/FeatureSchema.astro"; 
+import MainSection from "@components/ui/blocks/MainSection.astro";
+import LeftSection from "@components/ui/blocks/LeftSection.astro";
+import RightSection from "@components/ui/blocks/RightSection.astro";
+import { SITE } from "@data/constants";
+
+// Existing Images
+import MacBookAir from "@images/MacBookAir.png";
+import MedicalFormPhone from "@images/medical_signature.png";
+import StaffCalIpad from "@images/staff_calendar_ipad.png";
+import DataBase3 from "@images/customer_database3.png";
+
+// Placeholder markers for images you can add later
+// import RentalsOverview from "@images/rentals_overview.png"; 
+// import BookingOverview from "@images/booking_overview.png";
+
+interface Article {
+  isRightSection: boolean;
+  title: string;
+  content: string; 
+  btnExists?: boolean;
+  btnTitle?: string;
+  btnURL?: string;
+  single?: boolean;
+  img?: any;
+  imgAlt?: string;
+  imgOne?: any;
+  imgOneAlt?: string;
+  imgTwo?: any;
+  imgTwoAlt?: string;
+}
+
+const articles: Article[] = [
+  {
+    isRightSection: false,
+    title: "Activities & Planning",
+    content: `
+      <p>Manage your core operations with the industry's most flexible planner. Schedule participants across boats and get instant visual insights into daily or monthly capacity.</p>
+      <ul style="margin-top: 8px;"> 
+        <li>✔ <strong>Dynamic Manifests:</strong> Customizable tabs for gear & sizing or trip-specific data.</li>
+        <li>✔ <strong>Charter Templates:</strong> Fast-select and deploy recurring trip setups.</li>
+        <li>✔ <strong>Safety Logic:</strong> Instant insights into the lowest certification level in any group.</li>
+        <li>✔ <strong>Tanks & Blends:</strong> Track tank counts and Nitrox use directly via the manifest.</li>
+      </ul>
+    `,
+    img: MacBookAir,
+    imgAlt: "Diversdesk Planner showing boat capacity and trip scheduling",
+    btnExists: true,
+    btnTitle: "Explore the Planner",
+    btnURL: "https://calendly.com/diversdesk-info/demo",
+  },
+  {
+    isRightSection: true,
+    title: "Accommodation & Stay-Dive",
+    content: `
+      <p>Transform your resort management. Setting up your rooms automatically generates a webshop where guests can book rooms and availability instantly.</p>
+      <ul style="margin-top: 8px;"> 
+        <li>✔ <strong>Smart Pricing:</strong> Rules for seasonal rates, weekend surcharges, and single occupancy.</li>
+        <li>✔ <strong>Unified Calendar:</strong> Drag-and-drop bookings to optimize room usage.</li>
+        <li>✔ <strong>Stay-Dive Logic:</strong> Seamlessly bundle room bookings with activity packages.</li>
+      </ul>
+    `,
+    single: true,
+    imgOne: DataBase3, // Replace with an accommodation-specific screen
+    imgOneAlt: "Diversdesk accommodation calendar and pricing rules",
+  },
+  {
+    isRightSection: false,
+    title: "Staff & Workload Management",
+    content: `
+      <p>Empower your team with individual calendars that display only their relevant data, preventing double-bookings and burnout.</p>
+      <ul style="margin-top: 8px;"> 
+        <li>✔ <strong>Workload Insights:</strong> Accurate tracking of activities and courses for payroll processing.</li>
+        <li>✔ <strong>Roles & Permissions:</strong> Secure access for instructors, front desk, and accountants.</li>
+        <li>✔ <strong>WhatsApp Templates:</strong> Fast-select messaging for consistent guest communication.</li>
+      </ul>
+    `,
+    img: StaffCalIpad,
+    imgAlt: "Staff calendar and workload tracking on an iPad",
+  },
+  {
+    isRightSection: true,
+    title: "Rentals & Maintenance",
+    content: `
+      <p>Take the guesswork out of gear. Monitor your hard gear with smart maintenance tracking that triggers based on use or time.</p>
+      <ul style="margin-top: 8px;"> 
+        <li>✔ <strong>Service Alerts:</strong> Automated flags when a regulator or BCD hits its service interval.</li>
+        <li>✔ <strong>Allocation Insights:</strong> Instant view of gear availability across single or multi-day date ranges.</li>
+        <li>✔ <strong>Rental Items:</strong> Assign gear directly to participants with specific pricing rules.</li>
+      </ul>
+    `,
+    single: true,
+    imgOne: StaffCalIpad, // IMAGE NEEDED: Rental Overview screen
+    imgOneAlt: "Gear maintenance tracking and rental allocation overview",
+  },
+  {
+    isRightSection: false,
+    title: "Retail POS & Inventory",
+    content: `
+      <p>Manage your stock and sell online through an integrated webshop that stays in sync with your physical store.</p>
+      <ul style="margin-top: 8px;"> 
+        <li>✔ <strong>Stock Sync:</strong> Real-time inventory updates to prevent overselling online.</li>
+        <li>✔ <strong>Catalog Entry:</strong> Pre-entered data catalogs for fast item setup.</li>
+        <li>✔ <strong>Separate Pricing:</strong> Manage retail margins and taxes independently from services.</li>
+      </ul>
+    `,
+    img: MacBookAir, // IMAGE NEEDED: Retail/POS screen
+    imgAlt: "Diversdesk retail inventory and integrated webshop",
+  },
+  {
+    isRightSection: true,
+    title: "Reporting & Financial Suite",
+    content: `
+      <p>Get a bird's-eye view of your business health. Track metrics, process payments, and sync your data with bookkeeping tools.</p>
+      <ul style="margin-top: 8px;"> 
+        <li>✔ <strong>Booking Overview:</strong> Filterable list for payment status and registration completion.</li>
+        <li>✔ <strong>Financial Suite:</strong> Quickbooks integration and payment gateway connectivity.</li>
+        <li>✔ <strong>Invoice Customization:</strong> Professional, branded invoices with localized tax codes.</li>
+      </ul>
+    `,
+    single: true,
+    imgOne: DataBase3, 
+    imgOneAlt: "Financial metrics and booking overview dashboard",
+  },
+  {
+    isRightSection: false,
+    title: "Onboarding & Custom Journeys",
+    content: `
+      <p>Automate the guest experience with 13-language support and smart documentation that remembers returning customers.</p>
+      <ul style="margin-top: 8px;"> 
+        <li>✔ <strong>Custom Registration:</strong> Build forms with mandatory file uploads and bookable add-ons.</li>
+        <li>✔ <strong>Waiver Builder:</strong> Agency-standard or fully custom waivers with digital signatures.</li>
+        <li>✔ <strong>Auto-Reminders:</strong> Automated notifications for paperwork and upcoming trips.</li>
+      </ul>
+    `,
+    img: MedicalFormPhone,
+    imgAlt: "Multilingual digital registration and waivers on mobile",
+  }
+];
+
+const pageTitle: string = `Features | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  description="Discover DiversDesk's powerful features for dive center management: streamlined planning, scheduling, CRM, and paperless onboarding."
+  image="/images/features-image.avif"
+  canonical="https://www.diversdesk.com/features"
+  robots="noindex, follow"
+  showBanner={false}
+>
+
+  <FeatureSchema />
+
+  <MainSection
+    title="Management Without the Overhead"
+    subTitle="From the first booking to the final end-of-day report, Diversdesk connects your activities, accommodation, staff, and gear in one intuitive platform."
+    btnExists={true}
+    btnTitle="Schedule a Consultation"
+    btnURL="https://calendly.com/diversdesk-info/demo"
+  />
+  
+  {
+    articles.map(article => {
+      return article.isRightSection ? (
+        <RightSection
+          title={article.title}
+          single={article.single}
+          imgOne={article.imgOne}
+          imgOneAlt={article.imgOneAlt}
+          imgTwo={article.imgTwo}
+          imgTwoAlt={article.imgTwoAlt}
+          btnExists={article.btnExists}
+          btnTitle={article.btnTitle}
+          btnURL={article.btnURL}
+        >
+          <div><Fragment set:html={article.content} /></div>
+        </RightSection>
+      ) : (
+        <LeftSection
+          title={article.title}
+          img={article.img}
+          imgAlt={article.imgAlt}
+          btnExists={article.btnExists}
+          btnTitle={article.btnTitle}
+          btnURL={article.btnURL}
+        >
+          <div><Fragment set:html={article.content} /></div>
+        </LeftSection>
+      );
+    })
+  }   
+</MainLayout>
