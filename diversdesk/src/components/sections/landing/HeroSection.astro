@@ -67,14 +67,17 @@ interface Props {
   <div class="flex w-full">
       <div class="top-12 overflow-hidden">
 	{src && alt &&
-	<Image
+  <Image
         src={src}
         alt={alt}
         class="h-full w-full scale-110 object-cover object-center"
         draggable={"false"}
         loading={"eager"}
+        fetchpriority={"high"}
         format={"avif"}
-	 />
+      widths={[640, 768, 960, 1280, 1600, 1920]}
+      quality={90}
+  />
 	}
     </div>
   </div>

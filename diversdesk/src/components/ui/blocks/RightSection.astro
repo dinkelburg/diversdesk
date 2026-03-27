@@ -59,10 +59,8 @@ interface Props {
           src={imgOne}
           alt={imgOneAlt}
           format={"avif"}
-          widths={[400, 600, 800]}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px"
-          width={800}
-          height={450}
+          loading={"lazy"}
+          width={768}
         />
       </div>
     ) : (
@@ -74,10 +72,8 @@ interface Props {
           alt={imgOneAlt}
           draggable={"false"}
           format={"avif"}
-          widths={[343, 512, 686]}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 343px"
-          width={686}
-          height={594}
+          loading={"lazy"}
+          width={768}
         />
         <!-- Second image in a two-image layout -->
         <Image
@@ -86,10 +82,8 @@ interface Props {
           alt={imgTwoAlt}
           draggable={"false"}
           format={"avif"}
-          widths={[343, 512, 686]}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 343px"
-          width={686}
-          height={594}
+          loading={"lazy"}
+          width={768}
         />
       </div>
     )
