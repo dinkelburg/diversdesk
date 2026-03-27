@@ -27,6 +27,9 @@ const blogPosts = await getCollection("blog", ({ id }) => id.startsWith("en/"));
 const relatedPosts = blogPosts.filter((blogEntry) => blogEntry.slug !== post.slug);
 const { Content } = await post.render();
 const postData = post.data as typeof post.data & { dateModified?: Date };
+const introParagraphs = (post.data.contents || []).filter(
+  (content: string) => content.trim().length > 0,
+);
 const pageTitle = `${post.data.title} | ${SITE.title}`;
 const siteOrigin = "https://www.diversdesk.com";
 const pageUrl = `${siteOrigin}/blog/${post.slug}/`;
@@ -117,7 +120,7 @@ const blogPostingSchema = {
       </div>
       <!--Render contents from frontmatter-->
       <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
-        {post.data.contents.map((content: string) => (
+        {introParagraphs.map((content: string) => (
           <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">
             {content}
           </p>

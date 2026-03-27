@@ -39,6 +39,9 @@ const pageUrl = url || canonical;
 const pageImage = image.startsWith("http")
   ? image
   : new URL(image, Astro.site ?? Astro.url.origin).href;
+const socialImage = pageImage.endsWith(".avif")
+  ? "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.png"
+  : pageImage;
 const robotDirectives = robots
   .split(",")
   .map((directive: string) => directive.trim().toLowerCase())
@@ -82,7 +85,7 @@ const robotsExtras = robotDirectives
         basic: {
           title: title,
           type: ogType,
-          image: pageImage,
+          image: socialImage,
           url: pageUrl,
         },
       }}
@@ -91,7 +94,7 @@ const robotsExtras = robotDirectives
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={pageImage} />
+    <meta name="twitter:image" content={socialImage} />
     <!-- Allow page-specific head content -->
     <slot name="head" />
 
