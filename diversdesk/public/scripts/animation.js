@@ -10,16 +10,10 @@ document.addEventListener("DOMContentLoaded", function () {
             let speed = 1; // Adjust speed as needed
 
             const updateResetPoint = () => {
-                const viewportWidth = window.innerWidth;
+                // Dynamically calculate based on actual marquee width
                 const marqueeWidth = marquee.offsetWidth;
-
-                if (viewportWidth <= 767) {
-                    // Mobile: Adjust reset point for smoother scrolling
-                    return -marqueeWidth - 367; 
-                } else {
-                    // Desktop: Different reset point to avoid overlap
-                    return -marqueeWidth - 138;
-                }
+                // Reset point should be just past the full width of one marquee
+                return -marqueeWidth;
             };
 
             let resetPoint = updateResetPoint();
@@ -29,8 +23,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 marquee.style.transform = `translateX(${offset}px)`;
                 clone.style.transform = `translateX(${offset + marquee.offsetWidth}px)`;
 
+                // Use dynamically calculated reset point
                 if (offset <= resetPoint) {
                     offset = 0;
+                    // Recalculate in case window or content size changed
+                    resetPoint = updateResetPoint();
                 }
 
                 requestAnimationFrame(step);
@@ -38,8 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
             step();
 
+            // Recalculate on window resize
+            let resizeTimeout;
             window.addEventListener('resize', () => {
-                resetPoint = updateResetPoint();
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    resetPoint = updateResetPoint();
+                }, 250);
             });
         };
 

@@ -4,6 +4,8 @@ import Icon from "../../ui/icons/Icon.astro";
 import FullStar from "@components/ui/stars/FullStar.astro";
 
 const { content, author, role, avatarSrc, starCount } = Astro.props;
+const avatarAvifSrc = avatarSrc.replace(/\.(png|jpe?g|webp|avif)$/i, ".avif");
+const avatarWebpSrc = avatarSrc.replace(/\.(png|jpe?g|webp|avif)$/i, ".webp");
 
 interface Props {
   content: string;
@@ -27,13 +29,15 @@ interface Props {
     <div class="flex items-center pl-0 pr-4 py-4 rounded-lg">
       <div class="flex-shrink-0">
         <picture>
-          <source srcset={`${avatarSrc.replace('.png', '.avif')}`} type="image/avif" />
-          <source srcset={`${avatarSrc.replace('.png', '.webp')}`} type="image/webp" />
+          <source srcset={avatarAvifSrc} type="image/avif" />
+          <source srcset={avatarWebpSrc} type="image/webp" />
           <img
             class="h-10 w-10 rounded-full"
             src={avatarSrc}
             alt={`Avatar of ${author}, ${role}`}
             loading="lazy"
+            width="40"
+            height="40"
           />
         </picture>
       </div>

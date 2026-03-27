@@ -84,7 +84,10 @@ const companylogos = [
       <div class="animate-marquee-mobile md:animate-marquee w-auto flex flex-nowrap items-center gap-10 md:gap-20">
         {companylogos.concat(companylogos).map((item, index) => (
           <div class="flex justify-center items-center shrink-0 h-10 md:h-14 mx-4 md:mx-10">
-            <img class="h-full object-contain" src={item.logo} alt={item.alt} loading="lazy" />
+            <picture class="block h-full">
+              <source srcset={item.logo.replace(/\.png$/, '.webp')} type="image/webp" />
+              <img class="block h-full w-auto object-contain" src={item.logo} alt={item.alt} loading="lazy" />
+            </picture>
           </div>
         ))}
       </div>
