@@ -6,7 +6,6 @@ import compressor from 'astro-compressor';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom';
 import mdx from '@astrojs/mdx';
-import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,7 +29,7 @@ export default defineConfig({
   image: {
     domains: ['images.unsplash.com'], 
   },  
-  prefetch: true,
+  prefetch: false,
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -110,11 +109,6 @@ export default defineConfig({
     gzip: false,
     brotli: true
   }), mdx(),
-  partytown({
-    config: {
-      forward: ['dataLayer.push'],
-    },
-  }),
   ],
   adapter: vercel(),
   security: {

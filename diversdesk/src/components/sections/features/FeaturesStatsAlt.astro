@@ -4,19 +4,28 @@ import fallbackImage from "@images/Apple-Set.avif";
 import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 
 // Define props from Astro
-const { title, subTitle, benefits, image, imagePosition = "left", showButton = false, buttonTitle, buttonURL } = Astro.props;
-
 // Define TypeScript interface for props
 interface Props {
   title: string;
   subTitle?: string;
   benefits?: Array<string>;
-  image?: ImageMetadata; 
+  image?: any;
   imagePosition?: "left" | "right";
   showButton?: boolean;
   buttonTitle?: string;
   buttonURL?: string;
 }
+
+const {
+  title,
+  subTitle,
+  benefits,
+  image,
+  imagePosition = "left",
+  showButton = false,
+  buttonTitle,
+  buttonURL,
+}: Props = Astro.props;
 
 // Define SVG marker to be used in the component
 const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 h-6 w-6 text-orange-400 dark:text-orange-300 flex-none"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`;
@@ -33,7 +42,9 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
       class="rounded-xl"
       src={image || fallbackImage}
       alt="Macbook, ipad and iphone displaying dive center metrics using diversdesk dive shop management software"
-      widths={[480, 640, 768, 1024, 1280]}
+      widths={[360, 480, 640, 720, 768, 960, 1200]}
+      sizes="(max-width: 639px) 92vw, (max-width: 1023px) 88vw, (max-width: 1279px) 52vw, 48rem"
+      quality={68}
       loading={"lazy"}
       format={"webp"}
     />
@@ -58,7 +69,7 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
         </div>
         {benefits && (
           <ul class="space-y-2 sm:space-y-4">
-            {benefits.map((item) => (
+            {benefits.map((item: string) => (
               <li class="flex space-x-3">
                 <Fragment set:html={ListItemMarker} />
                 <span class="text-pretty text-base font-medium text-neutral-600 dark:text-neutral-400">

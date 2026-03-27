@@ -9,31 +9,43 @@ document.addEventListener("DOMContentLoaded", function () {
     const clone = marquee.cloneNode(true);
     clone.removeAttribute("data-marquee-track");
     clone.setAttribute("aria-hidden", "true");
+    clone.style.pointerEvents = "none";
     marquee.parentElement.appendChild(clone);
 
     let offset = 0;
-    let speed = 0.8;
+    let lastTs = 0;
+    let speed = window.innerWidth < 768 ? 42 : 54; // px/sec
     let marqueeWidth = 0;
 
     const updateWidth = () => {
-        marqueeWidth = marquee.getBoundingClientRect().width;
-        clone.style.transform = `translate3d(${offset + marqueeWidth}px, 0, 0)`;
+        marqueeWidth = marquee.scrollWidth;
+        if (marqueeWidth > 0) {
+            // Keep offset in-range after responsive/layout changes.
+            offset = ((offset % marqueeWidth) + marqueeWidth) % marqueeWidth;
+            applyTransforms();
+        }
     };
 
     const applyTransforms = () => {
-        marquee.style.transform = `translate3d(${offset}px, 0, 0)`;
-        clone.style.transform = `translate3d(${offset + marqueeWidth}px, 0, 0)`;
+        const x = -offset;
+        marquee.style.transform = `translate3d(${x}px, 0, 0)`;
+        clone.style.transform = `translate3d(${x + marqueeWidth}px, 0, 0)`;
     };
 
-    const step = () => {
+    const updateSpeed = () => {
+        speed = window.innerWidth < 768 ? 42 : 54;
+    };
+
+    const step = (ts) => {
+        if (!lastTs) {
+            lastTs = ts;
+        }
+
+        const dt = Math.min((ts - lastTs) / 1000, 0.05);
+        lastTs = ts;
+
         if (marqueeWidth > 0) {
-            offset -= speed;
-
-            // Continuous wrap (no hard reset) keeps motion seamless.
-            if (offset <= -marqueeWidth) {
-                offset += marqueeWidth;
-            }
-
+            offset = (offset + speed * dt) % marqueeWidth;
             applyTransforms();
         }
 
@@ -52,9 +64,18 @@ document.addEventListener("DOMContentLoaded", function () {
     let resizeTimeout;
     window.addEventListener("resize", () => {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(updateWidth, 150);
+        resizeTimeout = setTimeout(() => {
+            updateSpeed();
+            updateWidth();
+        }, 150);
     });
 
+    const observer = new ResizeObserver(() => {
+        updateWidth();
+    });
+    observer.observe(marquee);
+
+    updateSpeed();
     updateWidth();
-    step();
+    requestAnimationFrame(step);
 });

@@ -5,8 +5,6 @@ import TabContent from "@components/ui/blocks/TabContent.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 
 // Define props from Astro
-const { title, tabs } = Astro.props;
-
 // Define TypeScript interface for tab object
 interface Tab {
   heading: string;
@@ -23,6 +21,8 @@ interface Props {
   title?: string;
   tabs: Tab[];
 }
+
+const { title, tabs }: Props = Astro.props;
 ---
 
 <section
@@ -43,7 +43,7 @@ interface Props {
         <!-- Tab navigation - use the attribute 'first' in the first TabNav for the component to work -->
         <nav class="mt-5 grid gap-4 md:mt-10" aria-label="Tabs" role="tablist">
           {
-            tabs.map((tab, index) => 
+            tabs.map((tab: Tab, index: number) => 
             (
               <TabNav
                 id={`tabs-with-card-item-${index + 1}`}
@@ -65,7 +65,7 @@ interface Props {
         <div class="relative">
           <div>
             {
-              tabs.map((tab, index) => (
+              tabs.map((tab: Tab, index: number) => (
                 <TabContent
                   id={`tabs-with-card-${index + 1}`}
                   aria={`tabs-with-card-item-${index + 1}`}
@@ -92,4 +92,4 @@ interface Props {
 </section>
 <!--Import the necessary Tabs plugin-->
 <!--https://preline.co/plugins/html/tabs.html-->
-<script is:inline src="/scripts/vendor/preline/tabs/index.js"></script>
+<script is:inline defer src="/scripts/vendor/preline/tabs/index.js"></script>

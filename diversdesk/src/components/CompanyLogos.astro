@@ -104,16 +104,19 @@ const companylogos = [
   <!-- Logo marquee container -->
   <div class="overflow-x-hidden">
   <div class="-mx-2 sm:-mx-6 lg:-mx-8 pb-20">
-    <div class="relative flex overflow-hidden py-5">
-      <div class="animate-marquee-mobile md:animate-marquee w-auto flex flex-nowrap items-center gap-10 md:gap-20" data-marquee-track>
+    <div class="relative overflow-hidden py-5">
+      <div class="relative h-10 md:h-14" data-marquee-viewport>
+      <div class="absolute left-0 top-0 w-max shrink-0 flex flex-nowrap items-center gap-16 md:gap-32 will-change-transform" data-marquee-track>
         {companylogos.map((item, index) => (
-          <div class="flex justify-center items-center shrink-0 h-10 md:h-14 mx-4 md:mx-10">
+          <div class="flex justify-center items-center shrink-0 h-10 md:h-14">
             <picture class="block h-full">
               <source srcset={item.logo} type="image/webp" />
               <img class="block h-full w-auto object-contain" src={item.logo} alt={item.alt} loading="lazy" width={item.width} height={item.height} />
             </picture>
           </div>
         ))}
+        <div class="shrink-0 w-0" aria-hidden="true"></div>
+      </div>
       </div>
     </div>
   </div>

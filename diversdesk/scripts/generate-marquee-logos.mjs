@@ -38,7 +38,7 @@ for (const file of logos) {
   }
 
   const img = sharp(inPath, { density: 300 }).resize({ height: 70, withoutEnlargement: true });
-  await img.webp({ quality: 82, effort: 5 }).toFile(outPath);
+  await img.webp({ quality: 64, effort: 6 }).toFile(outPath);
 
   const meta = await sharp(outPath).metadata();
   const inSize = fs.statSync(inPath).size;

@@ -11,6 +11,7 @@ interface Props {
   title?: string;
   description?: string; 
   image?: string;     
+  socialImageAlt?: string;
   url?: string;       
   meta?: string;
   structuredData?: object;
@@ -25,6 +26,7 @@ const {
   title = SITE.title,
   description = Astro.props.description || "DiversDesk is leading the way in dive center operations, with planning & scheduling, advanced paperless onboarding, digital waivers, CRM, online bookings, and integrated payments. Try it today!",
   image = "/images/Laptop-and-phone-diversdesk.avif",
+  socialImageAlt = "DiversDesk dive center management software interface on desktop and mobile",
   url,
   meta = "",
   structuredData,
@@ -51,6 +53,19 @@ const nofollow = robotDirectives.includes("nofollow");
 const robotsExtras = robotDirectives
   .filter((directive: string) => directive !== "index" && directive !== "follow" && directive !== "noindex" && directive !== "nofollow")
   .join(", ");
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "DiversDesk",
+  url: "https://www.diversdesk.com",
+  description: "Leading software for dive center operations with planning, scheduling, digital onboarding, and integrated payments.",
+  inLanguage: lang,
+  publisher: {
+    "@type": "Organization",
+    name: "DiversDesk",
+    url: "https://www.diversdesk.com",
+  },
+};
 ---
 
 <html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
@@ -91,12 +106,12 @@ const robotsExtras = robotDirectives
       }}
     />
     <meta property="og:description" content={description} />
-    <meta property="og:image:alt" content="DiversDesk dive center management software interface on desktop and mobile" />
+    <meta property="og:image:alt" content={socialImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
-    <meta name="twitter:image:alt" content="DiversDesk dive center management software interface on desktop and mobile" />
+    <meta name="twitter:image:alt" content={socialImageAlt} />
     <!-- Allow page-specific head content -->
     <slot name="head" />
 
@@ -124,6 +139,7 @@ const robotsExtras = robotDirectives
         description: "Leading software for dive center operations with planning, scheduling, digital onboarding, and integrated payments."
       }}
     />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 
     <noscript>
       <picture>
@@ -154,22 +170,31 @@ const robotsExtras = robotDirectives
         document.documentElement.classList.remove("dark");
       }
     </script> 
-    <script is:inline src="/scripts/vendor/lenis/lenis.js"></script>
     <script is:inline>
-      const lenis = new Lenis();
+      window.addEventListener("load", () => {
+        const script = document.createElement("script");
+        script.src = "/scripts/vendor/lenis/lenis.js";
+        script.defer = true;
+        script.onload = () => {
+          if (!window.Lenis) return;
+          const lenis = new window.Lenis();
 
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
+          function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          }
 
-      requestAnimationFrame(raf);
+          requestAnimationFrame(raf);
+        };
+        document.body.appendChild(script);
+      });
     </script>
 
     {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     {meta && <Fragment set:html={meta} />}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /></noscript>
 <style>
   /* Make the cookie bar text and button smaller and reduce height */
   .cc-window.cc-banner {
@@ -253,9 +278,19 @@ const robotsExtras = robotDirectives
 
     </style>
 
-  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-
   <script>
+    const COOKIE_CONSENT_SRC = "https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js";
+
+    const loadScript = (src: string) =>
+      new Promise<void>((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = src;
+        script.defer = true;
+        script.onload = () => resolve();
+        script.onerror = () => reject(new Error(`Failed to load ${src}`));
+        document.body.appendChild(script);
+      });
+
     // Function to load Brevo widget - defined globally
     (window as any).loadBrevoWidget = function() {
       (function(d: Document, w: any, c: string) {
@@ -270,9 +305,10 @@ const robotsExtras = robotDirectives
       })(document, window, 'BrevoConversations');
     };
 
-    window.addEventListener("load", function(){
-      // @ts-ignore
-      window.cookieconsent.initialise({
+    const initCookieConsent = () => {
+      if (!(window as any).cookieconsent) return;
+
+      (window as any).cookieconsent.initialise({
         palette: {
           popup: { background: "#444" },
           button: { background: "#FF7557"}
@@ -302,7 +338,22 @@ const robotsExtras = robotDirectives
           }
         }
       });
-      
+    };
+
+    window.addEventListener("load", function () {
+      const start = () => {
+        loadScript(COOKIE_CONSENT_SRC)
+          .then(initCookieConsent)
+          .catch(() => {
+            // Ignore cookie banner load failures to avoid blocking page interactivity.
+          });
+      };
+
+      if ("requestIdleCallback" in window) {
+        (window as any).requestIdleCallback(start, { timeout: 2000 });
+      } else {
+        setTimeout(start, 300);
+      }
     });
   </script>
   </body>

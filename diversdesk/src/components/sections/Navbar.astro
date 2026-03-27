@@ -2,10 +2,8 @@
 //Import relevant dependencies
 import ThemeIcon from "@components/ThemeIcon.astro";
 import NavLink from "@components/ui/links/NavLink.astro";
-import Authentication from "./Authentication.astro";
 import enStrings from "@utils/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
-import LanguagePicker from "@components/ui/LanguagePicker.astro";
 
 // Select the correct translation based on the page's lang prop:
 const strings = enStrings;
@@ -209,5 +207,5 @@ const homeUrl = "/";
 <!--Import the necessary Collapse and Overlay plugins-->
 <!--https://preline.co/plugins/html/collapse.html-->
 <!--https://preline.co/plugins/html/overlay.html-->
-<script is:inline src="/scripts/vendor/preline/collapse/index.js"></script>
-<script is:inline src="/scripts/vendor/preline/overlay/index.js"></script>
+<script is:inline defer src="/scripts/vendor/preline/collapse/index.js"></script>
+<script is:inline defer src="/scripts/vendor/preline/overlay/index.js"></script>
