@@ -1,15 +1,18 @@
 ---
-import { getCollection } from 'astro:content';
-
 export const prerender = false;
 
 const supportId = Astro.params.id;
-const supportDocId = supportId ? `support/${supportId}` : '';
-const [supportDoc] = supportDocId
-	? await getCollection('docs', ({ id }) => id === supportDocId)
-	: [];
+const supportSourceFiles = import.meta.glob('/src/content/docs/support/*.{md,mdx}');
 
-if (supportDoc) {
+const supportDocExists = supportId
+	? Object.keys(supportSourceFiles).some(
+		(filePath) =>
+			filePath.endsWith(`/support/${supportId}.md`) ||
+			filePath.endsWith(`/support/${supportId}.mdx`),
+	)
+	: false;
+
+if (supportDocExists) {
 	return Astro.redirect(`/support/${supportId}/`, 307);
 }
 
