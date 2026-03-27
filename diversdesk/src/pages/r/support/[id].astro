@@ -1,9 +1,17 @@
 ---
+import { getCollection } from 'astro:content';
+
 export const prerender = false;
-const url = Astro.request.url;
-const redirectUrl = url.replace('/r/', '/');
-const resp = await fetch(redirectUrl);
-if (resp.status === 200) return Astro.redirect(redirectUrl, 307)
+
+const supportId = Astro.params.id;
+const supportDocId = supportId ? `support/${supportId}` : '';
+const [supportDoc] = supportDocId
+	? await getCollection('docs', ({ id }) => id === supportDocId)
+	: [];
+
+if (supportDoc) {
+	return Astro.redirect(`/support/${supportId}/`, 307);
+}
 
 return Astro.redirect('/welcome-to-docs/', 307)
 ---
