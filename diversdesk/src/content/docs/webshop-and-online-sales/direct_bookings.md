@@ -1,9 +1,10 @@
 ---
 title: Direct Bookings 
 description: How to setup and use direct bookings or Self-bookings.
+slug: articles/direct_bookings
 sidebar:
     label: Direct Bookings
-    order: 5
+    order: 1
 robots: noindex
 ---
 

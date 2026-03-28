@@ -1,9 +1,10 @@
 ---
 title: Adding an Icon to Your Mobile Home Screen
 description: A guide how to add a hyperlink icon to your mobile phone's homescreen
+slug: articles/add_to_homescreen
 sidebar:
     label: Mobile Homescreen Icon
-    order: 10
+    order: 5
 robots: noindex
 ---
 

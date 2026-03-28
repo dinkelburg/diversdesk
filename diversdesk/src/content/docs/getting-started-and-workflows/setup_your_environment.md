@@ -1,6 +1,7 @@
 ---
 title: Setup Your Environment
 description: Enter your company details, products and activities
+slug: user_manual/setup_your_environment
 sidebar:
     label: Setup Your Environment
     order: 3

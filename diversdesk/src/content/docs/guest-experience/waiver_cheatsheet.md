@@ -1,9 +1,10 @@
 ---
 title: Waiver Cheatsheet 
 description: In depth guide to create a custom waiver that meets your needs.
+slug: articles/waiver_cheatsheet
 sidebar:
     label: Waiver Cheatsheet 
-    order: 4
+    order: 6
 robots: noindex
 ---
 

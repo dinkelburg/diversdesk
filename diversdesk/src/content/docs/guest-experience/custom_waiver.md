@@ -1,9 +1,10 @@
 ---
 title: Create a Custom Waiver 
 description: In depth guide to create a custom waiver that meets your needs.
+slug: articles/custom_waiver
 sidebar:
     label: Create a Custom Waiver
-    order: 3
+    order: 5
 robots: noindex
 ---
 

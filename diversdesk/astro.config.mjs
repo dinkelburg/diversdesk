@@ -59,27 +59,72 @@ export default defineConfig({
     defaultLocale: "root",
     sidebar: [
       {
-        label: 'Quick Start Guide',
-        link: '/quickstart_guide'
-      }, 
+        label: 'Brief Introduction',
+        slug: 'user_manual/brief_introduction'
+      },
       {
-        label: 'User Manual',
-        collapsed: true, // This will collapse the group by default
+        label: 'Getting Started & Workflows',
+        collapsed: true,
         autogenerate: {
-          directory: "user_manual"
+          directory: 'getting-started-and-workflows'
         }
-      }, 
+      },
       {
-        label: 'Articles',
-        collapsed: true, // This will collapse the group by default
+        label: 'Activities & Planning',
+        collapsed: true,
         autogenerate: {
-          directory: "articles"
+          directory: 'activities-and-planning'
         }
-      }, 
+      },
       {
-        label: 'Video Training',
-        link: '/video_training'
-      }, 
+        label: 'Accommodation',
+        collapsed: true,
+        items: [
+          { label: 'Coming Soon', slug: 'welcome-to-docs' },
+        ]
+      },
+      {
+        label: 'Rentals & Retail',
+        collapsed: true,
+        autogenerate: {
+          directory: 'rentals-and-retail'
+        }
+      },
+      {
+        label: 'Guest Experience',
+        collapsed: true,
+        autogenerate: {
+          directory: 'guest-experience'
+        }
+      },
+      {
+        label: 'Webshop & Online Sales',
+        collapsed: true,
+        autogenerate: {
+          directory: 'webshop-and-online-sales'
+        }
+      },
+      {
+        label: 'Finance & Data',
+        collapsed: true,
+        autogenerate: {
+          directory: 'finance-and-data'
+        }
+      },
+      {
+        label: 'System & Integrations',
+        collapsed: true,
+        autogenerate: {
+          directory: 'system-and-integrations'
+        }
+      },
+      {
+        label: 'Video Tutorials',
+        collapsed: true,
+        autogenerate: {
+          directory: 'video-tutorials'
+        }
+      },
       {
         label: 'Updates',
         link: '/updates'

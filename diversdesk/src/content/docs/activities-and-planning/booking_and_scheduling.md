@@ -1,9 +1,10 @@
 ---
 title: Booking and scheduling
 description: How to create your first activity
+slug: user_manual/booking_and_scheduling
 sidebar:
     label: Booking and Scheduling
-    order: 6
+    order: 1
 robots: noindex
 ---
 

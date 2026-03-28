@@ -1,5 +1,9 @@
 ---
 title: Diversdesk video training
+slug: video_training
+sidebar:
+    label: Video Training
+    order: 1
 robots: noindex, nofollow
 
 ---

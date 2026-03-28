@@ -1,9 +1,10 @@
 ---
 title: Connecting Quickbooks
 description: Guide to connecting Quickbooks to your Diversdesk Account
+slug: articles/connecting-quickbooks
 sidebar:
     label: Quickbooks-setup
-    order: 5
+    order: 1
 pagefind: false
 robots: noindex, nofollow
 ---

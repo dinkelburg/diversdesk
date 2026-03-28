@@ -1,6 +1,10 @@
 ---
 title: Quickstart Guide
 description: Get started through a few simple settings
+slug: quickstart_guide
+sidebar:
+    label: Quick Start Guide
+    order: 1
 robots: noindex, nofollow
 ---
 

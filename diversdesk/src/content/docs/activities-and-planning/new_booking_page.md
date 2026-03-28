@@ -1,5 +1,9 @@
 ---
 title: Our Renewed Booking Page
+slug: new_booking_page
+sidebar:
+    label: Renewed Booking Page
+    order: 2
 robots: noindex, nofollow
 ---
 

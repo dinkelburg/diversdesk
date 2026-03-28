@@ -1,9 +1,10 @@
 ---
 title: Add-ons
 description: Learn how to create and utilize add-ons to streamline your workflow and drive upselling opportunities.
+slug: user_manual/add-ons
 sidebar:
     label: Add-ons
-    order: 10
+    order: 3
 robots: noindex
 ---
 

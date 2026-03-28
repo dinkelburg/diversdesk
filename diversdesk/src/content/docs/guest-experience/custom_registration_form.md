@@ -1,9 +1,10 @@
 ---
 title: Create a Custom Registration Form
 description: A reference page in my new Starlight docs site.
+slug: articles/custom_registration_form
 sidebar:
     label: Create a Custom Registration Form
-    order: 2
+    order: 4
 robots: noindex
 ---
 

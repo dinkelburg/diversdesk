@@ -1,9 +1,10 @@
 ---
 title: What Are Tags & Categories and How to Use Them?
 description: An explanation of what tags are and how to use them effectively.
+slug: articles/tags
 sidebar:
     label: Guide to Using Categories & Tags
-    order: 7
+    order: 3
 robots: noindex
 ---
 

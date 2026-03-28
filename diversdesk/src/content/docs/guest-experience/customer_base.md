@@ -1,6 +1,10 @@
 ---
 title: Customer Base
 description: Customer base
+slug: user_manual/customer_base
+sidebar:
+    label: Customer Base
+    order: 2
 robots: noindex
 ---
 

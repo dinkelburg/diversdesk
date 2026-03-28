@@ -1,9 +1,10 @@
 ---
 title: Retail
 description: Read how to create rental items, setup service triggers and assign gear to participants
+slug: user_manual/retail
 sidebar:
     label: Retail
-    order: 8
+    order: 2
     badge: New
 pagefind: false
 robots: noindex, nofollow

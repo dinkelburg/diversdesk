@@ -1,9 +1,10 @@
 ---
 title: Set Your Own Default Tank Sizes and Blends
 description: Define default tank sizes and gas blends, and see how these defaults appear in Detailed Day View
+slug: user_manual/tanks_and_blends
 sidebar:
     label: Tanks and Blends
-    order: 11
+    order: 2
 pagefind: false
 robots: noindex, nofollow
 

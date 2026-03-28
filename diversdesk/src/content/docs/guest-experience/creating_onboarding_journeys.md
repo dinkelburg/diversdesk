@@ -1,9 +1,10 @@
 ---
 title: Creating Customer Onboarding Journeys
 description: How to create and connect customer onboarding journeys.
+slug: user_manual/creating_onboarding_journeys
 sidebar:
     label: Creating Onboarding Journeys
-    order: 5
+    order: 1
 robots: noindex
 ---
 

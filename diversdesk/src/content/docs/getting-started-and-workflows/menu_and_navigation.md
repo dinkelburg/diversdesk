@@ -1,6 +1,9 @@
 ---
 title: Menu and Navigation
 description: Know your way around the platform
+slug: user_manual/menu_and_navigation
+sidebar:
+    order: 4
 robots: noindex
 ---
 

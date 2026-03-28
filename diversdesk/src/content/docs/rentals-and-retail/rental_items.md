@@ -1,9 +1,10 @@
 ---
 title: Rental Items
 description: Read how to create rental items, setup service triggers and assign gear to participants
+slug: user_manual/rental_items
 sidebar:
     label: Rental Items
-    order: 9
+    order: 1
 pagefind: false
 robots: noindex, nofollow
 

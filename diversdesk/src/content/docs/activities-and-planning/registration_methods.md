@@ -1,9 +1,10 @@
 ---
 title: Customer Registration/Booking Methods
 description: Ways to onboard your customer
+slug: user_manual/registration_methods
 sidebar:
     label: Customer Registration/Booking Methods
-    order: 7
+    order: 3
 robots: noindex
 ---
 

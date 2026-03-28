@@ -1,9 +1,10 @@
 ---
 title: Users and Rights
 description: Allocate different rights to your staff members
+slug: user_manual/users_and_rights
 sidebar:
     label: Users and Rights
-    order: 4
+    order: 1
 robots: noindex
 ---
 
