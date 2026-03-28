@@ -6,6 +6,7 @@
     --docs-sidebar-top-bg-active: rgba(248, 101, 69, 0.18);
     --docs-sidebar-top-border: transparent;
     --docs-sidebar-top-border-strong: rgba(248, 101, 69, 0.35);
+    --docs-toc-link-hover-bg: rgba(255, 255, 255, 0.08);
     --backdrop-color: #6f6f6f;
     --sl-color-accent: #F86545;
     --sl-color-accent-high: #FF7557;
@@ -30,6 +31,7 @@
     --docs-sidebar-top-bg-active: rgba(248, 101, 69, 0.14);
     --docs-sidebar-top-border: transparent;
     --docs-sidebar-top-border-strong: rgba(248, 101, 69, 0.28);
+    --docs-toc-link-hover-bg: rgba(0, 0, 0, 0.06);
     --backdrop-color: #f6f6f699;
     --sl-color-accent: #F86545;
     --sl-color-accent-high: #FF7557;
@@ -168,6 +170,19 @@ header {
     background-color: var(--sl-color-gray-6);
     color: var(--sl-color-white);
     transform: translate3d(3px, 0, 0);
+}
+
+/* Right-side page navigation (desktop TOC) hover clarity */
+.right-sidebar-panel :where(starlight-toc a) {
+    border-radius: 0.35rem;
+    margin-inline: -0.35rem;
+    padding-inline: 0.35rem;
+    transition: background-color 140ms ease, color 140ms ease;
+}
+
+.right-sidebar-panel :where(starlight-toc a:hover),
+.right-sidebar-panel :where(starlight-toc a:focus-visible) {
+    background-color: var(--docs-toc-link-hover-bg);
 }
 
 @media (max-width: 50rem) {

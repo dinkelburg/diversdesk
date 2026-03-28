@@ -143,6 +143,29 @@ const robotsDirective = Astro.url.pathname.startsWith('/support')
         } catch {}
       };
 
+      const closeAllTopLevelGroups = () => {
+        topLevelGroups.forEach((group) => {
+          group.open = false;
+        });
+
+        syncSidebarState();
+      };
+
+      topLevelLinks.forEach((link) => {
+        if (link.dataset.closeGroupsBound === 'true') {
+          return;
+        }
+
+        link.dataset.closeGroupsBound = 'true';
+        link.addEventListener('click', () => {
+          closeAllTopLevelGroups();
+        });
+      });
+
+      if (topLevelLinks.some((link) => link.getAttribute('aria-current') === 'page')) {
+        closeAllTopLevelGroups();
+      }
+
       topLevelGroups.forEach((group) => {
         if (group.dataset.accordionBound === 'true') {
           return;
