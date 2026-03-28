@@ -35,7 +35,7 @@ Your trial has ended trial. Your trail ran **from July 18, 2025 – August 2, 20
 
 Start your diversdesk Subscription [**here**](https://www.diversdesk.com/signup/form).
 
-Need more time? or still got questions, please [**schedule an appointment**](https://meet.brevo.com/diversdesk-demo/demo-with-diversdesk) with us. 
+Need more time? or still got questions, please [**schedule an appointment**](https://calendly.com/diversdesk-info/demo) with us. 
 :::
 
 You can view current subscription, invoices and billing term using <a href="https://billing.stripe.com/p/login/5kQ14n3Ve7gkgcYcll0VO00" target="_blank" rel="noopener noreferrer">this URL</a>
@@ -60,7 +60,7 @@ For every paying customer, we offer 2 hours of complimentary training. You're we
   <div style="display: flex; justify-content: flex-start; width: 100%; padding: 0; gap: 10px;">
     <!-- The Schedule Training button -->
     <a href="#"
-       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/diversdesk-info/diversdesk-demo'}); return false;"
+       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/diversdesk-info/demo'}); return false;"
        style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px; cursor: pointer;">
       Schedule Your Training
     </a>

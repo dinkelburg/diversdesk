@@ -1,5 +1,6 @@
 /* Dark mode colors. */
 :root {
+    --sl-font: "Inter";
     --backdrop-color: #6f6f6f;
     --sl-color-accent: #F86545;
     --sl-color-accent-high: #FF7557;

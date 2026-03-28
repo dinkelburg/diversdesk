@@ -58,7 +58,7 @@ For every paying customer, we offer 2 hours of complimentary training. You're we
   <div style="display: flex; justify-content: flex-start; width: 100%; padding: 0; gap: 10px;">
     <!-- The Schedule Training button -->
     <a href="#"
-       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/diversdesk-info/diversdesk-demo'}); return false;"
+       onclick="Calendly.initPopupWidget({url: 'https://calendly.com/diversdesk-info/demo'}); return false;"
        style="display: inline-block; padding: 6px 20px; background-color: #FF7557; color: white; text-decoration: none; border-radius: 5px; cursor: pointer;">
       Schedule Your Training
     </a>
