@@ -79,9 +79,9 @@ export default defineConfig({
       {
         label: 'Accommodation',
         collapsed: true,
-        items: [
-          { label: 'Coming Soon', slug: 'welcome-to-docs' },
-        ]
+        autogenerate: {
+          directory: 'accommodation'
+        }
       },
       {
         label: 'Rentals & Retail',

@@ -1,0 +1,81 @@
+---
+title: Accommodation Calendar
+description: Introduction in the Diversdesk Accommodation Calendar
+slug: user_manual/accommodation_calendar
+sidebar:
+    label: Acommodation Calendar
+    order: 1
+robots: noindex
+---
+
+import VideoLightbox from '@components/VideoLightbox.astro';
+
+Directly from the calendar you can create reservations, set up room types, set up rooms, and configure price rules. Each of these is explained below.
+
+## Setting up Room Types
+
+From the <strong>Accommodation &gt; Calendar</strong> page, you can set up your room types and their connected rooms.
+
+<VideoLightbox src="/images/user_manual/creating-a-room-type.webm" label="Open room type setup video" />
+
+Room types can be created or adjusted at any time using the settings icon on the calendar page, or via the button that appears when no room types have been created yet.
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; margin: 20px 0;">
+  <div style="flex: 1 1 320px; min-width: 280px; text-align: center;">
+    <img src="/images/user_manual/creating-a-room-type-filled.avif"
+         alt="Creating a room type in the accommodation calendar"
+         style="display: block; width: 100%; max-width: 520px; height: auto !important; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+  </div>
+  <div style="flex: 1 1 320px; min-width: 280px;">
+    <p>From the side panel, fill in the following details:</p>
+    <p><strong>Name:</strong> The name of this room type — for example, Standard, Deluxe, Villa, or Cabin.</p>
+    <p><strong>Max Occupancy:</strong> The maximum number of guests this room type can accommodate.</p>
+    <p><strong>Standard Occupancy:</strong> The typical occupancy used as the basis for your pricing.</p>
+    <p><strong>Base Price:</strong> The nightly rate for this room type at standard occupancy.</p>
+    <p><strong>Images:</strong> Upload and arrange photos for this room type.</p>
+  </div>
+</div>
+
+:::tip[Surcharge for Additional Guests]
+Using the max occupancy together with price rules, you can apply surcharges for guests beyond the standard occupancy.
+:::
+
+## Setting up Rooms
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; margin: 20px 0;">
+  <div style="flex: 1 1 320px; min-width: 280px;">
+<p>After creating a room type, you will be prompted to add individual rooms beneath it. Rooms represent each bookable unit within a room type — for example, Room 1 and Room 2 for standard accommodation, Bed 1 and Bed 2 for a bunk setup, or Cabin A and Cabin B for a cabin-style property.</p>
+  </div>
+  <div style="flex: 1 1 320px; min-width: 280px; text-align: center;">
+    <img src="/images/user_manual/creating-a-room.avif"
+         alt="Creating a room type in the accommodation calendar"
+         style="display: block; width: 100%; max-width: 520px; height: auto !important; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+  </div>
+</div>
+
+
+Room types and rooms can be edited at any time by clicking on their respective names.
+
+
+## Price Rules
+
+Price rules allow you to define rate adjustments on top of the base price. Available options include additional person surcharges and seasonal pricing.
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 24px; margin: 20px 0;">
+  <div style="flex: 1 1 320px; min-width: 280px; text-align: center;">
+    <img src="/images/user_manual/creating-price-rules.avif"
+         alt="Creating a room type in the accommodation calendar"
+         style="display: block; width: 100%; max-width: 520px; height: auto !important; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+  </div>
+  <div style="flex: 1 1 320px; min-width: 280px;">
+    <p><strong>Name:</strong> A descriptive name for the rule — for example, Weekend Rate or Additional Person Surcharge.</p>
+    <p><strong>Room Type:</strong> The room type this price rule applies to.</p>
+    <p><strong>Type:</strong> There's 2 options here:</p>
+    <ul>
+      <li><strong>Per Night:</strong> The Price Rule is applied on the room per night. Used for temporary price fluctuations e.g. weekend rates or high season pricing.</li>
+      <li><strong>Per Person / Night:</strong> The price is calculated per additional person or persons beyond the standard occupancy set for this Room Type.</li>
+    </ul>
+    <p><strong>Amount:</strong> The amount to add (or subtract) based on this rule. Either a fixed amount or a percentage (%).</p>
+    <p><strong>Days of Week:</strong> Optionally restrict this rule to specific days of the week.</p>
+  </div>
+</div>

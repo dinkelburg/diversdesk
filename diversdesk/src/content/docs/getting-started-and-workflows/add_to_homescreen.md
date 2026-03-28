@@ -14,6 +14,7 @@ On Iphone this is easily done through
 :::note[Note]
 This example is made on an iPhone using a Safari browser.
 ::: 
+
 1. **1.** Navigate to your planner hub and press the export button at the bottom of your browser
 2. **2.** Scroll up and press 'Add to Home Screen'
 3. **3.** Change the name to your liking

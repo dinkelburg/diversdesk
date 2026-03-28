@@ -20,7 +20,7 @@ robots: noindex
     <img 
       src="/images/user_manual/menu-add-ons.avif" 
       alt="Navigating to the add-ons page through the hamburger menu"
-      style="width: 100%; max-width: 200px; height: auto; margin: 0 auto;"
+      style="display: block; width: 100%; max-width: 200px; height: auto !important; object-fit: contain; margin: 0 auto;"
     />
   </div>
 </div>
