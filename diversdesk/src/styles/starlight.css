@@ -272,6 +272,29 @@ article.card {
     position: relative;
 }
 
+/* Keep accommodation media blocks side-by-side in docs desktop layout, even with side panels. */
+.sl-markdown-content .accommodation-media-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 24px;
+    margin: 20px 0;
+}
+
+.sl-markdown-content .accommodation-media-col {
+    min-width: 0;
+}
+
+.sl-markdown-content .accommodation-media-col-image {
+    text-align: center;
+}
+
+@media (max-width: 760px) {
+    .sl-markdown-content .accommodation-media-row {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Custom bullet styles */
 .bullet-dash ul,
 .bullet-question ul,

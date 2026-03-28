@@ -5,9 +5,9 @@ const { url = "/black-friday-deal" } = Astro.props; // Link to your deal page
 
 <div 
   id="bf-sticky-banner" 
-  class="sticky top-0 z-[100] hidden w-full bg-neutral-900 text-white shadow-md dark:bg-orange-900"
+  class="sticky top-0 z-[100] hidden w-full -translate-y-1 bg-neutral-900 text-white opacity-0 shadow-md transition-all duration-300 ease-out dark:bg-orange-900"
 >
-  <div class="mx-auto flex max-w-[85rem] items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+  <div class="flex w-full items-center justify-between py-3">
     
     <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
       <span class="font-bold text-orange-400">BLACK FRIDAY</span>
@@ -60,14 +60,32 @@ const { url = "/black-friday-deal" } = Astro.props; // Link to your deal page
   const closeBtn = document.getElementById('close-bf-banner');
   const bannerClosed = sessionStorage.getItem('bf-banner-closed');
 
+  const showBanner = () => {
+    if (!banner) return;
+    banner.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      banner.classList.remove('-translate-y-1', 'opacity-0');
+      banner.classList.add('translate-y-0', 'opacity-100');
+    });
+  };
+
+  const hideBanner = () => {
+    if (!banner) return;
+    banner.classList.remove('translate-y-0', 'opacity-100');
+    banner.classList.add('-translate-y-1', 'opacity-0');
+    window.setTimeout(() => {
+      banner.classList.add('hidden');
+    }, 300);
+  };
+
   // Only show if user hasn't closed it yet
   if (banner && !bannerClosed) {
-    banner.classList.remove('hidden');
+    showBanner();
   }
 
   if (closeBtn && banner) {
     closeBtn.addEventListener('click', () => {
-      banner.classList.add('hidden');
+      hideBanner();
       sessionStorage.setItem('bf-banner-closed', 'true');
     });
   }

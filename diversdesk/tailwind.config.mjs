@@ -8,6 +8,13 @@ export default {
   ],
   darkMode: "class", // Enable dark mode if needed
   theme: {
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         transparent: "transparent",

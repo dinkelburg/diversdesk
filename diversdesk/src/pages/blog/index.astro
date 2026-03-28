@@ -39,7 +39,7 @@ const secondTitle: string = "Insights";
 const secondSubTitle: string =
   "Read interesting articles and developments in the diving industry with insights from Diversdesk's team of industry experts. ";
 
-const pageTitle: string = `Blog | ${SITE.title}`;
+const pageTitle: string = "Dive Center Management Blog — Tips & Insights | DiversDesk";
 const pageDescription: string =
   "Stay up-to-date with the latest trends, tips, and insights from Diversdesk to enhance your dive center operations.";
 const pageUrl = "https://www.diversdesk.com/blog/";
@@ -73,7 +73,7 @@ const blogIndexSchema = {
 >
 
 <section
-class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full"
+class="mx-auto max-w-[1520px] space-y-8 px-4 pt-16 sm:px-6 lg:px-8"
 >
 <!--Page header-->
 <div class="mx-auto max-w-3xl text-left sm:text-center">
@@ -92,22 +92,22 @@ class="mx-auto max-w-[85rem] space-y-8 px-4 pt-16 sm:px-6 lg:px-8 2xl:max-w-full
 </section>
 
 <section
-class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+class="mx-auto max-w-[1520px] px-4 py-10 sm:px-6 lg:px-8 lg:py-14"
 >
 <!--Blog posts grid-->
-<div class="grid gap-6 lg:grid-cols-2">
+<div class="grid gap-6 min-[920px]:grid-cols-2">
   {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
 </div>
 </section>
 <!--Most recent blog post-->
 <section
-class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+class="mx-auto max-w-[1520px] px-4 py-10 sm:px-6 lg:px-8 lg:py-14"
 >
 <CardBlogRecent blogEntry={mostRecentPost} />
 </section>
 <!--Insights section-->
 <section
-class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+class="mx-auto max-w-[1520px] px-4 py-10 sm:px-6 lg:px-8 lg:py-14"
 >
 <div class="mx-auto mb-10 max-w-2xl text-center lg:mb-14">
   <h2
