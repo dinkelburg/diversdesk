@@ -79,8 +79,18 @@ Paperwork for different activities is automatically merged, and a valid term (de
 
     Get your staff onboarded so they can manage bookings and view schedules.
 
-<div style="display: flex; gap: 24px; align-items: flex-start; flex-direction: row;">
-  <div style="flex: 1.5; min-width: 0;">
+<style>{`
+  .team-layout { display: flex; gap: 24px; align-items: flex-start; flex-direction: row; }
+  .team-layout-text { flex: 1.5; min-width: 0; }
+  .team-layout-image { flex: 1; min-width: 0; }
+  @media (max-width: 640px) {
+    .team-layout { flex-direction: column; }
+    .team-layout-image { width: 100%; }
+  }
+`}</style>
+
+<div class="team-layout">
+  <div class="team-layout-text">
 
     *   **User Management:** Go to `Settings > Users` to add your team members. Once added, your staff can log in with their email and OTP, just like you did in step 1.
     *   **Permissions:** Assigning specific functions (*Manager*, *Divemaster*, *Instructor*, *Crew*, etc.) automatically grants role-specific views, allowing staff to only see their own schedule and assigned participants.
@@ -89,7 +99,7 @@ Paperwork for different activities is automatically merged, and a valid term (de
         
         Learn more on the [Users & Rights page](/user_manual/users_and_rights/).
   </div>
-  <div style="flex: 1; min-width: 0;">
+  <div class="team-layout-image">
     <img
       src="/images/user_manual/staff-roles.avif"
       alt="Staff roles setup"
