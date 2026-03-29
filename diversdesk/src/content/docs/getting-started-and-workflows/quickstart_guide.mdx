@@ -9,7 +9,9 @@ robots: noindex, nofollow
 ---
 import VideoLightbox from '@components/VideoLightbox.astro';
 
-Welcome to **Diversdesk**! We’re excited to help you get up and running. Follow these four essential steps to transition from setup to your first booking.
+**Welcome to Diversdesk**!
+
+We’re excited to help you get up and running. Follow these four essential steps to transition from setup to your first booking.
 
 > "Well begun is half done." — Aristotle
 
@@ -23,21 +25,41 @@ Once your environment is ready, you will receive a confirmation email containing
 *   **Navigation:** Once inside, a **hamburger menu (≡)** will appear in the top left corner of your screen. This is where you will find all menu items to operate your business.
 <VideoLightbox src="/images/user_manual/logging-into-diversdesk.webm" label="Open room type setup video" previewDesktopWidth="100%" />
 
-
-:::tip[White Labeling]
+:::tip[White Label]
 Your environment comes pre-configured with your own sub-domain, ensuring a professional, white-labeled experience for your customers from day one.
 :::
 
 ### 2. Personalize & Add Your Offerings
 Now it’s time to make the platform yours by inputting your core business data.
 
-*   **Company Profile:** Set your basic details and defaults under **Menu > Settings > General**. Here you can edit company info, set default units, and define booking behavior for your website.
-*   **Activities & Pricing:** Define what you offer (courses, trips, etc.) via **Menu > Activities > Pricing**. Add-ons can be entered during activity creation or managed via the dedicated tab on the pricing page.
-*   **Inventory:** Rentals and Retail items can be managed on their dedicated pages. Both allow you to enter categories and underlying products.
-*   **Accommodation:** If you manage lodging, enter these via **Menu > Accommodation**. You can set up room types, individual rooms, and use **Price Rules** for seasonal pricing.
+*   **Company Profile:** Set your basic details and defaults under `Menu > Settings > General`. Here you can edit company info, set default units, and define 'direct booking' (bookings via your webshop) behavior.
+
+    <img
+        src="/images/user_manual/Setting-general.avif"
+        alt="Onboarding setup"
+        style="display: block; width: 80%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);"
+    />
+
+*   **Activities & Pricing:** Define what you offer (courses, trips, etc.) via `Menu > Activities > Pricing`. Add-ons can be entered during activity creation or managed via the dedicated tab on the pricing page.
+
+    <img
+        src="/images/user_manual/activities-pricing.avif"
+        alt="Onboarding setup"
+        style="display: block; width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);"
+    />
+
+*   **Inventory (Optional):** Rentals and Retail items can be managed on their dedicated pages. Both allow you to enter categories and underlying products.
+*   **Accommodation (Optional):** If you manage lodging, enter these via `Menu > Accommodation > Calendar`. You can set up room types, individual rooms, and use **Price Rules** for seasonal pricing.
+        Read more about this on the [Accommodation page](/user_manual/accommodation_calendar).
+
+            <img
+        src="/images/user_manual/accommodation-calendar-select.avif"
+        alt="Onboarding setup"
+        style="display: block; width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);"
+    />
 
 ### 3. Build Your Customer Onboarding Journeys
-A smooth check-in starts with the right paperwork. Under **Menu > Settings**, you will find three key items in the **Onboarding** section:
+A smooth check-in starts with the right paperwork. Under `Menu > Settings`, you will find three key items in the **Onboarding** section:
 
 *   **Form Builder:** Create a "set of paperwork" for each guest type. Choose which registration fields to show and which waivers to connect.
  *   **Waiver Builder:** Create custom liability waivers, rental contracts, or terms and conditions tailored to your needs.
@@ -54,10 +76,27 @@ Paperwork for different activities is automatically merged, and a valid term (de
 :::
 
 ### 4. Add Your Team
-Get your staff onboarded so they can manage bookings and view schedules.
 
-*   **User Management:** Go to **Settings > Users** to add your team members. 
-*   **Permissions:** Assign specific roles (e.g., *Divemaster*, *Instructor*, or *Manager*) to ensure every staff member has the correct rights to perform their work. Use "Staff++" roles to allow editing or keep them as "Read-only."
+    Get your staff onboarded so they can manage bookings and view schedules.
+
+<div style="display: flex; gap: 24px; align-items: flex-start; flex-direction: row;">
+  <div style="flex: 1.5; min-width: 0;">
+
+    *   **User Management:** Go to `Settings > Users` to add your team members. Once added, your staff can log in with their email and OTP, just like you did in step 1.
+    *   **Permissions:** Assigning specific functions (*Manager*, *Divemaster*, *Instructor*, *Crew*, etc.) automatically grants role-specific views, allowing staff to only see their own schedule and assigned participants.
+    
+        On top of this, you can use "Manager" permission to allow editing, "Staff++" permission to grant full access to your planning, but restricted to read only, and set permission to view reporting pages. 
+        
+        Learn more on the [Users & Rights page](/user_manual/users_and_rights/).
+  </div>
+  <div style="flex: 1; min-width: 0;">
+    <img
+      src="/images/user_manual/staff-roles.avif"
+      alt="Staff roles setup"
+      style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);"
+    />
+  </div>
+</div>
 
 ---
 
