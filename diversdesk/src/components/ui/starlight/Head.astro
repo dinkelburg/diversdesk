@@ -189,13 +189,145 @@ const robotsDirective = Astro.url.pathname.startsWith('/support')
       });
     };
 
+    const copyTextToClipboard = async (text) => {
+      try {
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch {}
+
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.setAttribute('readonly', '');
+        textArea.style.position = 'fixed';
+        textArea.style.top = '-9999px';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        const copied = document.execCommand('copy');
+        textArea.remove();
+        return copied;
+      } catch {
+        return false;
+      }
+    };
+
+    const headingSelector = '.sl-markdown-content :is(h1, h2, h3, h4, h5, h6)[id]';
+    const headingCopyTimers = new WeakMap();
+
+    const showHeadingCopyFeedback = (heading) => {
+      let badge = heading.querySelector(':scope > .heading-copy-feedback');
+
+      if (!badge) {
+        badge = document.createElement('span');
+        badge.className = 'heading-copy-feedback';
+        badge.textContent = 'Permalink copied';
+        heading.appendChild(badge);
+      }
+
+      badge.classList.remove('is-visible');
+      requestAnimationFrame(() => {
+        badge.classList.add('is-visible');
+      });
+
+      const activeTimer = headingCopyTimers.get(heading);
+      if (activeTimer) {
+        clearTimeout(activeTimer);
+      }
+
+      const timer = setTimeout(() => {
+        badge.classList.remove('is-visible');
+        setTimeout(() => {
+          if (!badge.classList.contains('is-visible')) {
+            badge.remove();
+          }
+        }, 180);
+      }, 1100);
+
+      headingCopyTimers.set(heading, timer);
+    };
+
+    const initializeHeadingCopy = () => {
+      const headings = Array.from(document.querySelectorAll(headingSelector));
+
+      headings.forEach((heading) => {
+        if (heading.dataset.copyHeadingBound === 'true') {
+          return;
+        }
+
+        heading.dataset.copyHeadingBound = 'true';
+        heading.title = 'Click to copy permalink';
+
+        heading.addEventListener('click', async (event) => {
+          const target = event.target;
+
+          if (!(target instanceof Element)) {
+            return;
+          }
+
+          if (target.closest('a, button, input, textarea, select, summary')) {
+            return;
+          }
+
+          const selectedText = window.getSelection()?.toString().trim();
+          if (selectedText) {
+            return;
+          }
+
+          const id = heading.id;
+          if (!id) {
+            return;
+          }
+
+          const url = new URL(window.location.href);
+          url.hash = id;
+
+          event.preventDefault();
+          event.stopPropagation();
+
+          const copied = await copyTextToClipboard(url.toString());
+
+          if (copied) {
+            const previousTitle = heading.title;
+            heading.title = 'Permalink copied';
+            showHeadingCopyFeedback(heading);
+            setTimeout(() => {
+              heading.title = previousTitle;
+            }, 1200);
+          }
+        });
+      });
+
+      const anchorLinks = Array.from(document.querySelectorAll('.sl-anchor-link'));
+      anchorLinks.forEach((link) => {
+        if (link.dataset.copyHeadingBound === 'true') {
+          return;
+        }
+
+        link.dataset.copyHeadingBound = 'true';
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+        });
+      });
+    };
+
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initializeSidebarEnhancements, { once: true });
+      document.addEventListener('DOMContentLoaded', () => {
+        initializeSidebarEnhancements();
+        initializeHeadingCopy();
+      }, { once: true });
     } else {
       initializeSidebarEnhancements();
+      initializeHeadingCopy();
     }
 
     document.addEventListener('astro:after-swap', initializeSidebarEnhancements);
     document.addEventListener('astro:page-load', initializeSidebarEnhancements);
+    document.addEventListener('astro:after-swap', initializeHeadingCopy);
+    document.addEventListener('astro:page-load', initializeHeadingCopy);
   })();
 </script>

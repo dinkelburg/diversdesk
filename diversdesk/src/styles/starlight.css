@@ -272,6 +272,38 @@ article.card {
     position: relative;
 }
 
+/* Hide the default heading anchor icon; heading text click handles copy. */
+.sl-anchor-link {
+    display: none !important;
+}
+
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6)[id] {
+    cursor: pointer;
+}
+
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6)[id] .heading-copy-feedback {
+    display: inline-block;
+    margin-left: 0.45rem;
+    padding: 0.06rem 0.34rem;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--sl-color-accent-high) 45%, transparent);
+    background: color-mix(in srgb, var(--sl-color-accent-high) 16%, transparent);
+    color: var(--sl-color-white);
+    font-size: 0.62em;
+    font-weight: 600;
+    line-height: 1.35;
+    vertical-align: middle;
+    opacity: 0;
+    transform: translateY(-1px);
+    transition: opacity 140ms ease, transform 140ms ease;
+    pointer-events: none;
+}
+
+.sl-markdown-content :is(h1, h2, h3, h4, h5, h6)[id] .heading-copy-feedback.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Keep accommodation media blocks side-by-side in docs desktop layout, even with side panels. */
 .sl-markdown-content .accommodation-media-row {
     display: grid;
