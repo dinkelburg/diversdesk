@@ -5,16 +5,19 @@ interface Props {
   label?: string;
   /** Unique ID for pages with multiple videos. Auto-generated if omitted. */
   id?: string;
+  /** Preview width applied on desktop breakpoints (e.g. "80%" or "100%"). */
+  previewDesktopWidth?: string;
 }
 
 const {
   src,
   label = "Open video preview",
   id = `video-dialog-${Math.random().toString(36).slice(2, 9)}`,
+  previewDesktopWidth = "80%",
 } = Astro.props;
 ---
 
-<div class="video-lightbox-wrapper">
+<div class="video-lightbox-wrapper" style={`--video-preview-desktop-width: ${previewDesktopWidth};`}>
   <button type="button" class="video-lightbox-trigger" aria-label={label} onclick={`document.getElementById('${id}').showModal()`}>
     <video autoplay muted loop playsinline class="video-preview">
       <source src={src} type="video/webm" />
@@ -60,7 +63,7 @@ const {
 
   @media (min-width: 768px) {
     .video-preview {
-      width: 80%;
+      width: var(--video-preview-desktop-width, 80%);
     }
   }
 
