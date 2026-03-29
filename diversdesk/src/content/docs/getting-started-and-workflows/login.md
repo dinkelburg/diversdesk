@@ -25,7 +25,7 @@ You can create an account through a secure email verification link, or through a
 > Already got an account? continue reading at [**Login to your account**.](/user_manual/login/#login-to-your-account)
 
 ### 1. One Time Password (OTP)
-Signing up can be done through the sign-up button on [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signup) or, for Diversdesk white-label users, via the personal URL that we've provided to you.<br>
+Signing up can be done through the sign-up button on [app.diversdesk.com](https://app.diversdesk.com/u?toggle_modal=account&persist_flow=signin) or, for Diversdesk white-label users, via the personal URL that we've provided to you.<br>
 
 The 'Send a One Time Password' button will trigger an email with time limited 6 digit password to the email address you provided in the email input field.
 1. **1.** Fill your email and press 'send the the OTP password'.
@@ -55,7 +55,7 @@ It occasionally happens that pop-ups are blocked in your browser. Pressing the b
 :::
 
 ## Login to your account
-To login, you can visit [traveltruster.com](https://www.traveltruster.com/?modal=account&flow=signin) or, for Diversdesk white-label users, via the personal URL that we've provided to you, and select the login button for desktop or the profile icon on mobile phone.
+To login, you can visit [app.diversdesk.com](https://app.diversdesk.com/u?toggle_modal=account&persist_flow=signin) or, for Diversdesk white-label users, via **your personal URL** that we've provided to you, and select the login button for desktop or the profile icon on mobile phone.
 From there you can follow the prompt, and you'll be led to your account.
 1. **1.** Login through the profile icon 
 2. **2.** After a successful login, you will find all menu items under the hamburger menu in the left top of your screen.
