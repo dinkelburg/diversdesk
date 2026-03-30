@@ -272,6 +272,10 @@ article.card {
     position: relative;
 }
 
+.sl-markdown-content .bullet-numbered-bold ol > li::marker {
+    font-weight: 700;
+}
+
 /* Hide the default heading anchor icon; heading text click handles copy. */
 .sl-anchor-link {
     display: none !important;
@@ -319,6 +323,30 @@ article.card {
 
 .sl-markdown-content .accommodation-media-col-image {
     text-align: center;
+}
+
+.sl-markdown-content .login-intro-image-wrap {
+    text-align: center;
+}
+
+.sl-markdown-content .login-intro-image {
+    display: block;
+    width: var(--login-image-width, 100%);
+    max-width: 100%;
+    height: auto;
+    margin-inline: auto;
+}
+
+@media (min-width: 48rem) {
+    .sl-markdown-content .login-intro-image {
+        width: var(--login-image-width-md, var(--login-image-width, 100%));
+    }
+}
+
+@media (min-width: 64rem) {
+    .sl-markdown-content .login-intro-image {
+        width: var(--login-image-width-lg, var(--login-image-width-md, var(--login-image-width, 100%)));
+    }
 }
 
 @media (max-width: 760px) {
