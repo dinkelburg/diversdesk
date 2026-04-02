@@ -49,7 +49,7 @@ structuredData:
 
 <h2 id="introduction" class="section-heading">Introduction</h2>
 <p>
-In my opinion, one of the most important parts of running a successful dive centre is figuring out how to pay your instructors fairly. For dive centre owners and managers, understanding how to calculate and structure instructor salaries isn’t just about numbers. It’s about keeping your team motivated, your business sustainable, and your reputation strong. As mentioned in this article <a href="https://scubaboard.com/community/threads/a-scuba-diving-instructor-salary-explained-how-much-do-dive-instructors-earn.611876/" target="_blank" rel="noopener noreferrer">this article</a>, unlike many conventional jobs, a scuba diving instructor's income can vary dramatically, influenced by numerous factors.
+In my opinion, one of the most important parts of running a successful dive centre is figuring out how to pay your instructors fairly. For dive centre owners and managers, understanding how to calculate and structure instructor salaries isn’t just about numbers. It’s about keeping your team motivated, your business sustainable, and your reputation strong. As mentioned in this article <a href="https://scubaboard.com/community/threads/a-scuba-diving-instructor-salary-explained-how-much-do-dive-instructors-earn.611876/" target="_blank" rel="noopener noreferrer" style="color:#F86545">this article</a>, unlike many conventional jobs, a scuba diving instructor's income can vary dramatically, influenced by numerous factors.
 </p>
 <p>
 So how do you build something that works for both your team and your bottom line? This guide breaks down the common salary models, what influences instructor earnings, and what smart dive centres are doing to find the right balance.
@@ -60,14 +60,14 @@ So how do you build something that works for both your team and your bottom line
 
 <h3>Commission-Based Salary</h3>
 <p>
-This model is very common, especially in high-traffic dive destinations. Instructors earn a percentage of the fee for each course or dive they conduct. Usually, that percentage sits around 20 percent, though it can vary depending on the centre and the service provided. (<a href="https://oceantribe.co/news-offers/dive-courses/go-pro/scuba-diving-instructor-salary-how-much-can-you-really-make/" target="_blank" rel="noopener noreferrer">source</a>)
+This model is very common, especially in high-traffic dive destinations. Instructors earn a percentage of the fee for each course or dive they conduct. Usually, that percentage sits around 20 percent, though it can vary depending on the centre and the service provided. (<a href="https://oceantribe.co/news-offers/dive-courses/go-pro/scuba-diving-instructor-salary-how-much-can-you-really-make/" target="_blank" rel="noopener noreferrer" style="color:#F86545">source</a>)
 </p>
 <p><strong>Why it works:</strong> During high season, instructors can earn a lot. The more they teach, the more they take home.<br>
 <strong>What’s tricky:</strong> It gets unpredictable in low season. Instructors might struggle with inconsistent income, which can lead to stress or even burnout.</p>
 
 <h3>Fixed Salary</h3>
 <p>
-This approach is more common in resort-style dive centres or larger operations where staffing is structured and predictable. Instructors are paid a fixed monthly salary, usually falling somewhere between $1,000 and $1,500, depending on the region and cost of living (<a href="https://oceantribe.co/news-offers/dive-courses/go-pro/scuba-diving-instructor-salary-how-much-can-you-really-make/" target="_blank" rel="noopener noreferrer">source</a>)
+This approach is more common in resort-style dive centres or larger operations where staffing is structured and predictable. Instructors are paid a fixed monthly salary, usually falling somewhere between $1,000 and $1,500, depending on the region and cost of living (<a href="https://oceantribe.co/news-offers/dive-courses/go-pro/scuba-diving-instructor-salary-how-much-can-you-really-make/" target="_blank" rel="noopener noreferrer" style="color:#F86545">source</a>)
 </p>
 <p><strong>Why it works:</strong> It’s stable. Everyone knows what they’re getting each month.<br>
 <strong>What’s tricky:</strong> It doesn’t reward instructors who go the extra mile or take on extra dives during busy periods. That can lead to resentment if someone’s pulling more weight than others.</p>
@@ -95,7 +95,7 @@ Even with a set model, there are things that can swing an instructor’s pay sig
 
 <h2 id="how-diversdesk-can-help" class="section-heading">How Diversdesk Can Help Simplify Wage Tracking</h2>
 <p>
-In my opinion, even if you’ve already chosen a salary model and figured out what factors matter most, the real challenge is tracking everything without losing your mind. I’ve seen too many dive centres try to handle this with spreadsheets, handwritten notes, or just memory. It usually ends in confusion. That’s why I think using a tool like <a href="https://www.diversdesk.com/" target="_blank" rel="noopener noreferrer">Diversdesk</a> makes a big difference.
+In my opinion, even if you’ve already chosen a salary model and figured out what factors matter most, the real challenge is tracking everything without losing your mind. I’ve seen too many dive centres try to handle this with spreadsheets, handwritten notes, or just memory. It usually ends in confusion. That’s why I think using a tool like <a href="https://www.diversdesk.com/" target="_blank" rel="noopener noreferrer" style="color:#F86545">Diversdesk</a> makes a big difference.
 </p>
 <p>
 There’s a page in the system called Workload and I believe this will be a livesaver. It shows exactly how many activities each instructor or divemaster has done. Whether it’s fun dives, or courses, it’s all recorded and easy to see. No need to guess. No digging through booking history.
@@ -120,7 +120,7 @@ In my view, figuring out instructor pay isn’t just a behind-the-scenes admin t
 I think there’s no one perfect model that works for every business. What matters is finding what makes sense for your team, your location, and your goals. Some centres need the flexibility of commissions. Others thrive with fixed salaries. Many are starting to land somewhere in the middle with hybrid systems. Whichever way you go, the key is clarity. Make sure people understand how the system works and that it reflects the effort they put in.
 </p>
 <p>
-And if tracking it all feels like a lot of works, you’re not alone. That’s where <a href="https://www.diversdesk.com/" target="_blank" rel="noopener noreferrer">Diversdesk</a> really helps. The workload tracking and tank count features let you turn daily dive activity into clear numbers. It gives you and your staff something solid to rely on.
+And if tracking it all feels like a lot of works, you’re not alone. That’s where <a href="https://www.diversdesk.com/" target="_blank" rel="noopener noreferrer" style="color:#F86545">Diversdesk</a> really helps. The workload tracking and tank count features let you turn daily dive activity into clear numbers. It gives you and your staff something solid to rely on.
 </p>
 <p>
 At the end of the day, paying your team fairly and transparently is one of the best investments you can make. It’s good for morale, good for retention, and good for business. When your instructors feel supported, they teach better, they sell more, and they stick around longer. And that’s what keeps your dive centre growing strong.

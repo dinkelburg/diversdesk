@@ -60,7 +60,7 @@ If you’re not totally sure how much you’re really earning, or where that mon
 
 <h2 id="where-the-money-slips-away" class="section-heading">2. Where the Money Slips Away</h2>
 <p>
-Some money leaks are obvious. Most aren’t. And over time, they can quietly eat into your profits without you even noticing (<a href="https://www.thekartelsolution.com.au/blog/profit-leaks-the-silent-killer-of-small-businesses" target="_blank" rel="noopener">Source</a>). Here’s where I think dive shops often lose income without realizing it:
+Some money leaks are obvious. Most aren’t. And over time, they can quietly eat into your profits without you even noticing (<a href="https://www.thekartelsolution.com.au/blog/profit-leaks-the-silent-killer-of-small-businesses" target="_blank" rel="noopener" style="color:#F86545">Source</a>). Here’s where I think dive shops often lose income without realizing it:
 </p>
 <ul>
   <li>An extra gear item gets handed out, no one bills it</li>
@@ -74,7 +74,7 @@ Some money leaks are obvious. Most aren’t. And over time, they can quietly eat
 
 <h2 id="pricing-matters-more-than-you-think" class="section-heading">3. Pricing Matters More Than You Think</h2>
 <p>
-A lot of dive shop owners avoid raising prices because they don’t want to seem greedy. I get it. But in my opinion, underpricing is one of the biggest reasons cash flow gets tight. As a start, if you're not sure how to set your prices, check <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2021/02/16/12-techniques-for-selecting-the-right-pricing-strategy/" target="_blank" rel="noopener">this guide</a> on choosing the right pricing strategy.
+A lot of dive shop owners avoid raising prices because they don’t want to seem greedy. I get it. But in my opinion, underpricing is one of the biggest reasons cash flow gets tight. As a start, if you're not sure how to set your prices, check <a href="https://www.forbes.com/councils/forbesbusinesscouncil/2021/02/16/12-techniques-for-selecting-the-right-pricing-strategy/" target="_blank" rel="noopener" style="color:#F86545">this guide</a> on choosing the right pricing strategy.
 </p>
 <p>
 What you charge should reflect more than just the dive itself. For a dive centre, here are the things I think you need to factor in:
@@ -99,7 +99,7 @@ In my opinion, these are the kinds of insights every dive business should have a
 
 <h2 id="how-diversdesk-helps" class="section-heading">5. How Diversdesk Helps Your Dive Shop Avoid Missed Income and Track Profit Easily</h2>
 <p>
-I believe running a dive business gets a lot easier when everything is in one place. <a href="https://www.diversdesk.com/" target="_blank" rel="noopener">Diversdesk</a> helps you stay on top of your numbers while making sure nothing important gets missed. No forgotten payments. No missing gear. No unbilled extras. And yes, it also helps you track your profit. Here’s a quick look at the features that make it happen:
+I believe running a dive business gets a lot easier when everything is in one place. <a href="https://www.diversdesk.com/" target="_blank" rel="noopener" style="color:#F86545">Diversdesk</a> helps you stay on top of your numbers while making sure nothing important gets missed. No forgotten payments. No missing gear. No unbilled extras. And yes, it also helps you track your profit. Here’s a quick look at the features that make it happen:
 </p>
 <ul>
   <li><strong>All-in-One Booking:</strong> Bundle everything into one clean booking. Activities, gear, shop items, and add-ons, all in one booking, all easy to manage.</li>
@@ -107,7 +107,7 @@ I believe running a dive business gets a lot easier when everything is in one pl
   <li><strong>Sales Page:</strong> A full recap of your income. Everything sold or booked is tracked clearly, so you know exactly what’s coming in.</li>
   <li><strong>Rental Management:</strong> Keep track of your gear without the chaos. Assign rentals, track returns, and never miss a service schedule.</li>
   <li><strong>Metrics Dashboard:</strong> Your dive shop’s performance, simplified. Get real-time insights into earnings, top-selling activities, and outstanding payments.</li>
-  <li><strong>QuickBooks Integration:</strong> Diversdesk is fully integrated with <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChsSEwiampjLpsmOAxU3pWYCHa05LygYACICCAEQABoCc20&ae=2&co=1&ase=2&gclid=Cj0KCQjwhO3DBhDkARIsANxrhTqmWXD8ZEXRYe8QFkLy4gFtJ8qhwajm0TVClKtavo0Zc8mKlWPjzk4aAvEgEALw_wcB&ohost=www.google.com&cid=CAESeuD2_8mlmaiVJNffiIvlBLhkq3yY-bPFwkUyJHpzQ6Aow1cbk1Sg5IMDB89K8XunHm9thy7PmHYtoXLSUfcGJgr5QZIH3Au32OE4nRsY8o3QWmA7iYJyPiKI5LeOv3U0xA3hrlcwdMsFInOukZ8Bkfx1c9AUCToLXCC_&category=acrcp_v1_79&sig=AOD64_1ckH7gTzcYfUY3uyXzZdknDWn4KA&q&nis=4&adurl&ved=2ahUKEwjqp5TLpsmOAxX6S2cHHZn_DOYQ0Qx6BAgJEAE" target="_blank" rel="noopener">QuickBooks</a>, so your financial data syncs automatically. No more scattered reports.
+  <li><strong>QuickBooks Integration:</strong> Diversdesk is fully integrated with <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChsSEwiampjLpsmOAxU3pWYCHa05LygYACICCAEQABoCc20&ae=2&co=1&ase=2&gclid=Cj0KCQjwhO3DBhDkARIsANxrhTqmWXD8ZEXRYe8QFkLy4gFtJ8qhwajm0TVClKtavo0Zc8mKlWPjzk4aAvEgEALw_wcB&ohost=www.google.com&cid=CAESeuD2_8mlmaiVJNffiIvlBLhkq3yY-bPFwkUyJHpzQ6Aow1cbk1Sg5IMDB89K8XunHm9thy7PmHYtoXLSUfcGJgr5QZIH3Au32OE4nRsY8o3QWmA7iYJyPiKI5LeOv3U0xA3hrlcwdMsFInOukZ8Bkfx1c9AUCToLXCC_&category=acrcp_v1_79&sig=AOD64_1ckH7gTzcYfUY3uyXzZdknDWn4KA&q&nis=4&adurl&ved=2ahUKEwjqp5TLpsmOAxX6S2cHHZn_DOYQ0Qx6BAgJEAE" target="_blank" rel="noopener" style="color:#F86545">QuickBooks</a>, so your financial data syncs automatically. No more scattered reports.
 </ul>
 
 <p>Let’s take a look at the video to see how it works in action<p>
@@ -119,6 +119,6 @@ I believe running a dive business gets a lot easier when everything is in one pl
 I think profitability is about more than just staying busy. The shop might feel full, the boat might be out every day, but if you don’t know what’s coming in and what’s slipping through, it’s hard to grow with confidence. In my opinion, the dive shops that last are the ones that keep track of the details, not just the bookings.
 </p>
 <p>
-<a href="https://www.diversdesk.com/" target="_blank" rel="noopener">Diversdesk</a> helps you see the numbers clearly, stay on top of your gear, and avoid the little things that quietly cost you money. With the right tools in place, you can spend less time worrying about what’s missing and more time doing what you love, running a dive shop that actually works.
+<a href="https://www.diversdesk.com/" target="_blank" rel="noopener" style="color:#F86545">Diversdesk</a> helps you see the numbers clearly, stay on top of your gear, and avoid the little things that quietly cost you money. With the right tools in place, you can spend less time worrying about what’s missing and more time doing what you love, running a dive shop that actually works.
 </p>
 

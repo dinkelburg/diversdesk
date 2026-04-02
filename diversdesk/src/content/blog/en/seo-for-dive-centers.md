@@ -54,7 +54,7 @@ structuredData:
 
 <h2 id="why-seo-help-bookings" class="section-heading">1. Why SEO Can Help Your Dive Centre Get More Bookings</h2>
 <p>
-If you run a dive centre, showing up on Google is no longer just a nice bonus. In my opinion, it is important. Most divers start their search online by typing something like fun dives Nusa Penida or Open Water course in Komodo. If your website does not show up on that first page, you are probably missing out on bookings every single day. If you have already read <a href="https://www.diversdesk.com/blog/en/blog9-leveraging-social-media/" target="_blank" rel="noopener"> our article </a> on how to leverage social media for your dive centre, now is a good time to take the next step. Let’s make sure your website is just as easy to find. That is where SEO comes in.
+If you run a dive centre, showing up on Google is no longer just a nice bonus. In my opinion, it is important. Most divers start their search online by typing something like fun dives Nusa Penida or Open Water course in Komodo. If your website does not show up on that first page, you are probably missing out on bookings every single day. If you have already read <a href="https://www.diversdesk.com/blog/en/blog9-leveraging-social-media/" target="_blank" rel="noopener" style="color:#F86545"> our article </a> on how to leverage social media for your dive centre, now is a good time to take the next step. Let’s make sure your website is just as easy to find. That is where SEO comes in.
 </p>
 
 <div style="text-align: center;">
@@ -66,7 +66,7 @@ If you run a dive centre, showing up on Google is no longer just a nice bonus. I
 </div>
 
 <p>
-SEO, or Search Engine Optimization, is how you help Google understand your website and match it to the right people. Research shows that more than 75 percent of users never scroll past the first page of search results (<a href="https://www.digitalmindsgroup.com.au/blog/understanding-seo-a-vital-tool-for-anyone-in-the-digital-age#:~:text=Research%20shows%20that%20over%2075,SEO%20is%20its%20cost%2Deffectiveness." target="_blank" rel="noopener">source</a>), which means if you are not there, they probably will not find you. Think of Google as a giant library. Your website is a book, and SEO is how you write the label on the spine. If that label is missing or vague, people will not find you, no matter how good your services are. The following tips are easy to apply for beginnes and actually make a difference.
+SEO, or Search Engine Optimization, is how you help Google understand your website and match it to the right people. Research shows that more than 75 percent of users never scroll past the first page of search results (<a href="https://www.digitalmindsgroup.com.au/blog/understanding-seo-a-vital-tool-for-anyone-in-the-digital-age#:~:text=Research%20shows%20that%20over%2075,SEO%20is%20its%20cost%2Deffectiveness." target="_blank" rel="noopener" style="color:#F86545">source</a>), which means if you are not there, they probably will not find you. Think of Google as a giant library. Your website is a book, and SEO is how you write the label on the spine. If that label is missing or vague, people will not find you, no matter how good your services are. The following tips are easy to apply for beginnes and actually make a difference.
 </p>
 
 <h2 id="clear-page-titles" class="section-heading">2. Start with Clear Page Titles</h2>
@@ -76,7 +76,7 @@ Every page on your website has a title. It is the first thing Google notices and
 
 <h2 id="meta-descriptions" class="section-heading">3. Write Meta Descriptions That Make Sense</h2>
 <p>
-The meta description is the short text that appears under your page title in Google search results. It does not directly affect your ranking, but in my opinion, it plays a big role in whether someone clicks your link. According to <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener">Google’s official guide</a>, it should give people a clear and relevant summary of what your page is about. Keep it simple. Describe what the page offers and include one or two keywords naturally. For example, “Join our dive shop in Amed for Open Water and Advanced courses, guided fun dives, and friendly local instructors.” If your website builder lets you set meta descriptions, take the time to write one for each main page. If not, ask the person who built your site to help. It is a small detail that can help your site stand out.
+The meta description is the short text that appears under your page title in Google search results. It does not directly affect your ranking, but in my opinion, it plays a big role in whether someone clicks your link. According to <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener" style="color:#F86545">Google’s official guide</a>, it should give people a clear and relevant summary of what your page is about. Keep it simple. Describe what the page offers and include one or two keywords naturally. For example, “Join our dive shop in Amed for Open Water and Advanced courses, guided fun dives, and friendly local instructors.” If your website builder lets you set meta descriptions, take the time to write one for each main page. If not, ask the person who built your site to help. It is a small detail that can help your site stand out.
 </p>
 
 <h2 id="alt-text-photos" class="section-heading">4. Add Alt Text to Your Photos</h2>
@@ -91,10 +91,10 @@ Most of your guests are searching on their phones, especially when they are alre
 
 <h2 id="keep-website-fast" class="section-heading">6. Keep Your Website Fast</h2>
 <p>
-A slow website can be frustrating for your guests and it can also hurt your rankings. Google prefers fast sites because people do too. In many cases, large image files are the main reason for slow loading times. Try compressing your photos before uploading them. If you use videos, keep them short or <a href="https://www.youtube.com/" target="_blank" rel="noopener">link them from YouTube</a> instead of hosting them directly on your site. Avoid design elements that are too heavy or take too long to load.
+A slow website can be frustrating for your guests and it can also hurt your rankings. Google prefers fast sites because people do too. In many cases, large image files are the main reason for slow loading times. Try compressing your photos before uploading them. If you use videos, keep them short or <a href="https://www.youtube.com/" target="_blank" rel="noopener" style="color:#F86545">link them from YouTube</a> instead of hosting them directly on your site. Avoid design elements that are too heavy or take too long to load.
 </p>
 <p>
-To check how your website is performing, use a free tool like <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a>. It gives you clear suggestions and shows what needs improvement.
+To check how your website is performing, use a free tool like <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener" style="color:#F86545">PageSpeed Insights</a>. It gives you clear suggestions and shows what needs improvement.
 </p>
 
 <h2 id="blog-posts-seo" class="section-heading">7. Create Helpful Blog Posts to Support Your SEO</h2>
@@ -140,6 +140,6 @@ In my opinion, if you take the time to do the things I have shared here, like wr
 The best part is that once you set it up properly, SEO keeps working quietly in the background. You start to get more visibility, more clicks, and more divers walking through your door. Pick one thing to fix this week. Maybe update your homepage title or compress a few images. Then keep going from there. If you stay consistent, your rankings will improve and your dive centre will be right where it needs to be when people are ready to book.
 </p>
 <p>
-Keep in touch with <a href="https://www.diversdesk.com/" target="_blank" rel="noopener">Diversdesk</a> and explore the <a href="https://www.diversdesk.com/blog/en" target="_blank" rel="noopener"> blog section</a> to get more tips on how to grow your dive business and reach more divers online!
+Keep in touch with <a href="https://www.diversdesk.com/" target="_blank" rel="noopener" style="color:#F86545">Diversdesk</a> and explore the <a href="https://www.diversdesk.com/blog/" target="_blank" rel="noopener" style="color:#F86545"> blog section</a> to get more tips on how to grow your dive business and reach more divers online!
 </p>
 

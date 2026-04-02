@@ -59,7 +59,7 @@ There’s no denying that dive centers today are dealing with more complexity th
 The good news is, there is a better way to manage all of it. t's called dive center management software. In my opinion, this is no longer a nice-to-have. It is something every dive center should be using to stay organised and deliver a professional experience. It should be designed for the real day-to-day of running a dive business. It should save time, reduce mistakes, and make things easier for your team and your guests.
 </p>
 <p>
-In this article, I will walk you through the key features every diving management software should offer. And of course, we will also take a look at how <a href="https://www.diversdesk.com/" target="_blank" rel="noopener noreferrer">Diversdesk</a> delivers on those essentials.
+In this article, I will walk you through the key features every diving management software should offer. And of course, we will also take a look at how <a href="https://www.diversdesk.com/" target="_blank" rel="noopener noreferrer" style="color:#F86545">Diversdesk</a> delivers on those essentials.
 </p>
 
 <h2 id="automated-booking-and-scheduling" class="section-heading">1. Automated Booking and Scheduling</h2>
@@ -79,7 +79,7 @@ A proper diving management system should let divers complete their waivers, medi
 
 <h3>What Diversdesk offers</h3>
 <p>
-With Diversdesk, your customers can fill out digital waivers and forms from their phone or laptop ahead of time. Everything is stored and easy to access whenever needed. I’ve seen how much time this saves for dive shops, especially during busy check-ins. It also helps avoid errors or missed signatures since the system tracks what’s completed. You can find more in our blog: <a href="https://www.diversdesk.com/blog/en/blog11-chosing-digital-waiver-software/" target="_blank" rel="noopener noreferrer">How to Create Digital Waivers for Your Dive Operation: Center, Resort, or Liveaboard</a>
+With Diversdesk, your customers can fill out digital waivers and forms from their phone or laptop ahead of time. Everything is stored and easy to access whenever needed. I’ve seen how much time this saves for dive shops, especially during busy check-ins. It also helps avoid errors or missed signatures since the system tracks what’s completed. You can find more in our blog: <a href="https://www.diversdesk.com/blog/en/blog11-chosing-digital-waiver-software/" target="_blank" rel="noopener noreferrer" style="color:#F86545">How to Create Digital Waivers for Your Dive Operation: Center, Resort, or Liveaboard</a>
 </p>
 
 <h2 id="built-in-metrics-and-performance-overview" class="section-heading">3. Built-in Metrics and Performance Overview</h2>
@@ -89,7 +89,7 @@ In my opinion, every dive centre should have a clear picture of how the business
 
 <h3>What Diversdesk offers</h3>
 <p>
-Diversdesk gives you a simple, visual overview of how your dive center is performing. You can see your incoming revenue, outstanding payments, top-selling activities, where your customers are coming from, and how they made their bookings. It’s all live, and it’s all in one screen. I’ve found it really helpful for both finance and marketing. Whether you want to check how the month is going or look at which trips are most popular, it’s all right there when you need it. Find out more here! <a href="https://www.diversdesk.com/blog/en/blog8-dive-center-metrics/" target="_blank" rel="noopener noreferrer">Dive Center Metrics</a>
+Diversdesk gives you a simple, visual overview of how your dive center is performing. You can see your incoming revenue, outstanding payments, top-selling activities, where your customers are coming from, and how they made their bookings. It’s all live, and it’s all in one screen. I’ve found it really helpful for both finance and marketing. Whether you want to check how the month is going or look at which trips are most popular, it’s all right there when you need it. Find out more here! <a href="https://www.diversdesk.com/blog/en/blog8-dive-center-metrics/" target="_blank" rel="noopener noreferrer" style="color:#F86545">Dive Center Metrics</a>
 </p>
 
 <h2 id="mobile-access-and-cloud-sync" class="section-heading">4. Mobile Access and Cloud Sync</h2>
@@ -112,10 +112,10 @@ Even better if the system links with accounting apps, so your records stay tidy 
 
 <h3>What Diversdesk offers</h3>
 <p>
-Diversdesk supports integrated payments, so you can accept payments without switching between tools. It connects with trusted providers like <a href="https://www.xendit.co/en/" target="_blank" rel="noopener noreferrer">Xendit</a>, and every transaction stays linked to the booking and updates automatically. You can also track unpaid invoices easily, which I think really helps keep your cash flow in check.
+Diversdesk supports integrated payments, so you can accept payments without switching between tools. It connects with trusted providers like <a href="https://www.xendit.co/en/" target="_blank" rel="noopener noreferrer" style="color:#F86545">Xendit</a>, and every transaction stays linked to the booking and updates automatically. You can also track unpaid invoices easily, which I think really helps keep your cash flow in check.
 </p>
 <p>
-And for accounting, Diversdesk is already fully integrated with <a href="https://quickbooks.intuit.com/global/oa/online-accounting-software-for-small-business/?cid=ppc_QBO_ID_Top_B_Exact_G_Top12&gad_source=1&gad_campaignid=698117673&gbraid=0AAAAAD1w8J9tapUi2ZdJYwJFT2UAzAi7u&gclid=Cj0KCQjw0qTCBhCmARIsAAj8C4ZiAg6P3D57iMU2Vkrb495_rMOWcQiHtLtZyoujEOA0N5TtXzBAbscaAikQEALw_wcB&gclsrc=aw.ds" target="_blank" rel="noopener noreferrer">QuickBooks</a>. That means your sales data and invoices can sync straight into your books, saving time and reducing the chance of errors.
+And for accounting, Diversdesk is already fully integrated with <a href="https://quickbooks.intuit.com/global/oa/online-accounting-software-for-small-business/?cid=ppc_QBO_ID_Top_B_Exact_G_Top12&gad_source=1&gad_campaignid=698117673&gbraid=0AAAAAD1w8J9tapUi2ZdJYwJFT2UAzAi7u&gclid=Cj0KCQjw0qTCBhCmARIsAAj8C4ZiAg6P3D57iMU2Vkrb495_rMOWcQiHtLtZyoujEOA0N5TtXzBAbscaAikQEALw_wcB&gclsrc=aw.ds" target="_blank" rel="noopener noreferrer" style="color:#F86545">QuickBooks</a>. That means your sales data and invoices can sync straight into your books, saving time and reducing the chance of errors.
 </p>
 
 <h2 id="integrated-point-of-sale-pos" class="section-heading">6. Integrated Point of Sale (POS)</h2>

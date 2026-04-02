@@ -76,27 +76,27 @@ I think one of the most important things to remember is that they scroll before 
 
 Your website is your storefront. If it’s slow, messy, or looks outdated, people will leave. I think it needs to be clear, easy to use, and focused on what you actually offer. Show your gear. Use language that feels human. Add local keywords so the right people can find you.
 
-As mentioned <a href="https://businessesgrow.com/2023/02/20/benefits-of-blogging/" target="_blank">in this article</a>, having a blog helps more than most people think. Answer the questions divers are already asking. Write simple gear reviews. Share tips about local dive sites. Good content helps with search and builds trust.
+As mentioned <a href="https://businessesgrow.com/2023/02/20/benefits-of-blogging/" target="_blank" style="color:#F86545">in this article</a>, having a blog helps more than most people think. Answer the questions divers are already asking. Write simple gear reviews. Share tips about local dive sites. Good content helps with search and builds trust.
 
 <h2 id="social-media-keep-it-simple-make-it-useful" class="section-heading">4. Social Media: Keep It Simple, Make It Useful</h2>
 
 You don’t need a big setup or polished content to stand out. Just be consistent, helpful, and show what’s real. Here are a few tips to help you get the most out of Instagram, Facebook, and TikTok without overthinking it.
 
-**<a href="https://instagram.com" target="_blank">Instagram</a>**  
+**<a href="https://instagram.com" target="_blank" style="color:#F86545">Instagram</a>**  
 - Unbox gear. Show what it looks like on real people.  
 - Carousel posts comparing products work.  
 - Let instructors talk about what they use and why.  
 - Polls and questions get people involved.  
 - Use relevant hashtags that match your location and product.  
 
-**<a href="https://facebook.com" target="_blank">Facebook</a>**  
+**<a href="https://facebook.com" target="_blank" style="color:#F86545">Facebook</a>**  
 - One post, one product, short caption.  
 - Flash sales for your followers.  
 - Demo videos that explain how something works in under a minute.  
 - Share customer photos. Ask for them.  
 - Link to your catalog or website.  
 
-**<a href="https://tiktok.com" target="_blank">TikTok</a>**  
+**<a href="https://tiktok.com" target="_blank" style="color:#F86545">TikTok</a>**  
 - Behind-the-scenes at your shop.  
 - Tips from staff.  
 - Gear tests.  
@@ -124,7 +124,7 @@ If you have the tools, personalise your recommendations. Suggesting the right ge
 
 <h2 id="stay-flexible-and-pay-attention" class="section-heading">6. Stay Flexible and Pay Attention</h2>
 
-As mentioned in this article <a href="https://hbr.org/2011/07/adaptability-the-new-competitive-advantage" target="_blank">Adaptability: The New Competitive Advantage</a>, things move fast. What works now might not work next year. Be willing to test, adapt, and drop what doesn’t work.
+As mentioned in this article <a href="https://hbr.org/2011/07/adaptability-the-new-competitive-advantage" target="_blank" style="color:#F86545">Adaptability: The New Competitive Advantage</a>, things move fast. What works now might not work next year. Be willing to test, adapt, and drop what doesn’t work.
 
 If sustainability matters to you, show it. If your dive shop supports the local community, talk about it. People notice when a business is genuine and in tune. It’s not about chasing trends. It’s about listening, adjusting, and staying real.
 
@@ -138,9 +138,9 @@ If sustainability matters to you, show it. If your dive shop supports the local 
 
 <h2 id="use-tools-that-save-you-time" class="section-heading">7. Use Tools That Save You Time</h2>
 
-You don’t need to do everything manually. In my opinion, the key is using tools that give you clarity without adding more work. <a href="https://www.diversdesk.com" target="_blank">Diversdesk</a> is getting ready to launch its own POS and retail tools built for dive shops. You’ll be able to track sales, manage inventory, and see what’s working all in one place. That kind of support helps you stay focused on your customers and spend less time guessing what to promote.
+You don’t need to do everything manually. In my opinion, the key is using tools that give you clarity without adding more work. <a href="https://www.diversdesk.com" target="_blank" style="color:#F86545">Diversdesk</a> is getting ready to launch its own POS and retail tools built for dive shops. You’ll be able to track sales, manage inventory, and see what’s working all in one place. That kind of support helps you stay focused on your customers and spend less time guessing what to promote.
 
-I believe, that kind of insight, especially when built right into <a href="https://www.diversdesk.com" target="_blank">Diversdesk</a>, Ihelps you focus your marketing, make smarter decisions, and save time.
+I believe, that kind of insight, especially when built right into <a href="https://www.diversdesk.com" target="_blank" style="color:#F86545">Diversdesk</a>, Ihelps you focus your marketing, make smarter decisions, and save time.
 
 <h2 id="the-takeaway" class="section-heading">8. The Takeaway</h2>
 

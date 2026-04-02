@@ -32,7 +32,7 @@ QuickBooks has long been a favorite among small to medium-sized businesses, and 
 <li> • Steeper learning curve for beginners </li>
 </ul>
 <!-- <br />
-Visit <a href="https://quickbooks.intuit.com/" target="_blank" style="color:#FF7557;">Quickbooks</a>
+Visit <a href="https://quickbooks.intuit.com/" target="_blank" style="color:#FF7557; color:#F86545">Quickbooks</a>
 <br /> -->
 
 ## 2. Xero

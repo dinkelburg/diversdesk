@@ -41,7 +41,7 @@ structuredData:
   <h2 class="text-xl font-bold mb-3">Table of Contents</h2>
   <ul class="space-y-2 text-neutral-600 dark:text-neutral-400">
     <li><a href="#digital-waiver-advantages" class="hover:text-neutral-800 dark:hover:text-neutral-200">1. Digital Waivers: Why They Beat Paper, Hands Down.</a></li>
-    <li><a href="software-to-consider" class="hover:text-neutral-800 dark:hover:text-neutral-200">2. Software Options to consider for Dive Center Waivers:</a></li>
+    <li><a href="#software-to-consider" class="hover:text-neutral-800 dark:hover:text-neutral-200">2. Software Options to consider for Dive Center Waivers:</a></li>
     <li><a href="#diversdesk-advantage" class="hover:text-neutral-800 dark:hover:text-neutral-200">3. DiversDesk: The Dive Center Advantage:</a></li>
     <li><a href="#waiver-implementation" class="hover:text-neutral-800 dark:hover:text-neutral-200">4. Implementing Digital Waivers: Do It Right.</a></li>
     <li><a href="#conclusion" class="hover:text-neutral-800 dark:hover:text-neutral-200">5. Conclusion:</a></li>

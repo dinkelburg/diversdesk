@@ -98,7 +98,7 @@ Here’s what makes Diversdesk the preferred choice for businesses in the diving
 Choosing the best digital waiver software is a crucial step for any dive center or tour operator looking to modernize their operations. By investing in a paperless onboarding solution, you’ll save time, reduce errors, and provide an exceptional experience for your customers.
 Ready to elevate your business with Diversdesk? Start your free trial today and experience the difference!
 
-<a href="https://www.diversdesk.com/" target="_blank" style="color: #FF7557;">**Find Out More**</a>
+<a href="https://www.diversdesk.com/" target="_blank" style="color: #FF7557; color:#F86545">**Find Out More**</a>
 
 
 
