@@ -13,6 +13,8 @@ export default defineConfig({
 
   redirects: {
     "/blog/en": "/blog/",
+    "/blog/{post.slug}": "/blog/",
+    "/blog/%7Bpost.slug%7D": "/blog/",
     "/blog/en/how-to-digitally-onboard-fun-divers": "/blog/en/blog1-how-to-digitally-onboard-fun-divers",
     "/blog/en/post-2": "/blog/en/blog2-digital-whiteboard-for-dive-centers",
     "/blog/en/post-3": "/blog/en/blog3-what-makes-the-most-flexible-planner-and-scheduler",
