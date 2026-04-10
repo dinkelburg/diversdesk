@@ -26,7 +26,8 @@ export default defineConfig({
     "/insights/insight-2": "/insights/insight2-measures-to-protect-coral-reef",
     "/insights/insight-3": "/insights/insight3-2024-trends-diving-industry",
     "/insights/insight-4": "/insights/insight4-combating-plastic-polution",
-    "/blog/en/top-features-in-dive-center-management-softward": "/blog/en/top-features-in-dive-center-management-software"
+    "/blog/en/top-features-in-dive-center-management-softward": "/blog/en/top-features-in-dive-center-management-software",
+    "/insights/diversdesk-liveboard-subscription": "/insights/diversdesk-liveaboard-subscription"
   },
   
   image: {

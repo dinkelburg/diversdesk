@@ -1,0 +1,315 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+import LiveaboardShipImage from "@images/insights/liveaboard-ship.avif";
+
+const isProd = import.meta.env.PROD;
+const canonicalSlug = "expo/liveaboard";
+const pageTitle = `Liveaboard Subscription Offer | ${SITE.title}`;
+const pageDescription =
+  "Pre-launch teaser page for Diversdesk's liveaboard module with waitlist signup for launch updates and early access.";
+const redirectBaseUrl = isProd ? "https://www.diversdesk.com" : "http://localhost:4321";
+---
+
+<script
+  is:inline
+  src="https://www.google.com/recaptcha/api.js?render=6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW"
+></script>
+
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={`https://www.diversdesk.com/${canonicalSlug}`}
+  robots="noindex, nofollow"
+  image="/images/insights/liveaboard-ship.avif"
+>
+  <Fragment slot="head">
+    <style>
+      .liveaboard-hero {
+        background:
+          radial-gradient(circle at 12% 20%, rgba(14, 165, 233, 0.2), transparent 34%),
+          radial-gradient(circle at 88% 84%, rgba(249, 115, 22, 0.16), transparent 42%),
+          linear-gradient(140deg, #f8fafc 0%, #ffffff 52%, #f0f9ff 100%);
+      }
+
+      .reveal-up {
+        animation: reveal-up 650ms ease-out both;
+      }
+
+      .reveal-delay-1 {
+        animation-delay: 120ms;
+      }
+
+      .reveal-delay-2 {
+        animation-delay: 240ms;
+      }
+
+      .reveal-delay-3 {
+        animation-delay: 360ms;
+      }
+
+      @keyframes reveal-up {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </Fragment>
+
+  <section class="liveaboard-hero border-b border-neutral-200/70 py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <p class="reveal-up text-xs font-semibold uppercase tracking-[0.22em] text-sky-700">
+            Liveaboard Operators
+          </p>
+          <h1 class="reveal-up reveal-delay-1 mt-4 text-4xl font-black leading-tight text-neutral-900 sm:text-5xl lg:text-6xl">
+            A complete operating system for your liveaboard fleet.
+          </h1>
+          <p class="reveal-up reveal-delay-2 mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700 sm:text-xl">
+            Launching on <strong>September 1</strong>. Join the pre-launch waitlist to get updates and early access to the module built specifically for liveaboard businesses.
+          </p>
+
+          <div class="reveal-up reveal-delay-3 mt-8 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="#launch-waitlist"
+              class="inline-flex items-center justify-center rounded-xl bg-sky-700 px-7 py-4 text-base font-bold text-white transition hover:bg-sky-800"
+            >
+              Join Launch Waitlist
+            </a>
+            <a
+              href="#liveaboard-breakdown"
+              class="inline-flex items-center justify-center rounded-xl border border-neutral-300 bg-white px-7 py-4 text-base font-bold text-neutral-800 transition hover:border-sky-300 hover:text-sky-700"
+            >
+              Explore What Is Coming
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal-up reveal-delay-2 rounded-2xl border border-neutral-200/80 bg-white/90 p-6 shadow-xl shadow-sky-100/60 backdrop-blur sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">Core Liveaboard Advantages</p>
+          <ul class="mt-5 space-y-4 text-neutral-700">
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-sky-600"></span>
+              <span><strong>Booking Engine + Channel Sync</strong> to avoid overbookings and reduce manual admin.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-sky-600"></span>
+              <span><strong>Agent Portal</strong> with live availability and contracted pricing access.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-sky-600"></span>
+              <span><strong>Paperless Guest Onboarding</strong> with digital forms, docs, and medical data collection.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-sky-600"></span>
+              <span><strong>On-Board POS + Inventory + Manifests</strong> for full operational control from booking to departure.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="launch-waitlist" class="border-b border-neutral-200 bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-2xl border border-sky-200 bg-sky-50 p-6 sm:p-8">
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-sky-700">September 1 Launch</p>
+          <h2 class="mt-3 text-3xl font-black text-neutral-900 sm:text-4xl">Sign Up For Liveaboard Module Updates</h2>
+          <p class="mt-4 text-lg text-neutral-700">
+            Get product launch updates, preview invites, and rollout details for the new module.
+          </p>
+        </div>
+
+        <div id="launch-status" class="mx-auto mt-6 hidden max-w-3xl rounded-xl border px-4 py-3 text-sm"></div>
+
+        <form action="/api/signup" method="post" id="liveaboardLaunchForm" class="mx-auto mt-8 max-w-3xl">
+          <div style="position: fixed; top: -9999px; left: -9999px;">
+            <label for="website">Website</label>
+            <input name="website" id="website" value="" />
+          </div>
+
+          <input type="hidden" name="start" id="launch_start" value="" />
+          <input type="hidden" name="captcha_token" id="launch_captcha_token" value="" />
+          <input type="hidden" name="type" value="liveaboard_waitlist" />
+          <input type="hidden" name="campaign" value="liveaboard_module_prelaunch" />
+          <input type="hidden" name="module_launch_date" value="2026-09-01" />
+          <input
+            type="hidden"
+            name="redirect"
+            value={redirectBaseUrl + "/expo/liveaboard?status=success#launch-waitlist"}
+          />
+          <input
+            type="hidden"
+            name="redirect_error"
+            value={redirectBaseUrl + "/expo/liveaboard?status=error#launch-waitlist"}
+          />
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="launch_name" class="mb-1 block text-sm font-medium text-neutral-800">Full Name</label>
+              <input id="launch_name" name="full_name" type="text" required class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-sky-300" placeholder="Your full name" />
+            </div>
+            <div>
+              <label for="launch_email" class="mb-1 block text-sm font-medium text-neutral-800">Email</label>
+              <input id="launch_email" name="email" type="email" autocomplete="email" required class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-sky-300" placeholder="you@company.com" />
+            </div>
+            <div>
+              <label for="launch_company" class="mb-1 block text-sm font-medium text-neutral-800">Company</label>
+              <input id="launch_company" name="company" type="text" required class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-sky-300" placeholder="Your liveaboard brand" />
+            </div>
+            <div>
+              <label for="launch_fleet" class="mb-1 block text-sm font-medium text-neutral-800">Fleet Size</label>
+              <input id="launch_fleet" name="fleet_size" type="text" class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-sky-300" placeholder="Example: 2 boats" />
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <label for="launch_notes" class="mb-1 block text-sm font-medium text-neutral-800">What matters most for your operation?</label>
+            <textarea id="launch_notes" name="comment" rows="4" class="block w-full rounded-lg border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-500 focus:border-neutral-200 focus:outline-none focus:ring focus:ring-sky-300" placeholder="Booking engine, cabin management, channel manager, POS, gear fitting, billing, or other priorities..."></textarea>
+          </div>
+
+          <div class="mt-4 flex items-start gap-2">
+            <input id="launch_terms" type="checkbox" required class="mt-1 shrink-0 rounded border-neutral-200 text-neutral-600 focus:ring-sky-300" />
+            <label for="launch_terms" class="text-sm text-neutral-700">
+              I agree to the Diversdesk
+              <a href="/terms-conditions" class="font-semibold text-sky-700 hover:underline"> Terms of Service</a>
+              and
+              <a href="/privacy-policy" class="font-semibold text-sky-700 hover:underline"> Privacy Policy</a>.
+            </label>
+          </div>
+
+          <div class="mt-6">
+            <button id="launch_submit" type="submit" class="inline-flex w-full items-center justify-center rounded-xl bg-sky-700 px-7 py-4 text-base font-bold text-white transition hover:bg-sky-800 disabled:cursor-not-allowed disabled:opacity-60">
+              Keep Me Updated
+            </button>
+          </div>
+          <p class="mt-3 text-center text-sm text-neutral-600">
+            We will use these details to keep you informed about launch updates and early access.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-black text-neutral-900 sm:text-4xl">Simple Annual Pricing For Liveaboard Fleets</h2>
+        <p class="mt-4 text-lg text-neutral-700">
+          Transparent pricing that scales with your fleet and rewards multi-boat operators.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-center">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">1 Boat</p>
+          <h3 class="mt-3 text-3xl font-black text-neutral-900">$1,000</h3>
+          <p class="mt-1 text-sm text-neutral-600">USD / year</p>
+          <p class="mt-4 text-neutral-700">Everything you need to centralize one liveaboard operation.</p>
+        </article>
+
+        <article class="rounded-2xl border border-sky-300 bg-sky-50 p-6 text-center shadow-md shadow-sky-100">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-sky-700">2 Boats</p>
+          <h3 class="mt-3 text-3xl font-black text-neutral-900">$1,750</h3>
+          <p class="mt-1 text-sm text-neutral-600">USD / year</p>
+          <p class="mt-4 text-neutral-700">Includes a 25% discount on your second boat license.</p>
+        </article>
+
+        <article class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-center">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">3 Boats</p>
+          <h3 class="mt-3 text-3xl font-black text-neutral-900">$2,250</h3>
+          <p class="mt-1 text-sm text-neutral-600">USD / year</p>
+          <p class="mt-4 text-neutral-700">Includes a 50% discount on your third boat license.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="liveaboard-breakdown" class="border-y border-neutral-200 bg-neutral-100 py-14 sm:py-16">
+    <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+      <div class="flex flex-col justify-center">
+        <h2 class="text-3xl font-black text-neutral-900 sm:text-4xl">Want The Full Liveaboard Feature Breakdown?</h2>
+        <p class="mt-4 max-w-2xl text-lg text-neutral-700">
+          This new module is being built to give liveaboards one place to manage sleek booking engines, cabin availability per trip, channel management, gear fitting, onboard POS sales, package add-ons, consumptions, and one final bill after the trip.
+        </p>
+        <p class="mt-4 max-w-2xl text-lg text-neutral-700">
+          Review the full product direction and feature overview in the detailed insight article.
+        </p>
+
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+          <a
+            href="/insights/diversdesk-liveboard-subscription"
+            class="inline-flex items-center justify-center rounded-xl bg-neutral-900 px-7 py-4 text-base font-bold text-white transition hover:bg-black"
+          >
+            Read Full Liveaboard Insights
+          </a>
+          <a
+            href="#launch-waitlist"
+            class="inline-flex items-center justify-center rounded-xl border border-sky-300 bg-white px-7 py-4 text-base font-bold text-sky-800 transition hover:bg-sky-50"
+          >
+            Join The Waitlist
+          </a>
+        </div>
+
+        <p class="mt-6 text-sm text-neutral-600">
+          This campaign page is hidden from search engines and intended for direct outreach and QR traffic.
+        </p>
+      </div>
+
+      <div class="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-xl shadow-sky-100/50">
+        <Image
+          src={LiveaboardShipImage}
+          alt="Diversdesk liveaboard management interface preview"
+          class="h-full w-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+</MainLayout>
+
+<script>
+  const launchForm = document.getElementById("liveaboardLaunchForm") as HTMLFormElement | null;
+  const launchStart = document.getElementById("launch_start") as HTMLInputElement | null;
+  const launchCaptcha = document.getElementById("launch_captcha_token") as HTMLInputElement | null;
+  const launchSubmit = document.getElementById("launch_submit") as HTMLButtonElement | null;
+  const statusBox = document.getElementById("launch-status");
+  const status = new URL(window.location.href).searchParams.get("status");
+
+  if (statusBox && status === "success") {
+    statusBox.className = "mx-auto mt-6 max-w-3xl rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800";
+    statusBox.textContent = "Thanks. You are on the Liveaboard launch update list.";
+  } else if (statusBox && status === "error") {
+    statusBox.className = "mx-auto mt-6 max-w-3xl rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800";
+    statusBox.textContent = "Something went wrong. Please try again or contact us directly.";
+  }
+
+  if (launchForm && launchStart) {
+    launchStart.value = new Date().toISOString();
+  }
+
+  if (launchForm && launchSubmit) {
+    launchForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      // @ts-ignore
+      const token = await (grecaptcha as any).execute("6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW", { action: "submit" });
+      if (launchCaptcha) {
+        launchCaptcha.value = token;
+      }
+
+      launchSubmit.setAttribute("disabled", "true");
+      launchSubmit.textContent = "Submitting...";
+      launchForm.submit();
+    });
+  }
+</script>

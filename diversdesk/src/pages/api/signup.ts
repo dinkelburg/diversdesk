@@ -8,9 +8,11 @@ export const POST: APIRoute = async ({ request, redirect }) => {
   // 1. Setup Redirects and URLs
   const successUrl = formData.get("redirect") as string || "/signup2-trial/success";
   const errorUrl = formData.get("redirect_error") as string || "/signup2-trial/error";
-  
+  const formType = formData.get("type") as string | null;
+
   const MAKE_WEBHOOK_URL = "https://hook.eu1.make.com/ar41zuw1ke0a2m5fwk7pnrxo67284s1q";
-  const SECOND_WEBHOOK_URL = "https://hook.eu1.make.com/9xvwjor89g3e9r1q5kptvpf1tomh5hbw"; 
+  const SECOND_WEBHOOK_URL = "https://hook.eu1.make.com/9xvwjor89g3e9r1q5kptvpf1tomh5hbw";
+  const LIVEABOARD_WAITLIST_WEBHOOK_URL = "https://hook.eu1.make.com/hflhcblecswkbatlllnut3iam12mta7v";
 
   // 2. Bot Prevention: Honeypot & Timing
   const honeypot = formData.get("website");
@@ -60,22 +62,21 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     }
   });
 
+  const webhookTargets = formType === "liveaboard_waitlist"
+    ? [LIVEABOARD_WAITLIST_WEBHOOK_URL]
+    : [MAKE_WEBHOOK_URL, SECOND_WEBHOOK_URL];
+
   // 5. Execute Webhooks in Parallel
   try {
-    const results = await Promise.allSettled([
-      fetch(MAKE_WEBHOOK_URL, {
+    const results = await Promise.allSettled(webhookTargets.map((webhookUrl) =>
+      fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formDataObj),
-      }),
-      fetch(SECOND_WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formDataObj),
-      }),
-    ]);
+      })
+    ));
 
-    // Check the Primary Webhook (Make)
+    // Check the Primary Webhook
     const makeResult = results[0];
     if (makeResult.status === "rejected" || !makeResult.value.ok) {
       console.error("Primary Webhook (Make) failed");
@@ -84,7 +85,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
 
     // Check the Secondary Webhook (Optional)
     const secondResult = results[1];
-    if (secondResult.status === "rejected" || !secondResult.value.ok) {
+    if (secondResult && (secondResult.status === "rejected" || !secondResult.value.ok)) {
       console.warn("Secondary Webhook failed, but proceeding to success page.");
     }
 

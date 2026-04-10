@@ -1,0 +1,193 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+
+const canonicalSlug = "expo/adex-offer";
+const pageTitle = `ADEX Partner Offer | ${SITE.title}`;
+const pageDescription =
+  "ADEX-exclusive Diversdesk offer: schedule a live demo or start your annual subscription with a 25% discount.";
+---
+
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={`https://www.diversdesk.com/${canonicalSlug}`}
+  robots="noindex, nofollow"
+  image="/images/contact-hero.avif"
+>
+  <Fragment slot="head">
+    <style>
+      .adex-hero {
+        background:
+          radial-gradient(circle at 8% 10%, rgba(249, 115, 22, 0.22), transparent 36%),
+          radial-gradient(circle at 90% 84%, rgba(15, 23, 42, 0.12), transparent 44%),
+          linear-gradient(130deg, #fff7ed 0%, #ffffff 48%, #f5f5f4 100%);
+      }
+
+      .reveal-up {
+        animation: reveal-up 650ms ease-out both;
+      }
+
+      .reveal-delay-1 {
+        animation-delay: 120ms;
+      }
+
+      .reveal-delay-2 {
+        animation-delay: 240ms;
+      }
+
+      .reveal-delay-3 {
+        animation-delay: 360ms;
+      }
+
+      @keyframes reveal-up {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </Fragment>
+
+  <section class="adex-hero border-b border-neutral-200/70 py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <p class="reveal-up text-xs font-semibold uppercase tracking-[0.22em] text-orange-700">
+            ADEX 2026 Private Offer
+          </p>
+          <h1 class="reveal-up reveal-delay-1 mt-4 text-4xl font-black leading-tight text-neutral-900 sm:text-5xl lg:text-6xl">
+            Turn your next season into your smoothest one yet.
+          </h1>
+          <p class="reveal-up reveal-delay-2 mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700 sm:text-xl">
+            Thanks for connecting with Diversdesk at ADEX. If you are exploring a better way to run daily operations,
+            onboard guests, and increase repeat bookings, this page is your fast lane.
+          </p>
+
+          <div class="reveal-up reveal-delay-3 mt-8 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="https://calendly.com/diversdesk-info/demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-xl bg-orange-600 px-7 py-4 text-base font-bold text-white transition hover:bg-orange-700"
+            >
+              Schedule A Live Demo
+            </a>
+            <a
+              href="/diversdesk_checkout?promo=ADEX25"
+              class="inline-flex items-center justify-center rounded-xl border border-neutral-300 bg-white px-7 py-4 text-base font-bold text-neutral-800 transition hover:border-orange-300 hover:text-orange-700"
+            >
+              Start Subscription With 25% Off
+            </a>
+          </div>
+
+          <p class="mt-4 text-sm text-neutral-600">
+            ADEX code: <strong>ADEX25</strong> for annual plans.
+          </p>
+        </div>
+
+        <div class="reveal-up reveal-delay-2 rounded-2xl border border-neutral-200/80 bg-white/90 p-6 shadow-xl shadow-orange-100/50 backdrop-blur sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-700">What You Get</p>
+          <ul class="mt-5 space-y-4 text-neutral-700">
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-orange-500"></span>
+              <span><strong>25% discount</strong> on your first annual subscription when claiming the ADEX offer.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-orange-500"></span>
+              <span><strong>Personalized walkthrough</strong> focused on your dive center setup and workflow.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1 h-2.5 w-2.5 rounded-full bg-orange-500"></span>
+              <span><strong>Fast onboarding path</strong> so your team can start seeing value immediately.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">Step 1</p>
+          <h2 class="mt-3 text-xl font-bold text-neutral-900">Book a discovery demo</h2>
+          <p class="mt-3 text-neutral-700">
+            We map your current process, identify bottlenecks, and show exactly how Diversdesk fits your operation.
+          </p>
+        </article>
+        <article class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">Step 2</p>
+          <h2 class="mt-3 text-xl font-bold text-neutral-900">Pick your annual plan</h2>
+          <p class="mt-3 text-neutral-700">
+            Use the ADEX route to checkout and apply your discount as you start your subscription.
+          </p>
+        </article>
+        <article class="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">Step 3</p>
+          <h2 class="mt-3 text-xl font-bold text-neutral-900">Launch with confidence</h2>
+          <p class="mt-3 text-neutral-700">
+            Your staff gets operational quickly, while your guests experience smoother onboarding and bookings.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-neutral-200 bg-neutral-100 py-14 sm:py-16">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-black text-neutral-900 sm:text-4xl">Ready to lock in the ADEX offer?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-700">
+        Choose your next move: schedule a focused demo or go straight to subscription checkout.
+      </p>
+      <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+        <a
+          href="https://calendly.com/diversdesk-info/demo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center rounded-xl bg-neutral-900 px-7 py-4 text-base font-bold text-white transition hover:bg-black"
+        >
+          Book Demo
+        </a>
+        <a
+          href="/diversdesk_checkout?promo=ADEX25"
+          class="inline-flex items-center justify-center rounded-xl bg-orange-600 px-7 py-4 text-base font-bold text-white transition hover:bg-orange-700"
+        >
+          Claim 25% Discount
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-neutral-600">
+        This campaign page is intentionally hidden from search engines and designed for ADEX flyer QR traffic.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center text-3xl font-black text-neutral-900 sm:text-4xl">Diversdesk Main Feature Walkthrough In 2 Minutes</h2>
+      <p class="mx-auto mt-4 max-w-3xl text-center text-lg text-neutral-700">
+        Get a quick overview of the core Diversdesk workflow and how it supports smoother daily operations.
+      </p>
+
+      <div class="mt-8 overflow-hidden rounded-2xl border border-neutral-200 shadow-lg">
+        <div class="aspect-video w-full">
+          <iframe
+            class="h-full w-full"
+            src="https://www.youtube.com/embed/d7PkDQr4Dpw?si=jA-L7xO6PDrpjpNo"
+            title="Diversdesk main feature walkthrough in 2 minutes"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
