@@ -54,14 +54,14 @@ header {
 }
 
 #starlight__sidebar ul.top-level > li + li {
-    margin-top: 0.9rem;
+    margin-top: 0.6rem;
 }
 
 #starlight__sidebar ul.top-level > li > details > summary,
 #starlight__sidebar ul.top-level > li > a.large,
 #starlight__sidebar a.top-level-link-card {
     min-height: 2.75rem;
-    border: 1px solid var(--docs-sidebar-top-border);
+    border: none;
     border-radius: 0.9rem;
     background: var(--docs-sidebar-top-bg);
     padding: 0.65rem 0.8rem;
@@ -74,16 +74,47 @@ header {
 #starlight__sidebar ul.top-level > li > a.large:focus-visible,
 #starlight__sidebar a.top-level-link-card:hover,
 #starlight__sidebar a.top-level-link-card:focus-visible {
-    background: var(--docs-sidebar-top-bg-hover);
-    border-color: var(--docs-sidebar-top-border-strong);
+    background: rgba(248, 101, 69, 0.04);
+    border-color: rgba(248, 101, 69, 0.15);
+    border: 1px solid rgba(248, 101, 69, 0.15);
 }
 
-#starlight__sidebar ul.top-level > li > details[open] > summary,
+#starlight__sidebar ul.top-level > li > details[open] > summary .group-label {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+#starlight__sidebar ul.top-level > li > details[open] > summary {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
 #starlight__sidebar ul.top-level > li > a.large[aria-current='page'],
 #starlight__sidebar a.top-level-link-card[aria-current='page'] {
-    background: var(--docs-sidebar-top-bg-active);
-    border-color: var(--docs-sidebar-top-border-strong);
-    box-shadow: inset 0 0 0 1px rgba(248, 101, 69, 0.08);
+    background: rgba(248, 101, 69, 0.14);
+    border: 1px solid rgba(248, 101, 69, 0.2);
+    box-shadow: none;
+}
+
+/* Keep a clear marker for groups containing the active nested page,
+   even when another dropdown is currently expanded. */
+#starlight__sidebar ul.top-level > li > details:has(ul a[aria-current='page']) > summary .group-label {
+    color: var(--sl-color-white);
+    font-weight: 500;
+}
+
+#starlight__sidebar ul.top-level > li > details:has(ul a[aria-current='page']) > summary .group-label::after {
+    content: "";
+    width: 0.38rem;
+    height: 0.38rem;
+    border-radius: 999px;
+    background: var(--sl-color-accent);
+    margin-inline-start: 0.45rem;
+    flex-shrink: 0;
+}
+
+#starlight__sidebar ul.top-level > li > details:has(ul a[aria-current='page']) > summary .sidebar-category-icon {
+    color: var(--sl-color-accent);
 }
 
 #starlight__sidebar ul.top-level > li > details > summary .group-label {
@@ -92,6 +123,14 @@ header {
     gap: 0.55rem;
     position: relative;
     padding-inline-start: 1.65rem;
+    font-weight: 400;
+    color: var(--sl-color-gray-2);
+}
+
+#starlight__sidebar ul.top-level > li > details > summary .large {
+    font-size: var(--sl-text-sm);
+    font-weight: 400;
+    color: var(--sl-color-gray-2);
 }
 
 #starlight__sidebar a.top-level-link-card,
@@ -128,9 +167,9 @@ header {
 
 #starlight__sidebar ul.top-level > li > a.large,
 #starlight__sidebar a.top-level-link-card {
-    color: var(--sl-color-white);
-    font-size: var(--sl-text-lg);
-    font-weight: 600;
+    color: var(--sl-color-gray-2);
+    font-size: var(--sl-text-sm);
+    font-weight: 400;
 }
 
 #starlight__sidebar ul.top-level > li > a.large:hover,
@@ -145,7 +184,7 @@ header {
 #starlight__sidebar ul.top-level > li > details[open] > summary .sidebar-category-icon,
 #starlight__sidebar ul.top-level > li > a.large[aria-current='page'] .sidebar-category-icon,
 #starlight__sidebar a.top-level-link-card[aria-current='page'] .sidebar-category-icon {
-    color: var(--sl-color-accent-high);
+    color: var(--sl-color-accent);
 }
 
 /* Spacing and hover effect for nested (dropdown) links */
@@ -159,17 +198,21 @@ header {
 }
 
 #starlight__sidebar ul.top-level > li > details ul a {
+    border: none;
     border-radius: 0.4rem;
     padding-top: 0.35rem;
     padding-bottom: 0.35rem;
+    font-weight: 400;
+    color: var(--sl-color-white);
     transition: background-color 150ms ease, color 150ms ease, transform 150ms ease;
 }
 
+#starlight__sidebar ul.top-level > li > details ul a[aria-current='page'],
 #starlight__sidebar ul.top-level > li > details ul a:hover,
 #starlight__sidebar ul.top-level > li > details ul a:focus-visible {
-    background-color: var(--sl-color-gray-6);
+    background-color: rgba(248, 101, 69, 0.18);
     color: var(--sl-color-white);
-    transform: translate3d(3px, 0, 0);
+    transform: none;
 }
 
 /* Right-side page navigation (desktop TOC) hover clarity */
@@ -221,7 +264,7 @@ header {
     #starlight__sidebar ul.top-level > li > a.large,
     #starlight__sidebar a.top-level-link-card,
     #starlight__sidebar ul.top-level > li > details > summary .large {
-        font-size: var(--sl-text-base);
+        font-size: var(--sl-text-sm);
     }
 }
 
