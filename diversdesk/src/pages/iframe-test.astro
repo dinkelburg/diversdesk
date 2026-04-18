@@ -1,0 +1,75 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+
+const bookingUrl =
+  "https://example.diversdesk.com/establishment/d06901a7-439d-49d9-827f-84b9004527b5/shop/activity/37d16da1-33a6-4a36-80dc-27287421d755?persist_flow=signin&persist_authMethod=password";
+const generalWebshopUrl =
+  "https://example.diversdesk.com/establishment/d06901a7-439d-49d9-827f-84b9004527b5/shop";
+---
+
+<MainLayout
+  title="Diversdesk Iframe Test"
+  description="Test page for embedding a Diversdesk booking flow in an iframe."
+  robots="noindex, nofollow"
+>
+  <section class="mx-auto w-full max-w-[1700px] px-4 py-8 sm:px-6 lg:px-8">
+    <h1 class="text-2xl font-bold text-neutral-800 dark:text-white">Iframe Test Page</h1>
+    <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+      Use this layout to test embedding behavior with a side panel and a higher iframe.
+    </p>
+    <div class="mt-4 flex flex-wrap items-center gap-2 text-xs">
+      <a
+        href="/iframe-test"
+        class="rounded-md bg-orange-100 px-3 py-1.5 font-medium text-orange-800 hover:bg-orange-200 dark:bg-orange-900/30 dark:text-orange-200"
+      >
+        Side Panel Example
+      </a>
+      <a
+        href="/iframe-test-general"
+        class="rounded-md bg-neutral-100 px-3 py-1.5 font-medium text-neutral-800 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200"
+      >
+        General Webshop Example
+      </a>
+      <a
+        href="/iframe-test-activity"
+        class="rounded-md bg-neutral-100 px-3 py-1.5 font-medium text-neutral-800 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200"
+      >
+        Specific Activity Example
+      </a>
+    </div>
+
+    <div class="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-[360px_1fr]">
+      <aside class="h-fit rounded-xl border border-neutral-200 bg-white p-5 shadow-sm dark:border-neutral-700 dark:bg-neutral-900 lg:sticky lg:top-24">
+        <h2 class="text-base font-semibold text-neutral-800 dark:text-white">Quick Test URLs</h2>
+
+        <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+          General Webshop
+        </p>
+        <p class="mt-1 break-all rounded-md bg-neutral-100 p-3 text-xs text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200">
+          {generalWebshopUrl}
+        </p>
+
+        <p class="mt-4 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+          Specific Activity Booking Page
+        </p>
+        <p class="mt-1 break-all rounded-md bg-neutral-100 p-3 text-xs text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200">
+          {bookingUrl}
+        </p>
+
+        <p class="mt-4 text-xs text-neutral-600 dark:text-neutral-300">
+          Current iframe height is intentionally large to reduce nested scrolling during testing.
+        </p>
+      </aside>
+
+      <div class="overflow-hidden rounded-xl border border-neutral-200 shadow-sm dark:border-neutral-700">
+        <iframe
+          src={bookingUrl}
+          title="Diversdesk Booking Test"
+          class="block h-[1800px] w-full border-0 lg:h-[2200px]"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+</MainLayout>

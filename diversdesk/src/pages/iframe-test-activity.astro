@@ -1,0 +1,50 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+
+const activityBookingUrl =
+  "https://example.diversdesk.com/establishment/d06901a7-439d-49d9-827f-84b9004527b5/shop/activity/37d16da1-33a6-4a36-80dc-27287421d755?persist_flow=signin&persist_authMethod=password";
+---
+
+<MainLayout
+  title="Diversdesk Iframe Test - Specific Activity"
+  description="Test page for embedding a specific Diversdesk activity booking URL."
+  robots="noindex, nofollow"
+>
+  <section class="mx-auto w-full max-w-[1500px] px-4 py-8 sm:px-6 lg:px-8">
+    <h1 class="text-2xl font-bold text-neutral-800 dark:text-white">Specific Activity Embed Test</h1>
+    <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">
+      Use this page to test deep-linking directly to one activity booking flow.
+    </p>
+
+    <div class="mt-4 flex flex-wrap items-center gap-2 text-xs">
+      <a
+        href="/iframe-test"
+        class="rounded-md bg-neutral-100 px-3 py-1.5 font-medium text-neutral-800 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200"
+      >
+        Side Panel Example
+      </a>
+      <a
+        href="/iframe-test-general"
+        class="rounded-md bg-neutral-100 px-3 py-1.5 font-medium text-neutral-800 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-200"
+      >
+        General Webshop Example
+      </a>
+      <a
+        href="/iframe-test-activity"
+        class="rounded-md bg-orange-100 px-3 py-1.5 font-medium text-orange-800 hover:bg-orange-200 dark:bg-orange-900/30 dark:text-orange-200"
+      >
+        Specific Activity Example
+      </a>
+    </div>
+
+    <div class="mt-6 overflow-hidden rounded-xl border border-neutral-200 shadow-sm dark:border-neutral-700">
+      <iframe
+        src={activityBookingUrl}
+        title="Diversdesk Specific Activity Test"
+        class="block h-[1800px] w-full border-0 lg:h-[2200px]"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
+    </div>
+  </section>
+</MainLayout>
