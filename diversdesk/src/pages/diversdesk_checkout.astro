@@ -3,7 +3,9 @@ import MainLayout from "@/layouts/MainLayout.astro";
 import { SITE } from "@data/constants";
 
 const promoCode = Astro.url.searchParams.get("promo")?.trim().toUpperCase();
-const isAdexPromo = promoCode === "ADEX25";
+const supportedExpoPromoCodes = new Set(["ADEX25", "TDEX25"]);
+const isExpoPromo = promoCode ? supportedExpoPromoCodes.has(promoCode) : false;
+const expoName = promoCode?.startsWith("ADEX") ? "ADEX" : promoCode?.startsWith("TDEX") ? "TDEX" : null;
 
 const pricingPlans = [
   {
@@ -64,7 +66,7 @@ const pricingPlans = [
 ];
 
 const pricingPlansWithCheckout = pricingPlans.map((plan) => {
-  if (!isAdexPromo) {
+  if (!isExpoPromo || !promoCode) {
     return plan;
   }
 
@@ -85,13 +87,13 @@ const pageTitle = `Activate Your Subscription | ${SITE.title}`;
   description="Ensure uninterrupted access to your DiversDesk environment. Activate your subscription today and keep your dive operations running smoothly."
 >
   <section class="mx-auto max-w-[1520px] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-    {isAdexPromo && (
+    {isExpoPromo && promoCode && expoName && (
       <div class="mx-auto mb-8 max-w-4xl rounded-2xl border border-orange-300 bg-orange-50 p-6 text-center shadow-sm dark:border-orange-700/40 dark:bg-orange-900/20">
-        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-700 dark:text-orange-300">ADEX Exclusive Offer</p>
+        <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-700 dark:text-orange-300">{expoName} Exclusive Offer</p>
         <h2 class="mt-2 text-2xl font-bold text-neutral-900 dark:text-white">Your 25% Annual Discount Is Loaded</h2>
         <p class="mt-3 text-base text-neutral-700 dark:text-neutral-200">
           Promo code <strong>{promoCode}</strong> is pre-applied on the Stripe checkout pages below.
-          Complete your annual subscription to claim the ADEX rate.
+          Complete your annual subscription to claim the {expoName} rate.
         </p>
       </div>
     )}
