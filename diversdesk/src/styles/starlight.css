@@ -53,6 +53,11 @@ header {
     background-color: var(--backdrop-color) !important;
 }
 
+/* Keep sidebar width stable when expanding/collapsing groups adds/removes vertical scrolling. */
+#starlight__sidebar {
+    scrollbar-gutter: stable;
+}
+
 #starlight__sidebar ul.top-level > li + li {
     margin-top: 0.6rem;
 }
@@ -94,6 +99,14 @@ header {
     background: rgba(248, 101, 69, 0.14);
     border: 1px solid rgba(248, 101, 69, 0.2);
     box-shadow: none;
+}
+
+/* Keep sidebar badges visually consistent even on the selected page item. */
+#starlight__sidebar .sidebar-content a[aria-current='page'] > .sl-badge.default {
+    --sl-color-bg-badge: var(--sl-badge-default-bg);
+    --sl-color-border-badge: var(--sl-badge-default-border);
+    --sl-color-text-badge: var(--sl-badge-default-text);
+    color: var(--sl-color-text-badge);
 }
 
 /* Keep a clear marker for groups containing the active nested page,
@@ -514,6 +527,13 @@ article.card {
     max-width: 100%;
     height: auto;
     margin-inline: auto;
+}
+
+/* Ensure docs images keep their original aspect ratio when resized or zoomed. */
+.sl-markdown-content img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 @media (min-width: 48rem) {
