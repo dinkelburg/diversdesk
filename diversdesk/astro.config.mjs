@@ -131,7 +131,10 @@ export default defineConfig({
       },
       {
         label: 'Updates',
-        link: '/updates'
+        collapsed: true,
+        autogenerate: {
+          directory: 'updates'
+        }
       },
     ],
     disable404Route: true,

@@ -5,7 +5,6 @@ slug: user_manual/retail
 sidebar:
     label: Retail
     order: 2
-    badge: New
 pagefind: false
 robots: noindex, nofollow
 

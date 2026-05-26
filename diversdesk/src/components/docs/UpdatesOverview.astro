@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content';
+
+type UpdateCard = {
+  id: string;
+  href: string;
+  title: string;
+  description: string;
+  sortOrder: number | null;
+  sortDate: Date | null;
+  dateLabel: string;
+};
+
+const docsEntries = await getCollection('docs');
+
+const parseDateFromTitle = (title: string): { dateLabel: string; cleanTitle: string; parsedDate: Date | null } => {
+  const match = title.match(/^(\d{1,2}\s+[A-Za-z]{3}\s+\d{4})\s+-\s+(.+)$/);
+  if (!match) {
+    return {
+      dateLabel: 'Update',
+      cleanTitle: title,
+      parsedDate: null,
+    };
+  }
+
+  const [, rawDate, rawTitle] = match;
+  const parsed = new Date(rawDate);
+  return {
+    dateLabel: rawDate,
+    cleanTitle: rawTitle,
+    parsedDate: Number.isNaN(parsed.getTime()) ? null : parsed,
+  };
+};
+
+const parseDateFromId = (id: string): Date | null => {
+  const isoMatch = id.match(/(\d{4})-(\d{2})-(\d{2})/);
+  if (isoMatch) {
+    const [, y, m, d] = isoMatch;
+    return new Date(`${y}-${m}-${d}`);
+  }
+
+  const shortMatch = id.match(/(^|\/)(\d{2})(\d{2})(\d{2})_/);
+  if (shortMatch) {
+    const [, , yy, mm, dd] = shortMatch;
+    return new Date(`20${yy}-${mm}-${dd}`);
+  }
+
+  return null;
+};
+
+const updates: UpdateCard[] = docsEntries
+  .filter((entry) => entry.id.startsWith('updates/'))
+  .filter((entry) => entry.id !== 'updates/index')
+  .map((entry) => {
+    const { dateLabel, cleanTitle, parsedDate } = parseDateFromTitle(entry.data.title);
+    const idWithoutExt = entry.id.replace(/\.(md|mdx)$/i, '');
+    const href = `/${idWithoutExt}/`;
+
+    return {
+      id: entry.id,
+      href,
+      title: cleanTitle,
+      description: entry.data.description ?? 'Read the full release notes for this update.',
+      sortOrder: entry.data.sidebar?.order ?? null,
+      sortDate: parsedDate ?? parseDateFromId(entry.id),
+      dateLabel,
+    };
+  })
+  .sort((a, b) => {
+    if (a.sortOrder !== null && b.sortOrder !== null && a.sortOrder !== b.sortOrder) {
+      return a.sortOrder - b.sortOrder;
+    }
+
+    if (a.sortOrder !== null && b.sortOrder === null) {
+      return -1;
+    }
+
+    if (a.sortOrder === null && b.sortOrder !== null) {
+      return 1;
+    }
+
+    const left = a.sortDate ? a.sortDate.getTime() : 0;
+    const right = b.sortDate ? b.sortDate.getTime() : 0;
+    return right - left;
+  });
+
+---
+
+<section aria-label="All releases">
+  <div class="updates-list" role="list">
+    {updates.map((entry, index) => (
+      <a class={`updates-card ${index === 0 ? 'updates-card-featured' : ''}`} href={entry.href} role="listitem">
+        <div class="updates-card-main">
+          <div class="updates-card-topline">
+            <p class="updates-card-line">{entry.dateLabel} · {entry.title}</p>
+            {index === 0 && <span class="updates-card-badge">New Release!</span>}
+          </div>
+          <p class="updates-card-desc">{entry.description}</p>
+        </div>
+        <span class="updates-card-arrow" aria-hidden="true">&#8250;</span>
+      </a>
+    ))}
+  </div>
+</section>
