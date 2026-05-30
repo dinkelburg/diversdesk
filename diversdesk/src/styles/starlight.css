@@ -536,6 +536,13 @@ article.card {
     object-fit: contain;
 }
 
+/* Zoomed clones should not inherit content-level max-size constraints.
+   This prevents slight aspect distortion when source images use inline max-width styles. */
+.starlight-image-zoom-image {
+    max-width: none !important;
+    max-height: none !important;
+}
+
 @media (min-width: 48rem) {
     .sl-markdown-content .login-intro-image {
         width: var(--login-image-width-md, var(--login-image-width, 100%));

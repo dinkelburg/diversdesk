@@ -8,6 +8,8 @@ sidebar:
 robots: noindex
 ---
 
+import VideoLightbox from '@components/VideoLightbox.astro';
+
 Below, you will find the details of Diversdesk's first self-booking version, which involves a redirect from your website or a link you can share with your customers. This link directs them to either **My Page**, the desired **activity**, or directly to **step 1 of the registration process** within your Diversdesk environment.
 
 ## When to Use Direct Bookings
@@ -22,7 +24,9 @@ Direct bookings are **automatically scheduled in your planner** and marked with 
 
 Once activated, the direct booking functionality can be accessed through your My Page, where opening any activity card shows the **Book now!** button instead of an Inquiry button.
 
-![Direct booking or self-booking option](/images/book_now.png)
+<div style="text-align: center; margin: 20px 0;">
+  <img src="/images/book_now.png" alt="Direct booking or self-booking option" style="max-width: 50%;" />
+</div>
 
 ## The 3 Types of Redirect
 
@@ -30,10 +34,14 @@ Once activated, the direct booking functionality can be accessed through your My
 
 Use the URL to My Page from your website or share it directly with your customer. The customer can then select an activity and book a selected date.
 
-![Copy the URL to My Page](/images/copy_url_to_my_page.gif)
+<VideoLightbox
+  src="/images/copy_url_to_my_page.gif"
+  label="Copy the URL to My Page"
+  previewDesktopWidth="80%"
+/>
 
 :::tip[Tip]
-You can share the URL to My Page with a specific category expanded. To do this, paste **?activity={activity-category}** behind the default URL to My Page.
+You can share the URL to My Page with a specific category expanded. To do this, paste `?activity={activity-category}` behind the default URL to My Page.
 :::
 
 ![Example URL with preselected activity category](/images/example_url_fun-diving.png)
@@ -42,13 +50,21 @@ You can share the URL to My Page with a specific category expanded. To do this, 
 
 If you already know which activity your customer will join but want them to select their own date, share a direct link to that activity.
 
-![Copy the URL to a specific activity](/images/copy_url_to_activity.gif)
+<VideoLightbox
+  src="/images/copy_url_to_activity.gif"
+  label="Copy the URL to a specific activity"
+  previewDesktopWidth="80%"
+/>
 
 ### 3. Redirect Directly to the Registration Process
 
 If you only want your customer to register without showing activity details, share the hyperlink behind the **Book Now!** button of the selected activity.
 
-![Copy the URL from the Book Now button](/images/copy_url_to_book_now_button.gif)
+<VideoLightbox
+  src="/images/copy_url_to_book_now_button.gif"
+  label="Copy the URL from the Book Now button"
+  previewDesktopWidth="80%"
+/>
 
 ## Customer Flow
 

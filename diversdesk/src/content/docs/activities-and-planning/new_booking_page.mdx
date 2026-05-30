@@ -7,6 +7,8 @@ sidebar:
 robots: noindex, nofollow
 ---
 
+import VideoLightbox from '@components/VideoLightbox.astro';
+
 The heart of your daily operations has a brand-new look and feel, designed to reduce clicks and keep you organized.
 
 
@@ -14,7 +16,12 @@ The heart of your daily operations has a brand-new look and feel, designed to re
 <div style="text-align: center; margin: 20px 0;">
   <img src="/images/new-booking-page-ux.avif" 
        alt="Renewed Diversdesk Booking Page Image" 
-       style="max-width: 80%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  width="2880"
+  height="1716"
+  loading="eager"
+  decoding="sync"
+  fetchpriority="high"
+       style="max-width: 80%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 </div>
 
 ## Architecture
@@ -23,7 +30,7 @@ The heart of your daily operations has a brand-new look and feel, designed to re
 The left panel displays the participants or guests for the booking, along with booking share options.
 
 ### Right Panel
-In the right panel, you’ll find billing and payment information. The top section prominently displays the outstanding balance and a payment ledger with full history. <br>
+In the right panel, you'll find billing and payment information. The top section prominently displays the outstanding balance and a payment ledger with full history. <br />
 As before, you can generate invoices here that will automatically lock the booking for consistency.
 
 ### Middle content section
@@ -34,7 +41,7 @@ The middle section features a summary card at the top with all activities listed
 <div style="text-align: center; margin: 20px 0;">
   <img src="/images/booking-page-manage-button.avif" 
        alt="Location of the centralized manage button on the booking page" 
-       style="max-width: 80%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+       style="max-width: 80%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 </div>
 
 
@@ -52,7 +59,7 @@ Saving you from chasing individual hyperlinks spread across the page.
   <div style="flex: 1; text-align: right;">
   <img src="/images/booking-page-centralized-manage-button.avif" 
       alt="Menu under the centralized action button on the booking page" 
-      style="max-width: 60%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      style="max-width: 60%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
   </div>
 
 </div>
@@ -63,21 +70,23 @@ We’ve removed the clutter of individual menus on activity cards. Now, simply c
 
 Need to make broader changes? Selecting **Edit Booking** from the **+Manage** button opens a side panel where you can oversee the entire booking. From here, you can also jump into the individual activity or accommodation cards at the bottom of the view to make item-specific updates.
 
-<!-- <div style="flex: 1;">
+{/* <div style="flex: 1;">
   <img src="/images/activity-card-updated.avif" 
        alt="Activity card on the booking page" 
        style="display: block; margin: 0 auto; max-width: 50%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-</div> -->
+</div> */}
 
 <div style="flex: 1; text-align: left;">
-  <img src="/images/opening-card-side-panel.gif" 
-       alt="Activity card on the booking page" 
-       style="display: block; margin-left: 0; margin-right: auto; max-width: 80%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+  <VideoLightbox
+    src="/images/opening-card-side-panel.gif"
+    label="Open activity card side panel walkthrough"
+    previewDesktopWidth="80%"
+  />
 </div>
 
-<!-- **📊 Enhanced Visibility**
+{/* **📊 Enhanced Visibility**
 * **Taxes & Fees** Tax rates per set per Activity Category or and show now automomatically in the bill & invoice if set.
-* **Cleaner Interface:** Easier insight in guest details and trip information. -->
+* **Cleaner Interface:** Easier insight in guest details and trip information. */}
 
 ## Actions
 

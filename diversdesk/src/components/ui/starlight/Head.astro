@@ -331,3 +331,97 @@ const robotsDirective = Astro.url.pathname.startsWith('/support')
     document.addEventListener('astro:page-load', initializeHeadingCopy);
   })();
 </script>
+
+<script is:inline>
+  (() => {
+    if (window.__ddZoomCaptionGuardInitialized) {
+      return;
+    }
+    window.__ddZoomCaptionGuardInitialized = true;
+
+    const GAP_PX = 12;
+
+    const adjustZoomImageForCaption = () => {
+      const dialog = document.querySelector('.starlight-image-zoom-dialog[open]');
+      if (!(dialog instanceof HTMLDialogElement)) {
+        return;
+      }
+
+      const zoomedImage = dialog.querySelector('.starlight-image-zoom-image');
+      if (!(zoomedImage instanceof HTMLElement)) {
+        return;
+      }
+
+      const top = parseFloat(zoomedImage.style.top);
+      const height = parseFloat(zoomedImage.style.height);
+      if (!isFinite(top) || !isFinite(height)) {
+        return;
+      }
+
+      // Use offsetHeight so we measure actual rendered box size, not visual rect.
+      // Note: the zoom dialog is in the browser top layer (showModal), so the
+      // site header is rendered BEHIND it — headerH must NOT be subtracted here.
+      const caption = dialog.querySelector('figcaption');
+      const captionH = caption ? caption.offsetHeight : 0;
+
+      const minTop = GAP_PX;
+      const maxBottom = window.innerHeight - captionH - GAP_PX;
+      const availH = maxBottom - minTop;
+      const imageBottom = top + height;
+
+      if (imageBottom <= maxBottom) {
+        return; // No overlap — nothing to do.
+      }
+
+      const newTop = top - (imageBottom - maxBottom);
+
+      if (newTop >= minTop) {
+        // Simple upward shift fits without clipping the top edge.
+        zoomedImage.style.top = `${newTop}px`;
+      } else {
+        // Image is too tall to fit — scale it down proportionally.
+        const width = parseFloat(zoomedImage.style.width);
+        const scale = availH / height;
+        zoomedImage.style.top = `${minTop}px`;
+        zoomedImage.style.height = `${availH}px`;
+        if (isFinite(width)) {
+          const newWidth = width * scale;
+          zoomedImage.style.width = `${newWidth}px`;
+          zoomedImage.style.left = `${(window.innerWidth - newWidth) / 2}px`;
+        }
+      }
+    };
+
+    const scheduleAdjust = () => {
+      // Double rAF + setTimeout lets the dialog fully paint before we measure.
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setTimeout(adjustZoomImageForCaption, 0);
+        });
+      });
+    };
+
+    const initializeZoomCaptionGuard = () => {
+      // Watch for the class that starlight-image-zoom adds when an image is opened.
+      const bodyObserver = new MutationObserver(() => {
+        if (document.body.classList.contains('starlight-image-zoom-opened')) {
+          scheduleAdjust();
+        }
+      });
+
+      bodyObserver.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['class'],
+      });
+
+      // Re-run on viewport resize in case the user resizes while a dialog is open.
+      window.addEventListener('resize', scheduleAdjust, { passive: true });
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeZoomCaptionGuard, { once: true });
+    } else {
+      initializeZoomCaptionGuard();
+    }
+  })();
+</script>

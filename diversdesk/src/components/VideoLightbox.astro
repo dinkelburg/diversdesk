@@ -15,14 +15,23 @@ const {
   id = `video-dialog-${Math.random().toString(36).slice(2, 9)}`,
   previewDesktopWidth = "80%",
 } = Astro.props;
+
+const normalizedSrc = src.split('?')[0].toLowerCase();
+const isGif = normalizedSrc.endsWith('.gif');
+const isMp4 = normalizedSrc.endsWith('.mp4');
+const sourceType = isMp4 ? 'video/mp4' : 'video/webm';
 ---
 
 <div class="video-lightbox-wrapper" style={`--video-preview-desktop-width: ${previewDesktopWidth};`}>
   <button type="button" class="video-lightbox-trigger" aria-label={label} onclick={`document.getElementById('${id}').showModal()`}>
-    <video autoplay muted loop playsinline class="video-preview">
-      <source src={src} type="video/webm" />
-      Your browser does not support the video tag.
-    </video>
+    {isGif ? (
+      <img src={src} alt={label} class="video-preview-image" />
+    ) : (
+      <video autoplay muted loop playsinline class="video-preview">
+        <source src={src} type={sourceType} />
+        Your browser does not support the video tag.
+      </video>
+    )}
   </button>
 </div>
 
@@ -34,14 +43,22 @@ const {
       aria-label="Close video preview"
       onclick={`document.getElementById('${id}').close()`}
     >&times;</button>
-    <video controls autoplay muted loop playsinline class="video-dialog-player">
-      <source src={src} type="video/webm" />
-      Your browser does not support the video tag.
-    </video>
+    {isGif ? (
+      <img src={src} alt={label} class="video-dialog-image" />
+    ) : (
+      <video controls autoplay muted loop playsinline class="video-dialog-player">
+        <source src={src} type={sourceType} />
+        Your browser does not support the video tag.
+      </video>
+    )}
   </div>
 </dialog>
 
 <style>
+  :root {
+    --video-dialog-safe-pad: clamp(12px, 2vw, 24px);
+  }
+
   .video-lightbox-wrapper {
     text-align: center;
     margin: 20px 0;
@@ -61,23 +78,39 @@ const {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
+  .video-preview-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
   @media (min-width: 768px) {
-    .video-preview {
+    .video-preview,
+    .video-preview-image {
       width: var(--video-preview-desktop-width, 80%);
     }
   }
 
   .video-dialog {
-    width: min(92vw, 1100px);
-    max-width: 1100px;
+    display: none;
     padding: 0;
     border: 0;
     background: transparent;
-    margin: auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  }
+
+  .video-dialog[open] {
+    display: grid;
+    width: 100vw;
+    width: 100dvw;
+    height: 100vh;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    padding: var(--video-dialog-safe-pad);
+    margin: 0;
+    overflow: hidden;
+    place-items: center;
   }
 
   :global(.video-dialog::backdrop) {
@@ -87,7 +120,15 @@ const {
 
   .video-dialog-content {
     position: relative;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(97vw, 1400px);
+    max-width: 100%;
+    /* Explicit height so both <img> and <video> share the same bounding box.
+       Without this, max-height behaves differently for each element type,
+       making a 4:3 GIF appear narrower than a 16:9 video. */
+    height: calc(100dvh - (2 * var(--video-dialog-safe-pad)));
   }
 
   .video-dialog-close {
@@ -111,9 +152,21 @@ const {
 
   .video-dialog-player {
     width: 100%;
-    max-height: 85vh;
+    height: 100%;
     border-radius: 12px;
     background: #000000;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    object-fit: contain;
+    display: block;
+  }
+
+  .video-dialog-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: #000000;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    object-fit: contain;
+    display: block;
   }
 </style>
