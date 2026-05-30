@@ -40,15 +40,15 @@ To create a rental item, click the '+ Create Rental Item' button in the top righ
 
 This opens a side-panel where you can enter all the rental item's information. Here's an overview of each entry field:
 
-<div style="display: flex; align-items: center;">
-  <div class="w-1/2 md:w-2/5 mx-auto" style="margin-right: 20px;">
+<div class="split-media">
+  <div class="split-media-media split-media-media--narrow-mobile">
     <img
       src="/images/user_manual/side-panel-rental-gear.avif"
       alt="Available entry fields for rental items"
       style="max-width: 100%; height: auto; display: block;"
     />
   </div>
-  <div class="description-text">
+  <div class="description-text split-media-text">
     <p><strong>Category:</strong> Rental category name. <em>E.g. BCD or Wetsuit.</em></p>
     <p><strong>Title:</strong> You can use this field to add either a type or descriptive title that helps you recognize the rental item. <em>E.g. Basic Jacket or Aquaride (Integrated weights).</em></p>
     <p><strong>Brand:</strong> The Brand of your rental Item.</p>
@@ -148,16 +148,16 @@ It's possible to assign gear a second time in a day. If you do, a warning will b
 If for whatever reason you can't complete the gear check, you can leave the 'Gear Check Complete' check box open to continue the assignment at a later stage. At a higher level, you and your colleagues can see there's gear assigned to this customer, but the gear check hasn't been marked complete. 
 <br>
 
-<div style="display: flex; align-items: center;">
-  <div class="w-1/2 md:w-1/2 mx-auto" style="margin-right: 20px;">
+<div class="split-media">
+  <div class="split-media-media">
     <img
       src="/images/user_manual/gear-check-indication.avif"
       alt="Available entry fields for rental items"
       style="max-width: 100%; height: auto; display: block;"
     />
   </div>
-  <div class="description-text">
-    <p>The image on the left displays the gear check column on the Day Manifest page. The bottom check is complete, whereas the top participant has assigned gear but the check is not yet marked as complete.</p>
+  <div class="description-text split-media-text">
+    <p>The image shown here displays the gear check column on the Day Manifest page. The bottom check is complete, whereas the top participant has assigned gear but the check is not yet marked as complete.</p>
   </div>
 </div>
 
@@ -181,6 +181,29 @@ To add the Gear Check column to the Detailed Day page, just click the 'Customize
 
 
 <style>
+  .split-media {
+    display: block;
+  }
+
+  .split-media-media,
+  .split-media-text {
+    width: 100%;
+  }
+
+  .split-media-media--narrow-mobile {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .split-media-media {
+    margin-bottom: 12px;
+  }
+
+  .description-text.split-media-text {
+    font-size: 1em;
+  }
+
   .description-text {
     flex: 1; /* Retain flex property - though less relevant in a pure grid context now */
     font-size: 0.7em; /* Default font size for mobile (smaller) */
@@ -198,8 +221,23 @@ To add the Gear Check column to the Detailed Day page, just click the 'Customize
 
   /* Media query for desktop screens (or larger tablets) */
   @media (min-width: 768px) { /* Adjust this breakpoint if needed to match your md: from Tailwind */
-    .description-text {
-      font-size: 0.9em; /* Larger font size for desktop */
+    .split-media {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .split-media-media,
+    .split-media-text {
+      width: 50%;
+    }
+
+    .split-media-media {
+      margin-bottom: 0;
+    }
+
+    .description-text.split-media-text {
+      font-size: 1.05em;
     }
   }
 </style>
