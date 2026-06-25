@@ -1,19 +1,20 @@
 ---
-title: Adding an Icon to Your Mobile Home Screen
-description: A guide how to add a hyperlink icon to your mobile phone's homescreen
-slug: articles/add_to_homescreen
+title: How do I place an app-icon to my mobile homescreen?
+description: A quick guide to placing a Diversdesk app icon on your mobile home screen.
+slug: faq/mobile_homescreen_icon
 sidebar:
-    label: Mobile Homescreen Icon
+    label: How do I place an app-icon to my mobile homescreen?
     order: 5
 robots: noindex
 ---
 
-Adding an icon (website shortcut) to your homescreen is a great way to swiftly jump to you planner at any given time. 
-On Iphone this is easily done through 
+Adding an icon (website shortcut) to your homescreen is a great way to swiftly jump to your planner at any given time.
+
+On iPhone this is easily done through:
 
 :::note[Note]
 This example is made on an iPhone using a Safari browser.
-::: 
+:::
 
 1. **1.** Navigate to your planner hub and press the export button at the bottom of your browser
 2. **2.** Scroll up and press 'Add to Home Screen'

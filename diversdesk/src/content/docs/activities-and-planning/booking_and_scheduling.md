@@ -1,9 +1,9 @@
 ---
-title: Booking and scheduling
-description: How to create your first activity
+title: Planner
+description: Use the Planner page to create, manage, and schedule your activities.
 slug: user_manual/booking_and_scheduling
 sidebar:
-    label: Booking and Scheduling
+    label: Planner
     order: 1
 robots: noindex
 ---

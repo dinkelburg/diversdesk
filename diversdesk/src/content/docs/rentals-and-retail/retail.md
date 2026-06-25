@@ -1,10 +1,10 @@
 ---
-title: Retail
+title: Retail Stock
 description: Read how to create rental items, setup service triggers and assign gear to participants
-slug: user_manual/retail
+slug: user_manual/retail_stock
 sidebar:
-    label: Retail
-    order: 2
+  label: Retail Stock
+  order: 2
 pagefind: false
 robots: noindex, nofollow
 

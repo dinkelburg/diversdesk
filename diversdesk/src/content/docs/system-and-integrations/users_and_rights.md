@@ -1,9 +1,9 @@
 ---
-title: Users and Rights
-description: Allocate different rights to your staff members
-slug: user_manual/users_and_rights
+title: Permissions
+description: Use the Permissions page to manage user access and staff roles.
+slug: user_manual/permissions
 sidebar:
-    label: Users and Rights
+    label: Permissions
     order: 1
 robots: noindex
 ---
@@ -23,7 +23,7 @@ A user with staf+ rights can view all planning related pages, but has no rights 
 **3. Manager rights** </br>
 When given manager rights, a user can view and edit all existing content.
 
-
 ![Distinct Divemasters and Instructors through the diving level drop-down](/images/user_diving_level.jpg)
 
-The appropriate diving level can be given here. A staff member given Divemaster or Instructor rights has access to a personal page named 'My Page'. Read more about my page [here.](/articles/custom_registration_form)
+The appropriate diving level can be given here. A staff member given Divemaster or Instructor rights has access to a personal page named 'My Page'. Read more in the [custom registration form guide](/articles/custom_registration_form).
+

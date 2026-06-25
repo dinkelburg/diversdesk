@@ -27,7 +27,12 @@ export default defineConfig({
     "/insights/insight-3": "/insights/insight3-2024-trends-diving-industry",
     "/insights/insight-4": "/insights/insight4-combating-plastic-polution",
     "/blog/en/top-features-in-dive-center-management-softward": "/blog/en/top-features-in-dive-center-management-software",
-    "/insights/diversdesk-liveboard-subscription": "/insights/diversdesk-liveaboard-subscription"
+    "/insights/diversdesk-liveboard-subscription": "/insights/diversdesk-liveaboard-subscription",
+    "/articles/add_to_homescreen": "/faq/mobile_homescreen_icon",
+    "/faq/add_to_homescreen": "/faq/mobile_homescreen_icon",
+    "/user_manual/retail": "/user_manual/retail_stock",
+    "/user_manual/customer_base": "/user_manual/customers",
+    "/user_manual/users_and_rights": "/user_manual/permissions"
   },
   
   image: {
@@ -63,71 +68,174 @@ export default defineConfig({
     defaultLocale: "root",
     sidebar: [
       {
-        label: 'Brief Introduction',
-        slug: 'user_manual/brief_introduction'
+        label: 'Getting Started',
+        collapsed: true,
+        items: [
+          'quickstart_guide',
+          'user_manual/brief_introduction',
+          'user_manual/login',
+          'user_manual/setup_your_environment',
+          'user_manual/menu_and_navigation',
+        ]
       },
       {
-        label: 'Getting Started & Workflows',
+        label: 'User Manual',
         collapsed: true,
-        autogenerate: {
-          directory: 'getting-started-and-workflows'
-        }
+        items: [
+          {
+            label: 'Activities',
+            collapsed: false,
+            items: [
+              {
+                label: 'Planner',
+                slug: 'user_manual/booking_and_scheduling'
+              },
+              {
+                label: 'Day Manifest',
+                slug: 'user_manual/day_manifest'
+              },
+              {
+                label: 'Pricing',
+                slug: 'user_manual/pricing'
+              },
+              {
+                label: 'Webshop',
+                slug: 'user_manual/activities_webshop'
+              },
+            ]
+          },
+          {
+            label: 'Accommodation',
+            collapsed: false,
+            items: [
+              {
+                label: 'Calendar',
+                slug: 'user_manual/accommodation_calendar'
+              },
+              {
+                label: 'Webshop',
+                slug: 'user_manual/accommodation_webshop'
+              },
+            ]
+          },
+          {
+            label: 'Bookings',
+            slug: 'user_manual/bookings'
+          },
+          {
+            label: 'Customers',
+            slug: 'user_manual/customers'
+          },
+          {
+            label: 'Rentals',
+            collapsed: false,
+            items: [
+              {
+                label: 'Rental Items',
+                slug: 'user_manual/rental_items'
+              },
+              {
+                label: 'Rental Overview',
+                slug: 'user_manual/rental_overview'
+              },
+            ]
+          },
+          {
+            label: 'Retail POS',
+            collapsed: false,
+            items: [
+              {
+                label: 'Retail Stock',
+                slug: 'user_manual/retail_stock'
+              },
+              {
+                label: 'Webshop',
+                slug: 'user_manual/retail_pos_webshop'
+              },
+            ]
+          },
+          {
+            label: 'Reporting',
+            collapsed: false,
+            items: [
+              {
+                label: 'Metrics',
+                slug: 'user_manual/metrics'
+              },
+              {
+                label: 'Sales',
+                slug: 'user_manual/sales'
+              },
+              {
+                label: 'Payments',
+                slug: 'user_manual/payments'
+              },
+            ]
+          },
+          {
+            label: 'Webshop',
+            slug: 'user_manual/webshop'
+          },
+          {
+            label: 'Staff',
+            collapsed: false,
+            items: [
+              {
+                label: 'Workload',
+                slug: 'user_manual/workload'
+              },
+              {
+                label: 'Permissions',
+                slug: 'user_manual/permissions'
+              },
+            ]
+          },
+          {
+            label: 'Settings',
+            slug: 'user_manual/settings'
+          },
+        ]
       },
       {
-        label: 'Activities & Planning',
+        label: 'Features & Resources',
         collapsed: true,
-        autogenerate: {
-          directory: 'activities-and-planning'
-        }
+        items: [
+          'user_manual/discount-calculator',
+          'articles/direct_bookings',
+          'articles/website_iframe_integration',
+          'articles/custom_registration_form',
+          'articles/custom_waiver',
+          'articles/waiver_terms',
+          'articles/waiver_cheatsheet',
+          'articles/tags',
+          'articles/connecting-quickbooks',
+          'user_manual/add-ons',
+          'user_manual/tanks_and_blends',
+          'new_booking_page',
+        ]
       },
       {
-        label: 'Accommodation',
+        label: 'Workflows',
         collapsed: true,
-        autogenerate: {
-          directory: 'accommodation'
-        }
+        items: [
+          'user_manual/registration_methods',
+          'user_manual/creating_onboarding_journeys',
+          'articles/adding_dives_to_an_ongoing_activity',
+        ]
       },
       {
-        label: 'Rentals & Retail',
+        label: 'Video Training',
         collapsed: true,
-        autogenerate: {
-          directory: 'rentals-and-retail'
-        }
+        items: [
+          'video_training',
+        ]
       },
       {
-        label: 'Guest Experience',
+        label: 'FAQ & Troubleshooting',
         collapsed: true,
-        autogenerate: {
-          directory: 'guest-experience'
-        }
-      },
-      {
-        label: 'Webshop & Online Sales',
-        collapsed: true,
-        autogenerate: {
-          directory: 'webshop-and-online-sales'
-        }
-      },
-      {
-        label: 'Finance & Data',
-        collapsed: true,
-        autogenerate: {
-          directory: 'finance-and-data'
-        }
-      },
-      {
-        label: 'System & Integrations',
-        collapsed: true,
-        autogenerate: {
-          directory: 'system-and-integrations'
-        }
-      },
-      {
-        label: 'Video Tutorials',
-        collapsed: true,
-        autogenerate: {
-          directory: 'video-tutorials'
-        }
+        items: [
+          'faq/mobile_homescreen_icon',
+        ]
       },
       {
         label: 'Updates',

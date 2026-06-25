@@ -3,14 +3,14 @@ title: Diversdesk Docs
 head:
   - tag: title
     content: Diversdesk Docs
-description: Explore Diversdesk's comprehensive documentation for an in-depth look at our software its features. 
+description: Explore Diversdesk's documentation hub for onboarding, user guidance, features, workflows, training, troubleshooting, and updates.
 template: splash
 editUrl: false
 lastUpdated: false
 next: false
 hero:
   title: Documentation Hub
-  tagline: Your central hub for guidance, documentation and support.
+  tagline: Your central hub for onboarding, user guidance, workflows, training, troubleshooting, and updates.
   image:
       alt: A Diversdesk Logo
       dark: /public/images/Divers_desk_own_screen.png
@@ -28,23 +28,48 @@ hero:
 robots: noindex, nofollow
 ---
 import "@/styles/starlight_main.css";
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
 <CardGrid stagger>
+  <LinkCard
+    title="Getting Started"
+    href="../quickstart_guide/"
+    description="Start with onboarding, login, setup, and navigation guidance for first-time users."
+  />
 
-  <Card title="Quick Start Guide" icon="document">
-    Get up and running swiftly with our straightforward and concise Quickstart Guide, designed to help new users get started in just a few steps.  
-  </Card>
+  <LinkCard
+    title="User Manual"
+    href="../user_manual/booking_and_scheduling/"
+    description="Find page-by-page guidance that mirrors the main sections operators use inside the application."
+  />
 
-  <Card title="User Manual" icon="seti:eslint">
-    Discover a complete and in-depth description of Diversdesk's functionalities. Each subsection offers detailed specifications, usage instructions, and examples.
-  </Card>
+  <LinkCard
+    title="Features &amp; Resources"
+    href="../user_manual/discount-calculator/"
+    description="Explore feature explainers, module documentation, configuration guidance, and deeper reference articles."
+  />
 
-   <Card title="Articles" icon="seti:puppet">
-    Explore our supporting articles for tips, tricks, and example use cases to help you get the most out of Diversdesk.
-  </Card>
+  <LinkCard
+    title="Workflows"
+    href="../user_manual/registration_methods/"
+    description="Follow practical business workflows and step-by-step operating use cases across the platform."
+  />
 
-   <Card title="Updates" icon="seti:terraform">
-    Explore our latest updates and the new features we've added for you.
-  </Card>
+  <LinkCard
+    title="Video Training"
+    href="../video_training/"
+    description="Open the video training area for guided walkthroughs and visual learning resources."
+  />
+
+  <LinkCard
+    title="FAQ &amp; Troubleshooting"
+    href="../faq/mobile_homescreen_icon/"
+    description="Use quick-answer help pages and troubleshooting guidance for common operator questions."
+  />
+
+  <LinkCard
+    title="Updates"
+    href="../updates/"
+    description="Review the latest release notes and product improvements added to Diversdesk."
+  />
 </CardGrid>
