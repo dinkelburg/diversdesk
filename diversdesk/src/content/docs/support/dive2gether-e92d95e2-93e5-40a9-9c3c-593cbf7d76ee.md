@@ -59,4 +59,4 @@ You'll receive 2 hours of complimentary training from us. You're welcome to use 
 ## On-Demand Videos
 No videos added yet.
 
-Explore our our [video training page](/video_training) instead.
+Explore our our [video training page](/video-training/video-training) instead.

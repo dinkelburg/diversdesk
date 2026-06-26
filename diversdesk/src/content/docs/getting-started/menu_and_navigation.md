@@ -1,6 +1,7 @@
 ---
 title: Menu and Navigation
 description: Know your way around the platform
+slug: getting-started/menu-and-navigation
 sidebar:
     order: 4
 robots: noindex

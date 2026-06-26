@@ -1,6 +1,7 @@
 ---
 title: Sign Up or Log In
 description: How to and different methods to create or login to your account
+slug: getting-started/sign-up-or-login
 sidebar:
     label: Sign Up or Login
     order: 2

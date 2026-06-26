@@ -16,8 +16,8 @@ You can create a booking through the 'add activity' hyperlink on the planner pag
 
 **Read more about:**
 
-- The available [Input fields](/user_manual/booking_and_scheduling/#input-fields)
-- How to [Edit an existing booking](/user_manual/booking_and_scheduling/#edit-an-existing-booking)
+- The available [Input fields](/user_manual/activities/planner/#input-fields)
+- How to [Edit an existing booking](/user_manual/activities/planner/#edit-an-existing-booking)
 
 ### Booking page
 
@@ -30,8 +30,8 @@ The booking page is accessible via a unique URL, which you can easily share with
 **Discover more about the capabilities of the booking page. Learn how to:**
 
 - Create and manage payments.
-- Register [new](/user_manual/registration_methods/#12-send-a-personalized-email) or [existing](/user_manual/registration_methods/#13-select-an-existing-registration) participants.
-- [Share](/user_manual/registration_methods/#11-share-the-booking-url) the unique booking URL with individual or multiple group members, allowing each of them to register through the same link.
+- Register [new](/workflows/registration-methods/#12-send-a-personalized-email) or [existing](/workflows/registration-methods/#13-select-an-existing-registration) participants.
+- [Share](/workflows/registration-methods/#11-share-the-booking-url) the unique booking URL with individual or multiple group members, allowing each of them to register through the same link.
 
 ### Input fields
 

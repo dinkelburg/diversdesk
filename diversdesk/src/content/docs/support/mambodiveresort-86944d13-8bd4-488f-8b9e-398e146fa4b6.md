@@ -63,7 +63,7 @@ You have 2 hours of complimentary training included in your plan. You're welcome
 
 ## On-Demand Videos
 **No videos added yet.** <br>
-Explore our our [video training page](/video_training) instead.
+Explore our our [video training page](/video-training/video-training) instead.
 
 ## Video training in Bahasa Indonesia
 

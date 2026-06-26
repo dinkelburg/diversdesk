@@ -25,7 +25,7 @@ On the right-hand side, you will find an overview of all our contact moments, ma
 
 ## On-Demand Videos
 No videos added yet. <br>
-Explore our our [video training page](/video_training) instead.
+Explore our our [video training page](/video-training/video-training) instead.
 
 ## Other Useful Videos 
 ### Scheduling a 2nd trip in a day 

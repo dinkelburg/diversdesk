@@ -81,8 +81,8 @@ In this video we will discuss:
 
 ### Q: Where can I find a Manual?
 **Q:** Is there a youtube manual for using the platform? With a step by step manual of the workflow? </br>
-**A:** Documentation can be found through: [https://www.diversdesk.com/quickstart\_guide/](https://www.diversdesk.com/quickstart_guide/)
-Video training can be foud through: [https://www.diversdesk.com/video\_training](https://www.diversdesk.com/video_training)
+**A:** Documentation can be found through: [https://www.diversdesk.com/getting-started/quickstart-guide/](https://www.diversdesk.com/getting-started/quickstart-guide/)
+Video training can be foud through: [https://www.diversdesk.com/video-training/video-training](https://www.diversdesk.com/video-training/video-training)
 
 ### Q: How can I delete an existing booking?
 **A:** Atm bookings will stay in the cancel tab. From there we will delete upon request. And the rights to completely delete be given during our next update.

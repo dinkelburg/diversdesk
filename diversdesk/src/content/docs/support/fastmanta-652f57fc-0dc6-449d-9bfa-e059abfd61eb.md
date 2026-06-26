@@ -27,7 +27,7 @@ On the right-hand side, you will find an overview of all our contact moments, ma
 
 ### Q: Where can i find the details from a filled registration form? 
 Registered customers will directly end up in your planning hub. Depending on what Registration method they have followed, they will eigher show directly in your planning or as a pending registration. 
-All there is to know about registration methods can be read <a href="https://www.diversdesk.com/user_manual/registration_methods/" target="_blank">here.</a>
+All there is to know about registration methods can be read <a href="https://www.diversdesk.com/workflows/registration-methods/" target="_blank">here.</a>
 
 ### Q: How do we setup the registration form?
 You can navigate to the forms page and edit any custom onboarding journeys youâ€™ve created, allowing you to adjust which fields are displayed, which fields are mandatory, and which waivers are shown to customers going through this onboarding journey.
@@ -35,7 +35,7 @@ You can navigate to the forms page and edit any custom onboarding journeys youâ€
 To get a better understanding about setting up and managing registration forms and customer onboarding journeys, you can watch <a href="https://www.loom.com/share/42c3a2a447944de1a90bf4c0b969d863?sid=f8a8f2a3-7db7-47f0-b199-63388eb446bc" target="_blank">this on demand video</a> or <a href="https://www.loom.com/share/ac3c1b550cbd4f4888116b99a29e9679?t=820" target="_blank">this chapter.</a> from the getting started video. 
 
 ### Q: Can I add more form details?
-You can change the registration form and onboarding joueneys on the 'Forms' page by creating a new, or editing a new onboarding journey. Information about this can be found in this <a href="../articles/custom_registration_form" target="_blank">this article.</a>, or <a href="https://www.loom.com/share/ac3c1b550cbd4f4888116b99a29e9679?t=820" target="_blank">this chapter.</a> of the getting started video.
+You can change the registration form and onboarding joueneys on the 'Forms' page by creating a new, or editing a new onboarding journey. Information about this can be found in this <a href="../features-resources/custom-registration-form" target="_blank">this article.</a>, or <a href="https://www.loom.com/share/ac3c1b550cbd4f4888116b99a29e9679?t=820" target="_blank">this chapter.</a> of the getting started video.
 
 ### Q: Is an instructor not automatically scheduled for the complete course duration?
 Currently, you need to schedule an instructor for each trip or diving day within the ongoing trip. We understand that instructors are usually assigned for the full duration of a course, and we recognize this as a desired feature. We have created a ticket for this request and will keep you informed about when we will address it.
@@ -52,7 +52,7 @@ Since 14 Aug '24, we've released an update that allows you to asign 'Waiver Vali
 
 <a href="https://www.loom.com/share/41c6e762dbd148329fb2da2c7a54a9a4?sid=9c2bbe72-a37b-4bce-8ae1-5f8eed8b3434" target="_blank">this on-demand video.</a>This On-demand video will explain the functionality of Valid Terms. 
 
-Alternatively, you can read everything there is to know about it in <a href="../articles/waiver_terms" target="_blank">this article.</a>
+Alternatively, you can read everything there is to know about it in <a href="../features-resources/waiver-terms" target="_blank">this article.</a>
 <br>
 
 ## On-demand Videos (4)

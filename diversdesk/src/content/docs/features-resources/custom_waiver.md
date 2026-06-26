@@ -130,4 +130,4 @@ The value the input is filled with. Fixed value Value that cannot be changed</li
 </ul>
 
 ### Examples
-We kindly refer you to our Diversdesk [Waiver Cheatsheet](/articles/waiver_cheatsheet) for code examples.
+We kindly refer you to our Diversdesk [Waiver Cheatsheet](/features-resources/waiver-cheatsheet) for code examples.

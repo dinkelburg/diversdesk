@@ -1,6 +1,7 @@
 ---
 title: A Brief Introduction
 description: A brief introduction to our user manual.
+slug: getting-started/brief-introduction
 sidebar:
     label: Brief Introduction
     order: 1

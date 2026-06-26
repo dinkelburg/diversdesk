@@ -67,7 +67,7 @@ For every paying customer, we offer 2 hours of complimentary training. You're we
 
 ## On-Demand Videos
 **No videos added yet.** <br>
-Explore our our [video training page](/video_training) instead.
+Explore our our [video training page](/video-training/video-training) instead.
 
 ## Other Videos 
 

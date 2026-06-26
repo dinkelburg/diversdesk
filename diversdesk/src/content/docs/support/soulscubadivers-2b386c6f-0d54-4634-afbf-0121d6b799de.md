@@ -20,7 +20,7 @@ On the right-hand side, you will find an overview of all our contact moments, ma
 - Your Diversdesk environment 'My Page'
 
 ## On-Demand Videos
-On-demand videos are listed below, or explore our [video training page](/video_training) here.
+On-demand videos are listed below, or explore our [video training page](/video-training/video-training) here.
 
 ### Tier Pricing with Product Duplicates & Tags
 <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/666ce3d490db4616b738a3045bf1e857?sid=e863f2f7-efc4-425f-810e-cd6da71dd9b4" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>

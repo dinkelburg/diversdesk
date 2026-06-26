@@ -25,5 +25,5 @@ When given manager rights, a user can view and edit all existing content.
 
 ![Distinct Divemasters and Instructors through the diving level drop-down](/images/user_diving_level.jpg)
 
-The appropriate diving level can be given here. A staff member given Divemaster or Instructor rights has access to a personal page named 'My Page'. Read more in the [custom registration form guide](/articles/custom_registration_form).
+The appropriate diving level can be given here. A staff member given Divemaster or Instructor rights has access to a personal page named 'My Page'. Read more in the [custom registration form guide](/features-resources/custom-registration-form).
 
