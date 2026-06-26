@@ -28,11 +28,49 @@ export default defineConfig({
     "/insights/insight-4": "/insights/insight4-combating-plastic-polution",
     "/blog/en/top-features-in-dive-center-management-softward": "/blog/en/top-features-in-dive-center-management-software",
     "/insights/diversdesk-liveboard-subscription": "/insights/diversdesk-liveaboard-subscription",
-    "/articles/add_to_homescreen": "/faq/mobile_homescreen_icon",
-    "/faq/add_to_homescreen": "/faq/mobile_homescreen_icon",
-    "/user_manual/retail": "/user_manual/retail_stock",
+    "/articles/add_to_homescreen": "/faq/mobile-homescreen-icon",
+    "/faq/add_to_homescreen": "/faq/mobile-homescreen-icon",
+    "/faq/mobile_homescreen_icon": "/faq/mobile-homescreen-icon",
+    "/quickstart_guide": "/getting-started/quickstart-guide",
+    "/user_manual/brief_introduction": "/getting-started/brief-introduction",
+    "/user_manual/login": "/getting-started/sign-up-or-login",
+    "/getting-started/login": "/getting-started/sign-up-or-login",
+    "/user_manual/setup_your_environment": "/getting-started/setup-your-environment",
+    "/user_manual/menu_and_navigation": "/getting-started/menu-and-navigation",
+    "/user_manual/discount-calculator": "/features-resources/discount-calculator",
+    "/articles/direct_bookings": "/features-resources/direct-bookings",
+    "/articles/website_iframe_integration": "/features-resources/website-iframe-integration",
+    "/articles/custom_registration_form": "/features-resources/custom-registration-form",
+    "/articles/custom_waiver": "/features-resources/custom-waiver",
+    "/articles/waiver_terms": "/features-resources/waiver-terms",
+    "/articles/waiver_cheatsheet": "/features-resources/waiver-cheatsheet",
+    "/articles/tags": "/features-resources/tags",
+    "/articles/connecting-quickbooks": "/features-resources/connecting-quickbooks",
+    "/user_manual/add-ons": "/features-resources/add-ons",
+    "/user_manual/tanks_and_blends": "/features-resources/tanks-and-blends",
+    "/user_manual/registration_methods": "/workflows/registration-methods",
+    "/user_manual/creating_onboarding_journeys": "/workflows/creating-onboarding-journeys",
+    "/articles/adding_dives_to_an_ongoing_activity": "/workflows/adding-dives-to-an-ongoing-activity",
+    "/video_training": "/video-training/video-training",
+    "/user_manual/retail": "/user_manual/retail-pos/retail-stock",
     "/user_manual/customer_base": "/user_manual/customers",
-    "/user_manual/users_and_rights": "/user_manual/permissions"
+    "/user_manual/users_and_rights": "/user_manual/staff/permissions",
+    "/new_booking_page": "/user_manual/bookings",
+    "/user_manual/booking_and_scheduling": "/user_manual/activities/planner",
+    "/user_manual/day_manifest": "/user_manual/activities/day-manifest",
+    "/user_manual/pricing": "/user_manual/activities/pricing",
+    "/user_manual/activities_webshop": "/user_manual/activities/webshop",
+    "/user_manual/accommodation_calendar": "/user_manual/accommodation/calendar",
+    "/user_manual/accommodation_webshop": "/user_manual/accommodation/webshop",
+    "/user_manual/rental_items": "/user_manual/rentals/rental-items",
+    "/user_manual/rental_overview": "/user_manual/rentals/rental-overview",
+    "/user_manual/retail_stock": "/user_manual/retail-pos/retail-stock",
+    "/user_manual/retail_pos_webshop": "/user_manual/retail-pos/webshop",
+    "/user_manual/metrics": "/user_manual/reporting/metrics",
+    "/user_manual/sales": "/user_manual/reporting/sales",
+    "/user_manual/payments": "/user_manual/reporting/payments",
+    "/user_manual/workload": "/user_manual/staff/workload",
+    "/user_manual/permissions": "/user_manual/staff/permissions"
   },
   
   image: {
@@ -52,9 +90,11 @@ export default defineConfig({
         page.includes('/signup/trial/success') ||
         page.includes('/welcome-to-docs') ||
         page.includes('/user_manual') ||
-        page.includes('/quickstart_guide') ||
-        page.includes('/articles') ||
-        page.includes('/video_training') ||
+        page.includes('/getting-started') ||
+        page.includes('/features-resources') ||
+        page.includes('/workflows') ||
+        page.includes('/video-training') ||
+        page.includes('/faq') ||
         page.includes('/support') ||
         page.includes('/updates') ||
         page.includes('/work_in_progress') ||
@@ -71,11 +111,11 @@ export default defineConfig({
         label: 'Getting Started',
         collapsed: true,
         items: [
-          'quickstart_guide',
-          'user_manual/brief_introduction',
-          'user_manual/login',
-          'user_manual/setup_your_environment',
-          'user_manual/menu_and_navigation',
+          'getting-started/quickstart-guide',
+          'getting-started/brief-introduction',
+          'getting-started/sign-up-or-login',
+          'getting-started/setup-your-environment',
+          'getting-started/menu-and-navigation',
         ]
       },
       {
@@ -88,19 +128,23 @@ export default defineConfig({
             items: [
               {
                 label: 'Planner',
-                slug: 'user_manual/booking_and_scheduling'
+                slug: 'user_manual/activities/planner'
+              },
+              {
+                label: 'Planning beta',
+                slug: 'user_manual/activities/planning-beta'
               },
               {
                 label: 'Day Manifest',
-                slug: 'user_manual/day_manifest'
+                slug: 'user_manual/activities/day-manifest'
               },
               {
                 label: 'Pricing',
-                slug: 'user_manual/pricing'
+                slug: 'user_manual/activities/pricing'
               },
               {
                 label: 'Webshop',
-                slug: 'user_manual/activities_webshop'
+                slug: 'user_manual/activities/webshop'
               },
             ]
           },
@@ -110,11 +154,11 @@ export default defineConfig({
             items: [
               {
                 label: 'Calendar',
-                slug: 'user_manual/accommodation_calendar'
+                slug: 'user_manual/accommodation/calendar'
               },
               {
                 label: 'Webshop',
-                slug: 'user_manual/accommodation_webshop'
+                slug: 'user_manual/accommodation/webshop'
               },
             ]
           },
@@ -132,11 +176,11 @@ export default defineConfig({
             items: [
               {
                 label: 'Rental Items',
-                slug: 'user_manual/rental_items'
+                slug: 'user_manual/rentals/rental-items'
               },
               {
                 label: 'Rental Overview',
-                slug: 'user_manual/rental_overview'
+                slug: 'user_manual/rentals/rental-overview'
               },
             ]
           },
@@ -146,11 +190,19 @@ export default defineConfig({
             items: [
               {
                 label: 'Retail Stock',
-                slug: 'user_manual/retail_stock'
+                slug: 'user_manual/retail-pos/retail-stock'
               },
               {
                 label: 'Webshop',
-                slug: 'user_manual/retail_pos_webshop'
+                slug: 'user_manual/retail-pos/webshop'
+              },
+              {
+                label: 'Import',
+                slug: 'user_manual/retail-pos/import'
+              },
+              {
+                label: 'Cleanup',
+                slug: 'user_manual/retail-pos/cleanup'
               },
             ]
           },
@@ -160,15 +212,15 @@ export default defineConfig({
             items: [
               {
                 label: 'Metrics',
-                slug: 'user_manual/metrics'
+                slug: 'user_manual/reporting/metrics'
               },
               {
                 label: 'Sales',
-                slug: 'user_manual/sales'
+                slug: 'user_manual/reporting/sales'
               },
               {
                 label: 'Payments',
-                slug: 'user_manual/payments'
+                slug: 'user_manual/reporting/payments'
               },
             ]
           },
@@ -182,11 +234,11 @@ export default defineConfig({
             items: [
               {
                 label: 'Workload',
-                slug: 'user_manual/workload'
+                slug: 'user_manual/staff/workload'
               },
               {
                 label: 'Permissions',
-                slug: 'user_manual/permissions'
+                slug: 'user_manual/staff/permissions'
               },
             ]
           },
@@ -200,41 +252,40 @@ export default defineConfig({
         label: 'Features & Resources',
         collapsed: true,
         items: [
-          'user_manual/discount-calculator',
-          'articles/direct_bookings',
-          'articles/website_iframe_integration',
-          'articles/custom_registration_form',
-          'articles/custom_waiver',
-          'articles/waiver_terms',
-          'articles/waiver_cheatsheet',
-          'articles/tags',
-          'articles/connecting-quickbooks',
-          'user_manual/add-ons',
-          'user_manual/tanks_and_blends',
-          'new_booking_page',
+          'features-resources/discount-calculator',
+          'features-resources/direct-bookings',
+          'features-resources/website-iframe-integration',
+          'features-resources/custom-registration-form',
+          'features-resources/custom-waiver',
+          'features-resources/waiver-terms',
+          'features-resources/waiver-cheatsheet',
+          'features-resources/tags',
+          'features-resources/connecting-quickbooks',
+          'features-resources/add-ons',
+          'features-resources/tanks-and-blends',
         ]
       },
       {
         label: 'Workflows',
         collapsed: true,
         items: [
-          'user_manual/registration_methods',
-          'user_manual/creating_onboarding_journeys',
-          'articles/adding_dives_to_an_ongoing_activity',
+          'workflows/registration-methods',
+          'workflows/creating-onboarding-journeys',
+          'workflows/adding-dives-to-an-ongoing-activity',
         ]
       },
       {
         label: 'Video Training',
         collapsed: true,
         items: [
-          'video_training',
+          'video-training/video-training',
         ]
       },
       {
         label: 'FAQ & Troubleshooting',
         collapsed: true,
         items: [
-          'faq/mobile_homescreen_icon',
+          'faq/mobile-homescreen-icon',
         ]
       },
       {
