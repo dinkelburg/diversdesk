@@ -304,12 +304,54 @@ header {
     transition: background-color 150ms ease, color 150ms ease, transform 150ms ease;
 }
 
+#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 0.45rem;
+    row-gap: 0.08rem;
+    align-items: center;
+    line-height: 1.15;
+}
+
+#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle] .sl-badge {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    white-space: nowrap;
+}
+
+#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]::after {
+    content: attr(data-update-subtitle);
+    display: block;
+    grid-column: 1 / -1;
+    max-width: 100%;
+    font-size: 0.72rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--sl-color-gray-4);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 #starlight__sidebar ul.top-level > li > details ul a[aria-current='page'],
 #starlight__sidebar ul.top-level > li > details ul a:hover,
 #starlight__sidebar ul.top-level > li > details ul a:focus-visible {
     background-color: rgba(248, 101, 69, 0.18);
     color: var(--sl-color-white);
     transform: none;
+}
+
+#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle][aria-current='page'],
+#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:hover,
+#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:focus-visible {
+    color: #2d120d;
+}
+
+#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle][aria-current='page']::after,
+#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:hover::after,
+#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:focus-visible::after {
+    color: rgba(45, 18, 13, 0.78);
 }
 
 /* Treat second-level manual groups as static section headers instead of interactive dropdowns. */
