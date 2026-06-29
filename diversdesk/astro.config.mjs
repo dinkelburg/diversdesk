@@ -131,10 +131,6 @@ export default defineConfig({
                 slug: 'user_manual/activities/planner'
               },
               {
-                label: 'Planning beta',
-                slug: 'user_manual/activities/planning-beta'
-              },
-              {
                 label: 'Day Manifest',
                 slug: 'user_manual/activities/day-manifest'
               },
@@ -195,14 +191,6 @@ export default defineConfig({
               {
                 label: 'Webshop',
                 slug: 'user_manual/retail-pos/webshop'
-              },
-              {
-                label: 'Import',
-                slug: 'user_manual/retail-pos/import'
-              },
-              {
-                label: 'Cleanup',
-                slug: 'user_manual/retail-pos/cleanup'
               },
             ]
           },
