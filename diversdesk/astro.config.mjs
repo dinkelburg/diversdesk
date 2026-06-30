@@ -70,7 +70,8 @@ export default defineConfig({
     "/user_manual/sales": "/user_manual/reporting/sales",
     "/user_manual/payments": "/user_manual/reporting/payments",
     "/user_manual/workload": "/user_manual/staff/workload",
-    "/user_manual/permissions": "/user_manual/staff/permissions"
+    "/user_manual/permissions": "/user_manual/staff/permissions",
+    "/updates/2026-06-29-booking-workflow-improvements": "/updates/2026-06-29-refunds-handling"
   },
   
   image: {

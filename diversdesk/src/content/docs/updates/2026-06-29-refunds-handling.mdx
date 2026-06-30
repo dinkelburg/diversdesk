@@ -1,0 +1,57 @@
+---
+title: 29 Jun 2026 - Refunds Handling
+description: This release is led by new refund handling inside Diversdesk, alongside faster scheduling, surcharge rounding, day blocking, day multipliers, clearer warnings, and a smoother shared-tablet checkout flow.
+lastUpdated: 2026-06-29
+sidebar:
+  label: 29 Jun 2026
+  order: 1
+  badge: New
+  attrs:
+    data-update-subtitle: Refunds Handling
+---
+
+import VideoLightbox from '@components/VideoLightbox.astro';
+
+Release Date: June 29, 2026
+
+## What This Release Improves
+
+Today's live release is headlined by **refund handling directly inside Diversdesk**, including refunds for payment gateway payments.
+
+Alongside that, this release also includes several booking, planning, surcharge, and webshop workflow improvements.
+
+---
+
+### Refunds handled directly in Diversdesk
+
+Refund flows are now available inside Diversdesk itself. This includes payment gateway refunds, so you can manage the refund process directly from the dashboard instead of depending on a separate back-and-forth workflow outside Diversdesk. For teams handling customer changes, cancellations, or corrections, this makes refund handling much more practical and much easier to stay inside one operational flow.
+
+### Faster scheduling and rescheduling on the planner
+
+Scheduling work on the planner has been improved to make booking changes feel quicker and less frustrating during day-to-day operations. This applies both when building new schedules and when adjusting existing ones, helping your team move through planning tasks with fewer interruptions.
+
+### Clearer surcharge handling
+
+Surcharge behavior has been refined so pricing results are easier to understand and more consistent in edge cases. This helps reduce confusion when reviewing totals and makes it easier to trust what you see during booking changes.
+
+### Better control over webshop day availability
+
+You now have better control over which days are made available in the webshop. This makes it easier to manage when customers can book online and helps align the booking flow more closely with real operational availability.
+
+<VideoLightbox
+  src="/images/blocking-days.webm"
+  label="Blocking days for an activity"
+  previewDesktopWidth="100%"
+/>
+
+### Easier tiered pricing day handling
+
+Tiered pricing behavior has been improved for activity day setups, making this area easier to work with when your pricing depends on how activities are spread across days. This should make setup and review more straightforward for more complex offers.
+
+### Improved shared-tablet checkout flow
+
+The shared-tablet checkout experience has been smoothed out so it feels more reliable and easier to complete in environments where multiple guests use the same device in sequence. This should reduce friction during on-site sales or check-in flows.
+
+### Clearer day-card warnings during activity editing
+
+Warning messages shown while editing activities now better reflect the actual situation on the selected dates. In practice, this means that moving away from a past date could still trigger a warning based on the old date, even when the newly selected date was in the future. The warning now better reflects the actual new selection, making activity editing feel more logical and less confusing.
