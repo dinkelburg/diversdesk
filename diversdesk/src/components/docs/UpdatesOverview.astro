@@ -84,11 +84,15 @@ const updates: UpdateCard[] = docsEntries
     return right - left;
   });
 
+const latestUpdates = updates.slice(0, 3);
+const olderUpdates = updates.slice(3);
+const olderUpdatesPanelId = 'updates-overview-older-panel';
+
 ---
 
-<section aria-label="All releases">
+<section aria-label="Latest releases">
   <div class="updates-list" role="list">
-    {updates.map((entry, index) => (
+    {latestUpdates.map((entry, index) => (
       <a class={`updates-card ${index === 0 ? 'updates-card-featured' : ''}`} href={entry.href} role="listitem">
         <div class="updates-card-main">
           <div class="updates-card-topline">
@@ -101,4 +105,72 @@ const updates: UpdateCard[] = docsEntries
       </a>
     ))}
   </div>
+
+  {olderUpdates.length > 0 && (
+    <div class="updates-expand">
+      <button
+        class="updates-expand-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls={olderUpdatesPanelId}
+        data-updates-expand-toggle
+      >
+        <span class="updates-expand-inner">
+          <span class="updates-expand-copy">
+            <span class="updates-expand-label updates-expand-label-closed">Show all updates</span>
+            <span class="updates-expand-label updates-expand-label-open">Show fewer updates</span>
+          </span>
+          <span class="updates-expand-chevron" aria-hidden="true">&#8250;</span>
+        </span>
+      </button>
+
+      <div class="updates-expand-panel" id={olderUpdatesPanelId} hidden>
+        <div class="updates-list" role="list">
+          {olderUpdates.map((entry) => (
+            <a class="updates-card" href={entry.href} role="listitem">
+              <div class="updates-card-main">
+                <div class="updates-card-topline">
+                  <p class="updates-card-line">{entry.dateLabel} · {entry.title}</p>
+                </div>
+                <p class="updates-card-desc">{entry.description}</p>
+              </div>
+              <span class="updates-card-arrow" aria-hidden="true">&#8250;</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
 </section>
+
+<script is:inline>
+  const initializeUpdatesExpanders = () => {
+    document.querySelectorAll('[data-updates-expand-toggle]').forEach((toggle) => {
+      if (!(toggle instanceof HTMLButtonElement)) {
+        return;
+      }
+
+      const panelId = toggle.getAttribute('aria-controls');
+      if (!panelId) {
+        return;
+      }
+
+      const panel = document.getElementById(panelId);
+      if (!(panel instanceof HTMLElement)) {
+        return;
+      }
+
+      toggle.onclick = () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        const nextExpanded = !isExpanded;
+
+        toggle.setAttribute('aria-expanded', String(nextExpanded));
+        panel.hidden = !nextExpanded;
+      };
+    });
+  };
+
+  document.addEventListener('astro:page-load', initializeUpdatesExpanders);
+  document.addEventListener('astro:after-swap', initializeUpdatesExpanders);
+  initializeUpdatesExpanders();
+</script>
