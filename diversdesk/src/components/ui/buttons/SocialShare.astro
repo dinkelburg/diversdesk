@@ -57,6 +57,8 @@ const socialPlatforms: SocialPlatform[] = [
           <a
             class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-200 focus:bg-neutral-100  focus:outline-none dark:text-neutral-300 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700 "
             href={platform.url}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <Icon name={platform.svg} />
             Share on {platform.name}
@@ -110,42 +112,47 @@ const socialPlatforms: SocialPlatform[] = [
 <!--https://preline.co/plugins/html/dropdown.html-->
 <script is:inline defer src="/scripts/vendor/preline/dropdown/index.js"></script>
 
-<!-- https://clipboardjs.com/ -->
-<script is:inline defer src="/scripts/vendor/clipboard.min.js"></script>
-
 <script is:inline>
-  // Initialization of Clipboard
   (function () {
     window.addEventListener("load", () => {
-      const $clipboards = document.querySelectorAll(".js-clipboard");
-      $clipboards.forEach((el) => {
-        const clipboard = new ClipboardJS(el, {
-          text: () => {
-            return window.location.href;
-          },
-        });
-        clipboard.on("success", () => {
-          const $default = el.querySelector(".js-clipboard-default");
-          const $success = el.querySelector(".js-clipboard-success");
-          const $successText = el.querySelector(".js-clipboard-success-text");
+      const clipboardButtons = document.querySelectorAll(".js-clipboard");
+
+      clipboardButtons.forEach((el) => {
+        if (!(el instanceof HTMLButtonElement)) {
+          return;
+        }
+
+        el.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText(window.location.href);
+          } catch {
+            return;
+          }
+
+          const defaultIcon = el.querySelector(".js-clipboard-default");
+          const successIcon = el.querySelector(".js-clipboard-success");
+          const successTextNode = el.querySelector(".js-clipboard-success-text");
           const successText = el.dataset.clipboardSuccessText || "";
-          let oldSuccessText;
+          let oldSuccessText = "";
 
-          if ($successText) {
-            oldSuccessText = $successText.textContent;
-            $successText.textContent = successText;
-          }
-          if ($default && $success) {
-            $default.style.display = "none";
-            $success.style.display = "block";
+          if (successTextNode) {
+            oldSuccessText = successTextNode.textContent || "";
+            successTextNode.textContent = successText;
           }
 
-          setTimeout(function () {
-            if ($successText && oldSuccessText)
-              $successText.textContent = oldSuccessText;
-            if ($default && $success) {
-              $success.style.display = "";
-              $default.style.display = "";
+          if (defaultIcon instanceof HTMLElement && successIcon instanceof HTMLElement) {
+            defaultIcon.style.display = "none";
+            successIcon.style.display = "block";
+          }
+
+          setTimeout(() => {
+            if (successTextNode) {
+              successTextNode.textContent = oldSuccessText;
+            }
+
+            if (defaultIcon instanceof HTMLElement && successIcon instanceof HTMLElement) {
+              successIcon.style.display = "";
+              defaultIcon.style.display = "";
             }
           }, 800);
         });

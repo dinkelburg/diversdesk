@@ -193,8 +193,7 @@ const websiteSchema = {
     {structuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     {meta && <Fragment set:html={meta} />}
 
-<link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" onload="this.onload=null;this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" /></noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 <style>
   /* Make the cookie bar text and button smaller and reduce height */
   .cc-window.cc-banner {
@@ -327,7 +326,7 @@ const websiteSchema = {
           href: "/privacy-policy"
         },
 
-        onInitialise: function(status: any) {
+        onInitialise: function() {
           if (this.hasConsented()) {
             (window as any).loadBrevoWidget();
           }

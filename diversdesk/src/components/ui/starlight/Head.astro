@@ -199,22 +199,58 @@ const robotsDirective = Astro.url.pathname.startsWith('/support')
         }
       } catch {}
 
-      try {
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        textArea.setAttribute('readonly', '');
-        textArea.style.position = 'fixed';
-        textArea.style.top = '-9999px';
-        textArea.style.left = '-9999px';
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        const copied = document.execCommand('copy');
-        textArea.remove();
-        return copied;
-      } catch {
-        return false;
-      }
+      return false;
+    };
+
+    const initializeDocsContentLinks = () => {
+      const docsLinks = Array.from(document.querySelectorAll('.sl-markdown-content a[href]'));
+      const currentUrl = new URL(window.location.href);
+
+      docsLinks.forEach((link) => {
+        if (!(link instanceof HTMLAnchorElement)) {
+          return;
+        }
+
+        if (link.dataset.externalized === 'true') {
+          return;
+        }
+
+        const href = link.getAttribute('href')?.trim();
+
+        if (!href || href.startsWith('#') || href.startsWith('javascript:')) {
+          return;
+        }
+
+        let targetUrl;
+
+        try {
+          targetUrl = new URL(href, window.location.href);
+        } catch {
+          return;
+        }
+
+        const isSamePage =
+          targetUrl.origin === currentUrl.origin &&
+          targetUrl.pathname === currentUrl.pathname &&
+          targetUrl.search === currentUrl.search;
+
+        if (isSamePage) {
+          return;
+        }
+
+        link.target = '_blank';
+
+        const relTokens = new Set(
+          (link.getAttribute('rel') ?? '')
+            .split(/\s+/)
+            .filter(Boolean)
+        );
+
+        relTokens.add('noopener');
+        relTokens.add('noreferrer');
+        link.rel = Array.from(relTokens).join(' ');
+        link.dataset.externalized = 'true';
+      });
     };
 
     const headingSelector = '.sl-markdown-content :is(h1, h2, h3, h4, h5, h6)[id]';
@@ -320,15 +356,19 @@ const robotsDirective = Astro.url.pathname.startsWith('/support')
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => {
         initializeSidebarEnhancements();
+        initializeDocsContentLinks();
         initializeHeadingCopy();
       }, { once: true });
     } else {
       initializeSidebarEnhancements();
+      initializeDocsContentLinks();
       initializeHeadingCopy();
     }
 
     document.addEventListener('astro:after-swap', initializeSidebarEnhancements);
     document.addEventListener('astro:page-load', initializeSidebarEnhancements);
+    document.addEventListener('astro:after-swap', initializeDocsContentLinks);
+    document.addEventListener('astro:page-load', initializeDocsContentLinks);
     document.addEventListener('astro:after-swap', initializeHeadingCopy);
     document.addEventListener('astro:page-load', initializeHeadingCopy);
   })();

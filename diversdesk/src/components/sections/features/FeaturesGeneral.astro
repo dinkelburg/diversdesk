@@ -26,7 +26,7 @@ interface Props {
   primaryBtnURL?: string;
 }
 // Define props from Astro
-const { title, subTitle, src, alt, features, children, primaryBtn, primaryBtnURL } = Astro.props;
+const { title, src, alt, features, primaryBtn, primaryBtnURL } = Astro.props;
 
 ---
 
@@ -83,9 +83,7 @@ const { title, subTitle, src, alt, features, children, primaryBtn, primaryBtnURL
           <IconBlock
             heading={feature.heading}
             content={feature.content} 
-            bullets={feature.bullets} 
-            primaryBtn={undefined}
-            primaryBtnURL={undefined}
+            bullets={feature.bullets}
           >
             <Icon name={feature.svg} />
           </IconBlock>

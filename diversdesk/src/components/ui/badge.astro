@@ -1,5 +1,12 @@
 ---
-const { color = "DEFAULT", class: className } = Astro.props;
+interface Props {
+  color?: "DEFAULT" | "indigo" | "orange" | "purple";
+  class?: string;
+}
+
+const props = Astro.props as Props;
+const colorKey: keyof typeof colors = props.color ?? "DEFAULT";
+const className = props.class;
 
 const colors = {
   DEFAULT: "bg-gray-100 border-gray-200 border text-gray-800",
@@ -7,11 +14,13 @@ const colors = {
   orange: "bg-orange-100 border-orange-200 border text-orange-600",
   purple: "bg-purple-100 border-purple-200 border text-purple-600",
 };
+
+const badgeClasses = colors[colorKey];
 ---
 
 <span
   class:list={[
-    colors,
+    badgeClasses,
     className,
     "rounded-full text-xs font-medium px-3 py-1 ",
   ]}>

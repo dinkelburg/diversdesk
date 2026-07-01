@@ -1,8 +1,6 @@
 ---
 // Get heading, content, and bullets from Astro props
-const { heading, content, bullets,  primaryBtn, primaryBtnURL} = Astro.props;
-import CheckmarkSvg from "@images/checkmarksvg.svg" 
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+const { heading, content, bullets } = Astro.props;
 
 
 // Define TypeScript interface for props
@@ -10,16 +8,9 @@ interface Props {
   heading?: string;
   content?: string; // Content can contain HTML
   bullets?: string[]; // List of bullet points
-  primaryBtn?: string; // Button text
-  primaryBtnURL?: string; // Button URL
+  primaryBtn?: string; // Retained for compatibility with existing call sites.
+  primaryBtnURL?: string; // Retained for compatibility with existing call sites.
 }
-
-// Define classes for heading, content, and bullets
-const headingClasses = "text-lg font-bold text-neutral-800 dark:text-neutral-200 mb-2";
-const contentClasses = "text-neutral-700 dark:text-neutral-300 mb-4";
-const bulletContainerClasses = "list-none mt-2";
-const bulletItemClasses = "flex items-start gap-2 mb-2";
-const bulletIconClasses = "text-green-500 font-bold";
 ---
 
 <div class="flex items-start gap-x-4">
