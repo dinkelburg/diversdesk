@@ -281,6 +281,7 @@ header {
 
 /* Spacing and hover effect for nested (dropdown) links */
 #starlight__sidebar ul.top-level > li > details > ul {
+    position: relative;
     padding-top: 0.28rem;
     padding-bottom: 0.25rem;
 }
@@ -288,6 +289,18 @@ header {
 /* Align all expanded top-level groups with their label text instead of the sidebar edge. */
 #starlight__sidebar ul.top-level > li > details > ul {
     padding-inline-start: 1.7rem;
+}
+
+#starlight__sidebar ul.top-level > li > details > ul::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: 0.65rem;
+    top: 0.42rem;
+    bottom: 0.42rem;
+    width: 2px;
+    border-radius: 999px;
+    background: var(--sl-color-gray-3);
+    opacity: 0.14;
 }
 
 #starlight__sidebar ul.top-level > li > details ul li + li {
@@ -299,8 +312,10 @@ header {
     border-radius: 0.4rem;
     padding-top: 0.35rem;
     padding-bottom: 0.35rem;
+    font-size: 0.78rem;
+    line-height: 1.35;
     font-weight: 300;
-    color: var(--sl-color-gray-2);
+    color: var(--sl-color-gray-3);
     transition: background-color 150ms ease, color 150ms ease, transform 150ms ease;
 }
 
