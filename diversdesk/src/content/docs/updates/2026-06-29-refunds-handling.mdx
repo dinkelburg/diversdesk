@@ -1,6 +1,6 @@
 ---
 title: 29 Jun 2026 - Refunds Handling
-description: This release is led by new refund handling inside Diversdesk, alongside an updated Xendit checkout, faster scheduling, surcharge rounding, day blocking, day multipliers, clearer warnings, and a smoother shared-tablet checkout flow.
+description: This release is led by new refund handling inside Diversdesk, alongside more flexible reminder emails, an updated Xendit checkout, faster scheduling, surcharge rounding, day blocking, day multipliers, clearer warnings, and a smoother shared-tablet checkout flow.
 lastUpdated: 2026-06-29
 sidebar:
   label: 29 Jun 2026
@@ -12,11 +12,11 @@ sidebar:
 
 import VideoLightbox from '@components/VideoLightbox.astro';
 
-Release Date: June 29, 2026
+<p class="update-release-date">Release Date: June 29, 2026</p>
 
 Today's live release is headlined by **refund handling directly inside Diversdesk**, including refunds for payment gateway payments.
 
-Alongside that, this release also includes an updated **Xendit checkout experience**, plus several booking, planning, surcharge, and webshop workflow improvements.
+Alongside that, this release also includes more flexible **reminder emails**, an updated **Xendit checkout experience**, plus several booking, planning, surcharge, and webshop workflow improvements.
 
 ---
 
@@ -57,6 +57,14 @@ Tiered pricing behavior has been improved for activity day setups, making this a
 The **Xendit checkout** has been updated to the latest version.
 
 This brings a small UI refresh from Xendit itself, giving guests a cleaner payment step while keeping the overall checkout flow familiar. In practice, this means the payment experience now looks a bit more modern without changing how your team works with Xendit inside Diversdesk.
+
+This update also introduces an automatic **24-hour expiration** for created payment links. If a customer opens a payment link after it has expired, Diversdesk will automatically generate a new one so they can still continue to checkout and pay the outstanding amount.
+
+### More flexible reminder emails
+
+You can now set up **more than one reminder email** from **Settings > Notifications**.
+
+This gives you more flexibility in how and when reminder emails are sent, and it also makes it easier to add more personalized text to the messages your customers receive.
 
 ### Improved shared-tablet checkout flow
 

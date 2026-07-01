@@ -506,6 +506,31 @@ header {
     transform: none;
 }
 
+.updates-card-next-button {
+    width: 100%;
+    font: inherit;
+    color: inherit;
+    text-align: inherit;
+    cursor: pointer;
+}
+
+.updates-next-note {
+    margin: 0.5rem 0 0 0.15rem;
+    color: var(--sl-color-gray-2);
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.sl-markdown-content .update-release-date {
+    margin: 0 0 1.15rem;
+    color: var(--sl-color-gray-3);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
 .updates-card-next-tag {
     display: inline-flex;
     align-items: center;
