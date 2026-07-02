@@ -1,0 +1,38 @@
+---
+import MainLayout from "./MainLayout.astro";
+import "@styles/new-landing.css";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+  structuredData?: object;
+  ogType?: "website" | "article";
+}
+
+const {
+  title,
+  description,
+  image = "/images/Laptop-and-phone-diversdesk.avif",
+  canonical = Astro.url.href,
+  structuredData,
+  ogType = "website",
+}: Props = Astro.props;
+---
+
+<MainLayout
+  title={title}
+  description={description}
+  image={image}
+  canonical={canonical}
+  structuredData={structuredData}
+  ogType={ogType}
+  robots="noindex, nofollow"
+  showBanner={false}
+>
+  <slot name="head" slot="head" />
+  <div class="landing-body landing-surface min-h-screen">
+    <slot />
+  </div>
+</MainLayout>

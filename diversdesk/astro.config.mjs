@@ -98,6 +98,7 @@ export default defineConfig({
         page.includes('/faq') ||
         page.includes('/support') ||
         page.includes('/updates') ||
+        page.includes('/new') ||
         page.includes('/work_in_progress') ||
         page.includes('/terms-conditions') ||
         page.includes('/privacy-policy')

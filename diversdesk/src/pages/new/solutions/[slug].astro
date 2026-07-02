@@ -1,0 +1,157 @@
+---
+import { Image } from "astro:assets";
+import FAQ from "@components/sections/FAQ.astro";
+import FaqSchema from "@components/sections/new-landing/FaqSchema.astro";
+import StatsBand from "@components/sections/new-landing/StatsBand.astro";
+import PreviewLandingLayout from "@/layouts/PreviewLandingLayout.astro";
+import { featureMap, solutions, type SolutionPage } from "@data/newLanding";
+
+export function getStaticPaths() {
+  return solutions.map((solution) => ({
+    params: { slug: solution.slug },
+    props: { solution },
+  }));
+}
+
+const { solution } = Astro.props as { solution: SolutionPage };
+const solutionFeatures = solution.featureSlugs.map((slug) => featureMap[slug]).filter(Boolean);
+const spotlightFeatures = solutionFeatures.slice(0, 2);
+
+const faqGroup = {
+  subTitle: "Every solution page in the preview route now has its own FAQ block for topical relevance and future launch-ready SEO coverage.",
+  faqs: solution.faqs,
+};
+---
+
+<PreviewLandingLayout
+  title={solution.metaTitle}
+  description={solution.metaDescription}
+  canonical={`https://www.diversdesk.com/new/solutions/${solution.slug}`}
+>
+  <FaqSchema faqs={solution.faqs} />
+
+  <section class="landing-section pb-8 pt-12 lg:pb-10 lg:pt-16">
+    <div class="landing-shell">
+      <div class="grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+        <div>
+          <span class="landing-tag">{solution.heroEyebrow}</span>
+          <h1 class="landing-display mt-6 max-w-4xl text-5xl text-slate-950 sm:text-6xl lg:text-7xl">
+            {solution.heroTitle}
+          </h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
+            {solution.heroIntro}
+          </p>
+          <ul class="landing-bullet-list mt-8 space-y-3 text-sm leading-7 text-slate-700 sm:text-base">
+            {solution.valueProps.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a class="landing-button-primary" href="https://calendly.com/diversdesk-info/demo">Book a demo</a>
+            <a class="landing-button-secondary" href="/new/features">Explore all features</a>
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          {solution.pains.map((item, index) => (
+            <article class={`rounded-[30px] p-6 ${index === 0 ? "landing-card-dark text-white sm:col-span-2" : "landing-card"}`}>
+              <p class={`text-sm font-semibold uppercase tracking-[0.16em] ${index === 0 ? "text-orange-200" : "text-orange-600"}`}>
+                {index === 0 ? "Core shift" : "Why it matters"}
+              </p>
+              <h2 class={`landing-display mt-4 text-3xl ${index === 0 ? "text-white" : "text-slate-950"}`}>{item.title}</h2>
+              <p class={`mt-4 text-sm leading-7 ${index === 0 ? "text-slate-200" : "text-slate-600"}`}>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <StatsBand
+    title={`Why ${solution.shortLabel.toLowerCase()} teams pay attention to these metrics`}
+    intro="The goal is not more software. The goal is a more reliable operating rhythm across sales, service, and financial follow-through."
+    stats={solution.stats}
+  />
+
+  <section class="landing-section py-10 lg:py-14">
+    <div class="landing-shell">
+      <div class="mb-8 max-w-3xl">
+        <span class="landing-tag">Priority features</span>
+        <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl">
+          The feature mix is tailored to how {solution.shortLabel.toLowerCase()} actually operate.
+        </h2>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        {solutionFeatures.map((feature) => (
+          <article class="landing-card rounded-[28px] p-6">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">{feature.eyebrow}</p>
+            <h3 class="landing-display mt-3 text-3xl text-slate-950">{feature.title}</h3>
+            <p class="mt-4 text-sm leading-7 text-slate-600">{feature.summary}</p>
+            <ul class="landing-bullet-list mt-6 space-y-3 text-sm leading-6 text-slate-700">
+              {feature.bullets.slice(0, 2).map((bullet) => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+            <div class="mt-8">
+              <a class="landing-button-primary" href={`/new/features/${feature.slug}`}>Open feature page</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section py-4 lg:py-8">
+    <div class="landing-shell space-y-8">
+      {spotlightFeatures.map((feature, index) => (
+        <div class="grid gap-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+          <div class={index % 2 === 0 ? "order-2 lg:order-1" : "order-2"}>
+            <span class="landing-tag">Feature spotlight</span>
+            <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl">{feature.title}</h2>
+            <p class="mt-5 text-lg leading-8 text-slate-600">{feature.detail}</p>
+            <ul class="landing-bullet-list mt-6 space-y-3 text-sm leading-7 text-slate-700">
+              {feature.outcomes.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <div class="mt-8">
+              <a class="landing-button-secondary" href={`/new/features/${feature.slug}`}>See feature details</a>
+            </div>
+          </div>
+          <div class={index % 2 === 0 ? "order-1 lg:order-2" : "order-1"}>
+            <div class="landing-panel rounded-[32px] p-4 sm:p-6">
+              <Image
+                src={feature.image}
+                alt={feature.imageAlt}
+                class="w-full rounded-[24px] object-cover"
+                widths={[480, 720, 960, 1280]}
+                sizes="(max-width: 1023px) 100vw, 48vw"
+              />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FAQ title={`${solution.label} FAQ`} faqs={faqGroup} />
+
+  <section class="landing-section pb-14 pt-6 lg:pb-20">
+    <div class="landing-shell">
+      <div class="landing-card-dark rounded-[36px] px-6 py-8 text-white sm:px-8 sm:py-10 lg:px-12">
+        <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-200">Next step</p>
+            <h2 class="landing-display mt-4 text-4xl sm:text-5xl">{solution.ctaTitle}</h2>
+            <p class="mt-4 max-w-3xl text-base leading-7 text-slate-200">{solution.ctaBody}</p>
+          </div>
+          <div class="flex flex-wrap gap-4">
+            <a class="landing-button-primary" href="https://calendly.com/diversdesk-info/demo">Book a demo</a>
+            <a class="landing-button-secondary !bg-white/10 !text-white !border-white/20" href="/signup2-trial">Start free trial</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PreviewLandingLayout>

@@ -1,0 +1,81 @@
+---
+import FAQ from "@components/sections/FAQ.astro";
+import FaqSchema from "@components/sections/new-landing/FaqSchema.astro";
+import StatsBand from "@components/sections/new-landing/StatsBand.astro";
+import PreviewLandingLayout from "@/layouts/PreviewLandingLayout.astro";
+import { features, featuresFaqs, featureHubStats, solutionMap } from "@data/newLanding";
+
+const faqGroup = {
+  subTitle: "This page is part of the hidden preview route and is excluded from sitemap discovery until launch.",
+  faqs: featuresFaqs,
+};
+---
+
+<PreviewLandingLayout
+  title="DiversDesk Features Preview"
+  description="Preview the next feature hub for DiversDesk across dive centers, resorts, and liveaboards."
+  canonical="https://www.diversdesk.com/new/features"
+>
+  <FaqSchema faqs={featuresFaqs} />
+
+  <section class="landing-section pb-8 pt-12 lg:pb-10 lg:pt-16">
+    <div class="landing-shell">
+      <span class="landing-tag">Feature Hub</span>
+      <div class="mt-6 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div>
+          <h1 class="landing-display max-w-5xl text-5xl text-slate-950 sm:text-6xl lg:text-7xl">
+            Every feature page is now part of one cleaner internal SEO system.
+          </h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
+            Instead of one broad feature page trying to do everything, this preview route introduces a structured hub with dedicated pages for the product capabilities that operators actually search for.
+          </p>
+        </div>
+        <div class="landing-card-dark rounded-[32px] p-6 text-white sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-200">Browse by business model</p>
+          <div class="mt-5 flex flex-wrap gap-3">
+            <a class="landing-button-primary" href="/new/solutions/dive-centers">Dive Centers</a>
+            <a class="landing-button-secondary !bg-white/10 !text-white !border-white/20" href="/new/solutions/dive-resorts">Dive Resorts</a>
+            <a class="landing-button-secondary !bg-white/10 !text-white !border-white/20" href="/new/solutions/liveaboards">Liveaboards</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <StatsBand
+    title="The feature architecture is designed to rank and convert more cleanly."
+    intro="Each feature card below can stand alone as a search entry point while still reinforcing the broader DiversDesk product story."
+    stats={featureHubStats}
+  />
+
+  <section class="landing-section py-10 lg:py-14">
+    <div class="landing-shell">
+      <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        {features.map((feature) => (
+          <article class="landing-card rounded-[30px] p-6 sm:p-7">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">{feature.eyebrow}</p>
+            <h2 class="landing-display mt-3 text-3xl text-slate-950">{feature.title}</h2>
+            <p class="mt-4 text-base leading-7 text-slate-600">{feature.summary}</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              {feature.appliesTo.map((slug) => (
+                <span class="rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-orange-700">
+                  {solutionMap[slug].shortLabel}
+                </span>
+              ))}
+            </div>
+            <ul class="landing-bullet-list mt-6 space-y-3 text-sm leading-6 text-slate-700">
+              {feature.outcomes.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <div class="mt-8">
+              <a class="landing-button-primary" href={`/new/features/${feature.slug}`}>View feature page</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQ title="Feature hub FAQ" faqs={faqGroup} />
+</PreviewLandingLayout>

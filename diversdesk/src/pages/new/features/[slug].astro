@@ -1,0 +1,139 @@
+---
+import { Image } from "astro:assets";
+import FAQ from "@components/sections/FAQ.astro";
+import FaqSchema from "@components/sections/new-landing/FaqSchema.astro";
+import PreviewLandingLayout from "@/layouts/PreviewLandingLayout.astro";
+import { features, solutionMap, type LandingFeature } from "@data/newLanding";
+
+export function getStaticPaths() {
+  return features.map((feature) => ({
+    params: { slug: feature.slug },
+    props: { feature },
+  }));
+}
+
+const { feature } = Astro.props as { feature: LandingFeature };
+
+const faqGroup = {
+  subTitle: "Each feature detail page can capture a narrower search intent while feeding the broader landing-page structure.",
+  faqs: feature.faqs,
+};
+
+const relatedFeatures = features.filter(
+  (candidate) => candidate.slug !== feature.slug && candidate.appliesTo.some((slug) => feature.appliesTo.includes(slug))
+).slice(0, 3);
+---
+
+<PreviewLandingLayout
+  title={`${feature.title} Preview | DiversDesk`}
+  description={feature.summary}
+  canonical={`https://www.diversdesk.com/new/features/${feature.slug}`}
+>
+  <FaqSchema faqs={feature.faqs} />
+
+  <section class="landing-section pb-8 pt-12 lg:pt-16">
+    <div class="landing-shell">
+      <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <span class="landing-tag">{feature.eyebrow}</span>
+          <h1 class="landing-display mt-6 max-w-4xl text-5xl text-slate-950 sm:text-6xl lg:text-7xl">
+            {feature.title}
+          </h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
+            {feature.detail}
+          </p>
+          <div class="mt-8 flex flex-wrap gap-2">
+            {feature.appliesTo.map((slug) => (
+              <a class="rounded-full bg-slate-100 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-slate-700" href={`/new/solutions/${slug}`}>
+                {solutionMap[slug].label}
+              </a>
+            ))}
+          </div>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a class="landing-button-primary" href="https://calendly.com/diversdesk-info/demo">Book a demo</a>
+            <a class="landing-button-secondary" href="/new/features">Back to feature hub</a>
+          </div>
+        </div>
+
+        <div class="landing-panel rounded-[34px] p-4 sm:p-6">
+          <Image
+            src={feature.image}
+            alt={feature.imageAlt}
+            class="w-full rounded-[24px] object-cover"
+            widths={[480, 720, 960, 1280]}
+            sizes="(max-width: 1023px) 100vw, 46vw"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section py-10 lg:py-14">
+    <div class="landing-shell">
+      <div class="grid gap-6 lg:grid-cols-3">
+        {feature.outcomes.map((outcome) => (
+          <article class="landing-card rounded-[28px] p-6">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-orange-600">Outcome</p>
+            <h2 class="landing-display mt-3 text-3xl text-slate-950">{outcome}</h2>
+            <p class="mt-4 text-sm leading-7 text-slate-600">
+              This page is designed to convert a specific product need into a clear operational advantage for the operator.
+            </p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="landing-section py-4 lg:py-8">
+    <div class="landing-shell">
+      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div class="landing-card-dark rounded-[32px] p-6 text-white sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-200">What this feature changes</p>
+          <ul class="landing-bullet-list mt-6 space-y-4 text-sm leading-7 text-slate-200">
+            {feature.bullets.map((bullet) => (
+              <li>{bullet}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="landing-card rounded-[32px] p-6 sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">Fits best with</p>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2">
+            {feature.appliesTo.map((slug) => (
+              <a class="rounded-[24px] border border-slate-200 bg-slate-50 p-5 transition hover:border-orange-200 hover:bg-orange-50" href={`/new/solutions/${slug}`}>
+                <h3 class="landing-display text-2xl text-slate-950">{solutionMap[slug].shortLabel}</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">{solutionMap[slug].heroIntro}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {relatedFeatures.length > 0 && (
+    <section class="landing-section py-10 lg:py-14">
+      <div class="landing-shell">
+        <div class="mb-8 max-w-3xl">
+          <span class="landing-tag">Related features</span>
+          <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl">Keep the product story connected.</h2>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-3">
+          {relatedFeatures.map((relatedFeature) => (
+            <article class="landing-card rounded-[28px] p-6">
+              <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">{relatedFeature.eyebrow}</p>
+              <h3 class="landing-display mt-3 text-3xl text-slate-950">{relatedFeature.title}</h3>
+              <p class="mt-4 text-sm leading-7 text-slate-600">{relatedFeature.summary}</p>
+              <div class="mt-6">
+                <a class="landing-button-secondary" href={`/new/features/${relatedFeature.slug}`}>Read more</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <FAQ title={`FAQ about ${feature.title}`} faqs={faqGroup} />
+</PreviewLandingLayout>
