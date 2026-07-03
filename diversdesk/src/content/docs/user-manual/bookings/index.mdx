@@ -8,115 +8,63 @@ robots: noindex, nofollow
 ---
 
 import VideoLightbox from '@components/VideoLightbox.astro';
+import DocsPageTabs from '@components/docs/DocsPageTabs.astro';
 
-The **Bookings** page is the heart of your daily operations. Use it to review booking details, manage participants, and keep billing and activity information organised in one place.
+This section explains how to work with your bookings overview and how to manage an individual booking in detail.
 
-All bookings are listed in the **Bookings** page, which can be accessed from the main navigation bar. You can filter bookings by date, status, or search for a specific booking using the search bar.
+<DocsPageTabs
+  items={[
+    { href: '/user_manual/bookings', label: 'Bookings Overview' },
+    { href: '/user_manual/bookings/booking-page', label: 'Booking Page' },
+  ]}
+/>
 
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/images/new-booking-page-ux.avif" 
-       alt="Renewed Diversdesk Booking Page Image" 
-  width="2880"
-  height="1716"
-  loading="eager"
-  decoding="sync"
-  fetchpriority="high"
-       style="max-width: 80%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
-</div>
-
-
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/images/new-booking-page-ux.avif" 
-       alt="Renewed Diversdesk Booking Page Image" 
-  width="2880"
-  height="1716"
-  loading="eager"
-  decoding="sync"
-  fetchpriority="high"
-       style="max-width: 80%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
-</div>
-
-## Architecture
-
-### Left Panel
-The left panel displays the participants or guests for the booking, along with booking share options.
-
-### Right Panel
-In the right panel, you'll find billing and payment information. The top section prominently displays the outstanding balance and a payment ledger with full history. <br />
-As before, you can generate invoices here that will automatically lock the booking for consistency.
-
-### Middle content section
-The middle section features a summary card at the top with all activities listed below. If items from different segments are added to the booking, navigation buttons for each segment will appear automatically.
-
-## Navigating the Booking Page:
-
-<div style="text-align: center; margin: 20px 0;">
-  <img src="/images/booking-page-manage-button.avif" 
-       alt="Location of the centralized manage button on the booking page" 
-       style="max-width: 80%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
-</div>
-
-
-<div style="display: flex; align-items: flex-start; gap: 24px; padding: 10px;">
-  <div style="flex: 1;">
-
-  **⚡ New Quick-Action Button**
-
-We’ve upgraded the booking page to give you a single, powerful point of control. The new **+Manage** button is now your centralized hub for every action on the booking page. 
-
-You can now manage everything from adding activities, accommodations, and retail items to managing payments and generating invoices.
-Saving you from chasing individual hyperlinks spread across the page.
-  </div>
-  
-  <div style="flex: 1; text-align: right;">
-  <img src="/images/booking-page-centralized-manage-button.avif" 
-      alt="Menu under the centralized action button on the booking page" 
-      style="max-width: 60%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
-  </div>
-
-</div>
-
-**📝 Streamlined Card Editing**
-
-We’ve removed the clutter of individual menus on activity cards. Now, simply click on any card to open a dedicated side panel where you can manage all item-specific details in one view.
-
-Need to make broader changes? Selecting **Edit Booking** from the **+Manage** button opens a side panel where you can oversee the entire booking. From here, you can also jump into the individual activity or accommodation cards at the bottom of the view to make item-specific updates.
-
-{/* <div style="flex: 1;">
-  <img src="/images/activity-card-updated.avif" 
-       alt="Activity card on the booking page" 
-       style="display: block; margin: 0 auto; max-width: 50%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-</div> */}
+## Bookings Overview Page
+The Bookings page sits at the center of your daily operations. It’s where you manage current and upcoming bookings, log new ones, and keep track of everything happening across any given day or date-range.
 
 <div style="flex: 1; text-align: left;">
   <VideoLightbox
-    src="/images/opening-card-side-panel.gif"
+    src="/images/bookings-overview-page.webm"
     label="Open activity card side panel walkthrough"
-    previewDesktopWidth="80%"
+    previewDesktopWidth="100%"
   />
 </div>
 
-{/* **📊 Enhanced Visibility**
-* **Taxes & Fees** Tax rates per set per Activity Category or and show now automomatically in the bill & invoice if set.
-* **Cleaner Interface:** Easier insight in guest details and trip information. */}
+### What this page is used for
 
-## Actions
+Use the overview page to:
 
-#### Cancel a Booking
+ - Review all bookings in one list
+ - Create new bookings
+ - Search for a booking by booking reference
+ - Filter bookings by date or status
+ - Open a booking and continue working on its details
 
-Cancelling a booking can be done through the +Manage button at the top-right of your booking page.
+### How to work from the dashboard
+
+Start by narrowing down the list to the bookings you want to review. This is especially useful when your team is preparing for a specific date range, checking recent self-bookings, or following up on pending actions.
+
+The page functions as a control panel for managing your bookings efficiently:
+
+- <strong>Quick-filter buttons:</strong> Select pre-set days or date ranges instantly at the top of the screen.
+- <strong>Search bar:</strong> Find a specific booking immediately when you already know what you're looking for.
+- <strong>Custom date fields:</strong> Filter for custom periods or future dates outside the standard quick-filters.
+- <strong>Status filters:</strong> Focus strictly on bookings that still require your attention.
+
 
 :::tip
-  Using the Cancel Booking option in the +Manage button will cancel the entire booking. To remove individual activities, simply click on the specific item card. This opens a side panel where you can remove that activity without affecting the rest of the booking.
+Did you know you can quickly isolate the bookings that came in today, or narrow the view down to any specific date or date range? This makes it easy to review new bookings, prepare for the day ahead, or look back at a past period.
 :::
 
+### Opening a booking
 
-#### Connect a Registered Participant to 2nd Activity
+Once you find the correct entry, open it to access the full booking record. From there, you can manage participants, activities, billing, payments, and sharing options in more detail.
 
-#### Add an Existing Customer to the Booking
+### Typical use cases
 
-#### Generate an Invoice
+Teams usually use the dashboard to:
 
-#### Add or Update Payments
-
-#### Share the Booking Details
+ - Find a booking quickly when a customer contacts the shop
+ - Review new or recently changed bookings
+ - Prepare upcoming trips by checking who is booked and what still needs to be completed
+ - Jump into a booking to make changes, take payment, or send booking details

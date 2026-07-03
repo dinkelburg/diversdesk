@@ -69,6 +69,13 @@ const robotsDirective = Astro.url.pathname.startsWith('/support')
       return icon;
     };
 
+    const sidebarRouteAliases = [
+      {
+        match: '/user_manual/bookings/booking-page',
+        target: '/user_manual/bookings',
+      },
+    ];
+
     const initializeSidebarEnhancements = () => {
       const topLevelLinks = Array.from(
         document.querySelectorAll('#starlight__sidebar ul.top-level > li > a.large')
@@ -145,6 +152,63 @@ const robotsDirective = Astro.url.pathname.startsWith('/support')
         } catch {}
       };
 
+      const applySidebarRouteAlias = () => {
+        const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+
+        const activeAlias = sidebarRouteAliases.find(({ match }) => {
+          const normalizedMatch = match.replace(/\/$/, '') || '/';
+          return currentPath === normalizedMatch;
+        });
+
+        const aliasedLinks = Array.from(
+          document.querySelectorAll('#starlight__sidebar a[data-route-alias-current="true"]')
+        );
+
+        aliasedLinks.forEach((link) => {
+          link.removeAttribute('aria-current');
+          link.removeAttribute('data-route-alias-current');
+        });
+
+        if (!activeAlias) {
+          return;
+        }
+
+        const targetPath = activeAlias.target.replace(/\/$/, '') || '/';
+        const sidebarLinks = Array.from(document.querySelectorAll('#starlight__sidebar a[href]'));
+
+        const matchedLink = sidebarLinks.find((link) => {
+          if (!(link instanceof HTMLAnchorElement)) {
+            return false;
+          }
+
+          try {
+            const linkUrl = new URL(link.href, window.location.origin);
+            const normalizedLinkPath = linkUrl.pathname.replace(/\/$/, '') || '/';
+            return normalizedLinkPath === targetPath;
+          } catch {
+            return false;
+          }
+        });
+
+        if (!(matchedLink instanceof HTMLAnchorElement)) {
+          return;
+        }
+
+        matchedLink.setAttribute('aria-current', 'page');
+        matchedLink.setAttribute('data-route-alias-current', 'true');
+
+        let currentNode = matchedLink.parentElement;
+
+        while (currentNode) {
+          if (currentNode instanceof HTMLDetailsElement) {
+            currentNode.open = true;
+          }
+          currentNode = currentNode.parentElement;
+        }
+
+        syncSidebarState();
+      };
+
       const closeAllTopLevelGroups = () => {
         topLevelGroups.forEach((group) => {
           group.open = false;
@@ -163,6 +227,8 @@ const robotsDirective = Astro.url.pathname.startsWith('/support')
           closeAllTopLevelGroups();
         });
       });
+
+      applySidebarRouteAlias();
 
       if (topLevelLinks.some((link) => link.getAttribute('aria-current') === 'page')) {
         closeAllTopLevelGroups();
@@ -229,12 +295,13 @@ const robotsDirective = Astro.url.pathname.startsWith('/support')
           return;
         }
 
+        const isSameOrigin = targetUrl.origin === currentUrl.origin;
         const isSamePage =
-          targetUrl.origin === currentUrl.origin &&
+          isSameOrigin &&
           targetUrl.pathname === currentUrl.pathname &&
           targetUrl.search === currentUrl.search;
 
-        if (isSamePage) {
+        if (isSameOrigin || isSamePage) {
           return;
         }
 

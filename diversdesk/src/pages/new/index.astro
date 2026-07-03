@@ -6,8 +6,10 @@ import FaqSchema from "@components/sections/new-landing/FaqSchema.astro";
 import StatsBand from "@components/sections/new-landing/StatsBand.astro";
 import TestimonialsSectionMin from "@/components/sections/testimonials/TestimonialsSectionMinimal.astro";
 import PreviewLandingLayout from "@/layouts/PreviewLandingLayout.astro";
+import plannerImage from "@images/iPad_pro_detailed_day.avif";
+import resortImage from "@images/insights/diversdesk-accommodation-mockup.avif";
+import liveaboardImage from "@images/insights/liveaboard-ship.avif";
 import {
-  featureMap,
   homepageFaqs,
   homepageStats,
   homeHeroImage,
@@ -15,14 +17,11 @@ import {
   solutions,
 } from "@data/newLanding";
 
-const featuredFeatures = [
-  featureMap["digital-onboarding"],
-  featureMap["planner-scheduling"],
-  featureMap["booking-engine-channel-manager"],
-  featureMap["inventory-pos-rentals"],
-  featureMap["finance-bookkeeping"],
-  featureMap["agents-partners-portal"],
-];
+const solutionPreviewImages = {
+  "dive-centers": plannerImage,
+  "dive-resorts": resortImage,
+  liveaboards: liveaboardImage,
+};
 
 const homepageFaqGroup = {
   subTitle: "Each page in this preview route is hidden from search while the new landing system is built in parallel.",
@@ -37,92 +36,152 @@ const homepageFaqGroup = {
 >
   <FaqSchema faqs={homepageFaqs} />
 
-  <section class="landing-section pb-8 pt-12 lg:pb-12 lg:pt-16">
+  <section class="landing-section pb-12 pt-8 lg:pb-20 lg:pt-12">
     <div class="landing-shell">
-      <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div class="grid gap-12 lg:grid-cols-[0.98fr_1.02fr] lg:items-center">
         <div>
-          <span class="landing-tag">Preview Homepage</span>
-          <h1 class="landing-display mt-6 max-w-4xl text-5xl text-slate-950 sm:text-6xl lg:text-7xl">
-            Dive business management software for operators who want more clarity and less admin.
+          <span class="landing-tag">DiversDesk Solutions</span>
+          <h1 class="landing-display mt-6 max-w-4xl text-5xl text-slate-950 sm:text-6xl lg:text-[4.8rem] lg:leading-[1.02]">
+            The No. 1 solution for dive centers, dive resorts, and liveaboards.
           </h1>
           <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-            DiversDesk brings bookings, onboarding, planning, payments, retail, and guest operations into one calm operating system for dive centers, dive resorts, and liveaboards.
+            DiversDesk gives dive businesses one professional operating system for bookings, onboarding, planning, payments, inventory, and guest operations, with a tailored path for each business model.
           </p>
-          <ul class="landing-bullet-list mt-8 grid gap-3 text-sm font-medium text-slate-700 sm:grid-cols-2 sm:text-base">
-            <li>Stop stitching together spreadsheets, booking tools, waivers, POS, and finance workflows.</li>
-            <li>Give staff one source of truth for guests, schedules, inventory, and revenue events.</li>
-            <li>Move customers from inquiry to arrival with fewer delays, errors, and manual handoffs.</li>
-            <li>Build a more professional guest experience without creating more back-office work.</li>
+          <ul class="landing-bullet-list mt-8 space-y-3 text-sm font-medium text-slate-700 sm:text-base">
+            <li>Choose the solution path that matches how your business actually operates.</li>
+            <li>Replace disconnected tools with one calmer, more professional workflow.</li>
+            <li>Give every team clearer visibility from inquiry to arrival to final payment.</li>
           </ul>
           <div class="mt-10 flex flex-wrap gap-4">
             <a class="landing-button-primary" href="https://calendly.com/diversdesk-info/demo">Book a demo</a>
-            <a class="landing-button-secondary" href="/new/features">Explore all features</a>
+            <a class="landing-button-secondary" href="#solutions">See solutions</a>
           </div>
         </div>
 
-        <div class="landing-panel overflow-hidden rounded-[36px] p-4 sm:p-6">
-          <div class="rounded-[28px] bg-slate-950 p-6 text-white sm:p-8">
-            <div class="flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-orange-200">
-              <span>Bookings</span>
-              <span>Operations</span>
-              <span>Payments</span>
-              <span>Guests</span>
-            </div>
-            <h2 class="landing-display mt-5 text-3xl sm:text-4xl">
-              Three focused solution paths. One connected product story.
-            </h2>
-            <p class="mt-4 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
-              Start with the business model you run today, then drill into the features that remove friction from sales, guest preparation, daily operations, and financial follow-through.
-            </p>
-          </div>
-          <div class="mt-4 rounded-[28px] bg-white p-4 sm:p-5">
+        <div class="space-y-5">
+          <div class="landing-image-frame rounded-[34px]">
             <Image
               src={homeHeroImage}
               alt="DiversDesk shown across laptop and mobile screens."
-              class="w-full rounded-[22px] object-cover"
+              class="w-full rounded-[26px] object-cover"
               widths={[480, 720, 960, 1280]}
               sizes="(max-width: 1023px) 100vw, 48vw"
             />
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div class="landing-card rounded-[28px] p-5 sm:p-6">
+              <p class="landing-kicker">One source of truth</p>
+              <h2 class="landing-display mt-3 text-3xl text-slate-950">One system across sales, operations, and finance.</h2>
+              <p class="mt-3 text-sm leading-7 text-slate-600">Keep customer data, planning decisions, bookings, and commercial events connected instead of rebuilding the same story in different tools.</p>
+            </div>
+            <div class="landing-card rounded-[28px] p-5 sm:p-6">
+              <p class="landing-kicker">Tailored navigation</p>
+              <h2 class="landing-display mt-3 text-3xl text-slate-950">Clear paths for each type of operator.</h2>
+              <p class="mt-3 text-sm leading-7 text-slate-600">The homepage introduces the three solution types directly so visitors can move into the right tailored page immediately.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <StatsBand
-    title="The new landing system is built around measurable outcomes."
-    intro="These proof-style numbers are meant to reinforce the promise of speed, clarity, and consolidation across every solution page."
-    stats={homepageStats}
-  />
-
-  <section class="landing-section py-10 lg:py-14">
+  <section id="solutions" class="landing-section py-10 lg:py-16">
     <div class="landing-shell">
-      <div class="mb-8 max-w-3xl">
-        <span class="landing-tag">Solutions</span>
-        <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl">
-          One brand. Three operating models. No generic messaging.
+      <div class="max-w-3xl">
+        <span class="landing-tag">Choose your operation</span>
+        <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl lg:text-6xl">
+          Start with the business model you run.
         </h2>
         <p class="mt-4 text-lg leading-8 text-slate-600">
-          Each route speaks to a distinct business model while staying grounded in the same core promise: less admin, fewer errors, and a more professional customer experience.
+          Each route has its own tailored message, its own feature emphasis, and its own SEO focus, while staying connected to the same DiversDesk product story.
         </p>
       </div>
 
-      <div class="grid gap-6 xl:grid-cols-3">
+      <div class="mt-10 grid gap-8 xl:grid-cols-3">
         {solutions.map((solution) => (
-          <article class="landing-card rounded-[30px] p-6 sm:p-7">
-            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-600">{solution.shortLabel}</p>
-            <h3 class="landing-display mt-4 text-3xl text-slate-950">{solution.label}</h3>
-            <p class="mt-4 text-base leading-7 text-slate-600">{solution.heroIntro}</p>
-            <ul class="landing-bullet-list mt-6 space-y-3 text-sm leading-6 text-slate-700">
-              {solution.valueProps.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-            <div class="mt-8 flex flex-wrap gap-3">
-              <a class="landing-button-primary" href={`/new/solutions/${solution.slug}`}>Explore solution</a>
+          <article class="space-y-5">
+            <div class="landing-image-frame rounded-[30px]">
+              <Image
+                src={solutionPreviewImages[solution.slug]}
+                alt={`${solution.label} preview image`}
+                class="aspect-[4/3] w-full rounded-[24px] object-cover"
+                widths={[480, 720, 960]}
+                sizes="(max-width: 1279px) 100vw, 30vw"
+              />
+            </div>
+            <div class="landing-card rounded-[28px] p-6 sm:p-7">
+              <p class="landing-kicker">{solution.shortLabel}</p>
+              <h3 class="landing-display mt-3 text-3xl text-slate-950">{solution.label}</h3>
+              <p class="mt-4 text-base leading-7 text-slate-600">{solution.heroIntro}</p>
+              <div class="mt-6 space-y-2">
+                {solution.valueProps.slice(0, 2).map((item) => (
+                  <p class="text-sm font-medium leading-6 text-slate-700">{item}</p>
+                ))}
+              </div>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a class="landing-button-primary" href={`/new/solutions/${solution.slug}`}>Explore {solution.shortLabel}</a>
+              </div>
             </div>
           </article>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <StatsBand
+    title="Proof points work best when they support a cleaner message."
+    intro="The homepage should show a few strong outcomes, then quickly guide visitors toward the solution page that matches their operation."
+    stats={homepageStats}
+  />
+
+  <section class="landing-section py-12 lg:py-20">
+    <div class="landing-shell">
+      <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div>
+          <span class="landing-tag">Whitespace and imagery</span>
+          <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl lg:text-6xl">
+            Reserve plenty of room for visuals, not just copy.
+          </h2>
+          <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+            The new direction uses larger image zones and calmer spacing so each section can feel more premium now, and even stronger later when the final imagery is swapped in.
+          </p>
+          <div class="mt-8 space-y-4">
+            <p class="text-sm font-medium leading-7 text-slate-700">Use the same image in multiple sections for now if needed. The layout should already be strong before the final asset pass.</p>
+            <p class="text-sm font-medium leading-7 text-slate-700">Each solution page can keep these larger visual anchors while tailoring the feature message and SEO focus to its audience.</p>
+          </div>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div class="landing-image-frame rounded-[30px] sm:translate-y-8">
+            <Image
+              src={plannerImage}
+              alt="Planner image placeholder for the new landing pages."
+              class="aspect-[4/5] w-full rounded-[24px] object-cover"
+              widths={[480, 720, 960]}
+              sizes="(max-width: 639px) 100vw, 24vw"
+            />
+          </div>
+          <div class="space-y-5">
+            <div class="landing-image-frame rounded-[30px]">
+              <Image
+                src={resortImage}
+                alt="Accommodation image placeholder for the new landing pages."
+                class="aspect-[4/3] w-full rounded-[24px] object-cover"
+                widths={[480, 720, 960]}
+                sizes="(max-width: 639px) 100vw, 24vw"
+              />
+            </div>
+            <div class="landing-image-frame rounded-[30px]">
+              <Image
+                src={liveaboardImage}
+                alt="Liveaboard image placeholder for the new landing pages."
+                class="aspect-[4/3] w-full rounded-[24px] object-cover"
+                widths={[480, 720, 960]}
+                sizes="(max-width: 639px) 100vw, 24vw"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -132,41 +191,31 @@ const homepageFaqGroup = {
     subTitle="The moving operator logos stay on the combined landing page to strengthen social proof without repeating the same section across every child page."
   />
 
-  <section class="landing-section py-12 lg:py-16">
+  <section class="landing-section py-12 lg:py-20">
     <div class="landing-shell">
-      <div class="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
-        <div class="max-w-3xl">
-          <span class="landing-tag">Feature preview</span>
-          <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl">
-            The new feature story is structured around real operational pressure.
-          </h2>
+      <div class="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
+        <div class="landing-image-frame rounded-[34px]">
+          <Image
+            src={plannerImage}
+            alt="Feature-section placeholder image for DiversDesk."
+            class="aspect-[5/4] w-full rounded-[26px] object-cover"
+            widths={[720, 960, 1280]}
+            sizes="(max-width: 1023px) 100vw, 46vw"
+          />
         </div>
-        <a class="landing-button-secondary" href="/new/features">Show all features</a>
-      </div>
-
-      <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-        {featuredFeatures.map((feature) => (
-          <article class="landing-card rounded-[30px] p-6 sm:p-7">
-            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">{feature.eyebrow}</p>
-            <h3 class="landing-display mt-3 text-3xl text-slate-950">{feature.title}</h3>
-            <p class="mt-4 text-base leading-7 text-slate-600">{feature.summary}</p>
-            <ul class="landing-bullet-list mt-6 space-y-3 text-sm leading-6 text-slate-700">
-              {feature.bullets.slice(0, 2).map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-            <div class="mt-8 flex items-center justify-between gap-4">
-              <div class="flex flex-wrap gap-2">
-                {feature.appliesTo.map((solutionSlug) => (
-                  <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-slate-600">
-                    {solutionSlug.replace("-", " ")}
-                  </span>
-                ))}
-              </div>
-              <a class="text-sm font-semibold text-orange-600" href={`/new/features/${feature.slug}`}>View feature</a>
-            </div>
-          </article>
-        ))}
+        <div>
+          <span class="landing-tag">Feature structure</span>
+          <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl lg:text-6xl">
+            Tailored solution pages should decide which features come first.
+          </h2>
+          <p class="mt-5 text-lg leading-8 text-slate-600">
+            The feature hub still matters for SEO depth, but the homepage should stay selective. It should help visitors find their business type first, then surface the right supporting features from there.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a class="landing-button-primary" href="/new/features">Browse all features</a>
+            <a class="landing-button-secondary" href="/new/solutions/dive-centers">Start with Dive Centers</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>

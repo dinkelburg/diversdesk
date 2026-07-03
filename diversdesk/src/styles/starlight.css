@@ -53,6 +53,73 @@ header {
     background-color: var(--backdrop-color) !important;
 }
 
+.docs-page-tabs {
+    display: flex;
+    width: 100%;
+    gap: 0;
+    margin: 1rem 0 1.5rem;
+    border-bottom: 1px solid rgba(248, 101, 69, 0.22);
+    background: transparent;
+}
+
+.docs-page-tabs__link {
+    position: relative;
+    display: inline-flex;
+    flex: 1 1 0;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 3px solid transparent;
+    color: var(--sl-color-gray-3);
+    font-size: 0.98rem;
+    font-weight: 500;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    transition: color 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.docs-page-tabs__link:hover,
+.docs-page-tabs__link:focus-visible {
+    color: var(--sl-color-gray-1);
+    background: rgba(248, 101, 69, 0.05);
+    text-decoration: none;
+}
+
+.docs-page-tabs__link[aria-current='page'] {
+    background: rgba(248, 101, 69, 0.08);
+    border-bottom-color: var(--sl-color-accent);
+    color: var(--sl-color-white);
+    font-weight: 700;
+}
+
+:root[data-theme='light'] .docs-page-tabs__link:hover,
+:root[data-theme='light'] .docs-page-tabs__link:focus-visible,
+:root[data-theme='light'] .docs-page-tabs__link[aria-current='page'] {
+    color: var(--sl-color-gray-1);
+}
+
+:root[data-theme='light'] .docs-page-tabs__link:hover,
+:root[data-theme='light'] .docs-page-tabs__link:focus-visible {
+    background: rgba(248, 101, 69, 0.06);
+}
+
+:root[data-theme='light'] .docs-page-tabs__link[aria-current='page'] {
+    background: rgba(248, 101, 69, 0.1);
+}
+
+@media (max-width: 40rem) {
+    .docs-page-tabs__link {
+        min-height: 2.75rem;
+        padding: 0.7rem 0.65rem;
+        font-size: 0.88rem;
+    }
+}
+
 /* Keep sidebar width stable when expanding/collapsing groups adds/removes vertical scrolling. */
 #starlight__sidebar {
     scrollbar-gutter: stable;

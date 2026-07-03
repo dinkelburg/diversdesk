@@ -20,6 +20,8 @@ interface Props {
   canonical?: string;
   ogType?: "website" | "article";
   showBanner?: boolean;
+  showNavbar?: boolean;
+  showFooter?: boolean;
 }
 
 const {
@@ -35,6 +37,8 @@ const {
   canonical = Astro.url.href,
   ogType = "website",
   showBanner = false,
+  showNavbar = true,
+  showFooter = true,
 } = Astro.props;
 
 const pageUrl = url || canonical;
@@ -215,12 +219,12 @@ const websiteSchema = {
   <body class="bg-white selection:bg-orange-200 selection:text-neutral-700 dark:bg-neutral-800 overflow-x-hidden">
     {showBanner && <BlackFridayBanner />}
     <div class="w-full">
-      <Navbar />
+      {showNavbar && <Navbar />}
       <main>
         <slot />
       </main>
     </div>
-    <FooterSection />
+    {showFooter && <FooterSection />}
     <style>
       .scrollbar-hide::-webkit-scrollbar {
         display: none;

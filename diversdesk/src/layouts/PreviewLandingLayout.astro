@@ -1,5 +1,7 @@
 ---
 import MainLayout from "./MainLayout.astro";
+import PreviewFooter from "@components/sections/new-landing/PreviewFooter.astro";
+import PreviewNav from "@components/sections/new-landing/PreviewNav.astro";
 import "@styles/new-landing.css";
 
 interface Props {
@@ -30,9 +32,13 @@ const {
   ogType={ogType}
   robots="noindex, nofollow"
   showBanner={false}
+  showNavbar={false}
+  showFooter={false}
 >
   <slot name="head" slot="head" />
   <div class="landing-body landing-surface min-h-screen">
+    <PreviewNav />
     <slot />
+    <PreviewFooter />
   </div>
 </MainLayout>
