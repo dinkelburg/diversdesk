@@ -424,15 +424,27 @@ header {
     transform: none;
 }
 
-#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle][aria-current='page'],
-#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:hover,
-#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:focus-visible {
+:root:not([data-theme='light']) #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle][aria-current='page'],
+:root:not([data-theme='light']) #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:hover,
+:root:not([data-theme='light']) #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:focus-visible {
+    color: var(--sl-color-white);
+}
+
+:root:not([data-theme='light']) #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle][aria-current='page']::after,
+:root:not([data-theme='light']) #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:hover::after,
+:root:not([data-theme='light']) #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:focus-visible::after {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+:root[data-theme='light'] #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle][aria-current='page'],
+:root[data-theme='light'] #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:hover,
+:root[data-theme='light'] #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:focus-visible {
     color: #2d120d;
 }
 
-#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle][aria-current='page']::after,
-#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:hover::after,
-#starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:focus-visible::after {
+:root[data-theme='light'] #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle][aria-current='page']::after,
+:root[data-theme='light'] #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:hover::after,
+:root[data-theme='light'] #starlight__sidebar ul.top-level > li:nth-child(7) > details > ul a[data-update-subtitle]:focus-visible::after {
     color: rgba(45, 18, 13, 0.78);
 }
 
