@@ -1,0 +1,131 @@
+---
+title: Discount Calculator
+description: Create, apply, and manage reusable booking discounts with clear previews before you confirm them.
+slug: features-resources/discount-calculator
+sidebar:
+    label: Discount Calculator
+    order: 2
+robots: noindex
+---
+
+import VideoLightbox from '@components/VideoLightbox.astro';
+
+With the Discount Calculator you can build reusable discount rules and apply them to a booking or specific guests in a controlled way.
+
+## Create a Discount Rule
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; margin: 20px 0;">
+  <div style="flex: 3 1 360px; min-width: 0;">
+    <p>The Discount Calculator can be found inside the bill section of a booking. Clicking on the newly 
+    added ellipsis opens the bill quick-actions menu. From there, clicking <span style="white-space: nowrap;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display: inline-block; vertical-align: -0.125em; margin-right: 0.35rem;"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" /><path d="m15 9-6 6" /><path d="M9 9h.01" /><path d="M15 15h.01" /></svg><strong>Add discount</strong></span> opens 
+    the Discount Calculator side panel, where you can:</p>
+    <ul>
+      <li>Apply discounts to an entire booking or specific guests.</li>
+      <li>Save rules for team-wide reuse.</li>
+      <li>Preview calculations in real time before applying them.</li>
+      <li>Update or remove discounts without manually editing individual bill lines.</li>
+    </ul>
+  </div>
+
+  <div style="flex: 2 1 240px; min-width: 0; margin-top: -20px;">
+    <VideoLightbox
+      src="/images/discount-select.webm"
+      label="Create a discount rule"
+      previewDesktopWidth="100%"
+    />
+  </div>
+</div>
+
+### 1. Define Rule Basics
+* **Rule Name:** Use clear, recognizable names for your team (e.g., *Early Bird 10%*, *Staff Discount*, *Professional Discount*).
+* **Type:** Choose **Percentage** to subtract a percentage from the selected discount scope, or **Fixed amount** to subtract an exact monetary value. Use the input field next to the selected type to set the exact discount value.
+* **Application Mode:** Choose whether the discount applies to the selected bill lines for the **booking total** or to one or more specific **participants** in the booking.
+* **Default applied to:** For percentage rules, choose which default bill line groups the rule targets. You can still adjust these selections on the fly before applying the discount:
+  * Activities
+  * Add-ons
+  * Accommodation
+  * Retail
+
+<div style="text-align: center; margin: 22px 0;">
+  <img src="/images/discount-rule-1.avif"
+       alt="Non-consecutive scheduling view on mobile and desktop"
+  style="width: min(70%, 100%); height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+</div>
+
+Click **Save rule** to add it to your permanent library.
+
+## Apply a Discount to the Booking Total
+
+Choose **Booking total** for booking-wide promotions, package deals, or general goodwill discounts. 
+
+* **Line Selection:** You control exactly which bill lines are included.
+* **Percentage Rules:** Only affect the specific line groups selected.
+* **Fixed Rules:** The total deduction matches your exact fixed amount and is distributed proportionally across the selected bill lines.
+
+When a discount is applied to a specific scope, Diversdesk keeps that scope attached to the discount. For example, if the discount is scoped to **activities**, adding another activity later will include that new activity in the same discount scope when the discount is recalculated or updated.
+
+> **Tip:** The calculator displays a live summary so you can verify the math before saving.
+
+<VideoLightbox
+  src="/images/applying-a-discount-rule.webm"
+  label="Create a discount rule"
+  previewDesktopWidth="100%"
+/>
+
+## Apply a Discount to Specific Guests
+
+Choose **Participant allocation** when a discount belongs to individual participants/guests (e.g., Professional Discount, Family Discount, or any other targeted participant compensation). Each selected person receives an individual discount calculation based on their eligible bill lines.
+
+### Percentage Discounts
+Calculated strictly against the eligible bill lines linked to that specific guest. If the booking includes shared or unassigned costs, the calculator shows how those are distributed so the base amount remains completely transparent.
+
+### Fixed Discounts
+When applying a fixed amount to guests, select one of two behaviors:
+* **Shared amount:** The total amount is split evenly among the selected guests.
+* **Amount per participant:** The full amount is applied individually to *each* selected guest.
+
+**Important Safeguards:**
+* A guest's discount cannot exceed their remaining billable balance.
+* If a guest has no eligible balance left, their discount caps at zero.
+* Diversdesk will flag a warning if a selected guest has no remaining balance.
+
+## How Discount Stacking Works
+
+When your setup uses **parallel stacking**, each discount is calculated from the original selected **discount scope**, not from a total that has already been reduced by a previous discount.
+
+In practice, this means stacked discounts are calculated alongside each other on the same base amount, and the combined discount result is then deducted from the booking total.
+
+This makes the outcome easier to review and helps keep discount calculations more predictable when more than one discount applies.
+
+## Review & Manage Applied Discounts
+
+### Live Previews
+Before confirming, review the real-time breakdown to ensure the discount targets the correct lines or guests. The preview displays:
+* Gross total & remaining balance.
+* Discount scope / selection total.
+* Any existing applied discounts & the new preview discount amount.
+
+### System Warnings
+The calculator actively prevents pricing errors by warning you if:
+* The discount stacks with an existing rule.
+* Combined discounts push the booking total below zero.
+* The discount creates an overpayment (requiring a refund).
+* A selected guest has no balance left to discount.
+
+### Updates and Removals
+Once applied, you can manage everything right from the calculator panel: update the rule version, view the customer preview, or completely remove the discount.
+
+This is especially useful when the booking changes after the discount was first applied. If the discount is tied to a stored scope such as **activities**, **add-ons**, or other selected line groups, updating the discount keeps that scope logic in place and recalculates the result against the current matching lines in the booking.
+
+## Legacy Discounts
+
+Older bookings may contain discounts applied via the legacy activity card system. 
+
+* **Separation:** The calculator marks these as **Legacy**. They are not automatically converted into new Discount Rules.
+* **Management:** Legacy discounts must be edited directly on the original activity card where they were created. This prevents calculations on older bookings from breaking.
+
+## Quick Best Practices
+
+* **Be descriptive:** Name rules clearly so staff instantly know when to use them.
+* **Trust the preview:** Always double-check the live summary numbers before hitting apply.
+* **Watch out for stacking:** Take extra care when compounding multiple discounts on a single bill.
+* **Target accurately:** Only use guest allocation if the discount belongs strictly to specific individuals.

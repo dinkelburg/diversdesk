@@ -4,12 +4,32 @@
       class="updates-card updates-card-next updates-card-next-button"
       type="button"
       aria-expanded="false"
+      aria-controls="updates-in-progress-note"
+      data-updates-soon-toggle
+    >
+      <div class="updates-card-main">
+        <p class="updates-card-line">In Progress · Planner Iteration</p>
+        <p class="updates-card-desc">We are currently refining the planner with a faster planning flow, clearer day overviews, and smoother scheduling interactions.</p>
+      </div>
+      <span class="updates-card-next-tag" aria-hidden="true">In Progress</span>
+    </button>
+
+    <p class="updates-next-note" id="updates-in-progress-note" hidden>
+      Work on this update is actively underway. More information will be published once the next milestone is ready.
+    </p>
+  </div>
+
+  <div role="listitem">
+    <button
+      class="updates-card updates-card-next updates-card-next-button"
+      type="button"
+      aria-expanded="false"
       aria-controls="updates-coming-soon-note"
       data-updates-soon-toggle
     >
       <div class="updates-card-main">
-        <p class="updates-card-line">Coming Soon · New Planner</p>
-        <p class="updates-card-desc">A faster planning flow with clearer day-overviews and smoother drag-and-drop scheduling.</p>
+        <p class="updates-card-line">Coming Soon · Rental Gear Module Iteration</p>
+        <p class="updates-card-desc">The next roadmap item after planner work will focus on the next iteration of the rental gear module.</p>
       </div>
       <span class="updates-card-next-tag" aria-hidden="true">Soon</span>
     </button>
@@ -18,14 +38,6 @@
       Information for this update will be published soon.
     </p>
   </div>
-
-  <a class="updates-card updates-card-next" href="/updates/2026-07-02-discount-calculator/" role="listitem">
-    <div class="updates-card-main">
-      <p class="updates-card-line">In Progress · More Discount Flexibility</p>
-      <p class="updates-card-desc">We're currently working on making it easier to set and apply discounts.</p>
-    </div>
-    <span class="updates-card-next-tag" aria-hidden="true">Soon</span>
-  </a>
 </div>
 
 <script is:inline>
