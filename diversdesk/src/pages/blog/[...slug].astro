@@ -33,7 +33,10 @@ const introParagraphs = (post.data.contents || []).filter(
 const pageTitle = `${post.data.title} | ${SITE.title}`;
 const siteOrigin = "https://www.diversdesk.com";
 const pageUrl = `${siteOrigin}/blog/${post.slug}/`;
-const pageImage = new URL(post.data.cardImage.src, siteOrigin).toString();
+const pageImage =
+  post.data.cardImage && post.data.cardImage.src
+    ? new URL(post.data.cardImage.src, siteOrigin).toString()
+    : `${siteOrigin}/images/logo.avif`;
 const blogPostingSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -112,13 +115,15 @@ const blogPostingSchema = {
       </h1>
 
        <!-- Blog post image (cardImage) after 2nd paragraph -->
-       <div class="h-64 overflow-hidden rounded-lg shadow-lg md:h-80 mb-6">
-        <Image
-          src={post.data.cardImage}
-          alt={post.data.cardImageAlt}
-          format="avif"
-        />
-      </div>
+      {post.data.cardImage && (
+        <div class="h-64 overflow-hidden rounded-lg shadow-lg md:h-80 mb-6">
+          <Image
+            src={post.data.cardImage}
+            alt={post.data.cardImageAlt}
+            format="avif"
+          />
+        </div>
+      )}
       <!--Render contents from frontmatter-->
       <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
         {introParagraphs.map((content: string) => (
