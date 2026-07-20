@@ -1,0 +1,288 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+import { Image } from "astro:assets";
+import StarterPlanImage from "@images/insights/diversdesk-starter-plan.avif";
+
+const canonicalSlug = "partners/mark-padi-offer";
+const pageTitle = `Mark PADI Partner Offer | ${SITE.title}`;
+const pageDescription =
+  "Private Diversdesk partner offer: sign up through Mark with promo code MARK-PADI and receive 15 months for the price of a 12-month subscription.";
+const promoCode = "MARK-PADI";
+const signupUrl = `/signup-trial?promo=${promoCode}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={`https://www.diversdesk.com/${canonicalSlug}`}
+  robots="noindex, nofollow"
+  image="/images/Laptop-and-phone-diversdesk.avif"
+>
+  <Fragment slot="head">
+    <style>
+      .mark-hero {
+        background:
+          radial-gradient(circle at 12% 18%, rgba(255, 117, 87, 0.2), transparent 34%),
+          radial-gradient(circle at 88% 12%, rgba(20, 184, 166, 0.15), transparent 30%),
+          linear-gradient(135deg, #fffaf7 0%, #ffffff 48%, #eef8f8 100%);
+      }
+
+      .mark-reveal {
+        animation: mark-reveal 680ms ease-out both;
+      }
+
+      .mark-delay-1 {
+        animation-delay: 120ms;
+      }
+
+      .mark-delay-2 {
+        animation-delay: 240ms;
+      }
+
+      @keyframes mark-reveal {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        const promoButton = document.querySelector("[data-copy-promo]");
+        if (!promoButton) return;
+
+        const defaultText = promoButton.textContent;
+
+        promoButton.addEventListener("click", async () => {
+          const code = promoButton.getAttribute("data-copy-promo");
+          if (!code) return;
+
+          try {
+            await navigator.clipboard.writeText(code);
+            promoButton.textContent = "Copied: " + code;
+            setTimeout(() => {
+              promoButton.textContent = defaultText;
+            }, 1800);
+          } catch {
+            promoButton.textContent = code;
+          }
+        });
+      });
+    </script>
+  </Fragment>
+
+  <section class="mark-hero border-b border-neutral-200/70 py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div>
+          <p class="mark-reveal text-xs font-semibold uppercase tracking-[0.22em] text-orange-700">
+            Private Partner Offer
+          </p>
+          <h1 class="mark-reveal mark-delay-1 mt-4 text-4xl font-black leading-tight text-neutral-900 sm:text-5xl lg:text-6xl">
+            Stop juggling tools. Run your dive business from one professional hub.
+          </h1>
+          <p class="mark-reveal mark-delay-2 mt-6 max-w-2xl text-lg leading-relaxed text-neutral-700 sm:text-xl">
+            Save hours every week with online bookings, smart scheduling, paperless onboarding, payments, retail, accommodation, and CRM in one workflow built for dive operators.
+          </p>
+
+          <div class="mark-reveal mark-delay-2 mt-8 flex flex-col gap-4 sm:flex-row">
+            <a
+              href={signupUrl}
+              class="inline-flex items-center justify-center rounded-xl bg-orange-600 px-7 py-4 text-base font-bold text-white transition hover:bg-orange-700"
+            >
+              Start With Mark's Offer
+            </a>
+            <a
+              href="https://calendly.com/diversdesk-info/demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-xl border border-neutral-300 bg-white px-7 py-4 text-base font-bold text-neutral-800 transition hover:border-orange-300 hover:text-orange-700"
+            >
+              Schedule A Demo
+            </a>
+          </div>
+        </div>
+
+        <aside class="mark-reveal mark-delay-2 rounded-2xl border border-orange-200 bg-white/95 p-6 shadow-xl shadow-orange-100/60 backdrop-blur sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-700">Partner Benefit</p>
+          <h2 class="mt-4 text-3xl font-black text-neutral-900">15 months for the price of 12</h2>
+          <p class="mt-4 text-neutral-700">
+            Sign up for a yearly Diversdesk subscription through Mark and enter promo code <strong>{promoCode}</strong> on the signup page.
+          </p>
+          <p class="mt-4 text-neutral-700">
+            We will add <strong>3 free months</strong> on top of your chosen annual subscription, giving you a full 15 months to run Diversdesk in your operation.
+          </p>
+          <button
+            type="button"
+            data-copy-promo={promoCode}
+            class="mt-6 flex w-full items-center justify-between gap-3 rounded-xl bg-orange-50 px-4 py-3 text-left text-sm font-semibold text-orange-800 transition hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+            aria-label={`Copy promo code ${promoCode}`}
+          >
+            <span>Promo code: {promoCode}</span>
+            <svg
+              aria-hidden="true"
+              class="h-4 w-4 shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+          </button>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center">
+        <h2 class="text-3xl font-black text-neutral-900 sm:text-4xl">From chaos to clarity</h2>
+        <p class="mt-4 text-lg leading-relaxed text-neutral-700">
+          Dive centers need more than another booking form. Diversdesk replaces scattered tools with one intuitive system for bookings, planning, guest admin, sales, and follow-up.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-3 lg:grid-cols-4">
+        <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">Online Booking</p>
+          <h3 class="mt-3 text-xl font-bold text-neutral-900">Capture bookings 24/7</h3>
+          <p class="mt-3 text-neutral-700">
+            Embed your booking engine on your website and let customers reserve online while your team stays in control.
+          </p>
+        </article>
+        <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">Scheduling</p>
+          <h3 class="mt-3 text-xl font-bold text-neutral-900">Plan trips and staff faster</h3>
+          <p class="mt-3 text-neutral-700">
+            Build and adjust schedules, manage capacity, and keep staff aligned when bookings or logistics change.
+          </p>
+        </article>
+        <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">Onboarding</p>
+          <h3 class="mt-3 text-xl font-bold text-neutral-900">Onboard guests in seconds</h3>
+          <p class="mt-3 text-neutral-700">
+            Use digital registration, waivers, and medical forms so customers arrive prepared and check-in moves quickly.
+          </p>
+        </article>
+        <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-6">
+          <p class="text-xs font-semibold uppercase tracking-[0.14em] text-neutral-500">All In One</p>
+          <h3 class="mt-3 text-xl font-bold text-neutral-900">Reduce tool overload</h3>
+          <p class="mt-3 text-neutral-700">
+            Replace disconnected subscriptions for CRM, POS, waivers, planning, accommodation, and reporting with one dive business hub.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-neutral-200 bg-neutral-100 py-14 sm:py-16">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center text-3xl font-black text-neutral-900 sm:text-4xl">Diversdesk in 2 minutes</h2>
+      <p class="mx-auto mt-4 max-w-3xl text-center text-lg text-neutral-700">
+        Watch a quick overview of the core Diversdesk workflow and how it supports smoother daily operations.
+      </p>
+
+      <div class="mt-8 overflow-hidden rounded-2xl border border-neutral-200 bg-black shadow-lg">
+        <div class="aspect-video w-full">
+          <iframe
+            class="h-full w-full"
+            src="https://www.youtube.com/embed/d7PkDQr4Dpw?si=jA-L7xO6PDrpjpNo"
+            title="Diversdesk main feature walkthrough in 2 minutes"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-14 sm:py-16">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-orange-700">Onboarding</p>
+          <h2 class="mt-3 text-3xl font-black text-neutral-900 sm:text-4xl">A structured path from trial to live operations</h2>
+          <p class="mt-4 text-lg leading-relaxed text-neutral-700">
+            We normally guide new operators through a practical onboarding process, starting with a trial environment and moving toward a configured setup that fits the way your team works.
+          </p>
+          <div class="mt-8 overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-50 shadow-lg">
+            <Image
+              src={StarterPlanImage}
+              alt="Diversdesk starter plan overview for dive center onboarding"
+              class="h-full w-full object-cover"
+              widths={[480, 720, 960]}
+              sizes="(min-width: 1024px) 40vw, 100vw"
+            />
+          </div>
+        </div>
+
+        <div class="grid gap-4">
+          <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+            <h3 class="text-lg font-bold text-neutral-900">1. Trial period</h3>
+            <p class="mt-2 text-neutral-700">Explore Diversdesk first-hand and collect workflow questions from your team.</p>
+          </article>
+          <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+            <h3 class="text-lg font-bold text-neutral-900">2. Setup review</h3>
+            <p class="mt-2 text-neutral-700">We review your setup, booking flow, activities, and operational needs together.</p>
+          </article>
+          <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+            <h3 class="text-lg font-bold text-neutral-900">3. Adjustments</h3>
+            <p class="mt-2 text-neutral-700">If your center needs specific workflow adjustments, we help prepare the environment before the full transition.</p>
+          </article>
+          <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+            <h3 class="text-lg font-bold text-neutral-900">4. Team training</h3>
+            <p class="mt-2 text-neutral-700">Your team gets up to 2 hours of complimentary training, which can be split across multiple sessions.</p>
+          </article>
+          <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-5">
+            <h3 class="text-lg font-bold text-neutral-900">5. Ongoing support</h3>
+            <p class="mt-2 text-neutral-700">After launch, we keep supporting your operation and continue improving Diversdesk around real dive center workflows.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-neutral-900 py-14 text-white sm:py-16">
+    <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-black sm:text-4xl">Ready to claim Mark's partner offer?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-300">
+        Start your trial through the signup page and enter <strong class="text-white">{promoCode}</strong> as your promo code. When you choose a yearly subscription, we will extend it to 15 months.
+      </p>
+      <div class="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+        <a
+          href={signupUrl}
+          class="inline-flex items-center justify-center rounded-xl bg-orange-600 px-7 py-4 text-base font-bold text-white transition hover:bg-orange-700"
+        >
+          Start Trial With {promoCode}
+        </a>
+        <a
+          href="https://calendly.com/diversdesk-info/demo"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center rounded-xl border border-white/30 px-7 py-4 text-base font-bold text-white transition hover:border-white hover:bg-white/10"
+        >
+          Talk To Diversdesk
+        </a>
+      </div>
+      <p class="mt-6 text-sm text-neutral-300">
+        Want more context before starting? <a href="/insights/diversdesk-fitting-solution-for-dive-operations/" class="font-semibold text-white underline decoration-white/40 underline-offset-4 transition hover:decoration-white">Read why Diversdesk fits dive operations</a>.
+      </p>
+      <p class="mt-6 text-sm text-neutral-400">
+        This private partner page is hidden from search engines and intended for direct sharing only.
+      </p>
+    </div>
+  </section>
+</MainLayout>
