@@ -1,0 +1,97 @@
+---
+title: 17 Jul 2026 - Accommodation & Invoice Improvements
+description: Clearer accommodation availability, automatic stay pricing, and a cleaner invoice layout with better preview controls.
+lastUpdated: 2026-07-17
+sidebar:
+  label: 17 Jul 2026
+  order: 1
+  badge: New
+  attrs:
+    data-update-subtitle: Accommodation & Invoice Improvements
+---
+
+<p class="update-release-date">Release Date: July 17, 2026</p>
+
+This release improves two important day-to-day workflows in Diversdesk: **accommodation management** and **invoice review**.
+
+Accommodation scheduling is now easier to work with because availability is shown directly from the accommodation room dropdown, overlap warnings are clearer, and draft reservations stay visible while you adjust the booking. We have also changed how accommodation prices update after duration changes: prices now update automatically, with a toast confirmation and an option to revert when needed.
+
+Invoices have also received a cleaner, more neutral layout, with clearer invoice preview controls and more complete line-item information.
+
+---
+
+## Updates in This Release
+
+* **Accommodation availability in the room dropdown:** see which rooms are available, occupied, or blocked for the selected dates before saving.
+* **Required room selection for stays:** accommodation bookings now more clearly require a valid room before they can be completed.
+* **Clearer accommodation calendar previews:** draft reservations now stay visible while you adjust dates or duration in the side panel.
+* **Improved overlap prevention:** conflicting accommodation selections now show clearer warnings and keep the warning action visible above the grid.
+* **Better accommodation booking visibility:** booking reference, guest, and night details remain visible even when the booking starts outside the current calendar view.
+* **Automatic accommodation price updates:** changing duration now recalculates the price automatically, with a toast notification and a revert option below the price field.
+* **Cleaner invoice layout:** invoices now use a more neutral design that fits a wider range of operators.
+* **More complete invoice line items:** activity dates, quantities, unit prices, and discount lines are now shown more clearly on invoices.
+* **Improved invoice preview controls:** fit, zoom, reset-to-100%, and two-page view controls make invoice review easier on desktop.
+* **Better multi-page invoices:** longer invoices now handle page breaks and two-page preview more cleanly.
+* **Booking stability improvements:** copied participant registrations, booking deletion, and scheduled activity ordering have been refined.
+
+---
+
+### Accommodation availability is easier to see
+
+The **Dive & Stay** scheduling flow now shows room availability directly from the accommodation dropdown.
+
+When creating or editing an accommodation reservation, occupied rooms are no longer presented like freely available options. This makes it easier to choose the right room the first time and helps prevent conflicting reservations before they are saved.
+
+The same availability behavior is also available when adding accommodation from an existing booking, so the calendar and booking-page flows now feel more consistent.
+
+Accommodation bookings now also enforce room selection more clearly. This helps avoid incomplete stay bookings where accommodation was selected but no valid room was assigned.
+
+### Clearer accommodation calendar behavior
+
+The accommodation calendar now gives better visual feedback while reservations are being created or changed.
+
+When you select dates for a new reservation, the selected area stays visible while you continue working in the side panel. If you change the duration, the draft block updates immediately so the preview better matches what will be saved.
+
+Bookings that start outside the current calendar window also keep showing the important context on screen, including booking reference, guest details, and number of nights. This makes it easier to understand longer stays while working in a limited date view.
+
+Pricing information has also been moved onto the grid line instead of the middle of the calendar cell, because accommodation prices are shown per night rather than per day.
+
+### Stronger overlap warnings
+
+Overlap handling has been improved for accommodation reservations.
+
+When a selected room and date range conflicts with an existing stay, the accommodation type section now shows a clear warning. A related action also remains visible above the grid, even when the overlapping section itself is outside the visible part of the calendar.
+
+This helps staff catch conflicts earlier while still preserving the calendar overwrite workflow where it is intentionally used for room moves.
+
+### Accommodation prices now update automatically
+
+Accommodation pricing now responds automatically when duration changes.
+
+Previously, changing the number of nights required a manual price update. That could lead to incorrect pricing in places where the update button was not shown, especially when changing nights directly from a booking.
+
+Now the price recalculates automatically after a duration change. Diversdesk shows a toast to explain the update, and the helper text below the price field now gives you the option to revert the automatic price change when you need to keep the previous amount.
+
+### Cleaner invoices with more complete line items
+
+The invoice layout has been refreshed with a cleaner, more neutral design that works better across different operators.
+
+Invoices now include activity dates, quantity, unit price, and clearer discount-line information, giving guests and staff a better view of what each line item represents.
+
+Longer invoices also handle pagination more cleanly, so multi-page invoices are easier to review and print.
+
+### Improved invoice preview
+
+The invoice preview window has also been improved.
+
+Fit and zoom controls now sit in the center top section on desktop, and **Ctrl + scroll** zooms the invoice preview instead of the full page. Clicking the zoom percentage resets the preview to 100%, and a two-page view button is available for reviewing longer invoices more comfortably.
+
+On mobile and smaller screens, zoom buttons are hidden because users can use touch gestures to zoom the invoice directly.
+
+### Smaller booking workflow improvements
+
+Several smaller booking improvements are included in this release as well.
+
+Scheduled activities are now ordered by start time in the booking flow, copied participant registrations behave more reliably, and booking deletion has been adjusted to avoid accidentally replaying a previous delete action.
+
+Tax handling on the booking page has also been simplified by replacing the editable tax-rate input with clearer information, helping reduce confusion when reviewing booking totals.

@@ -225,6 +225,19 @@ const pageTitle: string = `Start Your Free Trial | ${SITE.title}`;
       /*Before submit, if you want to trigger your event, "include your code here"*/
     };
   </script>
+    <script type="text/javascript" is:inline>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const promoCode = params.get("promo") || params.get("code");
+            const promoInput = document.getElementById("CONTACT_CF11");
+
+            if (!promoCode || !(promoInput instanceof HTMLInputElement)) return;
+
+            promoInput.value = promoCode.toUpperCase();
+            promoInput.dispatchEvent(new Event("input", { bubbles: true }));
+            promoInput.dispatchEvent(new Event("change", { bubbles: true }));
+        });
+    </script>
 
   <style>
     #sf3z3148a715cb0f7201dddd29e359ab6f9fafac4a3870c7be3336d6c7c0d319edaf #customForm *:not(.dateClass){
