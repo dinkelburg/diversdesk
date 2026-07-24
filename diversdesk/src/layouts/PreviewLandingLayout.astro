@@ -35,7 +35,12 @@ const {
   showNavbar={false}
   showFooter={false}
 >
-  <slot name="head" slot="head" />
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <slot name="head" />
+  </Fragment>
   <div class="landing-body landing-surface min-h-screen">
     <PreviewNav />
     <slot />

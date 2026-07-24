@@ -1,0 +1,84 @@
+---
+import FAQ from "@components/sections/FAQ.astro";
+import FaqSchema from "@components/sections/new-landing/FaqSchema.astro";
+import StatsBand from "@components/sections/new-landing/StatsBand.astro";
+import PreviewLandingLayout from "@/layouts/PreviewLandingLayout.astro";
+import { featureMap, solutions, type SolutionPage } from "@data/newLanding";
+
+export function getStaticPaths() {
+  return solutions.map((solution) => ({
+    params: { solution: solution.slug },
+    props: { solution },
+  }));
+}
+
+const { solution } = Astro.props as { solution: SolutionPage };
+const solutionFeatures = solution.featureSlugs.map((slug) => featureMap[slug]).filter(Boolean);
+
+const faqGroup = {
+  subTitle: `${solution.shortLabel} features are grouped around the workflows this type of operator usually needs first.`,
+  faqs: solution.faqs,
+};
+---
+
+<PreviewLandingLayout
+  title={`${solution.shortLabel} Feature Hub Preview | DiversDesk`}
+  description={`Explore the DiversDesk features most relevant for ${solution.shortLabel.toLowerCase()}, including ${solutionFeatures.slice(0, 3).map((feature) => feature.title.toLowerCase()).join(", ")}.`}
+  canonical={`https://www.diversdesk.com/new/solutions/${solution.slug}/features`}
+>
+  <FaqSchema faqs={solution.faqs} />
+
+  <section class="landing-section pb-8 pt-12 lg:pb-10 lg:pt-16">
+    <div class="landing-shell">
+      <span class="landing-tag">{solution.shortLabel} features</span>
+      <div class="mt-6 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div>
+          <h1 class="landing-display max-w-5xl text-5xl text-slate-950 sm:text-6xl lg:text-7xl">
+            The DiversDesk feature stack for {solution.shortLabel.toLowerCase()}.
+          </h1>
+          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
+            {solution.heroIntro} This feature hub keeps the product story focused on the workflows, decisions, and operating rhythm that matter most for {solution.shortLabel.toLowerCase()}.
+          </p>
+        </div>
+        <div class="landing-card-dark rounded-[32px] p-6 text-white sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-200">Selected solution</p>
+          <h2 class="landing-display mt-4 text-4xl">{solution.shortLabel}</h2>
+          <p class="mt-4 text-sm leading-7 text-slate-200">Feature pages opened from here stay inside the {solution.shortLabel.toLowerCase()} journey.</p>
+          <div class="mt-6">
+            <a class="landing-button-secondary !bg-white/10 !text-white !border-white/20" href={`/new/solutions/${solution.slug}`}>Back to solution</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <StatsBand
+    title={`Why ${solution.shortLabel.toLowerCase()} teams need a focused feature path`}
+    intro="A focused feature path helps visitors understand the product through their own operating model instead of scanning a generic list of modules."
+    stats={solution.stats}
+  />
+
+  <section class="landing-section py-10 lg:py-14">
+    <div class="landing-shell">
+      <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        {solutionFeatures.map((feature) => (
+          <article class="landing-card rounded-[30px] p-6 sm:p-7">
+            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">{feature.eyebrow}</p>
+            <h2 class="landing-display mt-3 text-3xl text-slate-950">{feature.title}</h2>
+            <p class="mt-4 text-base leading-7 text-slate-600">{feature.summary}</p>
+            <ul class="landing-bullet-list mt-6 space-y-3 text-sm leading-6 text-slate-700">
+              {feature.outcomes.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <div class="mt-8">
+              <a class="landing-button-primary" href={`/new/solutions/${solution.slug}/features/${feature.slug}`}>Read more for {solution.shortLabel}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQ title={`${solution.shortLabel} feature FAQ`} faqs={faqGroup} />
+</PreviewLandingLayout>

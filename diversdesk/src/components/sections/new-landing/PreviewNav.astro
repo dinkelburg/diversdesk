@@ -1,5 +1,6 @@
 ---
 import BrandLogo from "@components/BrandLogo.astro";
+import { solutionMap, type SolutionSlug } from "@data/newLanding";
 
 const solutionLinks = [
   {
@@ -21,10 +22,13 @@ const solutionLinks = [
 
 const pagePath = Astro.url.pathname;
 const isSolutionsRoute = pagePath.startsWith("/new/solutions/");
+const selectedSolutionSlug = pagePath.match(/^\/new\/solutions\/([^/]+)/)?.[1] as SolutionSlug | undefined;
+const selectedSolution = selectedSolutionSlug ? solutionMap[selectedSolutionSlug] : undefined;
+const featuresHref = selectedSolution ? `/new/solutions/${selectedSolution.slug}/features` : "/new/features";
 ---
 
-<header class="preview-nav-wrap sticky top-0 z-[60] px-4 pt-4 sm:px-6 lg:px-8">
-  <nav class="preview-nav landing-panel mx-auto flex w-full max-w-[1520px] items-center justify-between rounded-[28px] px-4 py-3 sm:px-6 lg:px-8" aria-label="Preview navigation">
+<header class="preview-nav-wrap sticky top-0 z-[60] border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+  <nav class="preview-nav mx-auto flex w-full max-w-[1680px] items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Preview navigation">
     <a class="flex items-center gap-3 rounded-full px-1 py-1" href="/new" aria-label="DiversDesk preview homepage">
       <BrandLogo class="h-auto w-28" />
       <span class="hidden rounded-full bg-orange-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-orange-700 sm:inline-flex">
@@ -35,7 +39,7 @@ const isSolutionsRoute = pagePath.startsWith("/new/solutions/");
     <div class="hidden items-center gap-3 lg:flex">
       <details class="preview-dropdown group relative">
         <summary class={`preview-nav-link list-none ${isSolutionsRoute ? "preview-nav-link-active" : ""}`}>
-          <span>Solutions</span>
+          <span>{selectedSolution ? selectedSolution.shortLabel : "Solutions"}</span>
           <svg class="h-4 w-4 text-slate-500 transition group-open:rotate-180" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="m5 8 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
@@ -53,7 +57,7 @@ const isSolutionsRoute = pagePath.startsWith("/new/solutions/");
         </div>
       </details>
 
-      <a class={`preview-nav-link ${pagePath === "/new/features" || pagePath.startsWith("/new/features/") ? "preview-nav-link-active" : ""}`} href="/new/features">
+      <a class={`preview-nav-link ${pagePath === featuresHref || pagePath.includes("/features") ? "preview-nav-link-active" : ""}`} href={featuresHref}>
         Features
       </a>
       <a class="preview-nav-link" href="/pricing">
@@ -93,7 +97,7 @@ const isSolutionsRoute = pagePath.startsWith("/new/solutions/");
           </div>
           <div class="landing-divider"></div>
           <div class="space-y-2">
-            <a class="block rounded-full px-3 py-2 text-sm font-semibold text-slate-800" href="/new/features">Features</a>
+            <a class="block rounded-full px-3 py-2 text-sm font-semibold text-slate-800" href={featuresHref}>Features</a>
             <a class="block rounded-full px-3 py-2 text-sm font-semibold text-slate-800" href="/pricing">Pricing</a>
             <a class="block rounded-full px-3 py-2 text-sm font-semibold text-slate-800" href="/about">About</a>
             <a class="block rounded-full px-3 py-2 text-sm font-semibold text-slate-800" href="/contact">Contact</a>

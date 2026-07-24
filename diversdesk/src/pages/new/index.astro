@@ -36,7 +36,7 @@ const homepageFaqGroup = {
 >
   <FaqSchema faqs={homepageFaqs} />
 
-  <section class="landing-section pb-12 pt-8 lg:pb-20 lg:pt-12">
+  <section class="landing-section pb-10 pt-10 lg:pb-16 lg:pt-16">
     <div class="landing-shell">
       <div class="grid gap-12 lg:grid-cols-[0.98fr_1.02fr] lg:items-center">
         <div>
@@ -47,39 +47,20 @@ const homepageFaqGroup = {
           <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
             DiversDesk gives dive businesses one professional operating system for bookings, onboarding, planning, payments, inventory, and guest operations, with a tailored path for each business model.
           </p>
-          <ul class="landing-bullet-list mt-8 space-y-3 text-sm font-medium text-slate-700 sm:text-base">
-            <li>Choose the solution path that matches how your business actually operates.</li>
-            <li>Replace disconnected tools with one calmer, more professional workflow.</li>
-            <li>Give every team clearer visibility from inquiry to arrival to final payment.</li>
-          </ul>
-          <div class="mt-10 flex flex-wrap gap-4">
+          <div class="mt-9 flex flex-wrap gap-4">
             <a class="landing-button-primary" href="https://calendly.com/diversdesk-info/demo">Book a demo</a>
             <a class="landing-button-secondary" href="#solutions">See solutions</a>
           </div>
         </div>
 
-        <div class="space-y-5">
-          <div class="landing-image-frame rounded-[34px]">
-            <Image
-              src={homeHeroImage}
-              alt="DiversDesk shown across laptop and mobile screens."
-              class="w-full rounded-[26px] object-cover"
-              widths={[480, 720, 960, 1280]}
-              sizes="(max-width: 1023px) 100vw, 48vw"
-            />
-          </div>
-          <div class="grid gap-4 sm:grid-cols-2">
-            <div class="landing-card rounded-[28px] p-5 sm:p-6">
-              <p class="landing-kicker">One source of truth</p>
-              <h2 class="landing-display mt-3 text-3xl text-slate-950">One system across sales, operations, and finance.</h2>
-              <p class="mt-3 text-sm leading-7 text-slate-600">Keep customer data, planning decisions, bookings, and commercial events connected instead of rebuilding the same story in different tools.</p>
-            </div>
-            <div class="landing-card rounded-[28px] p-5 sm:p-6">
-              <p class="landing-kicker">Tailored navigation</p>
-              <h2 class="landing-display mt-3 text-3xl text-slate-950">Clear paths for each type of operator.</h2>
-              <p class="mt-3 text-sm leading-7 text-slate-600">The homepage introduces the three solution types directly so visitors can move into the right tailored page immediately.</p>
-            </div>
-          </div>
+        <div class="landing-hero-visual rounded-[32px]">
+          <Image
+            src={homeHeroImage}
+            alt="DiversDesk shown across laptop and mobile screens."
+            class="w-full rounded-[24px] object-cover"
+            widths={[480, 720, 960, 1280]}
+            sizes="(max-width: 1023px) 100vw, 48vw"
+          />
         </div>
       </div>
     </div>
@@ -87,7 +68,7 @@ const homepageFaqGroup = {
 
   <section id="solutions" class="landing-section py-10 lg:py-16">
     <div class="landing-shell">
-      <div class="max-w-3xl">
+      <div class="mx-auto max-w-3xl text-center">
         <span class="landing-tag">Choose your operation</span>
         <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl lg:text-6xl">
           Start with the business model you run.
@@ -97,19 +78,17 @@ const homepageFaqGroup = {
         </p>
       </div>
 
-      <div class="mt-10 grid gap-8 xl:grid-cols-3">
+      <div class="mt-12 grid gap-6 xl:grid-cols-3">
         {solutions.map((solution) => (
-          <article class="space-y-5">
-            <div class="landing-image-frame rounded-[30px]">
-              <Image
-                src={solutionPreviewImages[solution.slug]}
-                alt={`${solution.label} preview image`}
-                class="aspect-[4/3] w-full rounded-[24px] object-cover"
-                widths={[480, 720, 960]}
-                sizes="(max-width: 1279px) 100vw, 30vw"
-              />
-            </div>
-            <div class="landing-card rounded-[28px] p-6 sm:p-7">
+          <article class="landing-card overflow-hidden rounded-[30px]">
+            <Image
+              src={solutionPreviewImages[solution.slug]}
+              alt={`${solution.label} preview image`}
+              class="aspect-[16/10] w-full object-cover"
+              widths={[480, 720, 960]}
+              sizes="(max-width: 1279px) 100vw, 30vw"
+            />
+            <div class="p-6 sm:p-7">
               <p class="landing-kicker">{solution.shortLabel}</p>
               <h3 class="landing-display mt-3 text-3xl text-slate-950">{solution.label}</h3>
               <p class="mt-4 text-base leading-7 text-slate-600">{solution.heroIntro}</p>
@@ -136,52 +115,51 @@ const homepageFaqGroup = {
 
   <section class="landing-section py-12 lg:py-20">
     <div class="landing-shell">
-      <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <div>
-          <span class="landing-tag">Whitespace and imagery</span>
-          <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl lg:text-6xl">
-            Reserve plenty of room for visuals, not just copy.
-          </h2>
-          <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-            The new direction uses larger image zones and calmer spacing so each section can feel more premium now, and even stronger later when the final imagery is swapped in.
-          </p>
-          <div class="mt-8 space-y-4">
-            <p class="text-sm font-medium leading-7 text-slate-700">Use the same image in multiple sections for now if needed. The layout should already be strong before the final asset pass.</p>
-            <p class="text-sm font-medium leading-7 text-slate-700">Each solution page can keep these larger visual anchors while tailoring the feature message and SEO focus to its audience.</p>
-          </div>
-        </div>
+      <div class="mx-auto max-w-3xl text-center">
+        <span class="landing-tag">Whitespace and imagery</span>
+        <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl lg:text-6xl">
+          Reserve plenty of room for visuals, not just copy.
+        </h2>
+        <p class="mt-5 text-lg leading-8 text-slate-600">
+          The new direction uses larger image zones and calmer spacing so each section can feel more premium now, and even stronger later when the final imagery is swapped in.
+        </p>
+      </div>
 
-        <div class="grid gap-5 sm:grid-cols-2">
-          <div class="landing-image-frame rounded-[30px] sm:translate-y-8">
+      <div class="mt-10 grid gap-5 lg:grid-cols-[1.2fr_0.8fr]">
+        <div class="landing-image-frame rounded-[30px]">
+          <Image
+            src={plannerImage}
+            alt="Planner image placeholder for the new landing pages."
+            class="aspect-[16/10] h-full w-full rounded-[24px] object-cover"
+            widths={[720, 960, 1280]}
+            sizes="(max-width: 1023px) 100vw, 58vw"
+          />
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+          <div class="landing-image-frame rounded-[30px]">
             <Image
-              src={plannerImage}
-              alt="Planner image placeholder for the new landing pages."
-              class="aspect-[4/5] w-full rounded-[24px] object-cover"
+              src={resortImage}
+              alt="Accommodation image placeholder for the new landing pages."
+              class="aspect-[4/3] w-full rounded-[24px] object-cover"
               widths={[480, 720, 960]}
               sizes="(max-width: 639px) 100vw, 24vw"
             />
           </div>
-          <div class="space-y-5">
-            <div class="landing-image-frame rounded-[30px]">
-              <Image
-                src={resortImage}
-                alt="Accommodation image placeholder for the new landing pages."
-                class="aspect-[4/3] w-full rounded-[24px] object-cover"
-                widths={[480, 720, 960]}
-                sizes="(max-width: 639px) 100vw, 24vw"
-              />
-            </div>
-            <div class="landing-image-frame rounded-[30px]">
-              <Image
-                src={liveaboardImage}
-                alt="Liveaboard image placeholder for the new landing pages."
-                class="aspect-[4/3] w-full rounded-[24px] object-cover"
-                widths={[480, 720, 960]}
-                sizes="(max-width: 639px) 100vw, 24vw"
-              />
-            </div>
+          <div class="landing-image-frame rounded-[30px]">
+            <Image
+              src={liveaboardImage}
+              alt="Liveaboard image placeholder for the new landing pages."
+              class="aspect-[4/3] w-full rounded-[24px] object-cover"
+              widths={[480, 720, 960]}
+              sizes="(max-width: 639px) 100vw, 24vw"
+            />
           </div>
         </div>
+      </div>
+
+      <div class="landing-proof-list mx-auto mt-8 grid max-w-6xl gap-3 text-sm font-medium leading-7 text-slate-700 md:grid-cols-2">
+        <p>Use the same image in multiple sections for now if needed. The layout should already be strong before the final asset pass.</p>
+        <p>Each solution page can keep these larger visual anchors while tailoring the feature message and SEO focus to its audience.</p>
       </div>
     </div>
   </section>
@@ -193,8 +171,8 @@ const homepageFaqGroup = {
 
   <section class="landing-section py-12 lg:py-20">
     <div class="landing-shell">
-      <div class="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center">
-        <div class="landing-image-frame rounded-[34px]">
+      <div class="landing-card grid gap-8 overflow-hidden rounded-[32px] p-4 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:p-6">
+        <div class="order-2 lg:order-1">
           <Image
             src={plannerImage}
             alt="Feature-section placeholder image for DiversDesk."
@@ -203,7 +181,7 @@ const homepageFaqGroup = {
             sizes="(max-width: 1023px) 100vw, 46vw"
           />
         </div>
-        <div>
+        <div class="order-1 px-2 py-4 sm:px-4 lg:order-2 lg:px-8">
           <span class="landing-tag">Feature structure</span>
           <h2 class="landing-display mt-5 text-4xl text-slate-950 sm:text-5xl lg:text-6xl">
             Tailored solution pages should decide which features come first.

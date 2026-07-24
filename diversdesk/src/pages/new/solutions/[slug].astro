@@ -60,7 +60,7 @@ const faqGroup = {
           </ul>
           <div class="mt-10 flex flex-wrap gap-4">
             <a class="landing-button-primary" href="https://calendly.com/diversdesk-info/demo">Book a demo</a>
-            <a class="landing-button-secondary" href="/new/features">Explore all features</a>
+            <a class="landing-button-secondary" href={`/new/solutions/${solution.slug}/features`}>Explore {solution.shortLabel} features</a>
           </div>
         </div>
 
@@ -107,7 +107,7 @@ const faqGroup = {
           </p>
           <div class="mt-8 space-y-3">
             {solutionFeatures.slice(0, 6).map((feature) => (
-              <a class="flex items-center justify-between rounded-[20px] border border-slate-200 bg-white px-5 py-4 transition hover:border-orange-200 hover:bg-orange-50" href={`/new/features/${feature.slug}`}>
+              <a class="flex items-center justify-between rounded-[20px] border border-slate-200 bg-white px-5 py-4 transition hover:border-orange-200 hover:bg-orange-50" href={`/new/solutions/${solution.slug}/features/${feature.slug}`}>
                 <span class="text-base font-semibold text-slate-900">{feature.title}</span>
                 <span class="text-sm font-semibold text-orange-700">View</span>
               </a>
@@ -142,7 +142,7 @@ const faqGroup = {
               ))}
             </ul>
             <div class="mt-8">
-              <a class="landing-button-secondary" href={`/new/features/${feature.slug}`}>See feature details</a>
+              <a class="landing-button-secondary" href={`/new/solutions/${solution.slug}/features/${feature.slug}`}>See feature details</a>
             </div>
           </div>
           <div class={index % 2 === 0 ? "order-1 lg:order-2" : "order-1"}>

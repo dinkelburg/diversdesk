@@ -1,4 +1,6 @@
 ---
+import { featureMap, solutionMap, type SolutionSlug } from "@data/newLanding";
+
 const solutionLinks = [
   { title: "Dive Centers", url: "/new/solutions/dive-centers" },
   { title: "Dive Resorts", url: "/new/solutions/dive-resorts" },
@@ -11,6 +13,15 @@ const featureLinks = [
   { title: "Booking engine", url: "/new/features/booking-engine-channel-manager" },
   { title: "Accommodation module", url: "/new/features/accommodation-channel-manager" },
 ];
+
+const selectedSolutionSlug = Astro.url.pathname.match(/^\/new\/solutions\/([^/]+)/)?.[1] as SolutionSlug | undefined;
+const selectedSolution = selectedSolutionSlug ? solutionMap[selectedSolutionSlug] : undefined;
+const contextualFeatureLinks = selectedSolution
+  ? selectedSolution.featureSlugs.slice(0, 4).map((slug) => ({
+      title: featureMap[slug].title,
+      url: `/new/solutions/${selectedSolution.slug}/features/${slug}`,
+    }))
+  : featureLinks;
 ---
 
 <footer class="landing-section pb-10 pt-6 lg:pb-14">
@@ -33,9 +44,9 @@ const featureLinks = [
           </div>
         </div>
         <div>
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">Featured pages</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">{selectedSolution ? `${selectedSolution.shortLabel} features` : "Featured pages"}</p>
           <div class="mt-4 space-y-3">
-            {featureLinks.map((link) => (
+            {contextualFeatureLinks.map((link) => (
               <a class="block text-base font-medium text-slate-800 transition hover:text-orange-700" href={link.url}>{link.title}</a>
             ))}
           </div>
