@@ -116,11 +116,12 @@ const blogPostingSchema = {
 
        <!-- Blog post image (cardImage) after 2nd paragraph -->
       {post.data.cardImage && (
-        <div class="h-64 overflow-hidden rounded-lg shadow-lg md:h-80 mb-6">
+        <div class="overflow-hidden rounded-lg shadow-lg mb-6">
           <Image
             src={post.data.cardImage}
             alt={post.data.cardImageAlt}
             format="avif"
+            class="w-full h-auto"
           />
         </div>
       )}
