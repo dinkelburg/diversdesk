@@ -291,6 +291,7 @@ export default defineConfig({
     favicon: '/favicon.ico',
     components: {
       Head: './src/components/ui/starlight/Head.astro',
+      Search: './src/components/ui/starlight/AiSearch.astro',
       SiteTitle: './src/components/ui/starlight/SiteTitle.astro'
     },
     head: [{

@@ -1,0 +1,424 @@
+---
+import StarlightSearch from "@astrojs/starlight/components/Search.astro";
+---
+
+<div class="ai-search-actions">
+  <StarlightSearch class={Astro.props.class} />
+  <button class="ai-search-trigger" type="button" data-ai-search-open aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m12 3 1.15 3.2a7 7 0 0 0 4.2 4.2L20.5 12l-3.15 1.6a7 7 0 0 0-4.2 4.2L12 21l-1.15-3.2a7 7 0 0 0-4.2-4.2L3.5 12l3.15-1.6a7 7 0 0 0 4.2-4.2L12 3Z" />
+    </svg>
+    <span>Ask AI</span>
+  </button>
+</div>
+
+<dialog class="ai-search-dialog" data-ai-search-dialog aria-labelledby="ai-search-title">
+  <div class="ai-search-panel">
+    <header>
+      <div>
+        <p class="ai-search-eyebrow">Diversdesk Help</p>
+        <h2 id="ai-search-title">Ask the documentation</h2>
+      </div>
+      <button class="ai-search-close" type="button" data-ai-search-close aria-label="Close AI search">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </button>
+    </header>
+
+    <form data-ai-search-form>
+      <label for="ai-search-question">How can we help?</label>
+      <div class="ai-search-input-row">
+        <textarea
+          id="ai-search-question"
+          name="query"
+          rows="2"
+          minlength="3"
+          maxlength="500"
+          required
+          placeholder="For example: How do I create a direct booking?"
+        ></textarea>
+        <button type="submit" data-ai-search-submit>Ask</button>
+      </div>
+      <p class="ai-search-privacy">Don’t include names, email addresses, booking references, or other personal information.</p>
+    </form>
+
+    <div class="ai-search-result" data-ai-search-result hidden>
+      <div class="ai-search-status" data-ai-search-status aria-live="polite"></div>
+      <p class="ai-search-answer" data-ai-search-answer></p>
+      <div class="ai-search-sources" data-ai-search-sources hidden>
+        <h3>Sources</h3>
+        <ul data-ai-search-source-list></ul>
+      </div>
+    </div>
+
+    <footer>
+      <span>AI-generated from public Diversdesk documentation</span>
+      <a href="/contact">Contact helpdesk</a>
+    </footer>
+  </div>
+</dialog>
+
+<script>
+  type AiSearchResponse = {
+    answer?: string;
+    error?: string;
+    sources?: Array<{
+      id: string;
+      title: string;
+      url: string;
+    }>;
+  };
+
+  const isAiSearchResponse = (value: unknown): value is AiSearchResponse =>
+    typeof value === "object" && value !== null;
+
+  const getSafeSourceUrl = (value: string) => {
+    try {
+      const url = new URL(value);
+      return url.protocol === "https:" && (url.hostname === "diversdesk.com" || url.hostname.endsWith(".diversdesk.com"))
+        ? url.toString()
+        : null;
+    } catch {
+      return null;
+    }
+  };
+
+  const initializeAiSearch = () => {
+    const openButton = document.querySelector<HTMLButtonElement>("[data-ai-search-open]");
+    const closeButton = document.querySelector<HTMLButtonElement>("[data-ai-search-close]");
+    const dialog = document.querySelector<HTMLDialogElement>("[data-ai-search-dialog]");
+    const form = document.querySelector<HTMLFormElement>("[data-ai-search-form]");
+    const query = document.querySelector<HTMLTextAreaElement>("#ai-search-question");
+    const submitButton = document.querySelector<HTMLButtonElement>("[data-ai-search-submit]");
+    const result = document.querySelector<HTMLElement>("[data-ai-search-result]");
+    const status = document.querySelector<HTMLElement>("[data-ai-search-status]");
+    const answer = document.querySelector<HTMLElement>("[data-ai-search-answer]");
+    const sources = document.querySelector<HTMLElement>("[data-ai-search-sources]");
+    const sourceList = document.querySelector<HTMLUListElement>("[data-ai-search-source-list]");
+
+    if (!openButton || !closeButton || !dialog || !form || !query || !submitButton || !result || !status || !answer || !sources || !sourceList) {
+      return;
+    }
+    if (form.dataset.aiSearchBound === "true") return;
+    form.dataset.aiSearchBound = "true";
+
+    openButton.addEventListener("click", () => {
+      dialog.showModal();
+      query.focus();
+    });
+    closeButton.addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      result.hidden = false;
+      status.textContent = "Searching the documentation…";
+      answer.textContent = "";
+      sources.hidden = true;
+      sourceList.replaceChildren();
+      submitButton.disabled = true;
+      submitButton.textContent = "Searching";
+
+      try {
+        const response = await fetch("/api/ai-search", {
+          body: JSON.stringify({
+            context: {
+              locale: document.documentElement.lang || "en",
+              path: window.location.pathname,
+              surface: "docs",
+            },
+            query: query.value,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+        });
+        const payload: unknown = await response.json();
+
+        if (!isAiSearchResponse(payload) || !response.ok) {
+          throw new Error(isAiSearchResponse(payload) && payload.error ? payload.error : "AI search is unavailable.");
+        }
+
+        status.textContent = "AI-generated answer";
+        answer.textContent = payload.answer ?? "No answer was returned.";
+
+        const safeSources = (payload.sources ?? []).flatMap((source) => {
+          const url = getSafeSourceUrl(source.url);
+          return url ? [{ ...source, url }] : [];
+        });
+
+        safeSources.forEach((source) => {
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          link.href = source.url;
+          link.textContent = source.title;
+          item.append(link);
+          sourceList.append(item);
+        });
+        sources.hidden = safeSources.length === 0;
+      } catch (error) {
+        status.textContent = "We couldn’t complete the search";
+        answer.textContent = error instanceof Error ? error.message : "AI search is temporarily unavailable.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Ask";
+      }
+    });
+  };
+
+  initializeAiSearch();
+  document.addEventListener("astro:page-load", initializeAiSearch);
+</script>
+
+<style>
+  .ai-search-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .ai-search-trigger {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 0.4rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    border: 1px solid color-mix(in srgb, var(--sl-color-accent-high) 45%, var(--sl-color-gray-5));
+    border-radius: 0.5rem;
+    background: color-mix(in srgb, var(--sl-color-accent-low) 35%, var(--sl-color-black));
+    color: var(--sl-color-white);
+    cursor: pointer;
+    font: inherit;
+    font-size: var(--sl-text-sm);
+    font-weight: 650;
+    white-space: nowrap;
+  }
+
+  .ai-search-trigger:hover {
+    border-color: var(--sl-color-accent-high);
+    color: var(--sl-color-accent-high);
+  }
+
+  .ai-search-trigger svg {
+    width: 1.05rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+  }
+
+  .ai-search-dialog {
+    width: min(42rem, calc(100% - 2rem));
+    max-height: min(44rem, calc(100% - 2rem));
+    padding: 0;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 1rem;
+    background: var(--sl-color-black);
+    color: var(--sl-color-white);
+    box-shadow: var(--sl-shadow-lg);
+  }
+
+  .ai-search-dialog::backdrop {
+    background: var(--sl-color-backdrop-overlay);
+    backdrop-filter: blur(0.25rem);
+  }
+
+  .ai-search-panel {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ai-search-panel > header,
+  .ai-search-panel > footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .ai-search-panel > header {
+    border-bottom: 1px solid var(--sl-color-gray-5);
+  }
+
+  .ai-search-panel h2,
+  .ai-search-panel h3,
+  .ai-search-panel p {
+    margin: 0;
+  }
+
+  .ai-search-panel h2 {
+    font-size: var(--sl-text-xl);
+  }
+
+  .ai-search-eyebrow,
+  .ai-search-status {
+    color: var(--sl-color-accent-high);
+    font-size: var(--sl-text-xs);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .ai-search-close {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0.5rem;
+    border: 0;
+    border-radius: 50%;
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-gray-2);
+    cursor: pointer;
+    place-items: center;
+  }
+
+  .ai-search-close svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 1.8;
+  }
+
+  .ai-search-panel form {
+    padding: 1.25rem;
+  }
+
+  .ai-search-panel label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: var(--sl-text-sm);
+    font-weight: 650;
+  }
+
+  .ai-search-input-row {
+    display: flex;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  .ai-search-input-row textarea {
+    flex: 1;
+    min-width: 0;
+    resize: vertical;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.65rem;
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
+    font: inherit;
+    line-height: 1.45;
+  }
+
+  .ai-search-input-row textarea:focus {
+    border-color: var(--sl-color-accent-high);
+    outline: 2px solid color-mix(in srgb, var(--sl-color-accent-high) 30%, transparent);
+  }
+
+  .ai-search-input-row button {
+    align-self: stretch;
+    padding: 0 1rem;
+    border: 0;
+    border-radius: 0.65rem;
+    background: var(--sl-color-accent);
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+  }
+
+  .ai-search-input-row button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+  }
+
+  .ai-search-privacy {
+    margin-top: 0.55rem !important;
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-xs);
+  }
+
+  .ai-search-result {
+    margin: 0 1.25rem 1.25rem;
+    padding: 1rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.75rem;
+    background: var(--sl-color-gray-6);
+  }
+
+  .ai-search-answer {
+    margin-top: 0.65rem !important;
+    white-space: pre-line;
+  }
+
+  .ai-search-sources {
+    margin-top: 1rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--sl-color-gray-5);
+  }
+
+  .ai-search-sources h3 {
+    font-size: var(--sl-text-sm);
+  }
+
+  .ai-search-sources ul {
+    display: grid;
+    gap: 0.35rem;
+    margin: 0.55rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ai-search-sources a,
+  .ai-search-panel > footer a {
+    color: var(--sl-color-accent-high);
+  }
+
+  .ai-search-panel > footer {
+    border-top: 1px solid var(--sl-color-gray-5);
+    color: var(--sl-color-gray-3);
+    font-size: var(--sl-text-xs);
+  }
+
+  @media (max-width: 49.99rem) {
+    .ai-search-actions {
+      width: auto;
+    }
+
+    .ai-search-trigger span {
+      display: none;
+    }
+
+    .ai-search-trigger {
+      width: 2.5rem;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .ai-search-dialog {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      max-height: 100%;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .ai-search-input-row {
+      flex-direction: column;
+    }
+
+    .ai-search-input-row button {
+      min-height: 2.75rem;
+    }
+  }
+</style>
