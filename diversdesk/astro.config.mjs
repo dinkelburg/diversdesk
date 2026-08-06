@@ -133,6 +133,11 @@ export default defineConfig({
                 slug: 'user_manual/activities/planner'
               },
               {
+                label: 'Planner Beta',
+                slug: 'user_manual/activities/beta-planner',
+                badge: 'New'
+              },
+              {
                 label: 'Day Manifest',
                 slug: 'user_manual/activities/day-manifest'
               },

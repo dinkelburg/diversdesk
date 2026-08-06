@@ -522,6 +522,64 @@ header {
     background-color: var(--docs-toc-link-hover-bg);
 }
 
+/* Right-side page navigation (desktop TOC) hierarchy readability
+   - Level 1 (h2): strongest weight/size
+   - Level 2 (h3): slightly smaller and indented
+   - Level 3 (h4): compact and further indented */
+.right-sidebar-panel :where(starlight-toc li) {
+    margin-block: 0.1rem;
+}
+
+.right-sidebar-panel :where(starlight-toc > nav > ul > li > a) {
+    font-size: 0.83rem;
+    font-weight: 500;
+    line-height: 1.35;
+    opacity: 0.9;
+}
+
+.right-sidebar-panel :where(starlight-toc > nav > ul > li > ul > li > a) {
+    font-size: 0.76rem;
+    font-weight: 350;
+    line-height: 1.3;
+    padding-inline-start: 0.9rem;
+    opacity: 0.74;
+}
+
+.right-sidebar-panel :where(starlight-toc > nav > ul > li > ul > li > ul > li > a) {
+    font-size: 0.73rem;
+    font-weight: 350;
+    line-height: 1.25;
+    padding-inline-start: 1.55rem;
+    opacity: 0.76;
+}
+
+.right-sidebar-panel :where(starlight-toc ul ul) {
+    margin-top: 0.1rem;
+}
+
+.right-sidebar-panel :where(starlight-toc ul ul li) {
+    margin-block: 0.08rem;
+}
+
+.right-sidebar-panel :where(starlight-toc a[aria-current='true']),
+.right-sidebar-panel :where(starlight-toc a[aria-current='location']),
+.right-sidebar-panel :where(starlight-toc a[aria-current='page']) {
+    font-weight: 600;
+    opacity: 1;
+}
+
+/* Keep the desktop right TOC column compact; long titles already wrap. */
+@media (min-width: 72rem) {
+    .right-sidebar-container {
+        inline-size: 15.5rem;
+        flex: 0 0 15.5rem;
+    }
+
+    .right-sidebar {
+        inline-size: 100%;
+    }
+}
+
 @media (max-width: 50rem) {
     #starlight__sidebar ul.top-level > li > details > summary,
     #starlight__sidebar ul.top-level > li > a.large,

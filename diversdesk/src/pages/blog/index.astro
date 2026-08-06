@@ -8,15 +8,18 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 
 
-// Get all blogs post in English and sort them based on publish date
-
-const englishBlogEntries = await getCollection("blog", ({ id, data }) => {
-  const isEnglish = id.startsWith("en/");
-  const isVisible = import.meta.env.PROD ? data.showInFeed !== false : true;
-  return isEnglish && isVisible;
+// Get all visible blog posts. Prefer English entries, but gracefully fall back
+// to all visible entries if locale prefixes differ in some environments.
+const visibleBlogEntries = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? data.showInFeed !== false : true;
 });
 
-const blogPosts: CollectionEntry<"blog">[] = englishBlogEntries.sort(
+const englishBlogEntries = visibleBlogEntries.filter(({ id }) =>
+  id.startsWith("en/")
+);
+
+const blogPosts: CollectionEntry<"blog">[] =
+  (englishBlogEntries.length > 0 ? englishBlogEntries : visibleBlogEntries).sort(
   (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
@@ -27,7 +30,7 @@ const insightPosts: CollectionEntry<"insights">[] =
   });
 
 // Separate the most recent post from others
-const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
+const mostRecentPost: CollectionEntry<"blog"> | undefined = blogPosts[0];
 const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
 
 // Define variables for page content
@@ -102,7 +105,11 @@ class="mx-auto max-w-[1520px] px-4 py-10 sm:px-6 lg:px-8 lg:py-14"
 <section
 class="mx-auto max-w-[1520px] px-4 py-10 sm:px-6 lg:px-8 lg:py-14"
 >
-<CardBlogRecent blogEntry={mostRecentPost} />
+{mostRecentPost ? (
+  <CardBlogRecent blogEntry={mostRecentPost} />
+) : (
+  <p class="text-center text-neutral-500">No blog posts available yet.</p>
+)}
 </section>
 <!--Insights section-->
 <section
