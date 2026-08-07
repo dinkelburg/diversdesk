@@ -265,6 +265,10 @@ export default defineConfig({
         label: 'Workflows',
         collapsed: true,
         items: [
+          {
+            label: 'Create and Configure Activities',
+            slug: 'user_manual/activities/activity-setup'
+          },
           'workflows/registration-methods',
           'workflows/creating-onboarding-journeys',
           'workflows/adding-dives-to-an-ongoing-activity',

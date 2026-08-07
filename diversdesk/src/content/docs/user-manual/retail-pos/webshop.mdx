@@ -1,0 +1,84 @@
+---
+title: Webshop
+description: Use the Retail POS Webshop page to manage how retail products are presented and sold through your online shop.
+slug: user_manual/retail-pos/webshop
+robots: noindex
+---
+
+import DocsPageTabs from '@components/docs/DocsPageTabs.astro';
+
+Use the **Retail POS Webshop** page to review and manage how retail products appear in the public online shop.
+
+<DocsPageTabs
+  items={[
+    { href: '/user_manual/activities/webshop', label: 'Webshop Activities' },
+    { href: '/user_manual/retail-pos/webshop', label: 'Webshop Retail' },
+    { href: '/user_manual/accommodation/webshop', label: 'Webshop Accommodation' },
+  ]}
+/>
+
+This page acts as the customer-facing retail catalog and product-detail flow.
+
+## When This Tab Is Visible
+
+The Retail tab is shown publicly when retail mode is set to **Checkout**.
+
+Managers can still access the page internally when retail is enabled, even if the public checkout tab is not currently exposed to customers.
+
+## What Customers See
+
+The Retail Webshop can show:
+
+- A hero banner at the top of the page
+- Product categories and sub-categories
+- Featured products
+- Brand filters
+- Product detail pages with variant selection
+
+Only products with active product variants are shown in the retail webshop.
+
+## Product Detail Behavior
+
+On a product detail page, customers can:
+
+- Review product images
+- Choose available color and size combinations
+- See the product price
+- Add the selected item to cart
+
+This makes the public retail flow variant-aware instead of showing only one flat product record.
+
+## Internal Staff/Manager Use
+
+When the Retail Webshop is used internally rather than as a pure customer view, it can also support booking-connected sales flows.
+
+Depending on context, staff can:
+
+- Add a retail item directly to an existing booking/order
+- Create a new order from the retail item flow
+
+Managers can also access edit and cleanup-related controls outside customer view.
+
+## Category and Featured Behavior
+
+Category setup affects how customers browse the catalog.
+
+Featured items are shown separately on the main retail shop view, helping you surface priority products before a customer drills into a category.
+
+## Hero Banner Images
+
+The Retail hero banner is managed from **Shop Settings**.
+
+If multiple images are uploaded, they rotate automatically on the public page.
+
+## What This Page Depends On
+
+The Retail Webshop reflects setup from your retail catalog, especially:
+
+- Products
+- Variants
+- Categories
+- Brand values
+- Featured flags
+
+Use this page to verify that your public retail offer matches the stock and product presentation you want customers to see.
