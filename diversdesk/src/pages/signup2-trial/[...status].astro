@@ -4,6 +4,11 @@ import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
 import TextInput from "@components/ui/forms/input/TextInput.astro";
 import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
 import { SITE } from "@data/constants";
+import {
+  RECAPTCHA_ACTIONS,
+  RECAPTCHA_ENTERPRISE_SITE_KEY,
+  shouldBypassRecaptcha,
+} from "@/lib/recaptcha-enterprise";
 
 export const prerender = false;
 
@@ -19,13 +24,19 @@ const actionUrl = "/api/signup";
 const startIso = new Date().toISOString();
 
 const pageTitle: string = `Sign Up for Trial | ${SITE.title}`;
+const bypassRecaptcha = shouldBypassRecaptcha(
+  import.meta.env.DEV,
+  Astro.url.hostname,
+);
 
 ---
 
-<script
-  is:inline
-  src="https://www.google.com/recaptcha/api.js?render=6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW"
-></script>
+{!bypassRecaptcha && (
+  <script
+    is:inline
+    src={`https://www.google.com/recaptcha/enterprise.js?render=${RECAPTCHA_ENTERPRISE_SITE_KEY}`}
+  ></script>
+)}
 
 <MainLayout
   title={pageTitle}
@@ -78,7 +89,14 @@ const pageTitle: string = `Sign Up for Trial | ${SITE.title}`;
         ) : (
           <div class="mt-6 grid items-center gap-6 lg:grid-cols-1 lg:gap-16">
             <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-4">
-              <form action={actionUrl} method="post" id="signupForm">
+              <form
+                action={actionUrl}
+                method="post"
+                id="signupForm"
+                data-recaptcha-site-key={RECAPTCHA_ENTERPRISE_SITE_KEY}
+                data-recaptcha-action={RECAPTCHA_ACTIONS.signup}
+                data-recaptcha-bypass={bypassRecaptcha ? "true" : undefined}
+              >
                 <!-- Honeypot field - hidden from users, bots will fill it -->
                 <div style="position: fixed; top: -9999px; left: -9999px;">
                   <label for="website">Website</label>
@@ -326,8 +344,19 @@ if (form && submitBtn) {
     submitBtn.textContent = "Submitting...";
 
     try {
+      if (form.dataset.recaptchaBypass === "true") {
+        form.submit();
+        return;
+      }
+
+      const recaptchaSiteKey = form.dataset.recaptchaSiteKey;
+      const recaptchaAction = form.dataset.recaptchaAction;
+      if (!recaptchaSiteKey || !recaptchaAction) throw new Error("reCAPTCHA is not configured");
+
       // @ts-ignore
-      const token = await grecaptcha.execute("6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW", { action: "submit" });
+      const recaptchaEnterprise = grecaptcha.enterprise;
+      await new Promise<void>((resolve) => recaptchaEnterprise.ready(resolve));
+      const token = await recaptchaEnterprise.execute(recaptchaSiteKey, { action: recaptchaAction });
       const captchaInput = document.getElementById("captcha_token") as HTMLInputElement;
       if (captchaInput) captchaInput.value = token;
       form.submit();
@@ -339,5 +368,3 @@ if (form && submitBtn) {
   });
 }
 </script>
-
-

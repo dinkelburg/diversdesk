@@ -321,5 +321,9 @@ export default defineConfig({
   adapter: vercel(),
   security: {
     checkOrigin: false,
+    allowedDomains: [
+      { protocol: 'https', hostname: 'www.diversdesk.com' },
+      { protocol: 'https', hostname: 'diversdesk.com' },
+    ],
   },
 });

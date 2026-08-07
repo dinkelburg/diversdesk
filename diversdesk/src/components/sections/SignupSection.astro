@@ -3,8 +3,17 @@
 import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
 import TextInput from "@components/ui/forms/input/TextInput.astro";
 import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
+import {
+    RECAPTCHA_ACTIONS,
+    RECAPTCHA_ENTERPRISE_SITE_KEY,
+    shouldBypassRecaptcha,
+} from "@/lib/recaptcha-enterprise";
 
 const isProd = import.meta.env.PROD;
+const bypassRecaptcha = shouldBypassRecaptcha(
+    import.meta.env.DEV,
+    Astro.url.hostname,
+);
 const {status, type} = Astro.params;
 
 // Define the variables that will be used in this component
@@ -18,9 +27,11 @@ const actionUrl = '/api/signup';
 const namePrefix = 'reference_prefix-ref-00053-00000-signup_submission.signup_submission.data.'
 const startIso = new Date().toISOString();
 ---
-<script
-        is:inline
-        src='https://www.google.com/recaptcha/api.js?render=6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW'/>
+{!bypassRecaptcha && (
+    <script
+            is:inline
+            src={`https://www.google.com/recaptcha/enterprise.js?render=${RECAPTCHA_ENTERPRISE_SITE_KEY}`}/>
+)}
 <!-- Contact Us -->
 <section class="mx-auto max-w-[50rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
     <div class="mx-auto max-w-2xl lg:max-w-5xl">
@@ -46,7 +57,14 @@ const startIso = new Date().toISOString();
                     <div class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-4">
                         <!-- Form for user input with various input fields.-->
                         <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
-                        <form action={actionUrl} method="post" id="signupForm">
+                        <form
+                                action={actionUrl}
+                                method="post"
+                                id="signupForm"
+                                data-recaptcha-site-key={RECAPTCHA_ENTERPRISE_SITE_KEY}
+                                data-recaptcha-action={RECAPTCHA_ACTIONS.signup}
+                                data-recaptcha-bypass={bypassRecaptcha ? "true" : undefined}
+                        >
                             <div style="position: fixed; top: -9999px; left: -9999px;">
                                 <label for="website">Website</label>
                                 <input name="website" id="website" value=""/>
@@ -175,27 +193,42 @@ const startIso = new Date().toISOString();
 </section>
 <script>
 
-    const form = document.getElementById('signupForm');
+    const form = document.getElementById('signupForm') as HTMLFormElement | null;
     const submitBtn = document.getElementById('submitBtn');
 
     if (form && submitBtn) {
         form.addEventListener('submit', async (event) => {
             event.preventDefault();
-            const form = event.target as HTMLFormElement;
+            const formElement = event.target as HTMLFormElement;
 
-
-            // @ts-ignore
-            const token = await (grecaptcha as any).execute('6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW', {action: 'submit'});
-            const elementById = document.getElementById('captcha_token');
-            if (elementById instanceof HTMLInputElement) {
-                elementById.value = token;
-            }
-
-            // show loading
             submitBtn.setAttribute('disabled', 'true');
             submitBtn.textContent = 'Submitting...';
 
-            return form?.submit();
+            try {
+                if (formElement.dataset.recaptchaBypass === 'true') {
+                    formElement.submit();
+                    return;
+                }
+
+                const recaptchaSiteKey = formElement.dataset.recaptchaSiteKey;
+                const recaptchaAction = formElement.dataset.recaptchaAction;
+                if (!recaptchaSiteKey || !recaptchaAction) throw new Error('reCAPTCHA is not configured');
+
+                // @ts-ignore
+                const recaptchaEnterprise = grecaptcha.enterprise;
+                await new Promise<void>((resolve) => recaptchaEnterprise.ready(resolve));
+                const token = await recaptchaEnterprise.execute(recaptchaSiteKey, {action: recaptchaAction});
+                const elementById = document.getElementById('captcha_token');
+                if (elementById instanceof HTMLInputElement) {
+                    elementById.value = token;
+                }
+
+                formElement.submit();
+            } catch (error) {
+                console.error('Submission error:', error);
+                submitBtn.removeAttribute('disabled');
+                submitBtn.textContent = 'Sign Up';
+            }
         });
     }
     const errorBlock = document.getElementById('errorMessage');

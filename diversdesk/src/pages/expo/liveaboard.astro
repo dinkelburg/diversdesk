@@ -3,8 +3,17 @@ import { Image } from "astro:assets";
 import MainLayout from "@/layouts/MainLayout.astro";
 import { SITE } from "@data/constants";
 import LiveaboardShipImage from "@images/insights/liveaboard-ship.avif";
+import {
+  RECAPTCHA_ACTIONS,
+  RECAPTCHA_ENTERPRISE_SITE_KEY,
+  shouldBypassRecaptcha,
+} from "@/lib/recaptcha-enterprise";
 
 const isProd = import.meta.env.PROD;
+const bypassRecaptcha = shouldBypassRecaptcha(
+  import.meta.env.DEV,
+  Astro.url.hostname,
+);
 const canonicalSlug = "expo/liveaboard";
 const pageTitle = `Liveaboard Subscription Offer | ${SITE.title}`;
 const pageDescription =
@@ -12,10 +21,12 @@ const pageDescription =
 const redirectBaseUrl = isProd ? "https://www.diversdesk.com" : "http://localhost:4321";
 ---
 
-<script
-  is:inline
-  src="https://www.google.com/recaptcha/api.js?render=6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW"
-></script>
+{!bypassRecaptcha && (
+  <script
+    is:inline
+    src={`https://www.google.com/recaptcha/enterprise.js?render=${RECAPTCHA_ENTERPRISE_SITE_KEY}`}
+  ></script>
+)}
 
 <MainLayout
   title={pageTitle}
@@ -131,7 +142,15 @@ const redirectBaseUrl = isProd ? "https://www.diversdesk.com" : "http://localhos
 
         <div id="launch-status" class="mx-auto mt-6 hidden max-w-3xl rounded-xl border px-4 py-3 text-sm"></div>
 
-        <form action="/api/signup" method="post" id="liveaboardLaunchForm" class="mx-auto mt-8 max-w-3xl">
+        <form
+          action="/api/signup"
+          method="post"
+          id="liveaboardLaunchForm"
+          class="mx-auto mt-8 max-w-3xl"
+          data-recaptcha-site-key={RECAPTCHA_ENTERPRISE_SITE_KEY}
+          data-recaptcha-action={RECAPTCHA_ACTIONS.liveaboardWaitlist}
+          data-recaptcha-bypass={bypassRecaptcha ? "true" : undefined}
+        >
           <div style="position: fixed; top: -9999px; left: -9999px;">
             <label for="website">Website</label>
             <input name="website" id="website" value="" />
@@ -300,16 +319,33 @@ const redirectBaseUrl = isProd ? "https://www.diversdesk.com" : "http://localhos
   if (launchForm && launchSubmit) {
     launchForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-
-      // @ts-ignore
-      const token = await (grecaptcha as any).execute("6Lcc7ZkqAAAAADf9KNtDxhLKVTLM6a-w3EqzPBmW", { action: "submit" });
-      if (launchCaptcha) {
-        launchCaptcha.value = token;
-      }
-
       launchSubmit.setAttribute("disabled", "true");
       launchSubmit.textContent = "Submitting...";
-      launchForm.submit();
+
+      try {
+        if (launchForm.dataset.recaptchaBypass === "true") {
+          launchForm.submit();
+          return;
+        }
+
+        const recaptchaSiteKey = launchForm.dataset.recaptchaSiteKey;
+        const recaptchaAction = launchForm.dataset.recaptchaAction;
+        if (!recaptchaSiteKey || !recaptchaAction) throw new Error("reCAPTCHA is not configured");
+
+        // @ts-ignore
+        const recaptchaEnterprise = grecaptcha.enterprise;
+        await new Promise<void>((resolve) => recaptchaEnterprise.ready(resolve));
+        const token = await recaptchaEnterprise.execute(recaptchaSiteKey, { action: recaptchaAction });
+        if (launchCaptcha) {
+          launchCaptcha.value = token;
+        }
+
+        launchForm.submit();
+      } catch (error) {
+        console.error("Submission error:", error);
+        launchSubmit.removeAttribute("disabled");
+        launchSubmit.textContent = "Keep Me Updated";
+      }
     });
   }
 </script>

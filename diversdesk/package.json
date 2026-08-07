@@ -10,6 +10,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build && node process-html.mjs",
+    "test": "tsx --test tests/**/*.test.ts",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -48,6 +49,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-tailwindcss": "^0.5.14",
+    "tsx": "^4.20.5",
     "typescript": "^5.9.3"
   }
 }
