@@ -1,0 +1,81 @@
+---
+title: Webshop
+description: Use the Accommodation Webshop page to manage how accommodation offers appear in the online booking flow.
+slug: user_manual/accommodation/webshop
+robots: noindex
+---
+
+import DocsPageTabs from '@components/docs/DocsPageTabs.astro';
+
+Use the **Accommodation Webshop** page to review and manage how room and stay bookings work in the public shop.
+
+<DocsPageTabs
+  items={[
+    { href: '/user_manual/activities/webshop', label: 'Webshop Activities' },
+    { href: '/user_manual/retail-pos/webshop', label: 'Webshop Retail' },
+    { href: '/user_manual/accommodation/webshop', label: 'Webshop Accommodation' },
+  ]}
+/>
+
+This page is the customer-facing booking surface for accommodation.
+
+## When This Tab Is Visible
+
+The Accommodation tab is shown publicly when accommodation mode is set to **Checkout**.
+
+Managers can still access the page internally when accommodation is enabled, even if it is not currently exposed as a public checkout tab.
+
+## What Customers Can Do
+
+Customers can use this page to:
+
+- Choose dates for a stay
+- Choose the number of guests
+- Review room types
+- Check availability
+- See stay pricing for the selected dates
+- Add accommodation to cart
+
+## Date Selection Behavior
+
+For standard accommodation booking, customers select a date range from the date picker.
+
+If your accommodation setup uses **fixed departures** mode, the page switches to a departure selector instead of a normal date-range picker.
+
+In that case, the selected departure controls:
+
+- Start and end dates
+- Duration
+- Departure information shown in the hero area
+
+## Availability and Pricing Behavior
+
+Availability is date-dependent.
+
+If no dates are selected yet, the page prompts the customer to choose dates before checking room availability and pricing.
+
+Once dates are selected, Diversdesk uses the selected stay period to:
+
+- Evaluate availability
+- Calculate pricing
+- Show which room types can still be booked
+
+If the customer already has accommodation reservations in the cart, the page also shows a notice so they can review those selections.
+
+## Hero Banner Images
+
+The Accommodation Webshop page can display a rotating hero banner at the top.
+
+These images are managed from **Shop Settings**. If multiple images are uploaded, they rotate automatically.
+
+## What This Page Depends On
+
+What the customer sees here depends on your accommodation setup, including:
+
+- Room types
+- Room availability
+- Price rules
+- Accommodation mode
+- Published booking window logic
+
+Use this page to check whether the public stay-booking flow behaves the way you want before sending customers to it.

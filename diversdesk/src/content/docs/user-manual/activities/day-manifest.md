@@ -53,19 +53,25 @@ Because the view is customizable, you can create different operational tabs for 
 
 You can create tabs based on your team workflow and choose which columns are visible in each tab.
 
-Typical examples:
+The most effective setup is usually unique to your operation, not a one-size-fits-all template.
 
-- registration and payment follow-up
-- trip operation and staffing
-- pickup logistics and addresses
+When designing your tabs, align each tab to a real responsibility during the day. Keep each view focused so one role can complete its tasks without scanning unrelated information.
 
-This setup helps each team member work faster without clutter from unrelated fields.
+Good practice is to decide per tab:
+
+- who owns the tab (front desk, ops, captain, pickup team, etc.)
+- which decisions that role needs to make
+- which columns are essential to make those decisions quickly
+
+This approach keeps workflows clear, reduces handoff errors, and makes Day Manifest faster to use during peak hours.
 
 ### Registration Data and Unit Conversion
 
 Many available columns are sourced from participant registration data. Size and measurement values entered by customers are automatically shown in your establishment default units, configured under **Settings > General**.
 
 This keeps operational views consistent even when guests register using different units.
+
+![Page navigation through the hamburger menu](/images/user_manual/day-manifest-converted-sizing-unit.avif)
 
 ### Recommended Tab Setup (Inspiration)
 
@@ -137,20 +143,7 @@ Inside the active tab settings, you can:
 2. Reorder column display order
 3. Configure sorting priority (multi-level sorting)
 
-## Available Column Types (Examples)
-
-Day Manifest supports many column types so each view can be purpose-built. Common examples include:
-
-- booking reference and invoice number
-- registration status and waiver status
-- payment status
-- instructor, captain, and crew
-- meet type, meeting time, and location
-- participant remark and internal booking note
-- gear sizes and own gear
-- gear check status
-- trip fields (time, type, title, boat)
-- add-ons
+For the full list of available fields, see [Full Column List for Customize View](#full-column-list-for-customize-view).
 
 ## Actions You Can Perform Directly
 
