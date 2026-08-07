@@ -19,11 +19,16 @@ Giving a user the appropriate Role determines one's editing and viewing rights. 
 This means no additional rights next to the default rights of the staff member in qustion.  
 _E.g. An instructor without an allocated role can solely view his or her schedule and has no rights to see the general planning or other members their schedule._ </br></br>
 **2. Staf+ rights**  
-A user with staf+ rights can view all planning related pages, but has no rights to edit any content. </br></br>
+A user with staf+ rights can view planning-related pages and day operations, but is mostly read-only.  
+The exceptions are operational actions on Day Manifest where Staff+ can:
+
+- add/edit comments
+- change pickup/meeting time and address
+
+All other editing actions remain restricted. </br></br>
 **3. Manager rights** </br>
 When given manager rights, a user can view and edit all existing content.
 
 ![Distinct Divemasters and Instructors through the diving level drop-down](/images/user_diving_level.jpg)
 
 The appropriate diving level can be given here. A staff member given Divemaster or Instructor rights has access to a personal page named 'My Page'. Read more in the [custom registration form guide](/features-resources/custom-registration-form).
-

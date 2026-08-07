@@ -258,6 +258,7 @@ export default defineConfig({
           'features-resources/connecting-quickbooks',
           'features-resources/add-ons',
           'features-resources/tanks-and-blends',
+          'features-resources/registration-page',
         ]
       },
       {

@@ -231,6 +231,17 @@ header {
     mask-size: 110%;
 }
 
+/* Keep the full column table compact on Day Manifest docs page. */
+.sl-markdown-content .sl-heading-wrapper:has(> h2#full-column-list-for-customize-view) ~ table {
+    font-size: 0.74rem !important;
+}
+
+.sl-markdown-content .sl-heading-wrapper:has(> h2#full-column-list-for-customize-view) ~ table th,
+.sl-markdown-content .sl-heading-wrapper:has(> h2#full-column-list-for-customize-view) ~ table td {
+    font-size: 0.74rem !important;
+    line-height: 1.3;
+}
+
 #starlight__sidebar ul.top-level > li > details > summary:hover .group-label::before,
 #starlight__sidebar ul.top-level > li > details > summary:focus-visible .group-label::before,
 #starlight__sidebar ul.top-level > li > details[open] > summary .group-label::before,
