@@ -18,4 +18,6 @@ Pricing is closely connected to activity creation and publication.
 
 For the full step-by-step workflow to create and configure activities (including how setup affects webshop visibility), see [Create and Configure Activities](/user_manual/activities/activity-setup/).
 
+If you need to explain why duration changes do or do not affect the final amount, see [Why does the activity duration not impact the price?](/faq/why-does-the-activity-duration-not-impact-the-price/).
+
 If you are looking for the new discount-rule workflow, see the **Discount Calculator** article under **Features & Resources**.

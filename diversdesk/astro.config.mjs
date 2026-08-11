@@ -272,6 +272,7 @@ export default defineConfig({
           'workflows/registration-methods',
           'workflows/creating-onboarding-journeys',
           'workflows/adding-dives-to-an-ongoing-activity',
+          'workflows/tiered-activity-workflow',
         ]
       },
       {
@@ -286,6 +287,7 @@ export default defineConfig({
         collapsed: true,
         items: [
           'faq/mobile-homescreen-icon',
+          'faq/why-does-the-activity-duration-not-impact-the-price',
         ]
       },
       {
