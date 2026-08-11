@@ -1,6 +1,9 @@
 {
   "name": "diversdesk",
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "build": "npm run build:diversdesk && npm run build:traveltruster-blog",
     "build:diversdesk": "npm --prefix diversdesk run build",
