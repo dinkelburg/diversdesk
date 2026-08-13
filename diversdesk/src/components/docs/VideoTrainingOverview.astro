@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+
+const videoThumbnails: Record<string, string> = {
+  'video-training/alternative-payment-methods': 'https://cdn.loom.com/sessions/thumbnails/8fb67e02a5da4a2fa0b06eea0c64494d-fa544de83e59626a.gif',
+  'video-training/connecting-quickbooks': 'https://cdn.loom.com/sessions/thumbnails/a06bacb0a73c4a68b653bd6eda5e2bd9-ff82ec4197b02f57.gif',
+  'video-training/customer-onboarding': 'https://cdn.loom.com/sessions/thumbnails/9d6eb258e34c427b900a099d4a418f16-457e084dd0faf5b1.gif',
+  'video-training/environment-setup-first-booking': 'https://cdn.loom.com/sessions/thumbnails/17e9249266a9418abf76643df4f794d4-4dc44ebafe47d4b3.gif',
+  'video-training/getting-started': 'https://cdn.loom.com/sessions/thumbnails/ac3c1b550cbd4f4888116b99a29e9679-00001.gif',
+  'video-training/onboarding-methods': 'https://cdn.loom.com/sessions/thumbnails/e8009f683e7e40f3b8074e4312fee817-9be11a93cd9452c4.gif',
+  'video-training/new-planner-tutorial': 'https://i.ytimg.com/vi/jR05dn8BM3A/hqdefault.jpg',
+  'video-training/planning-and-scheduling': 'https://cdn.loom.com/sessions/thumbnails/e229ccf8e50345afaadfc66f05ffa9de-bd16dae501410bb6.gif',
+  'video-training/quickbooks-workflow': 'https://cdn.loom.com/sessions/thumbnails/50588a7dfabc415d8c6607ba09b83784-3d5d60bd2c5b0248.gif',
+  'video-training/retail-module': 'https://cdn.loom.com/sessions/thumbnails/ba28721ef5be42b798eb369496f90e2e-38b7c2fce2dbb937.gif',
+  'video-training/trip-manifest-list': 'https://cdn.loom.com/sessions/thumbnails/92e003a236b4464d9bde38e5eb8ab59a-b95293fa689d604a.gif',
+  'video-training/trip-templates': 'https://cdn.loom.com/sessions/thumbnails/5638ad088c654d248d67bc6846e3d951-49dbfeb232e4c16c.gif',
+  'video-training/user-roles-rights': 'https://cdn.loom.com/sessions/thumbnails/c4ad6bf478d045f18f96be6fe0ee04df-c76bd8cfc884892e.gif',
+};
+
+const videos = (await getCollection('docs'))
+  .filter((entry) => entry.id.startsWith('video-training/'))
+  .filter((entry) => entry.id !== 'video-training/video_training')
+  .map((entry) => ({
+    href: `/${entry.id.replace(/\.(md|mdx)$/i, '')}/`,
+    order: entry.data.sidebar?.order ?? Number.MAX_SAFE_INTEGER,
+    description: entry.data.description ?? 'Watch this Diversdesk training video.',
+    isNew: entry.data.sidebar?.badge?.text === 'New',
+    title: entry.data.title,
+    thumbnail: videoThumbnails[entry.id],
+  }))
+  .sort((left, right) => left.order - right.order);
+---
+
+<div class="video-training-grid" role="list">
+  {videos.map((video) => (
+    <a class="video-training-card" href={video.href} role="listitem">
+      <div class="video-training-thumbnail">
+        <img src={video.thumbnail} alt="" loading="lazy" />
+      </div>
+      <div class="video-training-card-body">
+        <div class="video-training-card-heading">
+          <p class="video-training-card-title">{video.title}</p>
+          {video.isNew && <span class="video-training-card-badge">New</span>}
+        </div>
+        <p class="video-training-card-description">{video.description}</p>
+      </div>
+    </a>
+  ))}
+</div>

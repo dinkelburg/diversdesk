@@ -879,7 +879,170 @@ header {
     margin-top: 0.9rem;
 }
 
+.video-training-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+}
+
+.video-training-card {
+    display: grid;
+    grid-template-columns: 6.25rem minmax(0, 1fr);
+    min-height: 4.5rem;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--sl-color-gray-4) 22%, transparent);
+    border-radius: 0.5rem;
+    background: color-mix(in srgb, var(--sl-color-gray-6) 92%, black);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 170ms ease, background-color 170ms ease, transform 170ms ease;
+}
+
+:root[data-theme="light"] .video-training-card {
+    background: color-mix(in srgb, var(--sl-color-gray-7) 92%, white);
+}
+
+.video-training-card:hover,
+.video-training-card:focus-visible {
+    border-color: color-mix(in srgb, var(--sl-color-accent) 55%, transparent);
+    background: color-mix(in srgb, var(--sl-color-accent) 10%, var(--sl-color-gray-6));
+    transform: translateX(2px);
+}
+
+:root[data-theme="light"] .video-training-card:hover,
+:root[data-theme="light"] .video-training-card:focus-visible {
+    background: color-mix(in srgb, var(--sl-color-accent) 9%, white);
+}
+
+.video-training-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.sl-markdown-content .video-training-card .video-training-thumbnail img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.video-training-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+    gap: 0.2rem;
+    padding: 0 0.75rem;
+}
+
+.video-training-card-title,
+.video-training-card-description {
+    margin: 0;
+}
+
+.video-training-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    min-width: 0;
+}
+
+.video-training-card-title {
+    color: var(--sl-color-white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.video-training-card-description {
+    color: var(--sl-color-gray-2);
+    font-size: 0.86rem;
+    line-height: 1.45;
+}
+
+.video-training-card-badge {
+    flex: 0 0 auto;
+    border: 1px solid color-mix(in srgb, var(--sl-color-accent) 45%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--sl-color-accent) 16%, transparent);
+    color: var(--sl-color-accent-high);
+    font-size: 0.64rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.22rem 0.38rem;
+    text-transform: uppercase;
+}
+
+.video-chapters {
+    display: grid;
+    gap: 0;
+    margin-top: 1rem;
+}
+
+.sl-markdown-content .video-duration {
+    margin: 0.7rem 0 0;
+    color: var(--sl-color-gray-2);
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.video-chapter {
+    display: grid;
+    grid-template-columns: 3.6rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.48rem 0;
+    color: var(--sl-color-text);
+    text-decoration: none;
+    transition: color 170ms ease;
+}
+
+.video-chapter:hover,
+.video-chapter:focus-visible {
+    color: var(--sl-color-accent);
+}
+
+.video-chapter:hover .video-chapter-time,
+.video-chapter:focus-visible .video-chapter-time,
+.video-chapter:hover .video-chapter-title,
+.video-chapter:focus-visible .video-chapter-title {
+    color: var(--sl-color-accent);
+}
+
+.video-chapter-time {
+    color: var(--sl-color-gray-2);
+    font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+}
+
+.video-chapter-title {
+    color: var(--sl-color-text);
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
 @media (max-width: 40rem) {
+    .video-training-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-training-thumbnail {
+        width: 100%;
+    }
+
+    .video-training-card {
+        grid-template-columns: 5.75rem minmax(0, 1fr);
+    }
+
     .updates-card {
         padding: 0.82rem 0.86rem;
     }

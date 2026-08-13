@@ -278,9 +278,9 @@ export default defineConfig({
       {
         label: 'Video Training',
         collapsed: true,
-        items: [
-          'video-training/video-training',
-        ]
+        autogenerate: {
+          directory: 'video-training'
+        }
       },
       {
         label: 'FAQ & Troubleshooting',

@@ -272,6 +272,7 @@ export const POST: APIRoute = async ({ request }) => {
       "Never claim that you accessed an account, booking, customer, establishment, or other private record.",
       "If the excerpts do not contain enough evidence, set answerable to false and say that the documentation does not answer the question.",
       "Answer in the language used by the question. Be direct and concise, but keep all necessary steps and caveats.",
+      "When an excerpt is a video transcript with a timestamp heading such as 05:32, include 'Video: 5:32' in the answer so the user can jump to the relevant moment. Do not describe transcripts as a source; cite only the supplied source IDs.",
       "Return plain text in answer. Put only supplied source IDs in sourceIds.",
     ].join("\n"),
     max_output_tokens: 700,

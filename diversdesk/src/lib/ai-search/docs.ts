@@ -16,6 +16,12 @@ const rawDocs = import.meta.glob<string>(
   },
 );
 
+const rawVideoTranscripts = import.meta.glob<string>("../../content/ai/video-transcripts/*.md", {
+  eager: true,
+  import: "default",
+  query: "?raw",
+});
+
 const allowedRoots = new Set([
   "faq",
   "features-resources",
@@ -281,6 +287,27 @@ const chunks = Object.entries(rawDocs).flatMap(([modulePath, raw]) => {
     }),
   );
 });
+
+const transcriptChunks = Object.entries(rawVideoTranscripts).flatMap(([, raw]) => {
+  const frontmatter = getFrontmatter(raw);
+  if (getFrontmatterValue(frontmatter, "index") !== "true") return [];
+
+  const title = getFrontmatterValue(frontmatter, "title");
+  const pagePath = getFrontmatterValue(frontmatter, "videoSlug");
+  if (!title || !pagePath) return [];
+
+  return splitIntoSections(getBodyWithoutFrontmatter(raw)).map((section, index) =>
+    createChunk({
+      heading: section.heading,
+      index,
+      pagePath,
+      text: section.text,
+      title,
+    }),
+  );
+});
+
+chunks.push(...transcriptChunks);
 
 const documentFrequency = chunks.reduce<Map<string, number>>((frequencies, chunk) => {
   chunk.tokens.forEach((token) => frequencies.set(token, (frequencies.get(token) ?? 0) + 1));

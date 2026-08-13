@@ -1,0 +1,18 @@
+---
+type Chapter = {
+  href: string;
+  time: string;
+  title: string;
+};
+
+const { chapters } = Astro.props as { chapters: Chapter[] };
+---
+
+<nav class="video-chapters" aria-label="Video chapters">
+  {chapters.map((chapter) => (
+    <a class="video-chapter" href={chapter.href}>
+      <time class="video-chapter-time">{chapter.time}</time>
+      <span class="video-chapter-title">{chapter.title}</span>
+    </a>
+  ))}
+</nav>
