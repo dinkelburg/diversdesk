@@ -33,6 +33,8 @@ When you open a specific booking from the bookings overview page, this is the in
        style="max-width: 80%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 </div>
 
+Everything related to a guest's visit lives in one booking. You can adjust the activities, retail items, accommodation, and participants that make up the booking as the guest's plans develop.
+
 ## Architecture
 
 ### Left Panel
@@ -56,20 +58,16 @@ The middle section features a summary card at the top with all activities listed
 <div style="display: flex; align-items: flex-start; gap: 24px; padding: 10px;">
   <div style="flex: 1;">
 
-  **⚡ New Quick-Action Button**
+  **⚡ Quick-Action Button**
 
-We’ve upgraded the individual booking view to give you a single, powerful point of control. The new **+Manage** button is now your centralized hub for actions inside that booking.
-
-You can now manage everything from adding activities, accommodations, and retail items to managing payments and generating invoices.
-Saving you from chasing individual hyperlinks spread across the page.
+The **+Manage** button gives you a single, powerful point of control for actions inside the booking. You can add activities, accommodation bookings, and retail items, as well as manage payments and generate invoices, without chasing separate action links across the page.
   </div>
-  
+
   <div style="flex: 1; text-align: right;">
-  <img src="/images/booking-page-centralized-manage-button.avif" 
-        alt="Menu under the centralized action button in an individual booking" 
-      style="max-width: 60%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+    <img src="/images/booking-page-centralized-manage-button.avif" 
+          alt="Menu under the centralized action button in an individual booking" 
+        style="max-width: 60%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
   </div>
-
 </div>
 
 **📝 Streamlined Card Editing**
@@ -87,6 +85,24 @@ Need to make broader changes? Selecting **Edit Booking** from the **+Manage** bu
 </div>
 
 ## Actions
+
+#### Schedule an Activity Again
+
+Open an activity card and select **Schedule again** in its side panel. Diversdesk automatically schedules the activity for the next day and initially connects all participants from the original activity.
+
+Before applying the new schedule, use the **Connect participants** step to adjust who joins, for example when not everyone continues on the following day.
+
+#### View an Activity in Planner
+
+Select **View in Planner** from an activity's side panel to open the Planner on day one of that activity. The **Activities** tab is selected, the relevant activity is expanded, and other activities remain collapsed for a clear view.
+
+#### Change the Duration of a Fixed-Price Activity
+
+Changing the duration of a **fixed-price** activity does not update the price of that activity. The activity price is per person and is only affected by adjusting the number of participants participating in the activity. This is especially useful for multi-day trips, where you may need to change the scheduled duration without changing the agreed activity price.
+
+:::tip
+Do you need activities that change price as more days are added? Consider setting up [Tiered Rates](/user_manual/activities/pricing/#tiered-rates).
+:::
 
 #### Cancel a Booking
 
