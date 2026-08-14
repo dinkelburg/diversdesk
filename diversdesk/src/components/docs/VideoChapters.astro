@@ -1,18 +1,44 @@
 ---
 type Chapter = {
   href: string;
+  seconds: number;
   time: string;
   title: string;
 };
 
-const { chapters } = Astro.props as { chapters: Chapter[] };
+const { chapters, videoId } = Astro.props as { chapters: Chapter[]; videoId: string };
 ---
 
-<nav class="video-chapters" aria-label="Video chapters">
+<nav class="video-chapters" aria-label="Video chapters" data-video-id={videoId}>
   {chapters.map((chapter) => (
-    <a class="video-chapter" href={chapter.href}>
+    <a class="video-chapter" href={chapter.href} data-video-chapter data-seconds={chapter.seconds}>
       <time class="video-chapter-time">{chapter.time}</time>
       <span class="video-chapter-title">{chapter.title}</span>
     </a>
   ))}
 </nav>
+
+<script>
+  document.querySelectorAll<HTMLElement>("[data-video-id]").forEach((chapterList) => {
+    const frame = document.getElementById(chapterList.dataset.videoId || "") as HTMLIFrameElement | null;
+    if (!frame) return;
+
+    chapterList.addEventListener("click", (event) => {
+      const chapterLink = (event.target as HTMLElement).closest<HTMLAnchorElement>("[data-video-chapter]");
+      const seconds = Number(chapterLink?.dataset.seconds);
+      if (!chapterLink || !Number.isFinite(seconds)) return;
+
+      event.preventDefault();
+
+      const videoUrl = new URL(frame.src);
+      if (videoUrl.hostname.includes("youtube")) {
+        videoUrl.searchParams.set("start", `${seconds}`);
+      } else if (videoUrl.hostname.includes("loom.com")) {
+        videoUrl.searchParams.set("t", `${seconds}`);
+      }
+      videoUrl.searchParams.set("autoplay", "1");
+      frame.src = videoUrl.toString();
+      frame.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
+</script>
