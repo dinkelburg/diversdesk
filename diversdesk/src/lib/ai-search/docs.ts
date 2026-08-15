@@ -309,6 +309,8 @@ const transcriptChunks = Object.entries(rawVideoTranscripts).flatMap(([, raw]) =
 
 chunks.push(...transcriptChunks);
 
+const chunksById = new Map(chunks.map((chunk) => [chunk.id, chunk]));
+
 const documentFrequency = chunks.reduce<Map<string, number>>((frequencies, chunk) => {
   chunk.tokens.forEach((token) => frequencies.set(token, (frequencies.get(token) ?? 0) + 1));
   return frequencies;
@@ -364,6 +366,13 @@ const scoreChunk = (chunk: SearchChunk, query: string, currentPath: string | nul
   return tokenScore + phraseScore + currentPageScore;
 };
 
+const toSearchSource = (chunk: SearchChunk): SearchSource => ({
+  excerpt: chunk.text,
+  id: chunk.id,
+  title: chunk.title,
+  url: chunk.url,
+});
+
 export const searchDocs = (query: string, currentPath: string | null): SearchSource[] => {
   const ranked = chunks
     .map((chunk) => ({
@@ -383,12 +392,17 @@ export const searchDocs = (query: string, currentPath: string | null): SearchSou
       return true;
     })
     .slice(0, MAX_SOURCES)
-    .map((entry, index) => ({
-      excerpt: entry.chunk.text,
-      id: `source-${index + 1}`,
-      title: entry.chunk.title,
-      url: entry.chunk.url,
-    }));
+    .map((entry) => toSearchSource(entry.chunk));
+};
+
+export const getDocsByIds = (ids: string[]): SearchSource[] => {
+  const seen = new Set<string>();
+  return ids.flatMap((id) => {
+    if (seen.has(id)) return [];
+    seen.add(id);
+    const chunk = chunksById.get(id);
+    return chunk ? [toSearchSource(chunk)] : [];
+  });
 };
 
 export const getIndexedDocumentCount = () => new Set(chunks.map((chunk) => chunk.pagePath)).size;

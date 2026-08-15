@@ -45,7 +45,7 @@ import StarlightSearch from "@astrojs/starlight/components/Search.astro";
 
     <div class="ai-search-result" data-ai-search-result hidden>
       <div class="ai-search-status" data-ai-search-status aria-live="polite"></div>
-      <p class="ai-search-answer" data-ai-search-answer></p>
+      <div class="ai-search-answer" data-ai-search-answer></div>
       <div class="ai-search-sources" data-ai-search-sources hidden>
         <h3>Sources</h3>
         <ul data-ai-search-source-list></ul>
@@ -60,6 +60,8 @@ import StarlightSearch from "@astrojs/starlight/components/Search.astro";
 </dialog>
 
 <script>
+  import { renderAiAnswerMarkdown } from "@/lib/ai-search/markdown";
+
   type AiSearchResponse = {
     answer?: string;
     error?: string;
@@ -82,6 +84,11 @@ import StarlightSearch from "@astrojs/starlight/components/Search.astro";
     } catch {
       return null;
     }
+  };
+
+  const setAnswer = (element: HTMLElement, value: string) => {
+    // Micromark escapes raw HTML and rejects dangerous protocols by default.
+    element.innerHTML = renderAiAnswerMarkdown(value);
   };
 
   const initializeAiSearch = () => {
@@ -110,6 +117,12 @@ import StarlightSearch from "@astrojs/starlight/components/Search.astro";
     closeButton.addEventListener("click", () => dialog.close());
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) dialog.close();
+    });
+    query.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" || event.shiftKey || event.isComposing) return;
+
+      event.preventDefault();
+      if (!submitButton.disabled) form.requestSubmit(submitButton);
     });
 
     form.addEventListener("submit", async (event) => {
@@ -146,7 +159,7 @@ import StarlightSearch from "@astrojs/starlight/components/Search.astro";
         }
 
         status.textContent = "AI-generated answer";
-        answer.textContent = payload.answer ?? "No answer was returned.";
+        setAnswer(answer, payload.answer ?? "No answer was returned.");
 
         const safeSources = (payload.sources ?? []).flatMap((source) => {
           const url = getSafeSourceUrl(source.url);
@@ -357,7 +370,89 @@ import StarlightSearch from "@astrojs/starlight/components/Search.astro";
 
   .ai-search-answer {
     margin-top: 0.65rem !important;
-    white-space: pre-line;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
+  .ai-search-answer :global(:first-child) {
+    margin-top: 0;
+  }
+
+  .ai-search-answer :global(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .ai-search-answer :global(p),
+  .ai-search-answer :global(ul),
+  .ai-search-answer :global(ol),
+  .ai-search-answer :global(pre),
+  .ai-search-answer :global(blockquote),
+  .ai-search-answer :global(table) {
+    margin: 0.65rem 0;
+  }
+
+  .ai-search-answer :global(h1),
+  .ai-search-answer :global(h2),
+  .ai-search-answer :global(h3),
+  .ai-search-answer :global(h4) {
+    margin: 0.9rem 0 0.4rem;
+    font-size: var(--sl-text-base);
+  }
+
+  .ai-search-answer :global(ul),
+  .ai-search-answer :global(ol) {
+    padding-inline-start: 1.4rem;
+  }
+
+  .ai-search-answer :global(li + li) {
+    margin-top: 0.25rem;
+  }
+
+  .ai-search-answer :global(strong) {
+    font-weight: 700;
+  }
+
+  .ai-search-answer :global(a) {
+    color: var(--sl-color-accent-high);
+  }
+
+  .ai-search-answer :global(code) {
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.3rem;
+    background: var(--sl-color-gray-5);
+    font-size: 0.9em;
+  }
+
+  .ai-search-answer :global(pre) {
+    overflow-x: auto;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--sl-color-gray-7);
+  }
+
+  .ai-search-answer :global(pre code) {
+    padding: 0;
+    background: transparent;
+  }
+
+  .ai-search-answer :global(blockquote) {
+    padding-inline-start: 0.8rem;
+    border-inline-start: 0.2rem solid var(--sl-color-gray-4);
+    color: var(--sl-color-gray-2);
+  }
+
+  .ai-search-answer :global(table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+  }
+
+  .ai-search-answer :global(th),
+  .ai-search-answer :global(td) {
+    padding: 0.35rem 0.55rem;
+    border: 1px solid var(--sl-color-gray-5);
+    text-align: start;
   }
 
   .ai-search-sources {
