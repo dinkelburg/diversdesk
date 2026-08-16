@@ -2,7 +2,7 @@
 /// <reference types="astro/client" />
 
 interface ImportMetaEnv {
-  readonly TANSTACK_APP_ORIGIN?: string;
+  readonly APP_ORIGIN?: string;
 }
 
 interface ImportMeta {

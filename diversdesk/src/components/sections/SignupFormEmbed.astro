@@ -6,10 +6,10 @@ interface Props {
 }
 
 const appOrigin =
-  import.meta.env.TANSTACK_APP_ORIGIN ||
+  import.meta.env.APP_ORIGIN ||
   (import.meta.env.DEV ? "http://localhost:3000" : undefined);
 if (!appOrigin) {
-  throw new Error("TANSTACK_APP_ORIGIN is required outside development");
+  throw new Error("APP_ORIGIN is required outside development");
 }
 const embedUrl = new URL("/embed/signup", appOrigin);
 embedUrl.searchParams.set("type", Astro.props.type);
