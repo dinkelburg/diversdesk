@@ -1,0 +1,97 @@
+---
+type SignupType = "trial" | "form" | "liveaboard_waitlist";
+
+interface Props {
+  type: SignupType;
+}
+
+const appOrigin =
+  import.meta.env.TANSTACK_APP_ORIGIN ||
+  (import.meta.env.DEV ? "http://localhost:3000" : undefined);
+if (!appOrigin) {
+  throw new Error("TANSTACK_APP_ORIGIN is required outside development");
+}
+const embedUrl = new URL("/embed/signup", appOrigin);
+embedUrl.searchParams.set("type", Astro.props.type);
+
+const promoCode =
+  Astro.url.searchParams.get("promo") || Astro.url.searchParams.get("code");
+if (promoCode && Astro.props.type !== "liveaboard_waitlist") {
+  embedUrl.searchParams.set("promo", promoCode);
+}
+
+const title = (() => {
+  if (Astro.props.type === "liveaboard_waitlist") {
+    return "Join the Diversdesk liveaboard waitlist";
+  }
+  if (Astro.props.type === "form") return "Sign up for Diversdesk";
+  return "Request a Diversdesk trial";
+})();
+---
+
+<iframe
+  data-diversdesk-signup
+  data-embed-src={embedUrl.toString()}
+  title={title}
+  class="block w-full border-0"
+  style="height: 1000px"
+  loading="eager"
+  referrerpolicy="strict-origin-when-cross-origin"
+  sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+></iframe>
+
+<noscript>
+  <p class="p-4 text-center text-sm text-neutral-700">
+    JavaScript is required to embed this form. You can also
+    <a class="font-semibold text-orange-600 hover:underline" href={embedUrl.toString()}>open the signup form directly</a>.
+  </p>
+</noscript>
+
+<script>
+  const signupMessageSource = "diversdesk-signup";
+  const getSignupTheme = () => document.documentElement.classList.contains("dark") ? "dark" : "light";
+
+  const setupSignupIframe = (iframe: HTMLIFrameElement) => {
+    if (iframe.dataset.embedReady === "true" || !iframe.dataset.embedSrc) return;
+    iframe.dataset.embedReady = "true";
+
+    const embedUrl = new URL(iframe.dataset.embedSrc);
+    embedUrl.searchParams.set("parentOrigin", window.location.origin);
+    embedUrl.searchParams.set("theme", getSignupTheme());
+    iframe.src = embedUrl.toString();
+
+    const sendTheme = () => {
+      iframe.contentWindow?.postMessage(
+        { source: signupMessageSource, event: "theme", theme: getSignupTheme() },
+        embedUrl.origin,
+      );
+    };
+    iframe.addEventListener("load", sendTheme);
+    const themeObserver = new MutationObserver(sendTheme);
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+
+    window.addEventListener("message", (event) => {
+      if (event.origin !== embedUrl.origin || event.source !== iframe.contentWindow) return;
+      if (typeof event.data !== "object" || event.data === null) return;
+      if (!("source" in event.data) || event.data.source !== signupMessageSource) return;
+      if (!("event" in event.data) || typeof event.data.event !== "string") return;
+
+      if (event.data.event === "resize" && "height" in event.data && typeof event.data.height === "number") {
+        const height = Math.min(2_400, Math.max(320, Math.ceil(event.data.height)));
+        iframe.style.height = `${height}px`;
+      }
+
+      if (event.data.event === "success" && "signupType" in event.data && typeof event.data.signupType === "string") {
+        window.dispatchEvent(
+          new CustomEvent("diversdesk:signup-success", {
+            detail: { signupType: event.data.signupType },
+          }),
+        );
+      }
+    });
+  };
+
+  document.querySelectorAll("iframe[data-diversdesk-signup]").forEach((element) => {
+    if (element instanceof HTMLIFrameElement) setupSignupIframe(element);
+  });
+</script>
