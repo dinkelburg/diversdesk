@@ -1,0 +1,31 @@
+---
+import SignupFormEmbed from "@/components/sections/SignupFormEmbed.astro";
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+
+const pageTitle = `Sign Up for Diversdesk | ${SITE.title}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  description="Send Diversdesk your operation details and get help setting up the right subscription."
+  canonical="https://www.diversdesk.com/signup/form"
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.diversdesk.com/signup/form",
+    url: "https://www.diversdesk.com/signup/form",
+    name: "Sign Up for Diversdesk",
+    description: "Send Diversdesk your operation details and get help setting up the right subscription.",
+    isPartOf: {
+      "@type": "WebSite",
+      url: "https://www.diversdesk.com",
+      name: "Diversdesk",
+    },
+    inLanguage: "en-US",
+  }}
+>
+  <section class="mx-auto min-h-[70vh] max-w-[56rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+    <SignupFormEmbed type="form" />
+  </section>
+</MainLayout>
