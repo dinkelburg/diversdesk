@@ -7,4 +7,24 @@ sidebar:
 
 This tutorial follows the end-to-end customer onboarding workflow in Diversdesk.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/9d6eb258e34c427b900a099d4a418f16?sid=83d549ee-8cd7-4d8a-914d-0ee4b6a1981c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+import VideoChapters from '@/components/docs/VideoChapters.astro';
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe id="customer-onboarding-video" src="https://www.loom.com/embed/9d6eb258e34c427b900a099d4a418f16?sid=83d549ee-8cd7-4d8a-914d-0ee4b6a1981c" title="Customer Onboarding A to Z" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+## Chapters
+
+<VideoChapters
+  videoId="customer-onboarding-video"
+  chapters={[
+    { time: '00:00', title: 'Customer onboarding journeys overview', seconds: 0, href: 'https://www.loom.com/share/9d6eb258e34c427b900a099d4a418f16?t=3' },
+    { time: '01:09', title: 'Copying a default onboarding journey', seconds: 69, href: 'https://www.loom.com/share/9d6eb258e34c427b900a099d4a418f16?t=69' },
+    { time: '02:27', title: 'Adding waivers and configuring registration fields', seconds: 147, href: 'https://www.loom.com/share/9d6eb258e34c427b900a099d4a418f16?t=147' },
+    { time: '03:58', title: 'Creating and understanding waivers', seconds: 238, href: 'https://www.loom.com/share/9d6eb258e34c427b900a099d4a418f16?t=238' },
+    { time: '06:07', title: 'Completing waiver content and languages', seconds: 367, href: 'https://www.loom.com/share/9d6eb258e34c427b900a099d4a418f16?t=367' },
+    { time: '08:53', title: 'Connecting onboarding journeys to activities', seconds: 533, href: 'https://www.loom.com/share/9d6eb258e34c427b900a099d4a418f16?t=533' },
+    { time: '10:37', title: 'Assigning course and snorkel journeys', seconds: 637, href: 'https://www.loom.com/share/9d6eb258e34c427b900a099d4a418f16?t=637' },
+    { time: '11:25', title: 'Using the generic registration page', seconds: 685, href: 'https://www.loom.com/share/9d6eb258e34c427b900a099d4a418f16?t=685' },
+    { time: '12:22', title: 'Booking and customer registration flow', seconds: 742, href: 'https://www.loom.com/share/9d6eb258e34c427b900a099d4a418f16?t=742' },
+    { time: '14:04', title: 'Reviewing completed waivers and registrations', seconds: 844, href: 'https://www.loom.com/share/9d6eb258e34c427b900a099d4a418f16?t=844' },
+  ]}
+/>
