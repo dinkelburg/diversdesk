@@ -60,8 +60,10 @@ Meeting details, customer messages, internal notes, booking source, and customer
 
 This reduces the need to search through the panel and makes it clearer which settings belong to the booking, price, or optional extras.
 
-### More dependable discount calculations
+### Discount Calculator Refinements
 
-We have refined two situations in the discount calculator to make saved discounts and booking totals more consistent.
+We have refined two situations in the discount calculator.
 
-Previously applied discounts now remain visible on the booking even if the discount rule's current scope no longer matches the lines originally selected. Percentage discounts also account correctly for selected negative lines, such as credits or negative adjustments, so these amounts reduce the discount calculation as expected.
+Discounts previously applied to items outside a rule's current scope now remain visible on the bill instead of disappearing after they are applied.
+
+Percentage discounts can now also be applied to negative line items, such as credits or negative adjustments, reducing the total discounted amount accordingly.
