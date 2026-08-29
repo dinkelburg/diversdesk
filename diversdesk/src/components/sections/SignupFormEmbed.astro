@@ -1,8 +1,11 @@
 ---
 type SignupType = "trial" | "form" | "liveaboard_waitlist";
+type SignupTheme = "light" | "dark";
 
 interface Props {
   type: SignupType;
+  successUrl?: string;
+  theme?: SignupTheme;
 }
 
 const appOrigin =
@@ -27,14 +30,17 @@ const title = (() => {
   if (Astro.props.type === "form") return "Sign up for Diversdesk";
   return "Request a Diversdesk trial";
 })();
+const initialHeight = Astro.props.type === "liveaboard_waitlist" ? 720 : 1000;
 ---
 
 <iframe
   data-diversdesk-signup
   data-embed-src={embedUrl.toString()}
+  data-success-url={Astro.props.successUrl}
+  data-theme={Astro.props.theme}
   title={title}
   class="block w-full border-0"
-  style="height: 1000px"
+  style={`height: ${initialHeight}px`}
   loading="eager"
   referrerpolicy="strict-origin-when-cross-origin"
   sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
@@ -49,7 +55,10 @@ const title = (() => {
 
 <script>
   const signupMessageSource = "diversdesk-signup";
-  const getSignupTheme = () => document.documentElement.classList.contains("dark") ? "dark" : "light";
+  const getSignupTheme = (iframe: HTMLIFrameElement) => {
+    if (iframe.dataset.theme === "light" || iframe.dataset.theme === "dark") return iframe.dataset.theme;
+    return document.documentElement.classList.contains("dark") ? "dark" : "light";
+  };
 
   const setupSignupIframe = (iframe: HTMLIFrameElement) => {
     if (iframe.dataset.embedReady === "true" || !iframe.dataset.embedSrc) return;
@@ -57,18 +66,20 @@ const title = (() => {
 
     const embedUrl = new URL(iframe.dataset.embedSrc);
     embedUrl.searchParams.set("parentOrigin", window.location.origin);
-    embedUrl.searchParams.set("theme", getSignupTheme());
+    embedUrl.searchParams.set("theme", getSignupTheme(iframe));
     iframe.src = embedUrl.toString();
 
     const sendTheme = () => {
       iframe.contentWindow?.postMessage(
-        { source: signupMessageSource, event: "theme", theme: getSignupTheme() },
+        { source: signupMessageSource, event: "theme", theme: getSignupTheme(iframe) },
         embedUrl.origin,
       );
     };
     iframe.addEventListener("load", sendTheme);
-    const themeObserver = new MutationObserver(sendTheme);
-    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    if (!iframe.dataset.theme) {
+      const themeObserver = new MutationObserver(sendTheme);
+      themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    }
 
     window.addEventListener("message", (event) => {
       if (event.origin !== embedUrl.origin || event.source !== iframe.contentWindow) return;
@@ -87,6 +98,9 @@ const title = (() => {
             detail: { signupType: event.data.signupType },
           }),
         );
+        if (iframe.dataset.successUrl) {
+          window.location.assign(new URL(iframe.dataset.successUrl, window.location.href).toString());
+        }
       }
     });
   };

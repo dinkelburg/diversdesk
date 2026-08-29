@@ -71,7 +71,17 @@ export default defineConfig({
     "/user_manual/payments": "/user_manual/reporting/payments",
     "/user_manual/workload": "/user_manual/staff/workload",
     "/user_manual/permissions": "/user_manual/staff/permissions",
-    "/updates/2026-06-29-booking-workflow-improvements": "/updates/2026-06-29-refunds-handling"
+    "/updates/2026-06-29-booking-workflow-improvements": "/updates/2026-06-29-refunds-handling",
+    "/signup2-trial": "/signup-trial",
+    "/signup2-trial/success": "/signup-trial-complete",
+    "/signup2-trial/error": "/signup-trial",
+    "/signup/trial": "/signup-trial",
+    "/signup/trial/success": "/signup-trial-complete",
+    "/signup/trial/error": "/signup-trial",
+    "/signup/form/success": "/signup/form",
+    "/signup/form/error": "/signup/form",
+    "/signup-tanstack": "/signup-trial",
+    "/signup-trial-complete-existing": "/signup-trial-complete"
   },
   
   image: {
@@ -85,10 +95,6 @@ export default defineConfig({
     sitemap({
       // Enhanced filter to exclude unwanted pages
       filter: (page) => !(
-        page.includes('/signup/form/error') ||
-        page.includes('/signup/form/success') ||
-        page.includes('/signup/trial/error') ||
-        page.includes('/signup/trial/success') ||
         page.includes('/welcome-to-docs') ||
         page.includes('/user_manual') ||
         page.includes('/getting-started') ||
