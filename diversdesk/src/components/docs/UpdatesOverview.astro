@@ -51,6 +51,7 @@ const parseDateFromId = (id: string): Date | null => {
 const updates: UpdateCard[] = docsEntries
   .filter((entry) => entry.id.startsWith('updates/'))
   .filter((entry) => entry.id !== 'updates/index')
+  .filter((entry) => !entry.data.draft)
   .map((entry) => {
     const { dateLabel, cleanTitle, parsedDate } = parseDateFromTitle(entry.data.title);
     const idWithoutExt = entry.id.replace(/\.(md|mdx)$/i, '');
