@@ -51,7 +51,6 @@ export default defineConfig({
     "/user_manual/registration_methods": "/workflows/registration-methods",
     "/user_manual/creating_onboarding_journeys": "/workflows/creating-onboarding-journeys",
     "/user_manual/bookings/multi-currency": "/workflows/multiple-currencies",
-    "/articles/adding_dives_to_an_ongoing_activity": "/workflows/adding-dives-to-an-ongoing-activity",
     "/video_training": "/video-training/video-training",
     "/user_manual/retail": "/user_manual/retail-pos/retail-stock",
     "/user_manual/customer_base": "/user_manual/customers",
@@ -277,8 +276,8 @@ export default defineConfig({
             slug: 'user_manual/activities/activity-setup'
           },
           'workflows/registration-methods',
+          'workflows/group-bookings-with-multiple-activities',
           'workflows/creating-onboarding-journeys',
-          'workflows/adding-dives-to-an-ongoing-activity',
           'workflows/tiered-activity-workflow',
           'workflows/multiple-currencies',
         ]
