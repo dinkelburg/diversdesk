@@ -296,6 +296,7 @@ export default defineConfig({
         items: [
           'faq/mobile-homescreen-icon',
           'faq/why-does-the-activity-duration-not-impact-the-price',
+          'faq/adjust-price-tax-discount-when-adding-item',
         ]
       },
       {
