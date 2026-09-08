@@ -1,7 +1,7 @@
 ---
 title: Liveaboard Partner Portal
-description: A quick guide for approved liveaboard partners to check departures and cabin availability, understand booking options, and prepare reservations.
-slug: liveaboard-partners
+description: Use the liveaboard partner portal to check availability, hold cabins, place an option, follow approval and payment steps, and track reservations.
+slug: liveaboard-partner-portal
 pagefind: false
 sidebar:
   hidden: true
@@ -10,33 +10,135 @@ next: false
 template: splash
 ---
 
-Use the partner portal to review liveaboard departures and cabin availability, place booking options, and submit reservations with the operator you work with.
+import PartnerBookingJourney from '../../../components/docs/PartnerBookingJourney.astro';
 
-This guide is for **approved sales partners and agents**. Access, available inventory, prices, and booking terms depend on your arrangement with the liveaboard operator.
+Check live availability and place reservations at **[app.diversdesk.com](https://app.diversdesk.com)**. This guide explains the steps from selecting cabins to a confirmed booking, including what happens when approval or a deposit is required.
 
-## Get access
+This guide is for **approved sales partners and agents**. The operators, vessels, prices, and booking actions available to you depend on your partner access and agreed terms.
 
-Use the portal link provided by your liveaboard operator. If you have not received a link, cannot sign in, or cannot see the operator's departures, contact the operator to check your partner access.
+## Sign in and find your way around
 
-Keep your portal link and this guide bookmarked so you can return to them when preparing a booking.
+1. Go to [app.diversdesk.com](https://app.diversdesk.com) and sign in with the email address your partner invitation was sent to.
+2. Open the menu and find **Partner portal**.
+3. Choose **Availability** to view departures, or **Reservations** to follow your options and bookings. **Reporting** is also available in this menu.
+4. Choose **Help** to return to this guide.
 
-## Check a departure
+If an operator or vessel is missing, or you can view availability but cannot place an option, ask the operator to check your access. Availability access and permission to hold cabins can be configured separately.
 
-Before offering a trip to your guests, review:
+## Check availability
 
-- The itinerary, departure dates, and trip duration.
-- The available cabin types and occupancy options.
-- The prices and any supplements, fees, or promotions shown for your booking.
-- The booking and payment terms agreed with the operator.
+Use the **Operator**, **Vessel**, **Status**, date, and **Guests** filters to find a suitable departure. You can hide trips without enough space. Check the **Updated** time and use **Refresh** before proceeding if you have had the page open for a while.
 
-The portal shows availability from the operator's reservation inventory. Other bookings remain anonymous. Recheck availability when you are ready to proceed.
+Open a trip to review its dates, itinerary, cabins, occupancy choices, prices, and any promotions. Check any **mandatory fees payable onboard**; these are separate from the booking amount collected upfront.
 
-## Make an option or reservation
+The availability view distinguishes available spaces, temporary checkout holds, placed options, and booked spaces. You can identify your own bookings; other partners' booking details remain anonymous.
 
-An **option** is a time-limited hold while you arrange the booking. A **reservation** is submitted against the inventory the operator has made available to you. Check its status and the operator's requirements before telling your guest that the booking is confirmed.
+:::note[Departure status and booking status are different]
+A **Confirmed** departure describes the trip. It does not mean your reservation is confirmed. A **Tentative** departure still requires operator approval; holding cabins does not confirm that the trip will operate.
+:::
 
-Follow the [booking checklist](/liveaboard-partners/booking-checklist/) for the information to prepare, option deadlines, and payment follow-up.
+## Your booking journey
+
+<PartnerBookingJourney />
+
+## Make a reservation
+
+Open a trip in **Availability** to start the reservation panel. Opening the panel or selecting cabins alone does not hold the spaces.
+
+1. Select the available cabins or places you need and choose the number of guests where offered.
+2. Review the selection and price.
+3. Click **Hold cabins & continue**.
+
+After this succeeds, the selected spaces are temporarily held and the **Checkout hold** countdown starts. The operator sets the duration shown in the portal.
+
+This is an **unfinished checkout hold**. You still need to add the booker details, review the request, and place the option before the timer ends. If the timer expires, the spaces are released and you must select available cabins again.
+
+If you close the panel, use **Continue checkout** on the unfinished hold to resume before it expires. To change the cabin selection, release the existing hold using the action in the panel, then select again. Releasing a hold makes its spaces available to others.
+
+## Place your option
+
+Enter the **Main booker** first name, last name, and email address. The phone number is optional. Use **Use my email** if your partner email should be the booker contact, and tick **The main booker is also travelling** only when that person is a guest.
+
+Additional guest details are optional at this stage. For each guest, either complete their first name, last name, and email, or leave the fields empty to provide the details later. Follow the operator's instructions for completing outstanding guest information before departure.
+
+Choose **Review option**, check the cabins, guest count, amount, and the approval explanation shown, then click **Place option**. **No payment is collected in this checkout.**
+
+After successful submission, the portal opens **Reservations**. Your request now follows the operator's approval and payment deadlines instead of the short checkout timer. Check the actual status there: a message that the reservation was placed does not necessarily mean it is confirmed.
+
+## Operator approval
+
+**If approval is required:** the option appears as **Approval pending** under **Options awaiting operator approval**. The selected spaces remain held while the operator reviews the request. Check the displayed approval deadline.
+
+- **Approved:** proceed to the required deposit, or directly to confirmation if no deposit is required.
+- **Declined:** the option ends and its spaces are released.
+- **Approval deadline expires without review:** the option is automatically declined and the spaces are released. Contact the operator before the deadline if you need assistance.
+
+**If approval is not required:** the booking skips the approval step and proceeds to the deposit check. Tentative departures still require approval even if your usual partner arrangement allows direct bookings.
+
+Approval rules and time limits may differ between operators, vessels, and partner agreements. Use the explanation and deadlines shown for your reservation.
+
+## Deposit and payment responsibility
+
+**If a deposit is required:** the option appears as **Deposit pending** under **Options awaiting deposit payment**. Pay or record the required deposit by the displayed deadline. After operator approval, the deposit deadline is set using the configured payment window.
+
+**If no deposit is required:** there is no deposit step. The booking confirms once any required approval is complete. Without approval or a deposit requirement, it confirms immediately after the option is placed.
+
+The operator can configure **who collects the deposit and who collects the balance separately**:
+
+| Who collects this payment? | What you need to do |
+| --- | --- |
+| **Operator** | Follow the operator's payment instructions. The partner payment-recording action shows **Collected by operator** and is unavailable to you. |
+| **Partner** | Once you have actually received the money, use **Record deposit** or **Record balance payment** when enabled, then **Mark as paid**. This records receipt; it does not charge the guest. |
+
+Payment recording is available only after approval, for the next payment due, and when the payment is eligible. If an action is disabled, check the reason shown or contact the operator.
+
+If the operator's payment flow offers a manual payment-proof upload, submitting proof does not itself confirm payment. The operator must review it. Follow up if it is declined or still awaiting review. Full payment may also be offered where enabled.
+
+:::caution[Watch the deposit deadline]
+An unpaid deposit can cause the option to be cancelled automatically and the spaces released. Payment already received or proof awaiting review is handled separately. If the status does not reflect a payment or uploaded proof, contact the operator promptly rather than assuming the option is confirmed.
+:::
+
+## Confirmation and balance
+
+Your reservation becomes **Confirmed** once any required approval is complete and the required deposit is recorded as paid, or no deposit is required. You can find it under **Confirmed bookings**.
+
+**Confirmed does not necessarily mean paid in full.** Open the reservation details to check the balance amount, status, and deadline. Depending on the operator's terms, the balance is due before departure or on departure. Follow the collection instructions for the balance even if a different party collected the deposit.
+
+An unpaid balance is marked overdue when its deadline is processed; this does not automatically release the confirmed cabin in the way an expired unpaid deposit can. Contact the operator to resolve an overdue balance.
+
+Complete outstanding guest information and follow any pre-departure instructions from the operator.
+
+## Understand the status in Reservations
+
+| Status | What it means |
+| --- | --- |
+| **Draft hold** | Checkout is unfinished. Use **Continue checkout** before the countdown ends. |
+| **Approval pending** | The option is waiting for the operator's decision. Check the approval deadline. |
+| **Deposit pending** | The required deposit is still outstanding. Follow the payment instructions and deadline. |
+| **Cabin review** | A cabin allocation needs an operator check. Contact the operator; this is not an extra approval step in every partner booking. |
+| **Confirmed** | The booking has reached confirmation. A balance or guest information may still be outstanding. |
+| **Cancelled** | The booking is no longer active. Contact the operator if you want to arrange it again. |
+
+Open a reservation to review its reference, trip, cabins, and deposit and balance details. The next deadline tells you which action needs attention first.
+
+## Emails and reminders
+
+The operator configures which emails are sent and whether they go to the booker/customer, partner, or operator. These may include an option receipt, approval or decline, payment requests, payment-proof updates, reminders, confirmation, cancellation, and pre-departure information.
+
+Not every booking sends every email. **Use Reservations to check your status and deadlines even if you have not received an email.** A confirmation email does not replace checking whether a balance remains due.
+
+## Release an option or request a change
+
+For an unfinished checkout, use its release action if you no longer need the spaces.
+
+For a submitted, eligible unpaid option, open its reservation or actions menu and choose **Release option**, then **Confirm release**. You can add an optional message for the cancellation email. Releasing the option cancels it and makes its spaces available again; emails follow the operator's notification settings.
+
+If **Release option** is unavailable, or the booking is confirmed, paid, or has payment activity in progress, contact the operator. Changes, cancellations, and refunds remain subject to your agreement with them.
 
 ## Need help?
 
-Contact your liveaboard operator about partner access, availability, prices, booking terms, changes, or cancellations. Include the departure date and reservation reference, if you have one. For a portal error, include the page you were using and the error message.
+For access to an operator, cabin availability, prices, approval, payments, booking changes, or cancellations, contact your liveaboard operator. Include the departure date and reservation reference where available.
+
+For help using the portal, email **[support@diversdesk.com](mailto:support@diversdesk.com)**. Describe the page and action you were using and any error message.
+
+For a short reminder of the process, use the [partner booking checklist](/liveaboard-partner-portal/booking-checklist/).

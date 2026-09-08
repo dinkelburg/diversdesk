@@ -12,6 +12,8 @@ export default defineConfig({
   site: 'https://www.diversdesk.com',
 
   redirects: {
+    "/liveaboard-partners": "/liveaboard-partner-portal/",
+    "/liveaboard-partners/booking-checklist": "/liveaboard-partner-portal/booking-checklist/",
     "/blog/en": "/blog/",
     "/blog/{post.slug}": "/blog/",
     "/blog/%7Bpost.slug%7D": "/blog/",
@@ -104,6 +106,7 @@ export default defineConfig({
         page.includes('/faq') ||
         page.includes('/support') ||
         page.includes('/liveaboard-partners') ||
+        page.includes('/liveaboard-partner-portal') ||
         page.includes('/updates') ||
         page.includes('/new') ||
         page.includes('/work_in_progress') ||

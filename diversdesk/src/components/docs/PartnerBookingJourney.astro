@@ -1,0 +1,132 @@
+<figure class="partner-journey" aria-labelledby="partner-journey-caption">
+  <figcaption id="partner-journey-caption">
+    <strong>From availability to a confirmed booking</strong>
+    <span>Follow the path that applies to your booking. Optional steps depend on the operator’s settings.</span>
+  </figcaption>
+
+  <ol class="journey-steps">
+    <li>
+      <span class="step-number" aria-hidden="true">1</span>
+      <div class="step-content">
+        <a class="step-title" href="#make-a-reservation">Select cabins → Hold cabins &amp; continue</a>
+        <p>Your selected spaces are held while you complete checkout. Finish before the countdown ends.</p>
+        <p class="exit-note">Timer expires → unfinished hold ends and the spaces become available again.</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-number" aria-hidden="true">2</span>
+      <div class="step-content">
+        <a class="step-title" href="#place-your-option">Booker details → Review option → Place option</a>
+        <p>Your option is submitted. No payment is collected in this checkout. Open Reservations to follow its status.</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-number" aria-hidden="true">3</span>
+      <div class="step-content">
+        <a class="step-title" href="#operator-approval">Is operator approval required?</a>
+        <div class="journey-branches">
+          <div class="branch">
+            <strong>Yes → Approval pending</strong>
+            <p>The operator reviews your option. Approval moves it to the next step.</p>
+            <p class="exit-note">Declined or approval deadline expires → option ends; spaces are released.</p>
+          </div>
+          <div class="branch branch-skip">
+            <strong>No → Skip approval</strong>
+            <p>Continue directly to the deposit check.</p>
+          </div>
+        </div>
+        <p class="step-note">A tentative departure requires operator approval, even with direct booking access.</p>
+      </div>
+    </li>
+    <li>
+      <span class="step-number" aria-hidden="true">4</span>
+      <div class="step-content">
+        <a class="step-title" href="#deposit-and-payment-responsibility">Is a deposit required?</a>
+        <div class="journey-branches">
+          <div class="branch">
+            <strong>Yes → Deposit pending</strong>
+            <p>Follow the payment instructions. The deposit must be recorded as paid to confirm the booking.</p>
+            <p class="exit-note">Unpaid at the deadline → the option can be cancelled and spaces released.</p>
+          </div>
+          <div class="branch branch-skip">
+            <strong>No → Skip the deposit</strong>
+            <p>The booking can confirm once any required approval is complete.</p>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="step-confirmed">
+      <span class="step-number" aria-hidden="true">5</span>
+      <div class="step-content">
+        <a class="step-title" href="#confirmation-and-balance">Confirmed</a>
+        <p>Check the remaining balance deadline and complete any outstanding guest information.</p>
+        <p class="step-note">Confirmed does not necessarily mean paid in full.</p>
+      </div>
+    </li>
+  </ol>
+
+  <p class="journey-footnote">This is a process overview. Your reservation shows its actual status, payment amounts, and deadlines.</p>
+</figure>
+
+<style>
+  .partner-journey {
+    margin: 1.5rem 0 2rem;
+    padding: clamp(1rem, 3vw, 1.75rem);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 1rem;
+    background: var(--sl-color-gray-7, var(--sl-color-gray-6));
+    color: var(--sl-color-gray-1);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .partner-journey figcaption { margin: 0 0 1.5rem; text-align: left; }
+  .partner-journey figcaption strong { display: block; color: var(--sl-color-white); font-size: 1.05rem; }
+  .partner-journey figcaption span { display: block; margin-top: 0.3rem; color: var(--sl-color-gray-2); }
+  .partner-journey .journey-steps { list-style: none; margin: 0; padding: 0; }
+  .partner-journey .journey-steps > li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.9rem minmax(0, 1fr);
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0 0 1.35rem;
+  }
+  .partner-journey .journey-steps > li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 0.9rem;
+    top: 2.1rem;
+    bottom: 0.25rem;
+    border-left: 2px solid var(--sl-color-gray-5);
+  }
+  .partner-journey .journey-steps > li:last-child { padding-bottom: 0; }
+  .partner-journey .step-number {
+    display: grid;
+    place-items: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 50%;
+    color: var(--sl-color-white);
+    background: var(--sl-color-black);
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+  .partner-journey .step-content { min-width: 0; margin: 0; padding-top: 0.15rem; }
+  .partner-journey .step-title { color: var(--sl-color-white); font-size: 0.95rem; font-weight: 700; text-decoration: none; }
+  .partner-journey .step-title:hover { text-decoration: underline; }
+  .partner-journey .step-title:focus-visible { outline: 2px solid var(--sl-color-accent); outline-offset: 4px; }
+  .partner-journey p { margin: 0.35rem 0 0; }
+  .partner-journey .journey-branches { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 0.75rem; margin-top: 0.75rem; }
+  .partner-journey .branch { margin: 0; padding: 0.9rem; border: 1px solid var(--sl-color-gray-5); border-top: 3px solid #f86545; border-radius: 0.5rem; background: var(--sl-color-black); }
+  .partner-journey .branch-skip { border-top-color: var(--sl-color-gray-4); }
+  .partner-journey .branch strong { color: var(--sl-color-white); font-size: 0.85rem; }
+  .partner-journey .exit-note { margin-top: 0.6rem; padding-left: 0.65rem; border-left: 2px solid #f86545; font-size: 0.8rem; }
+  .partner-journey .step-note { color: var(--sl-color-gray-2); font-size: 0.8rem; }
+  .partner-journey .step-confirmed .step-number { border-color: #34876b; }
+  .partner-journey .journey-footnote { margin-top: 1.3rem; padding-top: 1rem; border-top: 1px solid var(--sl-color-gray-5); color: var(--sl-color-gray-2); font-size: 0.8rem; }
+  @media (max-width: 38rem) {
+    .partner-journey .journey-branches { grid-template-columns: minmax(0, 1fr); }
+    .partner-journey .journey-steps > li { gap: 0.6rem; }
+  }
+</style>
