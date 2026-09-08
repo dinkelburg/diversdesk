@@ -7,6 +7,7 @@ const rawDocs = import.meta.glob<string>(
     "../../content/docs/**/*.md",
     "../../content/docs/**/*.mdx",
     "!../../content/docs/support/**",
+    "!../../content/docs/liveaboard-partners/**",
     "!../../content/docs/work_in_progress/**",
   ],
   {

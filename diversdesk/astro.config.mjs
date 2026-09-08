@@ -103,6 +103,7 @@ export default defineConfig({
         page.includes('/video-training') ||
         page.includes('/faq') ||
         page.includes('/support') ||
+        page.includes('/liveaboard-partners') ||
         page.includes('/updates') ||
         page.includes('/new') ||
         page.includes('/work_in_progress') ||
