@@ -5,6 +5,7 @@ import Navbar from "@components/sections/Navbar.astro";
 import FooterSection from "@components/sections/FooterSection.astro";
 import { SITE } from "@data/constants";
 import BlackFridayBanner from "@components/ui/banners/BlackFridayBanner.astro";
+import WhatsAppWidget from "@components/ui/WhatsAppWidget.astro";
 import "@styles/site-tailwind.css";
 
 interface Props {
@@ -225,6 +226,7 @@ const websiteSchema = {
       </main>
     </div>
     {showFooter && <FooterSection />}
+    <WhatsAppWidget />
     <style>
       .scrollbar-hide::-webkit-scrollbar {
         display: none;
@@ -294,20 +296,6 @@ const websiteSchema = {
         document.body.appendChild(script);
       });
 
-    // Function to load Brevo widget - defined globally
-    (window as any).loadBrevoWidget = function() {
-      (function(d: Document, w: any, c: string) {
-        (w as any).BrevoConversationsID = '689062179c3dcc470108fa25';
-        (w as any)[c] = (w as any)[c] || function() {
-          ((w as any)[c].q = (w as any)[c].q || []).push(arguments);
-        };
-        var s = d.createElement('script');
-        s.async = true;
-        s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
-        if (d.body) d.body.appendChild(s);
-      })(document, window, 'BrevoConversations');
-    };
-
     const initCookieConsent = () => {
       if (!(window as any).cookieconsent) return;
 
@@ -328,19 +316,26 @@ const websiteSchema = {
           ariaLabel: "Privacy Policy",
           link: "Read our Privacy Policy",
           href: "/privacy-policy"
-        },
-
-        onInitialise: function() {
-          if (this.hasConsented()) {
-            (window as any).loadBrevoWidget();
-          }
-        },
-        onPopupClose: function() {
-          if (this.hasConsented()) {
-            (window as any).loadBrevoWidget();
-          }
         }
       });
+
+      // Keep the contact button above the cookie banner at every screen size.
+      const banner = document.querySelector<HTMLElement>(".cc-window.cc-banner");
+      if (!banner) return;
+
+      const updateWidgetOffset = () => {
+        const height = banner.classList.contains("cc-invisible")
+          ? 0
+          : Math.max(0, window.innerHeight - banner.getBoundingClientRect().top);
+        document.documentElement.style.setProperty("--dd-cookie-banner-height", `${height}px`);
+      };
+
+      const resizeObserver = new ResizeObserver(updateWidgetOffset);
+      resizeObserver.observe(banner);
+      const visibilityObserver = new MutationObserver(updateWidgetOffset);
+      visibilityObserver.observe(banner, { attributes: true, attributeFilter: ["class", "style"] });
+      window.addEventListener("resize", updateWidgetOffset);
+      updateWidgetOffset();
     };
 
     window.addEventListener("load", function () {

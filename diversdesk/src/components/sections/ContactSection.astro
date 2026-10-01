@@ -4,6 +4,7 @@ import ContactIconBlock from "@components/ui/blocks/ContactIconBlock.astro";
 import Icon from "@components/ui/icons/Icon.astro";
 import { Image } from "astro:assets";
 import myImage from "/public/images/Divecenter_image.png";
+import { WHATSAPP_CONTACT } from "@data/contact";
 
 // Define the variables that will be used in this component
 const title: string = "Contact us";
@@ -96,8 +97,8 @@ const subTitle: string =
         heading="Contact us via WhatsApp"
         content="Shoot us a text via"
         isLinkVisible={true}
-        linkTitle="+31 615 556 395"
-        linkURL="https://api.whatsapp.com/send?phone=%2B31615556395"
+        linkTitle={WHATSAPP_CONTACT.displayNumber}
+        linkURL={WHATSAPP_CONTACT.href}
         ><Icon name="whatsapp" />
         </ContactIconBlock>
 

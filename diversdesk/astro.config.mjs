@@ -98,6 +98,7 @@ export default defineConfig({
       // Enhanced filter to exclude unwanted pages
       filter: (page) => !(
         page.includes('/welcome-to-docs') ||
+        page.includes('/docs/insights') ||
         page.includes('/user_manual') ||
         page.includes('/getting-started') ||
         page.includes('/features-resources') ||
@@ -272,6 +273,13 @@ export default defineConfig({
         ]
       },
       {
+        label: 'Insights',
+        collapsed: true,
+        items: [
+          'docs/insights/data-safety',
+        ]
+      },
+      {
         label: 'Workflows',
         collapsed: true,
         items: [
@@ -300,6 +308,8 @@ export default defineConfig({
           'faq/mobile-homescreen-icon',
           'faq/why-does-the-activity-duration-not-impact-the-price',
           'faq/adjust-price-tax-discount-when-adding-item',
+          'faq/how-does-the-xendit-split-fee-work',
+          'faq/why-does-the-registration-form-not-update-after-editing-form-builder',
         ]
       },
       {
