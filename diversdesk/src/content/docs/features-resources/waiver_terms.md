@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: All there is to know about Waiver Valid Terms
 description: A guide about waiver terms. What they do and how to use them.
 slug: features-resources/waiver-terms

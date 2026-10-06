@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Setup Your Environment
 description: Enter your company details, products and activities
 slug: getting-started/setup-your-environment

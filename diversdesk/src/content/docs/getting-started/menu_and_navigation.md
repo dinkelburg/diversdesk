@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Menu and Navigation
 description: Know your way around the platform
 slug: getting-started/menu-and-navigation

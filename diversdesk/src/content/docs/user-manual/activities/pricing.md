@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Pricing
 description: Manage activity pricing, tiered rates, activities, and add-ons from one place.
 slug: user_manual/activities/pricing

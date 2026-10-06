@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Why does the activity duration not impact the price?
 description: Understand when changing an activity duration affects the price and when fixed or tiered pricing should be used.
 slug: faq/why-does-the-activity-duration-not-impact-the-price

@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Customer Registration/Booking Methods
 description: Ways to onboard your customer
 sidebar:

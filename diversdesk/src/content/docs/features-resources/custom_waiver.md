@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Create a Custom Waiver 
 description: In depth guide to create a custom waiver that meets your needs.
 slug: features-resources/custom-waiver

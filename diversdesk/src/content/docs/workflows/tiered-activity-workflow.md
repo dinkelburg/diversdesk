@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Managing Tiered Activities
 description: Add, adjust, schedule, and price tiered activities from a single activity card in a booking.
 slug: workflows/tiered-activity-workflow

@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Rental Overview
 description: Use the Rental Overview page to review rental allocation and current rental status.
 slug: user_manual/rentals/rental-overview

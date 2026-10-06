@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Add-ons
 description: Learn how to create and utilize add-ons to streamline your workflow and drive upselling opportunities.
 slug: features-resources/add-ons

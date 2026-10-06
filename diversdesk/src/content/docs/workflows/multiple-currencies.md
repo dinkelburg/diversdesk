@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Working with Multiple Currencies
 description: Add items and record payments in another currency while keeping the booking bill in one currency.
 slug: workflows/multiple-currencies

@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Retail Stock
 description: Read how to create retail products, manage stock levels, and prepare inventory for webshop and counter sales.
 slug: user_manual/retail-pos/retail-stock

@@ -4,6 +4,8 @@ import StarlightHead from "@astrojs/starlight/components/Head.astro";
 Astro.props.viewTransitionsFallback = "animate";
 
 const isDocsPage = Astro.url.pathname.startsWith('/user_manual') ||
+                   Astro.url.pathname.startsWith('/help/') ||
+                   Astro.url.pathname.startsWith('/manuals/') ||
                    Astro.url.pathname.startsWith('/getting-started') ||
                    Astro.url.pathname.startsWith('/features-resources') ||
                    Astro.url.pathname.startsWith('/workflows') ||

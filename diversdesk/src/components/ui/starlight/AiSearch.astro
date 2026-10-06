@@ -1,9 +1,11 @@
 ---
-import StarlightSearch from "@astrojs/starlight/components/Search.astro";
+import ArticleSearch from './ArticleSearch.astro';
+import { audienceHome, resolveDocAudience } from '../../../lib/docs/audiences';
+const audience = resolveDocAudience(Astro.url.pathname, Astro.locals.starlightRoute.entry.data.audiences);
 ---
 
 <div class="ai-search-actions">
-  <StarlightSearch class={Astro.props.class} />
+  <ArticleSearch audience={audience} />
   <button class="ai-search-trigger" type="button" data-ai-search-open aria-haspopup="dialog">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="m12 3 1.15 3.2a7 7 0 0 0 4.2 4.2L20.5 12l-3.15 1.6a7 7 0 0 0-4.2 4.2L12 21l-1.15-3.2a7 7 0 0 0-4.2-4.2L3.5 12l3.15-1.6a7 7 0 0 0 4.2-4.2L12 3Z" />
@@ -12,7 +14,7 @@ import StarlightSearch from "@astrojs/starlight/components/Search.astro";
   </button>
 </div>
 
-<dialog class="ai-search-dialog" data-ai-search-dialog aria-labelledby="ai-search-title">
+<dialog class="ai-search-dialog" data-ai-search-dialog data-audience={audience} aria-labelledby="ai-search-title">
   <div class="ai-search-panel">
     <header>
       <div>
@@ -54,7 +56,7 @@ import StarlightSearch from "@astrojs/starlight/components/Search.astro";
 
     <footer>
       <span>AI-generated from public Diversdesk documentation</span>
-      <a href="/contact">Contact helpdesk</a>
+      <a href={audienceHome(audience)}>Browse this manual</a>
     </footer>
   </div>
 </dialog>
@@ -144,6 +146,7 @@ import StarlightSearch from "@astrojs/starlight/components/Search.astro";
               locale: document.documentElement.lang || "en",
               path: window.location.pathname,
               surface: "docs",
+              audience: dialog.dataset.audience,
             },
             query: query.value,
           }),

@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Settings
 description: Use the Settings page to manage establishment-wide configuration and setup.
 slug: user_manual/settings

@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: How do I place an app-icon to my mobile homescreen?
 description: A quick guide to placing a Diversdesk app icon on your mobile home screen.
 slug: faq/mobile-homescreen-icon

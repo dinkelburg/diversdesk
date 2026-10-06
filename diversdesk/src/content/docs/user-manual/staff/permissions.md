@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Permissions
 description: Use the Permissions page to manage user access and staff roles.
 slug: user_manual/staff/permissions

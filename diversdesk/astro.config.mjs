@@ -108,6 +108,8 @@ export default defineConfig({
         page.includes('/support') ||
         page.includes('/liveaboard-partners') ||
         page.includes('/liveaboard-partner-portal') ||
+        page.includes('/help/') ||
+        page.includes('/manuals/') ||
         page.includes('/updates') ||
         page.includes('/new') ||
         page.includes('/work_in_progress') ||
@@ -118,6 +120,7 @@ export default defineConfig({
     starlight({
     plugins: [starlightImageZoom()],
     title: 'Diversdesk Docs',
+    routeMiddleware: './src/lib/docs/route-middleware.ts',
     defaultLocale: "root",
     sidebar: [
       {
@@ -326,7 +329,8 @@ export default defineConfig({
     components: {
       Head: './src/components/ui/starlight/Head.astro',
       Search: './src/components/ui/starlight/AiSearch.astro',
-      SiteTitle: './src/components/ui/starlight/SiteTitle.astro'
+      SiteTitle: './src/components/ui/starlight/SiteTitle.astro',
+      PageTitle: './src/components/ui/starlight/PageTitle.astro'
     },
     head: [{
       tag: 'meta',

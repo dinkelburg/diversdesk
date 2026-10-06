@@ -1,0 +1,18 @@
+---
+import { getCollection, render } from "astro:content";
+import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
+import { docAudiences, manualIds, normalizeDocPath, visibleToAudience } from "../../../lib/docs/audiences";
+
+export async function getStaticPaths() {
+  const docs = await getCollection("docs");
+  return docAudiences.flatMap((audience) => docs.filter((doc) => visibleToAudience(doc, audience)).map((doc) => ({
+    params: { audience, article: doc.id === manualIds[audience] ? undefined : normalizeDocPath(doc.id) },
+    props: { doc },
+  })));
+}
+const { doc } = Astro.props;
+const { Content, headings } = await render(doc);
+---
+<StarlightPage frontmatter={{ title: doc.data.title, description: doc.data.description, audiences: doc.data.audiences, docsSection: doc.data.docsSection, template: "doc", editUrl: false, prev: false, next: false, pagefind: false }} headings={headings}>
+  <Content />
+</StarlightPage>

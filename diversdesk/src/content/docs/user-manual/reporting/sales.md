@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Sales
 description: Use the Sales page to review recorded sales, filter activity, and follow what has been sold across your operation.
 slug: user_manual/reporting/sales

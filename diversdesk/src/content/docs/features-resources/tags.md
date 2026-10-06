@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: What Are Tags & Categories and How to Use Them?
 description: An explanation of what tags are and how to use them effectively.
 slug: features-resources/tags

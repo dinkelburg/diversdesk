@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Why doesn't the registration form update after I edit it in Form Builder?
 description: Learn why Form Builder changes do not update existing bookings and how to change the onboarding journey on an activity card.
 slug: faq/why-does-the-registration-form-not-update-after-editing-form-builder

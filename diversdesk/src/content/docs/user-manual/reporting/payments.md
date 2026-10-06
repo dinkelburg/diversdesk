@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Payments
 description: Use the Payments page to review payment activity, statuses, and money movement linked to bookings and sales.
 slug: user_manual/reporting/payments

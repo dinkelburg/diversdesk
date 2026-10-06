@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Set Your Own Default Tank Sizes and Blends
 description: Define default tank sizes and gas blends, and see how these defaults appear in Detailed Day View
 slug: features-resources/tanks-and-blends

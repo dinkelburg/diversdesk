@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Managing Group Bookings with Multiple Activities
 description: Create one group booking for different activities and schedule only the participants who continue on another day.
 slug: workflows/group-bookings-with-multiple-activities

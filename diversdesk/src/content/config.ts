@@ -3,6 +3,7 @@
 import { z, defineCollection } from 'astro:content';
 import { docsSchema } from '@astrojs/starlight/schema';
 import { docsLoader } from '@astrojs/starlight/loaders';
+import { docAudiences } from '../lib/docs/audiences';
 
 const blogCollection = defineCollection({
   type: "content",
@@ -41,7 +42,10 @@ const insightsCollection = defineCollection({
 });
 
 export const collections = {
-  docs: defineCollection({ loader: docsLoader(), schema: docsSchema() }),
+  docs: defineCollection({ loader: docsLoader(), schema: docsSchema({ extend: z.object({
+    audiences: z.array(z.enum(docAudiences)).default([]),
+    docsSection: z.string().optional(),
+  }) }) }),
   'blog': blogCollection,
   'insights': insightsCollection,
 };

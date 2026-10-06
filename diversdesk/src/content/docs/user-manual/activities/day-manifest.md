@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Day Manifest
 description: Use Day Manifest to run your day from one customizable list view and handle registrations, waivers, payments, gear, and pickup logistics.
 slug: user_manual/activities/day-manifest

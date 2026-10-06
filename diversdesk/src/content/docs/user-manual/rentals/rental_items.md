@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Rental Items
 description: Read how to create rental items, setup service triggers and assign gear to participants
 slug: user_manual/rentals/rental-items

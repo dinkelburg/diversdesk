@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Waiver Cheatsheet 
 description: In depth guide to create a custom waiver that meets your needs.
 slug: features-resources/waiver-cheatsheet

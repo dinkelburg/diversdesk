@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Create and Configure Activities
 description: Set up activity structure, publication state, and webshop behavior before you fine-tune pricing.
 slug: user_manual/activities/activity-setup

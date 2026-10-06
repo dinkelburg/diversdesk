@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Registration Page
 description: Understand what the participant registration page shows and how to use it from Day Manifest.
 slug: features-resources/registration-page

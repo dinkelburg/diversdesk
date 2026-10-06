@@ -1,5 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
+import { audienceDocHref, resolveDocAudience, visibleToAudience } from '../../lib/docs/audiences';
+const audience = resolveDocAudience(Astro.url.pathname);
 
 const videoThumbnails: Record<string, string> = {
   'video-training/alternative-payment-methods': 'https://cdn.loom.com/sessions/thumbnails/8fb67e02a5da4a2fa0b06eea0c64494d-fa544de83e59626a.gif',
@@ -18,10 +20,11 @@ const videoThumbnails: Record<string, string> = {
 };
 
 const videos = (await getCollection('docs'))
+  .filter((entry) => visibleToAudience(entry, audience))
   .filter((entry) => entry.id.startsWith('video-training/'))
-  .filter((entry) => entry.id !== 'video-training/video_training')
+  .filter((entry) => !['video-training/video_training', 'video-training/video-training'].includes(entry.id))
   .map((entry) => ({
-    href: `/${entry.id.replace(/\.(md|mdx)$/i, '')}/`,
+    href: audienceDocHref(audience, entry.id),
     order: entry.data.sidebar?.order ?? Number.MAX_SAFE_INTEGER,
     description: entry.data.description ?? 'Watch this Diversdesk training video.',
     isNew: entry.data.sidebar?.badge?.text === 'New',

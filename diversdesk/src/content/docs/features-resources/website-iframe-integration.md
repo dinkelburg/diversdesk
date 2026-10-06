@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Website Iframe Integration
 description: Add your Diversdesk webshop or booking page to your own website using an iframe.
 slug: features-resources/website-iframe-integration

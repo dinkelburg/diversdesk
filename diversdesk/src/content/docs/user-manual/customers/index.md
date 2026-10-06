@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Customers
 description: Use the Customers page to view, search, and manage returning and new customer profiles.
 slug: user_manual/customers

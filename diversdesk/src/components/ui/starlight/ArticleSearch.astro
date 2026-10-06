@@ -1,0 +1,80 @@
+---
+import { audienceHome, audienceLabels, type DocAudience } from '../../../lib/docs/audiences';
+interface Props { audience: DocAudience }
+const { audience } = Astro.props;
+---
+<a class="article-search-trigger" href={audienceHome(audience)} aria-label="Search articles" data-article-search-open><span class="full-label">Search articles</span><span class="short-label" aria-hidden="true">Search</span></a>
+<dialog data-article-search-dialog data-audience={audience} aria-labelledby="article-search-title">
+  <header><h2 id="article-search-title">Search {audienceLabels[audience].toLowerCase()} help</h2><button type="button" data-article-search-close aria-label="Close article search">Close</button></header>
+  <form data-article-search-form>
+    <label for="article-query">What do you need help with?</label>
+    <div><input id="article-query" type="search" minlength="3" maxlength="500" required /><button type="submit">Search</button></div>
+  </form>
+  <p role="status" data-article-search-status></p>
+  <ul data-article-search-results></ul>
+  <a href={audienceHome(audience)}>Browse the manual and reference articles</a>
+</dialog>
+<script>
+  const initialize = () => {
+    const open = document.querySelector<HTMLAnchorElement>('[data-article-search-open]');
+    const dialog = document.querySelector<HTMLDialogElement>('[data-article-search-dialog]');
+    const form = document.querySelector<HTMLFormElement>('[data-article-search-form]');
+    const input = document.querySelector<HTMLInputElement>('#article-query');
+    const status = document.querySelector<HTMLElement>('[data-article-search-status]');
+    const results = document.querySelector<HTMLElement>('[data-article-search-results]');
+    if (!open || !dialog || !form || !input || !status || !results || form.dataset.bound) return;
+    form.dataset.bound = 'true';
+    open.addEventListener('click', (event) => { event.preventDefault(); dialog.showModal(); input.focus(); });
+    dialog.querySelector('[data-article-search-close]')?.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    let controller: AbortController | undefined;
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      controller?.abort();
+      const request = new AbortController();
+      controller = request;
+      results.replaceChildren();
+      status.textContent = 'Searching…';
+      try {
+        const params = new URLSearchParams({ audience: dialog.dataset.audience ?? '', q: input.value });
+        const response = await fetch(`/api/docs-search?${params}`, { signal: request.signal });
+        if (!response.ok) throw new Error('Search unavailable');
+        const payload: { sources: { title: string; url: string; excerpt: string }[] } = await response.json();
+        for (const source of payload.sources) {
+          const url = new URL(source.url);
+          if (url.origin !== 'https://www.diversdesk.com' || !url.pathname.startsWith(`/help/${dialog.dataset.audience}/`)) continue;
+          const item = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = `${url.pathname}${url.hash}`;
+          link.textContent = source.title;
+          const excerpt = document.createElement('p');
+          excerpt.textContent = source.excerpt.slice(0, 200) + (source.excerpt.length > 200 ? '…' : '');
+          item.append(link, excerpt);
+          results.append(item);
+        }
+        status.textContent = results.childElementCount ? `${results.childElementCount} results` : 'No matching articles. Browse the manual below.';
+      } catch {
+        if (!request.signal.aborted) status.textContent = 'Search is temporarily unavailable. You can still browse the manual below.';
+      }
+    });
+  };
+  initialize();
+  document.addEventListener('astro:page-load', initialize);
+</script>
+<style>
+  .article-search-trigger { display: inline-flex; align-items: center; height: 2.5rem; white-space: nowrap; padding: .55rem .8rem; border: 1px solid var(--sl-color-gray-5); border-radius: .5rem; font-size: .875rem; color: var(--sl-color-gray-1); text-decoration: none; }
+  .short-label { display: none; }
+  @media (max-width: 50rem) { .full-label { display: none; } .short-label { display: inline; } }
+  dialog { width: min(42rem, calc(100vw - 2rem)); max-height: 85vh; margin: 8vh auto; padding: 1.5rem; border: 1px solid var(--sl-color-gray-5); border-radius: .75rem; background: var(--sl-color-black); color: var(--sl-color-gray-1); }
+  dialog::backdrop { background: #0008; }
+  header, form div { display: flex; gap: 1rem; align-items: center; justify-content: space-between; }
+  header { margin-bottom: 1.5rem; }
+  h2 { font-size: 1.15rem; }
+  input { flex: 1; min-width: 0; padding: .65rem; background: var(--sl-color-gray-6); border: 1px solid var(--sl-color-gray-4); border-radius: .4rem; color: inherit; }
+  button { padding: .5rem; cursor: pointer; }
+  label { display: block; margin-bottom: .5rem; }
+  ul { padding-left: 1.25rem; }
+  ul :global(li) { margin-block: 1rem; }
+  ul :global(p) { margin: .3rem 0; font-size: .85rem; color: var(--sl-color-gray-2); }
+</style>

@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Creating Customer Onboarding Journeys
 description: How to create and connect customer onboarding journeys.
 slug: workflows/creating-onboarding-journeys

@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import { audienceDocHref, getDocSection, manualIds, resolveDocAudience, visibleToAudience, type DocAudience } from '../../lib/docs/audiences';
+interface Props { audience?: DocAudience }
+const audience = Astro.props.audience ?? resolveDocAudience(Astro.url.pathname);
+const entries = (await getCollection('docs')).filter((doc) => visibleToAudience(doc, audience) && doc.id !== manualIds[audience]);
+const sections = [...new Set(entries.map(getDocSection))];
+---
+<div class="reference-articles">
+  {sections.map((section) => <section>
+    <h3>{section}</h3>
+    <ul>{entries.filter((doc) => getDocSection(doc) === section).sort((a, b) => a.data.title.localeCompare(b.data.title)).map((doc) => <li>
+      <a href={audienceDocHref(audience, doc.id)}>{doc.data.title}</a>
+    </li>)}</ul>
+  </section>)}
+</div>
+<style>
+  .reference-articles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1.5rem; }
+  section { min-width: 0; }
+  h3 { margin-top: 0; font-size: 1rem; }
+  ul { padding-left: 1.25rem; }
+  li { margin-block: .45rem; }
+</style>

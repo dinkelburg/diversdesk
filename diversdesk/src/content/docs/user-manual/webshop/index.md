@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Webshop
 description: Use the Webshop section to understand the customer-facing online booking and sales flow across your Diversdesk setup.
 slug: user_manual/webshop

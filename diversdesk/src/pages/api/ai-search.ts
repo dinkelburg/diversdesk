@@ -5,7 +5,8 @@ import {
   mergeConversationSources,
   type AiSearchHistoryTurn,
 } from "@/lib/ai-search/conversation";
-import { getDocsByIds, getIndexedDocumentCount, searchDocs } from "@/lib/ai-search/docs";
+import { getDocSearchIndex } from "@/lib/ai-search/docs";
+import { docAudiences, resolveDocAudience } from "@/lib/docs/audiences";
 
 export const prerender = false;
 
@@ -30,6 +31,7 @@ const requestSchema = z.object({
       locale: z.string().trim().max(20).optional(),
       path: z.string().trim().max(180).optional(),
       surface: z.enum(["app", "docs"]).optional(),
+      audience: z.enum(docAudiences).optional(),
     })
     .strict()
     .optional(),
@@ -249,7 +251,11 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const query = redactPotentialPersonalData(parsedRequest.data.query);
-  const history: AiSearchHistoryTurn[] = (parsedRequest.data.history ?? []).map((turn) => ({
+  const audience = parsedRequest.data.context?.audience ?? resolveDocAudience(parsedRequest.data.context?.path ?? "");
+  const { searchDocs, getDocsByIds, getIndexedDocumentCount } = await getDocSearchIndex(audience);
+  const history: AiSearchHistoryTurn[] = (parsedRequest.data.history ?? [])
+    .filter((turn) => turn.sourceIds.length > 0 && getDocsByIds(turn.sourceIds).length === new Set(turn.sourceIds).size)
+    .map((turn) => ({
     answer: redactPotentialPersonalData(turn.answer),
     question: redactPotentialPersonalData(turn.question),
     sourceIds: turn.sourceIds,
@@ -282,6 +288,7 @@ export const POST: APIRoute = async ({ request }) => {
         indexedDocuments: getIndexedDocumentCount(),
         locale: parsedRequest.data.context?.locale ?? "en",
         surface: parsedRequest.data.context?.surface ?? "docs",
+        audience,
       },
       history: history.map((turn) => ({
         assistant: turn.answer,

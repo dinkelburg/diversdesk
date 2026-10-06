@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Create a Custom Registration Form
 description: A reference page in my new Starlight docs site.
 slug: features-resources/custom-registration-form

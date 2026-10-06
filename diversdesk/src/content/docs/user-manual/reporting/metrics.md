@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Metrics
 description: Use the Metrics page to review high-level business and operational performance indicators over time.
 slug: user_manual/reporting/metrics

@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Connecting Quickbooks
 description: Guide to connecting Quickbooks to your Diversdesk Account
 slug: features-resources/connecting-quickbooks

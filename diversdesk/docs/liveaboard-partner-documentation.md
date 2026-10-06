@@ -1,41 +1,48 @@
-# Liveaboard partner documentation
+# Documentation audiences and partner manuals
 
-The initial partner guides live in `src/content/docs/liveaboard-partners/` and publish at `/liveaboard-partner-portal/`. Share that URL with partners after deployment. The former `/liveaboard-partners/` URLs redirect to the corresponding pages under the new URL.
+The documentation has three public audience views:
 
-These pages are unlisted, not access-controlled. Anyone with the URL can read them. Do not put credentials, private partner terms, or guest information in this section.
+- `/help/partners/`: partner booking manual and partner reference articles.
+- `/help/liveaboard-operators/`: liveaboard operator manual and assigned reference articles.
+- `/help/operators/`: non-liveaboard operator manual and assigned reference articles.
 
-## Adding a page
+`/welcome-to-docs/` is the audience chooser. Existing article URLs remain accessible, including `/liveaboard-partner-portal/` used by the application's Help link. Visibility removes clutter; it is not access control. Never publish private operator settings, partner terms, credentials, or guest information in documentation.
 
-Copy the frontmatter from an existing page in this folder. Keep `pagefind: false`, `sidebar.hidden: true`, `prev: false`, and `next: false`; use a slug beneath `liveaboard-partner-portal/`. Link new guides from the partner landing page, not the general documentation navigation. Do not set `draft: true` on a page intended to be published.
+## Assigning an article
 
-Discovery controls:
+Set the article's frontmatter explicitly:
 
-- `pagefind: false` excludes each page from the built-in search index.
-- `src/lib/ai-search/docs.ts` excludes the folder from the AI search corpus.
-- The general sidebar does not include this section.
-- `src/components/ui/starlight/Head.astro` adds `noindex, nofollow` to the section.
-- `astro.config.mjs` excludes the section from the sitemap.
+```yaml
+audiences: ["partners"]
+```
 
-Leave crawling allowed in `robots.txt` so search engines can read the `noindex` directive.
+Shared articles may list both `liveaboard-operators` and `operators`, or any combination of the three audiences. The schema rejects unknown audience values. No audience assignment means the page is absent from these audience views and search. `draft: true` also excludes it. `docsSection` optionally sets the navigation group; otherwise it is inferred from the article's path.
 
-## Content and release
+Existing general operator articles were assigned to both operator audiences. The liveaboard-only release article keeps its existing draft status and is assigned only to liveaboard operators. Partner reference articles are assigned only to partners. Review these editorial tags when changing an article's scope.
 
-The guide was checked against the local `traveltruster` application's `feature/feature` branch at commit `ac01024b8` on 2026-09-08. The portal URL and invitation-email sign-in instructions were supplied by the product owner. Actual operator settings and the deployed application may differ; the guide explains conditional paths without assigning fixed deadlines to any operator.
+For partner articles, keep slugs beneath `liveaboard-partner-portal/`. Do not set `pagefind: false` on a published article that should be searchable: both article search and AI search respect that exclusion. The scoped copies set that flag only for their rendered HTML to avoid duplicate Pagefind indexing; the source article remains searchable in the audience index.
 
-Source references within that application's `tanstack/app/` directory:
+The partner manual follows six steps. Put control explanations, statuses, and exceptions in the linked page references. Use current action names: `Confirm booking`, `Copy booking URL`, `Report deposit transfer`, and `Report balance transfer`. Copying does not email guests; confirmation accepts payment responsibility, not separate proof of customer payment receipt. Customer extras may still show prices.
 
-- `routes/_all._catch.partner.availability.tsx`: opening a trip, Hold cabins & continue, booker/guest fields, Review option, Place option, and redirect to Reservations.
-- `components/HamburgerMenu.tsx`: Availability, Reservations, Reporting, and the Help link to this guide.
-- `domain/booking/booking-cache-and-checkout.server.ts`: direct versus operator approval, tentative departures, and approval deadlines.
-- `domain/liveaboard/liveaboard-booking-state.ts`: confirmation after required approval and deposit, plus the separate manual cabin-review state.
-- `domain/liveaboard/liveaboard-journey-policy.ts` and `liveaboard-payment-policy.ts`: partner-specific overrides, separate deposit/balance collectors, and before/on-departure balance timing.
-- `domain/liveaboard/liveaboard-booking-review.server.ts`: deposit window after approval and workflow activation.
-- `domain/callback/callback.server.tsx`: expiry of unreviewed partner options.
-- `domain/liveaboard/liveaboard-deposit-expiry.server.ts`, `liveaboard-payment-callback.ts`, and `liveaboard-journey-simulator.ts`: unpaid deposit expiry, payment-proof exceptions, overdue balances, and conditional email steps.
-- `domain/partner/PartnerReservationActions.tsx`, `partner-reservation-permissions.ts`, and `partner-liveaboard-hold-actions.server.ts`: payment recording and eligibility to release options.
+## Navigation and search
 
-`src/components/docs/PartnerBookingJourney.astro` renders the process schematic as responsive HTML. It is an overview, not a live reading of a partner's settings. Keep its wording and section links aligned with the guide when the application workflow changes.
+- `src/lib/docs/audiences.ts`: shared audience IDs, labels, visibility and link helpers.
+- `src/lib/docs/route-middleware.ts`: audience-only sidebar and manual link; disables automatic cross-audience pagination.
+- `src/pages/help/[audience]/[...article].astro`: pre-renders each assigned article for each audience without duplicating its source.
+- `src/middleware.ts`: rewrites known internal documentation links at build time to preserve the current audience. Application and external links are unchanged; explicit links to another audience remain usable.
+- `src/lib/ai-search/docs.ts`: builds the three search indexes from the validated content collection once per server instance. Transcripts inherit the parent video article's audience and publication rules.
+- `src/lib/ai-search/index.ts`: pure retrieval and source lookup, shared by ordinary article search and AI search.
 
-Run `npm run build` from the `diversdesk` application directory. Verify both guides render, have robots metadata, lack `data-pagefind-body`, and are absent from the sitemap and general navigation before deploying through the existing Vercel workflow.
+AI requests accept `context.audience` with one of the three IDs. When omitted, partner portal paths resolve to partners, scoped help paths resolve to their audience, and other paths fall back to operators. Invalid explicit values are rejected. Prior-turn source IDs are checked against the current audience; history with missing/out-of-audience sources is dropped. Search never broadens to another audience.
 
-A Git branch can be used to review changes, but it does not separate audiences after deployment. Later, partner authentication and an audience-specific search index can provide proper separation while retaining these URLs.
+The documentation pages pass audience explicitly. The separate application can pass its active role/workflow as `context.audience` for automatic liveaboard-operator selection; this website change does not alter that application's role handling. Its existing partner Help URL continues to work.
+
+## Performance and fallback
+
+Manuals, article lists, and navigation are static. Search operates on files in memory; it makes no booking, customer, payment, or application-database queries. Ordinary article search does not use an AI provider. Search failures retain links to the audience manual, which works without JavaScript.
+
+The company/partner-specific settings selector is deliberately deferred. No live account settings or email delivery history are fetched. Generic instructions use the actual reservation as the authority for amounts and deadlines.
+
+## Verification
+
+Run `npm test` and `npm run build` from `diversdesk/`. Tests cover audience isolation, drafts/unassigned pages, previous-source lookup, fallback and links. Check generated `/help/` pages, partner legacy URLs, noindex metadata, sidebar links, search source URLs, and sitemap exclusions. Test the three manuals at desktop and mobile widths. AI provider availability is separate from retrieval correctness.

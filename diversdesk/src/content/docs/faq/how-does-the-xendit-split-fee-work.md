@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: How does the 0.5% Diversdesk split fee on Xendit payments work?
 description: Learn how the 0.5% Diversdesk split fee is covered by our Xendit platform volume discount without increasing your total transaction fee.
 slug: faq/how-does-the-xendit-split-fee-work

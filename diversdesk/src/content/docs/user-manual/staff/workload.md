@@ -1,4 +1,5 @@
 ---
+audiences: ["liveaboard-operators", "operators"]
 title: Workload
 description: Use the Workload page to review staff workload, scheduling pressure, and how work is distributed across your team.
 slug: user_manual/staff/workload
