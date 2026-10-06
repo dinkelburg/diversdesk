@@ -8,12 +8,20 @@ import {
   audienceHome,
   getDocSection,
   manualIds,
+  normalizeDocPath,
   resolveDocAudience,
   visibleToAudience,
 } from "./audiences";
+import { scopeSidebar } from "./sidebar";
 
 export const onRequest = defineRouteMiddleware(async (context) => {
   const route = context.locals.starlightRoute;
+  if (normalizeDocPath(context.url.pathname) === "welcome-to-docs") {
+    route.siteTitleHref = "/welcome-to-docs/";
+    route.sidebar = [];
+    route.hasSidebar = false;
+    return;
+  }
   const audience = resolveDocAudience(
     context.url.pathname,
     route.entry.data.audiences,
@@ -34,6 +42,12 @@ export const onRequest = defineRouteMiddleware(async (context) => {
     badge: undefined,
     attrs: {},
   });
+  if (audience !== "partners") {
+    route.sidebar = scopeSidebar(route.sidebar, docs, audience, context.url.pathname);
+    route.pagination = { prev: undefined, next: undefined };
+    route.siteTitleHref = audienceHome(audience);
+    return;
+  }
   const groups = new Map<string, typeof docs>();
   for (const doc of docs.sort(
     (a, b) =>

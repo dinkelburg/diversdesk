@@ -12,7 +12,7 @@ const { audience } = Astro.props;
   </form>
   <p role="status" data-article-search-status></p>
   <ul data-article-search-results></ul>
-  <a href={audienceHome(audience)}>Browse the manual and reference articles</a>
+  <a href={audienceHome(audience)}>Browse help guides</a>
 </dialog>
 <script>
   const initialize = () => {
@@ -53,9 +53,9 @@ const { audience } = Astro.props;
           item.append(link, excerpt);
           results.append(item);
         }
-        status.textContent = results.childElementCount ? `${results.childElementCount} results` : 'No matching articles. Browse the manual below.';
+        status.textContent = results.childElementCount ? `${results.childElementCount} results` : 'No matching articles. Browse the help guides below.';
       } catch {
-        if (!request.signal.aborted) status.textContent = 'Search is temporarily unavailable. You can still browse the manual below.';
+        if (!request.signal.aborted) status.textContent = 'Search is temporarily unavailable. You can still browse the help guides below.';
       }
     });
   };

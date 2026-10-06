@@ -6,15 +6,15 @@ export const docAudiences = [
 export type DocAudience = (typeof docAudiences)[number];
 
 export const audienceLabels: Record<DocAudience, string> = {
-  partners: "Partners",
-  "liveaboard-operators": "Liveaboard operators",
-  operators: "Non-liveaboard operators",
+  partners: "Liveaboard Partners/Agents",
+  "liveaboard-operators": "Liveaboards",
+  operators: "Dive Centers & Resorts",
 };
 
 export const manualIds: Record<DocAudience, string> = {
   partners: "liveaboard-partner-portal",
-  "liveaboard-operators": "manuals/liveaboard-operators",
-  operators: "manuals/operators",
+  "liveaboard-operators": "getting-started/quickstart-guide",
+  operators: "getting-started/quickstart-guide",
 };
 
 export const isDocAudience = (value: unknown): value is DocAudience =>

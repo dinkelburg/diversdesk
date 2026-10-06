@@ -11,6 +11,7 @@ import {
   createDocSearchIndex,
   type SearchDocument,
 } from "../src/lib/ai-search/index";
+import { scopeSidebar } from "../src/lib/docs/sidebar";
 
 const documents: SearchDocument[] = [
   {
@@ -163,7 +164,122 @@ test("internal documentation links stay scoped without changing application or e
 });
 
 test("index articles use the same public path in navigation and search", () => {
-  const doc: AudienceDocument = { id: "updates/index", data: { title: "Updates", audiences: ["operators"] } };
-  assert.equal(audienceDocHref("operators", doc.id), "/help/operators/updates/");
-  assert.equal(scopeDocLink("/updates/", "/", "operators", [doc]), "/help/operators/updates/");
+  const doc: AudienceDocument = {
+    id: "updates/index",
+    data: { title: "Updates", audiences: ["operators"] },
+  };
+  assert.equal(
+    audienceDocHref("operators", doc.id),
+    "/help/operators/updates/",
+  );
+  assert.equal(
+    scopeDocLink("/updates/", "/", "operators", [doc]),
+    "/help/operators/updates/",
+  );
+});
+
+test("operator navigation preserves configured hierarchy, ordering, labels and badges", () => {
+  const docs: AudienceDocument[] = [
+    {
+      id: "getting-started/quickstart-guide",
+      data: {
+        title: "Quickstart",
+        audiences: ["operators", "liveaboard-operators"],
+      },
+    },
+    {
+      id: "user_manual/activities/beta-planner",
+      data: {
+        title: "Planner Beta",
+        audiences: ["operators", "liveaboard-operators"],
+      },
+    },
+    {
+      id: "getting-started/login",
+      data: { title: "Old login", audiences: [] },
+    },
+    {
+      id: "draft",
+      data: { title: "Draft", audiences: ["operators"], draft: true },
+    },
+    {
+      id: "liveaboard-partner-portal",
+      data: { title: "Partners", audiences: ["partners"] },
+    },
+  ];
+  const link = (id: string, label: string) => ({
+    type: "link" as const,
+    label,
+    href: `/${id}/`,
+    isCurrent: false,
+    badge: undefined,
+    attrs: {},
+  });
+  const badge = { text: "New", variant: "tip" as const };
+  const tree = [
+    {
+      type: "group" as const,
+      label: "Getting Started",
+      collapsed: true,
+      badge: undefined,
+      entries: [link(docs[0].id, "Quick Start Guide")],
+    },
+    {
+      type: "group" as const,
+      label: "Page guides",
+      collapsed: true,
+      badge: undefined,
+      entries: [
+        {
+          type: "group" as const,
+          label: "Activities",
+          collapsed: false,
+          badge: undefined,
+          entries: [{ ...link(docs[1].id, "Planner Beta"), badge }],
+        },
+      ],
+    },
+    {
+      type: "group" as const,
+      label: "Hidden",
+      collapsed: true,
+      badge: undefined,
+      entries: docs.slice(2).map((doc) => link(doc.id, doc.data.title)),
+    },
+  ];
+  for (const audience of ["operators", "liveaboard-operators"] as const) {
+    const href = `/help/${audience}/user_manual/activities/beta-planner/`;
+    const scoped = scopeSidebar(tree, docs, audience, href);
+    assert.deepEqual(scoped, [
+      {
+        ...tree[0],
+        entries: [
+          {
+            ...link(docs[0].id, "Quick Start Guide"),
+            href: `/help/${audience}/`,
+          },
+        ],
+      },
+      {
+        ...tree[1],
+        entries: [
+          {
+            type: "group",
+            label: "Activities",
+            collapsed: false,
+            badge: undefined,
+            entries: [
+              {
+                ...link(docs[1].id, "Planner Beta"),
+                href,
+                isCurrent: true,
+                badge,
+              },
+            ],
+          },
+        ],
+      },
+    ]);
+  }
+  assert.equal(tree[0].entries[0].href, "/getting-started/quickstart-guide/");
 });

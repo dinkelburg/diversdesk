@@ -1,5 +1,6 @@
 ---
-audiences: ["liveaboard-operators", "operators"]
+audiences: []
+pagefind: false
 title: "How Diversdesk Protects Your Data"
 description: "Understand how Diversdesk protects your dive business data with private document storage, controlled staff access, secure sign-in, and cloud storage encryption."
 slug: docs/insights/data-safety

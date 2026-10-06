@@ -1,10 +1,9 @@
 ---
 import mainLogo from "@images/starlight/diversdesk_logo.svg?raw";
 import docsLogo from "@images/starlight/docs_logo.svg?raw";
-import { audienceHome, resolveDocAudience } from '../../../lib/docs/audiences';
 
 const main = "/";
-const docs = audienceHome(resolveDocAudience(Astro.url.pathname, Astro.locals.starlightRoute.entry.data.audiences));
+const docs = Astro.locals.starlightRoute.siteTitleHref;
 ---
 
 <span class="site-title flex">

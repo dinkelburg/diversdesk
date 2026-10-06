@@ -12,6 +12,8 @@ export default defineConfig({
   site: 'https://www.diversdesk.com',
 
   redirects: {
+    "/help/operators/getting-started/quickstart-guide": "/help/operators/",
+    "/help/liveaboard-operators/getting-started/quickstart-guide": "/help/liveaboard-operators/",
     "/liveaboard-partners": "/liveaboard-partner-portal/",
     "/liveaboard-partners/booking-checklist": "/liveaboard-partner-portal/booking-checklist/",
     "/blog/en": "/blog/",
@@ -135,7 +137,7 @@ export default defineConfig({
         ]
       },
       {
-        label: 'User Manual',
+        label: 'Page guides',
         collapsed: true,
         items: [
           {
@@ -276,13 +278,6 @@ export default defineConfig({
         ]
       },
       {
-        label: 'Insights',
-        collapsed: true,
-        items: [
-          'docs/insights/data-safety',
-        ]
-      },
-      {
         label: 'Workflows',
         collapsed: true,
         items: [
@@ -329,8 +324,7 @@ export default defineConfig({
     components: {
       Head: './src/components/ui/starlight/Head.astro',
       Search: './src/components/ui/starlight/AiSearch.astro',
-      SiteTitle: './src/components/ui/starlight/SiteTitle.astro',
-      PageTitle: './src/components/ui/starlight/PageTitle.astro'
+      SiteTitle: './src/components/ui/starlight/SiteTitle.astro'
     },
     head: [{
       tag: 'meta',
