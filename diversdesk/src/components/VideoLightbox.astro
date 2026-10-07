@@ -1,30 +1,51 @@
 ---
 interface Props {
   src: string;
+  /** Optional grey caption beneath the video. Editable independently of its accessible label. */
+  caption?: string;
   /** Accessible label for the trigger button (describes what the video shows) */
   label?: string;
   /** Unique ID for pages with multiple videos. Auto-generated if omitted. */
   id?: string;
   /** Preview width applied on desktop breakpoints (e.g. "80%" or "100%"). */
   previewDesktopWidth?: string;
+  /** Keep video URLs out of media sources until the reader opens the lightbox. */
+  loadOnOpen?: boolean;
+  /** Load muted previews as they enter the viewport and pause them outside it. */
+  playInView?: boolean;
 }
 
 const {
   src,
-  label = "Open video preview",
+  caption,
+  label = caption || "Open video preview",
   id = `video-dialog-${Math.random().toString(36).slice(2, 9)}`,
   previewDesktopWidth = "80%",
+  loadOnOpen = false,
+  playInView = false,
 } = Astro.props;
 
 const normalizedSrc = src.split('?')[0].toLowerCase();
 const isGif = normalizedSrc.endsWith('.gif');
 const isMp4 = normalizedSrc.endsWith('.mp4');
 const sourceType = isMp4 ? 'video/mp4' : 'video/webm';
+const viewportVideo = playInView && !isGif;
+const lazyVideo = (loadOnOpen || viewportVideo) && !isGif;
 ---
 
-<div class="video-lightbox-wrapper" style={`--video-preview-desktop-width: ${previewDesktopWidth};`}>
-  <button type="button" class="video-lightbox-trigger" aria-label={label} onclick={`document.getElementById('${id}').showModal()`}>
-    {isGif ? (
+<figure class="video-lightbox-figure" style={`--video-preview-desktop-width: ${previewDesktopWidth};`}>
+<div class:list={["video-lightbox-wrapper", { "video-viewport-wrapper": viewportVideo }]}>
+  <button type="button" class:list={["video-lightbox-trigger", { "video-lazy-trigger": lazyVideo, "video-viewport-trigger": viewportVideo }]} aria-label={label} aria-haspopup="dialog" aria-controls={id} data-video-open={lazyVideo ? id : undefined} onclick={lazyVideo ? undefined : `document.getElementById('${id}').showModal()`}>
+    {viewportVideo ? (
+      <video muted loop playsinline preload="none" class="video-viewport-preview" data-viewport-video aria-hidden="true">
+        <source data-src={src} type={sourceType} />
+      </video>
+    ) : lazyVideo ? (
+      <span class="video-watch-card">
+        <svg viewBox="0 0 24 24" width="40" height="40" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor" opacity=".12"/><path d="m9 6 9 6-9 6Z" fill="currentColor"/></svg>
+        <span><strong>{label}</strong><span class="video-watch-hint">Watch a short video · Opens in a lightbox</span></span>
+      </span>
+    ) : isGif ? (
       <img src={src} alt={label} class="video-preview-image" />
     ) : (
       <video autoplay muted loop playsinline class="video-preview">
@@ -33,36 +54,152 @@ const sourceType = isMp4 ? 'video/mp4' : 'video/webm';
       </video>
     )}
   </button>
+  {viewportVideo && <button type="button" class="video-preview-toggle" data-preview-toggle={id} aria-label="Pause preview" title="Pause preview">
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+      <path class="preview-pause-icon" d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor" />
+      <path class="preview-play-icon" d="m7 4 14 8-14 8Z" fill="currentColor" />
+    </svg>
+  </button>}
 </div>
+{caption && <figcaption class="video-caption">{caption}</figcaption>}
+</figure>
+{lazyVideo && <noscript><p><a href={src}>Watch video: {label}</a></p></noscript>}
 
-<dialog id={id} class="video-dialog" onclick={`if (event.target === this) this.close()`}>
+<dialog id={id} class="video-dialog" aria-label={label} data-lazy-video-dialog={lazyVideo ? "" : undefined} onclick={lazyVideo ? undefined : `if (event.target === this) this.close()`}>
   <div class="video-dialog-content">
     <button
       type="button"
       class="video-dialog-close"
       aria-label="Close video preview"
-      onclick={`document.getElementById('${id}').close()`}
+      data-video-close={lazyVideo ? "" : undefined}
+      onclick={lazyVideo ? undefined : `document.getElementById('${id}').close()`}
     >&times;</button>
     {isGif ? (
       <img src={src} alt={label} class="video-dialog-image" />
     ) : (
-      <video controls autoplay muted loop playsinline class="video-dialog-player">
-        <source src={src} type={sourceType} />
+      <video controls autoplay={!lazyVideo} muted loop={!lazyVideo} playsinline preload={lazyVideo ? "none" : undefined} class="video-dialog-player" aria-label={label}>
+        <source src={lazyVideo ? undefined : src} data-src={lazyVideo ? src : undefined} type={sourceType} />
         Your browser does not support the video tag.
       </video>
     )}
   </div>
 </dialog>
 
+<script>
+  type PreviewState = { visible: boolean; pausedByUser: boolean; toggle: HTMLButtonElement };
+  const previews = new Map<HTMLVideoElement, PreviewState>();
+  let pageActive = true;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const updateToggle = (state: PreviewState) => {
+    const label = state.pausedByUser ? 'Play preview' : 'Pause preview';
+    state.toggle.setAttribute('aria-label', label);
+    state.toggle.title = label;
+    state.toggle.dataset.paused = String(state.pausedByUser);
+  };
+  const loadVideo = (video: HTMLVideoElement) => {
+    const source = video.querySelector('source');
+    if (source?.dataset.src && !source.hasAttribute('src')) {
+      source.src = source.dataset.src;
+      video.load();
+    }
+  };
+  const updatePreviews = () => {
+    const modalOpen = !!document.querySelector('[data-lazy-video-dialog][open]');
+    previews.forEach((state, video) => {
+      const shouldPlay = pageActive && state.visible && !state.pausedByUser && !document.hidden && !modalOpen;
+      if (shouldPlay) {
+        loadVideo(video);
+        if (video.paused) void video.play().catch((error: unknown) => {
+          // Scrolling or opening the lightbox can legitimately interrupt play().
+          if (error instanceof DOMException && error.name === 'NotAllowedError') {
+            state.pausedByUser = true;
+            updateToggle(state);
+          }
+        });
+      } else video.pause();
+      updateToggle(state);
+    });
+  };
+  const previewObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const state = previews.get(entry.target as HTMLVideoElement);
+      if (state) state.visible = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+    });
+    updatePreviews();
+  }, { threshold: [0, 0.25], rootMargin: '-64px 0px 0px 0px' }) : null;
+  const initializeLazyVideos = () => {
+    document.querySelectorAll<HTMLDialogElement>('[data-lazy-video-dialog]').forEach((dialog) => {
+      if (dialog.dataset.videoInitialized) return;
+      const video = dialog.querySelector('video');
+      const source = video?.querySelector('source');
+      const trigger = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-video-open]'))
+        .find((button) => button.dataset.videoOpen === dialog.id);
+      if (!video || !source?.dataset.src || !trigger) return;
+      dialog.dataset.videoInitialized = 'true';
+      const preview = trigger.querySelector<HTMLVideoElement>('[data-viewport-video]');
+      const toggle = trigger.parentElement?.querySelector<HTMLButtonElement>('[data-preview-toggle]');
+      if (preview && toggle) {
+        const state = { visible: !previewObserver, pausedByUser: reducedMotion.matches || !previewObserver, toggle };
+        previews.set(preview, state);
+        updateToggle(state);
+        toggle.addEventListener('click', () => {
+          state.pausedByUser = !state.pausedByUser;
+          updatePreviews();
+        });
+        previewObserver?.observe(preview);
+      }
+      trigger.addEventListener('click', () => {
+        document.querySelectorAll<HTMLDialogElement>('[data-lazy-video-dialog][open]').forEach((openDialog) => openDialog.close());
+        loadVideo(video);
+        dialog.showModal();
+        updatePreviews();
+        void video.play().catch(() => { /* Native controls remain available if playback is blocked. */ });
+      });
+      dialog.querySelector('[data-video-close]')?.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog || event.target === dialog.querySelector('.video-dialog-content')) dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        video.pause();
+        source.removeAttribute('src');
+        video.load();
+        updatePreviews();
+      });
+    });
+  };
+  const pauseLazyVideos = () => document.querySelectorAll<HTMLVideoElement>('[data-lazy-video-dialog] video').forEach((video) => video.pause());
+  const closeLazyVideos = () => document.querySelectorAll<HTMLDialogElement>('[data-lazy-video-dialog][open]').forEach((dialog) => dialog.close());
+  const cleanupPreviews = () => {
+    previews.forEach((_, video) => video.pause());
+    previewObserver?.disconnect();
+    previews.clear();
+  };
+  initializeLazyVideos();
+  document.addEventListener('astro:page-load', initializeLazyVideos);
+  document.addEventListener('astro:before-swap', () => { cleanupPreviews(); closeLazyVideos(); });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) pauseLazyVideos();
+    updatePreviews();
+  });
+  reducedMotion.addEventListener('change', () => {
+    if (reducedMotion.matches) previews.forEach((state) => { state.pausedByUser = true; });
+    updatePreviews();
+  });
+  window.addEventListener('pagehide', () => { pageActive = false; updatePreviews(); closeLazyVideos(); });
+  window.addEventListener('pageshow', () => { pageActive = true; updatePreviews(); });
+</script>
+
 <style>
   :root {
     --video-dialog-safe-pad: clamp(12px, 2vw, 24px);
   }
 
-  .video-lightbox-wrapper {
-    text-align: center;
+  .video-lightbox-figure {
     margin: 20px 0;
   }
+  .video-lightbox-wrapper { text-align: center; }
+  .video-caption { margin: .5rem 0 0; text-align: center; font-size: .85rem; line-height: 1.5; font-weight: 400; font-style: italic; color: #737373; }
+  :global([data-theme="dark"]) .video-caption { color: #a3a3a3; }
 
   .video-lightbox-trigger {
     display: inline-block;
@@ -84,6 +221,25 @@ const sourceType = isMp4 ? 'video/mp4' : 'video/webm';
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
+
+  .video-lazy-trigger { width: 100%; cursor: pointer; text-align: left; border-radius: 8px; }
+  .video-lazy-trigger:focus-visible { outline: 2px solid var(--sl-color-text-accent, #c95c40); outline-offset: 4px; }
+  .video-watch-card { display: flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid var(--sl-color-gray-5, #ddd); border-radius: 8px; background: var(--sl-color-gray-7, #fafafa); color: var(--sl-color-text, #222); }
+  .video-watch-card svg { flex-shrink: 0; color: var(--sl-color-text-accent, #c95c40); }
+  .video-watch-card strong { display: block; font-size: 1rem; }
+  .video-watch-hint { display: block; margin-top: .25rem; font-size: .8rem; color: var(--sl-color-gray-2, #555); }
+  .video-lazy-trigger:hover .video-watch-card { border-color: var(--sl-color-text-accent, #c95c40); }
+  .video-viewport-wrapper { position: relative; }
+  .video-viewport-trigger { display: block; text-align: center; cursor: zoom-in; }
+  .video-viewport-preview { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: var(--sl-color-gray-6, #eee); border-radius: 8px; }
+  .video-preview-toggle { position: absolute; bottom: 10px; right: 10px; display: grid; place-items: center; width: 36px; height: 36px; padding: 0; margin: 0; border: 1px solid #ffffff80; border-radius: 50%; background: #000b; color: #fff; cursor: pointer; opacity: 0; pointer-events: none; }
+  .video-viewport-wrapper:hover .video-preview-toggle,
+  .video-viewport-wrapper:focus-within .video-preview-toggle,
+  .video-preview-toggle[data-paused="true"] { opacity: 1; pointer-events: auto; }
+  .video-preview-toggle:focus-visible { outline: 2px solid var(--sl-color-text-accent, #c95c40); outline-offset: 3px; }
+  .preview-play-icon, .video-preview-toggle[data-paused="true"] .preview-pause-icon { display: none; }
+  .video-preview-toggle[data-paused="true"] .preview-play-icon { display: block; }
+  @media (hover: none) { .video-preview-toggle { opacity: 1; pointer-events: auto; } }
 
   @media (min-width: 768px) {
     .video-preview,
@@ -132,6 +288,7 @@ const sourceType = isMp4 ? 'video/mp4' : 'video/webm';
   }
 
   .video-dialog-close {
+    z-index: 1;
     position: absolute;
     top: 12px;
     right: 12px;

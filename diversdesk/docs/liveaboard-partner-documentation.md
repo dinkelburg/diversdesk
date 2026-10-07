@@ -43,7 +43,11 @@ Regular documentation pages have no audience switcher or audience heading link. 
 
 Manuals, article lists, and navigation are static. Search operates on files in memory; it makes no booking, customer, payment, or application-database queries. Ordinary article search does not use an AI provider. Search failures retain links to the audience manual, which works without JavaScript.
 
-The company/partner-specific settings selector is deliberately deferred. No live account settings or email delivery history are fetched. Generic instructions use the actual reservation as the authority for amounts and deadlines.
+The public documentation remains generic. Operator-specific guidance is implemented in the separate application's `/partner/guide` page, reached through Partner portal → Booking guide. It uses the authenticated partner's active liveaboard connections; the selector includes the operator and location, and selects a sole connection automatically. The partner can also choose the general guide.
+
+The application guide uses three read-only queries after authentication: connected locations, the selected agreement's effective policy, and a bounded set of email settings. It does not load availability, bookings, customers, invoices, or email delivery logs, and does not send emails or change settings. Only safe configuration summaries reach the browser. The response is private and not cached; operator selection reloads current settings. Existing reservations remain authoritative for saved terms, amounts, deadlines, full-payment arrangements and available actions.
+
+Missing or unauthorized selections never load another operator's settings. Settings failures show all six general steps, with unknown email behavior clearly identified, plus a link to the public manual. The route error page also retains that manual link. Email summaries describe configuration rather than delivery; booking-specific eligibility, invoice notifications and manual sends can differ. This guide does not personalize AI search.
 
 ## Verification
 
