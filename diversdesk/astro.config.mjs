@@ -324,6 +324,7 @@ export default defineConfig({
     components: {
       Head: './src/components/ui/starlight/Head.astro',
       Search: './src/components/ui/starlight/AiSearch.astro',
+      Sidebar: './src/components/ui/starlight/Sidebar.astro',
       SiteTitle: './src/components/ui/starlight/SiteTitle.astro'
     },
     head: [{

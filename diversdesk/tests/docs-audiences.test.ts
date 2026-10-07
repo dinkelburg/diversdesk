@@ -147,7 +147,7 @@ test("internal documentation links stay scoped without changing application or e
   );
   assert.equal(
     scopeDocLink("/welcome-to-docs/", "/", "partners", docs),
-    "/help/partners/",
+    "/welcome-to-docs/",
   );
   for (const link of [
     "https://app.diversdesk.com/booking/123",

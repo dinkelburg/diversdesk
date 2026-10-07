@@ -105,7 +105,8 @@ export const scopeDocLink = (
     return href;
   const path = normalizeDocPath(url.pathname);
   if (path.startsWith("help/")) return href;
-  if (path === "welcome-to-docs") return audienceHome(audience);
+  // The public chooser must stay reachable when intentionally switching hubs.
+  if (path === "welcome-to-docs") return href;
   const doc = docs.find((entry) => normalizeDocPath(entry.id) === path);
   if (!doc || !visibleToAudience(doc, audience)) return href;
   return `${audienceDocHref(audience, doc.id)}${url.search}${url.hash}`;

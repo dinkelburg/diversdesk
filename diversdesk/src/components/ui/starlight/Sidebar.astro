@@ -1,0 +1,54 @@
+---
+import DefaultSidebar from '@astrojs/starlight/components/Sidebar.astro';
+import { audienceLabels, resolveDocAudience } from '../../../lib/docs/audiences';
+
+const audience = resolveDocAudience(Astro.url.pathname, Astro.locals.starlightRoute.entry.data.audiences);
+---
+
+<DefaultSidebar />
+<div class="docs-hub-switch">
+  <span class="docs-hub-name">{audienceLabels[audience]}</span>
+  <span class="docs-hub-separator" aria-hidden="true">·</span>
+  <a href="/welcome-to-docs/" aria-label="Switch documentation hub">
+    <span>Switch</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M4 7h16m-4-4 4 4-4 4M20 17H4m4-4-4 4 4 4" />
+    </svg>
+  </a>
+</div>
+
+<style>
+  .docs-hub-switch {
+    position: sticky;
+    bottom: 0;
+    margin-top: auto;
+    padding: .85rem 0;
+    border-top: 1px solid var(--sl-color-hairline-light);
+    background: var(--sl-color-bg-sidebar, var(--sl-color-black));
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: .3rem;
+    font-size: .7rem;
+    line-height: 1.4;
+  }
+  .docs-hub-name, .docs-hub-separator { color: var(--sl-color-gray-3); }
+  .docs-hub-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .docs-hub-separator { flex-shrink: 0; }
+  .docs-hub-switch a {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+    gap: .25rem;
+    padding: .4rem 0;
+    border-radius: .25rem;
+    color: var(--sl-color-text-accent);
+    font-size: inherit;
+    text-decoration: none;
+  }
+  .docs-hub-switch svg { flex-shrink: 0; }
+  .docs-hub-switch a:hover { text-decoration: underline; }
+  .docs-hub-switch a:focus-visible { outline: 2px solid var(--sl-color-text-accent); outline-offset: 2px; }
+  @media (pointer: coarse) { .docs-hub-switch a { min-height: 44px; } }
+</style>
