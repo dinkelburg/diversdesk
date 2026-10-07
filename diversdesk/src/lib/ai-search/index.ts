@@ -1,3 +1,4 @@
+import type { MarkdownHeading } from "astro";
 import { audienceDocHref, type DocAudience } from "../docs/audiences";
 
 const DOCS_ORIGIN = "https://www.diversdesk.com";
@@ -125,12 +126,6 @@ const tokenize = (value: string) =>
     .map(stem)
     .filter((token) => token.length > 1 && !stopWords.has(token));
 
-const slugifyHeading = (heading: string) =>
-  normalize(heading)
-    .replace(/[^a-z0-9\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-");
-
 const splitLongText = (text: string) => {
   if (text.length <= MAX_CHUNK_LENGTH) return [text];
 
@@ -146,32 +141,44 @@ const splitLongText = (text: string) => {
   }, []);
 };
 
-const splitIntoSections = (body: string) => {
-  const sections: Array<{ heading: string | null; text: string }> = [];
+const splitIntoSections = (body: string, headings: MarkdownHeading[] = []) => {
+  const headingSlugs = new Map<string, string[]>();
+  for (const heading of headings) {
+    const key = `${heading.depth}:${cleanInlineMarkdown(heading.text)}`;
+    const slugs = headingSlugs.get(key) ?? [];
+    slugs.push(heading.slug);
+    headingSlugs.set(key, slugs);
+  }
+  const sections: Array<{ heading: string | null; headingSlug: string | null; text: string }> = [];
   let heading: string | null = null;
+  let headingSlug: string | null = null;
   let lines: string[] = [];
 
   const flush = () => {
     const text = cleanBody(lines.join("\n"));
-    if (text) sections.push({ heading, text });
+    if (text) sections.push({ heading, headingSlug, text });
     lines = [];
   };
 
   body.split(/\r?\n/).forEach((line) => {
-    const headingMatch = line.match(/^#{2,3}\s+(.+)$/);
+    const headingMatch = line.match(/^(#{2,3})\s+(.+?)(?:\s+#+\s*)?$/);
     if (!headingMatch) {
       lines.push(line);
       return;
     }
 
     flush();
-    heading = cleanInlineMarkdown(headingMatch[1]);
+    heading = cleanInlineMarkdown(headingMatch[2]);
+    // Consume repeated headings in order. Unmatched sections (including transcripts)
+    // link to the page instead of inventing an anchor that does not exist.
+    headingSlug = headingSlugs.get(`${headingMatch[1].length}:${heading}`)?.shift() ?? null;
   });
   flush();
 
   return sections.flatMap((section) =>
     splitLongText(section.text).map((text) => ({
       heading: section.heading,
+      headingSlug: section.headingSlug,
       text,
     })),
   );
@@ -180,6 +187,7 @@ const splitIntoSections = (body: string) => {
 const createChunk = (args: {
   audience: DocAudience;
   heading: string | null;
+  headingSlug: string | null;
   index: number;
   pagePath: string;
   text: string;
@@ -190,7 +198,7 @@ const createChunk = (args: {
     audienceDocHref(args.audience, args.pagePath),
     DOCS_ORIGIN,
   );
-  if (args.heading) url.hash = slugifyHeading(args.heading);
+  if (args.headingSlug) url.hash = args.headingSlug;
 
   const bodyTokens = tokenize(args.text);
   const bodyTermCounts = bodyTokens.reduce<Map<string, number>>(
@@ -224,6 +232,7 @@ export type SearchDocument = {
   id: string;
   title: string;
   body: string;
+  headings?: MarkdownHeading[];
   audiences: DocAudience[];
   draft?: boolean;
   searchEnabled?: boolean;
@@ -242,10 +251,11 @@ export const createDocSearchIndex = (
         doc.audiences.includes(audience),
     )
     .flatMap((doc) =>
-      splitIntoSections(doc.body).map((section, index) => ({
+      splitIntoSections(doc.body, doc.headings).map((section, index) => ({
         ...createChunk({
           audience,
           heading: section.heading,
+          headingSlug: section.headingSlug,
           index,
           pagePath: doc.id,
           text: section.text,

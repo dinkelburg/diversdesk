@@ -26,7 +26,12 @@ const { audience } = Astro.props;
     form.dataset.bound = 'true';
     open.addEventListener('click', (event) => { event.preventDefault(); dialog.showModal(); input.focus(); });
     dialog.querySelector('[data-article-search-close]')?.addEventListener('click', () => dialog.close());
-    dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('click', (event) => {
+      // Same-page results only change the hash, so navigation will not dismiss the modal.
+      if (event.target === dialog || (event.target instanceof Element && event.target.closest('a[href]'))) {
+        dialog.close();
+      }
+    });
     let controller: AbortController | undefined;
     form.addEventListener('submit', async (event) => {
       event.preventDefault();

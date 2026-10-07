@@ -1,4 +1,4 @@
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 import { docAudiences, type DocAudience } from "../docs/audiences";
 import { createDocSearchIndex, type SearchDocument } from "./index";
 export type { SearchSource } from "./index";
@@ -21,14 +21,19 @@ const frontmatterValue = (raw: string, key: string) => {
 // Loaded once per server instance. All three indexes use published files, never application data.
 const loadIndexes = async () => {
   const docs = await getCollection("docs");
-  const documents: SearchDocument[] = docs.map((doc) => ({
+  const searchableDocs = docs.filter((doc) =>
+    !doc.data.draft && doc.data.pagefind && doc.data.audiences.length > 0,
+  );
+  const documents: SearchDocument[] = await Promise.all(searchableDocs.map(async (doc) => ({
     id: doc.id,
     title: doc.data.title,
     body: doc.body ?? "",
+    // Read Astro's compiled heading metadata, including punctuation and duplicate IDs.
+    headings: (await render(doc)).headings,
     audiences: doc.data.audiences,
     draft: doc.data.draft,
     searchEnabled: doc.data.pagefind,
-  }));
+  })));
   for (const [path, raw] of Object.entries(rawTranscripts)) {
     if (frontmatterValue(raw, "index") !== "true") continue;
     const id = frontmatterValue(raw, "videoSlug")?.replace(/^\/+|\/+$/g, "");

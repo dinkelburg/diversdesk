@@ -60,6 +60,61 @@ const documents: SearchDocument[] = [
   },
 ];
 
+test("search links use rendered heading IDs, including punctuation and duplicates", () => {
+  const index = createDocSearchIndex([{
+    id: "getting-started/quickstart-guide",
+    title: "Quickstart",
+    audiences: ["operators"],
+    body: [
+      "## 2. Personalize & Add Your Offerings",
+      "Configure offerings.",
+      "## Café & résumé",
+      "Accented headings.",
+      "## Repeated",
+      "First section.",
+      "## Repeated",
+      "Second section.",
+      "### **Custom** heading ###",
+      "Custom anchor.",
+    ].join("\n"),
+    headings: [
+      { depth: 2, text: "2. Personalize & Add Your Offerings", slug: "2-personalize--add-your-offerings" },
+      { depth: 2, text: "Café & résumé", slug: "café--résumé" },
+      { depth: 2, text: "Repeated", slug: "repeated" },
+      { depth: 2, text: "Repeated", slug: "repeated-1" },
+      { depth: 3, text: "Custom heading", slug: "custom-anchor" },
+    ],
+  }], "operators");
+  const sources = index.getDocsByIds(Array.from({ length: 5 }, (_, i) => `getting-started/quickstart-guide:${i}`));
+  assert.deepEqual(sources.map((source) => decodeURIComponent(new URL(source.url).hash)), [
+    "#2-personalize--add-your-offerings", "#café--résumé", "#repeated", "#repeated-1", "#custom-anchor",
+  ]);
+});
+
+test("long sections keep their rendered anchor on every search chunk", () => {
+  const index = createDocSearchIndex([{
+    id: "faq/long",
+    title: "Long guide",
+    audiences: ["operators"],
+    body: "## Long & detailed\n" + "A sentence about bookings. ".repeat(150),
+    headings: [{ depth: 2, text: "Long & detailed", slug: "long--detailed" }],
+  }], "operators");
+  const sources = index.getDocsByIds(["faq/long:0", "faq/long:1", "faq/long:2"]);
+  assert.equal(sources.length, 3);
+  assert.ok(sources.every((source) => new URL(source.url).hash === "#long--detailed"));
+});
+
+test("unmatched and transcript headings link to the page without an invented fragment", () => {
+  const index = createDocSearchIndex([
+    { id: "faq/unmatched", title: "Guide", body: "## Missing heading\nBooking instructions.", audiences: ["operators"], headings: [] },
+    { id: "video-training/example", sourceId: "transcript:example", title: "Video", body: "## 01:30 Booking walkthrough\nBooking instructions.", audiences: ["operators"] },
+  ], "operators");
+  assert.deepEqual(index.getDocsByIds(["faq/unmatched:0", "transcript:example:0"]).map((source) => source.url), [
+    "https://www.diversdesk.com/help/operators/faq/unmatched/",
+    "https://www.diversdesk.com/help/operators/video-training/example/",
+  ]);
+});
+
 test("each audience searches only published assigned articles, with scoped source links", () => {
   for (const audience of [
     "partners",
