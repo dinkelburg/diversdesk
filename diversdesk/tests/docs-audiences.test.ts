@@ -91,6 +91,38 @@ test("search links use rendered heading IDs, including punctuation and duplicate
   ]);
 });
 
+test("heading lookup matches smart quotes while preserving rendered slugs and source titles", () => {
+  const index = createDocSearchIndex([{
+    id: "workflows/registration-methods",
+    title: "Registration methods",
+    audiences: ["operators"],
+    body: [
+      "## Intro to Diversdesk's Onboarding Flexibility",
+      "Choose an onboarding method.",
+      "### Sharing the 'Generic Registration Page'",
+      "Share the registration link.",
+      '### Choose "Guest"',
+      "First choice.",
+      '### Choose “Guest”',
+      "Second choice.",
+    ].join("\n"),
+    headings: [
+      { depth: 2, text: "Intro to Diversdesk’s Onboarding Flexibility", slug: "intro-to-diversdesks-onboarding-flexibility" },
+      { depth: 3, text: "Sharing the ‘Generic Registration Page’", slug: "sharing-the-generic-registration-page" },
+      { depth: 3, text: 'Choose “Guest”', slug: "choose-guest" },
+      { depth: 3, text: 'Choose “Guest”', slug: "choose-guest-1" },
+    ],
+  }], "operators");
+  const sources = index.getDocsByIds(Array.from({ length: 4 }, (_, i) => `workflows/registration-methods:${i}`));
+  assert.deepEqual(sources.map((source) => new URL(source.url).hash), [
+    "#intro-to-diversdesks-onboarding-flexibility",
+    "#sharing-the-generic-registration-page",
+    "#choose-guest",
+    "#choose-guest-1",
+  ]);
+  assert.equal(sources[1].title, "Registration methods — Sharing the 'Generic Registration Page'");
+});
+
 test("long sections keep their rendered anchor on every search chunk", () => {
   const index = createDocSearchIndex([{
     id: "faq/long",

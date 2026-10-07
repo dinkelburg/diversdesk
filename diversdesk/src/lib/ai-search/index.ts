@@ -141,10 +141,15 @@ const splitLongText = (text: string) => {
   }, []);
 };
 
+// Astro can smarten quotes in rendered headings. Normalize only the lookup key,
+// preserving the original title and Astro's exact slug.
+const headingKey = (depth: number, text: string) =>
+  `${depth}:${cleanInlineMarkdown(text).replace(/[‘’]/g, "'").replace(/[“”]/g, '"')}`;
+
 const splitIntoSections = (body: string, headings: MarkdownHeading[] = []) => {
   const headingSlugs = new Map<string, string[]>();
   for (const heading of headings) {
-    const key = `${heading.depth}:${cleanInlineMarkdown(heading.text)}`;
+    const key = headingKey(heading.depth, heading.text);
     const slugs = headingSlugs.get(key) ?? [];
     slugs.push(heading.slug);
     headingSlugs.set(key, slugs);
@@ -171,7 +176,7 @@ const splitIntoSections = (body: string, headings: MarkdownHeading[] = []) => {
     heading = cleanInlineMarkdown(headingMatch[2]);
     // Consume repeated headings in order. Unmatched sections (including transcripts)
     // link to the page instead of inventing an anchor that does not exist.
-    headingSlug = headingSlugs.get(`${headingMatch[1].length}:${heading}`)?.shift() ?? null;
+    headingSlug = headingSlugs.get(headingKey(headingMatch[1].length, headingMatch[2]))?.shift() ?? null;
   });
   flush();
 
