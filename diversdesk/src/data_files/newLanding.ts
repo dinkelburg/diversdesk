@@ -1,4 +1,5 @@
 import type { ImageMetadata } from "astro";
+import { solutionFeatureSlugs } from "./featureRoutes.mjs";
 import heroImage from "@images/hero-image-1920.avif";
 import plannerImage from "@images/iPad_pro_detailed_day.avif";
 import waiversImage from "@images/custom_waivers_2.avif";
@@ -60,9 +61,8 @@ export const homeHeroImage = heroImage;
 
 export const homepageStats: StatItem[] = [
   {
-    value: 65,
-    suffix: "%",
-    label: "Faster onboarding",
+    value: 1,
+    label: "Connected onboarding journey",
     detail: "Shorten the time it takes guests to register, sign waivers, and pay before arrival.",
   },
   {
@@ -536,9 +536,8 @@ export const solutions: SolutionPage[] = [
     ],
     stats: [
       {
-        value: 65,
-        suffix: "%",
-        label: "Faster guest onboarding",
+        value: 1,
+        label: "Connected guest journey",
         detail: "Complete registration, waivers, and prepayments before guests arrive at the desk.",
       },
       {
@@ -559,17 +558,7 @@ export const solutions: SolutionPage[] = [
         detail: "Move waivers, medicals, and onboarding away from printed forms.",
       },
     ],
-    featureSlugs: [
-      "digital-onboarding",
-      "planner-scheduling",
-      "booking-engine-channel-manager",
-      "inventory-pos-rentals",
-      "staff-wages-workload",
-      "finance-bookkeeping",
-      "payment-gateways",
-      "agents-partners-portal",
-      "group-bookings-split-billing-discounts",
-    ],
+    featureSlugs: solutionFeatureSlugs["dive-centers"],
     faqs: [
       {
         question: "Can DiversDesk support trips, courses, rentals, and retail in one workflow?",
@@ -632,9 +621,8 @@ export const solutions: SolutionPage[] = [
         detail: "Keep availability closer to real demand across direct and partner-led selling.",
       },
       {
-        value: 65,
-        suffix: "%",
-        label: "Faster pre-arrival onboarding",
+        value: 1,
+        label: "Pre-arrival registration flow",
         detail: "Collect the operational details you need before guests check in at the property.",
       },
       {
@@ -643,18 +631,7 @@ export const solutions: SolutionPage[] = [
         detail: "Keep the stay, the dive plan, and the billing story connected from start to finish.",
       },
     ],
-    featureSlugs: [
-      "digital-onboarding",
-      "planner-scheduling",
-      "booking-engine-channel-manager",
-      "inventory-pos-rentals",
-      "finance-bookkeeping",
-      "payment-gateways",
-      "agents-partners-portal",
-      "accommodation-channel-manager",
-      "group-bookings-split-billing-discounts",
-      "staff-wages-workload",
-    ],
+    featureSlugs: solutionFeatureSlugs["dive-resorts"],
     faqs: [
       {
         question: "Can DiversDesk manage rooms and diving together?",
@@ -728,16 +705,7 @@ export const solutions: SolutionPage[] = [
         detail: "Cover sales, agents, onboarding, manifests, payments, inventory, and onboard commercial operations.",
       },
     ],
-    featureSlugs: [
-      "booking-engine-channel-manager",
-      "agents-partners-portal",
-      "inventory-pos-rentals",
-      "payment-gateways",
-      "finance-bookkeeping",
-      "vessel-cabin-management",
-      "manifests-guest-automation",
-      "digital-onboarding",
-    ],
+    featureSlugs: solutionFeatureSlugs.liveaboards,
     faqs: [
       {
         question: "Can agents see live cabin availability and contracted rates?",

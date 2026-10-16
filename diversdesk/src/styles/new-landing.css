@@ -158,8 +158,7 @@
   display: none;
 }
 
-.preview-nav details[open] > summary,
-.preview-dropdown:hover > summary {
+.preview-nav details[open] > summary {
   background: #fff7ed;
   color: #c2410c;
 }
@@ -168,8 +167,7 @@
   display: none;
 }
 
-.preview-dropdown[open] .preview-dropdown-panel,
-.preview-dropdown:hover .preview-dropdown-panel {
+.preview-dropdown[open] .preview-dropdown-panel {
   display: block;
 }
 
@@ -190,4 +188,34 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.landing-body [hidden] {
+  display: none !important;
+}
+
+.landing-body :is(a, button, summary):focus-visible {
+  outline: 3px solid #c2410c;
+  outline-offset: 4px;
+}
+
+.preview-nav summary {
+  cursor: pointer;
+}
+
+.feature-filter {
+  border: 1px solid #cbd5e1;
+  border-radius: 9999px;
+  padding: 0.7rem 1.1rem;
+  color: #334155;
+  background: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.feature-filter:hover,
+.feature-filter[aria-pressed="true"] {
+  border-color: #c2410c;
+  color: #9a3412;
+  background: #fff7ed;
 }

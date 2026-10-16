@@ -31,7 +31,7 @@ const { title, intro, stats }: Props = Astro.props;
         {stats.map((stat) => (
           <div class="rounded-[24px] border border-slate-200/70 bg-white/80 p-5">
             <p class="landing-stat-value text-5xl font-semibold text-slate-950 sm:text-6xl">
-              <span>{stat.prefix || ""}</span><span data-countup-target={stat.value} data-countup-suffix={stat.suffix || ""}>0</span>
+              <span>{stat.prefix || ""}</span><span data-countup-target={stat.value} data-countup-suffix={stat.suffix || ""}>{stat.value}{stat.suffix || ""}</span>
             </p>
             <h3 class="mt-4 text-lg font-semibold text-slate-900">{stat.label}</h3>
             <p class="mt-2 text-sm leading-6 text-slate-600">{stat.detail}</p>
@@ -46,6 +46,7 @@ const { title, intro, stats }: Props = Astro.props;
   const countupGroups = document.querySelectorAll("[data-countup-group]");
 
   countupGroups.forEach((group) => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
     if (group.dataset.countupBound === "true") return;
     group.dataset.countupBound = "true";
 

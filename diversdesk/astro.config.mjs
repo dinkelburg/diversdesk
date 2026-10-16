@@ -6,12 +6,14 @@ import compressor from 'astro-compressor';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom';
 import mdx from '@astrojs/mdx';
+import { previewFeatureRedirects } from './src/data_files/featureRoutes.mjs';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.diversdesk.com',
 
   redirects: {
+    ...previewFeatureRedirects,
     "/help/operators/getting-started/quickstart-guide": "/help/operators/",
     "/help/liveaboard-operators/getting-started/quickstart-guide": "/help/liveaboard-operators/",
     "/liveaboard-partners": "/liveaboard-partner-portal/",

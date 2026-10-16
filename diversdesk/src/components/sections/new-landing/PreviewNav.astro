@@ -1,6 +1,11 @@
 ---
 import BrandLogo from "@components/BrandLogo.astro";
-import { solutionMap, type SolutionSlug } from "@data/newLanding";
+import { featureGroups } from "@data/featureContent";
+
+interface Props {
+  homeHref?: string;
+}
+const { homeHref = "/new" } = Astro.props;
 
 const solutionLinks = [
   {
@@ -22,14 +27,12 @@ const solutionLinks = [
 
 const pagePath = Astro.url.pathname;
 const isSolutionsRoute = pagePath.startsWith("/new/solutions/");
-const selectedSolutionSlug = pagePath.match(/^\/new\/solutions\/([^/]+)/)?.[1] as SolutionSlug | undefined;
-const selectedSolution = selectedSolutionSlug ? solutionMap[selectedSolutionSlug] : undefined;
-const featuresHref = selectedSolution ? `/new/solutions/${selectedSolution.slug}/features` : "/new/features";
+const isFeaturesRoute = pagePath.startsWith("/new/features");
 ---
 
 <header class="preview-nav-wrap sticky top-0 z-[60] border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
-  <nav class="preview-nav mx-auto flex w-full max-w-[1680px] items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Preview navigation">
-    <a class="flex items-center gap-3 rounded-full px-1 py-1" href="/new" aria-label="DiversDesk preview homepage">
+  <nav class="preview-nav relative mx-auto flex w-full max-w-[1680px] items-center justify-between px-4 py-3 sm:px-6 lg:px-8" aria-label="Main navigation">
+    <a class="flex items-center gap-3 rounded-full px-1 py-1" href={homeHref} aria-label="DiversDesk preview homepage">
       <BrandLogo class="h-auto w-28" />
       <span class="hidden rounded-full bg-orange-50 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-orange-700 sm:inline-flex">
         Preview
@@ -39,7 +42,7 @@ const featuresHref = selectedSolution ? `/new/solutions/${selectedSolution.slug}
     <div class="hidden items-center gap-3 lg:flex">
       <details class="preview-dropdown group relative">
         <summary class={`preview-nav-link list-none ${isSolutionsRoute ? "preview-nav-link-active" : ""}`}>
-          <span>{selectedSolution ? selectedSolution.shortLabel : "Solutions"}</span>
+          <span>Solutions</span>
           <svg class="h-4 w-4 text-slate-500 transition group-open:rotate-180" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="m5 8 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
@@ -57,9 +60,27 @@ const featuresHref = selectedSolution ? `/new/solutions/${selectedSolution.slug}
         </div>
       </details>
 
-      <a class={`preview-nav-link ${pagePath === featuresHref || pagePath.includes("/features") ? "preview-nav-link-active" : ""}`} href={featuresHref}>
-        Features
-      </a>
+      <details class="preview-dropdown group">
+        <summary class={`preview-nav-link list-none ${isFeaturesRoute ? "preview-nav-link-active" : ""}`}>
+          <span>Features</span>
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 8 5 5 5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </summary>
+        <div class="preview-dropdown-panel absolute left-1/2 top-full w-[min(960px,calc(100vw-3rem))] -translate-x-1/2 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_24px_60px_rgba(15,23,42,0.14)]">
+          <a class="flex items-center justify-between gap-6 rounded-2xl bg-orange-50 p-4 font-semibold text-orange-800 hover:bg-orange-100" href="/new/features">
+            <span>Explore all features<span class="mt-1 block text-sm font-normal text-slate-600">Find the tools that fit your operation.</span></span><span aria-hidden="true">→</span>
+          </a>
+          <div class="mt-6 grid grid-cols-3 gap-6">
+            {featureGroups.map((group) => (
+              <div>
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-500">{group.title}</p>
+                <ul class="mt-3 space-y-1">
+                  {group.features.map((feature) => <li><a class="block rounded-xl px-3 py-2 text-sm font-medium leading-6 text-slate-800 hover:bg-orange-50 hover:text-orange-800" href={`/new/features/${feature.slug}`}>{feature.label}</a></li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </details>
       <a class="preview-nav-link" href="/pricing">
         Pricing
       </a>
@@ -77,12 +98,12 @@ const featuresHref = selectedSolution ? `/new/solutions/${selectedSolution.slug}
     </div>
 
     <details class="preview-mobile-menu relative lg:hidden">
-      <summary class="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 list-none">
+      <summary aria-label="Open navigation" class="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white text-slate-900 list-none">
         <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
         </svg>
       </summary>
-      <div class="landing-panel absolute right-0 top-[calc(100%+1rem)] w-[min(24rem,calc(100vw-2rem))] rounded-[28px] p-4 shadow-[0_24px_60px_rgba(15,23,42,0.14)]">
+      <div class="landing-panel absolute right-0 top-[calc(100%+1rem)] max-h-[calc(100dvh-7rem)] w-[min(24rem,calc(100vw-2rem))] overflow-y-auto rounded-[28px] p-4 shadow-[0_24px_60px_rgba(15,23,42,0.14)]">
         <div class="space-y-4">
           <div>
             <p class="px-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">Solutions</p>
@@ -97,7 +118,15 @@ const featuresHref = selectedSolution ? `/new/solutions/${selectedSolution.slug}
           </div>
           <div class="landing-divider"></div>
           <div class="space-y-2">
-            <a class="block rounded-full px-3 py-2 text-sm font-semibold text-slate-800" href={featuresHref}>Features</a>
+            <a class="block rounded-xl bg-orange-50 px-3 py-3 text-sm font-semibold text-orange-800" href="/new/features">Explore all features →</a>
+            {featureGroups.map((group) => (
+              <details class="rounded-xl border border-slate-200">
+                <summary class="cursor-pointer px-3 py-3 text-sm font-semibold text-slate-800">{group.title}</summary>
+                <ul class="space-y-1 px-3 pb-3">
+                  {group.features.map((feature) => <li><a class="block rounded-lg px-2 py-2 text-sm text-slate-700 hover:bg-orange-50" href={`/new/features/${feature.slug}`}>{feature.label}</a></li>)}
+                </ul>
+              </details>
+            ))}
             <a class="block rounded-full px-3 py-2 text-sm font-semibold text-slate-800" href="/pricing">Pricing</a>
             <a class="block rounded-full px-3 py-2 text-sm font-semibold text-slate-800" href="/about">About</a>
             <a class="block rounded-full px-3 py-2 text-sm font-semibold text-slate-800" href="/contact">Contact</a>
@@ -111,3 +140,29 @@ const featuresHref = selectedSolution ? `/new/solutions/${selectedSolution.slug}
     </details>
   </nav>
 </header>
+
+<script>
+  const nav = document.querySelector<HTMLElement>(".preview-nav");
+  if (nav) {
+    const menus = Array.from(nav.querySelectorAll<HTMLDetailsElement>(".preview-dropdown, .preview-mobile-menu"));
+    for (const menu of menus) {
+      menu.addEventListener("toggle", () => {
+        if (menu.open) for (const other of menus) if (other !== menu) other.open = false;
+      });
+      menu.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          menu.open = false;
+          menu.querySelector("summary")?.focus();
+        }
+      });
+    }
+    document.addEventListener("click", (event) => {
+      if (event.target instanceof Node && !nav.contains(event.target)) for (const menu of menus) menu.open = false;
+    });
+    nav.addEventListener("focusout", () => {
+      requestAnimationFrame(() => {
+        for (const menu of menus) if (!menu.contains(document.activeElement)) menu.open = false;
+      });
+    });
+  }
+</script>

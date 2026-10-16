@@ -1,81 +1,132 @@
 ---
+import { Image } from "astro:assets";
 import FAQ from "@components/sections/FAQ.astro";
 import FaqSchema from "@components/sections/new-landing/FaqSchema.astro";
-import StatsBand from "@components/sections/new-landing/StatsBand.astro";
 import PreviewLandingLayout from "@/layouts/PreviewLandingLayout.astro";
-import { features, featuresFaqs, featureHubStats, solutionMap } from "@data/newLanding";
+import { featureMap, features, featuresFaqs, solutions, solutionMap } from "@data/newLanding";
+import { featureGroups } from "@data/featureContent";
 
-const faqGroup = {
-  subTitle: "This page is part of the hidden preview route and is excluded from sitemap discovery until launch.",
-  faqs: featuresFaqs,
-};
+const faqGroup = { subTitle: "Find the tools that fit your team's day-to-day work.", faqs: featuresFaqs };
+const workflow = [
+  { title: "Take the booking", text: "Give guests a direct path from your website to an activity and date.", slug: "booking-engine-channel-manager" },
+  { title: "Prepare the guest", text: "Collect registration details and waivers before arrival.", slug: "digital-onboarding" },
+  { title: "Plan the day", text: "Coordinate guests, instructors, boats, and activity changes.", slug: "planner-scheduling" },
+  { title: "Review the payment", text: "Keep transaction history connected to the booking.", slug: "payment-gateways" },
+];
 ---
 
-<PreviewLandingLayout
-  title="DiversDesk Features Preview"
-  description="Preview the next feature hub for DiversDesk across dive centers, resorts, and liveaboards."
-  canonical="https://www.diversdesk.com/new/features"
->
+<PreviewLandingLayout title="Dive Business Software Features | DiversDesk" description="Explore DiversDesk tools for bookings, digital waivers, planning, payments, accommodation, and liveaboard operations." canonical="https://www.diversdesk.com/new/features">
   <FaqSchema faqs={featuresFaqs} />
-
-  <section class="landing-section pb-8 pt-12 lg:pb-10 lg:pt-16">
+  <section class="landing-section pb-8 pt-12 lg:pt-16">
     <div class="landing-shell">
-      <span class="landing-tag">Feature Hub</span>
-      <div class="mt-6 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-        <div>
-          <h1 class="landing-display max-w-5xl text-5xl text-slate-950 sm:text-6xl lg:text-7xl">
-            Every feature page is now part of one cleaner internal SEO system.
-          </h1>
-          <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">
-            Instead of one broad feature page trying to do everything, this preview route introduces a structured hub with dedicated pages for the product capabilities that operators actually search for.
-          </p>
-        </div>
-        <div class="landing-card-dark rounded-[32px] p-6 text-white sm:p-8">
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-200">Browse by business model</p>
-          <div class="mt-5 flex flex-wrap gap-3">
-            <a class="landing-button-primary" href="/new/solutions/dive-centers">Dive Centers</a>
-            <a class="landing-button-secondary !bg-white/10 !text-white !border-white/20" href="/new/solutions/dive-resorts">Dive Resorts</a>
-            <a class="landing-button-secondary !bg-white/10 !text-white !border-white/20" href="/new/solutions/liveaboards">Liveaboards</a>
-          </div>
-        </div>
+      <span class="landing-tag">Explore the platform</span>
+      <h1 class="landing-display mt-6 max-w-5xl text-5xl text-slate-950 sm:text-6xl lg:text-7xl">Everything you need to run your dive business.</h1>
+      <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-600 sm:text-xl">Connect bookings, guest preparation, daily operations, and payments. Explore the tools that fit your dive center, resort, or liveaboard.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a class="landing-button-primary" href="https://calendly.com/diversdesk-info/demo">Book a demo</a>
+        <a class="landing-button-secondary" href="#feature-directory">Explore features</a>
       </div>
     </div>
   </section>
 
-  <StatsBand
-    title="The feature architecture is designed to rank and convert more cleanly."
-    intro="Each feature card below can stand alone as a search entry point while still reinforcing the broader DiversDesk product story."
-    stats={featureHubStats}
-  />
-
-  <section class="landing-section py-10 lg:py-14">
+  <section id="feature-directory" class="landing-section scroll-mt-28 py-10 lg:py-14" data-feature-directory>
     <div class="landing-shell">
-      <div class="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-        {features.map((feature) => (
-          <article class="landing-card rounded-[30px] p-6 sm:p-7">
-            <p class="text-sm font-semibold uppercase tracking-[0.16em] text-slate-500">{feature.eyebrow}</p>
-            <h2 class="landing-display mt-3 text-3xl text-slate-950">{feature.title}</h2>
-            <p class="mt-4 text-base leading-7 text-slate-600">{feature.summary}</p>
-            <div class="mt-6 flex flex-wrap gap-2">
-              {feature.appliesTo.map((slug) => (
-                <span class="rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-orange-700">
-                  {solutionMap[slug].shortLabel}
-                </span>
-              ))}
+      <div class="mb-10 border-b border-slate-200 pb-6">
+        <h2 class="landing-display text-3xl text-slate-950">Find your tools</h2>
+        <div class="mt-5 flex flex-wrap gap-2" role="group" aria-label="Filter features by business type" data-feature-filters hidden>
+          <button type="button" class="feature-filter" data-audience="all" aria-pressed="true" aria-controls="feature-groups">All features</button>
+          {solutions.map((solution) => (
+            <button type="button" class="feature-filter" data-audience={solution.slug} aria-pressed="false" aria-controls="feature-groups">{solution.shortLabel}</button>
+          ))}
+        </div>
+        <p class="mt-4 text-sm text-slate-600" role="status" aria-live="polite" aria-atomic="true" data-feature-count>{features.length} features for all business types</p>
+      </div>
+      <div id="feature-groups" class="space-y-14">
+        {featureGroups.map((group) => (
+          <section data-feature-group aria-labelledby={`group-${group.id}`}>
+            <h3 id={`group-${group.id}`} class="landing-display text-3xl text-slate-950 sm:text-4xl">{group.title}</h3>
+            <p class="mt-3 text-base leading-7 text-slate-600">{group.description}</p>
+            <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+              {group.features.map((entry) => {
+                const feature = featureMap[entry.slug];
+                return (
+                  <article class="landing-card flex flex-col overflow-hidden rounded-[28px]" data-feature-card data-audiences={feature.appliesTo.join(" ")}>
+                    <div class="bg-slate-100 p-5">
+                      <Image src={feature.image} alt={feature.imageAlt} class="aspect-[16/9] w-full rounded-xl object-contain" widths={[360, 540, 720]} sizes="(min-width: 1280px) 30vw, (min-width: 768px) 45vw, 90vw" loading="lazy" />
+                    </div>
+                    <div class="flex flex-1 flex-col p-6">
+                      <h4 class="landing-display text-2xl text-slate-950">{entry.label}</h4>
+                      <p class="mt-3 text-base leading-7 text-slate-600">{feature.summary}</p>
+                      <div class="mb-6 mt-4 flex flex-wrap gap-2">
+                        {feature.appliesTo.map((slug) => <span class="rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold text-orange-800">{solutionMap[slug].shortLabel}</span>)}
+                      </div>
+                      <a class="mt-auto font-semibold text-orange-700 underline-offset-4 hover:underline" href={`/new/features/${feature.slug}`}>Explore {entry.label.toLowerCase()} <span aria-hidden="true">→</span></a>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
-            <ul class="landing-bullet-list mt-6 space-y-3 text-sm leading-6 text-slate-700">
-              {feature.outcomes.map((item) => (
-                <li>{item}</li>
-              ))}
-            </ul>
-            <div class="mt-8">
-              <a class="landing-button-primary" href={`/new/features/${feature.slug}`}>View feature page</a>
-            </div>
-          </article>
+          </section>
         ))}
       </div>
     </div>
   </section>
 
-  <FAQ title="Feature hub FAQ" faqs={faqGroup} />
+  <section class="landing-section py-10 lg:py-16">
+    <div class="landing-shell">
+      <div class="landing-card-dark rounded-[32px] p-6 text-white sm:p-10">
+        <span class="text-sm font-semibold uppercase tracking-widest text-orange-200">One connected workflow</span>
+        <h2 class="landing-display mt-4 text-4xl sm:text-5xl">From first booking to dive day.</h2>
+        <p class="mt-4 max-w-2xl leading-7 text-slate-300">An activity booking brings the guest journey and your team's operational work together.</p>
+        <ol class="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+          {workflow.map((step, index) => (
+            <li>
+              <span class="text-sm font-semibold text-orange-200">0{index + 1}</span>
+              <h3 class="mt-3 text-xl font-semibold"><a class="underline-offset-4 hover:underline" href={`/new/features/${step.slug}`}>{step.title}</a></h3>
+              <p class="mt-3 text-sm leading-7 text-slate-300">{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+  <FAQ title="Choosing your features" faqs={faqGroup} />
+  <section class="landing-section pb-16 pt-6">
+    <div class="landing-shell">
+      <div class="landing-card rounded-[32px] p-8 sm:p-12">
+        <h2 class="landing-display text-4xl text-slate-950">See how DiversDesk fits your operation.</h2>
+        <p class="mt-4 max-w-2xl leading-7 text-slate-600">Walk through the workflows that matter to your team, from guest bookings to the end-of-day review.</p>
+        <a class="landing-button-primary mt-6" href="https://calendly.com/diversdesk-info/demo">Book a demo</a>
+      </div>
+    </div>
+  </section>
 </PreviewLandingLayout>
+
+<script>
+  const directory = document.querySelector<HTMLElement>("[data-feature-directory]");
+  if (directory) {
+    const filters = directory.querySelector<HTMLElement>("[data-feature-filters]")!;
+    const buttons = Array.from(filters.querySelectorAll<HTMLButtonElement>("[data-audience]"));
+    const cards = Array.from(directory.querySelectorAll<HTMLElement>("[data-feature-card]"));
+    const groups = Array.from(directory.querySelectorAll<HTMLElement>("[data-feature-group]"));
+    const count = directory.querySelector<HTMLElement>("[data-feature-count]")!;
+    const applyFilter = (requested: string | null) => {
+      const audience = buttons.some((button) => button.dataset.audience === requested) ? requested : "all";
+      for (const button of buttons) button.setAttribute("aria-pressed", String(button.dataset.audience === audience));
+      for (const card of cards) card.hidden = audience !== "all" && !card.dataset.audiences?.split(" ").includes(audience!);
+      for (const group of groups) group.hidden = !group.querySelector("[data-feature-card]:not([hidden])");
+      const label = buttons.find((button) => button.dataset.audience === audience)?.textContent?.trim();
+      count.textContent = `${cards.filter((card) => !card.hidden).length} features for ${audience === "all" ? "all business types" : label}`;
+    };
+    filters.hidden = false;
+    applyFilter(new URL(window.location.href).searchParams.get("audience"));
+    for (const button of buttons) button.addEventListener("click", () => {
+      const url = new URL(window.location.href);
+      if (button.dataset.audience === "all") url.searchParams.delete("audience");
+      else url.searchParams.set("audience", button.dataset.audience!);
+      history.replaceState(null, "", url);
+      applyFilter(button.dataset.audience!);
+    });
+    window.addEventListener("popstate", () => applyFilter(new URL(window.location.href).searchParams.get("audience")));
+  }
+</script>

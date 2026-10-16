@@ -1,0 +1,196 @@
+---
+import { Image } from "astro:assets";
+import "@styles/new2-landing.css";
+import PreviewLandingLayout from "@/layouts/PreviewLandingLayout.astro";
+import CompanyLogos from "@components/CompanyLogos.astro";
+import FAQ from "@components/sections/FAQ.astro";
+import FaqSchema from "@components/sections/new-landing/FaqSchema.astro";
+import TestimonialsSectionMin from "@components/sections/testimonials/TestimonialsSectionMinimal.astro";
+import { homeHeroImage, mainPageTestimonials } from "@data/newLanding";
+import plannerImage from "@images/iPad_pro_detailed_day.avif";
+import resortImage from "@images/insights/diversdesk-accommodation-mockup.avif";
+import liveaboardImage from "@images/insights/liveaboard-ship.avif";
+
+const advantages = [
+  {
+    title: "Fewer tools. Less complexity.",
+    text: "Bring your core workflows into one system and reduce the need for separate tools and subscriptions.",
+  },
+  {
+    title: "Less admin. More time for guests.",
+    text: "Collect guest details and waivers before arrival, and keep the information connected to their booking.",
+  },
+  {
+    title: "One shared view for your team.",
+    text: "Keep bookings, schedules, guest information, and payment records together so everyone can follow the same operation.",
+  },
+];
+
+const audiences = [
+  { slug: "dive-centers", title: "Dive Centers", text: "Bring daily trips, courses, guest registration, and equipment rentals into one workflow.", image: plannerImage, alt: "DiversDesk planner for daily dive trips and guest scheduling." },
+  { slug: "dive-resorts", title: "Dive Resorts", text: "Connect accommodation, diving, and guest billing throughout the stay.", image: resortImage, alt: "DiversDesk accommodation management for dive resorts." },
+  { slug: "liveaboards", title: "Liveaboards", text: "Coordinate cabin bookings, partner reservations, guest paperwork, and departure preparation.", image: liveaboardImage, alt: "A liveaboard vessel at sea." },
+];
+
+const selectedFeatures = [
+  { slug: "digital-onboarding", title: "Digital onboarding & waivers", text: "Collect registration details and signed paperwork before guests arrive.", icon: ["M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5", "m16 3 5 5-9 9H7v-5Z", "m14 5 5 5"] },
+  { slug: "booking-engine-channel-manager", title: "Online bookings", text: "Let customers choose activities and dates through your website.", icon: ["M8 2v4m8-4v4", "M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z", "M3 10h18m-13 6 3 3 5-5"] },
+  { slug: "planner-scheduling", title: "Planning & scheduling", text: "Coordinate trips, instructors, boats, and guest assignments in one view.", icon: ["M8 6h13M8 12h8M8 18h11", "M3 5h1v2H3Zm0 6h1v2H3Zm0 6h1v2H3Z"] },
+  { slug: "finance-bookkeeping", title: "Payments & bookkeeping", text: "Review payment activity and connect your bookkeeping workflow.", icon: ["M20 8V5a2 2 0 0 0-2-2H6a3 3 0 0 0 0 6h14v11H6a3 3 0 0 1-3-3V6", "M20 12h-5a2 2 0 0 0 0 4h5", "M16 14h.01"] },
+  { slug: "inventory-pos-rentals", title: "Inventory, retail & rentals", text: "Keep equipment rentals and purchases connected to every guest.", icon: ["m12 2 9 5v10l-9 5-9-5V7Z", "m3 7 9 5 9-5m-9 5v10M7.5 4.5l9 5v5"] },
+  { slug: "agents-partners-portal", title: "Agent & partner portal", text: "Give invited partners access to liveaboard availability and reservations.", icon: ["M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2m20 0v-2a4 4 0 0 0-3-3.87", "M13 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Zm3-3.87a4 4 0 0 1 0 7.75"] },
+];
+
+const faqs = [
+  { question: "What is DiversDesk?", answer: "DiversDesk is dive business management software for dive centers, dive resorts, and liveaboards. It connects bookings, guest registration, planning, payments, and operational workflows in one platform." },
+  { question: "Can DiversDesk replace separate tools and subscriptions?", answer: "DiversDesk brings core workflows such as scheduling, registration, waivers, rentals, retail, and payment tracking into one system. This can reduce the need for separate tools. Your business may still use specialist services such as accounting software and payment providers." },
+  { question: "Can guests book and complete waivers online?", answer: "Yes. Customers can book activities through a direct link or an embedded booking page, then complete the registration and waivers connected to their onboarding journey." },
+  { question: "Can DiversDesk connect accommodation and diving?", answer: "Yes. Dive resorts can manage room reservations and dive activities within DiversDesk, with accommodation and guest billing connected to the wider booking workflow." },
+];
+const faqGroup = { subTitle: "A few practical answers before you explore further.", faqs };
+---
+
+<PreviewLandingLayout
+  title="Dive Business Software for Centers, Resorts & Liveaboards | DiversDesk"
+  description="Run your dive business in one place. DiversDesk connects bookings, guest registration, planning, and payments for dive centers, resorts, and liveaboards."
+  canonical="https://www.diversdesk.com/new2"
+  homeHref="/new2"
+>
+  <FaqSchema faqs={faqs} />
+
+  <section class="new2-hero landing-section flex items-center py-12 lg:py-16" aria-labelledby="new2-heading">
+    <div class="landing-shell">
+      <div class="grid gap-10 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12">
+        <div>
+          <span class="landing-tag">Dive Business Software</span>
+          <h1 id="new2-heading" class="landing-display mt-6 max-w-3xl text-5xl leading-[1.06] text-slate-950 sm:text-6xl lg:text-[4.5rem]">Run your entire dive operation <span class="text-orange-700">in one place.</span></h1>
+          <p class="mt-6 max-w-xl text-lg leading-8 text-slate-600">Bring bookings, guest registration, planning, payments, and daily operations together. Spend less time switching between tools—and simplify the subscriptions your business relies on.</p>
+          <p class="mt-4 text-sm font-medium leading-6 text-slate-600">Built for dive centers, dive resorts, and liveaboards.</p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a class="landing-button-primary" href="https://calendly.com/diversdesk-info/demo">Book a demo</a>
+            <a class="landing-button-secondary" href="/new/features">Explore features</a>
+          </div>
+        </div>
+        <div class="landing-hero-visual rounded-[32px]">
+          <Image src={homeHeroImage} alt="DiversDesk dive business software on laptop and mobile screens." class="w-full rounded-[24px] object-contain" widths={[480, 720, 960, 1280]} sizes="(max-width: 1023px) 90vw, 46vw" loading="eager" fetchpriority="high" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="new2-logo-ribbon" aria-label="DiversDesk customers">
+    <CompanyLogos title="Trusted by dive businesses around the world" />
+  </div>
+
+  <section class="landing-section py-10 lg:py-16" aria-label="Three advantages of DiversDesk">
+    <div class="landing-shell">
+      <div class="grid gap-8 border-y border-slate-200 py-10 lg:grid-cols-3 lg:gap-12 lg:py-12">
+        {advantages.map((advantage, index) => (
+          <div>
+            <span class="text-sm font-bold tracking-widest text-orange-700" aria-hidden="true">0{index + 1}</span>
+            <h2 class="landing-display mt-4 max-w-xs text-3xl text-slate-950">{advantage.title}</h2>
+            <p class="mt-4 max-w-md text-base leading-7 text-slate-600">{advantage.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="solutions" class="landing-section scroll-mt-28 py-10 lg:py-16">
+    <div class="landing-shell">
+      <span class="landing-kicker">Choose your operation</span>
+      <h2 class="landing-display mt-4 text-4xl text-slate-950 sm:text-5xl">Built around the way you operate.</h2>
+      <div class="mt-8 grid gap-6 lg:grid-cols-3">
+        {audiences.map((audience) => (
+          <article class="landing-card flex flex-col overflow-hidden rounded-[28px]">
+            <Image src={audience.image} alt={audience.alt} class="aspect-[16/10] w-full object-cover" widths={[480, 720, 960]} sizes="(max-width: 1023px) 90vw, 30vw" loading="lazy" />
+            <div class="flex flex-1 flex-col p-6 sm:p-7">
+              <h3 class="landing-display text-3xl text-slate-950">{audience.title}</h3>
+              <p class="mb-6 mt-4 leading-7 text-slate-600">{audience.text}</p>
+              <a class="mt-auto font-semibold text-orange-700 underline-offset-4 hover:underline" href={`/new/solutions/${audience.slug}`}>Explore {audience.title.toLowerCase()} <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="new2-features landing-section scroll-mt-28" aria-labelledby="new2-features-heading">
+    <div class="landing-shell">
+      <div class="new2-feature-intro">
+        <span class="new2-feature-eyebrow">Explore the features</span>
+        <h2 id="new2-features-heading" class="landing-display">The tools behind<br class="new2-desktop-break" /> a smoother day.</h2>
+        <p>From the first booking to the final payment, keep your guest journey connected and easy to manage.</p>
+      </div>
+
+      <article class="new2-onboarding-showcase">
+        <div class="new2-onboarding-copy">
+          <span class="new2-feature-eyebrow">01 — Guest experience</span>
+          <h3 class="landing-display">Paperless from<br /> the first hello.</h3>
+          <p>Make arrival effortless with digital registration, waivers, and medical forms guests can complete before they arrive.</p>
+          <ul>
+            <li>Custom registration and waivers</li>
+            <li>Multi-language guest forms</li>
+            <li>Pre-payments and invoicing</li>
+          </ul>
+          <a class="new2-feature-link" href="/new/features/digital-onboarding">Explore guest onboarding <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M4.5 10h11M11.5 6l4 4-4 4" /></svg></a>
+        </div>
+        <div class="new2-onboarding-visual" role="img" aria-label="Example of a guest completing a digital rental agreement before a dive trip.">
+          <Image src={liveaboardImage} alt="" class="new2-onboarding-photo" widths={[480, 720, 960, 1280]} sizes="(max-width: 767px) 90vw, 55vw" loading="lazy" />
+          <div class="new2-onboarding-note" aria-hidden="true"><span>Before arrival</span><strong>Ready for the water.</strong></div>
+          <div class="new2-form-preview" aria-hidden="true">
+            <div class="new2-form-top"><span class="new2-form-brand">d</span><strong>Guest onboarding</strong><span class="new2-form-example">Preview</span></div>
+            <div class="new2-form-body">
+              <span class="new2-feature-eyebrow">Registration form</span>
+              <div class="new2-form-title">Rental agreement</div>
+              <p>Please review your details before signing.</p>
+              <div class="new2-form-label">Full name</div>
+              <div class="new2-form-field">Alex Morgan</div>
+              <div class="new2-form-label">Signature</div>
+              <div class="new2-form-field new2-form-signature">Alex Morgan</div>
+              <div class="new2-form-submit">Complete registration</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="new2-more-features">
+        <div class="new2-more-intro">
+          <span class="new2-feature-eyebrow">More ways to simplify</span>
+          <h3 class="landing-display">One system for the whole operation.</h3>
+          <a class="new2-feature-link" href="/new/features">Explore all features <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M4.5 10h11M11.5 6l4 4-4 4" /></svg></a>
+        </div>
+        <div class="new2-feature-list">
+          {selectedFeatures.slice(1).map((feature, index) => (
+            <a class="new2-feature-row" href={`/new/features/${feature.slug}`} aria-labelledby={`new2-feature-${feature.slug}`}>
+              <span class="new2-feature-number" aria-hidden="true">0{index + 2}</span>
+              <span class="new2-feature-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  {feature.icon.map((path) => <path d={path} />)}
+                </svg>
+              </span>
+              <div><h4 id={`new2-feature-${feature.slug}`}>{feature.title}</h4><p>{feature.text}</p></div>
+              <span class="new2-feature-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M4.5 10h11M11.5 6l4 4-4 4" /></svg></span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <TestimonialsSectionMin title="What dive operators say about DiversDesk" testimonials={mainPageTestimonials} primaryBtn="Read more customer stories" primaryBtnURL="/about#testimonials" />
+
+  <FAQ title="Questions before you get started" faqs={faqGroup} />
+
+  <section class="landing-section pb-14 pt-6 lg:pb-20">
+    <div class="landing-shell">
+      <div class="landing-card-dark grid gap-8 rounded-[32px] p-8 text-white sm:p-10 lg:grid-cols-[1fr_auto] lg:items-center lg:p-12">
+        <div>
+          <h2 class="landing-display max-w-3xl text-4xl sm:text-5xl">See your operation in one place.</h2>
+          <p class="mt-4 max-w-2xl text-base leading-7 text-slate-300">Walk through your booking process, guest preparation, and daily planning with our team.</p>
+        </div>
+        <a class="landing-button-primary justify-self-start" href="https://calendly.com/diversdesk-info/demo">Book a demo</a>
+      </div>
+    </div>
+  </section>
+</PreviewLandingLayout>

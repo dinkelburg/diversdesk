@@ -19,7 +19,7 @@ const selectedSolution = selectedSolutionSlug ? solutionMap[selectedSolutionSlug
 const contextualFeatureLinks = selectedSolution
   ? selectedSolution.featureSlugs.slice(0, 4).map((slug) => ({
       title: featureMap[slug].title,
-      url: `/new/solutions/${selectedSolution.slug}/features/${slug}`,
+      url: `/new/features/${slug}#${selectedSolution.slug}`,
     }))
   : featureLinks;
 ---
@@ -30,9 +30,9 @@ const contextualFeatureLinks = selectedSolution
       <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr_0.9fr]">
         <div>
           <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-700">DiversDesk Preview</p>
-          <h2 class="landing-display mt-4 text-4xl text-slate-950">Clean, tailored landing pages without touching the live homepage yet.</h2>
+          <h2 class="landing-display mt-4 text-4xl text-slate-950">More time for guests. A clearer day for your team.</h2>
           <p class="mt-4 max-w-xl text-base leading-7 text-slate-600">
-            This preview route is where the new homepage, solution pages, and image-led layouts can evolve in parallel before anything replaces the live landing page.
+            Bring bookings, guest preparation, operations, and payments together for your dive center, resort, or liveaboard.
           </p>
         </div>
         <div>
@@ -49,6 +49,7 @@ const contextualFeatureLinks = selectedSolution
             {contextualFeatureLinks.map((link) => (
               <a class="block text-base font-medium text-slate-800 transition hover:text-orange-700" href={link.url}>{link.title}</a>
             ))}
+            <a class="block font-semibold text-orange-700 hover:underline" href="/new/features">Explore all features →</a>
           </div>
         </div>
       </div>
