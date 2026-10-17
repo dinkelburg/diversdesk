@@ -1,7 +1,7 @@
 ---
 audiences: ["liveaboard-operators", "operators"]
 title: 15 Oct 2026 - Planning, Manifests & Daily Operations
-description: "Organize your day manifest, plan tanks and meals, check scheduling conflicts, and export complete customer lists."
+description: "Staff tank counts, a dedicated tank management panel, trip end times and improved overlap checks, plus clearer manifests and complete customer exports."
 lastUpdated: 2026-10-15
 sidebar:
   label: 15 Oct 2026
@@ -11,43 +11,66 @@ sidebar:
     data-update-subtitle: Planning, Manifests & Daily Operations
 ---
 
+import VideoLightbox from '@components/VideoLightbox.astro';
+
 <p class="update-release-date">Release Date: October 15, 2026</p>
 
-This release makes daily planning and administration easier, with more flexible manifests, clearer tank and meal summaries, scheduling checks, and improvements to registrations and customer exports. It also includes updates for liveaboard partners and booking widgets.
+This release adds staff tank counts, a dedicated tank management panel and trip end times with improved overlap checks. It also improves manifest columns, meal summaries, registration updates and customer exports, alongside updates for liveaboard partners and booking widgets.
 
 ## Everyday Planning and Administration
 
-### Put the information your team needs on the manifest
+### Customizable planner columns and improved manifest controls
 
-The day manifest's column editor now lets you search for columns, filter the list, and choose what to show. Arrange columns by dragging them or using the move-up and move-down controls.
+You can now choose and reorder columns in the planner, including the new **payment status** column.
 
-Wide manifests stay within the page, with a horizontal scrollbar to reach columns further across the table. Exports can include visible staff rows, including their tanks and dietary information.
+The day manifest’s column editor has also improved, with search, filters and easier column ordering.
 
-The planner has its own column settings, including an optional **payment status** column. Planner settings are shared across the establishment, and changing them requires the appropriate permissions.
+<VideoLightbox
+  src="/images/user_manual/rearranging-columns-planner.webm"
+  label="Rearranging columns in the planner"
+  previewDesktopWidth="100%"
+/>
 
-### Check tanks and meals before the trip
+### Staff tank counts, a new tank panel and improved meal summaries
 
-Tank summaries group quantities by **tank size and gas blend**, making it easier to compare what is needed with what has been assigned. Mismatch warnings help you spot quantities that need attention. Use **Match all** for the eligible guest or staff allocations you want to update; mixed allocations need individual review.
+Staff tank counts are now included alongside guest tanks in the trip totals. A new **dedicated tank management panel** lets you review and adjust guest and staff tank allocations in one place.
+
+Mismatch warnings help you spot quantities that need attention. Use **Match all** for the eligible guest or staff allocations you want to update; mixed allocations need individual review.
 
 Eligible guide tank defaults account for the trip's dive sites. Dry or rest trips and non-diving guide roles do not receive automatic diving tank quantities. If you explicitly save a staff member with no tanks, that choice stays empty.
 
+<VideoLightbox
+  src="/images/user_manual/trip-tank-assignment.webm"
+  label="Managing guest and staff tank assignments for a trip"
+  previewDesktopWidth="100%"
+/>
+
 When the **diet column** is displayed, trip food summaries bring guest and staff requirements together. They show meal counts, dietary preferences, people bringing their own food and missing answers. Guests are counted once per trip, and people bringing their own food are excluded from the meal count.
 
-### Avoid conflicting participant schedules
+### Trip end times and improved overlap checks
 
-Trip end times now help Diversdesk check for overlapping participant assignments. Confirmed overlaps are blocked; when missing end times leave a possible conflict, you are asked to confirm before continuing. The scheduling dialog also makes it clearer whether you are moving someone or adding another trip.
+Trips now have **end times**, and Diversdesk automatically checks for overlapping participant assignments. Confirmed overlaps are blocked; when missing end times leave a possible conflict, you are asked to confirm before continuing. The scheduling dialog also makes it clearer whether you are moving someone or adding another trip.
 
 Trip and staff filters, calendar opening and staff counts have been refined. Removing a trip from a participant's schedule also removes it from the pending selection.
 
 When the final guest assigned to an instructor or divemaster is removed from a trip, the unused guide assignment is cleared. This keeps staffing, food and tank totals in line with the remaining guests. Captain and crew assignments are preserved.
 
-### Update forms and export complete customer lists
+### Bulk registration-form updates
 
 After changing a registration form, you can preview and update eligible upcoming or ongoing bookings and guest registrations that still use an older version of that form. This reduces the need to update each one separately. Cancelled bookings and bookings with an open checkout payment are excluded.
 
+<img
+  src="/images/user_manual/Updated-onboarding-journey.avif"
+  alt="Options for updating existing registrations to the latest onboarding journey"
+  loading="lazy"
+  style="display: block; max-width: 100%; height: auto; margin: 20px auto; border-radius: 8px;"
+/>
+
+### Complete customer exports
+
 Customer CSV exports now include **all customers matching your filters**, rather than only the page currently displayed. Exports include certification, activity names and activity counts, with improved support for accented characters in Excel. Cancelled bookings are excluded from activity filtering and totals.
 
-### Keep edits safe and complimentary items visible
+### Unsaved-change protection and complimentary items in sales reports
 
 The affected side panels now ask for confirmation before discarding unsaved edits and prevent closing while a save is in progress. Closing the top panel also leaves the panels underneath in place.
 
@@ -59,17 +82,17 @@ Sales reports now show zero-priced items when a sale or participation quantity h
 
 These changes apply when you use the relevant integration or booking workflow.
 
-### Understand partner responsibilities
+### New guide to partner booking and payment responsibilities
 
 Authorized booking partners can open a guide for their operator connection explaining who approves bookings, who collects deposits and balances, and who receives booking and payment notifications.
 
-### Share liveaboard availability with Scubadates
+### Opt-in Scubadates sharing with destinations and onboard fees
 
 Liveaboard operators can opt in to sharing trip information with **Scubadates**, including availability, cabin prices, itineraries, requirements, destinations and onboard fees.
 
 Trip templates support up to three Scubadates regions and itemized per-person onboard fees, including currency and notes. Sharing must be enabled for the establishment.
 
-### Keep the booking widget in the right language
+### Improved language matching in the liveaboard booking widget
 
 The liveaboard booking widget follows its configured language or the host website's language and keeps that choice as guests move through the booking flow.
 
