@@ -61,3 +61,15 @@ The dedicated name for the language you're entering. This is the name that your 
 The actual waiver text can be entered here. through the available cheatsheet you can see what 'markdown' text formatting options can be made.</br>
 </div>
 
+## Set when each waiver is required
+
+Each waiver added to an onboarding journey defaults to **Always**. To require it only for a particular age group, open the waiver's **ellipsis menu**, choose **Edit requirement**, and select **Based on age**.
+
+- **From 50** includes participants aged 50 and older.
+- **Under 50** includes participants younger than 50.
+
+Save the requirement, then save the onboarding journey. These rules belong to each journey: the same waiver can be required for everyone in one journey and only for a particular age group in another.
+
+Age is calculated on the activity start date, or today if no activity is assigned. Date of birth is required when an age condition is used.
+
+See [Age Based Waiver Requirements](/features-resources/age-based-waivers/) for birthday examples and the full setup guide.

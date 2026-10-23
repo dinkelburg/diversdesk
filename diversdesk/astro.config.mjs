@@ -270,6 +270,7 @@ export default defineConfig({
           'features-resources/website-iframe-integration',
           'features-resources/custom-registration-form',
           'features-resources/custom-waiver',
+          'features-resources/age-based-waivers',
           'features-resources/waiver-terms',
           'features-resources/waiver-cheatsheet',
           'features-resources/tags',
