@@ -1,138 +1,72 @@
 ---
 audiences: ["liveaboard-operators", "operators"]
 title: Add-ons
-description: Learn how to create and utilize add-ons to streamline your workflow and drive upselling opportunities.
+description: Create add-ons, configure their prices and booking access, connect activities, and link rental gear from the shared side panel.
 slug: features-resources/add-ons
 sidebar:
-    label: Add-ons
-    order: 3
+  label: Add-ons
+  order: 3
 robots: noindex
 ---
 
-<div style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
-  <div style="flex: 2 1 300px; min-width: 200px;">
-    Add-ons are items or services that you can add to an activity or person within a booking. They are a powerful way to offer customization and to increase the value of your offerings. 
-    <br><br>
-    You can manage add-ons from the addons page under <strong>Menu &gt; Recourses &gt; Add-ons</strong>. 
-    <br><br>
-    From this page, you can create new add-ons and see which activities they are connected to.
-  </div>
-  <div style="flex: 1 1 200px; min-width: 100px; text-align: center;">
-    <img 
-      src="/images/user_manual/menu-add-ons.avif" 
-      alt="Navigating to the add-ons page through the hamburger menu"
-      style="display: block; width: 100%; max-width: 200px; height: auto !important; object-fit: contain; margin: 0 auto;"
-    />
-  </div>
-</div>
+Add-ons are extra items or services offered alongside activities, such as a private guide, a transfer, or rental equipment. Manage them on **Pricing > Add-ons**. The list shows their prices, basis, selection default, activity connections, booking access, and price default.
 
 ## Creating an Add-on
 
-![Creating an add-on](/images/user_manual/create-an-add-on.avif)
+Choose **Create Add-on** at the top right. Creation opens in a side panel. Enter the following settings:
 
-At the top of the Add-ons page, you'll find a section to create a new add-on with the following attributes:
+| Field | What it controls |
+| --- | --- |
+| **Add-on name** | The name shown for the extra. Keep it short and recognisable. |
+| **Price** and **Currency** | The amount and currency to charge. Currency starts with the establishment default. |
+| **Basis** | Apply the price per day, per dive, per trip, or as a one-time fee. |
+| **Price Default** | **Per person** charges each guest separately; **Per booking** charges once for the booking. |
+| **Who Can Book This?** | **Customers and managers** allows customer selection in the supported booking flows; **Managers only** keeps selection with staff. |
+| **Selection Default** | Leave the extra unselected, or preselect it by default. A preselected extra can still be removed. |
 
-**Add-on Name:** <br>
-The name your customers will see.
-:::tip
-For the best display on smaller screens, we recommend keeping names short and to the point.
-:::
+Use the info icons beside the field titles for explanations. Choose **Create** to save, or **Cancel** to leave without creating the add-on.
 
-**Price:** <br>
-The price of your add-on.
+### Connect Activities Before Saving
 
-**Currency:** <br>
-The currency for the price. This field will automatically be filled with your default currency.
+Expand **Connected activities** and tick the activities that should offer the add-on. The number beside the title shows the selected activity count. Use its info icon for an explanation.
 
-**Basis:** <br>
-This defines how the price is applied and includes the following options:
-- per day
-- per dive
-- per trip
-- one time fee
+**Bulk select activities...** adds all activities or a whole category without removing other selections. Fully selected groups have a checkmark. A split count, such as 1/3, indicates a partial selection. Adjust individual checkboxes afterward, or choose **Clear** to remove the draft's activity selections.
 
-**Default Quantity:** <br>
-You can set a default quantity that will be automatically added to a booking.
-:::caution
-The default quantity is a fixed number. It will not change based on the number of people in the booking. We're working on a 'next-generation' add-on feature that will include a smart quantity option.
-:::
+Save the add-on to apply its activity connections. Booking access and activity connections work together: allowing customers to choose an add-on does not connect it to an activity automatically.
 
-**Allow Participant Choice** <br>
-This feature lets you add an add-on to the participant registration form, selectable for your participant, which is great for upselling specific items like an action camera rental or a private guide.
+## Rental Add-ons
 
-See the section on [The Power of Upselling Add-ons](#the-power-of-upselling-add-ons) for more information.
+Rental add-ons connect the same pricing fields to equipment categories. Create them from Add-ons or from [Rental Pricing](/user_manual/rentals/rental-pricing/); both pages manage the same add-on.
 
-### Alternative: Creating an add-on from within an activity
-You can also create and connect an add-on directly while you are editing an activity. This allows you to stay within your current workflow. 
+### Create a Rental Add-on
 
-![Connecting the add-on to an activity](/images/user_manual/create-add-on-within-activity.avif)
+1. Choose **Create Add-on** and enter the name and price.
+2. In **Rental gear**, enable **Use as a rental add-on**.
+3. Choose **One equipment category** or **Equipment set**, then select the included categories.
+4. Connect the activities that should offer the rental and choose **Create**.
 
-After you've created the add-on, simply presh the refresh hyperlink, and it will appear in the drop-down list.
+Rental add-ons stay optional and per person. The form prevents a per-booking price default, preselection by default, and a per-dive basis. If you enable rental mode after choosing a per-dive basis, the form changes it to per day. Per-day, per-trip, and one-time fee prices are supported.
 
-![Connecting the add-on to an activity](/images/user_manual/refresh-add-on-section.avif)
+An equipment category can have only one individual rental price. Categories that already have one are greyed out for another individual price; hover to see the reason. Equipment sets can include categories with individual prices.
 
-## Connecting an Add-on
-Once an add-on is created, this add-on can be connect to an activity. You can do this through editing an activity and adding the desired add-ons. 
+Use the orange **Create new** link beside **Included rental categories** to add a missing rental item in the shared panel. Saving returns to your add-on draft and selects its category when available for that offering.
 
-![Connecting the add-on to an activity](/images/user_manual/add-ons-on-activity-page.avif)
+### Connect an Existing Add-on to Rental Gear
 
-:::tip
-From the add-ons page you can view what activities are currently connected to a specific Add-on.
-:::
+Open its details, expand **Rental gear**, and choose **Connect to rental gear**. The rental-price panel opens with the add-on selected. Existing add-ons must be per person, not selected by default, use a per-day, per-trip, or one-time fee basis, and have no existing rental connection to be eligible.
 
-## Displaying Add-ons on the Detailed Day page
-On the **Detailed Day** view, you can add the **Add-on** column to display any add-ons connected to the person or the booking.
+The existing add-on's price, booking access, and activity connections are reused. Review the offering, categories, and activities before saving. Physical inventory items are maintained separately on [Rental Items](/user_manual/rentals/rental-items/).
 
-Through the customize button, you can tick the the add-ons checkbox to add the column.
+## Viewing and Editing Add-ons
 
-<div style="text-align: center;">
-  <img 
-    src="/images/user_manual/add-add-ons-to-detailed-day-view.avif" 
-    alt="Adding the add-ons column to the Detailed Day page."
-    class="w-1/2 md:w-1/2 mx-auto"
-  />
-</div>
+Select an add-on's name to open its details, then choose **Edit**. Connected rental gear appears in **Rental gear**, in the same position as in the editor. Its count shows how many categories are included. Expand **Connected activities** to see linked activities and open them.
 
-### Understanding Add-On Types
-Diversdesk offers two distinct types of add-ons to accommodate different needs:
+Linked rentals use the shared editor. Saving updates the add-on settings, rental categories, and activity connections together. The same changes are visible from Rental Pricing.
 
-**Per person:** An add-on is selected by an individual through the registration form and therefore connected to this person. 
-Example: A participant selected an UW camera rental during registering the sign-up form. This add-on is then automaticlaly connected to this individual and added to the bill. 
+Drag add-ons to change their order, then choose **Save Order**. Rental prices share the Add-ons order.
 
-<div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
-  <div style="flex: 1 1 200px; min-width: 100px; display: flex; align-items: center; justify-content: center;">
-    <img 
-    src="/images/user_manual/add-ons-icon-per-person.png" 
-    alt="Add ons per person badge and icon"
-    style="width: 100%; max-width: 150px; height: auto; margin: 0 auto; padding-top: 12px;"
-    />
-  </div>
-  <div style="flex: 2 1 300px; min-width: 200px; display: flex; align-items: center;">
-    Add-ons that are connected to a person are shown with a 'single-person-icon'
-  </div>
-</div>
+## Showing Add-ons in Daily Operations
 
-<br>
-**Per Activity:** This add-on is added directly to an activity by a user with manager rights. Since it's connected to the activity, not to a specific person, it will appear for every individual participating in that activity.
+On the **Detailed Day** view, enable the **Add-on** column through the page's column controls to display connected add-ons alongside your daily plan.
 
-<div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
-  <div style="flex: 1 1 200px; min-width: 100px; text-align: center; justify-content: center;">
-    <img 
-      src="/images/user_manual/add-ons-icon-per-activity.png" 
-      alt="Add ons per Activity badge"
-      style="width: 100%; max-width: 150px; height: auto; margin: 0 auto; padding-top: 12px;"
-    />
-  </div>
-    <div style="flex: 2 1 300px; min-width: 200px;">
-    Add-ons that are connected to an activity are indicated with a 'multi-person-icon' 
-  </div>
-</div>
-
-:::note
-The 2nd generation of add-ons is soon to be released and will be easier to connect and have more flexibility throughout the application. 
-:::
-
-## The power of Upselling Add-ons
-Add-ons are an ideal way to upsell items directly through the registration form. Even if your guests didn't originally plan on purchasing an extra item, seeing the option can encourage them to select an add-on, generating more revenue for your business.
-
-
+For rental setup, guest rental choices, and equipment sets, continue with [Rental Pricing](/user_manual/rentals/rental-pricing/).

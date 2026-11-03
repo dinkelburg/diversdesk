@@ -200,6 +200,10 @@ export default defineConfig({
                 slug: 'user_manual/rentals/rental-items'
               },
               {
+                label: 'Rental Pricing',
+                slug: 'user_manual/rentals/rental-pricing'
+              },
+              {
                 label: 'Rental Overview',
                 slug: 'user_manual/rentals/rental-overview'
               },
