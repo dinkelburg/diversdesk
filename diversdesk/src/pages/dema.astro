@@ -1,0 +1,105 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { SITE } from "@data/constants";
+
+const pageTitle = `DEMA Show Offer | ${SITE.title}`;
+const promoCode = "DEMA2026";
+// DEMA Show runs November 3–6, 2026: https://www.demashow.com/
+// The offer ends two weeks after the final show day.
+const expiryDate = "20 November 2026";
+const signupUrl = `/signup-trial?promo=${promoCode}`;
+const checkoutUrl = `/diversdesk_checkout?promo=${promoCode}`;
+---
+
+<MainLayout
+  title={pageTitle}
+  description={`Start a free trial and get 30% off DiversDesk! This exclusive offer for DEMA Show exhibitors is valid through ${expiryDate}.`}
+  canonical="https://www.diversdesk.com/dema"
+  robots="noindex, nofollow"
+>
+  <section class="dema-hero mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8" aria-labelledby="dema-title">
+    <div class="grid items-center gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-20">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-widest text-orange-600 dark:text-orange-400">
+          DEMA Show 2026 <span aria-hidden="true">/</span> New Orleans
+        </p>
+        <h1 id="dema-title" class="mt-6 text-balance text-5xl font-extrabold leading-tight tracking-tight text-neutral-800 dark:text-neutral-100 sm:text-6xl">
+          More time for<br />your divers.
+        </h1>
+        <p class="mt-6 max-w-lg text-lg leading-relaxed text-neutral-600 dark:text-neutral-300">
+          Bring your bookings, scheduling, and guest experience together with DiversDesk.
+          Keep your dive center running smoothly, from the first booking to the next adventure.
+        </p>
+      </div>
+
+      <div class="rounded-3xl border border-orange-200 bg-orange-50 p-8 dark:border-neutral-600 dark:bg-neutral-700 sm:p-10">
+        <h2 class="text-lg font-bold text-neutral-800 dark:text-neutral-100">Your DEMA show offer</h2>
+        <p class="mt-6 flex items-baseline gap-3 text-orange-600 dark:text-orange-400">
+          <span class="text-8xl font-extrabold tracking-tighter">30%</span>
+          <span class="text-3xl font-bold">off</span>
+        </p>
+        <p class="mt-4 leading-relaxed text-neutral-600 dark:text-neutral-300">
+          Exclusively for DEMA Show exhibitors. Subscribe by {expiryDate} to claim your discount.
+        </p>
+        <div class="mt-8 border-t border-orange-200 pt-6 dark:border-neutral-600">
+          <p class="text-sm text-neutral-600 dark:text-neutral-300">Your discount code</p>
+          <div class="mt-2 flex flex-wrap items-center gap-3">
+            <code class="select-all font-mono text-2xl font-bold tracking-widest text-neutral-800 dark:text-neutral-100">{promoCode}</code>
+            <button
+              type="button"
+              data-copy-promo={promoCode}
+              class="rounded px-2 py-2 text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500 dark:text-neutral-300 dark:hover:text-orange-400"
+              aria-label={`Copy discount code ${promoCode}`}
+            >Copy code</button>
+          </div>
+          <p data-copy-status role="status" class="mt-2 min-h-5 text-sm text-neutral-600 dark:text-neutral-300"></p>
+          <a
+            href={checkoutUrl}
+            class="mt-4 flex w-full items-center justify-center rounded-xl bg-orange-600 px-5 py-4 text-center font-bold text-white transition hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
+          >Choose a Plan &amp; Checkout</a>
+          <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-300">Continue with {promoCode} for 30% off your annual subscription.</p>
+          <p class="mt-4 text-sm text-neutral-600 dark:text-neutral-300">Offer ends <time datetime="2026-11-20">{expiryDate}</time></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8" aria-labelledby="demo-title">
+    <h2 id="demo-title" class="text-center text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200">
+      See DiversDesk in Action
+    </h2>
+    <p class="mt-4 text-center text-neutral-600 dark:text-neutral-400">
+      Watch this short video to see how we can help streamline your dive center.
+    </p>
+    <div class="mt-8 aspect-video w-full overflow-hidden rounded-lg shadow-lg">
+      <iframe
+        src="https://www.loom.com/embed/7f321b4bc2484ec4a4358ed143da9460"
+        title="See DiversDesk in action"
+        class="h-full w-full border-0"
+        loading="lazy"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <p class="mt-8 text-center text-sm text-neutral-600 dark:text-neutral-300">
+      Prefer to try it first?
+      <a href={signupUrl} class="font-semibold underline underline-offset-4 hover:text-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">Start a free trial</a>.
+    </p>
+  </section>
+</MainLayout>
+
+<script>
+  const copyButton = document.querySelector<HTMLButtonElement>("[data-copy-promo]");
+  const copyStatus = document.querySelector<HTMLElement>("[data-copy-status]");
+  copyButton?.addEventListener("click", async () => {
+    const code = copyButton.dataset.copyPromo;
+    if (!code || !copyStatus) return;
+    try {
+      await navigator.clipboard.writeText(code);
+      copyButton.textContent = "Copied!";
+      copyStatus.textContent = `${code} copied to clipboard.`;
+    } catch {
+      copyButton.textContent = "Copy code";
+      copyStatus.textContent = "Select the code above and copy it manually.";
+    }
+  });
+</script>

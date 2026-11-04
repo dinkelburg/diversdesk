@@ -117,6 +117,7 @@ export default defineConfig({
         page.includes('/updates') ||
         page.includes('/new') ||
         page.includes('/work_in_progress') ||
+        new URL(page).pathname.replace(/\/$/, '') === '/dema' ||
         page.includes('/terms-conditions') ||
         page.includes('/privacy-policy')
       ),

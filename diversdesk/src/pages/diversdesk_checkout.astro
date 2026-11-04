@@ -2,10 +2,18 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import { SITE } from "@data/constants";
 
+// Render per request so campaign query parameters reach the Stripe links.
+export const prerender = false;
+
 const promoCode = Astro.url.searchParams.get("promo")?.trim().toUpperCase();
-const supportedExpoPromoCodes = new Set(["ADEX25", "TDEX25"]);
-const isExpoPromo = promoCode ? supportedExpoPromoCodes.has(promoCode) : false;
-const expoName = promoCode?.startsWith("ADEX") ? "ADEX" : promoCode?.startsWith("TDEX") ? "TDEX" : null;
+const expoOffers: Record<string, { name: string; discount: number }> = {
+  ADEX25: { name: "ADEX", discount: 25 },
+  TDEX25: { name: "TDEX", discount: 25 },
+  DEMA2026: { name: "DEMA", discount: 30 },
+};
+const expoOffer = promoCode && Object.hasOwn(expoOffers, promoCode) ? expoOffers[promoCode] : undefined;
+const isExpoPromo = Boolean(expoOffer);
+const expoName = expoOffer?.name;
 
 const pricingPlans = [
   {
@@ -90,10 +98,10 @@ const pageTitle = `Activate Your Subscription | ${SITE.title}`;
     {isExpoPromo && promoCode && expoName && (
       <div class="mx-auto mb-8 max-w-4xl rounded-2xl border border-orange-300 bg-orange-50 p-6 text-center shadow-sm dark:border-orange-700/40 dark:bg-orange-900/20">
         <p class="text-sm font-semibold uppercase tracking-[0.18em] text-orange-700 dark:text-orange-300">{expoName} Exclusive Offer</p>
-        <h2 class="mt-2 text-2xl font-bold text-neutral-900 dark:text-white">Your 25% Annual Discount Is Loaded</h2>
+        <h2 class="mt-2 text-2xl font-bold text-neutral-900 dark:text-white">{expoOffer?.discount}% Off Your Annual Subscription</h2>
         <p class="mt-3 text-base text-neutral-700 dark:text-neutral-200">
-          Promo code <strong>{promoCode}</strong> is pre-applied on the Stripe checkout pages below.
-          Complete your annual subscription to claim the {expoName} rate.
+          Promo code <strong>{promoCode}</strong> is included when you choose a plan below.
+          Check your discount at checkout before completing your subscription.
         </p>
       </div>
     )}
@@ -103,7 +111,11 @@ const pageTitle = `Activate Your Subscription | ${SITE.title}`;
         Ready to Make it Official?
       </h2>
       <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
-        Your trial is coming to an end. <strong>Activate your subscription today</strong> to ensure your environment stays live with no downtime or data loss.
+        {isExpoPromo ? (
+          <>Choose the annual plan that fits your dive center and continue to checkout with your {expoName} offer.</>
+        ) : (
+          <>Your trial is coming to an end. <strong>Activate your subscription today</strong> to ensure your environment stays live with no downtime or data loss.</>
+        )}
       </p>
     </div>
 
