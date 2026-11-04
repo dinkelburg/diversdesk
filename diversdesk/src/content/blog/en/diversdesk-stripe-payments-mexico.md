@@ -14,6 +14,7 @@ tags: ["Dive Centre Payments", "Mexico", "Stripe", "Online Bookings"]
 contents:
   - "A guest has chosen their dives, agreed on the dates, and is ready to book. Making the payment should be a straightforward next step. For dive centres in Mexico, Diversdesk's Stripe integration brings online card payments into the booking workflow."
 robots: "index, follow"
+showInFeed: false
 canonical: "https://www.diversdesk.com/blog/en/diversdesk-stripe-payments-mexico/"
 ---
 

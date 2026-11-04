@@ -24,7 +24,10 @@ export async function getStaticPaths() {
 // Props and content extraction
 const { post } = Astro.props;
 const blogPosts = await getCollection("blog", ({ id }) => id.startsWith("en/"));
-const relatedPosts = blogPosts.filter((blogEntry) => blogEntry.slug !== post.slug);
+// Feed visibility affects cards only; every article still has a public URL.
+const relatedPosts = blogPosts.filter(
+  (blogEntry) => blogEntry.slug !== post.slug && blogEntry.data.showInFeed !== false,
+);
 const { Content } = await post.render();
 const postData = post.data as typeof post.data & { dateModified?: Date };
 const introParagraphs = (post.data.contents || []).filter(

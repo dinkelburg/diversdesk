@@ -6,7 +6,7 @@ role: "Customer Success & Training Coordinator"
 authorImage: "@/images/blog/melissa.avif"
 authorImageAlt: "Image of Melissa, Customer Success & Training Coordinator"
 pubDate: 2025-08-10
-dateModified: 2025-08-10
+dateModified: 2026-11-04
 cardImage: "@/images/blog/online-payment-gateway-for-dive-centres-easy-customer-payments.avif"
 cardImageAlt: "Dive centre customer using Diversdesk payment integration with Xendit"
 readTime: 3.5
@@ -20,7 +20,7 @@ structuredData:
   "@type": "BlogPosting"
   headline: "Diversdesk & Xendit: Revolutionising Online Payments for Dive Centres in Southeast Asia"
   datePublished: "2025-08-10"
-  dateModified: "2025-08-10"
+  dateModified: "2026-11-04"
   author:
     "@type": "Person"
     name: "Melissa"
@@ -46,6 +46,7 @@ structuredData:
     <li><a href="#highlight-payment-method-variety" class="hover:text-neutral-800 dark:hover:text-neutral-200">Highlight Payment Method Variety</a></li>
     <li><a href="#how-it-works-in-diversdesk" class="hover:text-neutral-800 dark:hover:text-neutral-200">How It Works in Diversdesk</a></li>
     <li><a href="#final-thoughts" class="hover:text-neutral-800 dark:hover:text-neutral-200">Final Thoughts</a></li>
+    <li><a href="#payment-options-other-regions" class="hover:text-neutral-800 dark:hover:text-neutral-200">Payment Options in Other Regions</a></li>
   </ul>
 </nav>
 
@@ -103,4 +104,8 @@ In my view, bringing Xendit and <a href="https://www.diversdesk.com/" target="_b
 <p>
 Payments become an effortless part of the journey instead of a hurdle. If you’re ready to simplify your payments and bring more efficiency to your dive centre, now’s a good time to give Diversdesk and Xendit a closer look.
 </p>
+
+<h2 id="payment-options-other-regions" class="section-heading">Payment options for dive centres in other regions</h2>
+
+Operating outside Southeast Asia? Explore our guides to [Stripe payments for dive centres in Mexico](/blog/en/diversdesk-stripe-payments-mexico/) and [Sentoo payments for dive centres in the Dutch Caribbean](/blog/en/diversdesk-sentoo-payments-caribbean/). Each guide explains the regional payment options and how they connect to your Diversdesk bookings.
 

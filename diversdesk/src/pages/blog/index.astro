@@ -11,7 +11,7 @@ import type { CollectionEntry } from "astro:content";
 // Get all visible blog posts. Prefer English entries, but gracefully fall back
 // to all visible entries if locale prefixes differ in some environments.
 const visibleBlogEntries = await getCollection("blog", ({ data }) => {
-  return import.meta.env.PROD ? data.showInFeed !== false : true;
+  return data.showInFeed !== false;
 });
 
 const englishBlogEntries = visibleBlogEntries.filter(({ id }) =>

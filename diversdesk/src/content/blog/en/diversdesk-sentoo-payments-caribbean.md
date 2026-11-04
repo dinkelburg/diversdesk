@@ -14,6 +14,7 @@ tags: ["Dive Centre Payments", "Caribbean", "Sentoo", "Online Bookings"]
 contents:
   - "A payment solution for a Caribbean dive centre needs to work with the banks and customers it serves. Diversdesk integrates with Sentoo, bringing a regional payment option into your booking workflow in supported parts of the Dutch Caribbean."
 robots: "index, follow"
+showInFeed: false
 canonical: "https://www.diversdesk.com/blog/en/diversdesk-sentoo-payments-caribbean/"
 ---
 
