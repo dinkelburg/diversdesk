@@ -1,0 +1,73 @@
+<section class="setup-card" aria-label="USD 128 transfer and setup package">
+  <div class="setup-card__header">
+    <p class="setup-card__eyebrow">TRANSFER &amp; SETUP PACKAGE</p>
+    <div class="setup-card__price"><span>USD</span><strong>128</strong></div>
+    <p class="setup-card__caption">One-time setup. A confident start.</p>
+    <div class="setup-card__limits">
+      <span>Up to 8 hours</span><span>One dive center</span>
+    </div>
+  </div>
+  <div class="setup-card__body">
+    <p class="setup-card__label">Your environment, ready for your team</p>
+    <ul>
+      <li>A shared drive with example templates and space to upload your existing data.</li>
+      <li>Activities, retail products, add-ons and pricing configured.</li>
+      <li>Your existing customer base transferred.</li>
+      <li>Pre-set onboarding journeys.</li>
+      <li>A dedicated onboarding call of up to <strong>60 minutes</strong>.</li>
+    </ul>
+    <a class="setup-card__cta" href="/contact/">Let's plan your setup <span aria-hidden="true">&rarr;</span></a>
+  </div>
+  <div class="setup-card__scope">
+    <p class="setup-card__label">Clear scope. No surprises.</p>
+    <ul>
+      <li>We review your requirements and supplied data before starting to confirm what is covered.</li>
+      <li>Any work beyond the agreed scope is quoted separately and only carried out with your approval.</li>
+      <li>Future booking entry is separate, at <strong>IDR 150,000 per hour</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .setup-card {
+    margin-block: 1.5rem 2rem;
+    overflow: hidden;
+    border: 1px solid #fed7aa;
+    border-radius: 1.5rem;
+    background: #fff;
+    color: #292524;
+    box-shadow: 0 12px 32px -18px rgb(154 52 18 / 25%);
+  }
+  .setup-card__header {
+    padding: clamp(1.25rem, 4vw, 2rem);
+    background: linear-gradient(135deg, #fff7ed, #ffedd5);
+    border-bottom: 1px solid #fed7aa;
+  }
+  .setup-card p { margin: 0; }
+  .setup-card__eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; color: #9a3412; }
+  .setup-card__price { display: flex; align-items: baseline; gap: 0.6rem; margin-block: 0.5rem; color: #9a3412; }
+  .setup-card__price span { font-size: 1.1rem; font-weight: 600; }
+  .setup-card__price strong { font-size: clamp(3.5rem, 8vw, 4.5rem); line-height: 1; letter-spacing: -0.05em; }
+  .setup-card__caption { font-size: 1rem; color: #57534e; }
+  .setup-card__limits { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+  .setup-card__limits span { border: 1px solid #fed7aa; border-radius: 999px; padding: 0.3rem 0.75rem; background: rgb(255 255 255 / 75%); font-size: 0.8rem; font-weight: 600; }
+  .setup-card__body { padding: clamp(1.25rem, 4vw, 2rem); }
+  .setup-card__label { font-size: 1rem; font-weight: 700; }
+  .setup-card ul { margin: 1rem 0 0; padding-left: 1.25rem; list-style: disc outside; font-size: 1rem; line-height: 1.65; }
+  .setup-card li + li { margin-top: 0.65rem; }
+  .setup-card li::marker { color: #c2410c; }
+  .setup-card__cta { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; border-radius: 0.75rem; padding: 0.85rem 1rem; background: #c2410c; color: #fff; text-decoration: none; font-size: 1rem; font-weight: 600; }
+  .setup-card__cta:hover { background: #9a3412; }
+  .setup-card__cta:focus-visible { outline: 3px solid #ea580c; outline-offset: 4px; }
+  .setup-card__scope { padding: 1.25rem clamp(1.25rem, 4vw, 2rem); background: #fafaf9; border-top: 1px solid #e7e5e4; }
+  .setup-card__scope ul { margin-top: 0.75rem; font-size: 0.875rem; color: #57534e; }
+  :global(.dark) .setup-card { background: #262626; color: #f5f5f4; border-color: #7c2d12; }
+  :global(.dark) .setup-card__header { background: linear-gradient(135deg, #431407, #292524); border-color: #7c2d12; }
+  :global(.dark) .setup-card__eyebrow,
+  :global(.dark) .setup-card__price { color: #fdba74; }
+  :global(.dark) .setup-card__caption,
+  :global(.dark) .setup-card__scope ul { color: #d6d3d1; }
+  :global(.dark) .setup-card__limits span { background: #292524; border-color: #9a3412; }
+  :global(.dark) .setup-card__scope { background: #1c1917; border-color: #44403c; }
+  :global(.dark) .setup-card li::marker { color: #fb923c; }
+</style>

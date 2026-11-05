@@ -146,6 +146,25 @@ const insightSchema = {
     margin-top: 1.5rem;
   }
 
+  article ul,
+  article ol {
+    margin-top: 0.75rem;
+    padding-left: 1.5rem;
+    list-style-position: outside;
+  }
+
+  article ul {
+    list-style-type: disc;
+  }
+
+  article ol {
+    list-style-type: decimal;
+  }
+
+  article li + li {
+    margin-top: 0.5rem;
+  }
+
   #toc li {
     display: flex;
     align-items: center;
