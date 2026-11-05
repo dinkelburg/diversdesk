@@ -38,6 +38,7 @@ const insightsCollection = defineCollection({
   cardImage: image(),
   cardImageAlt: z.string(),
   showInFeed: z.boolean().default(true),
+  robots: z.string().optional(),
   }),
 });
 

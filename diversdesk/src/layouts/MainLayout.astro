@@ -7,6 +7,7 @@ import { SITE } from "@data/constants";
 import BlackFridayBanner from "@components/ui/banners/BlackFridayBanner.astro";
 import WhatsAppWidget from "@components/ui/WhatsAppWidget.astro";
 import "@styles/site-tailwind.css";
+import { getRobotsSettings } from "@/lib/robots";
 
 interface Props {
   title?: string;
@@ -49,15 +50,7 @@ const pageImage = image.startsWith("http")
 const socialImage = pageImage.endsWith(".avif")
   ? "https://www.diversdesk.com/images/Laptop-and-phone-diversdesk.png"
   : pageImage;
-const robotDirectives = robots
-  .split(",")
-  .map((directive: string) => directive.trim().toLowerCase())
-  .filter(Boolean);
-const noindex = robotDirectives.includes("noindex");
-const nofollow = robotDirectives.includes("nofollow");
-const robotsExtras = robotDirectives
-  .filter((directive: string) => directive !== "index" && directive !== "follow" && directive !== "noindex" && directive !== "nofollow")
-  .join(", ");
+const { noindex, nofollow, robotsExtras } = getRobotsSettings(robots);
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",

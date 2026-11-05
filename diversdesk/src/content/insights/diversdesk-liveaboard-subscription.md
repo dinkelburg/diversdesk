@@ -1,7 +1,7 @@
 ---
 title: "Diversdesk's Liveboard Subscription: The Allround Solution for Liveaboard Operators"
 description: "Discover Diversdesk's Liveaboard solution. Manage cabin availability, automate agent bookings, sync with channel managers, and go 100% paperless with our powerful software designed for liveaboard fleets."
-showInFeed: false
+showInFeed: true
 author: "Bart"
 role: "Co-founder & CEO of Diversdesk"
 authorImage: "@/images/blog/bart.avif"
@@ -14,7 +14,7 @@ readTime: 8
 tags: ["Liveaboard Management", "Dive Business Software", "Channel Management", "Paperless Registration", "CRM", "Fleet Management", "Agent Portal"]
 contents: ["Key Benefits at a Glance", "Powerful Booking Engine & Channel Management", "Empower Agents with a Consolidated Hub", "On-Board POS, Inventory & Maintenance", "100% Paperless Registration & Automated Nurturing", "Custom Manifests & Financial Reporting", "Pricing", "Ready to Simplify Your Liveaboard Business?"]
 
-robots: "noindex, nofollow"
+robots: "index, follow"
 canonical: "https://www.diversdesk.com/insights/diversdesk-liveaboard-subscription"
 structuredData:
   "@context": "https://schema.org"

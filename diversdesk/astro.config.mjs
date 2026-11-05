@@ -101,6 +101,7 @@ export default defineConfig({
     sitemap({
       // Enhanced filter to exclude unwanted pages
       filter: (page) => !(
+        new URL(page).pathname.replace(/\/$/, '') === '/blog/viewhidden' ||
         page.includes('/welcome-to-docs') ||
         page.includes('/docs/insights') ||
         page.includes('/user_manual') ||

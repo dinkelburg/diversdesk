@@ -1,0 +1,23 @@
+---
+import { getRobotsSettings } from "@/lib/robots";
+
+interface Props {
+  robots?: string;
+}
+
+const { noindex, nofollow } = getRobotsSettings(Astro.props.robots);
+const allowed = "bg-neutral-100 text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200";
+const restricted = "bg-amber-100 text-amber-900 dark:bg-amber-900 dark:text-amber-100";
+---
+
+<div class="mt-4 flex flex-wrap items-center gap-2 text-xs" aria-label="Article search settings">
+  <span class="mr-1 text-neutral-500 dark:text-neutral-400">Search settings</span>
+  <span
+    class:list={["rounded-full px-2.5 py-1 font-medium", noindex ? restricted : allowed]}
+    title={noindex ? "noindex: asks search engines to exclude this article from results" : "index: allows this article to appear in search results"}
+  >{noindex ? "No index" : "Index allowed"}</span>
+  <span
+    class:list={["rounded-full px-2.5 py-1 font-medium", nofollow ? restricted : allowed]}
+    title={nofollow ? "nofollow: asks search engines not to follow links on this article" : "follow: allows search engines to follow links on this article"}
+  >{nofollow ? "No follow" : "Follow allowed"}</span>
+</div>

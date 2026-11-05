@@ -1,0 +1,99 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import CardBlog from "@components/ui/cards/CardBlog.astro";
+import CardInsight from "@components/ui/cards/CardInsight.astro";
+import ArticleSearchStatus from "@components/ArticleSearchStatus.astro";
+import { getCollection } from "astro:content";
+
+// Match the article routes: blog pages use English entries; insights use all entries.
+const blogPosts = (
+  await getCollection("blog", ({ id, data }) =>
+    id.startsWith("en/") && data.showInFeed === false,
+  )
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const insightPosts = (
+  await getCollection("insights", ({ data }) => data.showInFeed === false)
+).sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<MainLayout
+  title="Hidden Articles | DiversDesk"
+  description="Browse articles hidden from the Blog and Insights listing."
+  canonical="https://www.diversdesk.com/blog/viewhidden/"
+  robots="noindex, nofollow"
+  showBanner={false}
+>
+  <main class="mx-auto max-w-[1520px] space-y-12 px-4 py-16 sm:px-6 lg:px-8">
+    <header class="max-w-3xl">
+      <a
+        href="/blog/"
+        class="font-medium text-orange-600 underline decoration-2 underline-offset-4 hover:text-orange-700 dark:text-orange-300"
+      >Back to Blog &amp; Insights</a>
+      <h1 class="mt-6 text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl">
+        Hidden articles
+      </h1>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
+        Articles hidden from the Blog and Insights listing. Open any article to review it.
+        These articles are still accessible to anyone with their direct links.
+      </p>
+      <div class="mt-6 rounded-xl border border-neutral-200 bg-neutral-50 p-4 text-sm text-neutral-600 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-400">
+        <p>
+          <strong class="font-semibold text-neutral-800 dark:text-neutral-200">This directory:</strong>
+          <code>noindex, nofollow</code>. Each article has its own search settings, shown below its card.
+        </p>
+        <details class="mt-3">
+          <summary class="cursor-pointer font-medium text-neutral-800 dark:text-neutral-200">What do index and follow mean?</summary>
+          <dl class="mt-3 space-y-3">
+            <div>
+              <dt class="font-medium text-neutral-800 dark:text-neutral-200">Index allowed / No index</dt>
+              <dd>Allows the article to appear in search results, or asks search engines to exclude it.</dd>
+            </div>
+            <div>
+              <dt class="font-medium text-neutral-800 dark:text-neutral-200">Follow allowed / No follow</dt>
+              <dd>Allows search engines to follow links on the article, or asks them not to. This refers to links within the article.</dd>
+            </div>
+          </dl>
+          <p class="mt-3">These are the page's configured instructions, not confirmation that a search engine has indexed or crawled it. Hiding an article from the Blog or Insights listing does not change these settings.</p>
+          <a class="mt-3 inline-block underline underline-offset-4" href="https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag">Google's guide to search settings</a>
+        </details>
+      </div>
+    </header>
+
+    <section aria-labelledby="hidden-blog-heading">
+      <h2 id="hidden-blog-heading" class="mb-6 text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+        Blog ({blogPosts.length})
+      </h2>
+      {blogPosts.length > 0 ? (
+        <div class="grid gap-6 min-[920px]:grid-cols-2">
+          {blogPosts.map((blogEntry) => (
+            <div>
+              <CardBlog blogEntry={blogEntry} />
+              <ArticleSearchStatus robots={blogEntry.data.robots} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p class="text-neutral-600 dark:text-neutral-400">No hidden blog articles.</p>
+      )}
+    </section>
+
+    <section aria-labelledby="hidden-insights-heading">
+      <h2 id="hidden-insights-heading" class="mb-6 text-2xl font-bold text-neutral-800 dark:text-neutral-200">
+        Insights ({insightPosts.length})
+      </h2>
+      {insightPosts.length > 0 ? (
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {insightPosts.map((insightEntry) => (
+            <div>
+              <CardInsight insightEntry={insightEntry} />
+              <ArticleSearchStatus robots={insightEntry.data.robots} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p class="text-neutral-600 dark:text-neutral-400">No hidden insights articles.</p>
+      )}
+    </section>
+  </main>
+</MainLayout>

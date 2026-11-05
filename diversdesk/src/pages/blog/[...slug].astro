@@ -80,6 +80,7 @@ const blogPostingSchema = {
   canonical={pageUrl}
   ogType="article"
   structuredData={blogPostingSchema}
+  robots={post.data.robots}
 >
   {post.data.additionalSchema && (
     <Fragment slot="head">
