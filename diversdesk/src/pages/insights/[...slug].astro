@@ -54,39 +54,46 @@ const insightSchema = {
     <div class="mx-auto max-w-screen-xl px-4 md:px-8">
       <div class="grid gap-8 md:grid-cols-2 lg:gap-12">
         <div>
-          <div class="h-64 overflow-hidden rounded-lg shadow-lg md:h-auto">
-            <img
-              class="h-full w-full object-cover object-center"
-              src={post.data.cardImage.src}
-              alt={post.data.cardImageAlt}
-              draggable="false"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
           <div
             id="progress-mobile"
             class="fixed left-0 top-0 h-2 w-full bg-gradient-to-r from-orange-400/30 to-orange-400 md:hidden"
           >
           </div>
-          <div id="pin" class="mt-10 hidden space-y-4 md:block">
+          <div id="insight-sidebar" class="flex flex-col gap-10">
             <div
-              class="h-px w-full overflow-hidden bg-neutral-300 dark:bg-neutral-700"
+              id="insight-cover"
+              class="h-64 overflow-hidden rounded-lg shadow-lg md:h-auto"
             >
-              <div
-                id="progress"
-                class="h-px w-full bg-gradient-to-r from-orange-400/30 to-orange-400"
-              >
-              </div>
+              <img
+                class="h-full w-full object-cover object-center"
+                src={post.data.cardImage.src}
+                alt={post.data.cardImageAlt}
+                draggable="false"
+                loading="eager"
+                decoding="async"
+              />
             </div>
-            <p class="text-pretty text-sm font-light text-neutral-500">
-              Table of Contents:
-            </p>
-            <div id="toc" class="">
-              <ul
-                class="space-y-2 text-pretty text-base text-neutral-700 transition duration-300 dark:text-neutral-400"
-              >
-              </ul>
+            <div id="pin" class="hidden md:block">
+              <div id="insight-toc-content" class="space-y-4">
+                <div
+                  class="h-px w-full overflow-hidden bg-neutral-300 dark:bg-neutral-700"
+                >
+                  <div
+                    id="progress"
+                    class="h-px w-full bg-gradient-to-r from-orange-400/30 to-orange-400"
+                  >
+                  </div>
+                </div>
+                <p class="text-pretty text-sm font-light text-neutral-500">
+                  Table of Contents:
+                </p>
+                <div id="toc">
+                  <ul
+                    class="space-y-2 text-pretty text-base text-neutral-700 transition duration-300 dark:text-neutral-400"
+                  >
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -247,7 +254,7 @@ const insightSchema = {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  let pinTimeline: gsap.core.Timeline | null = null;
+  let stopSidebarPin: (() => void) | undefined;
   const tocScrollTriggers: ScrollTrigger[] = [];
 
   const SVG_HTML_STRING =
@@ -267,26 +274,76 @@ const insightSchema = {
     listItem?.classList.add("selected");
   }
 
-  function initToc(): void {
-    if (pinTimeline) {
-      pinTimeline.scrollTrigger?.kill();
-      pinTimeline.kill();
-      pinTimeline = null;
-    }
+  function initSidebarPin(): void {
+    const sidebar = document.getElementById("insight-sidebar");
+    const cover = document.getElementById("insight-cover");
+    const tocPanel = document.getElementById("pin");
+    const tocContent = document.getElementById("insight-toc-content");
+    const navbar = document.querySelector("header");
+    if (!sidebar || !cover || !tocPanel || !tocContent) return;
 
+    const viewportPadding = 16;
+    const getPinTop = () => {
+      const navbarTop = navbar ? parseFloat(getComputedStyle(navbar).top) || 0 : 0;
+      return navbarTop + (navbar?.offsetHeight ?? 0) + viewportPadding;
+    };
+    // Measure the contents directly so GSAP's pin spacer doesn't affect the fit check.
+    const getSidebarHeight = () =>
+      cover.offsetHeight + parseFloat(getComputedStyle(sidebar).rowGap) + tocContent.offsetHeight;
+
+    let pin: ScrollTrigger | undefined;
+    let frame = 0;
+    let previousLayout = "";
+
+    const updatePin = () => {
+      const top = getPinTop();
+      const sidebarHeight = getSidebarHeight();
+      const desktop = getComputedStyle(tocPanel).display !== "none";
+      const fits = sidebarHeight <= window.innerHeight - top - viewportPadding;
+      const layout = [desktop, fits, sidebarHeight, sidebar.offsetWidth, window.innerHeight, top].join();
+      if (layout === previousLayout) return;
+      previousLayout = layout;
+
+      const target = desktop ? (fits ? sidebar : tocPanel) : undefined;
+      if (pin?.pin !== target) {
+        pin?.kill();
+        pin = target ? ScrollTrigger.create({
+          trigger: target,
+          pin: true,
+          pinSpacing: target === tocPanel,
+          start: fits ? () => `top ${getPinTop()}px` : "top 20%",
+          endTrigger: "footer",
+          end: fits
+            ? () => `top ${getPinTop() + getSidebarHeight() + viewportPadding}px`
+            : "top bottom",
+        }) : undefined;
+      }
+      ScrollTrigger.refresh();
+    };
+
+    const scheduleUpdate = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(updatePin);
+    };
+    const observer = new ResizeObserver(scheduleUpdate);
+    observer.observe(cover);
+    observer.observe(tocContent);
+    if (navbar) observer.observe(navbar);
+    window.addEventListener("resize", scheduleUpdate);
+    stopSidebarPin = () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("resize", scheduleUpdate);
+      pin?.kill();
+    };
+    updatePin();
+  }
+
+  function initToc(): void {
+    stopSidebarPin?.();
+    stopSidebarPin = undefined;
     tocScrollTriggers.forEach((trigger) => trigger.kill());
     tocScrollTriggers.length = 0;
-
-    pinTimeline = gsap.timeline({
-      scrollTrigger: {
-        scrub: 1,
-        pin: true,
-        trigger: "#pin",
-        start: "top 20%",
-        endTrigger: "footer",
-        end: "top bottom",
-      },
-    });
 
     // The article element that contains the Markdown content
     const article: HTMLElement | null = document.querySelector("article");
@@ -336,7 +393,7 @@ const insightSchema = {
       }
     });
 
-    ScrollTrigger.refresh();
+    initSidebarPin();
   }
 
   if (document.readyState === "loading") {
@@ -346,4 +403,5 @@ const insightSchema = {
   }
 
   document.addEventListener("astro:page-load", initToc);
+  document.addEventListener("astro:before-swap", () => stopSidebarPin?.());
 </script>
